@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1770"
+   height="1752"
+   viewBox="0 0 1770 1752"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg14"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs18" />
+  <title
+     id="title">Vantage Movers logo</title>
+  <desc
+     id="desc">Clean vector logo with blue and gold Vantage icon above a blue VANTAGE wordmark.</desc>
+  <g
+     id="icon">
+    <path
+       fill="#024799"
+       d="m 235,0 h 374 l 311,824 -95,86 -135,200 z"
+       id="path4" />
+    <path
+       fill="#ffce45"
+       d="m 1406,0 h 364 l -222,548 c -169,8 -350,80 -376,112 z"
+       id="path6" />
+    <path
+       fill="#ffce45"
+       d="m 1476,706 17,10 -205,496 h -14 v -162 c 33,-133 111,-283 202,-344 z"
+       id="path8" />
+  </g>
+  <g
+     id="wordmark"
+     transform="scale(0.884,1)">
+    <g
+       aria-label="VANTAGE"
+       id="text11"
+       style="font-weight:700;font-size:240px;font-family:'Nimbus Sans', Arial, sans-serif;letter-spacing:8;fill:#024799">
+      <path
+         d="m 95.28,1750 60,-174.96 H 119.04 L 80.88,1706.8 42,1575.04 H 5.76 L 64.8,1750 Z"
+         id="path20" />
+      <path
+         d="m 270.79997,1714.72 11.52,35.28 h 36.96 l -60.48,-174.96 h -39.84 l -62.16,174.96 h 36.72 l 11.76,-35.28 z m -9.84,-30 h -45.6 l 22.8,-68.4 z"
+         id="path22" />
+      <path
+         d="m 454.48,1750 h 36 v -174.96 h -36 v 119.04 L 385.12,1575.04 H 348.16 V 1750 h 36 v -120.96 z"
+         id="path24" />
+      <path
+         d="m 605.52,1605.04 h 51.12 v -30 H 516.48 v 30 h 53.04 V 1750 h 36 z"
+         id="path26" />
+      <path
+         d="m 766.8802,1714.72 11.52,35.28 h 36.96 l -60.48,-174.96 h -39.84 l -62.16,174.96 h 36.72 l 11.76,-35.28 z m -9.84,-30 h -45.6 l 22.8,-68.4 z"
+         id="path28" />
+      <path
+         d="m 989.2003,1655.92 h -70.08 v 30 h 39.84 c -0.96,9.84 -3.36,15.84 -8.64,22.08 -8.64,10.56 -22.08,16.8 -35.76,16.8 -29.28,0 -49.92,-25.44 -49.92,-61.44 0,-37.68 18.24,-60.48 48.96,-60.48 12.48,0 23.04,3.6 30.96,10.56 5.04,4.32 7.68,8.4 10.8,17.52 h 33.84 c -4.32,-36.24 -33.6,-58.8 -75.84,-58.8 -50.4,0 -84.72,37.2 -84.72,91.68 0,53.04 34.56,91.68 81.84,91.68 23.52,0 39.36,-8.4 52.8,-28.08 l 4.32,23.04 h 21.6 z"
+         id="path30" />
+      <path
+         d="m 1068.2403,1674.64 h 83.76 v -30 h -83.76 v -39.6 h 90.48 v -30 h -126.48 V 1750 h 130.8 v -30 h -94.8 z"
+         id="path32" />
+    </g>
+  </g>
+</svg>

@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Design reference bundle - not part of the app.
+    "design_handoff_vantage_movers/**",
   ]),
 ]);
 

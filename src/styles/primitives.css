@@ -1,0 +1,389 @@
+/* ============================================================
+   Vantage Movers - Primitives: eyebrow, buttons, phone, stars,
+   illustration fills (ImageFill scenes)
+   ============================================================ */
+
+.eyebrow {
+  align-items: center;
+  color: var(--trust-blue);
+  display: inline-flex;
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  gap: 9px;
+  letter-spacing: 0.14em;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.eyebrow::before {
+  background: var(--gold);
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 22px;
+}
+
+.eyebrow.center {
+  justify-content: center;
+}
+
+.eyebrow.on-dark {
+  color: var(--gold);
+}
+
+.btn {
+  align-items: center;
+  background: var(--cta);
+  border: none;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 6px 16px rgba(20, 93, 160, 0.28);
+  color: var(--cta-text);
+  display: inline-flex;
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 700;
+  gap: 10px;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  padding: 16px 30px;
+  text-transform: uppercase;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--cta-hover);
+  box-shadow: 0 12px 26px rgba(6, 43, 85, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+}
+
+.btn--gold {
+  background: var(--gold);
+  box-shadow: 0 6px 16px rgba(244, 180, 0, 0.32);
+  color: var(--navy);
+}
+
+.btn--gold:hover {
+  background: #e0a500;
+  color: var(--navy);
+}
+
+.btn--lg {
+  font-size: 16px;
+  padding: 19px 40px;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--ghost {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  box-shadow: none;
+  color: var(--white);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+}
+
+.phone {
+  align-items: center;
+  display: inline-flex;
+  font-family: var(--font-head);
+  font-weight: 800;
+  gap: 12px;
+  letter-spacing: -0.01em;
+}
+
+.phone__icon {
+  background: var(--gold);
+  border-radius: 50%;
+  color: var(--navy);
+  display: grid;
+  flex: none;
+  height: 42px;
+  place-items: center;
+  width: 42px;
+}
+
+.phone__icon svg {
+  height: 19px;
+  width: 19px;
+}
+
+.phone--sm .phone__icon {
+  height: 36px;
+  width: 36px;
+}
+
+.phone--sm .phone__icon svg {
+  height: 16px;
+  width: 16px;
+}
+
+.phone__label {
+  color: var(--steel);
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.phone__num {
+  color: var(--navy);
+  font-size: 19px;
+  line-height: 1;
+}
+
+.phone.on-dark .phone__num,
+.phone.on-dark .phone__label {
+  color: #fff;
+}
+
+.phone.on-dark .phone__label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.stars {
+  align-items: center;
+  color: var(--gold);
+  display: inline-flex;
+  gap: 4px;
+}
+
+.stars svg {
+  height: 20px;
+  width: 20px;
+}
+
+.fill {
+  background: var(--steel-100);
+  border-radius: var(--radius);
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.fill__photo {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  z-index: 0;
+}
+
+.fill__label {
+  backdrop-filter: blur(3px);
+  background: rgba(6, 43, 85, 0.4);
+  border-radius: 999px;
+  bottom: 12px;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 10.5px;
+  left: 12px;
+  letter-spacing: 0.02em;
+  padding: 4px 9px;
+  position: absolute;
+  z-index: 4;
+}
+
+.fill__grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+  inset: 0;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.fill__ov {
+  background: linear-gradient(180deg, rgba(4, 18, 38, 0.3) 0%, rgba(4, 18, 38, 0.78) 100%);
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+}
+
+.mtf {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.mtf-boxes .bx {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  position: absolute;
+}
+
+.mtf-boxes .bx::after {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 6px 0 rgba(255, 255, 255, 0.14);
+  content: "";
+  height: 2px;
+  left: 18%;
+  position: absolute;
+  right: 18%;
+  top: 32%;
+}
+
+.mtf-boxes .b1 {
+  bottom: 8%;
+  height: 30%;
+  right: 8%;
+  width: 26%;
+}
+
+.mtf-boxes .b2 {
+  bottom: 8%;
+  height: 24%;
+  right: 33%;
+  width: 22%;
+}
+
+.mtf-boxes .b3 {
+  bottom: 37%;
+  height: 22%;
+  right: 11%;
+  transform: rotate(-4deg);
+  width: 20%;
+}
+
+.mtf-boxes .b4 {
+  bottom: 31%;
+  height: 15%;
+  opacity: 0.8;
+  right: 31%;
+  transform: rotate(5deg);
+  width: 15%;
+}
+
+.mtf-truck .trailer {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06));
+  border: 1.5px solid rgba(255, 255, 255, 0.24);
+  border-radius: 6px;
+  bottom: 22%;
+  height: 26%;
+  position: absolute;
+  right: 12%;
+  width: 34%;
+}
+
+.mtf-truck .cab {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1.5px solid rgba(255, 255, 255, 0.24);
+  border-radius: 6px 8px 4px 4px;
+  bottom: 22%;
+  height: 17%;
+  position: absolute;
+  right: 8%;
+  width: 12%;
+}
+
+.mtf-truck .wheel {
+  aspect-ratio: 1;
+  background: rgba(4, 18, 38, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  bottom: 16%;
+  position: absolute;
+  width: 5%;
+}
+
+.mtf-truck .w1 {
+  right: 11%;
+}
+
+.mtf-truck .w2 {
+  right: 30%;
+}
+
+.mtf-truck .w3 {
+  right: 38%;
+}
+
+.mtf-route .dot {
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(244, 180, 0, 0.18);
+  height: 16px;
+  position: absolute;
+  width: 16px;
+}
+
+.mtf-route .d1 {
+  left: 16%;
+  top: 64%;
+}
+
+.mtf-route .d2 {
+  background: #fff;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.16);
+  right: 16%;
+  top: 30%;
+}
+
+.mtf-route .line {
+  border-right: 2px dashed rgba(255, 255, 255, 0.45);
+  border-top: 2px dashed rgba(255, 255, 255, 0.45);
+  border-top-right-radius: 60px;
+  height: 64%;
+  left: 18%;
+  position: absolute;
+  right: 18%;
+  top: 30%;
+}
+
+.mtf-glyph {
+  display: grid;
+  place-items: center;
+}
+
+.mtf-glyph svg {
+  color: rgba(255, 255, 255, 0.3);
+  height: 38%;
+  stroke-width: 1.2;
+  width: 38%;
+}
+
+.urgency {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.92);
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 9px;
+  padding: 9px 16px;
+}
+
+.urgency__dot {
+  animation: pulse 2s infinite;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.3);
+  height: 8px;
+  width: 8px;
+}
