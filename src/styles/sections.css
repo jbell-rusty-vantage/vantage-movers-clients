@@ -52,12 +52,12 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: 6px 0;
   transition: padding 0.25s;
 }
 
 .header.is-stuck .header__in {
-  padding: 11px 0;
+  padding: 5px 0;
 }
 
 .header__left {
@@ -73,7 +73,7 @@
 }
 
 .logo__img {
-  --logo-size: clamp(46px, 2.8vw + 34px, 58px);
+  --logo-size: clamp(62px, 4vw + 44px, 80px);
   display: block;
   flex: none;
   height: var(--logo-size);
@@ -83,7 +83,7 @@
 }
 
 .logo--dark .logo__img {
-  --logo-size: clamp(50px, 3vw + 36px, 64px);
+  --logo-size: clamp(72px, 4.5vw + 48px, 92px);
 }
 
 .header__partner {
