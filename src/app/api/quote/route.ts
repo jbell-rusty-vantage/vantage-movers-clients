@@ -16,6 +16,7 @@ const requestSchema = quoteFormSchema.extend({
   source_company: z.string().trim().optional(),
   source_company_site: z.string().trim().optional(),
   ref_no: z.string().trim().optional(),
+  sms_consent: z.boolean().optional(),
 });
 
 function normalizeSourceCompany(value?: string): string {
@@ -38,7 +39,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 });
   }
 
-  const { source_company, source_company_site, ref_no, ...quote } = parsed.data;
+  const { source_company, source_company_site, ref_no, sms_consent, ...quote } = parsed.data;
 
   // Forward the validated lead to vantage-main-server. Failures are logged but
   // never block the estimate the user is waiting on.
@@ -54,6 +55,7 @@ export async function POST(req: Request) {
     move_date: quote.date,
     ref_no: ref_no || undefined,
     quoted: true,
+    sms_consent: sms_consent ?? quote.smsConsent,
   };
 
   const leadResult = await createFormLead(leadPayload);

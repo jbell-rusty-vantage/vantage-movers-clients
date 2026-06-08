@@ -25,8 +25,7 @@ const publicSans = Public_Sans({
 
 export const metadata: Metadata = {
   title: `${site.name} | Affordable Nationwide Moving Services`,
-  description:
-    "Get a free moving estimate from Vantage Movers, a licensed nationwide moving broker for long-distance, office, military, packing, storage, and auto transport moves.",
+  description: `Get a free moving estimate from ${site.name}, a licensed nationwide moving broker for long-distance, office, military, packing, storage, and auto transport moves.`,
   applicationName: site.name,
 };
 
@@ -36,7 +35,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${publicSans.variable} antialiased`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${archivo.variable} ${publicSans.variable} antialiased`}
+    >
       <body>
         <PromoProvider>
           <div id="top" />

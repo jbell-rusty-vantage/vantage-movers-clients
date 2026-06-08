@@ -2,7 +2,7 @@
  * Lead-source / partner configuration.
  *
  * Each landing-page URL segment maps to a partner company: the slug determines
- * which logo is juxtaposed with the Vantage Movers logo in the header and which
+ * which logo is juxtaposed with the Vantage Home Movers logo in the header and which
  * `source_company` is sent to vantage-main-server when a form lead is captured.
  *
  * The bare root (`/`) is the canonical Vantage site (`main_site`) and renders no
@@ -37,9 +37,9 @@ export interface PartnerConfig {
 
 export const MAIN_SITE: PartnerConfig = {
   slug: "",
-  name: "Vantage Movers",
+  name: "Vantage Home Movers",
   sourceCompany: "main_site",
-  sourceCompanySite: "vantagemovers.com",
+  sourceCompanySite: "vantagequotes.com",
 };
 
 export const PARTNERS: Record<string, PartnerConfig> = {
@@ -47,7 +47,7 @@ export const PARTNERS: Record<string, PartnerConfig> = {
     slug: "tbm",
     name: "TBM",
     sourceCompany: "tbm_leads",
-    sourceCompanySite: "vantagemovers.com/tbm",
+    sourceCompanySite: "vantagequotes.com/tbm",
     logo: "/partnerlogos/tbm_leads.svg",
     logoWidth: 190,
     logoHeight: 50,
@@ -57,7 +57,7 @@ export const PARTNERS: Record<string, PartnerConfig> = {
     slug: "tbm-primes",
     name: "TBM Prime",
     sourceCompany: "tbm_prime_leads",
-    sourceCompanySite: "vantagemovers.com/tbm-primes",
+    sourceCompanySite: "vantagequotes.com/tbm-primes",
     logo: "/partnerlogos/tbm_prime_leads.svg",
     logoWidth: 134,
     logoHeight: 40,
@@ -67,7 +67,7 @@ export const PARTNERS: Record<string, PartnerConfig> = {
     slug: "top10",
     name: "Top 10",
     sourceCompany: "top10_leads",
-    sourceCompanySite: "vantagemovers.com/top10",
+    sourceCompanySite: "vantagequotes.com/top10",
     logo: "/partnerlogos/top10.svg",
     logoWidth: 130,
     logoHeight: 36,

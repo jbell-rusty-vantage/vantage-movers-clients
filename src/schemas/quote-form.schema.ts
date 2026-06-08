@@ -47,9 +47,11 @@ export const quoteFormSchema = z.object({
     .trim()
     .refine((v) => v.replace(/\D/g, "").length >= 10, "Enter a valid phone number"),
   email: z.string().trim().regex(EMAIL_RE, "Enter a valid email"),
+  smsConsent: z.boolean().optional().default(false),
 });
 
-export type QuoteFormValues = z.infer<typeof quoteFormSchema>;
+export type QuoteFormInput = z.input<typeof quoteFormSchema>;
+export type QuoteFormValues = z.output<typeof quoteFormSchema>;
 
 export const emptyQuote: QuoteFormValues = {
   pickup: "",
@@ -59,10 +61,11 @@ export const emptyQuote: QuoteFormValues = {
   name: "",
   phone: "",
   email: "",
+  smsConsent: false,
 };
 
 /** Per-step field groups for `form.trigger(...)` before advancing. */
-export const STEP_FIELDS: Record<number, (keyof QuoteFormValues)[]> = {
+export const STEP_FIELDS: Record<number, (keyof QuoteFormInput)[]> = {
   0: ["pickup", "dest"],
   1: ["date", "size", "name", "phone", "email"],
 };

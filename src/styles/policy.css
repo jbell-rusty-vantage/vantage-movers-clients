@@ -246,7 +246,7 @@
   margin: 0;
   font-size: 15px;
 }
-.p-contact a {
+.p-contact p a {
   color: var(--gold);
   font-weight: 700;
   text-decoration: none;
@@ -272,10 +272,11 @@
 }
 .p-btn--gold {
   background: var(--gold);
-  color: var(--navy);
+  color: #fff;
 }
 .p-btn--gold:hover {
   background: #e0a500;
+  color: #fff;
   transform: translateY(-2px);
 }
 .p-btn--ghost {

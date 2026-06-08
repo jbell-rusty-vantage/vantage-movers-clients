@@ -17,6 +17,7 @@ import {
   STEP_FIELDS,
   emptyQuote,
   quoteFormSchema,
+  type QuoteFormInput,
   type QuoteFormValues,
   type QuoteResult,
 } from "@/schemas/quote-form.schema";
@@ -80,8 +81,8 @@ function ZipCompletionField({
   placeholder: string;
   displayValue: string;
   onDisplayChange: (value: string) => void;
-  register: UseFormRegister<QuoteFormValues>;
-  setValue: UseFormSetValue<QuoteFormValues>;
+  register: UseFormRegister<QuoteFormInput>;
+  setValue: UseFormSetValue<QuoteFormInput>;
   error?: FieldError;
 }) {
   const [resolvedRegion, setResolvedRegion] = useState("");
@@ -203,7 +204,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
     reset,
     setValue,
     formState: { errors },
-  } = useForm<QuoteFormValues>({
+  } = useForm<QuoteFormInput, unknown, QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
     defaultValues: emptyQuote,
     mode: "onTouched",
@@ -222,6 +223,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
           source_company: sourceCompany,
           source_company_site: sourceCompanySite,
           ref_no: refNo,
+          sms_consent: getValues("smsConsent"),
         }),
       });
       if (!res.ok) throw new Error("Quote request failed");
@@ -335,6 +337,23 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
             <Field id="email" label="Email address" error={errors.email?.message}>
               <Input id="email" type="email" placeholder="jane@email.com" {...register("email")} />
             </Field>
+            <label className="qf__sms-consent" htmlFor="sms-consent">
+              <input id="sms-consent" type="checkbox" {...register("smsConsent")} />
+              <span className="qf__sms-consent-label">
+                I agree to receive SMS messages from {site.name} about my moving quote request,
+                scheduling updates, appointment reminders, and customer support. Up to 4 messages
+                per month. Message and data rates may apply. Reply STOP to opt out. Reply HELP for
+                help.{" "}
+                <a href="/sms-privacy" target="_blank" rel="noopener noreferrer">
+                  SMS Privacy Policy
+                </a>
+                .{" "}
+                <a href="/sms-terms" target="_blank" rel="noopener noreferrer">
+                  SMS Terms
+                </a>
+                . Consent is not required to submit a quote request.
+              </span>
+            </label>
           </div>
         )}
 
@@ -399,9 +418,8 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
       </a>
 
       <p className="qf__legal">
-        By submitting this form, you acknowledge that {site.name} may contact you with updates,
-        offers, and information relevant to your moving process. You also agree to our privacy
-        policy.
+        By submitting this form, you request a moving quote from {site.name}. See our{" "}
+        <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms &amp; Conditions</a>.
       </p>
     </form>
   );

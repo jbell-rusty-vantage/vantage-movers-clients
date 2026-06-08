@@ -56,6 +56,7 @@ export interface CreateFormLeadInput {
   move_date?: string;
   ref_no?: string;
   quoted?: boolean;
+  sms_consent?: boolean;
 }
 
 export interface CreateFormLeadResult {
