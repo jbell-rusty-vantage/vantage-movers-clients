@@ -28,11 +28,6 @@ export const metadata: Metadata = {
   description:
     "Get a free moving estimate from Vantage Movers, a licensed nationwide moving broker for long-distance, office, military, packing, storage, and auto transport moves.",
   applicationName: site.name,
-  icons: {
-    icon: "/vantagelogo.svg",
-    shortcut: "/vantagelogo.svg",
-    apple: "/vantagelogo.svg",
-  },
 };
 
 export default function RootLayout({
