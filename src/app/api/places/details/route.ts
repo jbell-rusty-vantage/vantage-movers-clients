@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getGoogleAccessToken } from "../google-auth";
 
+export const runtime = "nodejs";
+
 interface PlaceDetailsResponse {
   formattedAddress?: string;
   addressComponents?: Array<{
