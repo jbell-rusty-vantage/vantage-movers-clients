@@ -69,6 +69,11 @@ export interface StatItem {
   icon: IconName;
   big: string;
   small: string;
+  animatedRange?: {
+    min: number;
+    max: number;
+    suffix?: string;
+  };
 }
 
 export interface HeroContent {

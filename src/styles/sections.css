@@ -73,16 +73,17 @@
 }
 
 .logo__img {
+  --logo-size: clamp(46px, 2.8vw + 34px, 58px);
   display: block;
   flex: none;
-  height: 46px;
+  height: var(--logo-size);
   object-fit: cover;
   object-position: top;
-  width: 46px;
+  width: var(--logo-size);
 }
 
 .logo--dark .logo__img {
-  filter: brightness(0) invert(1);
+  --logo-size: clamp(50px, 3vw + 36px, 64px);
 }
 
 .header__partner {
@@ -265,6 +266,12 @@
   font-size: 24px;
   font-weight: 800;
   line-height: 1;
+}
+
+.rolling-number {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  min-width: 5.7em;
 }
 
 .stat__small {

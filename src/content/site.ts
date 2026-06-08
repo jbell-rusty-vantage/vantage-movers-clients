@@ -21,7 +21,7 @@ export const site: SiteConfig = {
   tagline: "Nationwide Moving Network",
   copyrightYear: 2026,
   brokerDisclaimer:
-    "Please note that a properly licensed interstate broker, such as Vantage Movers, is not a motor carrier and will not transport an individual shipper's household goods, but will coordinate and arrange for the transportation of household goods by an FMCSA-authorized motor carrier, whose charges will be determined by its published tariff. All estimated charges and final actual charges will be based upon the carrier's tariff, which is available for inspection from the carrier upon reasonable request. (*) Up to 70% off on tariff rates.",
+    "Please note that a properly licensed interstate broker, such as Vantage Movers, is not a motor carrier and will not transport an individual shipper's household goods, but will coordinate and arrange for the transportation of household goods by an FMCSA-authorized motor carrier. All estimated charges and final actual charges will be based upon the carrier's tariff, which is available for inspection from the carrier upon reasonable request.",
 };
 
 /** tel: href helper kept here so the formatting rule lives with the config. */

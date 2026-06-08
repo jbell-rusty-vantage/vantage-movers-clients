@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   useForm,
@@ -29,9 +29,10 @@ import { StepIndicator } from "./StepIndicator";
 
 type LocationFieldName = "pickup" | "dest";
 
-interface AddressSuggestion {
+interface ZipSuggestion {
   placeId: string;
   text: string;
+  postalCode: string;
 }
 
 function Field({
@@ -61,7 +62,7 @@ function createSessionToken() {
   return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 }
 
-function AddressAutocompleteField({
+function ZipCompletionField({
   id,
   label,
   fieldName,
@@ -82,17 +83,15 @@ function AddressAutocompleteField({
   setValue: UseFormSetValue<QuoteFormValues>;
   error?: FieldError;
 }) {
-  const [suggestions, setSuggestions] = useState<AddressSuggestion[]>([]);
-  const [open, setOpen] = useState(false);
+  const [resolvedRegion, setResolvedRegion] = useState("");
   const [loading, setLoading] = useState(false);
   const [lookupError, setLookupError] = useState("");
-  const [sessionToken, setSessionToken] = useState(createSessionToken);
-  const fieldRef = useRef<HTMLDivElement>(null);
+  const [sessionToken] = useState(createSessionToken);
 
   useEffect(() => {
-    const trimmed = displayValue.trim();
+    const zip = displayValue.replace(/\D/g, "").slice(0, 5);
 
-    if (trimmed.length < 3) {
+    if (zip.length !== 5) {
       return;
     }
 
@@ -102,18 +101,31 @@ function AddressAutocompleteField({
       setLookupError("");
       try {
         const res = await fetch(
-          `/api/places/autocomplete?input=${encodeURIComponent(trimmed)}&sessionToken=${encodeURIComponent(sessionToken)}`,
+          `/api/places/autocomplete?input=${encodeURIComponent(zip)}&sessionToken=${encodeURIComponent(sessionToken)}`,
           { signal: controller.signal },
         );
-        if (!res.ok) throw new Error("Unable to load address suggestions");
-        const data = (await res.json()) as { suggestions?: AddressSuggestion[] };
-        setSuggestions(data.suggestions ?? []);
-        setOpen(true);
+        if (!res.ok) throw new Error("Unable to resolve ZIP");
+        const data = (await res.json()) as { suggestions?: ZipSuggestion[] };
+        const match = data.suggestions?.find((suggestion) => suggestion.postalCode === zip);
+
+        if (!match) {
+          setValue(fieldName, "", { shouldDirty: true, shouldValidate: true });
+          setResolvedRegion("");
+          setLookupError("Enter a valid US ZIP code.");
+          return;
+        }
+
+        setValue(fieldName, match.postalCode, {
+          shouldDirty: true,
+          shouldTouch: true,
+          shouldValidate: true,
+        });
+        setResolvedRegion(match.text);
       } catch {
         if (!controller.signal.aborted) {
-          setSuggestions([]);
-          setOpen(false);
-          setLookupError("Address suggestions are unavailable. You can enter a 5-digit ZIP.");
+          setValue(fieldName, "", { shouldDirty: true, shouldValidate: true });
+          setResolvedRegion("");
+          setLookupError("ZIP lookup is unavailable. Please try again.");
         }
       } finally {
         if (!controller.signal.aborted) setLoading(false);
@@ -126,97 +138,32 @@ function AddressAutocompleteField({
     };
   }, [displayValue, fieldName, sessionToken, setValue]);
 
-  useEffect(() => {
-    function handlePointerDown(event: PointerEvent) {
-      if (!fieldRef.current?.contains(event.target as Node)) {
-        setOpen(false);
-      }
-    }
-
-    document.addEventListener("pointerdown", handlePointerDown);
-    return () => document.removeEventListener("pointerdown", handlePointerDown);
-  }, []);
-
-  async function selectSuggestion(suggestion: AddressSuggestion) {
-    setLoading(true);
-    setLookupError("");
-    try {
-      const res = await fetch(
-        `/api/places/details?placeId=${encodeURIComponent(suggestion.placeId)}&sessionToken=${encodeURIComponent(sessionToken)}`,
-      );
-      if (!res.ok) throw new Error("Unable to load selected address");
-      const data = (await res.json()) as { formattedAddress?: string; postalCode?: string };
-      if (!data.postalCode) {
-        setLookupError("Select an address with a 5-digit ZIP code.");
-        return;
-      }
-
-      onDisplayChange(data.formattedAddress || suggestion.text);
-      setValue(fieldName, data.postalCode.slice(0, 5), {
-        shouldDirty: true,
-        shouldTouch: true,
-        shouldValidate: true,
-      });
-      setOpen(false);
-      setSuggestions([]);
-      setSessionToken(createSessionToken());
-    } catch {
-      setLookupError("We could not read that address. Try another result or enter a ZIP.");
-    } finally {
-      setLoading(false);
-    }
-  }
-
   return (
     <Field id={id} label={label} error={error?.message || lookupError}>
       <input type="hidden" {...register(fieldName)} />
-      <div className="qf__autocomplete" ref={fieldRef}>
+      <div className="qf__zip">
         <div className="qf__input-ico">
           <Icon name="pin" />
           <Input
             id={id}
             placeholder={placeholder}
             value={displayValue}
-            autoComplete="street-address"
+            autoComplete="postal-code"
+            inputMode="numeric"
+            maxLength={5}
             onChange={(e) => {
-              const nextValue = e.target.value;
-              onDisplayChange(nextValue);
-              if (/^\d{5}$/.test(nextValue.trim())) {
-                setValue(fieldName, nextValue.trim(), {
-                  shouldDirty: true,
-                  shouldValidate: true,
-                });
-              } else {
-                setValue(fieldName, "", { shouldDirty: true, shouldValidate: false });
-              }
-              if (nextValue.trim().length < 3) {
-                setSuggestions([]);
-                setOpen(false);
-                setLookupError("");
-              }
+              const nextZip = e.target.value.replace(/\D/g, "").slice(0, 5);
+              onDisplayChange(nextZip);
+              setResolvedRegion("");
+              setLookupError("");
+              setLoading(false);
+              setValue(fieldName, "", { shouldDirty: true, shouldValidate: false });
             }}
-            onFocus={() => suggestions.length > 0 && setOpen(true)}
           />
         </div>
-        {open && (
-          <div className="qf__suggestions" role="listbox" aria-label={`${label} suggestions`}>
-            {loading && <div className="qf__suggestion qf__suggestion--muted">Searching...</div>}
-            {!loading &&
-              suggestions.map((suggestion) => (
-                <button
-                  key={suggestion.placeId}
-                  type="button"
-                  className="qf__suggestion"
-                  onClick={() => selectSuggestion(suggestion)}
-                >
-                  {suggestion.text}
-                </button>
-              ))}
-            {!loading && suggestions.length === 0 && (
-              <div className="qf__suggestion qf__suggestion--muted">No addresses found</div>
-            )}
-            <div className="qf__suggestions-brand">Powered by Google</div>
-          </div>
+        {loading && <span className="qf__zip-status">Resolving ZIP...</span>}
+        {!loading && resolvedRegion && (
+          <span className="qf__zip-status qf__zip-status--ok">{resolvedRegion}</span>
         )}
       </div>
     </Field>
@@ -236,8 +183,8 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
   const [result, setResult] = useState<QuoteResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
-  const [pickupAddress, setPickupAddress] = useState("");
-  const [destAddress, setDestAddress] = useState("");
+  const [pickupZip, setPickupZip] = useState("");
+  const [destZip, setDestZip] = useState("");
 
   // Lead-source ref number passed by partner companies (?ref_no=...).
   const searchParams = useSearchParams();
@@ -299,8 +246,8 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
 
   function handleReset() {
     reset(emptyQuote);
-    setPickupAddress("");
-    setDestAddress("");
+    setPickupZip("");
+    setDestZip("");
     setResult(null);
     setSubmitError("");
     setStep(0);
@@ -320,24 +267,24 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
       <div className="qf__body">
         {step === 0 && (
           <div className="qf__pane">
-            <AddressAutocompleteField
-              id="pickup-address"
-              label="Pickup address"
+            <ZipCompletionField
+              id="pickup-zip"
+              label="Pickup ZIP"
               fieldName="pickup"
-              placeholder="Start typing pickup address"
-              displayValue={pickupAddress}
-              onDisplayChange={setPickupAddress}
+              placeholder="Enter pickup ZIP"
+              displayValue={pickupZip}
+              onDisplayChange={setPickupZip}
               register={register}
               setValue={setValue}
               error={errors.pickup}
             />
-            <AddressAutocompleteField
-              id="dest-address"
-              label="Destination address"
+            <ZipCompletionField
+              id="dest-zip"
+              label="Destination ZIP"
               fieldName="dest"
-              placeholder="Start typing destination address"
-              displayValue={destAddress}
-              onDisplayChange={setDestAddress}
+              placeholder="Enter destination ZIP"
+              displayValue={destZip}
+              onDisplayChange={setDestZip}
               register={register}
               setValue={setValue}
               error={errors.dest}

@@ -27,8 +27,8 @@ export function Footer() {
         <div className="footer__brand">
           <Logo dark />
           <p className="footer__blurb">
-            A licensed nationwide moving broker coordinating safe, affordable relocations for
-            families and businesses across the country.
+            A licensed nationwide moving broker helping families and businesses coordinate
+            interstate relocations through authorized motor carriers.
           </p>
         </div>
 

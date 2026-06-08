@@ -178,56 +178,20 @@
   padding-left: 40px;
 }
 
-.qf__autocomplete {
-  position: relative;
+.qf__zip {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.qf__suggestions {
-  background: #fff;
-  border: 1px solid var(--steel-200);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-lg);
-  left: 0;
-  margin-top: 6px;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  top: 100%;
-  z-index: 20;
-}
-
-.qf__suggestion {
-  background: #fff;
-  border: 0;
-  color: var(--near-black);
-  cursor: pointer;
-  display: block;
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.35;
-  padding: 11px 13px;
-  text-align: left;
-  width: 100%;
-}
-
-.qf__suggestion:hover,
-.qf__suggestion:focus {
-  background: var(--cool-white);
-}
-
-.qf__suggestion--muted {
+.qf__zip-status {
   color: var(--steel);
-  cursor: default;
+  font-size: 12px;
+  font-weight: 600;
 }
 
-.qf__suggestions-brand {
-  background: var(--cool-white);
-  border-top: 1px solid var(--steel-100);
-  color: var(--steel);
-  font-size: 11px;
-  font-weight: 700;
-  padding: 8px 13px;
-  text-align: right;
+.qf__zip-status--ok {
+  color: var(--navy);
 }
 
 .qf__field.has-error input,

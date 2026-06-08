@@ -10,16 +10,21 @@ interface PlacesAutocompleteResponse {
       text?: {
         text?: string;
       };
+      types?: string[];
     };
   }>;
 }
 
+function normalizeZip(input: string) {
+  return input.replace(/\D/g, "").slice(0, 5);
+}
+
 export async function GET(req: Request) {
   const url = new URL(req.url);
-  const input = url.searchParams.get("input")?.trim() || "";
+  const input = normalizeZip(url.searchParams.get("input") || "");
   const sessionToken = url.searchParams.get("sessionToken")?.trim();
 
-  if (input.length < 3) {
+  if (input.length !== 5) {
     return NextResponse.json({ suggestions: [] });
   }
 
@@ -35,7 +40,7 @@ export async function GET(req: Request) {
       body: JSON.stringify({
         input,
         includedRegionCodes: ["us"],
-        includedPrimaryTypes: ["street_address", "premise", "subpremise"],
+        includedPrimaryTypes: ["postal_code"],
         languageCode: "en-US",
         sessionToken,
       }),
@@ -53,6 +58,7 @@ export async function GET(req: Request) {
         .map((prediction) => ({
           placeId: prediction?.placeId,
           text: prediction?.text?.text,
+          postalCode: prediction?.text?.text.match(/\b\d{5}\b/)?.[0] ?? input,
         })) ?? [];
 
     return NextResponse.json({ suggestions });

@@ -68,7 +68,7 @@ export function PromoModal({
             <span className="pm-amount__val">{amount}</span>
             <span className="pm-amount__off">OFF</span>
           </div>
-          <p className="pm-cap">your moving estimate when you call today</p>
+          <p className="pm-cap">YOUR MOVING ESTIMATE WHEN YOU CALL TODAY</p>
         </div>
 
         <div className="pm-body">

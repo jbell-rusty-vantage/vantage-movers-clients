@@ -1,14 +1,24 @@
 import type { HeroContent } from "@/types";
 
 export const hero: HeroContent = {
-  ratingScore: "4.6/5.0",
-  ratingCount: "from 350 reviews",
-  headline: ["Get Affordable", "Moving Services"],
+  ratingScore: "4.8/5.0",
+  ratingCount: "from 1000+ reviews",
+  headline: ["Affordable Long Distance", "Moving Coordination"],
   subcopy:
-    "Find out how much we can help you save on your next move. Request a free, instant affordable moving quote now — no obligation.",
+    "Plan your interstate move with a licensed moving broker that helps match your route, inventory, and service needs with authorized motor carriers.",
   stats: [
-    { icon: "users", big: "100,000+", small: "Families moved nationwide" },
-    { icon: "clock", big: "44+", small: "Booked a move in the last hour" },
+    {
+      icon: "users",
+      big: "50,000+",
+      small: "Families moved nationwide",
+      animatedRange: { min: 50000, max: 55000, suffix: "+" },
+    },
+    {
+      icon: "clock",
+      big: "20+",
+      small: "Booked a move in the last hour",
+      animatedRange: { min: 20, max: 30, suffix: "+" },
+    },
   ],
   variant: "split",
 };

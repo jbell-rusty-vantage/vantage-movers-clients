@@ -2,8 +2,8 @@ import type { Service } from "@/types";
 
 export const servicesIntro = {
   eyebrow: "What we do",
-  title: "We Make Moving Easy",
-  body: "From packing and moving to storage and more — we know what it takes, and we have the moving experts ready to get you into your new home or office.",
+  title: "Long Distance Moving, Coordinated",
+  body: "From quote requests to carrier coordination, we help customers plan interstate moves with practical support and clear next steps.",
 };
 
 export const services: Service[] = [
@@ -11,28 +11,28 @@ export const services: Service[] = [
     scene: "longdist",
     icon: "box",
     title: "Long Distance Moves",
-    body: "Planning a move across the country or to a different state? Get a customized quote for an easy, fully-coordinated long distance move.",
+    body: "Planning a move across the country or to another state? Request a customized estimate and coordination support for your interstate relocation.",
     image: "/sitepictures/Truck%20Loaded.jpeg",
   },
   {
     scene: "storage",
     icon: "box",
     title: "Packing & Storage",
-    body: "Our moving team offers professional packing to keep your items safe during transit, with secure short- and long-term storage options afterward.",
+    body: "Ask about packing and storage options that can be arranged through authorized service providers for your route and move size.",
     image: "/sitepictures/packing.jpg",
   },
   {
     scene: "office",
     icon: "office",
     title: "Office Moves",
-    body: "Relocating a small or large office? Request an instant moving quote and let us make moving your business to a new location a breeze.",
+    body: "Relocating an office? We can help gather move details and coordinate available carrier options for business relocations.",
     image: "/sitepictures/Furniture%202.jpeg",
   },
   {
     scene: "military",
     icon: "shield",
     title: "Military Moves",
-    body: "Vantage proudly supports military families. We're a premier choice for helping service members relocate with care, precision, and respect.",
+    body: "Service members and military families can request support comparing long distance moving options and coordinating the details of their relocation.",
     image: "/sitepictures/Furniture%201.jpeg",
   },
 ];

@@ -7,6 +7,7 @@ import { Icon } from "@/components/ui/Icon";
 import { ImageFill } from "@/components/ui/ImageFill";
 import { QuoteForm } from "@/components/quote-form/QuoteForm";
 import { QuoteFormSkeleton } from "@/components/quote-form/QuoteFormSkeleton";
+import { RollingNumber } from "@/components/ui/RollingNumber";
 import type { StatItem } from "@/types";
 
 function StatCard({ stat }: { stat: StatItem }) {
@@ -16,7 +17,18 @@ function StatCard({ stat }: { stat: StatItem }) {
         <Icon name={stat.icon} />
       </span>
       <div>
-        <div className="stat__big">{stat.big}</div>
+        <div className="stat__big">
+          {stat.animatedRange ? (
+            <RollingNumber
+              fallback={stat.big}
+              min={stat.animatedRange.min}
+              max={stat.animatedRange.max}
+              suffix={stat.animatedRange.suffix}
+            />
+          ) : (
+            stat.big
+          )}
+        </div>
         <div className="stat__small">{stat.small}</div>
       </div>
     </div>

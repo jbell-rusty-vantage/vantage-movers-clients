@@ -2,8 +2,8 @@ import type { Review } from "@/types";
 
 export const reviewsIntro = {
   eyebrow: "Real reviews",
-  title: "What Our 100,000+ Customers Say",
-  body: "Real reviews from satisfied customers who trusted us with their move.",
+  title: "What Customers Say",
+  body: "Customer feedback from long distance moves coordinated through Vantage.",
 };
 
 export const reviews: Review[] = [
@@ -15,17 +15,17 @@ export const reviews: Review[] = [
   {
     name: "Priya N.",
     location: "Seattle → Boston",
-    text: "The staff were amazing to work with! Super friendly and super efficient. They made moving so easy and hassle-free — I'd recommend them to anyone.",
+    text: "The staff were friendly, responsive, and efficient. They helped make a complicated long-distance move feel much more manageable.",
   },
   {
     name: "Devon & Alyssa",
     location: "Tampa → Nashville",
-    text: "Between the first person I spoke to and the team in customer service, my experience with Vantage was seamless from the first call to delivery day.",
+    text: "From the first person I spoke to through customer service follow-up, Vantage kept communication clear from the first call to delivery day.",
   },
   {
     name: "Renee K.",
     location: "Chicago → Phoenix",
-    text: "They coordinated a packed schedule across two time zones without a single hiccup. Everything arrived on time and exactly as promised. Genuinely impressed.",
+    text: "They helped coordinate a packed schedule across two time zones and kept me informed as the move details came together. Genuinely impressed.",
   },
   {
     name: "Hassan M.",
@@ -40,6 +40,6 @@ export const reviews: Review[] = [
   {
     name: "Lena V.",
     location: "Portland → Salt Lake City",
-    text: "From the first quote to delivery day everything was transparent. No surprise fees, no chasing anyone down. This is how a move should go.",
+    text: "From the first quote to delivery day, the process was clear and easy to follow. I appreciated having someone available when questions came up.",
   },
 ];

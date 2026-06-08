@@ -1,7 +1,7 @@
 import type { BannerContent, CommitmentContent, TwoColContent } from "@/types";
 
 /** Shared urgency pill copy used by banners + promo. */
-export const URGENCY_TEXT = "44+ booked a move in the last hour";
+export const URGENCY_TEXT = "20+ booked a move in the last hour";
 
 /** Partner logos for the "trusted & reviewed on" marquee. */
 export interface TrustLogo {
@@ -24,17 +24,17 @@ export const trustStrip: { label: string; logos: TrustLogo[] } = {
 /** 6. Promo banner. */
 export const promoBanner: BannerContent = {
   scene: "promo",
-  eyebrow: "Save more",
-  title: ["Save More With", "Vantage Movers"],
-  body: "Get competitive quotes and expert coordination for your long distance move.",
+  eyebrow: "Free moving estimate",
+  title: ["Plan Your Interstate", "Move With Clarity"],
+  body: "Get a quote request started with a licensed broker that helps coordinate long distance moves through authorized motor carriers.",
 };
 
 /** 8. Expertise banner (tall). */
 export const expertiseBanner: BannerContent = {
   scene: "expertise",
-  eyebrow: "Our expertise",
-  title: ["Nationwide Long Distance", "Moving Is Our Expertise"],
-  body: "We focus on making every long distance move efficient, reliable, and tailored to your needs. Our professional moving experts are dedicated to careful planning and safe transportation — ensuring your move is smooth from start to finish.",
+  eyebrow: "Our focus",
+  title: ["Nationwide Long Distance", "Move Coordination"],
+  body: "We help customers organize interstate moves with clear estimates, route planning, and carrier coordination. Final charges may vary based on carrier tariff, inventory, services, and move conditions.",
   tall: true,
   image: "/sitepictures/Truck%20Loaded.jpeg",
 };
@@ -53,7 +53,7 @@ export const autoTransport: TwoColContent = {
   scene: "auto",
   eyebrow: "Auto transport",
   title: ["Need Reliable Auto Transport?"],
-  body: "Vantage Movers takes the hassle out of car transport. Our auto-transport experts handle everything, so you can focus on settling in. Contact us for a free quote and see why we offer the best car transport services in the country.",
+  body: "Need to move a vehicle along with your household goods? Our coordinators can help you request auto-transport options and compare the services available for your route.",
   cta: { label: "Request Free Quote", href: "#quote" },
   image: "/sitepictures/autotransport.jpg",
 };
@@ -63,9 +63,9 @@ export const support: TwoColContent = {
   id: "support",
   reverse: true,
   scene: "support",
-  eyebrow: "Always-on support",
-  title: ["Support Is Available", "Every Step Of The Way"],
-  body: "Vantage Movers customer support is available every step of the way. From pickup to delivery, we are there with you to help make your move a breeze — by phone, email, or chat, seven days a week.",
+  eyebrow: "Coordination support",
+  title: ["Support For The", "Key Moving Details"],
+  body: "Our team helps with quote requests, service questions, scheduling details, and carrier coordination so you can make informed decisions before moving day.",
   cta: { label: "Get Instant Quote", href: "#quote" },
   image: "/sitepictures/Furniture%201.jpeg",
 };
@@ -73,6 +73,6 @@ export const support: TwoColContent = {
 /** 10. Commitment band. */
 export const commitment: CommitmentContent = {
   eyebrow: "Why Vantage",
-  title: "Our Commitment To Excellence",
-  body: "Vantage Movers stands out by prioritizing our customers. Our goal is to simplify your moving process and provide the best moving services tailored to your specific needs. Choose Vantage for a smooth and easy move.",
+  title: "Licensed Broker. Clear Coordination.",
+  body: "Vantage Movers is a licensed interstate moving broker. We help customers plan, quote, and coordinate long distance relocations through FMCSA-authorized motor carriers.",
 };
