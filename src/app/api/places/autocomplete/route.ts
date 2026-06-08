@@ -58,7 +58,7 @@ export async function GET(req: Request) {
         .map((prediction) => ({
           placeId: prediction?.placeId,
           text: prediction?.text?.text,
-          postalCode: prediction?.text?.text.match(/\b\d{5}\b/)?.[0] ?? input,
+          postalCode: prediction?.text?.text?.match(/\b\d{5}\b/)?.[0] ?? input,
         })) ?? [];
 
     return NextResponse.json({ suggestions });
