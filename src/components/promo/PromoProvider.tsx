@@ -1,12 +1,13 @@
 "use client";
 
-import { createContext, useContext, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 import { promo } from "@/content/promo";
 import { usePromoTrigger } from "@/hooks/usePromoTrigger";
 import { PromoModal } from "./PromoModal";
 
 interface PromoContextValue {
   openPromo: () => void;
+  setPromoSuppressed: (suppressed: boolean) => void;
 }
 
 const PromoContext = createContext<PromoContextValue | null>(null);
@@ -19,13 +20,20 @@ export function usePromo() {
 }
 
 export function PromoProvider({ children }: { children: ReactNode }) {
+  const [promoSuppressed, setPromoSuppressed] = useState(false);
+  const shouldSuppressPromo = useCallback(() => promoSuppressed, [promoSuppressed]);
   const [open, openNow, close] = usePromoTrigger({
     inactivitySec: promo.enabled ? promo.inactivitySec : 0,
     exitIntent: promo.enabled && promo.exitIntent,
+    shouldSuppress: shouldSuppressPromo,
   });
 
+  useEffect(() => {
+    if (promoSuppressed && open) close();
+  }, [close, open, promoSuppressed]);
+
   return (
-    <PromoContext.Provider value={{ openPromo: openNow }}>
+    <PromoContext.Provider value={{ openPromo: openNow, setPromoSuppressed }}>
       {children}
       {promo.enabled && (
         <PromoModal

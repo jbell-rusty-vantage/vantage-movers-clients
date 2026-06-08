@@ -12,6 +12,8 @@ export interface PromoTriggerOptions {
   exitIntent?: boolean;
   /** Don't auto-fire again once dismissed this session. */
   oncePerSession?: boolean;
+  /** Prevent opening while the customer is in a higher-priority flow. */
+  shouldSuppress?: () => boolean;
 }
 
 /**
@@ -22,14 +24,16 @@ export function usePromoTrigger({
   inactivitySec = 35,
   exitIntent = true,
   oncePerSession = true,
+  shouldSuppress,
 }: PromoTriggerOptions): [boolean, () => void, () => void] {
   const [open, setOpen] = useState(false);
   const fired = useRef(false);
 
   const openNow = useCallback(() => {
+    if (shouldSuppress?.()) return;
     fired.current = true;
     setOpen(true);
-  }, []);
+  }, [shouldSuppress]);
 
   const close = useCallback(() => {
     setOpen(false);
@@ -58,6 +62,8 @@ export function usePromoTrigger({
       return !!el?.closest?.(".qf, input, textarea, select");
     };
 
+    const isSuppressed = () => shouldSuppress?.() ?? false;
+
     const schedule = () => {
       if (timer) clearTimeout(timer);
       if (!fired.current && inactivitySec > 0) timer = setTimeout(fire, inactivitySec * 1000);
@@ -65,7 +71,7 @@ export function usePromoTrigger({
 
     function fire() {
       if (fired.current) return;
-      if (isTyping()) {
+      if (isTyping() || isSuppressed()) {
         schedule();
         return;
       }
@@ -109,7 +115,7 @@ export function usePromoTrigger({
       document.removeEventListener("mouseout", onExit);
       document.documentElement.removeEventListener("mouseleave", onExit);
     };
-  }, [inactivitySec, exitIntent, oncePerSession]);
+  }, [inactivitySec, exitIntent, oncePerSession, shouldSuppress]);
 
   return [open, openNow, close];
 }

@@ -25,6 +25,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
 import { Label } from "@/components/ui/Label";
+import { usePromo } from "@/components/promo/PromoProvider";
 import { StepIndicator } from "./StepIndicator";
 
 type LocationFieldName = "pickup" | "dest";
@@ -189,6 +190,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
   // Lead-source ref number passed by partner companies (?ref_no=...).
   const searchParams = useSearchParams();
   const refNo = searchParams.get("ref_no")?.trim() || undefined;
+  const { setPromoSuppressed } = usePromo();
 
   // Min selectable move date (today). Computed at render; hydration warnings
   // are suppressed on the input since the server/client day can differ by tz.
@@ -208,6 +210,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
   });
 
   async function submitQuote() {
+    setPromoSuppressed(true);
     setLoading(true);
     setSubmitError("");
     try {
@@ -227,6 +230,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
       setStep(2);
     } catch {
       setSubmitError("Something went wrong. Please try again or give us a call.");
+      setPromoSuppressed(false);
     } finally {
       setLoading(false);
     }
@@ -250,6 +254,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
     setDestZip("");
     setResult(null);
     setSubmitError("");
+    setPromoSuppressed(false);
     setStep(0);
   }
 
