@@ -10,7 +10,7 @@ import {
 } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
-import { telHref, usd } from "@/lib/format";
+import { telHref } from "@/lib/format";
 import { site } from "@/content/site";
 import {
   MOVE_SIZES,
@@ -253,8 +253,6 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
     setStep(0);
   }
 
-  const firstName = (getValues("name") || "").trim().split(" ")[0];
-
   return (
     <form className={cn("qf", compact && "qf--compact")} onSubmit={handleNext} noValidate>
       <div className="qf__head">
@@ -340,11 +338,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
             <div className="qf__result-badge">
               <Icon name="check" width={20} height={20} />
             </div>
-            <p className="qf__result-cap">Estimated cost for your move</p>
-            <div className="qf__price">
-              {usd(result.low)}
-              <span>–{usd(result.high)}</span>
-            </div>
+            <p className="qf__result-cap">Thank you for submitting your request</p>
             <div className="qf__result-meta">
               <span>
                 <Icon name="pin" width={15} height={15} /> {getValues("pickup")} →{" "}
@@ -354,10 +348,15 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
                 <Icon name="truck" width={15} height={15} /> ~{result.miles} mi · {getValues("size")}
               </span>
             </div>
-            <p className="qf__result-note">
-              A moving specialist will call {firstName || "you"} shortly to confirm your exact rate
-              and book your date.
-            </p>
+            <div className="qf__result-note">
+              <p>A Moving coordinator will reach out to you shortly</p>
+              <p className="qf__result-call">
+                To speak to a Coordinator Immediately Call{" "}
+                <a href={telHref(site.phone)} className="qf__result-phone">
+                  {site.phone}
+                </a>
+              </p>
+            </div>
             <button type="button" className="qf__reset" onClick={handleReset}>
               ↺ Start a new quote
             </button>
