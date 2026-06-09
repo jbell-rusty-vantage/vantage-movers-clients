@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { cn } from "@/lib/utils";
+import { resolveSiteImage } from "@/content/images";
 import type { TwoColContent } from "@/types";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ImageFill } from "@/components/ui/ImageFill";
@@ -8,11 +9,14 @@ import { Button } from "@/components/ui/Button";
 
 export interface TwoColProps {
   content: TwoColContent;
+  /** Override section photo by registry key or public path. */
+  image?: string;
 }
 
 /** Two-column text + illustration section (Auto Transport / Support). */
-export function TwoCol({ content }: TwoColProps) {
-  const { id, reverse, scene, eyebrow, title, body, cta, image } = content;
+export function TwoCol({ content, image }: TwoColProps) {
+  const { id, reverse, scene, eyebrow, title, body, cta } = content;
+  const src = image ? resolveSiteImage(image) : content.image;
   return (
     <section className={cn("section twocol", reverse && "twocol--rev")} id={id}>
       <div className="wrap twocol__in">
@@ -35,7 +39,7 @@ export function TwoCol({ content }: TwoColProps) {
         <div className="twocol__media reveal" data-d="1">
           <ImageFill
             scene={scene}
-            src={image}
+            src={src}
             alt={title.join(" ")}
             sizes="(max-width: 900px) 100vw, 50vw"
             className="twocol__img"

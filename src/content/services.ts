@@ -1,4 +1,5 @@
 import type { Service } from "@/types";
+import { SITE_IMAGES } from "@/content/images";
 
 export const servicesIntro = {
   eyebrow: "What we do",
@@ -12,27 +13,27 @@ export const services: Service[] = [
     icon: "box",
     title: "Long Distance Moves",
     body: "Planning a move across the country or to another state? Request a customized estimate and coordination support for your interstate relocation.",
-    image: "/sitepictures/Truck%20Loaded.jpeg",
+    image: SITE_IMAGES.longDistanceMoves,
   },
   {
     scene: "storage",
     icon: "box",
     title: "Packing & Storage",
     body: "Ask about packing and storage options that can be arranged through authorized service providers for your route and move size.",
-    image: "/sitepictures/packing.jpg",
+    image: SITE_IMAGES.packingStorage,
   },
   {
     scene: "office",
     icon: "office",
     title: "Office Moves",
     body: "Relocating an office? We can help gather move details and coordinate available carrier options for business relocations.",
-    image: "/sitepictures/Furniture%202.jpeg",
+    image: SITE_IMAGES.officeMoves,
   },
   {
     scene: "military",
     icon: "shield",
     title: "Military Moves",
     body: "Service members and military families can request support comparing long distance moving options and coordinating the details of their relocation.",
-    image: "/sitepictures/Furniture%201.jpeg",
+    image: SITE_IMAGES.militaryMoves,
   },
 ];

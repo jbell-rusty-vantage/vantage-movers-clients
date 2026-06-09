@@ -84,6 +84,22 @@ export interface HeroContent {
   stats: StatItem[];
   /** "split" | "centered" - the locked-in layout variant from the prototype. */
   variant: "split" | "centered";
+  /** Default hero background photo under /public. */
+  image?: string;
+  /**
+   * Dark gradient strength over the photo (0–1). Maps to `--hero-overlay`.
+   * Lower = lighter/brighter hero; higher = darker/moodier.
+   */
+  overlayOpacity?: number;
+  /**
+   * Photo brightness multiplier (1 = normal). Maps to `--hero-brightness`.
+   * Values above 1 lighten the image itself before the overlay.
+   */
+  imageBrightness?: number;
+  /** CSS object-position for the hero photo (e.g. `"center center"`). */
+  imagePosition?: string;
+  /** object-position at viewport widths ≥1550px — lower % pans image down on screen. */
+  imagePositionLg?: string;
 }
 
 export interface Service {

@@ -1,4 +1,5 @@
 import type { PartnerConfig } from "@/content/partners";
+import { SITE_IMAGES, type SiteImageKey } from "@/content/images";
 import type { Testimonial } from "@/lib/vantage/server";
 import { Hero } from "@/components/sections/Hero";
 import { TrustStrip } from "@/components/sections/TrustStrip";
@@ -16,6 +17,16 @@ export interface LandingPageProps {
   source: PartnerConfig;
   /** Live testimonials from vantage-main-server (empty -> static fallback). */
   testimonials: Testimonial[];
+  /** Override section photos by registry key or public path/filename. */
+  images?: Partial<Record<SiteImageKey, string>>;
+  /** Dark gradient over hero photo (0–1). Lower = brighter. Defaults to `hero.overlayOpacity`. */
+  heroOverlayOpacity?: number;
+  /** Hero photo brightness (1 = normal). Defaults to `hero.imageBrightness`. */
+  heroImageBrightness?: number;
+  /** Hero photo object-position. Defaults to `hero.imagePosition`. */
+  heroImagePosition?: string;
+  /** Hero object-position at ≥1550px. Defaults to `hero.imagePositionLg`. */
+  heroImagePositionLg?: string;
 }
 
 /**
@@ -23,18 +34,42 @@ export interface LandingPageProps {
  * path. The `source` prop carries the partner/lead-source company (driving the
  * quote form's `source_company`) and `testimonials` are server-fetched.
  */
-export function LandingPage({ source, testimonials }: LandingPageProps) {
+export function LandingPage({
+  source,
+  testimonials,
+  images,
+  heroOverlayOpacity,
+  heroImageBrightness,
+  heroImagePosition,
+  heroImagePositionLg,
+}: LandingPageProps) {
+  const resolved = { ...SITE_IMAGES, ...images };
+
   return (
     <main>
-      <Hero source={source} />
+      <Hero
+        source={source}
+        backgroundImage={resolved.hero}
+        overlayOpacity={heroOverlayOpacity}
+        imageBrightness={heroImageBrightness}
+        imagePosition={heroImagePosition}
+        imagePositionLg={heroImagePositionLg}
+      />
       <TrustStrip />
-      <Services />
+      <Services
+        images={{
+          longDistanceMoves: resolved.longDistanceMoves,
+          packingStorage: resolved.packingStorage,
+          officeMoves: resolved.officeMoves,
+          militaryMoves: resolved.militaryMoves,
+        }}
+      />
       <PromoBanner />
       <Testimonials items={testimonials} />
-      <ExpertiseBanner />
-      <AutoTransport />
+      <ExpertiseBanner image={resolved.expertiseBanner} />
+      <AutoTransport image={resolved.autoTransport} />
       <Commitment />
-      <Support />
+      <Support image={resolved.coordinationSupport} />
       <FinalCTA />
     </main>
   );

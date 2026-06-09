@@ -1,0 +1,121 @@
+---
+description: Project organization and architecture for the Vantage Movers public marketing site
+globs: vantage-movers-clients/**/*
+alwaysApply: false
+---
+
+# Vantage Movers Clients — Project Organization
+
+`vantage-movers-clients` is the **public lead-capture marketing site** for Vantage Home Movers (licensed interstate moving broker). It is a Next.js 16 App Router app with **no database** — copy lives in `content/`, leads go to `vantage-main-server` via server-only API calls.
+
+## Stack & Conventions
+
+- **Next.js 16.2** App Router, **React 19**, **Tailwind CSS 4**, React Compiler (`reactCompiler: true`).
+- Forms: **React Hook Form + Zod 4** (`@hookform/resolvers/zod`). Icons: **lucide-react** via semantic `IconName` in `types/index.ts` → `components/ui/Icon.tsx`.
+- Path alias: `@/*` → `src/*`. Package manager: **pnpm** (`pnpm dev`, `pnpm lint`, `pnpm typecheck`).
+- Next.js docs for this version live in `.next-docs/` — see `NEXTJS_AGENTS.md` before assuming older Next APIs.
+
+## Folder Ownership
+
+| Path | Owns |
+|------|------|
+| `src/app/` | Routes, root `layout.tsx`, `globals.css` imports, route handlers, PDF redirect routes |
+| `src/components/` | React UI — keep pages thin, compose here |
+| `src/content/` | Static copy, nav links, partner config, legal doc data, promo toggles |
+| `src/schemas/` | Zod schemas shared by client form + API routes (`quote-form.schema.ts`) |
+| `src/lib/` | Pure helpers (`utils`, `format`, `estimate`) + `lib/vantage/server.ts` (server-only backend seam) |
+| `src/hooks/` | Client hooks (`useStickyHeader`, `usePromoTrigger`, scroll/lock helpers) |
+| `src/types/` | Shared domain TypeScript types (`SiteConfig`, `LegalDoc`, `SceneName`, etc.) |
+| `src/styles/` | Feature CSS imported by `globals.css` — **not** all-in-Tailwind |
+| `public/` | Images, partner SVGs (`partnerlogos/`), FMCSA PDFs (`pdfs/`), brand assets |
+
+### `src/components/` breakdown
+
+- **`LandingPage.tsx`** — orchestrates the full homepage; partner pages reuse it with a different `source`.
+- **`layout/`** — `LicenseBar`, `Header` (resolves partner from pathname), `Footer`, `Logo`.
+- **`sections/`** — landing blocks (`Hero`, `Services`, `Testimonials`, banners, CTAs). Read copy from `content/`.
+- **`quote-form/`** — multi-step quote UI; posts to `/api/quote`. Uses Google Places autocomplete via `/api/places/*`.
+- **`ui/`** — primitives (`Button`, `Input`, `Select`, `ImageFill`, `Phone`). Prefer extending these over one-offs.
+- **`policy/`** — `PolicyPage` renders `LegalDoc` from `content/legal/*`.
+- **`promo/`** — `PromoProvider` + modal; config in `content/promo.ts`, triggers in `hooks/usePromoTrigger.ts`.
+- **`interactive/`** — sitewide scroll/reveal UX (`RevealManager`, `BackToTop`).
+
+## Route Surface
+
+**Landing pages** (async Server Components → fetch testimonials → `<LandingPage />`):
+
+- `/` — canonical site (`MAIN_SITE` from `content/partners.ts`)
+- `/tbm`, `/tbm-primes`, `/top10` — partner landings; same sections, different `source_company` + header logo
+
+**Legal pages** — thin `page.tsx` + `PolicyPage` + metadata from `content/legal/*`:
+
+- `/privacy`, `/terms`, `/sms-privacy`, `/sms-terms`, `/cancellation`
+
+**PDF shortcuts** (route handlers redirect to `/public/pdfs/`):
+
+- `/ready-to-move`, `/your-rights`
+
+**API route handlers**:
+
+- `POST /api/quote` — validate with `quoteFormSchema`, `createFormLead()` (non-blocking on failure), return `estimate()` JSON
+- `GET /api/places/autocomplete`, `GET /api/places/details` — server-side Google Places (ZIP autocomplete)
+
+## Partner / Lead Source Model
+
+`content/partners.ts` is the single map from URL slug → API payload:
+
+- `sourceCompany` must match `vantage-main-server` `SOURCE_COMPANIES` (`main_site`, `tbm_leads`, `tbm_prime_leads`, `top10_leads`).
+- `Header` calls `resolvePartner(pathname)`; `QuoteForm` sends `source_company` + `source_company_site` on submit.
+- Adding a partner: entry in `PARTNERS`, new `src/app/<slug>/page.tsx`, logo under `public/partnerlogos/`.
+
+## Styling Rules
+
+Hybrid CSS — do **not** convert existing sections to utility-only Tailwind.
+
+- `globals.css` imports: `base.css` (tokens/fonts), `primitives.css`, `sections.css`, `quote-form.css`, `promo.css`, `policy.css`.
+- Semantic BEM-like classes: `.hero__*`, `.qf__*` (quote form), `.p-*` (policy), `.btn`, `.wrap`.
+- Brand tokens in `styles/base.css` (`--navy`, `--gold`, `--trust-blue`). Fonts: Archivo (headings) + Public Sans (body) in root layout.
+- Real photos live in `public/`; section backgrounds use `ImageFill` + `SceneName` presets or optional `image` paths in content.
+
+## Content vs Components
+
+- **Edit copy** in `src/content/` (`site.ts` for phone/license/disclaimer, `hero.ts`, `services.ts`, `sections.ts`, `reviews.ts`, `navigation.ts`).
+- **Edit structure/behavior** in `src/components/`. Keep legal HTML in content files; `PolicyPage` renders typed blocks (`LegalBlock`).
+- `MOVE_SIZES` in `schemas/quote-form.schema.ts` must stay aligned with `vantage-main-server` — no client-side remapping.
+
+## Backend Boundary (`vantage-main-server`)
+
+- **Only** `src/lib/vantage/server.ts` talks to the backend (`import "server-only"`).
+- Env: `VANTAGE_API_SECRET` (required), `VANTAGE_API_BASE_URL`, optional `FORM_LEAD_ROUTE`.
+- Uses `x-api-secret` header. **Never** expose the secret or call the backend directly from client components.
+- `getTestimonials()` — cached fetch, returns `[]` on failure (static `content/reviews.ts` fallback in UI).
+- `createFormLead()` — called from `/api/quote`; lead failure is logged but must not block the estimate response.
+
+## Environment Variables
+
+| Variable | Scope | Purpose |
+|----------|-------|---------|
+| `VANTAGE_API_SECRET` | server | Backend auth |
+| `VANTAGE_API_BASE_URL` | server | API host (defaults to Vercel prod URL) |
+| `FORM_LEAD_ROUTE` | server | Override form-lead path |
+| `GOOGLE_SERVICE_ACCOUNT_JSON` | server | Places autocomplete/details |
+| `NEXT_PUBLIC_PROMO_*` | client | Promo modal toggles (`content/promo.ts`) |
+
+## Out of Scope / Do Not Use
+
+- `internal_hidden_docs/` — design handoff reference only; excluded from `tsconfig`.
+- `estimate()` in `lib/estimate.ts` — placeholder pricing math, not production rates.
+- No auth, no Mongo, no admin dashboard — that lives in `vantage-admin` / `vantage-main-server`.
+
+## Quick “Where Do I…?”
+
+| Task | Start here |
+|------|------------|
+| Change phone, license, disclaimer | `content/site.ts` |
+| Add/edit homepage section copy | `content/hero.ts`, `services.ts`, `sections.ts` + matching `components/sections/*` |
+| Change quote validation or steps | `schemas/quote-form.schema.ts`, `components/quote-form/QuoteForm.tsx` |
+| Wire new lead field to CRM | schema → `app/api/quote/route.ts` → `CreateFormLeadInput` in `lib/vantage/server.ts` |
+| Add legal page | `content/legal/<slug>.ts`, `app/<slug>/page.tsx`, link in `content/navigation.ts` |
+| Style a section | matching file in `src/styles/`, reuse tokens from `base.css` |
+
+After substantive changes, run `pnpm lint` and `pnpm typecheck`.

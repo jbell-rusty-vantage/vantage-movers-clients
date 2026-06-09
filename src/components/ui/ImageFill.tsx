@@ -109,7 +109,7 @@ export function ImageFill({
 
   if (src) {
     return (
-      <div className={cn("fill", className)} style={style}>
+      <div className={cn("fill fill--photo", className)} style={style}>
         <Image
           className="fill__photo"
           src={src}

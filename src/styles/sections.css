@@ -168,9 +168,31 @@
 .finalcta__bg,
 .banner__bg {
   border-radius: 0;
+  height: 100%;
   inset: 0;
   position: absolute;
+  width: 100%;
   z-index: 0;
+}
+
+.hero__bg.fill,
+.banner__bg.fill,
+.finalcta__bg.fill {
+  position: absolute;
+}
+
+.hero__bg .fill__photo {
+  filter: brightness(var(--hero-brightness, 1));
+  object-position: var(--hero-image-position, center);
+}
+
+@media (min-width: 1550px) {
+  .hero__bg .fill__photo {
+    object-position: var(
+      --hero-image-position-lg,
+      var(--hero-image-position, center)
+    );
+  }
 }
 
 .hero__overlay {

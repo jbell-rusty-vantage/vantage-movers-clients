@@ -1,23 +1,27 @@
 import { Fragment, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { resolveSiteImage } from "@/content/images";
 import type { BannerContent } from "@/types";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ImageFill } from "@/components/ui/ImageFill";
 
 export interface BannerProps {
   content: BannerContent;
+  /** Override banner photo by registry key or public path. */
+  image?: string;
   /** CTA row (buttons, phone, urgency pill). */
   children?: ReactNode;
 }
 
 /** Reusable full-bleed image banner (Promo / Expertise / Final CTA). */
-export function Banner({ content, children }: BannerProps) {
-  const { scene, eyebrow, title, body, tall, overlay, image } = content;
+export function Banner({ content, image, children }: BannerProps) {
+  const { scene, eyebrow, title, body, tall, overlay } = content;
+  const src = image ? resolveSiteImage(image) : content.image;
   return (
     <section className={cn("banner reveal", tall && "banner--tall")}>
       <ImageFill
         scene={scene}
-        src={image}
+        src={src}
         alt={title.join(" ")}
         className="banner__bg"
         showLabel={false}

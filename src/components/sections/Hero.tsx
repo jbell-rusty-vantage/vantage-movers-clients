@@ -1,6 +1,7 @@
-import { Suspense } from "react";
+import { Suspense, type CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 import { hero } from "@/content/hero";
+import { resolveSiteImage, SITE_IMAGES } from "@/content/images";
 import type { PartnerConfig } from "@/content/partners";
 import { Stars } from "@/components/ui/Stars";
 import { Icon } from "@/components/ui/Icon";
@@ -60,13 +61,40 @@ function HeroCopy({ centered }: { centered: boolean }) {
   );
 }
 
-export function Hero({ source }: { source?: PartnerConfig }) {
+export function Hero({
+  source,
+  backgroundImage,
+  overlayOpacity,
+  imageBrightness,
+  imagePosition,
+  imagePositionLg,
+}: {
+  source?: PartnerConfig;
+  /** Registry key (e.g. `"enhancedTwo"`, `"hero"`) or public path/filename for the quote-form backdrop. */
+  backgroundImage?: string;
+  /** Dark gradient strength (0–1). Lower = brighter hero. Defaults to `hero.overlayOpacity`. */
+  overlayOpacity?: number;
+  /** Photo brightness multiplier (1 = normal). Defaults to `hero.imageBrightness`. */
+  imageBrightness?: number;
+  /** CSS object-position. Defaults to `hero.imagePosition`. */
+  imagePosition?: string;
+  /** object-position at ≥1550px. Defaults to `hero.imagePositionLg`. */
+  imagePositionLg?: string;
+}) {
   const centered = hero.variant === "centered";
+  const bg = resolveSiteImage(backgroundImage ?? hero.image ?? SITE_IMAGES.hero);
+  const heroStyle = {
+    "--hero-overlay": overlayOpacity ?? hero.overlayOpacity ?? 0.62,
+    "--hero-brightness": imageBrightness ?? hero.imageBrightness ?? 1,
+    "--hero-image-position": imagePosition ?? hero.imagePosition ?? "center",
+    "--hero-image-position-lg": imagePositionLg ?? hero.imagePositionLg ?? "center 30%",
+  } as CSSProperties;
+
   return (
-    <section className={cn("hero", `hero--${hero.variant}`)} id="quote">
+    <section className={cn("hero", `hero--${hero.variant}`)} id="quote" style={heroStyle}>
       <ImageFill
         scene="hero"
-        src="/sitepictures/Truck%20Loaded.jpeg"
+        src={bg}
         alt=""
         className="hero__bg"
         showLabel={false}

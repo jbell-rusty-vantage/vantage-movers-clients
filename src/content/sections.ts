@@ -1,4 +1,5 @@
 import type { BannerContent, CommitmentContent, TwoColContent } from "@/types";
+import { SITE_IMAGES } from "@/content/images";
 
 /** Shared urgency pill copy used by banners + promo. */
 export const URGENCY_TEXT = "20+ booked a move in the last hour";
@@ -36,7 +37,7 @@ export const expertiseBanner: BannerContent = {
   title: ["Nationwide Long Distance", "Move Coordination"],
   body: "We help customers organize interstate moves with clear estimates, route planning, and carrier coordination. Final charges may vary based on carrier tariff, inventory, services, and move conditions.",
   tall: true,
-  image: "/sitepictures/Truck%20Loaded.jpeg",
+  image: SITE_IMAGES.expertiseBanner,
 };
 
 /** 12. Final CTA banner. */
@@ -55,7 +56,7 @@ export const autoTransport: TwoColContent = {
   title: ["Need Reliable Auto Transport?"],
   body: "Need to move a vehicle along with your household goods? Our coordinators can help you request auto-transport options and compare the services available for your route.",
   cta: { label: "Request Free Quote", href: "#quote" },
-  image: "/sitepictures/autotransport.jpg",
+  image: SITE_IMAGES.autoTransport,
 };
 
 /** 11. Support two-column section (reversed). */
@@ -67,7 +68,7 @@ export const support: TwoColContent = {
   title: ["Support For The", "Key Moving Details"],
   body: "Our team helps with quote requests, service questions, scheduling details, and carrier coordination so you can make informed decisions before moving day.",
   cta: { label: "Get Instant Quote", href: "#quote" },
-  image: "/sitepictures/Furniture%201.jpeg",
+  image: SITE_IMAGES.coordinationSupport,
 };
 
 /** 10. Commitment band. */
