@@ -10,6 +10,7 @@ import { Footer } from "@/components/layout/Footer";
 import { PromoProvider } from "@/components/promo/PromoProvider";
 import { RevealManager } from "@/components/interactive/RevealManager";
 import { BackToTop } from "@/components/interactive/BackToTop";
+import { BounceTracker } from "@/components/analytics/BounceTracker";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -52,6 +53,7 @@ export default function RootLayout({
           <RevealManager />
           <BackToTop />
         </PromoProvider>
+        <BounceTracker />
         <Analytics />
         <SpeedInsights />
       </body>

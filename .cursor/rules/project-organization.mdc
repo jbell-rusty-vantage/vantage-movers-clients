@@ -12,6 +12,7 @@ alwaysApply: false
 
 - **Next.js 16.2** App Router, **React 19**, **Tailwind CSS 4**, React Compiler (`reactCompiler: true`).
 - Forms: **React Hook Form + Zod 4** (`@hookform/resolvers/zod`). Icons: **lucide-react** via semantic `IconName` in `types/index.ts` → `components/ui/Icon.tsx`.
+- Vercel telemetry: `<Analytics />` and `<SpeedInsights />` are mounted once in `src/app/layout.tsx`; custom marketing events live in `src/lib/analytics.ts`.
 - Path alias: `@/*` → `src/*`. Package manager: **pnpm** (`pnpm dev`, `pnpm lint`, `pnpm typecheck`).
 - Next.js docs for this version live in `.next-docs/` — see `NEXTJS_AGENTS.md` before assuming older Next APIs.
 
@@ -38,6 +39,7 @@ alwaysApply: false
 - **`ui/`** — primitives (`Button`, `Input`, `Select`, `ImageFill`, `Phone`). Prefer extending these over one-offs.
 - **`policy/`** — `PolicyPage` renders `LegalDoc` from `content/legal/*`.
 - **`promo/`** — `PromoProvider` + modal; config in `content/promo.ts`, triggers in `hooks/usePromoTrigger.ts`.
+- **`analytics/`** — client-only tracking helpers such as bounce/session trackers. Do not mount Vercel Speed Insights here; keep it in the root layout.
 - **`interactive/`** — sitewide scroll/reveal UX (`RevealManager`, `BackToTop`).
 
 ## Route Surface
