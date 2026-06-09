@@ -36,10 +36,14 @@ export async function POST(req: Request) {
 
   const parsed = requestSchema.safeParse(body);
   if (!parsed.success) {
-    return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 });
+    return NextResponse.json(
+      { error: z.treeifyError(parsed.error) },
+      { status: 400 },
+    );
   }
 
-  const { source_company, source_company_site, ref_no, sms_consent, ...quote } = parsed.data;
+  const { source_company, source_company_site, ref_no, sms_consent, ...quote } =
+    parsed.data;
 
   // Forward the validated lead to vantage-main-server. Failures are logged but
   // never block the estimate the user is waiting on.
@@ -54,7 +58,6 @@ export async function POST(req: Request) {
     move_size: quote.size,
     move_date: quote.date,
     ref_no: ref_no || undefined,
-    quoted: true,
     sms_consent: sms_consent ?? quote.smsConsent,
   };
 
