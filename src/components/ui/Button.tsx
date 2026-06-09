@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 import { Icon } from "./Icon";
 
 type Variant = "primary" | "gold" | "ghost";
@@ -49,15 +52,24 @@ export function Button(props: ButtonProps) {
       href: string;
     };
     const isInternal = href.startsWith("/");
+    const isQuoteCta = href === "#quote";
+    const handleClick: AnchorHTMLAttributes<HTMLAnchorElement>["onClick"] = (event) => {
+      if (isQuoteCta) {
+        trackEvent("cta_clicked", {
+          cta_location: props["aria-label"] ?? (typeof children === "string" ? children : "site_cta"),
+        });
+      }
+      anchorRest.onClick?.(event);
+    };
     if (isInternal) {
       return (
-        <Link href={href} className={cls} {...anchorRest}>
+        <Link href={href} className={cls} {...anchorRest} onClick={handleClick}>
           {inner}
         </Link>
       );
     }
     return (
-      <a href={href} className={cls} {...anchorRest}>
+      <a href={href} className={cls} {...anchorRest} onClick={handleClick}>
         {inner}
       </a>
     );

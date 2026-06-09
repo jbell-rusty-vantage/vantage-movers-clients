@@ -69,5 +69,5 @@ export async function POST(req: Request) {
   }
 
   const result = estimate(quote);
-  return NextResponse.json(result);
+  return NextResponse.json({ ...result, leadCaptured: leadResult.ok });
 }

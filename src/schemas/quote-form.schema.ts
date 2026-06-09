@@ -74,4 +74,5 @@ export interface QuoteResult {
   low: number; // USD, rounded to nearest 50
   high: number; // USD, ~1.34 x low
   miles: number; // estimated route distance
+  leadCaptured?: boolean; // true when the backend accepted the lead
 }

@@ -194,6 +194,10 @@
   color: var(--navy);
 }
 
+.qf__zip-status--warning {
+  color: #b45309;
+}
+
 .qf__field.has-error input,
 .qf__field.has-error select {
   background: #fef5f5;

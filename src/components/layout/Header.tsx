@@ -30,7 +30,7 @@ export function Header() {
             </span>
           ) : null}
         </div>
-        <Phone label="Call for a free quote" />
+        <Phone label="Call for a free quote" analyticsLocation="header" />
       </div>
     </header>
   );

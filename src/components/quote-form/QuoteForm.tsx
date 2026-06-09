@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   useForm,
@@ -11,6 +11,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
 import { telHref } from "@/lib/format";
+import { quoteFormAnalytics, trackEvent, trackZipNotRecognized } from "@/lib/analytics";
 import { site } from "@/content/site";
 import {
   MOVE_SIZES,
@@ -30,6 +31,13 @@ import { usePromo } from "@/components/promo/PromoProvider";
 import { StepIndicator } from "./StepIndicator";
 
 type LocationFieldName = "pickup" | "dest";
+type StepName = "locations" | "move_details" | "confirmation";
+
+const STEP_ANALYTICS: Record<number, { step_name: StepName; step_number: number }> = {
+  0: { step_name: "locations", step_number: 1 },
+  1: { step_name: "move_details", step_number: 2 },
+  2: { step_name: "confirmation", step_number: 3 },
+};
 
 interface ZipSuggestion {
   placeId: string;
@@ -86,8 +94,10 @@ function ZipCompletionField({
   error?: FieldError;
 }) {
   const [resolvedRegion, setResolvedRegion] = useState("");
+  const [lookupWarning, setLookupWarning] = useState("");
   const [loading, setLoading] = useState(false);
   const [lookupError, setLookupError] = useState("");
+  const lastUnrecognizedZip = useRef("");
   const [sessionToken] = useState(createSessionToken);
 
   useEffect(() => {
@@ -111,21 +121,33 @@ function ZipCompletionField({
         const match = data.suggestions?.find((suggestion) => suggestion.postalCode === zip);
 
         if (!match) {
-          setValue(fieldName, "", { shouldDirty: true, shouldValidate: true });
+          setValue(fieldName, zip, { shouldDirty: true, shouldTouch: true, shouldValidate: true });
           setResolvedRegion("");
-          setLookupError("Enter a valid US ZIP code.");
+          setLookupWarning(
+            "We couldn't verify this ZIP automatically, but you can still continue.",
+          );
+          if (lastUnrecognizedZip.current !== zip) {
+            lastUnrecognizedZip.current = zip;
+            trackZipNotRecognized({
+              field_name: fieldName,
+              zip,
+              suggestion_count: data.suggestions?.length ?? 0,
+            });
+          }
           return;
         }
 
+        lastUnrecognizedZip.current = "";
         setValue(fieldName, match.postalCode, {
           shouldDirty: true,
           shouldTouch: true,
           shouldValidate: true,
         });
         setResolvedRegion(match.text);
+        setLookupWarning("");
       } catch {
         if (!controller.signal.aborted) {
-          setValue(fieldName, "", { shouldDirty: true, shouldValidate: true });
+          setValue(fieldName, zip, { shouldDirty: true, shouldTouch: true, shouldValidate: true });
           setResolvedRegion("");
           setLookupError("ZIP lookup is unavailable. Please try again.");
         }
@@ -157,15 +179,19 @@ function ZipCompletionField({
               const nextZip = e.target.value.replace(/\D/g, "").slice(0, 5);
               onDisplayChange(nextZip);
               setResolvedRegion("");
+              setLookupWarning("");
               setLookupError("");
               setLoading(false);
-              setValue(fieldName, "", { shouldDirty: true, shouldValidate: false });
+              setValue(fieldName, nextZip, { shouldDirty: true, shouldValidate: false });
             }}
           />
         </div>
         {loading && <span className="qf__zip-status">Resolving ZIP...</span>}
         {!loading && resolvedRegion && (
           <span className="qf__zip-status qf__zip-status--ok">{resolvedRegion}</span>
+        )}
+        {!loading && lookupWarning && (
+          <span className="qf__zip-status qf__zip-status--warning">{lookupWarning}</span>
         )}
       </div>
     </Field>
@@ -192,6 +218,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
   const searchParams = useSearchParams();
   const refNo = searchParams.get("ref_no")?.trim() || undefined;
   const { setPromoSuppressed } = usePromo();
+  const formStarted = useRef(false);
 
   // Min selectable move date (today). Computed at render; hydration warnings
   // are suppressed on the input since the server/client day can differ by tz.
@@ -201,6 +228,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
     register,
     trigger,
     getValues,
+    getFieldState,
     reset,
     setValue,
     formState: { errors },
@@ -210,10 +238,48 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
     mode: "onTouched",
   });
 
+  useEffect(() => {
+    const stepMeta = STEP_ANALYTICS[step];
+    trackEvent("form_step_viewed", {
+      ...quoteFormAnalytics,
+      ...stepMeta,
+    });
+  }, [step]);
+
+  function markFormStarted() {
+    if (formStarted.current) return;
+    formStarted.current = true;
+    trackEvent("form_started", quoteFormAnalytics);
+  }
+
+  function trackValidationErrors(stepNumber: number) {
+    const stepMeta = STEP_ANALYTICS[stepNumber];
+    const values = getValues();
+    for (const fieldName of STEP_FIELDS[stepNumber]) {
+      const fieldError = getFieldState(fieldName).error;
+      if (!fieldError) continue;
+      trackEvent("form_validation_error", {
+        ...quoteFormAnalytics,
+        ...stepMeta,
+        field_name: fieldName,
+        error_type: values[fieldName] ? "invalid" : "required",
+      });
+    }
+  }
+
+  function safeQuoteMetadata() {
+    const values = getValues();
+    return {
+      ...quoteFormAnalytics,
+      move_size: values.size || "unknown",
+    };
+  }
+
   async function submitQuote() {
     setPromoSuppressed(true);
     setLoading(true);
     setSubmitError("");
+    trackEvent("form_submit_attempted", safeQuoteMetadata());
     try {
       const res = await fetch("/api/quote", {
         method: "POST",
@@ -229,8 +295,14 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
       if (!res.ok) throw new Error("Quote request failed");
       const data: QuoteResult = await res.json();
       setResult(data);
+      trackEvent(data.leadCaptured ? "form_submit_success" : "form_submit_failed", {
+        ...safeQuoteMetadata(),
+        error_type: data.leadCaptured ? null : "lead_capture_failed",
+      });
+      trackEvent("quote_estimate_viewed", safeQuoteMetadata());
       setStep(2);
     } catch {
+      trackEvent("form_submit_failed", safeQuoteMetadata());
       setSubmitError("Something went wrong. Please try again or give us a call.");
       setPromoSuppressed(false);
     } finally {
@@ -242,7 +314,14 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
     e.preventDefault();
     if (loading) return;
     const valid = await trigger(STEP_FIELDS[step]);
-    if (!valid) return;
+    if (!valid) {
+      trackValidationErrors(step);
+      return;
+    }
+    trackEvent("form_step_completed", {
+      ...quoteFormAnalytics,
+      ...STEP_ANALYTICS[step],
+    });
     if (step === 1) {
       await submitQuote();
     } else {
@@ -261,7 +340,13 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
   }
 
   return (
-    <form className={cn("qf", compact && "qf--compact")} onSubmit={handleNext} noValidate>
+    <form
+      className={cn("qf", compact && "qf--compact")}
+      onSubmit={handleNext}
+      onFocusCapture={markFormStarted}
+      onChangeCapture={markFormStarted}
+      noValidate
+    >
       <div className="qf__head">
         <h3>Get Instant Quote</h3>
         <p>Receive your free moving quote in seconds</p>
@@ -306,11 +391,27 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
                   type="date"
                   min={today}
                   suppressHydrationWarning
+                  onFocus={() =>
+                    trackEvent("calendar_or_date_picker_opened", {
+                      ...quoteFormAnalytics,
+                      ...STEP_ANALYTICS[1],
+                    })
+                  }
                   {...register("date")}
                 />
               </Field>
               <Field id="size" label="Move size" error={errors.size?.message}>
-                <Select id="size" {...register("size")}>
+                <Select
+                  id="size"
+                  {...register("size", {
+                    onChange: (event) =>
+                      trackEvent("lead_quality_signal_selected", {
+                        ...quoteFormAnalytics,
+                        ...STEP_ANALYTICS[1],
+                        move_size: event.target.value,
+                      }),
+                  })}
+                >
                   <option value="" disabled>
                     Select…
                   </option>
@@ -344,11 +445,21 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
                 scheduling updates, appointment reminders, and customer support. Up to 4 messages
                 per month. Message and data rates may apply. Reply STOP to opt out. Reply HELP for
                 help.{" "}
-                <a href="/sms-privacy" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="/sms-privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent("sms_privacy_clicked", { link_location: "quote_form" })}
+                >
                   SMS Privacy Policy
                 </a>
                 .{" "}
-                <a href="/sms-terms" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="/sms-terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent("sms_terms_clicked", { link_location: "quote_form" })}
+                >
                   SMS Terms
                 </a>
                 . Consent is not required to submit a quote request.
@@ -376,7 +487,11 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
               <p>A Moving coordinator will reach out to you shortly</p>
               <p className="qf__result-call">
                 To speak to a Coordinator Immediately Call{" "}
-                <a href={telHref(site.phone)} className="qf__result-phone">
+                <a
+                  href={telHref(site.phone)}
+                  className="qf__result-phone"
+                  onClick={() => trackEvent("phone_clicked", { link_location: "quote_result" })}
+                >
                   {site.phone}
                 </a>
               </p>
@@ -413,13 +528,23 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
         </>
       )}
 
-      <a href={telHref(site.phone)} className="qf__phone">
+      <a
+        href={telHref(site.phone)}
+        className="qf__phone"
+        onClick={() => trackEvent("phone_clicked", { link_location: "quote_form" })}
+      >
         <Icon name="phone" width={16} height={16} fill="currentColor" stroke="none" /> {site.phone}
       </a>
 
       <p className="qf__legal">
         By submitting this form, you request a moving quote from {site.name}. See our{" "}
-        <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms &amp; Conditions</a>.
+        <a
+          href="/privacy"
+          onClick={() => trackEvent("privacy_policy_clicked", { link_location: "quote_form" })}
+        >
+          Privacy Policy
+        </a>{" "}
+        and <a href="/terms">Terms &amp; Conditions</a>.
       </p>
     </form>
   );

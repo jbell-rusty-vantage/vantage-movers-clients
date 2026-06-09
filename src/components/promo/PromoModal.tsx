@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { telHref } from "@/lib/format";
+import { trackEvent } from "@/lib/analytics";
 import { site } from "@/content/site";
 import { useLockBodyScroll } from "@/hooks/useLockBodyScroll";
 import { Icon } from "@/components/ui/Icon";
@@ -41,6 +42,7 @@ export function PromoModal({
   if (!open) return null;
 
   const goToQuote = () => {
+    trackEvent("cta_clicked", { cta_location: "promo_modal" });
     onClose();
     const q = document.getElementById("quote");
     if (q) requestAnimationFrame(() => q.scrollIntoView({ behavior: "smooth", block: "start" }));
@@ -78,7 +80,12 @@ export function PromoModal({
             specialist will give you a free, no-obligation estimate in minutes.
           </p>
 
-          <a className="pm-call" href={telHref(phone)} aria-label={`Call ${phone}`}>
+          <a
+            className="pm-call"
+            href={telHref(phone)}
+            aria-label={`Call ${phone}`}
+            onClick={() => trackEvent("phone_clicked", { link_location: "promo_modal" })}
+          >
             <span className="pm-call__ico">
               <Icon name="phone" fill="currentColor" stroke="none" />
             </span>

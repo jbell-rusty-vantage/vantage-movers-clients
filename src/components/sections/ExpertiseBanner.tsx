@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 export function ExpertiseBanner({ image }: { image?: string } = {}) {
   return (
     <Banner content={expertiseBanner} image={image}>
-      <Phone dark />
+      <Phone dark analyticsLocation="expertise_banner" />
       <Button variant="gold" href="#quote">
         Get a Quote
       </Button>

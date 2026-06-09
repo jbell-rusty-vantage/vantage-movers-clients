@@ -1,5 +1,8 @@
+"use client";
+
 import { services, servicesIntro } from "@/content/services";
 import { resolveSiteImage, type SiteImageKey } from "@/content/images";
+import { trackEvent } from "@/lib/analytics";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Icon } from "@/components/ui/Icon";
 import { ImageFill } from "@/components/ui/ImageFill";
@@ -49,7 +52,16 @@ export function Services({ images }: ServicesProps = {}) {
                 </span>
                 <h3>{s.title}</h3>
                 <p>{s.body}</p>
-                <a className="svc__link" href="#quote">
+                <a
+                  className="svc__link"
+                  href="#quote"
+                  onClick={() =>
+                    trackEvent("cta_clicked", {
+                      cta_location: "service_card",
+                      move_type: s.title,
+                    })
+                  }
+                >
                   Get a quote <Icon name="arrowRight" width={15} height={15} />
                 </a>
               </div>

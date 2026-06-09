@@ -32,7 +32,7 @@ export function TwoCol({ content, image }: TwoColProps) {
           </h2>
           <p>{body}</p>
           <div className="twocol__cta">
-            <Phone />
+            <Phone analyticsLocation={id} />
             <Button href={cta.href}>{cta.label}</Button>
           </div>
         </div>

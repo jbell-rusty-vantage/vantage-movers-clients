@@ -26,7 +26,7 @@ export function FinalCTA() {
             </Fragment>
           ))}
         </h2>
-        <Phone dark />
+        <Phone dark analyticsLocation="final_cta" />
         <span className="urgency">
           <span className="urgency__dot" />
           {URGENCY_TEXT}

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { trackEvent, legalEventForHref } from "@/lib/analytics";
 import { site } from "@/content/site";
 import { quickLinks } from "@/content/navigation";
 import { Icon } from "@/components/ui/Icon";
@@ -7,17 +10,30 @@ import { Button } from "@/components/ui/Button";
 import { Logo } from "./Logo";
 
 function FooterLink({ href, label, newTab }: { href: string; label: string; newTab?: boolean }) {
+  const handleClick = () => {
+    const eventName = legalEventForHref(href);
+    if (eventName) trackEvent(eventName, { link_location: "footer" });
+  };
+
   if (newTab) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer">
+      <a href={href} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
         {label}
       </a>
     );
   }
   if (href.startsWith("/")) {
-    return <Link href={href}>{label}</Link>;
+    return (
+      <Link href={href} onClick={handleClick}>
+        {label}
+      </Link>
+    );
   }
-  return <a href={href}>{label}</a>;
+  return (
+    <a href={href} onClick={handleClick}>
+      {label}
+    </a>
+  );
 }
 
 export function Footer() {
@@ -67,7 +83,7 @@ export function Footer() {
 
         <div className="footer__col footer__cta">
           <h4>Get a Free Moving Estimate</h4>
-          <Phone dark sm />
+          <Phone dark sm analyticsLocation="footer" />
           <Button variant="gold" href="#quote">
             Get a Quote
           </Button>

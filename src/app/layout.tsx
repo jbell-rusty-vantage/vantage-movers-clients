@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, Public_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { site } from "@/content/site";
 import { LicenseBar } from "@/components/layout/LicenseBar";
@@ -50,6 +52,8 @@ export default function RootLayout({
           <RevealManager />
           <BackToTop />
         </PromoProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
