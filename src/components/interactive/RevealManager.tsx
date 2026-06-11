@@ -11,45 +11,72 @@ export function RevealManager() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const observers = new Set<IntersectionObserver>();
+    let frame: number | null = null;
+    const observed = new WeakSet<HTMLElement>();
+    let io: IntersectionObserver | null = null;
 
-    function observeReveals() {
-      const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal:not(.in)"));
-      if (els.length === 0) return;
-
-      if (!("IntersectionObserver" in window)) {
-        els.forEach((el) => el.classList.add("in"));
-        return;
-      }
-
-      const io = new IntersectionObserver(
+    if ("IntersectionObserver" in window) {
+      io = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("in");
-              io.unobserve(entry.target);
+              io?.unobserve(entry.target);
             }
           });
         },
         { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
       );
+    }
 
-      observers.add(io);
-      els.forEach((el) => io.observe(el));
+    function isInViewport(el: HTMLElement) {
+      const rect = el.getBoundingClientRect();
+      return rect.bottom > 0 && rect.top < window.innerHeight * 0.92;
+    }
+
+    function observeReveals() {
+      const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal:not(.in)"));
+      if (els.length === 0) return;
+
+      els.forEach((el) => {
+        if (!io || isInViewport(el)) {
+          el.classList.add("in");
+          return;
+        }
+        if (!observed.has(el)) {
+          observed.add(el);
+          io.observe(el);
+        }
+      });
+    }
+
+    function scheduleObserve() {
+      if (frame !== null) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = null;
+        observeReveals();
+      });
     }
 
     function handlePageShow(event: PageTransitionEvent) {
       if (event.persisted) {
-        observeReveals();
+        scheduleObserve();
       }
     }
 
-    observeReveals();
+    const mutations = new MutationObserver(scheduleObserve);
+    mutations.observe(document.body, { childList: true, subtree: true });
+
+    scheduleObserve();
     window.addEventListener("pageshow", handlePageShow);
 
     return () => {
+      if (frame !== null) {
+        window.cancelAnimationFrame(frame);
+      }
       window.removeEventListener("pageshow", handlePageShow);
-      observers.forEach((io) => io.disconnect());
+      mutations.disconnect();
+      io?.disconnect();
     };
   }, [pathname]);
 
