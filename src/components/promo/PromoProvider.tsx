@@ -1,6 +1,15 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
+import { usePathname } from "next/navigation";
 import { promo } from "@/content/promo";
 import { usePromoTrigger } from "@/hooks/usePromoTrigger";
 import { PromoModal } from "./PromoModal";
@@ -20,6 +29,8 @@ export function usePromo() {
 }
 
 export function PromoProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const previousPathname = useRef(pathname);
   const [promoSuppressed, setPromoSuppressed] = useState(false);
   const shouldSuppressPromo = useCallback(() => promoSuppressed, [promoSuppressed]);
   const [open, openNow, close] = usePromoTrigger({
@@ -31,6 +42,13 @@ export function PromoProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (promoSuppressed && open) close();
   }, [close, open, promoSuppressed]);
+
+  useEffect(() => {
+    if (previousPathname.current !== pathname) {
+      previousPathname.current = pathname;
+      if (open) close();
+    }
+  }, [close, open, pathname]);
 
   return (
     <PromoContext.Provider value={{ openPromo: openNow, setPromoSuppressed }}>
