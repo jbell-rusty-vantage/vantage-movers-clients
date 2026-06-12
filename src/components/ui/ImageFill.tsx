@@ -109,7 +109,15 @@ export function ImageFill({
 
   if (src) {
     return (
-      <div className={cn("fill fill--photo", className)} style={style}>
+      <div
+        className={cn("fill fill--photo", className)}
+        style={{
+          background: `radial-gradient(120% 120% at 80% 0%, ${s.g[0]} 0%, ${s.g[1]} 70%)`,
+          ...style,
+        }}
+      >
+        <div className="fill__grain" aria-hidden />
+        <MotifShapes kind={s.motif} />
         <Image
           className="fill__photo"
           src={src}

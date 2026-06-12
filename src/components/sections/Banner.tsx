@@ -25,6 +25,7 @@ export function Banner({ content, image, children }: BannerProps) {
         alt={title.join(" ")}
         className="banner__bg"
         showLabel={false}
+        sizes="100vw"
         overlay={overlay ?? true}
       />
       <div className="wrap banner__in">
