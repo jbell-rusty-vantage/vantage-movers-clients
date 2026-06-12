@@ -43,7 +43,7 @@ export function Services({ images }: ServicesProps = {}) {
                 scene={s.scene}
                 src={serviceImage(s, images)}
                 alt={s.title}
-                sizes="(max-width: 600px) 100vw, 33vw"
+                sizes="(max-width: 600px) 100vw, (max-width: 980px) 50vw, 25vw"
                 className="svc__img"
               />
               <div className="svc__body">

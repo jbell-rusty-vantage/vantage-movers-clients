@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
   type ReactNode,
@@ -31,13 +32,22 @@ export function usePromo() {
 export function PromoProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const previousPathname = useRef(pathname);
+  const promoSuppressedRef = useRef(false);
   const [promoSuppressed, setPromoSuppressed] = useState(false);
-  const shouldSuppressPromo = useCallback(() => promoSuppressed, [promoSuppressed]);
+  const shouldSuppressPromo = useCallback(() => promoSuppressedRef.current, []);
+  const updatePromoSuppressed = useCallback((suppressed: boolean) => {
+    promoSuppressedRef.current = suppressed;
+    setPromoSuppressed(suppressed);
+  }, []);
   const [open, openNow, close] = usePromoTrigger({
     inactivitySec: promo.enabled ? promo.inactivitySec : 0,
     exitIntent: promo.enabled && promo.exitIntent,
     shouldSuppress: shouldSuppressPromo,
   });
+  const contextValue = useMemo(
+    () => ({ openPromo: openNow, setPromoSuppressed: updatePromoSuppressed }),
+    [openNow, updatePromoSuppressed],
+  );
 
   useEffect(() => {
     if (promoSuppressed && open) close();
@@ -51,7 +61,7 @@ export function PromoProvider({ children }: { children: ReactNode }) {
   }, [close, open, pathname]);
 
   return (
-    <PromoContext.Provider value={{ openPromo: openNow, setPromoSuppressed }}>
+    <PromoContext.Provider value={contextValue}>
       {children}
       {promo.enabled && (
         <PromoModal

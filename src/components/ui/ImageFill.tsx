@@ -88,8 +88,10 @@ export interface ImageFillProps {
   alt?: string;
   /** Responsive `sizes` hint for the photo. */
   sizes?: string;
-  /** Render the photo as an above-the-fold/LCP candidate. */
-  priority?: boolean;
+  /** Preload the photo when it is the above-the-fold/LCP image. */
+  preload?: boolean;
+  /** Optimizer quality. Background photos tolerate the default 75 well. */
+  quality?: number;
   children?: ReactNode;
 }
 
@@ -102,7 +104,8 @@ export function ImageFill({
   src,
   alt = "",
   sizes = "100vw",
-  priority,
+  preload = false,
+  quality = 75,
   children,
 }: ImageFillProps) {
   const s = SCENES[scene] ?? SCENES.hero;
@@ -124,8 +127,10 @@ export function ImageFill({
           alt={alt}
           fill
           sizes={sizes}
-          loading={priority ? "eager" : "lazy"}
-          fetchPriority={priority ? "high" : "auto"}
+          quality={quality}
+          preload={preload}
+          loading={preload ? undefined : "lazy"}
+          decoding="async"
         />
         {overlay ? (
           <div

@@ -3,28 +3,23 @@
  * Files live in `/public` (root) or `/public/sitepictures/`.
  */
 
-/**
- * Hero background options — set `SITE_IMAGES.hero` to any value below.
- * Empty entries intentionally use ImageFill's branded scene fallback until
- * licensed photo assets are added under `/public`.
- */
+/** Hero background options — set `SITE_IMAGES.hero` to any value below. */
 export const HERO_IMAGES = {
-  enhanced: "",
-  enhancedTwo: "",
-  webp: "",
+  enhanced: "/hero_image_enhanced.png",
+  webp: "/hero_image.webp",
 } as const;
 
 export type HeroImageKey = keyof typeof HERO_IMAGES;
 
 export const SITE_IMAGES = {
   hero: HERO_IMAGES.enhanced,
-  longDistanceMoves: "",
-  packingStorage: "",
-  officeMoves: "",
-  militaryMoves: "",
-  expertiseBanner: "",
-  autoTransport: "",
-  coordinationSupport: "",
+  longDistanceMoves: "/long_distance_traffic.webp",
+  packingStorage: "/couple_with_boxes.jpg",
+  officeMoves: "/moving_boxes_in_office.webp",
+  militaryMoves: "/military_moves.webp",
+  expertiseBanner: "/sitepictures/Truck%20Loaded.jpeg",
+  autoTransport: "/sitepictures/autotransport.jpg",
+  coordinationSupport: "/customer_service_rep.webp",
 } as const;
 
 export type SiteImageKey = keyof typeof SITE_IMAGES;

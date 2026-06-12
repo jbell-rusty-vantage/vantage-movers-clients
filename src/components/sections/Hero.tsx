@@ -98,7 +98,8 @@ export function Hero({
         alt=""
         className="hero__bg"
         showLabel={false}
-        priority
+        sizes="100vw"
+        preload
       />
       <div className="hero__overlay" />
       <div className="wrap hero__in">

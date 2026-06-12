@@ -41,6 +41,7 @@ export function RevealManager() {
       els.forEach((el) => {
         if (!io || isInViewport(el)) {
           el.classList.add("in");
+          io?.unobserve(el);
           return;
         }
         if (!observed.has(el)) {
@@ -64,17 +65,26 @@ export function RevealManager() {
       }
     }
 
+    function handleVisibilityChange() {
+      if (document.visibilityState === "visible") {
+        scheduleObserve();
+      }
+    }
+
+    const mutationRoot = document.querySelector("main") ?? document.body;
     const mutations = new MutationObserver(scheduleObserve);
-    mutations.observe(document.body, { childList: true, subtree: true });
+    mutations.observe(mutationRoot, { childList: true, subtree: true });
 
     scheduleObserve();
     window.addEventListener("pageshow", handlePageShow);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       if (frame !== null) {
         window.cancelAnimationFrame(frame);
       }
       window.removeEventListener("pageshow", handlePageShow);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       mutations.disconnect();
       io?.disconnect();
     };
