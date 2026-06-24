@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { featureRows, services } from "@/lib/content";
+import { resolveSiteImage } from "@/lib/images";
 import { SERVICE_ICONS } from "@/lib/icons";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -54,7 +55,8 @@ export function ServicesSection() {
 
           const image = (
             <ImageTile
-              label={row.imageLabel}
+              src={resolveSiteImage(row.image)}
+              alt={row.imageAlt}
               badge={
                 <TileBadge icon={<BadgeIcon size={15} strokeWidth={2} />}>
                   {row.badge.label}

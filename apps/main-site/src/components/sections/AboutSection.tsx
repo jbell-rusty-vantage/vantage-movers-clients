@@ -1,17 +1,16 @@
 import { ArrowRight } from "lucide-react";
+import { SITE_IMAGES } from "@/lib/images";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { ImageTile, StatBadge } from "@/components/ui/ImageTile";
+import { ImageTile } from "@/components/ui/ImageTile";
 
 export function AboutSection() {
   return (
     <section id="about" className="bg-white py-24">
       <Container className="grid items-center gap-14 md:grid-cols-2">
         <ImageTile
-          label="coordinators-helping-family.jpg"
-          statBadge={
-            <StatBadge value="15+ yrs" label="coordinating long-distance moves" />
-          }
+          src={SITE_IMAGES.aboutCoordinators}
+          alt="Vantage moving coordinators helping a family plan their move"
         />
 
         <div>

@@ -1,8 +1,27 @@
 "use client";
 
-import { useState } from "react";
-import { Check } from "lucide-react";
-import { moveSizes, serviceTypes } from "@/lib/content";
+import { useEffect, useState, type ReactNode } from "react";
+import { useSearchParams } from "next/navigation";
+import {
+  useForm,
+  type FieldError,
+  type UseFormRegister,
+  type UseFormSetValue,
+} from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Check, MapPin } from "lucide-react";
+import { business } from "@/lib/content";
+import { telHref } from "@/lib/format";
+import { MAIN_SITE } from "@/content/partners";
+import {
+  MOVE_SIZES,
+  STEP_FIELDS,
+  emptyQuote,
+  quoteFormSchema,
+  type QuoteFormInput,
+  type QuoteFormValues,
+  type QuoteResult,
+} from "@/schemas/quote-form.schema";
 
 const STEPS = [
   { n: 1, label: "Location" },
@@ -13,23 +32,245 @@ const STEPS = [
 const labelCls =
   "mb-[7px] block font-display text-[13.5px] font-semibold text-brand-blue";
 const inputCls =
-  "mb-4 w-full rounded-lg2 border-[1.5px] border-cream-border bg-cream px-3.5 py-[13px] text-[15px] text-ink outline-none transition focus:border-[#2E86DE] focus:bg-white focus:shadow-[0_0_0_3px_rgba(46,134,222,.16)]";
+  "mb-1 w-full rounded-lg2 border-[1.5px] border-cream-border bg-cream px-3.5 py-[13px] text-[15px] text-ink outline-none transition focus:border-[#2E86DE] focus:bg-white focus:shadow-[0_0_0_3px_rgba(46,134,222,.16)]";
+const inputErrCls = "border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,.16)]";
 const yellowBtn =
-  "cursor-pointer rounded-lg2 border-none bg-brand-yellow font-display text-base font-bold tracking-[.04em] text-black uppercase shadow-[0_8px_22px_rgba(255,192,46,.3)] transition hover:-translate-y-0.5";
+  "cursor-pointer rounded-lg2 border-none bg-brand-yellow font-display text-base font-bold tracking-[.04em] text-black uppercase shadow-[0_8px_22px_rgba(255,192,46,.3)] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0";
 const ghostBtn =
-  "cursor-pointer rounded-lg2 border-[1.5px] border-cream-border bg-white font-display text-[15px] font-bold tracking-[.04em] text-brand-blue uppercase";
+  "cursor-pointer rounded-lg2 border-[1.5px] border-cream-border bg-white font-display text-[15px] font-bold tracking-[.04em] text-brand-blue uppercase disabled:cursor-not-allowed disabled:opacity-60";
 
-export function QuoteWizard() {
-  const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [submitted, setSubmitted] = useState(false);
+type LocationFieldName = "pickup" | "dest";
 
-  const next = () => setStep((s) => Math.min(3, s + 1) as 1 | 2 | 3);
-  const back = () => setStep((s) => Math.max(1, s - 1) as 1 | 2 | 3);
+interface ZipSuggestion {
+  placeId: string;
+  text: string;
+  postalCode: string;
+}
+
+function createSessionToken() {
+  if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
+    return crypto.randomUUID();
+  }
+  return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
+function Field({
+  label,
+  error,
+  children,
+  className = "mb-4",
+}: {
+  label: string;
+  error?: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <label className={labelCls}>{label}</label>
+      {children}
+      {error && <p className="mt-1 text-[13px] text-red-500">{error}</p>}
+    </div>
+  );
+}
+
+function ZipField({
+  id,
+  label,
+  fieldName,
+  placeholder,
+  displayValue,
+  onDisplayChange,
+  register,
+  setValue,
+  error,
+}: {
+  id: string;
+  label: string;
+  fieldName: LocationFieldName;
+  placeholder: string;
+  displayValue: string;
+  onDisplayChange: (value: string) => void;
+  register: UseFormRegister<QuoteFormInput>;
+  setValue: UseFormSetValue<QuoteFormInput>;
+  error?: FieldError;
+}) {
+  const [resolvedRegion, setResolvedRegion] = useState("");
+  const [lookupWarning, setLookupWarning] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [lookupError, setLookupError] = useState("");
+  const [sessionToken] = useState(createSessionToken);
+
+  useEffect(() => {
+    const zip = displayValue.replace(/\D/g, "").slice(0, 5);
+    if (zip.length !== 5) return;
+
+    const controller = new AbortController();
+    const timeout = window.setTimeout(async () => {
+      setLoading(true);
+      setLookupError("");
+      try {
+        const res = await fetch(
+          `/api/places/autocomplete?input=${encodeURIComponent(zip)}&sessionToken=${encodeURIComponent(sessionToken)}`,
+          { signal: controller.signal },
+        );
+        if (!res.ok) throw new Error("Unable to resolve ZIP");
+        const data = (await res.json()) as { suggestions?: ZipSuggestion[] };
+        const match = data.suggestions?.find((s) => s.postalCode === zip);
+
+        if (!match) {
+          setValue(fieldName, zip, { shouldDirty: true, shouldTouch: true, shouldValidate: true });
+          setResolvedRegion("");
+          setLookupWarning(
+            "We couldn't verify this ZIP automatically, but you can still continue.",
+          );
+          return;
+        }
+
+        setValue(fieldName, match.postalCode, {
+          shouldDirty: true,
+          shouldTouch: true,
+          shouldValidate: true,
+        });
+        setResolvedRegion(match.text);
+        setLookupWarning("");
+      } catch {
+        if (!controller.signal.aborted) {
+          setValue(fieldName, zip, { shouldDirty: true, shouldTouch: true, shouldValidate: true });
+          setResolvedRegion("");
+          setLookupError("ZIP lookup is unavailable. Please try again.");
+        }
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
+    }, 250);
+
+    return () => {
+      window.clearTimeout(timeout);
+      controller.abort();
+    };
+  }, [displayValue, fieldName, sessionToken, setValue]);
 
   return (
-    <div
+    <Field label={label} error={error?.message || lookupError}>
+      <input type="hidden" {...register(fieldName)} />
+      <div className="relative">
+        <MapPin
+          className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-[#94a3b8]"
+          aria-hidden
+        />
+        <input
+          id={id}
+          className={`${inputCls} pl-10 ${error || lookupError ? inputErrCls : ""}`}
+          placeholder={placeholder}
+          value={displayValue}
+          autoComplete="postal-code"
+          inputMode="numeric"
+          maxLength={5}
+          onChange={(e) => {
+            const nextZip = e.target.value.replace(/\D/g, "").slice(0, 5);
+            onDisplayChange(nextZip);
+            setResolvedRegion("");
+            setLookupWarning("");
+            setLookupError("");
+            setLoading(false);
+            setValue(fieldName, nextZip, { shouldDirty: true, shouldValidate: false });
+          }}
+        />
+      </div>
+      {loading && (
+        <p className="mt-1 text-[12.5px] text-[#64748B]">Resolving ZIP…</p>
+      )}
+      {!loading && resolvedRegion && (
+        <p className="mt-1 text-[12.5px] font-medium text-success">{resolvedRegion}</p>
+      )}
+      {!loading && lookupWarning && (
+        <p className="mt-1 text-[12.5px] text-amber-600">{lookupWarning}</p>
+      )}
+    </Field>
+  );
+}
+
+export function QuoteWizard() {
+  const [step, setStep] = useState(0);
+  const [result, setResult] = useState<QuoteResult | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [pickupZip, setPickupZip] = useState("");
+  const [destZip, setDestZip] = useState("");
+
+  const searchParams = useSearchParams();
+  const refNo = searchParams.get("ref_no")?.trim() || undefined;
+  const today = new Date().toISOString().split("T")[0];
+
+  const {
+    register,
+    trigger,
+    getValues,
+    reset,
+    setValue,
+    formState: { errors },
+  } = useForm<QuoteFormInput, unknown, QuoteFormValues>({
+    resolver: zodResolver(quoteFormSchema),
+    defaultValues: emptyQuote,
+    mode: "onTouched",
+  });
+
+  async function submitQuote() {
+    setLoading(true);
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...getValues(),
+          source_company: MAIN_SITE.sourceCompany,
+          source_company_site: MAIN_SITE.sourceCompanySite,
+          ref_no: refNo,
+          sms_consent: getValues("smsConsent"),
+        }),
+      });
+      if (!res.ok) throw new Error("Quote request failed");
+      const data: QuoteResult = await res.json();
+      setResult(data);
+      setStep(2);
+    } catch {
+      setSubmitError("Something went wrong. Please try again or give us a call.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleNext(e: React.FormEvent) {
+    e.preventDefault();
+    if (loading) return;
+    const valid = await trigger(STEP_FIELDS[step]);
+    if (!valid) return;
+    if (step === 1) {
+      await submitQuote();
+    } else {
+      setStep((s) => s + 1);
+    }
+  }
+
+  function handleReset() {
+    reset(emptyQuote);
+    setPickupZip("");
+    setDestZip("");
+    setResult(null);
+    setSubmitError("");
+    setStep(0);
+  }
+
+  const stepDisplay = step + 1;
+
+  return (
+    <form
       id="quote"
       className="rounded-panel bg-white px-[30px] pt-[30px] pb-[26px] shadow-form-card"
+      onSubmit={handleNext}
+      noValidate
     >
       <div className="mb-2 text-center">
         <h2 className="mb-1.5 font-display text-[25px] font-extrabold -tracking-[.02em] text-brand-blue">
@@ -42,8 +283,8 @@ export function QuoteWizard() {
 
       <div className="my-[22px] mb-6 flex items-center justify-center">
         {STEPS.map((s, i) => {
-          const current = step === s.n;
-          const done = step >= s.n;
+          const current = stepDisplay === s.n;
+          const done = stepDisplay > s.n || (step === 2 && result);
           const dot = current
             ? "bg-brand-yellow text-black shadow-[0_4px_12px_rgba(255,192,46,.4)]"
             : done
@@ -67,7 +308,7 @@ export function QuoteWizard() {
         })}
       </div>
 
-      {submitted ? (
+      {step === 2 && result ? (
         <div className="px-2 pt-6 pb-3.5 text-center">
           <span className="mx-auto mb-4 grid size-[60px] place-items-center rounded-full bg-success-bg">
             <Check className="text-success" size={30} strokeWidth={2.5} />
@@ -75,16 +316,19 @@ export function QuoteWizard() {
           <h3 className="mb-2 font-display text-[21px] font-extrabold text-brand-blue">
             Request Received
           </h3>
+          <p className="mb-3 text-[14.5px] leading-[1.55] text-[#64748B]">
+            {getValues("pickup")} → {getValues("dest")} · ~{result.miles} mi · {getValues("size")}
+          </p>
           <p className="mb-[18px] text-[14.5px] leading-[1.55] text-[#64748B]">
-            A Vantage moving coordinator will reach out shortly to help plan your
-            long-distance move.
+            A Vantage moving coordinator will reach out shortly. To speak with someone now, call{" "}
+            <a href={telHref(business.phoneDisplay)} className="font-semibold text-brand-blue-bright">
+              {business.phoneDisplay}
+            </a>
+            .
           </p>
           <button
             type="button"
-            onClick={() => {
-              setSubmitted(false);
-              setStep(1);
-            }}
+            onClick={handleReset}
             className="cursor-pointer rounded-lg2 border-[1.5px] border-cream-border bg-cream px-5 py-[11px] font-display text-sm font-bold tracking-[.04em] text-brand-blue uppercase"
           >
             Start Over
@@ -92,87 +336,122 @@ export function QuoteWizard() {
         </div>
       ) : (
         <>
+          {step === 0 && (
+            <div>
+              <ZipField
+                id="pickup-zip"
+                label="Moving From (ZIP)"
+                fieldName="pickup"
+                placeholder="Pickup ZIP code"
+                displayValue={pickupZip}
+                onDisplayChange={setPickupZip}
+                register={register}
+                setValue={setValue}
+                error={errors.pickup}
+              />
+              <ZipField
+                id="dest-zip"
+                label="Moving To (ZIP)"
+                fieldName="dest"
+                placeholder="Destination ZIP code"
+                displayValue={destZip}
+                onDisplayChange={setDestZip}
+                register={register}
+                setValue={setValue}
+                error={errors.dest}
+              />
+            </div>
+          )}
+
           {step === 1 && (
             <div>
-              <label className={labelCls}>Moving From</label>
-              <input className={inputCls} placeholder="Pickup ZIP or City, State" />
-              <label className={labelCls}>Moving To</label>
-              <input className={inputCls} placeholder="Destination ZIP or City, State" />
-              <label className={labelCls}>Estimated Move Date</label>
-              <input className={`${inputCls} text-[#64748B]`} type="date" />
-              <button type="button" onClick={next} className={`${yellowBtn} w-full py-[15px]`}>
-                Continue
-              </button>
-            </div>
-          )}
-
-          {step === 2 && (
-            <div>
-              <label className={labelCls}>Move Size</label>
-              <select className={inputCls} defaultValue={moveSizes[0]}>
-                {moveSizes.map((o) => (
-                  <option key={o}>{o}</option>
-                ))}
-              </select>
-              <label className={labelCls}>Service Type</label>
-              <select className={inputCls} defaultValue={serviceTypes[0]}>
-                {serviceTypes.map((o) => (
-                  <option key={o}>{o}</option>
-                ))}
-              </select>
-              <label className={labelCls}>
-                Notes <span className="font-normal text-[#94a3b8]">(optional)</span>
-              </label>
-              <textarea
-                rows={2}
-                placeholder="Tell us about special items, stairs, storage needs…"
-                className={`${inputCls} resize-none`}
-              />
-              <div className="flex gap-3">
-                <button type="button" onClick={back} className={`${ghostBtn} px-5 py-3.5`}>
-                  Back
-                </button>
-                <button type="button" onClick={next} className={`${yellowBtn} flex-1 py-3.5`}>
-                  Continue
-                </button>
-              </div>
-            </div>
-          )}
-
-          {step === 3 && (
-            <div>
-              <label className={labelCls}>Full Name</label>
-              <input className={inputCls} placeholder="Your name" />
-              <label className={labelCls}>Email</label>
-              <input className={inputCls} type="email" placeholder="you@email.com" />
-              <label className={labelCls}>Phone</label>
-              <input className={`${inputCls} mb-3.5`} type="tel" placeholder="(000) 000-0000" />
-              <p className="mb-4 text-[11.5px] leading-[1.5] text-[#94a3b8]">
-                By submitting, I consent to receive calls/SMS from Vantage Movers about my
-                moving quote. Msg &amp; data rates may apply. Reply STOP to opt out. See our{" "}
-                <a href="#" className="text-brand-blue-bright">
-                  Privacy Policy
-                </a>{" "}
-                &amp;{" "}
-                <a href="#" className="text-brand-blue-bright">
-                  Terms
-                </a>
-                .
-              </p>
-              <div className="flex gap-3">
-                <button type="button" onClick={back} className={`${ghostBtn} px-5 py-3.5`}>
-                  Back
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setSubmitted(true)}
-                  className="flex-1 cursor-pointer rounded-lg2 border-none bg-brand-blue-bright py-3.5 font-display text-base font-bold tracking-[.04em] text-white uppercase shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue"
+              <Field label="Estimated Move Date" error={errors.date?.message}>
+                <input
+                  type="date"
+                  min={today}
+                  suppressHydrationWarning
+                  className={`${inputCls} text-[#64748B] ${errors.date ? inputErrCls : ""}`}
+                  {...register("date")}
+                />
+              </Field>
+              <Field label="Move Size" error={errors.size?.message}>
+                <select
+                  className={`${inputCls} ${errors.size ? inputErrCls : ""}`}
+                  defaultValue=""
+                  {...register("size")}
                 >
-                  Get Free Quote
-                </button>
-              </div>
+                  <option value="" disabled>
+                    Select move size…
+                  </option>
+                  {MOVE_SIZES.map((s) => (
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label="Full Name" error={errors.name?.message}>
+                <input
+                  className={`${inputCls} ${errors.name ? inputErrCls : ""}`}
+                  placeholder="Your name"
+                  {...register("name")}
+                />
+              </Field>
+              <Field label="Email" error={errors.email?.message}>
+                <input
+                  type="email"
+                  className={`${inputCls} ${errors.email ? inputErrCls : ""}`}
+                  placeholder="you@email.com"
+                  {...register("email")}
+                />
+              </Field>
+              <Field label="Phone" error={errors.phone?.message} className="mb-3.5">
+                <input
+                  type="tel"
+                  inputMode="tel"
+                  className={`${inputCls} ${errors.phone ? inputErrCls : ""}`}
+                  placeholder="(000) 000-0000"
+                  {...register("phone")}
+                />
+              </Field>
+              <label className="mb-4 flex gap-2.5 text-left">
+                <input
+                  type="checkbox"
+                  className="mt-1 size-4 shrink-0 accent-brand-blue-bright"
+                  {...register("smsConsent")}
+                />
+                <span className="text-[11.5px] leading-[1.5] text-[#64748B]">
+                  I agree to receive SMS messages from {business.name} about my moving quote
+                  request, scheduling updates, and customer support. Msg &amp; data rates may apply.
+                  Reply STOP to opt out. Consent is not required to submit a quote request.
+                </span>
+              </label>
             </div>
           )}
+
+          {submitError && (
+            <p className="mb-3 text-center text-[13.5px] text-red-500">{submitError}</p>
+          )}
+
+          <div className="flex gap-3">
+            {step > 0 && (
+              <button
+                type="button"
+                onClick={() => setStep((s) => s - 1)}
+                disabled={loading}
+                className={`${ghostBtn} px-5 py-3.5`}
+              >
+                Back
+              </button>
+            )}
+            <button
+              type="submit"
+              disabled={loading}
+              className={`${step === 0 ? `${yellowBtn} w-full py-[15px]` : step === 1 ? "flex-1 cursor-pointer rounded-lg2 border-none bg-brand-blue-bright py-3.5 font-display text-base font-bold tracking-[.04em] text-white uppercase shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0" : yellowBtn} ${step === 1 ? "" : step > 0 ? "flex-1 py-3.5" : ""}`}
+            >
+              {loading ? "Submitting…" : step === 1 ? "Get Free Quote" : "Continue"}
+            </button>
+          </div>
         </>
       )}
 
@@ -180,6 +459,6 @@ export function QuoteWizard() {
         <Check className="text-success" size={13} strokeWidth={2.5} aria-hidden />
         Free estimate · No obligation · Under a minute
       </p>
-    </div>
+    </form>
   );
 }

@@ -17,6 +17,24 @@ export const business = {
     "Vantage Movers is a licensed interstate moving broker. Vantage is not a motor carrier and does not transport household goods. Vantage coordinates and arranges transportation of household goods through FMCSA-authorized motor carriers. Final charges are based on the carrier's tariff, shipment inventory, requested services, route, and move conditions. Carrier tariffs are available for inspection from the carrier upon reasonable request.",
 } as const;
 
+/** Animated hero metrics — ranges match the partner landing page (`apps/clients`). */
+export const heroMetrics = {
+  recentMoves: {
+    fallback: "20+",
+    min: 20,
+    max: 30,
+    suffix: "+",
+    label: "moves booked in the last hour",
+  },
+  familiesMoved: {
+    fallback: "50,000+",
+    min: 50000,
+    max: 55000,
+    suffix: "+",
+    label: "Families moved nationwide",
+  },
+} as const;
+
 export type IconKey =
   | "truck"
   | "globe"
@@ -201,24 +219,6 @@ export const navLinks = [
   { label: "Contact", href: "#contact" },
 ] as const;
 
-export const moveSizes = [
-  "Studio",
-  "1 Bedroom",
-  "2 Bedrooms",
-  "3 Bedrooms",
-  "4 Bedrooms",
-  "5+ Bedrooms",
-  "Commercial / Office",
-];
-
-export const serviceTypes = [
-  "Long Distance Move",
-  "Cross Country Move",
-  "Interstate Move",
-  "Corporate / Office Move",
-  "Military Move",
-  "Auto Transport",
-];
 
 export const stateNames: Record<string, string> = {
   AL: "Alabama",
@@ -228,6 +228,7 @@ export const stateNames: Record<string, string> = {
   CA: "California",
   CO: "Colorado",
   CT: "Connecticut",
+  DC: "District of Columbia",
   DE: "Delaware",
   FL: "Florida",
   GA: "Georgia",
@@ -285,7 +286,8 @@ export const featureRows = [
       "Clear, upfront estimate support — fewer surprises",
       "One point of contact from quote to delivery",
     ],
-    imageLabel: "long-distance-moving-day.jpg",
+    image: "longDistanceMoves" as const,
+    imageAlt: "Long-distance moving truck on the highway",
     badge: { label: "Most Requested", icon: "truck" as const },
     imageFirst: true,
   },
@@ -298,7 +300,8 @@ export const featureRows = [
       "Flexible scheduling around your orders",
       "Storage and auto transport options available",
     ],
-    imageLabel: "military-family-home.jpg",
+    image: "militaryMoves" as const,
+    imageAlt: "Military family preparing for a coordinated move",
     badge: { label: "Veteran-Friendly", icon: "shield" as const },
     imageFirst: false,
   },

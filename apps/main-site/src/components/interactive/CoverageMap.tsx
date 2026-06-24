@@ -1,14 +1,139 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, MapPin } from "lucide-react";
+import usa from "@svg-maps/usa";
 import { stateNames, coverageCopy } from "@/lib/content";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
+const nameToAbbr = Object.fromEntries(
+  Object.entries(stateNames).map(([abbr, name]) => [name, abbr]),
+);
+
+type StatePath = {
+  abbr: string;
+  name: string;
+  path: string;
+};
+
+type LabelPosition = {
+  x: number;
+  y: number;
+  fontSize: number;
+};
+
+const LABEL_OVERRIDES: Partial<Record<string, Partial<LabelPosition>>> = {
+  AK: { x: 260, y: 620, fontSize: 10 },
+  HI: { x: 320, y: 520, fontSize: 10 },
+  DC: { x: 1088, y: 410, fontSize: 8 },
+  MD: { x: 1105, y: 392, fontSize: 8 },
+  DE: { x: 1120, y: 372, fontSize: 8 },
+  RI: { x: 1148, y: 342, fontSize: 8 },
+  CT: { x: 1142, y: 328, fontSize: 8 },
+  NJ: { x: 1118, y: 358, fontSize: 9 },
+  MA: { x: 1155, y: 310, fontSize: 9 },
+  NH: { x: 1158, y: 288, fontSize: 9 },
+  VT: { x: 1138, y: 278, fontSize: 9 },
+  FL: { x: 1045, y: 545, fontSize: 10 },
+  LA: { x: 815, y: 495, fontSize: 10 },
+  MI: { x: 955, y: 318, fontSize: 10 },
+};
+
+function labelFontSize(width: number, height: number) {
+  const size = Math.min(width, height);
+  if (size < 36) return 8;
+  if (size < 52) return 9;
+  if (size < 72) return 10;
+  return 11;
+}
+
+function getStateStyles(abbr: string, active: string, hovered: string | null) {
+  const isActive = active === abbr;
+  const isHovered = hovered === abbr && !isActive;
+
+  if (isActive) {
+    return {
+      fill: "var(--color-brand-blue)",
+      stroke: "var(--color-brand-yellow)",
+      strokeWidth: 1.6,
+      filter: "url(#coverage-state-shadow)",
+    };
+  }
+
+  if (isHovered) {
+    return {
+      fill: "var(--color-brand-blue-bright)",
+      stroke: "var(--color-brand-blue-mid)",
+      strokeWidth: 1.2,
+      filter: undefined,
+    };
+  }
+
+  return {
+    fill: "#ffffff",
+    stroke: "var(--color-cream-border)",
+    strokeWidth: 0.85,
+    filter: undefined,
+  };
+}
+
+function getLabelFill(abbr: string, active: string, hovered: string | null) {
+  const isActive = active === abbr;
+  const isHovered = hovered === abbr && !isActive;
+
+  if (isActive) return "var(--color-brand-yellow)";
+  if (isHovered) return "#ffffff";
+  return "#475569";
+}
+
 export function CoverageMap() {
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [labelPositions, setLabelPositions] = useState<Record<string, LabelPosition>>({});
   const [active, setActive] = useState("FL");
-  const abbrs = Object.keys(stateNames);
+  const [hovered, setHovered] = useState<string | null>(null);
+
+  const statePaths = useMemo<StatePath[]>(
+    () =>
+      usa.locations
+        .map((loc) => {
+          const abbr = nameToAbbr[loc.name];
+          if (!abbr) return null;
+          return { abbr, name: loc.name, path: loc.path };
+        })
+        .filter((loc): loc is StatePath => loc !== null),
+    [],
+  );
+
+  useLayoutEffect(() => {
+    const svg = svgRef.current;
+    if (!svg) return;
+
+    const positions: Record<string, LabelPosition> = {};
+
+    for (const { abbr } of statePaths) {
+      const pathEl = svg.querySelector<SVGPathElement>(`#coverage-state-${abbr}`);
+      if (!pathEl) continue;
+
+      const box = pathEl.getBBox();
+      const override = LABEL_OVERRIDES[abbr];
+
+      positions[abbr] = {
+        x: override?.x ?? box.x + box.width / 2,
+        y: override?.y ?? box.y + box.height / 2,
+        fontSize: override?.fontSize ?? labelFontSize(box.width, box.height),
+      };
+    }
+
+    setLabelPositions(positions);
+  }, [statePaths]);
+
   const selName = stateNames[active]!;
+  const previewAbbr = hovered ?? active;
+  const previewName = stateNames[previewAbbr] ?? selName;
+
+  const selectState = useCallback((abbr: string) => {
+    setActive(abbr);
+  }, []);
 
   return (
     <div className="grid items-center gap-14 max-md:grid-cols-1 md:grid-cols-[.95fr_1.05fr]">
@@ -21,7 +146,10 @@ export function CoverageMap() {
           Vantage helps customers coordinate interstate moves across the United States.
           Select your state to see how we help match you with authorized motor carriers.
         </p>
-        <div className="rounded-card border border-cream-border bg-cream p-[26px] shadow-card">
+        <div
+          key={active}
+          className="rounded-card border border-cream-border bg-cream p-[26px] shadow-card"
+        >
           <div className="mb-3 flex items-center gap-3">
             <span className="grid size-11 place-items-center rounded-lg2 bg-brand-blue">
               <MapPin className="size-[22px] text-brand-yellow" strokeWidth={2} aria-hidden />
@@ -42,31 +170,99 @@ export function CoverageMap() {
         </div>
       </div>
 
-      <div className="rounded-panel border border-cream-border bg-cream p-6">
-        <div className="mb-3.5 text-center font-mono text-[11px] text-[#94a3b8]">
-          interactive-coverage-map · click a state
+      <div className="rounded-panel border border-cream-border bg-cream p-5 shadow-card sm:p-6">
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <p className="m-0 font-display text-sm font-bold tracking-[.06em] text-brand-blue uppercase">
+            Coverage Map
+          </p>
+          <p
+            className="m-0 truncate text-right font-display text-sm font-extrabold text-brand-blue transition-opacity duration-150"
+            aria-live="polite"
+          >
+            {previewName}
+            <span className="ml-1.5 font-bold text-[#64748B]">{previewAbbr}</span>
+          </p>
         </div>
-        <div className="grid grid-cols-8 gap-[7px]">
-          {abbrs.map((ab) => {
-            const isActive = active === ab;
-            return (
-              <button
-                key={ab}
-                type="button"
-                title={stateNames[ab]}
-                onClick={() => setActive(ab)}
-                className={
-                  "cursor-pointer rounded-chip py-[9px] font-display text-xs transition " +
-                  (isActive
-                    ? "border-none bg-brand-blue font-extrabold text-brand-yellow shadow-[0_4px_12px_rgba(2,71,153,.25)]"
-                    : "border border-cream-border bg-white font-bold text-[#475569]")
-                }
-              >
-                {ab}
-              </button>
-            );
-          })}
+
+        <div className="relative overflow-hidden rounded-card border border-cream-border bg-gradient-to-br from-white via-white to-brand-yellow-soft/40 p-3 sm:p-4">
+          <svg
+            ref={svgRef}
+            viewBox={usa.viewBox}
+            className="mx-auto block h-auto w-full max-h-[min(52vw,420px)]"
+            role="img"
+            aria-label="Interactive map of United States coverage. Click a state to view details."
+          >
+            <defs>
+              <filter id="coverage-state-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow
+                  dx="0"
+                  dy="2"
+                  stdDeviation="2.5"
+                  floodColor="#024799"
+                  floodOpacity="0.28"
+                />
+              </filter>
+            </defs>
+
+            {statePaths.map(({ abbr, name, path }) => {
+              const styles = getStateStyles(abbr, active, hovered);
+              const isActive = active === abbr;
+              const label = labelPositions[abbr];
+
+              return (
+                <g
+                  key={abbr}
+                  className="coverage-state-group cursor-pointer focus:outline-none"
+                  role="button"
+                  tabIndex={0}
+                  aria-label={name}
+                  aria-pressed={isActive}
+                  onMouseEnter={() => setHovered(abbr)}
+                  onMouseLeave={() => setHovered(null)}
+                  onFocus={() => setHovered(abbr)}
+                  onBlur={() => setHovered(null)}
+                  onClick={() => selectState(abbr)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      selectState(abbr);
+                    }
+                  }}
+                >
+                  <path
+                    id={`coverage-state-${abbr}`}
+                    d={path}
+                    fill={styles.fill}
+                    stroke={styles.stroke}
+                    strokeWidth={styles.strokeWidth}
+                    filter={styles.filter}
+                    className="transition-[fill,stroke,stroke-width,filter] duration-150 ease-out focus:outline-none"
+                  />
+                  {label ? (
+                    <text
+                      x={label.x}
+                      y={label.y}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      pointerEvents="none"
+                      fill={getLabelFill(abbr, active, hovered)}
+                      fontSize={label.fontSize}
+                      fontWeight={isActive ? 800 : 700}
+                      className="select-none font-display tracking-[.04em] transition-[fill] duration-150 ease-out"
+                      aria-hidden
+                    >
+                      {abbr}
+                    </text>
+                  ) : null}
+                </g>
+              );
+            })}
+          </svg>
         </div>
+
+        <p className="mt-3.5 mb-0 text-center text-[13px] text-[#64748B]">
+          Hover to preview · Click to select your state
+        </p>
       </div>
     </div>
   );

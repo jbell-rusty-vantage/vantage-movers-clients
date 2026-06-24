@@ -1,3 +1,4 @@
+import type { Testimonial } from "@vantage/api-client";
 import { ComplianceBar } from "@/components/layout/ComplianceBar";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -12,7 +13,11 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TrustBand } from "@/components/sections/TrustBand";
 import { WhyVantageSection } from "@/components/sections/WhyVantageSection";
 
-export function HomePage() {
+interface HomePageProps {
+  testimonials?: Testimonial[];
+}
+
+export function HomePage({ testimonials = [] }: HomePageProps) {
   return (
     <>
       <ComplianceBar />
@@ -25,7 +30,7 @@ export function HomePage() {
         <HowItWorksSection />
         <WhyVantageSection />
         <AboutSection />
-        <TestimonialsSection />
+        <TestimonialsSection items={testimonials} />
         <FaqSection />
         <FinalCTASection />
       </main>
