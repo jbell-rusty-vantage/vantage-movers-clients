@@ -1,8 +1,15 @@
+import path from "node:path";
 import type { NextConfig } from "next";
+
+const monorepoRoot = path.join(__dirname, "../..");
 
 const nextConfig: NextConfig = {
   transpilePackages: ["@vantage/api-client", "@vantage/utils"],
+  outputFileTracingRoot: monorepoRoot,
   reactCompiler: true,
+  turbopack: {
+    root: monorepoRoot,
+  },
   images: {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
