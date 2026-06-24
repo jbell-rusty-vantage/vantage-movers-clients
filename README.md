@@ -57,6 +57,8 @@ In each Vercel project settings:
 
 Deploys run via GitHub Actions (prebuilt output), same as before the monorepo migration.
 
+Run `vercel pull`, `vercel build`, and `vercel deploy` from the **repository root**. Each Vercel project's Root Directory setting (`apps/clients` or `apps/main-site`) tells the CLI where the app lives — do not also `cd` into that folder in CI or paths will double up.
+
 ## Shared packages
 
 Import from apps using workspace protocol:
