@@ -1,0 +1,13 @@
+{
+  "name": "@vantage/styles",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./base.css": "./base.css",
+    "./tailwind-preset": "./tailwind-preset.ts"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

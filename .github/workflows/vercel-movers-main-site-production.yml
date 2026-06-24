@@ -1,53 +1,44 @@
-name: Vercel Preview (Clients)
+name: Vercel Production (Main Site)
 
 on:
-  pull_request:
-    paths:
-      - apps/clients/**
-      - packages/**
-      - pnpm-lock.yaml
-      - pnpm-workspace.yaml
-      - turbo.json
-      - .github/workflows/vercel-movers-clients-preview.yml
   push:
-    branches-ignore:
+    branches:
       - main
     paths:
-      - apps/clients/**
+      - apps/main-site/**
       - packages/**
       - pnpm-lock.yaml
       - pnpm-workspace.yaml
       - turbo.json
-      - .github/workflows/vercel-movers-clients-preview.yml
+      - .github/workflows/vercel-movers-main-site-production.yml
+  workflow_dispatch:
 
 permissions:
   contents: read
-  pull-requests: write
 
 concurrency:
-  group: vercel-preview-clients-${{ github.head_ref || github.ref_name }}
-  cancel-in-progress: true
+  group: vercel-production-main-site
+  cancel-in-progress: false
 
 defaults:
   run:
-    working-directory: apps/clients
+    working-directory: apps/main-site
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_MOVERS_CLIENTS }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_MOVERS_MAIN_SITE }}
   VERCEL_GIT_PROVIDER: github
   VERCEL_GIT_REPO_SLUG: ${{ github.event.repository.name }}
   VERCEL_GIT_REPO_OWNER: ${{ github.repository_owner }}
-  VERCEL_GIT_COMMIT_REF: ${{ github.head_ref || github.ref_name }}
+  VERCEL_GIT_COMMIT_REF: ${{ github.ref_name }}
   VERCEL_GIT_COMMIT_SHA: ${{ github.sha }}
   VERCEL_GIT_COMMIT_AUTHOR_LOGIN: ${{ github.actor }}
-  VERCEL_GIT_PULL_REQUEST_ID: ${{ github.event.pull_request.number || '' }}
 
 jobs:
   deploy:
-    name: Build and deploy clients preview
+    name: Build and deploy main-site production
     runs-on: ubuntu-latest
 
     steps:
@@ -71,18 +62,18 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Typecheck
-        run: pnpm turbo typecheck --filter=@vantage/clients
+        run: pnpm turbo typecheck --filter=@vantage/main-site
 
-      - name: Pull Vercel preview environment
-        run: vercel pull --yes --environment=preview --token="$VERCEL_TOKEN"
+      - name: Pull Vercel production environment
+        run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
 
-      - name: Build prebuilt output
-        run: vercel build --token="$VERCEL_TOKEN"
+      - name: Build prebuilt production output
+        run: vercel build --prod --token="$VERCEL_TOKEN"
 
-      - name: Deploy prebuilt preview
+      - name: Deploy prebuilt production
         id: deploy
         run: |
-          url="$(vercel deploy --prebuilt --archive=tgz --token="$VERCEL_TOKEN")"
+          url="$(vercel deploy --prebuilt --prod --archive=tgz --token="$VERCEL_TOKEN")"
           echo "url=$url" >> "$GITHUB_OUTPUT"
-          echo "### Clients preview deployment" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Main site production deployment" >> "$GITHUB_STEP_SUMMARY"
           echo "$url" >> "$GITHUB_STEP_SUMMARY"

@@ -1,39 +1,19 @@
 {
-  "name": "vantage-movers-clients",
+  "name": "vantage-movers",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@hookform/resolvers": "^5.4.0",
-    "@radix-ui/react-label": "^2.1.9",
-    "@radix-ui/react-select": "^2.3.0",
-    "@vercel/analytics": "^2.0.1",
-    "@vercel/speed-insights": "^2.0.0",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^1.17.0",
-    "next": "16.2.7",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "react-hook-form": "^7.78.0",
-    "tailwind-merge": "^3.6.0",
-    "zod": "^4.4.3"
+    "dev": "turbo dev",
+    "dev:clients": "turbo dev --filter=@vantage/clients",
+    "dev:main-site": "turbo dev --filter=@vantage/main-site",
+    "build": "turbo build",
+    "build:clients": "turbo build --filter=@vantage/clients",
+    "build:main-site": "turbo build --filter=@vantage/main-site",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.7",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  }
+    "turbo": "^2.5.4"
+  },
+  "packageManager": "pnpm@10.13.1"
 }

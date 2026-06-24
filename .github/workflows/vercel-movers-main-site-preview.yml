@@ -1,42 +1,42 @@
-name: Vercel Preview (Clients)
+name: Vercel Preview (Main Site)
 
 on:
   pull_request:
     paths:
-      - apps/clients/**
+      - apps/main-site/**
       - packages/**
       - pnpm-lock.yaml
       - pnpm-workspace.yaml
       - turbo.json
-      - .github/workflows/vercel-movers-clients-preview.yml
+      - .github/workflows/vercel-movers-main-site-preview.yml
   push:
     branches-ignore:
       - main
     paths:
-      - apps/clients/**
+      - apps/main-site/**
       - packages/**
       - pnpm-lock.yaml
       - pnpm-workspace.yaml
       - turbo.json
-      - .github/workflows/vercel-movers-clients-preview.yml
+      - .github/workflows/vercel-movers-main-site-preview.yml
 
 permissions:
   contents: read
   pull-requests: write
 
 concurrency:
-  group: vercel-preview-clients-${{ github.head_ref || github.ref_name }}
+  group: vercel-preview-main-site-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 
 defaults:
   run:
-    working-directory: apps/clients
+    working-directory: apps/main-site
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_MOVERS_CLIENTS }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_MOVERS_MAIN_SITE }}
   VERCEL_GIT_PROVIDER: github
   VERCEL_GIT_REPO_SLUG: ${{ github.event.repository.name }}
   VERCEL_GIT_REPO_OWNER: ${{ github.repository_owner }}
@@ -47,7 +47,7 @@ env:
 
 jobs:
   deploy:
-    name: Build and deploy clients preview
+    name: Build and deploy main-site preview
     runs-on: ubuntu-latest
 
     steps:
@@ -71,7 +71,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Typecheck
-        run: pnpm turbo typecheck --filter=@vantage/clients
+        run: pnpm turbo typecheck --filter=@vantage/main-site
 
       - name: Pull Vercel preview environment
         run: vercel pull --yes --environment=preview --token="$VERCEL_TOKEN"
@@ -84,5 +84,5 @@ jobs:
         run: |
           url="$(vercel deploy --prebuilt --archive=tgz --token="$VERCEL_TOKEN")"
           echo "url=$url" >> "$GITHUB_OUTPUT"
-          echo "### Clients preview deployment" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Main site preview deployment" >> "$GITHUB_STEP_SUMMARY"
           echo "$url" >> "$GITHUB_STEP_SUMMARY"

@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vantage Movers Monorepo
 
-## Getting Started
+pnpm workspace containing the public marketing Next.js apps and shared packages.
 
-First, run the development server:
+## Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+apps/
+  clients/     Partner landing pages (Top10, TBM, etc.) → vantagemoves.com
+  main-site/   Vantage organic Main Site → dedicated domain (TBD)
+packages/
+  api-client/  Server-only vantage-main-server API client
+  styles/      Brand tokens, base CSS, Tailwind preset
+  utils/       Shared helpers (cn)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`vantage-main-server` and `vantage-admin` remain in separate repositories.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm install
+cp .env apps/clients/.env      # if migrating from pre-monorepo root .env
+cp .env apps/main-site/.env
+```
 
-## Learn More
+## Development
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm dev:clients      # http://localhost:3000
+pnpm dev:main-site    # http://localhost:3001
+pnpm dev              # both apps via Turborepo
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Build & check
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm build
+pnpm typecheck
+pnpm lint
+```
 
-## Deploy on Vercel
+## Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Each app is a separate Vercel project linked to this repo:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| App | Root Directory | GitHub secret |
+|-----|----------------|---------------|
+| Clients | `apps/clients` | `VERCEL_PROJECT_ID_MOVERS_CLIENTS` |
+| Main Site | `apps/main-site` | `VERCEL_PROJECT_ID_MOVERS_MAIN_SITE` |
+
+In each Vercel project settings:
+
+1. Set **Root Directory** to the app path above.
+2. Enable **Include source files outside of the Root Directory in the Build Step**.
+3. Keep **Git deployments disabled** (`vercel.json` in each app).
+
+Deploys run via GitHub Actions (prebuilt output), same as before the monorepo migration.
+
+## Shared packages
+
+Import from apps using workspace protocol:
+
+```ts
+import { getTestimonials } from "@vantage/api-client";
+import { cn } from "@vantage/utils";
+```
+
+```css
+@import "@vantage/styles/base.css";
+```

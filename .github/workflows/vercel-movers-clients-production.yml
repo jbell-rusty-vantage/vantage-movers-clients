@@ -1,17 +1,28 @@
-name: Vercel Production
+name: Vercel Production (Clients)
 
 on:
   push:
     branches:
       - main
+    paths:
+      - apps/clients/**
+      - packages/**
+      - pnpm-lock.yaml
+      - pnpm-workspace.yaml
+      - turbo.json
+      - .github/workflows/vercel-movers-clients-production.yml
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: vercel-production
+  group: vercel-production-clients
   cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: apps/clients
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -27,7 +38,7 @@ env:
 
 jobs:
   deploy:
-    name: Build and deploy production
+    name: Build and deploy clients production
     runs-on: ubuntu-latest
 
     steps:
@@ -51,7 +62,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Typecheck
-        run: pnpm typecheck
+        run: pnpm turbo typecheck --filter=@vantage/clients
 
       - name: Pull Vercel production environment
         run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
@@ -64,5 +75,5 @@ jobs:
         run: |
           url="$(vercel deploy --prebuilt --prod --archive=tgz --token="$VERCEL_TOKEN")"
           echo "url=$url" >> "$GITHUB_OUTPUT"
-          echo "### Production deployment" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Clients production deployment" >> "$GITHUB_STEP_SUMMARY"
           echo "$url" >> "$GITHUB_STEP_SUMMARY"
