@@ -1,28 +1,29 @@
 import type { Metadata } from "next";
-import { Archivo, Public_Sans } from "next/font/google";
+import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { business } from "@/lib/content";
 import "./globals.css";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+const display = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
   display: "swap",
 });
 
-const publicSans = Public_Sans({
-  variable: "--font-public-sans",
+const body = Hanken_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Vantage Home Movers | Nationwide Moving Services",
+  title: `${business.name} | Nationwide Long-Distance Moving Broker`,
   description:
-    "Licensed nationwide moving broker for long-distance, office, military, packing, storage, and auto transport moves.",
-  applicationName: "Vantage Home Movers",
+    "Licensed interstate moving broker helping families and businesses coordinate long-distance moves with FMCSA-authorized motor carriers.",
+  applicationName: business.name,
 };
 
 export default function RootLayout({
@@ -31,11 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${archivo.variable} ${publicSans.variable} antialiased`}
-    >
-      <body>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <body className="antialiased">
         {children}
         <Analytics />
         <SpeedInsights />

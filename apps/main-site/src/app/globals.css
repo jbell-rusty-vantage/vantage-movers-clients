@@ -1,2 +1,93 @@
 @import "tailwindcss";
-@import "@vantage/styles/base.css";
+
+@theme inline {
+  --color-brand-blue: #024799;
+  --color-brand-blue-bright: #1763cf;
+  --color-brand-blue-mid: #0a5bc0;
+  --color-brand-blue-deep: #022f66;
+  --color-brand-yellow: #ffce45;
+  --color-brand-yellow-soft: #fff3d1;
+  --color-ink: #111827;
+  --color-ink-soft: #1f2937;
+  --color-cream: #f6f1e8;
+  --color-cream-border: #e5dccb;
+  --color-cream-border-2: #ece4d6;
+  --color-footer: #0b0d14;
+  --color-success: #16a34a;
+  --color-success-bg: #dcfce7;
+  --color-on-dark-100: #cfe0f2;
+  --color-on-dark-200: #c5d6ea;
+  --color-on-dark-300: #bcd0e8;
+  --color-on-dark-400: #9cc6f2;
+  --color-on-dark-500: #9fb6d2;
+  --color-on-dark-600: #7f9bbd;
+  --color-on-dark-700: #6f8aad;
+
+  --font-display: var(--font-display), system-ui, sans-serif;
+  --font-body: var(--font-body), system-ui, sans-serif;
+
+  --radius-chip: 7px;
+  --radius-md2: 9px;
+  --radius-lg2: 11px;
+  --radius-xl2: 13px;
+  --radius-card: 16px;
+  --radius-panel: 20px;
+
+  --shadow-card: 0 2px 10px rgba(2, 71, 153, 0.05);
+  --shadow-card-hover: 0 20px 44px rgba(2, 71, 153, 0.14);
+  --shadow-tile: 0 18px 48px rgba(2, 71, 153, 0.16);
+  --shadow-cta: 0 6px 18px rgba(37, 117, 222, 0.28);
+  --shadow-cta-yellow: 0 10px 28px rgba(255, 192, 46, 0.32);
+  --shadow-form-card: 0 24px 60px rgba(4, 18, 38, 0.4);
+  --shadow-menu: 0 18px 48px rgba(2, 71, 153, 0.16);
+
+  --animate-vm-pulse: vm-pulse 2s infinite;
+}
+
+:root {
+  --brand-blue: #024799;
+  --brand-blue-bright: #1763cf;
+  --brand-yellow: #ffce45;
+  --cream: #f6f1e8;
+  --footer: #0b0d14;
+  --maxw: 1200px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+  color: var(--color-ink);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes vm-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.82);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation: none !important;
+  }
+}
