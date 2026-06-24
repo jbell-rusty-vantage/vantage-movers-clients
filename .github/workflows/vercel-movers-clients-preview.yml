@@ -72,6 +72,20 @@ jobs:
       - name: Pull Vercel preview environment
         run: vercel pull --yes --environment=preview --token="$VERCEL_TOKEN"
 
+      - name: Apply monorepo root directory for Vercel CLI
+        run: |
+          node -e '
+          const fs = require("fs");
+          const file = ".vercel/project.json";
+          const project = JSON.parse(fs.readFileSync(file, "utf8"));
+          project.settings = {
+            ...(project.settings ?? {}),
+            rootDirectory: "apps/clients",
+            framework: "nextjs",
+          };
+          fs.writeFileSync(file, JSON.stringify(project, null, 2));
+          '
+
       - name: Build prebuilt output
         run: vercel build --token="$VERCEL_TOKEN"
 
