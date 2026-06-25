@@ -2,14 +2,8 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { quoteFormSchema } from "@/schemas/quote-form.schema";
 import { estimate } from "@/lib/estimate";
+import { MAIN_SITE } from "@/content/partners";
 import { createFormLead, type CreateFormLeadInput } from "@vantage/api-client";
-
-const SOURCE_COMPANIES = [
-  "tbm_leads",
-  "tbm_prime_leads",
-  "top10_leads",
-  "main_site",
-] as const;
 
 const requestSchema = quoteFormSchema.extend({
   source_company: z.string().trim().optional(),
@@ -17,13 +11,6 @@ const requestSchema = quoteFormSchema.extend({
   ref_no: z.string().trim().optional(),
   sms_consent: z.boolean().optional(),
 });
-
-function normalizeSourceCompany(value?: string): string {
-  if (value && (SOURCE_COMPANIES as readonly string[]).includes(value)) {
-    return value;
-  }
-  return "main_site";
-}
 
 export async function POST(req: Request) {
   let body: unknown;
@@ -41,12 +28,21 @@ export async function POST(req: Request) {
     );
   }
 
-  const { source_company, source_company_site, ref_no, sms_consent, ...quote } =
-    parsed.data;
+  const { ref_no, sms_consent } = parsed.data;
+  const quote = {
+    pickup: parsed.data.pickup,
+    dest: parsed.data.dest,
+    date: parsed.data.date,
+    size: parsed.data.size,
+    name: parsed.data.name,
+    phone: parsed.data.phone,
+    email: parsed.data.email,
+    smsConsent: parsed.data.smsConsent,
+  };
 
   const leadPayload: CreateFormLeadInput = {
-    source_company: normalizeSourceCompany(source_company),
-    source_company_site,
+    source_company: MAIN_SITE.sourceCompany,
+    source_company_site: MAIN_SITE.sourceCompanySite,
     name: quote.name,
     email: quote.email,
     phone_number: quote.phone,

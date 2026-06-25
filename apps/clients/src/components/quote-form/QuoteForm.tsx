@@ -27,6 +27,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
 import { Label } from "@/components/ui/Label";
+import { MoveDatePicker } from "@vantage/ui";
 import { usePromo } from "@/components/promo/PromoProvider";
 import { StepIndicator } from "./StepIndicator";
 
@@ -220,10 +221,6 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
   const { setPromoSuppressed } = usePromo();
   const formStarted = useRef(false);
 
-  // Min selectable move date (today). Computed at render; hydration warnings
-  // are suppressed on the input since the server/client day can differ by tz.
-  const today = new Date().toISOString().split("T")[0];
-
   const {
     register,
     trigger,
@@ -231,6 +228,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
     getFieldState,
     reset,
     setValue,
+    watch,
     formState: { errors },
   } = useForm<QuoteFormInput, unknown, QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
@@ -386,18 +384,26 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
           <div className="qf__pane">
             <div className="qf__row">
               <Field id="date" label="Move date" error={errors.date?.message}>
-                <Input
+                <MoveDatePicker
                   id="date"
-                  type="date"
-                  min={today}
-                  suppressHydrationWarning
-                  onFocus={() =>
+                  variant="clients"
+                  value={watch("date")}
+                  hasError={!!errors.date}
+                  placeholder="Select move date"
+                  onOpen={() =>
                     trackEvent("calendar_or_date_picker_opened", {
                       ...quoteFormAnalytics,
                       ...STEP_ANALYTICS[1],
                     })
                   }
-                  {...register("date")}
+                  onChange={(nextDate) =>
+                    setValue("date", nextDate, {
+                      shouldDirty: true,
+                      shouldTouch: true,
+                      shouldValidate: true,
+                    })
+                  }
+                  onBlur={() => void trigger("date")}
                 />
               </Field>
               <Field id="size" label="Move size" error={errors.size?.message}>

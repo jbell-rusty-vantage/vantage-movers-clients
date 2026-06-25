@@ -10,7 +10,7 @@ export function Logo({ variant = "header" }: LogoProps) {
   const isFooter = variant === "footer";
 
   return (
-    <Link href="#top" className="flex items-center no-underline" aria-label={business.name}>
+    <Link href="/#top" className="flex items-center no-underline" aria-label={business.name}>
       <Image
         className={isFooter ? "h-[52px] w-auto" : "h-[46px] w-auto"}
         src="/vantage/vantagelogo.png"

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   business,
   footerCompanyLinks,
@@ -15,8 +16,8 @@ export function Footer() {
           <div>
             <Logo variant="footer" />
             <p className="mt-[18px] max-w-xs text-[14.5px] leading-[1.6] text-on-dark-500">
-              A licensed interstate moving broker helping families and businesses coordinate
-              long-distance moves with authorized motor carriers.
+              A licensed interstate household goods moving broker helping families and businesses
+              coordinate long-distance relocations through authorized motor carriers.
             </p>
             <div className="mt-[18px] text-[13px] leading-[1.8] text-on-dark-600">
               {business.address.map((line) => (
@@ -35,13 +36,13 @@ export function Footer() {
             </h4>
             <div className="flex flex-col gap-[11px] text-[14.5px]">
               {footerServiceLinks.map((label) => (
-                <a
+                <Link
                   key={label}
-                  href="#services"
+                  href="/#services"
                   className="text-on-dark-500 no-underline transition hover:text-white"
                 >
                   {label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -52,13 +53,23 @@ export function Footer() {
             </h4>
             <div className="flex flex-col gap-[11px] text-[14.5px]">
               {footerCompanyLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-on-dark-500 no-underline transition hover:text-white"
-                >
-                  {link.label}
-                </a>
+                link.href.startsWith("/") ? (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="text-on-dark-500 no-underline transition hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="text-on-dark-500 no-underline transition hover:text-white"
+                  >
+                    {link.label}
+                  </a>
+                )
               ))}
             </div>
           </div>
@@ -69,13 +80,13 @@ export function Footer() {
             </h4>
             <div className="flex flex-col gap-[11px] text-[14.5px]">
               {footerLegalLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   className="text-on-dark-500 no-underline transition hover:text-white"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

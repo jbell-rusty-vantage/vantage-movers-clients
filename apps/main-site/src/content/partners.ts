@@ -15,5 +15,5 @@ export const MAIN_SITE: PartnerConfig = {
   slug: "",
   name: "Vantage Home Movers",
   sourceCompany: "main_site",
-  sourceCompanySite: "vantagequotes.com",
+  sourceCompanySite: "vantagehomemovers.com",
 };

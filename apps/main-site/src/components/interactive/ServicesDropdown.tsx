@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { services } from "@/lib/content";
 import { SERVICE_ICONS } from "@/lib/icons";
@@ -38,16 +39,16 @@ export function ServicesDropdown() {
           {services.map((s) => {
             const Icon = SERVICE_ICONS[s.icon];
             return (
-              <a
+              <Link
                 key={s.title}
-                href="#services"
+                href="/#services"
                 className="flex items-center gap-[11px] rounded-md2 px-3 py-2.5 text-[14.5px] font-semibold text-brand-blue no-underline transition hover:bg-cream"
               >
                 <span className="grid size-[30px] flex-none place-items-center rounded-chip bg-brand-yellow-soft text-brand-blue-bright">
                   <Icon size={17} aria-hidden />
                 </span>
                 {s.title}
-              </a>
+              </Link>
             );
           })}
         </div>

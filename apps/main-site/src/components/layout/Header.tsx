@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Phone } from "lucide-react";
 import { business, navLinks } from "@/lib/content";
 import { Container } from "@/components/ui/Container";
@@ -13,13 +14,13 @@ export function Header() {
         <nav className="hidden items-center gap-1 font-display text-[15.5px] font-semibold text-brand-blue lg:flex">
           <ServicesDropdown />
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="rounded-lg2 px-3.5 py-2.5 no-underline transition hover:bg-cream"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -32,18 +33,18 @@ export function Header() {
               <Phone className="size-[17px] text-brand-blue" strokeWidth={2} aria-hidden />
             </span>
             <span className="flex flex-col leading-[1.15]">
-              <span className="text-[11px] font-semibold text-[#64748B]">Free Quote</span>
+              <span className="text-[11px] font-semibold text-[#64748B]">Moving Quote</span>
               <span className="font-display text-[15px] font-extrabold text-brand-blue">
                 {business.phoneDisplay}
               </span>
             </span>
           </a>
-          <a
-            href="#quote"
+          <Link
+            href="/#quote"
             className="rounded-lg2 bg-brand-blue-bright px-[22px] py-3.5 font-display text-[15px] font-bold tracking-[.04em] text-white uppercase no-underline shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue"
           >
-            Get Quote
-          </a>
+            Request a Quote
+          </Link>
         </div>
       </Container>
     </header>

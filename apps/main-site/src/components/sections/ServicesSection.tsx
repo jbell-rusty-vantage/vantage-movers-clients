@@ -12,13 +12,14 @@ export function ServicesSection() {
     <section id="services" className="bg-cream py-24">
       <Container>
         <div className="mx-auto mb-[52px] max-w-[680px] text-center">
-          <Eyebrow className="justify-center">What We Do</Eyebrow>
+          <Eyebrow className="justify-center">What We Coordinate</Eyebrow>
           <h2 className="mb-4 text-balance font-display text-[clamp(30px,3.4vw,44px)] leading-[1.08] font-extrabold -tracking-[.02em] text-brand-blue">
-            Long-Distance Moving Services, Coordinated With Care
+            Long-Distance Moving Services, Arranged Through Authorized Carriers
           </h2>
           <p className="text-[17px] leading-[1.6] text-[#64748B]">
-            As your moving broker, Vantage helps match each relocation with licensed, authorized
-            motor carriers — so you get the right service for your route and inventory.
+            Vantage Movers is a licensed interstate household goods moving broker. We help customers
+            plan and coordinate relocations by reviewing move details and arranging transportation
+            through FMCSA-authorized motor carriers.
           </p>
         </div>
 
@@ -41,7 +42,7 @@ export function ServicesSection() {
                   href="#quote"
                   className="rounded-lg2 bg-brand-blue-bright px-[26px] py-3.5 font-display text-[15px] font-bold tracking-[.04em] text-white uppercase no-underline shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue"
                 >
-                  Get a Quote
+                  Request a Quote
                 </a>
                 <a
                   href="#services"
@@ -104,7 +105,7 @@ export function ServicesSection() {
                   {s.desc}
                 </p>
                 <span className="inline-flex items-center gap-[7px] font-display text-sm font-bold text-brand-blue-bright">
-                  Get a Quote <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
+                  Request a Quote <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
                 </span>
               </a>
             );

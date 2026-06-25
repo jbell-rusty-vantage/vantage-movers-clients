@@ -10,7 +10,7 @@ export function WhyVantageSection() {
         <div className="mx-auto mb-[52px] max-w-[640px] text-center">
           <Eyebrow className="justify-center">Why Vantage</Eyebrow>
           <h2 className="text-balance font-display text-[clamp(30px,3.4vw,44px)] leading-[1.08] font-extrabold -tracking-[.02em] text-brand-blue">
-            A Moving Broker Built Around Clarity &amp; Trust
+            A Licensed Moving Broker Built Around Clear Coordination
           </h2>
         </div>
 
@@ -38,16 +38,16 @@ export function WhyVantageSection() {
             style={{ backgroundImage: "linear-gradient(140deg,#1763CF,#024799)" }}
           >
             <h3 className="mb-2 font-display text-xl font-extrabold text-white">
-              Ready to plan your move?
+              Ready to review your move details?
             </h3>
             <p className="mb-[18px] text-[14.5px] leading-[1.55] text-on-dark-100">
-              Get a free, no-obligation estimate in under a minute.
+              Request a personalized moving estimate in under a minute.
             </p>
             <a
               href="#quote"
               className="self-start rounded-lg2 bg-brand-yellow px-[22px] py-3 font-display text-sm font-bold tracking-[.04em] text-black uppercase no-underline transition hover:-translate-y-0.5"
             >
-              Get a Free Estimate
+              Request a Free Moving Quote
             </a>
           </div>
         </div>

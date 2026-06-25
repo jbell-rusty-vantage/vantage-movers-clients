@@ -1,0 +1,282 @@
+/* ============================================================
+   Vantage Movers — shared move date picker
+   ============================================================ */
+
+.vdp {
+  position: relative;
+  width: 100%;
+}
+
+/* ---- Trigger (input-like button) ---- */
+
+.vdp__trigger {
+  align-items: center;
+  background: var(--vdp-trigger-bg, #f5f8fb);
+  border: 1.5px solid var(--vdp-trigger-border, #e2e8f0);
+  border-radius: var(--vdp-radius, 8px);
+  color: var(--vdp-trigger-text, #111827);
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  font-size: 15px;
+  gap: 8px;
+  justify-content: space-between;
+  outline: none;
+  padding: 13px 14px;
+  text-align: left;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
+  width: 100%;
+}
+
+.vdp__trigger:hover:not(:disabled) {
+  border-color: var(--vdp-trigger-border-hover, #cbd5e1);
+}
+
+.vdp__trigger:focus-visible {
+  background: #fff;
+  border-color: var(--vdp-accent, #2e86de);
+  box-shadow: 0 0 0 3px var(--vdp-focus-ring, rgba(46, 134, 222, 0.16));
+}
+
+.vdp[data-open="true"] .vdp__trigger {
+  background: #fff;
+  border-color: var(--vdp-accent, #2e86de);
+  box-shadow: 0 0 0 3px var(--vdp-focus-ring, rgba(46, 134, 222, 0.16));
+}
+
+.vdp[data-error="true"] .vdp__trigger {
+  background: #fef5f5;
+  border-color: #dc2626;
+}
+
+.vdp[data-error="true"] .vdp__trigger:focus-visible,
+.vdp[data-error="true"][data-open="true"] .vdp__trigger {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.16);
+}
+
+.vdp__trigger:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.vdp__value {
+  flex: 1;
+  min-width: 0;
+}
+
+.vdp__value--placeholder {
+  color: var(--vdp-placeholder, #64748b);
+}
+
+.vdp__icon {
+  color: var(--vdp-icon, #64748b);
+  display: grid;
+  flex: none;
+  place-items: center;
+}
+
+/* ---- Popover ---- */
+
+.vdp__popover {
+  animation: vdpIn 0.18s ease;
+  background: #fff;
+  border: 1.5px solid var(--vdp-popover-border, #e2e8f0);
+  border-radius: var(--vdp-radius-lg, 12px);
+  box-shadow: var(--vdp-popover-shadow, 0 18px 50px rgba(6, 43, 85, 0.16));
+  padding: 14px;
+  z-index: 1000;
+}
+
+.vdp__popover--portal {
+  position: fixed;
+}
+
+@keyframes vdpIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- Calendar (react-day-picker overrides) ---- */
+
+.vdp__calendar {
+  --rdp-accent-color: var(--vdp-accent, #2e86de);
+  --rdp-accent-background-color: var(--vdp-accent-soft, rgba(46, 134, 222, 0.14));
+  width: 100%;
+}
+
+.vdp__months {
+  width: 100%;
+}
+
+.vdp__month {
+  width: 100%;
+}
+
+.vdp__caption {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.vdp__caption-label {
+  color: var(--vdp-caption, #062b55);
+  flex: 1;
+  font-family: var(--vdp-font-head, inherit);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.vdp__nav {
+  display: contents;
+}
+
+.vdp__nav-btn {
+  align-items: center;
+  background: var(--vdp-nav-bg, #eef2f7);
+  border: none;
+  border-radius: 8px;
+  color: var(--vdp-caption, #062b55);
+  cursor: pointer;
+  display: grid;
+  height: 32px;
+  place-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background 0.15s;
+  width: 32px;
+}
+
+.vdp__nav-btn:hover {
+  background: var(--vdp-nav-bg-hover, #e2e8f0);
+}
+
+.vdp__nav-btn:first-of-type {
+  left: 0;
+}
+
+.vdp__nav-btn:last-of-type {
+  right: 0;
+}
+
+.vdp__grid {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.vdp__weekdays {
+  margin-bottom: 4px;
+}
+
+.vdp__weekday {
+  color: var(--vdp-muted, #64748b);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 0;
+  text-transform: uppercase;
+}
+
+.vdp__day {
+  padding: 2px;
+  text-align: center;
+}
+
+.vdp__day-btn {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--vdp-trigger-text, #111827);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  height: 36px;
+  transition:
+    background 0.12s,
+    color 0.12s;
+  width: 36px;
+}
+
+.vdp__day-btn:hover:not(.vdp__day-btn--disabled):not(.vdp__day-btn--selected) {
+  background: var(--vdp-day-hover, #eef2f7);
+}
+
+.vdp__day-btn--today:not(.vdp__day-btn--selected) {
+  color: var(--vdp-accent, #2e86de);
+  font-weight: 800;
+}
+
+.vdp__day-btn--selected {
+  background: var(--vdp-selected-bg, #145da0) !important;
+  color: #fff !important;
+  font-weight: 800;
+}
+
+.vdp__day-btn--outside {
+  color: var(--vdp-outside, #94a3b8);
+  opacity: 0.55;
+}
+
+.vdp__day-btn--disabled {
+  color: var(--vdp-disabled, #cbd5e1);
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* ---- Clients variant (partner landing pages) ---- */
+
+.vdp[data-variant="clients"],
+.vdp__popover[data-variant="clients"] {
+  --vdp-trigger-bg: var(--cool-white, #f5f8fb);
+  --vdp-trigger-border: var(--steel-200, #e2e8f0);
+  --vdp-trigger-text: var(--near-black, #111827);
+  --vdp-accent: var(--bright-blue, #2e86de);
+  --vdp-focus-ring: rgba(46, 134, 222, 0.16);
+  --vdp-selected-bg: var(--trust-blue, #145da0);
+  --vdp-caption: var(--navy, #062b55);
+  --vdp-font-head: var(--font-head, inherit);
+  --vdp-radius: var(--radius-sm, 8px);
+  --vdp-radius-lg: var(--radius, 12px);
+}
+
+/* ---- Main site variant ---- */
+
+.vdp[data-variant="main-site"],
+.vdp__popover[data-variant="main-site"] {
+  --vdp-trigger-bg: #f6f1e8;
+  --vdp-trigger-border: #e5dccb;
+  --vdp-trigger-border-hover: #d9cdb8;
+  --vdp-trigger-text: #111827;
+  --vdp-accent: #2e86de;
+  --vdp-focus-ring: rgba(46, 134, 222, 0.16);
+  --vdp-selected-bg: #1763cf;
+  --vdp-caption: #024799;
+  --vdp-font-head: var(--font-display, inherit);
+  --vdp-radius: 11px;
+  --vdp-radius-lg: 13px;
+  --vdp-popover-shadow: 0 18px 48px rgba(2, 71, 153, 0.16);
+  --vdp-nav-bg: #f6f1e8;
+  --vdp-nav-bg-hover: #ece4d6;
+  --vdp-day-hover: #fff3d1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vdp__popover {
+    animation: none;
+  }
+}

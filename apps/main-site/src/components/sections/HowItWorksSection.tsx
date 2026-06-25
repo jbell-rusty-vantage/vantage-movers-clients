@@ -19,7 +19,7 @@ export function HowItWorksSection() {
             How It Works
           </Eyebrow>
           <h2 className="text-balance font-display text-[clamp(30px,3.4vw,44px)] leading-[1.08] font-extrabold -tracking-[.02em] text-white">
-            From Quote Request To Moving Day, in Three Steps
+            From Quote Request to Carrier Assignment, in Three Steps
           </h2>
         </div>
 

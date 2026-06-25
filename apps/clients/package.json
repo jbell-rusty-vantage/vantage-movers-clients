@@ -15,6 +15,7 @@
     "@radix-ui/react-select": "^2.3.0",
     "@vantage/api-client": "workspace:*",
     "@vantage/styles": "workspace:*",
+    "@vantage/ui": "workspace:*",
     "@vantage/utils": "workspace:*",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",

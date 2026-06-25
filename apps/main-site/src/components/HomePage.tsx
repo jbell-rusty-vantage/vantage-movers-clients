@@ -11,6 +11,7 @@ import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TrustBand } from "@/components/sections/TrustBand";
+import { TrustStrip } from "@/components/sections/TrustStrip";
 import { WhyVantageSection } from "@/components/sections/WhyVantageSection";
 
 interface HomePageProps {
@@ -24,6 +25,7 @@ export function HomePage({ testimonials = [] }: HomePageProps) {
       <Header />
       <main>
         <HeroSection />
+        <TrustStrip />
         <TrustBand />
         <ServicesSection />
         <CoverageSection />

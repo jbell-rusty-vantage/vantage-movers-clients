@@ -1,19 +1,19 @@
 import type { ComponentType } from "react";
 import {
-  Archive,
   Briefcase,
   Building2,
-  Car,
   DollarSign,
   FileText,
   Globe,
   Headphones,
   Home,
   Package,
+  PackageOpen,
   Route,
   Shield,
   Truck,
   UserCheck,
+  Users,
 } from "lucide-react";
 import type { IconKey } from "@/lib/content";
 
@@ -24,14 +24,14 @@ export const SERVICE_ICONS: Record<
   ComponentType<{ size?: number; className?: string; strokeWidth?: number }>
 > = {
   truck: Truck,
-  globe: Globe,
   route: Route,
   home: Home,
   office: Building2,
   shield: Shield,
+  users: Users,
   box: Package,
-  archive: Archive,
-  car: Car,
+  "package-open": PackageOpen,
+  headphones: Headphones,
 };
 
 export const WHY_ICONS: Record<

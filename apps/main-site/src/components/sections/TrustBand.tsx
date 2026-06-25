@@ -10,8 +10,8 @@ export function TrustBand() {
         <div className="flex flex-wrap items-center gap-4">
           <Stars />
           <div className="text-[14.5px] text-[#64748B]">
-            <b className="font-display text-brand-blue">Rated by movers nationwide</b> ·
-            transparent, broker-coordinated service
+            <b className="font-display text-brand-blue">Customer feedback nationwide</b> ·
+            licensed broker-coordinated service
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-3.5">

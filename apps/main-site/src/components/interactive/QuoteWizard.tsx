@@ -10,6 +10,7 @@ import {
 } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, MapPin } from "lucide-react";
+import { MoveDatePicker } from "@vantage/ui";
 import { business } from "@/lib/content";
 import { telHref } from "@/lib/format";
 import { MAIN_SITE } from "@/content/partners";
@@ -52,6 +53,16 @@ function createSessionToken() {
     return crypto.randomUUID();
   }
   return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
+function createMainSiteRefNo() {
+  const date = new Date().toISOString().slice(0, 10).replaceAll("-", "");
+  const random =
+    typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID().replaceAll("-", "").slice(0, 10)
+      : Math.random().toString(36).slice(2, 12);
+
+  return `MS-${date}-${random.toUpperCase()}`;
 }
 
 function Field({
@@ -182,7 +193,7 @@ function ZipField({
         <p className="mt-1 text-[12.5px] text-[#64748B]">Resolving ZIP…</p>
       )}
       {!loading && resolvedRegion && (
-        <p className="mt-1 text-[12.5px] font-medium text-success">{resolvedRegion}</p>
+        <p className="mt-1 text-[12.5px] font-semibold text-ink">{resolvedRegion}</p>
       )}
       {!loading && lookupWarning && (
         <p className="mt-1 text-[12.5px] text-amber-600">{lookupWarning}</p>
@@ -198,17 +209,18 @@ export function QuoteWizard() {
   const [submitError, setSubmitError] = useState("");
   const [pickupZip, setPickupZip] = useState("");
   const [destZip, setDestZip] = useState("");
+  const [internalRefNo] = useState(createMainSiteRefNo);
 
   const searchParams = useSearchParams();
-  const refNo = searchParams.get("ref_no")?.trim() || undefined;
-  const today = new Date().toISOString().split("T")[0];
-
+  const inboundRefNo = searchParams.get("ref_no")?.trim();
+  const refNo = inboundRefNo ? `${internalRefNo}-${inboundRefNo.slice(0, 24)}` : internalRefNo;
   const {
     register,
     trigger,
     getValues,
     reset,
     setValue,
+    watch,
     formState: { errors },
   } = useForm<QuoteFormInput, unknown, QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
@@ -274,10 +286,10 @@ export function QuoteWizard() {
     >
       <div className="mb-2 text-center">
         <h2 className="mb-1.5 font-display text-[25px] font-extrabold -tracking-[.02em] text-brand-blue">
-          Get an Instant Estimate
+          Request Your Moving Quote
         </h2>
         <p className="m-0 text-[14.5px] text-[#64748B]">
-          Free, no-obligation quote in three quick steps.
+          Tell us where you are moving, when, and what you need moved.
         </p>
       </div>
 
@@ -310,8 +322,8 @@ export function QuoteWizard() {
 
       {step === 2 && result ? (
         <div className="px-2 pt-6 pb-3.5 text-center">
-          <span className="mx-auto mb-4 grid size-[60px] place-items-center rounded-full bg-success-bg">
-            <Check className="text-success" size={30} strokeWidth={2.5} />
+          <span className="mx-auto mb-4 grid size-[60px] place-items-center rounded-full bg-brand-yellow-soft">
+            <Check className="text-brand-blue-bright" size={30} strokeWidth={2.5} />
           </span>
           <h3 className="mb-2 font-display text-[21px] font-extrabold text-brand-blue">
             Request Received
@@ -366,12 +378,20 @@ export function QuoteWizard() {
           {step === 1 && (
             <div>
               <Field label="Estimated Move Date" error={errors.date?.message}>
-                <input
-                  type="date"
-                  min={today}
-                  suppressHydrationWarning
-                  className={`${inputCls} text-[#64748B] ${errors.date ? inputErrCls : ""}`}
-                  {...register("date")}
+                <MoveDatePicker
+                  id="move-date"
+                  variant="main-site"
+                  value={watch("date")}
+                  hasError={!!errors.date}
+                  placeholder="Select move date"
+                  onChange={(nextDate) =>
+                    setValue("date", nextDate, {
+                      shouldDirty: true,
+                      shouldTouch: true,
+                      shouldValidate: true,
+                    })
+                  }
+                  onBlur={() => void trigger("date")}
                 />
               </Field>
               <Field label="Move Size" error={errors.size?.message}>
@@ -449,15 +469,15 @@ export function QuoteWizard() {
               disabled={loading}
               className={`${step === 0 ? `${yellowBtn} w-full py-[15px]` : step === 1 ? "flex-1 cursor-pointer rounded-lg2 border-none bg-brand-blue-bright py-3.5 font-display text-base font-bold tracking-[.04em] text-white uppercase shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0" : yellowBtn} ${step === 1 ? "" : step > 0 ? "flex-1 py-3.5" : ""}`}
             >
-              {loading ? "Submitting…" : step === 1 ? "Get Free Quote" : "Continue"}
+              {loading ? "Submitting…" : step === 1 ? "Request Free Quote" : "Continue"}
             </button>
           </div>
         </>
       )}
 
       <p className="mt-4 flex items-center justify-center gap-[7px] text-center text-[12.5px] text-[#94a3b8]">
-        <Check className="text-success" size={13} strokeWidth={2.5} aria-hidden />
-        Free estimate · No obligation · Under a minute
+        <Check className="text-brand-blue-bright" size={13} strokeWidth={2.5} aria-hidden />
+        Free estimate · No obligation · Broker-coordinated quote
       </p>
     </form>
   );

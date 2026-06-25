@@ -140,11 +140,12 @@ export function CoverageMap() {
       <div>
         <Eyebrow>Nationwide Coverage</Eyebrow>
         <h2 className="mb-4 text-balance font-display text-[clamp(30px,3.4vw,44px)] leading-[1.08] font-extrabold -tracking-[.02em] text-brand-blue">
-          Find Long-Distance Moving Support By State
+          Interstate Moving Coordination By State
         </h2>
         <p className="mb-7 text-[17px] leading-[1.6] text-[#64748B]">
-          Vantage helps customers coordinate interstate moves across the United States.
-          Select your state to see how we help match you with authorized motor carriers.
+          Vantage helps customers coordinate long-distance and interstate relocations across the
+          United States. Select your state to learn how we arrange transportation through authorized
+          motor carriers.
         </p>
         <div
           key={active}
@@ -165,7 +166,7 @@ export function CoverageMap() {
             href="#quote"
             className="inline-flex items-center gap-2 rounded-lg2 bg-brand-blue-bright px-5 py-3 font-display text-sm font-bold tracking-[.04em] text-white uppercase no-underline transition hover:bg-brand-blue"
           >
-            Get a {selName} Quote <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
+            Get a {selName} Estimate <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
           </a>
         </div>
       </div>

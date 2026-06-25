@@ -13,8 +13,8 @@
   --color-cream-border: #e5dccb;
   --color-cream-border-2: #ece4d6;
   --color-footer: #0b0d14;
-  --color-success: #16a34a;
-  --color-success-bg: #dcfce7;
+  --color-success: #1763cf;
+  --color-success-bg: #dbeafe;
   --color-on-dark-100: #cfe0f2;
   --color-on-dark-200: #c5d6ea;
   --color-on-dark-300: #bcd0e8;
@@ -82,6 +82,34 @@ body {
   }
 }
 
+.trust-marquee {
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  overflow: hidden;
+}
+
+.trust-marquee-track {
+  animation: trust-marquee 34s linear infinite;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding-left: 64px;
+  width: max-content;
+  will-change: transform;
+}
+
+.trust-marquee:hover .trust-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes trust-marquee {
+  from {
+    transform: translateX(-33.333%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .testi-marquee {
   mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
   overflow: hidden;
@@ -89,11 +117,12 @@ body {
 }
 
 .testi-track {
-  animation: testi-marquee 70s linear infinite;
+  animation: testi-marquee 34s linear infinite;
   display: flex;
   gap: 24px;
   padding: 0 12px;
   width: max-content;
+  will-change: transform;
 }
 
 .testi-marquee:hover .testi-track {
@@ -115,7 +144,17 @@ body {
   box-shadow: 0 14px 36px rgba(4, 18, 38, 0.3);
   padding: 28px;
   transition: transform 0.25s, box-shadow 0.25s;
-  width: 360px;
+  width: clamp(300px, 30vw, 390px);
+}
+
+.policy-copy a {
+  color: var(--color-brand-blue-bright);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.policy-copy a:hover {
+  text-decoration: underline;
 }
 
 .testi-card:hover {

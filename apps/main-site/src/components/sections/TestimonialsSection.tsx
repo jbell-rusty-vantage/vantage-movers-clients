@@ -46,6 +46,15 @@ function fallbackCards(): CardData[] {
   }));
 }
 
+function fillMarquee(cards: CardData[]): CardData[] {
+  const target = 12;
+  if (cards.length === 0) return [];
+  return Array.from({ length: target }, (_, index) => ({
+    ...cards[index % cards.length]!,
+    key: `${cards[index % cards.length]!.key}-${index}`,
+  }));
+}
+
 function TestimonialCard({ data }: { data: CardData }) {
   return (
     <figure className="testi-card flex-none">
@@ -73,7 +82,8 @@ interface TestimonialsSectionProps {
 }
 
 export function TestimonialsSection({ items = [] }: TestimonialsSectionProps) {
-  const cards = items.length > 0 ? toCardData(items) : fallbackCards();
+  const sourceCards = items.length > 0 ? toCardData(items) : fallbackCards();
+  const cards = fillMarquee(sourceCards);
 
   return (
     <section className="relative overflow-hidden bg-brand-blue py-24">
@@ -84,10 +94,10 @@ export function TestimonialsSection({ items = [] }: TestimonialsSectionProps) {
             Customer Feedback
           </Eyebrow>
           <h2 className="mb-3 text-balance font-display text-[clamp(30px,3.4vw,44px)] leading-[1.08] font-extrabold -tracking-[.02em] text-white">
-            Hear It From Movers We&apos;ve Helped
+            Hear From Customers We&apos;ve Helped Coordinate
           </h2>
           <p className="text-[15px] text-on-dark-500">
-            Feedback from long-distance moves coordinated through Vantage.
+            Feedback from long-distance relocations coordinated through Vantage.
           </p>
         </div>
       </Container>

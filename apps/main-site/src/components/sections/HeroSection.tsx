@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Suspense } from "react";
 import { Package, Phone, Users } from "lucide-react";
-import { business, heroMetrics } from "@/lib/content";
+import { business, hero, heroMetrics } from "@/lib/content";
 import { SITE_IMAGES } from "@/lib/images";
 import { Container } from "@/components/ui/Container";
 import { RollingNumber } from "@/components/ui/RollingNumber";
@@ -33,12 +33,20 @@ export function HeroSection() {
 
       <Container className="relative z-[2] grid items-center gap-14 py-16 pb-[84px] lg:grid-cols-[1.05fr_.95fr]">
         <div>
-          <h1 className="mb-7 text-balance font-display text-[clamp(40px,4.4vw,64px)] leading-[1.06] font-extrabold -tracking-[.02em] text-white [text-shadow:0_2px_18px_rgba(0,0,0,.45)]">
-            Affordable Long-Distance Moving Coordination
+          <h1 className="mb-5 text-balance font-display text-[clamp(36px,4vw,58px)] leading-[1.08] font-extrabold -tracking-[.02em] text-white [text-shadow:0_2px_18px_rgba(0,0,0,.45)]">
+            {hero.headline}
           </h1>
 
+          <p className="mb-4 max-w-[620px] text-[15.5px] leading-[1.65] text-white/92 [text-shadow:0_1px_10px_rgba(0,0,0,.35)]">
+            {hero.paragraph}
+          </p>
+
+          <p className="mb-6 max-w-[580px] text-[14.5px] leading-[1.6] font-semibold text-white/88 [text-shadow:0_1px_8px_rgba(0,0,0,.3)]">
+            {hero.supportingLine}
+          </p>
+
           <div className="mb-7 inline-flex items-center gap-[9px] rounded-full border border-white/16 bg-white/8 px-4 py-2">
-            <span className="inline-block size-[9px] animate-vm-pulse rounded-full bg-success" />
+            <span className="inline-block size-[9px] animate-vm-pulse rounded-full bg-brand-blue-bright shadow-[0_0_0_4px_rgba(46,134,222,.2)]" />
             <span className="text-sm font-semibold text-white [text-shadow:0_1px_8px_rgba(0,0,0,.4)]">
               <b className="font-bold">
                 <RollingNumber
@@ -58,7 +66,7 @@ export function HeroSection() {
               href="#quote"
               className="rounded-lg2 bg-brand-yellow px-7 py-4 font-display text-base font-bold tracking-[.04em] text-black uppercase no-underline shadow-cta-yellow transition hover:-translate-y-0.5"
             >
-              Get a Free Moving Estimate
+              {hero.primaryCta}
             </a>
             <a
               href={business.phoneHref}
@@ -67,9 +75,13 @@ export function HeroSection() {
               <span className="grid size-[34px] shrink-0 place-items-center rounded-full bg-brand-yellow">
                 <Phone className="size-[17px] text-brand-blue" strokeWidth={2.25} aria-hidden />
               </span>
-              {business.phoneDisplay}
+              {hero.secondaryCta}
             </a>
           </div>
+
+          <p className="mb-8 max-w-[620px] rounded-lg2 border border-white/15 bg-[rgba(4,18,38,.45)] px-4 py-3 text-[12.5px] leading-[1.6] text-white/80 backdrop-blur-sm">
+            {hero.brokerNote}
+          </p>
 
           <div className="flex flex-wrap gap-4">
             <div className="min-w-[190px] flex-1 rounded-card border border-white/25 bg-[rgba(4,18,38,.55)] px-[22px] py-[18px] shadow-[0_8px_24px_rgba(0,0,0,.22)] backdrop-blur-md">
@@ -109,7 +121,7 @@ export function HeroSection() {
                 </span>
               </div>
               <div className="text-[15px] leading-snug font-semibold text-white">
-                Interstate coverage coordinated
+                Interstate coordination available
               </div>
             </div>
           </div>
