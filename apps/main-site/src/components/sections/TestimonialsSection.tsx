@@ -7,12 +7,12 @@ import { testimonials as fallbackTestimonials } from "@/lib/content";
 import { heroHeadingFont, testimonialsBodyFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { radiusClasses } from "@/stories/layout-playground";
+import { radiusClasses } from "@/lib/playground/layout-playground";
 import {
   cardSizeWidths,
   resolveStarColors,
   type StarStyleId,
-} from "@/stories/testimonials-playground";
+} from "@/lib/playground/testimonials-playground";
 
 const MAX_TEXT = 320;
 const CAROUSEL_GAP = 24;

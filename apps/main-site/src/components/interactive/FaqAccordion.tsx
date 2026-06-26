@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { faqs } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
-import { radiusClasses } from "@/stories/layout-playground";
+import { radiusClasses } from "@/lib/playground/layout-playground";
 
 /** Playground args promoted to production — see FaqSection.stories.tsx Playground. */
 const QUESTION_FONT_SIZE = 17;

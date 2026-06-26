@@ -7,8 +7,8 @@ import { SERVICE_ICONS } from "@/lib/icons";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ImageTile, TileBadge } from "@/components/ui/ImageTile";
-import { radiusClasses } from "@/stories/layout-playground";
-import type { ServiceIconId } from "@/stories/services-playground";
+import { radiusClasses } from "@/lib/playground/layout-playground";
+import type { ServiceIconId } from "@/lib/playground/services-playground";
 
 /** Playground args promoted to production — see ServicesSection.stories.tsx Playground. */
 const SECTION_HEADING_FONT_SIZE = 40;

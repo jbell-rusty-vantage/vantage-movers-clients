@@ -7,10 +7,10 @@ import { Container } from "@/components/ui/Container";
 import { business, quoteSection, trustStrip } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { resolveSiteImage } from "@/lib/images";
-import { radiusClasses } from "@/stories/layout-playground";
+import { radiusClasses } from "@/lib/playground/layout-playground";
 import {
   resolveStarColors,
-} from "@/stories/testimonials-playground";
+} from "@/lib/playground/testimonials-playground";
 
 /** Playground args promoted to production — see GetInTouchSection.stories.tsx Playground. */
 const HEADING_FONT_SIZE = 36;

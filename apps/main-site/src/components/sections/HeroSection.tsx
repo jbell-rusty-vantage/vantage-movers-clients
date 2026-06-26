@@ -13,12 +13,12 @@ import {
   heroTextShadowStyles,
   resolveHeroImageFilter,
   resolveHeroOverlayBackground,
-} from "@/stories/hero-playground";
+} from "@/lib/playground/hero-playground";
 import {
   resolveHeroPrimaryCtaClasses,
   resolveHeroSecondaryCtaClasses,
   resolveHeroSecondaryIconCircleClasses,
-} from "@/stories/hero-icons-playground";
+} from "@/lib/playground/hero-icons-playground";
 
 function QuoteWizardFallback() {
   return (

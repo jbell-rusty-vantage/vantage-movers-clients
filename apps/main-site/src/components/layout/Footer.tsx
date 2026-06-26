@@ -12,7 +12,7 @@ import { Logo } from "./Logo";
 import {
   footerPaddingScale,
   resolveFooterColors,
-} from "@/stories/footer-playground";
+} from "@/lib/playground/footer-playground";
 
 /** Playground args promoted to production — see Footer.stories.tsx Playground. */
 const BODY_FONT_SIZE = 13;

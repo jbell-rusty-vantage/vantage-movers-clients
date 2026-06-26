@@ -2,8 +2,8 @@ import { Phone } from "lucide-react";
 import { business, finalCta } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
-import { radiusClasses, spacingScale } from "@/stories/layout-playground";
-import { resolveFinalCtaColors } from "@/stories/final-cta-playground";
+import { radiusClasses, spacingScale } from "@/lib/playground/layout-playground";
+import { resolveFinalCtaColors } from "@/lib/playground/final-cta-playground";
 
 /** Playground args promoted to production — see FinalCTASection.stories.tsx Playground. */
 const HEADING_FONT_SIZE = 44;

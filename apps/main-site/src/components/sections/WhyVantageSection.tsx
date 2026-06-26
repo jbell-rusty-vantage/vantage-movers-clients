@@ -2,12 +2,12 @@ import { whyVantage, whyVantageSection } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { radiusClasses } from "@/stories/layout-playground";
+import { radiusClasses } from "@/lib/playground/layout-playground";
 import {
   resolveWhyVantageColors,
   whyVantageIcons,
   type WhyVantageIconId,
-} from "@/stories/why-vantage-playground";
+} from "@/lib/playground/why-vantage-playground";
 
 /** Playground args promoted to production — see WhyVantageSection.stories.tsx Playground. */
 const HEADING_FONT_SIZE = 36;

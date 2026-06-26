@@ -2,8 +2,8 @@ import { Phone } from "lucide-react";
 import { business, howItWorks, howItWorksSection } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
-import { radiusClasses, spacingScale } from "@/stories/layout-playground";
-import { resolveHowItWorksColors } from "@/stories/how-it-works-playground";
+import { radiusClasses, spacingScale } from "@/lib/playground/layout-playground";
+import { resolveHowItWorksColors } from "@/lib/playground/how-it-works-playground";
 
 /** Playground args promoted to production — see HowItWorksSection.stories.tsx Playground. */
 const HEADING_FONT_SIZE = 44;

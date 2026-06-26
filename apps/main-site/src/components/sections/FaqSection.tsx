@@ -3,7 +3,7 @@ import { FaqAccordion } from "@/components/interactive/FaqAccordion";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
-import { radiusClasses } from "@/stories/layout-playground";
+import { radiusClasses } from "@/lib/playground/layout-playground";
 
 /** Playground args promoted to production — see FaqSection.stories.tsx Playground. */
 const HEADING_FONT_SIZE = 44;

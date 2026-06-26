@@ -6,8 +6,8 @@ import usa from "@svg-maps/usa";
 import { coverageCopy, stateNames } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { radiusClasses } from "@/stories/layout-playground";
-import { resolveCoverageColors } from "@/stories/coverage-playground";
+import { radiusClasses } from "@/lib/playground/layout-playground";
+import { resolveCoverageColors } from "@/lib/playground/coverage-playground";
 
 /** Playground args promoted to production — see CoverageSection.stories.tsx Playground. */
 const COVERAGE_COLORS = resolveCoverageColors("highContrast", {});
