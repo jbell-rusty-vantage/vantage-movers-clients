@@ -6,7 +6,15 @@ import { ChevronDown } from "lucide-react";
 import { services } from "@/lib/content";
 import { SERVICE_ICONS } from "@/lib/icons";
 
-export function ServicesDropdown() {
+interface ServicesDropdownProps {
+  triggerClassName?: string;
+  triggerStyle?: React.CSSProperties;
+}
+
+export function ServicesDropdown({
+  triggerClassName = "px-3.5 py-2.5",
+  triggerStyle,
+}: ServicesDropdownProps) {
   const [open, setOpen] = useState(false);
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
@@ -22,7 +30,8 @@ export function ServicesDropdown() {
     >
       <button
         type="button"
-        className="flex cursor-pointer items-center gap-1.5 rounded-lg2 border-none bg-transparent px-3.5 py-2.5 font-display font-semibold text-brand-blue"
+        className={`flex cursor-pointer items-center gap-1.5 rounded-none border-none bg-transparent font-semibold text-brand-blue ${triggerClassName}`}
+        style={triggerStyle}
         aria-expanded={open}
         aria-haspopup="true"
         onFocus={() => setOpen(true)}

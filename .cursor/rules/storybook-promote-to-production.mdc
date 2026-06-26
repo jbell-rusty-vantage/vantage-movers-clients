@@ -1,0 +1,197 @@
+---
+description: How to promote main-site Storybook Playground choices into production components
+globs: apps/main-site/src/stories/**/*,apps/main-site/src/components/**/*
+alwaysApply: false
+---
+
+# Storybook → Production (main-site)
+
+Use this when the user asks to **apply**, **promote**, or **sync** their Storybook Playground choices to the live site in `apps/main-site`.
+
+Storybook is the design lab. Production components are the source of truth for the Next.js app. The job is to make production match the **Playground** story, not the other way around.
+
+## Architecture
+
+Each promotable section follows the same four-layer pattern:
+
+| Layer | Location | Role |
+|-------|----------|------|
+| **Production** | `src/components/sections/*.tsx`, `src/components/layout/*.tsx` | Hardcoded component rendered on the site and in the `Production` story |
+| **Preview** | `src/stories/*Preview.tsx` | Client component that accepts all playground args as props and renders the tuned UI |
+| **Playground tokens** | `src/stories/*-playground.ts`, `layout-playground.ts`, `typography-fonts.ts` | Token IDs, labels, and **resolver functions** (colors, filters, radii, star styles, etc.) |
+| **Stories** | `src/stories/*.stories.tsx` | `Production` story (controls off) + `Playground` story (user's chosen `args`) |
+
+Shared playground modules:
+
+- `hero-playground.ts` — photo filters, overlays, text colors, shadows
+- `hero-icons-playground.ts` — CTA styles, hero/stat icons
+- `layout-playground.ts` — border-radius tokens, spacing presets, layout icons
+- `testimonials-playground.ts` — marquee/carousel, card sizes, stars
+- `trust-band-playground.ts` — trust band colors and badges
+- `services-playground.ts` — services section icons and sizing
+- `typography-fonts.ts` — font ID → CSS `fontFamily` map (used in Storybook previews)
+
+Run Storybook from `apps/main-site`:
+
+```bash
+pnpm storybook   # port 6006
+```
+
+## Where the user's choices live
+
+**Primary source:** the `Playground` export's `args` object in the matching `*.stories.tsx` file.
+
+Example — user tuned Hero in Storybook and saved args:
+
+```tsx
+// src/stories/HeroSection.stories.tsx
+export const Playground: Story = {
+  args: {
+    imageEffect: "muted",
+    headingFont: "redHatDisplay",
+    bodyFont: "manrope",
+    // …only overrides; unset args fall back to *DefaultArgs in *Preview.tsx
+  },
+  render: (args) => <HeroSectionPreview {...args} />,
+};
+```
+
+**Merge rule:** final config = `{ ...*DefaultArgs, ...Playground.args }`. Read both the Playground overrides and the `*DefaultArgs` export in the matching `*Preview.tsx` when promoting.
+
+**User handoff formats** (all equivalent if you resolve them correctly):
+
+1. "Apply Playground args from `HeroSection.stories.tsx`" (preferred — read the file)
+2. Paste a YAML/JSON block using **exact control names** from `*ArgTypes`
+3. Storybook URL with `?args=…` query params
+
+Do **not** rely on vague descriptions ("make it softer", "more gold"). Use token IDs (`amber`, `md2`, `highContrast`, etc.).
+
+## Component map
+
+| Storybook title | Playground args in | Preview component | Production component | Playground helpers |
+|-----------------|-------------------|-------------------|----------------------|-------------------|
+| `Sections/HeroSection` | `HeroSection.stories.tsx` | `HeroSectionPreview.tsx` | `components/sections/HeroSection.tsx` | `hero-playground.ts`, `hero-icons-playground.ts`, `layout-playground.ts` |
+| `Layout/Header` | `Header.stories.tsx` | `HeaderPreview.tsx` | `components/layout/Header.tsx` | `layout-playground.ts`, `typography-fonts.ts` |
+| `Layout/ComplianceBar` | `ComplianceBar.stories.tsx` | `ComplianceBarPreview.tsx` | `components/layout/ComplianceBar.tsx` | `layout-playground.ts`, `typography-fonts.ts` |
+| `Sections/TrustBand` | `TrustBand.stories.tsx` | `TrustBandPreview.tsx` | `components/sections/TrustBand.tsx` | `trust-band-playground.ts`, `layout-playground.ts` |
+| `Sections/TestimonialsSection` | `TestimonialsSection.stories.tsx` | `TestimonialsSectionPreview.tsx` | `components/sections/TestimonialsSection.tsx` | `testimonials-playground.ts`, `layout-playground.ts` |
+| `Sections/ServicesSection` | `ServicesSection.stories.tsx` | `ServicesSectionPreview.tsx` | `components/sections/ServicesSection.tsx` | `services-playground.ts`, `layout-playground.ts` |
+
+After promoting, **Production** and **Playground** stories should look the same (modulo shared widgets like `QuoteWizard` that are identical in both).
+
+### Already promoted (reference implementations)
+
+These production files were promoted from Playground and are good templates:
+
+- `components/sections/HeroSection.tsx` — resolvers from `hero-playground.ts`, fonts from `lib/fonts.ts`, copy in `lib/content.ts`
+- `components/layout/Header.tsx` — spacing/radii from `layout-playground.ts`, `headerChrome` in `lib/content.ts`
+- `components/layout/ComplianceBar.tsx` — relaxed spacing + Manrope
+
+## Promotion workflow (agent checklist)
+
+### 1. Read the spec
+
+1. Open `*.stories.tsx` → `Playground.args`
+2. Open matching `*Preview.tsx` → `*DefaultArgs` and trace how each arg is used in JSX
+3. Open matching `*-playground.ts` for resolver functions — **do not re-derive CSS by hand** when a resolver exists
+
+### 2. Update production
+
+Edit the **Production** component file (not the Preview). For each arg:
+
+- **Tailwind class tokens** (`ctaRadius: "md2"`) → use `radiusClasses.md2` from `layout-playground.ts` or the equivalent class (`rounded-md2`)
+- **Resolver outputs** (image filter, overlay, colors, CTA classes, star colors) → call the same resolver at module scope or inline the resolved value once
+- **Visibility flags** (`showBrokerNote: false`) → remove or conditionally omit that JSX block
+- **Layout presets** (`sectionPadding: "compact"`) → copy the class map from Preview (e.g. `sectionPaddingClasses` in `HeroSectionPreview.tsx`)
+- **Child components** (e.g. `ServicesDropdown` inside Header) → update if they hardcode styles that Preview overrides via parent context
+
+Prefer **minimal diffs**. Do not refactor Preview/Playground files unless needed for parity.
+
+### 3. Fonts — use `next/font`, not Storybook Google links
+
+Storybook loads extra fonts via `.storybook/preview-head.html`. Production must use **`next/font/google`** in `src/lib/fonts.ts`.
+
+Current chrome/hero font choices (Playground pattern):
+
+| Token ID | Next font export | Used for |
+|----------|------------------|----------|
+| `redHatDisplay` | `heroHeadingFont` | Hero headings, nav links, CTAs, stat numbers |
+| `manrope` | `heroBodyFont` | Hero body, compliance bar, nav phone sublabel |
+
+Apply with `.className` on the relevant elements (or a wrapper). Site-wide defaults remain `siteDisplayFont` / `siteBodyFont` (Bricolage + Hanken) on `<html>` in `layout.tsx`.
+
+When promoting a section that picks new fonts, **add the `next/font` loader to `lib/fonts.ts`** if it does not exist yet; reuse the same export if already loaded.
+
+### 4. Copy and structured data
+
+Move user-edited **text args** into `src/lib/content.ts` (or a focused export like `headerChrome`), not hardcoded strings in components.
+
+Examples:
+
+- Hero paragraph, CTA labels → `hero`, `heroMetrics` in `content.ts`
+- Header CTA / phone labels → `headerChrome` in `content.ts`
+- Section headings/eyebrows → add fields to `content.ts` if they differ from defaults
+
+Keep content centralized so production and future stories stay in sync.
+
+### 5. CSS and globals
+
+- Prefer Tailwind utilities and existing `@theme` tokens in `globals.css`
+- Marquee/carousel behavior may need rules in `globals.css` (see `.testi-marquee`, `.testi-track`) — update or add variants if navigation mode changes
+- Do not import Storybook-only files into production unless they are pure utilities (playground resolvers are acceptable short-term; prefer moving shared resolvers to `src/lib/` if production starts depending on many story modules)
+
+### 6. Verify
+
+1. `pnpm exec tsc --noEmit` from `apps/main-site`
+2. Compare **Production** vs **Playground** in Storybook side by side
+3. Spot-check dev server: `pnpm dev:main-site` (port 3001)
+
+Do **not** update `*DefaultArgs` to match Playground unless the user asks to change the Storybook baseline. Production promotion does not require changing default args.
+
+## Common pitfalls
+
+| Pitfall | Correct approach |
+|---------|------------------|
+| Passing props to production components | Production components are prop-less today; **bake** resolved values into JSX/classes |
+| Using `fontFamilyStyle()` from `typography-fonts.ts` in production | Use `heroHeadingFont.className` / `heroBodyFont.className` from `lib/fonts.ts` |
+| Honoring `headlineColor` when `contentColorPreset` is not `custom` | Preset wins — read `resolveHeroContentColors()` in `hero-playground.ts` |
+| Ignoring `Playground.args` partial overrides | Always merge with `*DefaultArgs` |
+| Changing only the Production story | Edit the component under `src/components/` |
+| Site-wide font swap when only one section changed | Scope fonts to the promoted section unless user requests global typography |
+
+## Example agent prompt (user → agent)
+
+```
+Promote Storybook Playground choices to production in apps/main-site:
+
+- TestimonialsSection — args from src/stories/TestimonialsSection.stories.tsx Playground
+- TrustBand — args from src/stories/TrustBand.stories.tsx Playground
+
+For each section:
+1. Merge Playground args with *DefaultArgs
+2. Follow *Preview.tsx rendering and *-playground.ts resolvers
+3. Use next/font via lib/fonts.ts for font args
+4. Put copy changes in lib/content.ts
+5. Run tsc and confirm Production ≈ Playground in Storybook
+```
+
+## File index (quick lookup)
+
+```
+apps/main-site/
+├── src/
+│   ├── lib/
+│   │   ├── content.ts          # Site copy — update when Playground changes text args
+│   │   └── fonts.ts            # next/font loaders (site + hero/chrome fonts)
+│   ├── components/
+│   │   ├── layout/             # ComplianceBar, Header ← Layout/* stories
+│   │   └── sections/           # Hero, TrustBand, Testimonials, Services, …
+│   └── stories/
+│       ├── *.stories.tsx       # Playground.args = user choices
+│       ├── *Preview.tsx        # Spec for how args become UI
+│       ├── *-playground.ts     # Tokens + resolvers
+│       ├── layout-playground.ts
+│       └── typography-fonts.ts # Storybook-only fontFamily map (previews)
+└── .storybook/
+    └── preview-head.html       # Google Fonts for Storybook only — not used in production
+```

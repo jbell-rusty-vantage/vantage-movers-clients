@@ -45,3 +45,14 @@ yarn-error.log*
 next-env.d.ts
 
 internal_hidden_docs/
+
+# Storybook — local design lab only; promote choices to production components before pushing
+**/.storybook/
+**/src/stories/
+**/*.stories.tsx
+**/*.stories.ts
+**/vitest.config.ts
+**/vitest.shims.d.ts
+*storybook.log
+debug-storybook.log
+storybook-static

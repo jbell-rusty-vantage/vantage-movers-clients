@@ -10,7 +10,11 @@
     "build:clients": "turbo build --filter=@vantage/clients",
     "build:main-site": "turbo build --filter=@vantage/main-site",
     "lint": "turbo lint",
-    "typecheck": "turbo typecheck"
+    "typecheck": "turbo typecheck",
+    "storybook": "turbo storybook",
+    "storybook:main-site": "turbo storybook --filter=@vantage/main-site",
+    "storybook:clients": "turbo storybook --filter=@vantage/clients",
+    "build-storybook": "turbo build-storybook"
   },
   "devDependencies": {
     "turbo": "^2.5.4"

@@ -1,10 +1,34 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import type { Testimonial } from "@vantage/api-client";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { testimonials as fallbackTestimonials } from "@/lib/content";
+import { heroHeadingFont, testimonialsBodyFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Stars } from "@/components/ui/Stars";
+import { radiusClasses } from "@/stories/layout-playground";
+import {
+  cardSizeWidths,
+  resolveStarColors,
+  type StarStyleId,
+} from "@/stories/testimonials-playground";
 
 const MAX_TEXT = 320;
+const CAROUSEL_GAP = 24;
+
+/** Playground args promoted to production — see TestimonialsSection.stories.tsx Playground. */
+const CAROUSEL_VISIBLE_COUNT = 3;
+const QUOTE_FONT_SIZE = 14;
+const NAME_FONT_SIZE = 15;
+const SUBLABEL_FONT_SIZE = 13;
+const CARD_SIZE = "default" as const;
+const CARD_RADIUS = "card" as const;
+const CARD_PADDING = 28;
+const STAR_SIZE = 14;
+const STAR_STYLE: StarStyleId = "outline";
+const STAR_COLORS = resolveStarColors("amber");
+const SHOW_STARS = true;
 
 function truncate(text: string): string {
   if (text.length <= MAX_TEXT) return text;
@@ -55,25 +79,187 @@ function fillMarquee(cards: CardData[]): CardData[] {
   }));
 }
 
-function TestimonialCard({ data }: { data: CardData }) {
+function TestimonialStars({
+  size,
+  style,
+  fill,
+  stroke,
+  className,
+}: {
+  size: number;
+  style: StarStyleId;
+  fill: string;
+  stroke: string;
+  className?: string;
+}) {
+  const starProps =
+    style === "filled"
+      ? { className: "fill-current", strokeWidth: 0 }
+      : style === "outline"
+        ? { className: "", strokeWidth: 2, fill: "none" }
+        : { className: "fill-current opacity-35", strokeWidth: 1.5 };
+
   return (
-    <figure className="testi-card flex-none">
-      <Stars size={17} value={data.rating} className="mb-3.5" />
-      <blockquote className="mb-5 text-[15.5px] leading-[1.65] text-ink-soft italic">
+    <div className={`flex gap-0.5 ${className ?? ""}`} aria-label="5 out of 5 stars">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star
+          key={i}
+          size={size}
+          className={starProps.className}
+          style={{ color: stroke, fill: style === "outline" ? "none" : fill }}
+          strokeWidth={starProps.strokeWidth}
+          aria-hidden
+        />
+      ))}
+    </div>
+  );
+}
+
+function TestimonialCard({
+  data,
+  fixedWidth,
+}: {
+  data: CardData;
+  fixedWidth?: number;
+}) {
+  return (
+    <figure
+      className={`flex-none bg-white shadow-[0_14px_36px_rgba(4,18,38,0.3)] transition duration-250 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(4,18,38,0.36)] ${radiusClasses[CARD_RADIUS]}`}
+      style={{
+        width: fixedWidth !== undefined ? `${fixedWidth}px` : cardSizeWidths[CARD_SIZE],
+        padding: `${CARD_PADDING}px`,
+      }}
+    >
+      {SHOW_STARS && (
+        <TestimonialStars
+          size={STAR_SIZE}
+          style={STAR_STYLE}
+          fill={STAR_COLORS.fill}
+          stroke={STAR_COLORS.stroke}
+          className="mb-3.5"
+        />
+      )}
+      <blockquote
+        className={`mb-5 italic text-ink-soft ${testimonialsBodyFont.className}`}
+        style={{
+          fontSize: `${QUOTE_FONT_SIZE}px`,
+          lineHeight: 1.65,
+        }}
+      >
         &ldquo;{data.quote}&rdquo;
       </blockquote>
       <figcaption className="flex items-center gap-3">
-        <span className="grid size-11 place-items-center rounded-full bg-gradient-to-br from-[#2E86DE] to-brand-blue-bright font-display text-[15px] font-extrabold text-white">
+        <span
+          className={`grid size-11 place-items-center rounded-full bg-gradient-to-br from-[#2E86DE] to-brand-blue-bright text-[15px] font-extrabold text-white ${heroHeadingFont.className}`}
+        >
           {initials(data.name)}
         </span>
         <span>
-          <span className="block font-display text-[15px] font-bold text-brand-blue">
+          <span
+            className={`block font-bold text-brand-blue ${heroHeadingFont.className}`}
+            style={{ fontSize: `${NAME_FONT_SIZE}px` }}
+          >
             {data.name}
           </span>
-          <span className="block text-[13px] text-[#64748B]">{data.sublabel}</span>
+          <span
+            className={`block text-[#64748B] ${testimonialsBodyFont.className}`}
+            style={{ fontSize: `${SUBLABEL_FONT_SIZE}px` }}
+          >
+            {data.sublabel}
+          </span>
         </span>
       </figcaption>
     </figure>
+  );
+}
+
+function TestimonialsCarousel({
+  trackCards,
+  visibleCount,
+}: {
+  trackCards: CardData[];
+  visibleCount: number;
+}) {
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [prevVisibleCount, setPrevVisibleCount] = useState(visibleCount);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const [cardWidth, setCardWidth] = useState(0);
+
+  if (visibleCount !== prevVisibleCount) {
+    setPrevVisibleCount(visibleCount);
+    setCarouselIndex(0);
+  }
+
+  useEffect(() => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    const updateWidth = () => {
+      const viewportWidth = viewport.clientWidth;
+      if (viewportWidth <= 0) return;
+      const width = (viewportWidth - (visibleCount - 1) * CAROUSEL_GAP) / visibleCount;
+      setCardWidth(width);
+    };
+
+    updateWidth();
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(viewport);
+    return () => observer.disconnect();
+  }, [visibleCount]);
+
+  const slideStep = cardWidth > 0 ? cardWidth + CAROUSEL_GAP : 0;
+  const maxStartIndex = Math.max(0, trackCards.length - visibleCount);
+
+  const goNext = () =>
+    setCarouselIndex((index) => (index >= maxStartIndex ? 0 : index + 1));
+  const goPrev = () =>
+    setCarouselIndex((index) => (index <= 0 ? maxStartIndex : index - 1));
+
+  return (
+    <div className="relative mx-auto max-w-[1400px] px-4">
+      <div className="flex items-center gap-4">
+        <button
+          type="button"
+          onClick={goPrev}
+          className="grid size-11 shrink-0 place-items-center rounded-full border border-white/25 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow"
+          aria-label="Show previous testimonial"
+        >
+          <ChevronLeft size={22} strokeWidth={2.4} aria-hidden />
+        </button>
+
+        <div
+          ref={viewportRef}
+          className="min-w-0 flex-1 overflow-hidden py-2.5 [mask-image:linear-gradient(90deg,transparent,#000_3%,#000_97%,transparent)]"
+          aria-label={`Customer testimonials carousel, ${visibleCount} visible`}
+        >
+          <div
+            className="flex transition-transform duration-350 ease-out"
+            style={{
+              gap: `${CAROUSEL_GAP}px`,
+              transform:
+                slideStep > 0 ? `translateX(-${carouselIndex * slideStep}px)` : undefined,
+            }}
+          >
+            {trackCards.map((card) => (
+              <TestimonialCard
+                key={card.key}
+                data={card}
+                fixedWidth={cardWidth > 0 ? cardWidth : undefined}
+              />
+            ))}
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={goNext}
+          className="grid size-11 shrink-0 place-items-center rounded-full border border-white/25 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow"
+          aria-label="Show next testimonial"
+        >
+          <ChevronRight size={22} strokeWidth={2.4} aria-hidden />
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -83,38 +269,38 @@ interface TestimonialsSectionProps {
 
 export function TestimonialsSection({ items = [] }: TestimonialsSectionProps) {
   const sourceCards = items.length > 0 ? toCardData(items) : fallbackCards();
-  const cards = fillMarquee(sourceCards);
+  const carouselTrackCards = fillMarquee(sourceCards);
 
   return (
     <section className="relative overflow-hidden bg-brand-blue py-24">
-      <div className="absolute -top-[100px] -left-[100px] size-[420px] rounded-full bg-[radial-gradient(circle,rgba(46,134,222,.22),transparent_65%)]" />
+      <div
+        className="absolute -top-[100px] -left-[100px] size-[420px] rounded-full bg-[radial-gradient(circle,rgba(46,134,222,.22),transparent_65%)]"
+        aria-hidden
+      />
       <Container className="relative">
         <div className="mx-auto mb-12 max-w-[640px] text-center">
           <Eyebrow onDark className="justify-center">
             Customer Feedback
           </Eyebrow>
-          <h2 className="mb-3 text-balance font-display text-[clamp(30px,3.4vw,44px)] leading-[1.08] font-extrabold -tracking-[.02em] text-white">
+          <h2
+            className={`mb-3 text-balance leading-[1.08] font-extrabold -tracking-[.02em] text-white ${heroHeadingFont.className}`}
+            style={{ fontSize: "clamp(30px, 3.4vw, 44px)" }}
+          >
             Hear From Customers We&apos;ve Helped Coordinate
           </h2>
-          <p className="text-[15px] text-on-dark-500">
+          <p
+            className={`text-on-dark-500 ${testimonialsBodyFont.className}`}
+            style={{ fontSize: "15px" }}
+          >
             Feedback from long-distance relocations coordinated through Vantage.
           </p>
         </div>
       </Container>
 
-      <div
-        className="testi-marquee"
-        aria-label="Customer testimonials, auto-scrolling. Hover to pause."
-      >
-        <div className="testi-track">
-          {cards.map((t) => (
-            <TestimonialCard key={`a-${t.key}`} data={t} />
-          ))}
-          {cards.map((t) => (
-            <TestimonialCard key={`b-${t.key}`} data={t} />
-          ))}
-        </div>
-      </div>
+      <TestimonialsCarousel
+        trackCards={carouselTrackCards}
+        visibleCount={CAROUSEL_VISIBLE_COUNT}
+      />
     </section>
   );
 }

@@ -1,29 +1,68 @@
 import Link from "next/link";
 import {
   business,
+  footerChrome,
   footerCompanyLinks,
   footerLegalLinks,
   footerServiceLinks,
 } from "@/lib/content";
+import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "./Logo";
+import {
+  footerPaddingScale,
+  resolveFooterColors,
+} from "@/stories/footer-playground";
+
+/** Playground args promoted to production — see Footer.stories.tsx Playground. */
+const BODY_FONT_SIZE = 13;
+const COLUMN_HEADING_FONT_SIZE = 14;
+const PADDING = footerPaddingScale.default;
+const colors = resolveFooterColors("navyBlue", {});
+
+const linkClassName =
+  "no-underline transition-colors duration-150 hover:[color:var(--footer-link-hover)]";
 
 export function Footer() {
+  const accentClass = heroHeadingFont.className;
+  const bodyClass = heroBodyFont.className;
+  const addressFontSize = Math.max(BODY_FONT_SIZE - 1.5, 12);
+
   return (
-    <footer className="bg-footer px-7 pt-16 pb-8 text-on-dark-500">
+    <footer
+      className={`${bodyClass} px-7`}
+      style={{
+        backgroundColor: colors.footerBg,
+        color: colors.bodyColor,
+        paddingTop: `${PADDING.pt}px`,
+        paddingBottom: `${PADDING.pb}px`,
+        ["--footer-link-hover" as string]: colors.linkHoverColor,
+      }}
+    >
       <Container className="px-0">
-        <div className="grid gap-10 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+        <div
+          className="grid border-b pb-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]"
+          style={{ gap: `${PADDING.gridGap}px`, borderColor: colors.borderColor }}
+        >
           <div>
             <Logo variant="footer" />
-            <p className="mt-[18px] max-w-xs text-[14.5px] leading-[1.6] text-on-dark-500">
-              A licensed interstate household goods moving broker helping families and businesses
-              coordinate long-distance relocations through authorized motor carriers.
+            <p
+              className="mt-[18px] max-w-xs leading-[1.6]"
+              style={{ fontSize: `${BODY_FONT_SIZE}px`, color: colors.bodyColor }}
+            >
+              {footerChrome.tagline}
             </p>
-            <div className="mt-[18px] text-[13px] leading-[1.8] text-on-dark-600">
+            <div
+              className="mt-[18px] leading-[1.8]"
+              style={{ fontSize: `${addressFontSize}px`, color: colors.mutedColor }}
+            >
               {business.address.map((line) => (
                 <div key={line}>{line}</div>
               ))}
-              <div className="mt-2 font-display text-lg font-extrabold text-white">
+              <div
+                className={`${accentClass} mt-2 text-lg font-extrabold`}
+                style={{ color: colors.phoneColor }}
+              >
                 {business.phoneDisplay}
               </div>
               <div className="mt-1">{business.hours}</div>
@@ -31,15 +70,22 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-[18px] font-display text-sm font-extrabold tracking-[.06em] text-white uppercase">
+            <h4
+              className={`${accentClass} mb-[18px] font-extrabold tracking-[.06em] uppercase`}
+              style={{
+                fontSize: `${COLUMN_HEADING_FONT_SIZE}px`,
+                color: colors.headingColor,
+              }}
+            >
               Services
             </h4>
-            <div className="flex flex-col gap-[11px] text-[14.5px]">
+            <div className="flex flex-col gap-[11px]" style={{ fontSize: `${BODY_FONT_SIZE}px` }}>
               {footerServiceLinks.map((label) => (
                 <Link
                   key={label}
                   href="/#services"
-                  className="text-on-dark-500 no-underline transition hover:text-white"
+                  className={linkClassName}
+                  style={{ color: colors.linkColor }}
                 >
                   {label}
                 </Link>
@@ -48,16 +94,23 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-[18px] font-display text-sm font-extrabold tracking-[.06em] text-white uppercase">
+            <h4
+              className={`${accentClass} mb-[18px] font-extrabold tracking-[.06em] uppercase`}
+              style={{
+                fontSize: `${COLUMN_HEADING_FONT_SIZE}px`,
+                color: colors.headingColor,
+              }}
+            >
               Company
             </h4>
-            <div className="flex flex-col gap-[11px] text-[14.5px]">
-              {footerCompanyLinks.map((link) => (
+            <div className="flex flex-col gap-[11px]" style={{ fontSize: `${BODY_FONT_SIZE}px` }}>
+              {footerCompanyLinks.map((link) =>
                 link.href.startsWith("/") ? (
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="text-on-dark-500 no-underline transition hover:text-white"
+                    className={linkClassName}
+                    style={{ color: colors.linkColor }}
                   >
                     {link.label}
                   </Link>
@@ -65,25 +118,33 @@ export function Footer() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-on-dark-500 no-underline transition hover:text-white"
+                    className={linkClassName}
+                    style={{ color: colors.linkColor }}
                   >
                     {link.label}
                   </a>
-                )
-              ))}
+                ),
+              )}
             </div>
           </div>
 
           <div>
-            <h4 className="mb-[18px] font-display text-sm font-extrabold tracking-[.06em] text-white uppercase">
+            <h4
+              className={`${accentClass} mb-[18px] font-extrabold tracking-[.06em] uppercase`}
+              style={{
+                fontSize: `${COLUMN_HEADING_FONT_SIZE}px`,
+                color: colors.headingColor,
+              }}
+            >
               Legal
             </h4>
-            <div className="flex flex-col gap-[11px] text-[14.5px]">
+            <div className="flex flex-col gap-[11px]" style={{ fontSize: `${BODY_FONT_SIZE}px` }}>
               {footerLegalLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-on-dark-500 no-underline transition hover:text-white"
+                  className={linkClassName}
+                  style={{ color: colors.linkColor }}
                 >
                   {link.label}
                 </Link>
@@ -92,29 +153,44 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-start gap-8 border-b border-white/10 py-8">
+        <div
+          className="flex flex-wrap items-start gap-8 border-b py-8"
+          style={{ borderColor: colors.borderColor }}
+        >
           <div className="flex-none">
-            <div className="mb-2 font-display text-sm font-extrabold text-white">
-              Trusted Moving Broker
+            <div
+              className={`${accentClass} mb-2 font-extrabold`}
+              style={{ fontSize: `${COLUMN_HEADING_FONT_SIZE}px`, color: colors.headingColor }}
+            >
+              {footerChrome.brokerBlockTitle}
             </div>
-            <div className="text-[13px] leading-[1.8] text-on-dark-600">
+            <div
+              className="leading-[1.8]"
+              style={{ fontSize: `${addressFontSize}px`, color: colors.mutedColor }}
+            >
               DOT: {business.dot}
               <br />
               MC: {business.mc}
             </div>
           </div>
-          <p className="min-w-[340px] flex-1 text-[12.5px] leading-[1.7] text-on-dark-700">
+          <p
+            className="min-w-[340px] flex-1 leading-[1.7]"
+            style={{ fontSize: "12.5px", color: colors.mutedColor }}
+          >
             {business.brokerDisclaimer}
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-6 text-[13px] text-on-dark-700">
+        <div
+          className="flex flex-wrap items-center justify-between gap-4 pt-6"
+          style={{ fontSize: "13px", color: colors.mutedColor }}
+        >
           <span>{business.copyright}</span>
           <span className="flex gap-5">
-            <a href="#" className="text-on-dark-700 no-underline transition hover:text-white">
+            <a href="#" className={linkClassName} style={{ color: colors.mutedColor }}>
               Sitemap
             </a>
-            <a href="#" className="text-on-dark-700 no-underline transition hover:text-white">
+            <a href="#" className={linkClassName} style={{ color: colors.mutedColor }}>
               Accessibility
             </a>
           </span>

@@ -32,6 +32,12 @@
   ],
   "exclude": [
     "node_modules",
-    "internal_hidden_docs/design_handoff_vantage_movers"
+    "internal_hidden_docs/design_handoff_vantage_movers",
+    "src/stories",
+    "**/*.stories.tsx",
+    "**/*.stories.ts",
+    ".storybook",
+    "vitest.config.ts",
+    "vitest.shims.d.ts"
   ]
 }

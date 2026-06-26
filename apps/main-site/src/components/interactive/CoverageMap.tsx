@@ -3,8 +3,17 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, MapPin } from "lucide-react";
 import usa from "@svg-maps/usa";
-import { stateNames, coverageCopy } from "@/lib/content";
+import { coverageCopy, stateNames } from "@/lib/content";
+import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { radiusClasses } from "@/stories/layout-playground";
+import { resolveCoverageColors } from "@/stories/coverage-playground";
+
+/** Playground args promoted to production — see CoverageSection.stories.tsx Playground. */
+const COVERAGE_COLORS = resolveCoverageColors("highContrast", {});
+const HEADING_FONT_SIZE = 44;
+const INTRO_FONT_SIZE = 17;
+const DEFAULT_STATE = "FL";
 
 const nameToAbbr = Object.fromEntries(
   Object.entries(stateNames).map(([abbr, name]) => [name, abbr]),
@@ -47,14 +56,18 @@ function labelFontSize(width: number, height: number) {
   return 11;
 }
 
-function getStateStyles(abbr: string, active: string, hovered: string | null) {
+function getStateStyles(
+  abbr: string,
+  active: string,
+  hovered: string | null,
+) {
   const isActive = active === abbr;
   const isHovered = hovered === abbr && !isActive;
 
   if (isActive) {
     return {
-      fill: "var(--color-brand-blue)",
-      stroke: "var(--color-brand-yellow)",
+      fill: COVERAGE_COLORS.mapActiveFill,
+      stroke: COVERAGE_COLORS.mapActiveStroke,
       strokeWidth: 1.6,
       filter: "url(#coverage-state-shadow)",
     };
@@ -62,16 +75,16 @@ function getStateStyles(abbr: string, active: string, hovered: string | null) {
 
   if (isHovered) {
     return {
-      fill: "var(--color-brand-blue-bright)",
-      stroke: "var(--color-brand-blue-mid)",
+      fill: COVERAGE_COLORS.mapHoverFill,
+      stroke: COVERAGE_COLORS.mapHoverStroke,
       strokeWidth: 1.2,
       filter: undefined,
     };
   }
 
   return {
-    fill: "#ffffff",
-    stroke: "var(--color-cream-border)",
+    fill: COVERAGE_COLORS.mapDefaultFill,
+    stroke: COVERAGE_COLORS.mapDefaultStroke,
     strokeWidth: 0.85,
     filter: undefined,
   };
@@ -81,15 +94,15 @@ function getLabelFill(abbr: string, active: string, hovered: string | null) {
   const isActive = active === abbr;
   const isHovered = hovered === abbr && !isActive;
 
-  if (isActive) return "var(--color-brand-yellow)";
-  if (isHovered) return "#ffffff";
-  return "#475569";
+  if (isActive) return COVERAGE_COLORS.mapActiveLabel;
+  if (isHovered) return COVERAGE_COLORS.mapHoverLabel;
+  return COVERAGE_COLORS.mapDefaultLabel;
 }
 
 export function CoverageMap() {
   const svgRef = useRef<SVGSVGElement>(null);
   const [labelPositions, setLabelPositions] = useState<Record<string, LabelPosition>>({});
-  const [active, setActive] = useState("FL");
+  const [active, setActive] = useState(DEFAULT_STATE);
   const [hovered, setHovered] = useState<string | null>(null);
 
   const statePaths = useMemo<StatePath[]>(
@@ -138,54 +151,103 @@ export function CoverageMap() {
   return (
     <div className="grid items-center gap-14 max-md:grid-cols-1 md:grid-cols-[.95fr_1.05fr]">
       <div>
-        <Eyebrow>Nationwide Coverage</Eyebrow>
-        <h2 className="mb-4 text-balance font-display text-[clamp(30px,3.4vw,44px)] leading-[1.08] font-extrabold -tracking-[.02em] text-brand-blue">
+        <Eyebrow className={heroHeadingFont.className}>Nationwide Coverage</Eyebrow>
+        <h2
+          className={`mb-4 text-balance leading-[1.08] font-extrabold -tracking-[.02em] ${heroHeadingFont.className}`}
+          style={{
+            fontSize: `clamp(30px, 3.4vw, ${HEADING_FONT_SIZE}px)`,
+            color: COVERAGE_COLORS.headingColor,
+          }}
+        >
           Interstate Moving Coordination By State
         </h2>
-        <p className="mb-7 text-[17px] leading-[1.6] text-[#64748B]">
+        <p
+          className={`mb-7 leading-[1.6] ${heroBodyFont.className}`}
+          style={{ fontSize: `${INTRO_FONT_SIZE}px`, color: COVERAGE_COLORS.bodyColor }}
+        >
           Vantage helps customers coordinate long-distance and interstate relocations across the
           United States. Select your state to learn how we arrange transportation through authorized
           motor carriers.
         </p>
         <div
           key={active}
-          className="rounded-card border border-cream-border bg-cream p-[26px] shadow-card"
+          className={`border p-[26px] shadow-card ${radiusClasses.none}`}
+          style={{
+            backgroundColor: COVERAGE_COLORS.detailCardBg,
+            borderColor: COVERAGE_COLORS.detailCardBorder,
+          }}
         >
           <div className="mb-3 flex items-center gap-3">
-            <span className="grid size-11 place-items-center rounded-lg2 bg-brand-blue">
-              <MapPin className="size-[22px] text-brand-yellow" strokeWidth={2} aria-hidden />
+            <span
+              className={`grid size-11 place-items-center ${radiusClasses.lg2}`}
+              style={{ backgroundColor: COVERAGE_COLORS.detailIconBg }}
+            >
+              <MapPin
+                className="size-[22px]"
+                style={{ color: COVERAGE_COLORS.detailIconColor }}
+                strokeWidth={2}
+                aria-hidden
+              />
             </span>
-            <h3 className="m-0 font-display text-[23px] font-extrabold text-brand-blue">
+            <h3
+              className={`m-0 text-[23px] font-extrabold ${heroHeadingFont.className}`}
+              style={{ color: COVERAGE_COLORS.detailTitleColor }}
+            >
               {selName}
             </h3>
           </div>
-          <p className="mb-[18px] text-[15px] leading-[1.6] text-[#64748B]">
+          <p
+            className={`mb-[18px] text-[15px] leading-[1.6] ${heroBodyFont.className}`}
+            style={{ color: COVERAGE_COLORS.bodyColor }}
+          >
             {coverageCopy(selName)}
           </p>
           <a
             href="#quote"
-            className="inline-flex items-center gap-2 rounded-lg2 bg-brand-blue-bright px-5 py-3 font-display text-sm font-bold tracking-[.04em] text-white uppercase no-underline transition hover:bg-brand-blue"
+            className={`inline-flex items-center gap-2 px-5 py-3 text-sm font-bold tracking-[.04em] uppercase no-underline transition hover:opacity-90 ${radiusClasses.md2} ${heroHeadingFont.className}`}
+            style={{
+              backgroundColor: COVERAGE_COLORS.ctaBg,
+              color: COVERAGE_COLORS.ctaText,
+            }}
           >
             Get a {selName} Estimate <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
           </a>
         </div>
       </div>
 
-      <div className="rounded-panel border border-cream-border bg-cream p-5 shadow-card sm:p-6">
+      <div
+        className={`border p-5 shadow-card sm:p-6 ${radiusClasses.md2}`}
+        style={{
+          backgroundColor: COVERAGE_COLORS.mapPanelBg,
+          borderColor: COVERAGE_COLORS.mapPanelBorder,
+        }}
+      >
         <div className="mb-4 flex items-center justify-between gap-3">
-          <p className="m-0 font-display text-sm font-bold tracking-[.06em] text-brand-blue uppercase">
+          <p
+            className={`m-0 text-sm font-bold tracking-[.06em] uppercase ${heroHeadingFont.className}`}
+            style={{ color: COVERAGE_COLORS.headingColor }}
+          >
             Coverage Map
           </p>
           <p
-            className="m-0 truncate text-right font-display text-sm font-extrabold text-brand-blue transition-opacity duration-150"
+            className={`m-0 truncate text-right text-sm font-extrabold transition-opacity duration-150 ${heroHeadingFont.className}`}
+            style={{ color: COVERAGE_COLORS.headingColor }}
             aria-live="polite"
           >
             {previewName}
-            <span className="ml-1.5 font-bold text-[#64748B]">{previewAbbr}</span>
+            <span className="ml-1.5 font-bold" style={{ color: COVERAGE_COLORS.bodyColor }}>
+              {previewAbbr}
+            </span>
           </p>
         </div>
 
-        <div className="relative overflow-hidden rounded-card border border-cream-border bg-gradient-to-br from-white via-white to-brand-yellow-soft/40 p-3 sm:p-4">
+        <div
+          className={`relative overflow-hidden border p-3 sm:p-4 ${radiusClasses.none}`}
+          style={{
+            background: COVERAGE_COLORS.mapInnerBg,
+            borderColor: COVERAGE_COLORS.detailCardBorder,
+          }}
+        >
           <svg
             ref={svgRef}
             viewBox={usa.viewBox}
@@ -249,7 +311,7 @@ export function CoverageMap() {
                       fill={getLabelFill(abbr, active, hovered)}
                       fontSize={label.fontSize}
                       fontWeight={isActive ? 800 : 700}
-                      className="select-none font-display tracking-[.04em] transition-[fill] duration-150 ease-out"
+                      className={`select-none tracking-[.04em] transition-[fill] duration-150 ease-out ${heroHeadingFont.className}`}
                       aria-hidden
                     >
                       {abbr}
@@ -261,7 +323,10 @@ export function CoverageMap() {
           </svg>
         </div>
 
-        <p className="mt-3.5 mb-0 text-center text-[13px] text-[#64748B]">
+        <p
+          className={`mt-3.5 mb-0 text-center text-[13px] ${heroBodyFont.className}`}
+          style={{ color: COVERAGE_COLORS.bodyColor }}
+        >
           Hover to preview · Click to select your state
         </p>
       </div>

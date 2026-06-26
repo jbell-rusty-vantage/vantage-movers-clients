@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { CoverageSection } from "@/components/sections/CoverageSection";
+import { GetInTouchSection } from "@/components/sections/GetInTouchSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -26,14 +27,18 @@ export function HomePage({ testimonials = [] }: HomePageProps) {
       <main>
         <HeroSection />
         <TrustStrip />
-        <TrustBand />
+
         <ServicesSection />
-        <CoverageSection />
+        <TrustBand />
         <HowItWorksSection />
+        <CoverageSection />
         <WhyVantageSection />
         <AboutSection />
         <TestimonialsSection items={testimonials} />
         <FaqSection />
+        <GetInTouchSection
+          featuredTestimonial={testimonials.length > 0 ? testimonials[0] : null}
+        />
         <FinalCTASection />
       </main>
       <Footer />

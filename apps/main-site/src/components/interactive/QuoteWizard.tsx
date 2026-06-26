@@ -11,7 +11,9 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, MapPin } from "lucide-react";
 import { MoveDatePicker } from "@vantage/ui";
-import { business } from "@/lib/content";
+import { business, quoteSection } from "@/lib/content";
+import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
+import { radiusClasses } from "@/stories/layout-playground";
 import { telHref } from "@/lib/format";
 import { MAIN_SITE } from "@/content/partners";
 import {
@@ -25,10 +27,22 @@ import {
 } from "@/schemas/quote-form.schema";
 
 const STEPS = [
-  { n: 1, label: "Location" },
-  { n: 2, label: "Details" },
-  { n: 3, label: "Contact" },
+  { n: 1, label: "Moving Details" },
+  { n: 2, label: "Contact Info" },
+  { n: 3, label: "Confirmation" },
 ] as const;
+
+const PANEL_STEPS = [
+  { n: 1, label: "Your Move" },
+  { n: 2, label: "Contact" },
+  { n: 3, label: "Done" },
+] as const;
+
+export interface QuoteWizardProps {
+  variant?: "hero" | "panel";
+  formId?: string;
+  className?: string;
+}
 
 const labelCls =
   "mb-[7px] block font-display text-[13.5px] font-semibold text-brand-blue";
@@ -202,7 +216,11 @@ function ZipField({
   );
 }
 
-export function QuoteWizard() {
+export function QuoteWizard({
+  variant = "hero",
+  formId,
+  className = "",
+}: QuoteWizardProps) {
   const [step, setStep] = useState(0);
   const [result, setResult] = useState<QuoteResult | null>(null);
   const [loading, setLoading] = useState(false);
@@ -226,6 +244,7 @@ export function QuoteWizard() {
     resolver: zodResolver(quoteFormSchema),
     defaultValues: emptyQuote,
     mode: "onTouched",
+    shouldUnregister: false,
   });
 
   async function submitQuote() {
@@ -257,13 +276,18 @@ export function QuoteWizard() {
   async function handleNext(e: React.FormEvent) {
     e.preventDefault();
     if (loading) return;
-    const valid = await trigger(STEP_FIELDS[step]);
+
+    const fieldsToValidate =
+      step === 1 ? ([...STEP_FIELDS[0], ...STEP_FIELDS[1]] as (keyof QuoteFormInput)[]) : STEP_FIELDS[step];
+    const valid = await trigger(fieldsToValidate);
     if (!valid) return;
+
     if (step === 1) {
       await submitQuote();
-    } else {
-      setStep((s) => s + 1);
+      return;
     }
+
+    setStep((s) => s + 1);
   }
 
   function handleReset() {
@@ -276,25 +300,46 @@ export function QuoteWizard() {
   }
 
   const stepDisplay = step + 1;
+  const isPanel = variant === "panel";
+  const steps = isPanel ? PANEL_STEPS : STEPS;
+  const resolvedFormId = formId ?? (isPanel ? undefined : "quote");
+  const fieldIdPrefix = resolvedFormId ?? "quote";
+  const panelPadding = isPanel ? "px-6 pt-0 pb-6" : "px-[30px] pt-[30px] pb-[26px]";
+  const headingFontClass = isPanel ? heroHeadingFont.className : "font-display";
+  const bodyFontClass = isPanel ? heroBodyFont.className : "";
 
   return (
     <form
-      id="quote"
-      className="rounded-panel bg-white px-[30px] pt-[30px] pb-[26px] shadow-form-card"
+      id={resolvedFormId}
+      className={`${isPanel ? radiusClasses.md2 : "rounded-panel"} bg-white ${panelPadding} shadow-form-card ${bodyFontClass} ${className ?? ""}`}
       onSubmit={handleNext}
       noValidate
     >
-      <div className="mb-2 text-center">
-        <h2 className="mb-1.5 font-display text-[25px] font-extrabold -tracking-[.02em] text-brand-blue">
-          Request Your Moving Quote
-        </h2>
-        <p className="m-0 text-[14.5px] text-[#64748B]">
-          Tell us where you are moving, when, and what you need moved.
-        </p>
-      </div>
+      {isPanel ? (
+        <div className="-mx-6 mb-6 bg-brand-blue px-6 pt-6 pb-5">
+          <h2
+            className={`mb-1 text-[22px] font-extrabold -tracking-[.02em] text-white ${headingFontClass}`}
+          >
+            {quoteSection.formTitle}
+          </h2>
+          <p className="m-0 text-[13.5px] text-on-dark-500">{quoteSection.formSubtitle}</p>
+          <div className="mt-4 h-0.5 w-full rounded-full bg-brand-yellow" />
+        </div>
+      ) : (
+        <div className="mb-2 text-center">
+          <h2 className="mb-1.5 font-display text-[25px] font-extrabold -tracking-[.02em] text-brand-blue">
+            Request Your Moving Quote
+          </h2>
+          <p className="m-0 text-[14.5px] text-[#64748B]">
+            Tell us where you are moving, when, and what you need moved.
+          </p>
+        </div>
+      )}
 
-      <div className="my-[22px] mb-6 flex items-center justify-center">
-        {STEPS.map((s, i) => {
+      <div
+        className={`my-[22px] mb-6 flex items-center ${isPanel ? "justify-between px-1" : "justify-center"}`}
+      >
+        {steps.map((s, i) => {
           const current = stepDisplay === s.n;
           const done = stepDisplay > s.n || (step === 2 && result);
           const dot = current
@@ -306,14 +351,18 @@ export function QuoteWizard() {
             <div key={s.n} className="flex items-center">
               <div className="flex flex-col items-center gap-1.5">
                 <span
-                  className={`grid size-[34px] place-items-center rounded-full font-display text-[15px] font-extrabold ${dot}`}
+                  className={`grid size-[34px] place-items-center rounded-full text-[15px] font-extrabold ${headingFontClass} ${dot}`}
                 >
                   {s.n}
                 </span>
-                <span className="text-xs font-semibold text-[#64748B]">{s.label}</span>
+                <span className="max-w-[88px] text-center text-xs leading-tight font-semibold text-[#64748B]">
+                  {s.label}
+                </span>
               </div>
-              {i < STEPS.length - 1 && (
-                <span className="mx-1.5 mb-[18px] h-0.5 w-[46px] bg-cream-border" />
+              {i < steps.length - 1 && (
+                <span
+                  className={`mb-[18px] h-0.5 bg-cream-border ${isPanel ? "mx-2 w-[28px] lg:w-[40px]" : "mx-1.5 w-[46px]"}`}
+                />
               )}
             </div>
           );
@@ -351,7 +400,7 @@ export function QuoteWizard() {
           {step === 0 && (
             <div>
               <ZipField
-                id="pickup-zip"
+                id={`${fieldIdPrefix}-pickup-zip`}
                 label="Moving From (ZIP)"
                 fieldName="pickup"
                 placeholder="Pickup ZIP code"
@@ -362,7 +411,7 @@ export function QuoteWizard() {
                 error={errors.pickup}
               />
               <ZipField
-                id="dest-zip"
+                id={`${fieldIdPrefix}-dest-zip`}
                 label="Moving To (ZIP)"
                 fieldName="dest"
                 placeholder="Destination ZIP code"
@@ -372,14 +421,9 @@ export function QuoteWizard() {
                 setValue={setValue}
                 error={errors.dest}
               />
-            </div>
-          )}
-
-          {step === 1 && (
-            <div>
               <Field label="Estimated Move Date" error={errors.date?.message}>
                 <MoveDatePicker
-                  id="move-date"
+                  id={`${fieldIdPrefix}-move-date`}
                   variant="main-site"
                   value={watch("date")}
                   hasError={!!errors.date}
@@ -410,6 +454,11 @@ export function QuoteWizard() {
                   ))}
                 </select>
               </Field>
+            </div>
+          )}
+
+          {step === 1 && (
+            <div>
               <Field label="Full Name" error={errors.name?.message}>
                 <input
                   className={`${inputCls} ${errors.name ? inputErrCls : ""}`}
@@ -469,7 +518,13 @@ export function QuoteWizard() {
               disabled={loading}
               className={`${step === 0 ? `${yellowBtn} w-full py-[15px]` : step === 1 ? "flex-1 cursor-pointer rounded-lg2 border-none bg-brand-blue-bright py-3.5 font-display text-base font-bold tracking-[.04em] text-white uppercase shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0" : yellowBtn} ${step === 1 ? "" : step > 0 ? "flex-1 py-3.5" : ""}`}
             >
-              {loading ? "Submitting…" : step === 1 ? "Request Free Quote" : "Continue"}
+              {loading
+                ? "Submitting…"
+                : step === 1
+                  ? isPanel
+                    ? "Get My Free Quote"
+                    : "Request Free Quote"
+                  : "Continue"}
             </button>
           </div>
         </>
@@ -477,7 +532,9 @@ export function QuoteWizard() {
 
       <p className="mt-4 flex items-center justify-center gap-[7px] text-center text-[12.5px] text-[#94a3b8]">
         <Check className="text-brand-blue-bright" size={13} strokeWidth={2.5} aria-hidden />
-        Free estimate · No obligation · Broker-coordinated quote
+        {isPanel
+          ? "We never sell your information."
+          : "Free estimate · No obligation · Broker-coordinated quote"}
       </p>
     </form>
   );

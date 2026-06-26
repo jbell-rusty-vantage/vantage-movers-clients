@@ -228,6 +228,7 @@ Set in `apps/clients/.env` and/or `apps/main-site/.env` (and matching Vercel pro
 | Wire new lead field to CRM | either | schema → `app/api/quote/route.ts` → `CreateFormLeadInput` in `@vantage/api-client` |
 | Style a clients landing section | clients | matching file in `src/styles/`, tokens from `@vantage/styles/base.css` |
 | Style a main-site section | main-site | Tailwind classes + `@theme` tokens in `globals.css` |
+| Promote Storybook Playground choices to production | main-site | See `.cursor/rules/storybook-promote-to-production.mdc` — read `Playground.args` in `src/stories/*.stories.tsx`, follow `*Preview.tsx` + resolvers |
 | Change shared backend API calls | both | `packages/api-client/src/index.ts` |
 | Change shared brand base tokens | clients primarily | `packages/styles/base.css` |
 

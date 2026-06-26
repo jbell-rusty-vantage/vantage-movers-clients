@@ -77,6 +77,9 @@ export function MoveDatePicker({
 
   const selected = parseIsoDate(value);
   const displayValue = selected ? format(selected, "MMM d, yyyy") : "";
+  const today = startOfToday();
+  const calendarStartMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+  const calendarEndMonth = new Date(today.getFullYear() + 3, 11, 1);
 
   useEffect(() => {
     if (selected) {
@@ -212,7 +215,11 @@ export function MoveDatePicker({
               onSelect={handleSelect}
               month={month}
               onMonthChange={setMonth}
-              disabled={{ before: startOfToday() }}
+              captionLayout="dropdown"
+              hideNavigation
+              startMonth={calendarStartMonth}
+              endMonth={calendarEndMonth}
+              disabled={{ before: today }}
               showOutsideDays
               classNames={{
                 root: "vdp__calendar",
@@ -220,9 +227,11 @@ export function MoveDatePicker({
                 month: "vdp__month",
                 month_caption: "vdp__caption",
                 caption_label: "vdp__caption-label",
-                nav: "vdp__nav",
-                button_previous: "vdp__nav-btn",
-                button_next: "vdp__nav-btn",
+                dropdowns: "vdp__dropdowns",
+                dropdown_root: "vdp__dropdown-root",
+                dropdown: "vdp__dropdown",
+                months_dropdown: "vdp__dropdown vdp__dropdown--month",
+                years_dropdown: "vdp__dropdown vdp__dropdown--year",
                 month_grid: "vdp__grid",
                 weekdays: "vdp__weekdays",
                 weekday: "vdp__weekday",
