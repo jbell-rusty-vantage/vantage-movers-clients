@@ -1,5 +1,6 @@
 export const footerColorPresetIds = [
   "production",
+  "light",
   "deeperNight",
   "navyBlue",
   "charcoal",
@@ -10,6 +11,7 @@ export type FooterColorPresetId = (typeof footerColorPresetIds)[number];
 
 export const footerColorPresetLabels: Record<FooterColorPresetId, string> = {
   production: "Production — near-black footer",
+  light: "Light — white footer with dark text",
   deeperNight: "Deeper night — stronger contrast",
   navyBlue: "Navy blue — brand-aligned footer",
   charcoal: "Charcoal — softer dark gray",
@@ -37,6 +39,16 @@ export const footerColorPresets: Record<Exclude<FooterColorPresetId, "custom">, 
     linkHoverColor: "#ffffff",
     borderColor: "rgba(255, 255, 255, 0.1)",
     phoneColor: "#ffffff",
+  },
+  light: {
+    footerBg: "#ffffff",
+    headingColor: "#024799",
+    bodyColor: "#1f2937",
+    mutedColor: "#64748b",
+    linkColor: "#111827",
+    linkHoverColor: "#1763cf",
+    borderColor: "#ece4d6",
+    phoneColor: "#024799",
   },
   deeperNight: {
     footerBg: "#050608",

@@ -12,11 +12,11 @@ export function Logo({ variant = "header" }: LogoProps) {
   return (
     <Link href="/#top" className="flex items-center no-underline" aria-label={business.name}>
       <Image
-        className={isFooter ? "h-[52px] w-auto" : "h-[46px] w-auto"}
-        src="/vantage/vantagelogo.png"
+        className={isFooter ? "h-[52px] w-auto" : "h-[36px] w-auto"}
+        src="/vantage-movers-logo-refined-smaller-text.svg"
         alt=""
-        width={160}
-        height={128}
+        width={301}
+        height={86}
         priority
       />
     </Link>

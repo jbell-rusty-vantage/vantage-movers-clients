@@ -12,7 +12,7 @@ export const business = {
   dot: "4078939",
   mc: "1551322",
   address: ["1880 N Congress Ave Ste 401A", "Boynton Beach, FL 33426"],
-  brokerLine: "Licensed Interstate Household Goods Moving Broker",
+  brokerLine: "Licensed Moving Broker",
   copyright: "© 2026 Vantage Movers. All rights reserved.",
   brokerDisclaimer:
     "Vantage Movers is a licensed interstate moving broker. Vantage is not a motor carrier and does not transport household goods. Vantage coordinates and arranges transportation of household goods through FMCSA-authorized motor carriers. Final charges are based on the carrier's tariff, shipment inventory, requested services, route, and move conditions. Carrier tariffs are available for inspection from the carrier upon reasonable request.",

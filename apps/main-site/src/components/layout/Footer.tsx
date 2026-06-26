@@ -18,7 +18,7 @@ import {
 const BODY_FONT_SIZE = 13;
 const COLUMN_HEADING_FONT_SIZE = 14;
 const PADDING = footerPaddingScale.default;
-const colors = resolveFooterColors("navyBlue", {});
+const colors = resolveFooterColors("light", {});
 
 const linkClassName =
   "no-underline transition-colors duration-150 hover:[color:var(--footer-link-hover)]";
@@ -187,10 +187,10 @@ export function Footer() {
         >
           <span>{business.copyright}</span>
           <span className="flex gap-5">
-            <a href="#" className={linkClassName} style={{ color: colors.mutedColor }}>
+            <a href="#" className={linkClassName} style={{ color: colors.linkColor }}>
               Sitemap
             </a>
-            <a href="#" className={linkClassName} style={{ color: colors.mutedColor }}>
+            <a href="#" className={linkClassName} style={{ color: colors.linkColor }}>
               Accessibility
             </a>
           </span>
