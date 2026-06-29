@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { telHref } from "@/lib/format";
 import { site } from "@/content/site";
+import { resolvePartner } from "@/content/partners";
 
 export default function Error({
   error,
@@ -11,6 +13,9 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const pathname = usePathname();
+  const phoneNumber = resolvePartner(pathname).phone ?? site.phone;
+
   useEffect(() => {
     console.error(error);
   }, [error]);
@@ -26,8 +31,8 @@ export default function Error({
         <button className="btn" onClick={reset}>
           Try again
         </button>
-        <a className="btn btn--gold" href={telHref(site.phone)}>
-          Call {site.phone}
+        <a className="btn btn--gold" href={telHref(phoneNumber)}>
+          Call {phoneNumber}
         </a>
       </div>
     </div>

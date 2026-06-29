@@ -11,10 +11,12 @@ export interface TwoColProps {
   content: TwoColContent;
   /** Override section photo by registry key or public path. */
   image?: string;
+  /** Source-specific public phone number for call CTAs. */
+  phone?: string;
 }
 
 /** Two-column text + illustration section (Auto Transport / Support). */
-export function TwoCol({ content, image }: TwoColProps) {
+export function TwoCol({ content, image, phone }: TwoColProps) {
   const { id, reverse, scene, eyebrow, title, body, cta } = content;
   const src = image ? resolveSiteImage(image) : content.image;
   return (
@@ -32,7 +34,7 @@ export function TwoCol({ content, image }: TwoColProps) {
           </h2>
           <p>{body}</p>
           <div className="twocol__cta">
-            <Phone analyticsLocation={id} />
+            <Phone num={phone} analyticsLocation={id} />
             <Button href={cta.href}>{cta.label}</Button>
           </div>
         </div>

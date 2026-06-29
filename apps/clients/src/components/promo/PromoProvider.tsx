@@ -12,6 +12,7 @@ import {
 } from "react";
 import { usePathname } from "next/navigation";
 import { promo } from "@/content/promo";
+import { resolvePartner } from "@/content/partners";
 import { usePromoTrigger } from "@/hooks/usePromoTrigger";
 import { PromoModal } from "./PromoModal";
 
@@ -31,6 +32,7 @@ export function usePromo() {
 
 export function PromoProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const phoneNumber = resolvePartner(pathname).phone;
   const previousPathname = useRef(pathname);
   const promoSuppressedRef = useRef(false);
   const [promoSuppressed, setPromoSuppressed] = useState(false);
@@ -69,6 +71,7 @@ export function PromoProvider({ children }: { children: ReactNode }) {
           onClose={close}
           amount={promo.amount}
           urgencyText={promo.urgencyText}
+          phone={phoneNumber}
         />
       )}
     </PromoContext.Provider>

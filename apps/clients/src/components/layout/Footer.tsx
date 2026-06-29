@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { trackEvent, legalEventForHref } from "@/lib/analytics";
 import { site } from "@/content/site";
 import { quickLinks } from "@/content/navigation";
+import { resolvePartner } from "@/content/partners";
 import { Icon } from "@/components/ui/Icon";
 import { Phone } from "@/components/ui/Phone";
 import { Button } from "@/components/ui/Button";
@@ -37,6 +39,9 @@ function FooterLink({ href, label, newTab }: { href: string; label: string; newT
 }
 
 export function Footer() {
+  const pathname = usePathname();
+  const phoneNumber = resolvePartner(pathname).phone;
+
   return (
     <footer className="footer">
       <div className="footer__grid">
@@ -83,7 +88,7 @@ export function Footer() {
 
         <div className="footer__col footer__cta">
           <h4>Get a Free Moving Estimate</h4>
-          <Phone dark sm analyticsLocation="footer" />
+          <Phone num={phoneNumber} dark sm analyticsLocation="footer" />
           <Button variant="gold" href="#quote">
             Get a Quote
           </Button>

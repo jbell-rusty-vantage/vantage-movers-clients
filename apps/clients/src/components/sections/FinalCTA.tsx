@@ -5,7 +5,7 @@ import { ImageFill } from "@/components/ui/ImageFill";
 import { Phone } from "@/components/ui/Phone";
 import { Button } from "@/components/ui/Button";
 
-export function FinalCTA() {
+export function FinalCTA({ phone }: { phone?: string } = {}) {
   return (
     <section className="finalcta reveal">
       <ImageFill
@@ -26,7 +26,7 @@ export function FinalCTA() {
             </Fragment>
           ))}
         </h2>
-        <Phone dark analyticsLocation="final_cta" />
+        <Phone num={phone} dark analyticsLocation="final_cta" />
         <span className="urgency">
           <span className="urgency__dot" />
           {URGENCY_TEXT}

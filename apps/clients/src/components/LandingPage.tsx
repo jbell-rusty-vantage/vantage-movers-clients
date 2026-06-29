@@ -17,6 +17,8 @@ export interface LandingPageProps {
   source: PartnerConfig;
   /** Live testimonials from vantage-main-server (empty -> static fallback). */
   testimonials: Testimonial[];
+  /** Source-specific phone number for visible call CTAs. */
+  phone?: string;
   /** Override section photos by registry key or public path/filename. */
   images?: Partial<Record<SiteImageKey, string>>;
   /** Dark gradient over hero photo (0–1). Lower = brighter. Defaults to `hero.overlayOpacity`. */
@@ -37,6 +39,7 @@ export interface LandingPageProps {
 export function LandingPage({
   source,
   testimonials,
+  phone,
   images,
   heroOverlayOpacity,
   heroImageBrightness,
@@ -44,11 +47,13 @@ export function LandingPage({
   heroImagePositionLg,
 }: LandingPageProps) {
   const resolved = { ...SITE_IMAGES, ...images };
+  const phoneNumber = phone ?? source.phone;
 
   return (
     <main>
       <Hero
         source={source}
+        phone={phoneNumber}
         backgroundImage={resolved.hero}
         overlayOpacity={heroOverlayOpacity}
         imageBrightness={heroImageBrightness}
@@ -66,11 +71,11 @@ export function LandingPage({
       />
       <PromoBanner />
       <Testimonials items={testimonials} />
-      <ExpertiseBanner image={resolved.expertiseBanner} />
-      <AutoTransport image={resolved.autoTransport} />
+      <ExpertiseBanner image={resolved.expertiseBanner} phone={phoneNumber} />
+      <AutoTransport image={resolved.autoTransport} phone={phoneNumber} />
       <Commitment />
-      <Support image={resolved.coordinationSupport} />
-      <FinalCTA />
+      <Support image={resolved.coordinationSupport} phone={phoneNumber} />
+      <FinalCTA phone={phoneNumber} />
     </main>
   );
 }

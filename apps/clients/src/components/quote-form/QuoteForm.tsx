@@ -205,9 +205,11 @@ export interface QuoteFormProps {
   sourceCompany?: string;
   /** Origin site recorded with the lead. */
   sourceCompanySite?: string;
+  /** Source-specific public phone number for call CTAs. */
+  phone?: string;
 }
 
-export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFormProps) {
+export function QuoteForm({ compact, sourceCompany, sourceCompanySite, phone }: QuoteFormProps) {
   const [step, setStep] = useState(0);
   const [result, setResult] = useState<QuoteResult | null>(null);
   const [loading, setLoading] = useState(false);
@@ -220,6 +222,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
   const refNo = searchParams.get("ref_no")?.trim() || undefined;
   const { setPromoSuppressed } = usePromo();
   const formStarted = useRef(false);
+  const phoneNumber = phone ?? site.phone;
 
   const {
     register,
@@ -494,11 +497,11 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
               <p className="qf__result-call">
                 To speak to a Coordinator Immediately Call{" "}
                 <a
-                  href={telHref(site.phone)}
+                  href={telHref(phoneNumber)}
                   className="qf__result-phone"
                   onClick={() => trackEvent("phone_clicked", { link_location: "quote_result" })}
                 >
-                  {site.phone}
+                  {phoneNumber}
                 </a>
               </p>
             </div>
@@ -535,11 +538,11 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite }: QuoteFo
       )}
 
       <a
-        href={telHref(site.phone)}
+        href={telHref(phoneNumber)}
         className="qf__phone"
         onClick={() => trackEvent("phone_clicked", { link_location: "quote_form" })}
       >
-        <Icon name="phone" width={16} height={16} fill="currentColor" stroke="none" /> {site.phone}
+        <Icon name="phone" width={16} height={16} fill="currentColor" stroke="none" /> {phoneNumber}
       </a>
 
       <p className="qf__legal">

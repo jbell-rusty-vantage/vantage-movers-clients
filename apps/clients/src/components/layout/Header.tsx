@@ -12,6 +12,7 @@ export function Header() {
   const stuck = useStickyHeader();
   const pathname = usePathname();
   const partner = resolvePartner(pathname);
+  const phoneNumber = partner.phone;
 
   return (
     <header className={cn("header", stuck && "is-stuck")}>
@@ -26,11 +27,12 @@ export function Header() {
                 alt={partner.alt ?? partner.name}
                 width={partner.logoWidth ?? 130}
                 height={partner.logoHeight ?? 40}
+                style={partner.logoStyle}
               />
             </span>
           ) : null}
         </div>
-        <Phone label="Call for a free quote" analyticsLocation="header" />
+        <Phone num={phoneNumber} label="Call for a free quote" analyticsLocation="header" />
       </div>
     </header>
   );

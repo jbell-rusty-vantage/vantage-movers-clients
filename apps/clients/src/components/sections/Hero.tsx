@@ -63,6 +63,7 @@ function HeroCopy({ centered }: { centered: boolean }) {
 
 export function Hero({
   source,
+  phone,
   backgroundImage,
   overlayOpacity,
   imageBrightness,
@@ -70,6 +71,7 @@ export function Hero({
   imagePositionLg,
 }: {
   source?: PartnerConfig;
+  phone?: string;
   /** Registry key (e.g. `"enhancedTwo"`, `"hero"`) or public path/filename for the quote-form backdrop. */
   backgroundImage?: string;
   /** Dark gradient strength (0–1). Lower = brighter hero. Defaults to `hero.overlayOpacity`. */
@@ -110,6 +112,7 @@ export function Hero({
               compact={centered}
               sourceCompany={source?.sourceCompany}
               sourceCompanySite={source?.sourceCompanySite}
+              phone={phone}
             />
           </Suspense>
         </div>

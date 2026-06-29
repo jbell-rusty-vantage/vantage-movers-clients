@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 /**
  * Lead-source / partner configuration.
  *
@@ -14,6 +16,7 @@ export type SourceCompany =
   | "tbm_leads"
   | "tbm_prime_leads"
   | "top10_leads"
+  | "get_movers_leads"
   | "main_site";
 
 export interface PartnerConfig {
@@ -27,10 +30,14 @@ export interface PartnerConfig {
   sourceCompanySite: string;
   /** Partner logo path under /public, omitted for the canonical site. */
   logo?: string;
+  /** Source-specific public phone number, defaults to the site phone when omitted. */
+  phone?: string;
   /** Intrinsic logo width (px) for next/image. */
   logoWidth?: number;
   /** Intrinsic logo height (px) for next/image. */
   logoHeight?: number;
+  /** Optional header-only sizing tweaks for unusually shaped partner logos. */
+  logoStyle?: CSSProperties;
   /** Accessible label for the partner logo. */
   alt?: string;
 }
@@ -72,6 +79,18 @@ export const PARTNERS: Record<string, PartnerConfig> = {
     logoWidth: 130,
     logoHeight: 36,
     alt: "Top 10 Moving Companies",
+  },
+  getmovers: {
+    slug: "getmovers",
+    name: "GetMovers",
+    sourceCompany: "get_movers_leads",
+    sourceCompanySite: "vantagequotes.com/getmovers",
+    logo: "/partnerlogos/getmovers.svg",
+    phone: "(888) 397-1005",
+    logoWidth: 207,
+    logoHeight: 20,
+    logoStyle: { height: "auto", width: "190px" },
+    alt: "GetMovers",
   },
 };
 
