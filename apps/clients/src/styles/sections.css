@@ -73,17 +73,17 @@
 }
 
 .logo__img {
-  --logo-size: clamp(62px, 4vw + 44px, 80px);
+  --logo-height: clamp(34px, 2.2vw + 24px, 44px);
   display: block;
   flex: none;
-  height: var(--logo-size);
-  object-fit: cover;
-  object-position: top;
-  width: var(--logo-size);
+  height: var(--logo-height);
+  object-fit: contain;
+  object-position: left center;
+  width: auto;
 }
 
 .logo--dark .logo__img {
-  --logo-size: clamp(72px, 4.5vw + 48px, 92px);
+  --logo-height: clamp(38px, 2.5vw + 28px, 50px);
 }
 
 .header__partner {
@@ -213,6 +213,7 @@
 }
 
 .hero__copy {
+  font-family: var(--font-hero-body), system-ui, sans-serif;
   max-width: 580px;
 }
 
@@ -230,7 +231,7 @@
 }
 
 .hero__rating b {
-  font-family: var(--font-head);
+  font-family: var(--font-hero-head), system-ui, sans-serif;
 }
 
 .hero__rating-count {
@@ -239,12 +240,14 @@
 
 .hero h1 {
   color: #fff;
+  font-family: var(--font-hero-head), system-ui, sans-serif;
   font-size: clamp(40px, 5.6vw, 68px);
   font-weight: 800;
 }
 
 .hero__sub {
   color: rgba(255, 255, 255, 0.88);
+  font-family: var(--font-hero-body), system-ui, sans-serif;
   font-size: 19px;
   margin-top: 22px;
   max-width: 500px;
@@ -284,7 +287,7 @@
 }
 
 .stat__big {
-  font-family: var(--font-head);
+  font-family: var(--font-hero-head), system-ui, sans-serif;
   font-size: 24px;
   font-weight: 800;
   line-height: 1;
@@ -420,6 +423,24 @@
   width: auto;
   opacity: 0.85;
   transition: opacity 0.2s;
+}
+
+.trustlogo--getmovers {
+  flex: none;
+  height: 30px;
+  justify-content: center;
+  width: 114px;
+}
+
+.trustlogo__img--getmovers {
+  display: block;
+  filter: contrast(1.1);
+  height: auto;
+  max-height: 30px;
+  object-fit: contain;
+  object-position: center;
+  opacity: 1;
+  width: 100%;
 }
 
 .trustlogo:hover .trustlogo__img {
@@ -615,8 +636,8 @@
 
 .tcard blockquote {
   color: var(--near-black);
+  font-family: var(--font-body), system-ui, sans-serif;
   font-size: 16px;
-  font-style: italic;
   line-height: 1.6;
   margin: 16px 0 22px;
 }

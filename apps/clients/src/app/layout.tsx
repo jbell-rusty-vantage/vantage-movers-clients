@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Archivo, Public_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -11,20 +10,7 @@ import { PromoProvider } from "@/components/promo/PromoProvider";
 import { RevealManager } from "@/components/interactive/RevealManager";
 import { BackToTop } from "@/components/interactive/BackToTop";
 import { BounceTracker } from "@/components/analytics/BounceTracker";
-
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
-  display: "swap",
-});
-
-const publicSans = Public_Sans({
-  variable: "--font-public-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
+import { siteBodyFont, siteDisplayFont } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: `${site.name} | Affordable Nationwide Moving Services`,
@@ -41,9 +27,9 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${publicSans.variable} antialiased`}
+      className={`${siteDisplayFont.variable} ${siteBodyFont.variable}`}
     >
-      <body>
+      <body className="antialiased">
         <PromoProvider>
           <div id="top" />
           <LicenseBar />

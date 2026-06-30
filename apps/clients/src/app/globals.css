@@ -5,3 +5,13 @@
 @import "../styles/quote-form.css";
 @import "../styles/promo.css";
 @import "../styles/policy.css";
+
+/* Hero + testimonial sections reuse the site-wide display/body stacks. */
+:root {
+  --font-hero-head: var(--font-display);
+  --font-hero-body: var(--font-body);
+}
+
+a {
+  font-family: var(--font-body), system-ui, sans-serif;
+}

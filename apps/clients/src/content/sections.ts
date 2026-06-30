@@ -10,6 +10,8 @@ export interface TrustLogo {
   alt: string;
   width: number;
   height: number;
+  /** Optional modifier for logo-specific CSS (e.g. "getmovers"). */
+  imgClass?: string;
 }
 
 export const trustStrip: { label: string; logos: TrustLogo[] } = {
@@ -19,6 +21,13 @@ export const trustStrip: { label: string; logos: TrustLogo[] } = {
     { src: "/partnerlogos/tbm_prime_leads.svg", alt: "TBM Prime", width: 134, height: 40 },
     { src: "/partnerlogos/top10.svg", alt: "Top 10 Moving Companies", width: 130, height: 36 },
     { src: "/partnerlogos/convoice.svg", alt: "Consumer Voice", width: 99, height: 30 },
+    {
+      src: "/partnerlogos/getmovers.svg",
+      alt: "Get Movers",
+      width: 456,
+      height: 44,
+      imgClass: "getmovers",
+    },
   ],
 };
 

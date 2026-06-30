@@ -51,8 +51,9 @@ internal_hidden_docs/
 **/src/stories/
 **/*.stories.tsx
 **/*.stories.ts
+**/tsconfig.storybook.json
 **/vitest.config.ts
 **/vitest.shims.d.ts
-*storybook.log
-debug-storybook.log
-storybook-static
+**/*storybook.log
+**/debug-storybook.log
+**/storybook-static/

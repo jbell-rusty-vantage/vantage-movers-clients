@@ -25,7 +25,9 @@ export const SITE_IMAGES = {
 export type SiteImageKey = keyof typeof SITE_IMAGES;
 
 /** Resolve a registry key or raw public path/filename. */
-export function resolveSiteImage(nameOrPath: SiteImageKey | HeroImageKey | string): string {
+export function resolveSiteImage(
+  nameOrPath: SiteImageKey | HeroImageKey | string,
+): string {
   if (!nameOrPath) {
     return "";
   }

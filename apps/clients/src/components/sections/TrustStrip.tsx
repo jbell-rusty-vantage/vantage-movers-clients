@@ -5,9 +5,12 @@ function LogoRow({ keyPrefix }: { keyPrefix: string }) {
   return (
     <>
       {trustStrip.logos.map((l) => (
-        <span key={`${keyPrefix}-${l.src}`} className="trustlogo">
+        <span
+          key={`${keyPrefix}-${l.src}`}
+          className={`trustlogo${l.imgClass ? ` trustlogo--${l.imgClass}` : ""}`}
+        >
           <Image
-            className="trustlogo__img"
+            className={`trustlogo__img${l.imgClass ? ` trustlogo__img--${l.imgClass}` : ""}`}
             src={l.src}
             alt={l.alt}
             width={l.width}
