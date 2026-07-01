@@ -34,7 +34,13 @@ interface PopoverCoords {
   top: number;
   left: number;
   width: number;
+  maxHeight?: number;
 }
+
+/** Minimum width needed for a 7-column day grid inside the popover padding. */
+const POPOVER_WIDTH = 320;
+const VIEWPORT_MARGIN = 8;
+const POPOVER_GAP = 8;
 
 function CalendarIcon() {
   return (
@@ -97,10 +103,28 @@ export function MoveDatePicker({
       const trigger = rootRef.current;
       if (!trigger) return;
       const rect = trigger.getBoundingClientRect();
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+      const width = Math.min(POPOVER_WIDTH, viewportWidth - VIEWPORT_MARGIN * 2);
+      const maxLeft = viewportWidth - width - VIEWPORT_MARGIN;
+      const left = Math.min(Math.max(rect.left, VIEWPORT_MARGIN), maxLeft);
+      const popoverHeight = popoverRef.current?.offsetHeight ?? 340;
+      const topBelow = rect.bottom + POPOVER_GAP;
+      const topAbove = rect.top - popoverHeight - POPOVER_GAP;
+      const hasMoreRoomAbove = rect.top > viewportHeight - rect.bottom;
+      const top =
+        topBelow + popoverHeight > viewportHeight - VIEWPORT_MARGIN && hasMoreRoomAbove
+          ? Math.max(VIEWPORT_MARGIN, topAbove)
+          : topBelow;
+      const maxHeight =
+        top < rect.top
+          ? rect.top - POPOVER_GAP - VIEWPORT_MARGIN
+          : viewportHeight - top - VIEWPORT_MARGIN;
       setCoords({
-        top: rect.bottom + 8,
-        left: rect.left,
-        width: Math.min(rect.width, 320),
+        top,
+        left,
+        width,
+        maxHeight,
       });
     }
 
@@ -207,6 +231,7 @@ export function MoveDatePicker({
               top: coords.top,
               left: coords.left,
               width: coords.width,
+              maxHeight: coords.maxHeight,
             }}
           >
             <DayPicker

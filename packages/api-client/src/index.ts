@@ -10,13 +10,13 @@ import "server-only";
  */
 
 const API_BASE_URL =
-  process.env.VANTAGE_API_BASE_URL?.replace(/\/+$/, "") ??
+  process.env.VANTAGE_API_BASE_URL?.trim().replace(/\/+$/, "") ||
   "https://vantage-movers-main-server.vercel.app";
 
-const API_SECRET = process.env.VANTAGE_API_SECRET;
+const API_SECRET = process.env.VANTAGE_API_SECRET?.trim();
 
 const FORM_LEAD_ROUTE =
-  process.env.FORM_LEAD_ROUTE?.replace(/^\/+/, "") ?? "api/v1/form-leads";
+  process.env.FORM_LEAD_ROUTE?.trim().replace(/^\/+|\/+$/g, "") || "api/v1/form-leads";
 
 type NextFetchInit = RequestInit & {
   next?: { revalidate?: number | false; tags?: string[] };
@@ -112,7 +112,7 @@ export async function getTestimonials(
     }
 
     const body = (await res.json()) as TestimonialListResponse;
-    return body.data?.items ?? [];
+    return (body.data?.items ?? []).filter((item) => item.published);
   } catch (error) {
     console.error("[vantage] testimonials fetch error:", error);
     return [];

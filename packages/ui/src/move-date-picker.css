@@ -86,13 +86,18 @@
   background: #fff;
   border: 1.5px solid var(--vdp-popover-border, #e2e8f0);
   border-radius: var(--vdp-radius-lg, 12px);
+  box-sizing: border-box;
   box-shadow: var(--vdp-popover-shadow, 0 18px 50px rgba(6, 43, 85, 0.16));
+  isolation: isolate;
+  max-width: calc(100vw - 16px);
+  overflow: auto;
   padding: 14px;
   z-index: 1000;
 }
 
 .vdp__popover--portal {
   position: fixed;
+  z-index: 10000;
 }
 
 @keyframes vdpIn {
@@ -111,14 +116,28 @@
 .vdp__calendar {
   --rdp-accent-color: var(--vdp-accent, #2e86de);
   --rdp-accent-background-color: var(--vdp-accent-soft, rgba(46, 134, 222, 0.14));
+  box-sizing: border-box;
+  min-width: 0;
+  position: relative;
   width: 100%;
 }
 
+.vdp__calendar * {
+  box-sizing: border-box;
+}
+
 .vdp__months {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  min-width: 0;
+  position: relative;
   width: 100%;
 }
 
 .vdp__month {
+  max-width: 100%;
+  min-width: 0;
   width: 100%;
 }
 
@@ -190,6 +209,8 @@
 
 .vdp__grid {
   border-collapse: collapse;
+  table-layout: fixed;
+  max-width: 100%;
   width: 100%;
 }
 
@@ -209,18 +230,25 @@
 .vdp__day {
   padding: 2px;
   text-align: center;
+  vertical-align: middle;
+  width: 14.285%;
 }
 
 .vdp__day-btn {
+  align-items: center;
   background: transparent;
   border: none;
   border-radius: 8px;
   color: var(--vdp-trigger-text, #111827);
   cursor: pointer;
+  display: inline-flex;
   font-family: inherit;
   font-size: 14px;
   font-weight: 600;
   height: 36px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 100%;
   transition:
     background 0.12s,
     color 0.12s;
@@ -251,6 +279,42 @@
   color: var(--vdp-disabled, #cbd5e1);
   cursor: not-allowed;
   opacity: 0.45;
+}
+
+@media (max-width: 380px) {
+  .vdp__popover {
+    padding: 12px;
+  }
+
+  .vdp__caption {
+    margin-bottom: 10px;
+  }
+
+  .vdp__dropdowns {
+    gap: 4px;
+  }
+
+  .vdp__dropdown {
+    font-size: 12px;
+    padding: 6px 22px 6px 8px;
+  }
+
+  .vdp__dropdown--month {
+    min-width: 6.75rem;
+  }
+
+  .vdp__dropdown--year {
+    min-width: 5rem;
+  }
+
+  .vdp__day {
+    padding: 1px;
+  }
+
+  .vdp__day-btn {
+    height: 34px;
+    width: 34px;
+  }
 }
 
 /* ---- Clients variant (partner landing pages) ---- */
