@@ -349,8 +349,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite, phone }: 
       noValidate
     >
       <div className="qf__head">
-        <h3>Get Instant Quote</h3>
-        <p>Receive your free moving quote in seconds</p>
+        <h3>Request Moving Quote</h3>
       </div>
 
       <StepIndicator step={step} />
@@ -360,7 +359,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite, phone }: 
           <div className="qf__pane">
             <ZipCompletionField
               id="pickup-zip"
-              label="Pickup ZIP"
+              label="Pickup Zip"
               fieldName="pickup"
               placeholder="Enter pickup ZIP"
               displayValue={pickupZip}
@@ -371,7 +370,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite, phone }: 
             />
             <ZipCompletionField
               id="dest-zip"
-              label="Destination ZIP"
+              label="Destination Zip"
               fieldName="dest"
               placeholder="Enter destination ZIP"
               displayValue={destZip}
@@ -386,7 +385,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite, phone }: 
         {step === 1 && (
           <div className="qf__pane">
             <div className="qf__row">
-              <Field id="date" label="Move date" error={errors.date?.message}>
+              <Field id="date" label="Move Date" error={errors.date?.message}>
                 <MoveDatePicker
                   id="date"
                   variant="clients"
@@ -409,7 +408,7 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite, phone }: 
                   onBlur={() => void trigger("date")}
                 />
               </Field>
-              <Field id="size" label="Move size" error={errors.size?.message}>
+              <Field id="size" label="Move Size" error={errors.size?.message}>
                 <Select
                   id="size"
                   {...register("size", {
@@ -527,16 +526,25 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite, phone }: 
                 onClick={() => setStep((s) => s - 1)}
                 disabled={loading}
               >
-                Back
+                Previous
               </button>
             )}
             <Button type="submit" block disabled={loading} arrow={!loading}>
-              {loading ? "Calculating…" : step === 1 ? "Get Free Quote" : "Continue"}
+              {loading ? "Calculating…" : step === 1 ? "GET QUOTE" : "Next"}
             </Button>
           </div>
         </>
       )}
 
+      <p className="qf__help">
+        Need help?{" "}
+        <a
+          href={telHref(phoneNumber)}
+          onClick={() => trackEvent("phone_clicked", { link_location: "quote_form_help" })}
+        >
+          Call Now
+        </a>
+      </p>
       <a
         href={telHref(phoneNumber)}
         className="qf__phone"
@@ -546,14 +554,8 @@ export function QuoteForm({ compact, sourceCompany, sourceCompanySite, phone }: 
       </a>
 
       <p className="qf__legal">
-        By submitting this form, you request a moving quote from {site.name}. See our{" "}
-        <a
-          href="/privacy"
-          onClick={() => trackEvent("privacy_policy_clicked", { link_location: "quote_form" })}
-        >
-          Privacy Policy
-        </a>{" "}
-        and <a href="/terms">Terms &amp; Conditions</a>.
+        By submitting this form, you acknowledge that Vantage Movers may contact you with updates,
+        offers, and information relevant to your moving process.
       </p>
     </form>
   );

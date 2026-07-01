@@ -17,9 +17,9 @@ export const SITE_IMAGES = {
   packingStorage: "/couple_with_boxes.jpg",
   officeMoves: "/moving_boxes_in_office.webp",
   militaryMoves: "/military_moves.webp",
-  expertiseBanner: "/sitepictures/Truck%20Loaded.jpeg",
+  expertiseBanner: "/vantage_moves_truck_long_distance.png",
   autoTransport: "/sitepictures/autotransport.jpg",
-  coordinationSupport: "/customer_service_rep.webp",
+  coordinationSupport: "/customer_service_rep.png",
 } as const;
 
 export type SiteImageKey = keyof typeof SITE_IMAGES;

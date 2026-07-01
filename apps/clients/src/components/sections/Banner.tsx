@@ -29,9 +29,11 @@ export function Banner({ content, image, children }: BannerProps) {
         overlay={overlay ?? true}
       />
       <div className="wrap banner__in">
-        <Eyebrow center onDark>
-          {eyebrow}
-        </Eyebrow>
+        {eyebrow && (
+          <Eyebrow center onDark>
+            {eyebrow}
+          </Eyebrow>
+        )}
         <h2>
           {title.map((line, i) => (
             <Fragment key={line}>

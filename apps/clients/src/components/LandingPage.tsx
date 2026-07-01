@@ -7,8 +7,6 @@ import { Services } from "@/components/sections/Services";
 import { PromoBanner } from "@/components/sections/PromoBanner";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { ExpertiseBanner } from "@/components/sections/ExpertiseBanner";
-import { AutoTransport } from "@/components/sections/AutoTransport";
-import { Commitment } from "@/components/sections/Commitment";
 import { Support } from "@/components/sections/Support";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
@@ -72,8 +70,6 @@ export function LandingPage({
       <PromoBanner />
       <Testimonials items={testimonials} />
       <ExpertiseBanner image={resolved.expertiseBanner} phone={phoneNumber} />
-      <AutoTransport image={resolved.autoTransport} phone={phoneNumber} />
-      <Commitment />
       <Support image={resolved.coordinationSupport} phone={phoneNumber} />
       <FinalCTA phone={phoneNumber} />
     </main>

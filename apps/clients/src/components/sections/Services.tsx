@@ -31,11 +31,13 @@ export function Services({ images }: ServicesProps = {}) {
   return (
     <section className="section services" id="services">
       <div className="wrap">
-        <div className="section__head reveal">
-          <Eyebrow center>{servicesIntro.eyebrow}</Eyebrow>
-          <h2>{servicesIntro.title}</h2>
-          <p>{servicesIntro.body}</p>
-        </div>
+        {servicesIntro.title ? (
+          <div className="section__head reveal">
+            {servicesIntro.eyebrow && <Eyebrow center>{servicesIntro.eyebrow}</Eyebrow>}
+            <h2>{servicesIntro.title}</h2>
+            {servicesIntro.body && <p>{servicesIntro.body}</p>}
+          </div>
+        ) : null}
         <div className="services__grid">
           {services.map((s, i) => (
             <article className="svc reveal" data-d={(i % 3) + 1} key={s.title}>

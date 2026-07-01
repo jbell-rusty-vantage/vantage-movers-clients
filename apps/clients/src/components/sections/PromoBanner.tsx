@@ -6,7 +6,7 @@ export function PromoBanner() {
   return (
     <Banner content={promoBanner}>
       <Button variant="gold" size="lg" href="#quote">
-        Request a Free Estimate
+        GET QUOTE
       </Button>
       <span className="urgency">
         <span className="urgency__dot" />

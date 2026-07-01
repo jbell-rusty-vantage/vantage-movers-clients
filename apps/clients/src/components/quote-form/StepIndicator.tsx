@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { cn } from "@vantage/utils";
 import { Icon } from "@/components/ui/Icon";
 
-const STEP_LABELS = ["Location", "Details", "Quote"];
+const STEP_LABELS = ["Location", "Info", "Estimate"];
 
 export function StepIndicator({ step }: { step: number }) {
   return (

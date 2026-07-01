@@ -7,6 +7,7 @@
   align-items: center;
   color: var(--trust-blue);
   display: inline-flex;
+  flex-wrap: wrap;
   font-family: var(--font-head);
   font-size: 13px;
   font-weight: 700;
@@ -14,7 +15,6 @@
   letter-spacing: 0.14em;
   margin: 0 0 14px;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 
 .eyebrow::before {
@@ -47,7 +47,9 @@
   gap: 10px;
   justify-content: center;
   letter-spacing: 0.04em;
+  min-width: 0;
   padding: 16px 30px;
+  text-align: center;
   text-transform: uppercase;
   transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
   white-space: nowrap;
@@ -108,6 +110,11 @@
   font-weight: 800;
   gap: 12px;
   letter-spacing: -0.01em;
+  min-width: 0;
+}
+
+.phone__text {
+  min-width: 0;
 }
 
 .phone__icon {
@@ -151,6 +158,7 @@
   color: var(--navy);
   font-size: 19px;
   line-height: 1;
+  overflow-wrap: anywhere;
 }
 
 .phone.on-dark .phone__num,
@@ -382,7 +390,9 @@
   font-size: 14px;
   font-weight: 600;
   gap: 9px;
+  max-width: 100%;
   padding: 9px 16px;
+  text-align: center;
 }
 
 .urgency__dot {
@@ -392,4 +402,63 @@
   box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.3);
   height: 8px;
   width: 8px;
+}
+
+@media (max-width: 600px) {
+  .btn,
+  .btn--lg {
+    padding: 15px 20px;
+  }
+
+  .phone {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .eyebrow {
+    font-size: 11px;
+    gap: 7px;
+    justify-content: center;
+    letter-spacing: 0.1em;
+  }
+
+  .eyebrow::before {
+    width: 16px;
+  }
+
+  .btn,
+  .btn--lg {
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    padding: 13px 14px;
+    white-space: normal;
+    width: 100%;
+  }
+
+  .phone__icon {
+    height: 36px;
+    width: 36px;
+  }
+
+  .phone__icon svg {
+    height: 16px;
+    width: 16px;
+  }
+
+  .phone__label {
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+  }
+
+  .phone__num {
+    font-size: 16px;
+  }
+
+  .urgency {
+    border-radius: 14px;
+    font-size: 12.5px;
+    justify-content: center;
+    padding: 8px 10px;
+  }
 }

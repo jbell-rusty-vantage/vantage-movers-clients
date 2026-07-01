@@ -7,6 +7,7 @@
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
+  min-width: 0;
   padding: 30px 30px 24px;
   width: 100%;
 }
@@ -77,6 +78,7 @@
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.04em;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -147,6 +149,7 @@
   font-family: inherit;
   font-size: 15px;
   outline: none;
+  min-width: 0;
   padding: 13px 14px;
   transition: border-color 0.15s, box-shadow 0.15s;
   width: 100%;
@@ -188,6 +191,7 @@
   color: var(--steel);
   font-size: 12px;
   font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
 .qf__zip-status--ok {
@@ -208,6 +212,7 @@
   color: #dc2626;
   font-size: 12px;
   font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
 .qf__sms-consent {
@@ -248,6 +253,7 @@
 .qf__foot {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 20px;
 }
@@ -283,6 +289,8 @@
   gap: 9px;
   justify-content: center;
   margin-top: 16px;
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
 .qf__phone svg {
@@ -291,6 +299,25 @@
 
 .qf__phone:hover {
   color: var(--trust-blue);
+}
+
+.qf__help {
+  color: var(--steel);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.qf__help a {
+  color: var(--trust-blue);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.qf__help a:hover {
+  color: var(--navy);
 }
 
 .qf__legal {
@@ -448,7 +475,125 @@
 }
 
 @media (max-width: 600px) {
+  .qf {
+    padding: 24px 22px 22px;
+  }
+
+  .qf--compact {
+    padding: 22px 20px 20px;
+  }
+
   .qf__row {
     grid-template-columns: 1fr;
+  }
+
+  .qf__foot .btn {
+    flex: 1 1 180px;
+  }
+}
+
+@media (max-width: 360px) {
+  .qf {
+    border-radius: 16px;
+    padding: 18px 14px 16px;
+  }
+
+  .qf--compact {
+    padding: 18px 14px 16px;
+  }
+
+  .qf__head {
+    margin-bottom: 18px;
+  }
+
+  .qf__head h3 {
+    font-size: 21px;
+    text-align: center;
+  }
+
+  .qf__steps {
+    margin-bottom: 20px;
+  }
+
+  .qf__step {
+    gap: 5px;
+  }
+
+  .qf__step-num {
+    font-size: 12px;
+    height: 28px;
+    width: 28px;
+  }
+
+  .qf__step-label {
+    font-size: 9.5px;
+    letter-spacing: 0.02em;
+  }
+
+  .qf__step-bar {
+    margin: 0 4px 18px;
+  }
+
+  .qf__pane {
+    gap: 13px;
+  }
+
+  .qf__label {
+    font-size: 12px;
+  }
+
+  .qf input,
+  .qf select {
+    font-size: 14px;
+    padding: 12px 12px;
+  }
+
+  .qf__input-ico svg {
+    left: 11px;
+  }
+
+  .qf__input-ico input {
+    padding-left: 36px;
+  }
+
+  .qf__sms-consent {
+    gap: 8px;
+  }
+
+  .qf__sms-consent-label {
+    font-size: 10.5px;
+  }
+
+  .qf__foot {
+    align-items: stretch;
+    flex-direction: column-reverse;
+    gap: 9px;
+  }
+
+  .qf__foot .btn,
+  .qf__back {
+    flex: none;
+    width: 100%;
+  }
+
+  .qf__back {
+    padding: 13px 14px;
+  }
+
+  .qf__phone {
+    font-size: 15px;
+  }
+
+  .qf__price {
+    font-size: 34px;
+  }
+
+  .qf__price span {
+    font-size: 22px;
+  }
+
+  .qf__result-note {
+    font-size: 12.5px;
+    padding: 11px 12px;
   }
 }

@@ -8,7 +8,7 @@ export function ExpertiseBanner({ image, phone }: { image?: string; phone?: stri
     <Banner content={expertiseBanner} image={image}>
       <Phone num={phone} dark analyticsLocation="expertise_banner" />
       <Button variant="gold" href="#quote">
-        Get a Quote
+        REQUEST Free quote
       </Button>
     </Banner>
   );

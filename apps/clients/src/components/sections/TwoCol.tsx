@@ -23,7 +23,7 @@ export function TwoCol({ content, image, phone }: TwoColProps) {
     <section className={cn("section twocol", reverse && "twocol--rev")} id={id}>
       <div className="wrap twocol__in">
         <div className="twocol__text reveal">
-          <Eyebrow>{eyebrow}</Eyebrow>
+          {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
           <h2>
             {title.map((line, i) => (
               <Fragment key={line}>

@@ -9,9 +9,9 @@ export const hero: HeroContent = {
   imagePositionLg: "center 30%",
   ratingScore: "4.8/5.0",
   ratingCount: "from 1000+ reviews",
-  headline: ["Affordable Long Distance", "Moving Coordination"],
+  headline: ["Affordable Stress Free", "Long Distance Moving Services"],
   subcopy:
-    "Plan your interstate move with a licensed moving broker that helps match your route, inventory, and service needs with authorized motor carriers.",
+    "Let's make your move easy. See why Vantage Movers is the premier choice in state to state moving services.",
   stats: [
     {
       icon: "users",

@@ -2,9 +2,9 @@ import type { Service } from "@/types";
 import { SITE_IMAGES } from "@/content/images";
 
 export const servicesIntro = {
-  eyebrow: "What we do",
-  title: "Long Distance Moving, Coordinated",
-  body: "From quote requests to carrier coordination, we help customers plan interstate moves with practical support and clear next steps.",
+  eyebrow: "",
+  title: "",
+  body: "",
 };
 
 export const services: Service[] = [
@@ -12,28 +12,28 @@ export const services: Service[] = [
     scene: "longdist",
     icon: "box",
     title: "Long Distance Moves",
-    body: "Planning a move across the country or to another state? Request a customized estimate and coordination support for your interstate relocation.",
+    body: "With our nationwide footprint we have the moving experts and coordinators ready to help you with your long distance moving journey.",
     image: SITE_IMAGES.longDistanceMoves,
   },
   {
     scene: "storage",
     icon: "box",
-    title: "Packing & Storage",
-    body: "Ask about packing and storage options that can be arranged through authorized service providers for your route and move size.",
+    title: "Packing and Storage",
+    body: "Get the full Vantage experience. With professional packing and storage services. Your moving team ensures your belongings stay safe during and after moving.",
     image: SITE_IMAGES.packingStorage,
   },
   {
     scene: "office",
     icon: "office",
     title: "Office Moves",
-    body: "Relocating an office? We can help gather move details and coordinate available carrier options for business relocations.",
+    body: "From large to small we'll help coordinate and provide the professional movers you need for a smooth office relocation.",
     image: SITE_IMAGES.officeMoves,
   },
   {
     scene: "military",
     icon: "shield",
     title: "Military Moves",
-    body: "Service members and military families can request support comparing long distance moving options and coordinating the details of their relocation.",
+    body: "Vantage Movers is trusted by thousands of military families. Contact us today to see how we can help you with our military family moving services.",
     image: SITE_IMAGES.militaryMoves,
   },
 ];
