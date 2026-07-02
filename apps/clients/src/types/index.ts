@@ -81,6 +81,8 @@ export interface HeroContent {
   ratingCount: string;
   headline: string[];
   subcopy: string;
+  /** Short label above the hero stat cards. */
+  statsHeading?: string;
   stats: StatItem[];
   /** "split" | "centered" - the locked-in layout variant from the prototype. */
   variant: "split" | "centered";

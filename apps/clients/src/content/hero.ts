@@ -9,9 +9,10 @@ export const hero: HeroContent = {
   imagePositionLg: "center 30%",
   ratingScore: "4.8/5.0",
   ratingCount: "from 1000+ reviews",
-  headline: ["Affordable Stress Free", "Long Distance Moving Services"],
+  headline: ["Easy Moves", "Better Prices"],
   subcopy:
-    "Let's make your move easy. See why Vantage Movers is the premier choice in state to state moving services.",
+    "Vantage Movers offers cost-effective long-distance moving services for Residential, Corporate, and Military Relocations. Our experienced team personalizes every quote based on YOUR needs for packing, loading, and transportation, guaranteeing a seamless and hassle-free move with our renowned carrier network.",
+  statsHeading: "Trusted by Homeowners Nationwide",
   stats: [
     {
       icon: "users",

@@ -43,19 +43,23 @@ function HeroCopy({ centered }: { centered: boolean }) {
         <Stars size={18} /> <b className="hero__rating-score">{hero.ratingScore}</b>{" "}
         <span className="hero__rating-count">{hero.ratingCount}</span>
       </span>
-      <h1>
-        {hero.headline.map((line, i) => (
-          <span key={line}>
-            {i > 0 && <br />}
-            {line}
-          </span>
-        ))}
+      <h1 className="hero__headline">
+        <span className="hero__headline-part">{hero.headline[0]}</span>
+        <span className="hero__headline-sep" aria-hidden="true">
+          .{" "}
+        </span>
+        <span className="hero__headline-part">{hero.headline[1]}</span>
       </h1>
       <p className="hero__sub">{hero.subcopy}</p>
-      <div className={cn("hero__stats", centered && "is-center")}>
-        {hero.stats.map((stat) => (
-          <StatCard key={stat.small} stat={stat} />
-        ))}
+      <div className={cn("hero__trust", centered && "is-center")}>
+        {hero.statsHeading ? (
+          <p className="hero__stats-heading">{hero.statsHeading}</p>
+        ) : null}
+        <div className={cn("hero__stats", centered && "is-center")}>
+          {hero.stats.map((stat) => (
+            <StatCard key={stat.small} stat={stat} />
+          ))}
+        </div>
       </div>
     </div>
   );
