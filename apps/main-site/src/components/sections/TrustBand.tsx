@@ -1,5 +1,4 @@
 import { Shield } from "lucide-react";
-import { business } from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { Stars } from "@/components/ui/Stars";
 
@@ -10,17 +9,13 @@ export function TrustBand() {
         <div className="flex flex-wrap items-center gap-4">
           <Stars />
           <div className="text-[14.5px] text-[#64748B]">
-            <b className="font-display text-brand-blue">Customer feedback nationwide</b> ·
-            licensed broker-coordinated service
+            <b className="font-display text-brand-blue">Customer feedback nationwide</b>
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-3.5">
           <span className="inline-flex items-center gap-2 rounded-full bg-brand-yellow-soft px-4 py-2 font-display text-[13px] font-bold text-brand-blue">
             <Shield className="size-[15px]" strokeWidth={2} aria-hidden />
-            Bonded &amp; Insured Broker
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full border border-cream-border bg-cream px-4 py-2 font-display text-[13px] font-bold text-brand-blue">
-            FMCSA Licensed · DOT {business.dot}
+            FMCSA Licensed &amp; Bonded
           </span>
         </div>
       </Container>

@@ -3,7 +3,7 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, MapPin } from "lucide-react";
 import usa from "@svg-maps/usa";
-import { coverageCopy, stateNames } from "@/lib/content";
+import { coverageCopy, coverageSection, stateNames } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { radiusClasses } from "@/lib/playground/layout-playground";
@@ -151,7 +151,7 @@ export function CoverageMap() {
   return (
     <div className="grid items-center gap-14 max-md:grid-cols-1 md:grid-cols-[.95fr_1.05fr]">
       <div>
-        <Eyebrow className={heroHeadingFont.className}>Nationwide Coverage</Eyebrow>
+        <Eyebrow className={heroHeadingFont.className}>{coverageSection.eyebrow}</Eyebrow>
         <h2
           className={`mb-4 text-balance leading-[1.08] font-extrabold -tracking-[.02em] ${heroHeadingFont.className}`}
           style={{
@@ -159,15 +159,13 @@ export function CoverageMap() {
             color: COVERAGE_COLORS.headingColor,
           }}
         >
-          Interstate Moving Coordination By State
+          {coverageSection.title}
         </h2>
         <p
           className={`mb-7 leading-[1.6] ${heroBodyFont.className}`}
           style={{ fontSize: `${INTRO_FONT_SIZE}px`, color: COVERAGE_COLORS.bodyColor }}
         >
-          Vantage helps customers coordinate long-distance and interstate relocations across the
-          United States. Select your state to learn how we arrange transportation through authorized
-          motor carriers.
+          {coverageSection.body}
         </p>
         <div
           key={active}

@@ -1,5 +1,4 @@
 import type { Testimonial } from "@vantage/api-client";
-import { ComplianceBar } from "@/components/layout/ComplianceBar";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -22,7 +21,6 @@ interface HomePageProps {
 export function HomePage({ testimonials = [] }: HomePageProps) {
   return (
     <>
-      <ComplianceBar />
       <Header />
       <main>
         <HeroSection />
@@ -37,7 +35,9 @@ export function HomePage({ testimonials = [] }: HomePageProps) {
         <TestimonialsSection items={testimonials} />
         <FaqSection />
         <GetInTouchSection
-          featuredTestimonial={testimonials.length > 0 ? testimonials[0] : null}
+          featuredTestimonial={
+            testimonials.find((item) => item.published) ?? null
+          }
         />
         <FinalCTASection />
       </main>

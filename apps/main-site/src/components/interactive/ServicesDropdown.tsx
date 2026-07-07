@@ -1,10 +1,12 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { services } from "@/lib/content";
 import { SERVICE_ICONS } from "@/lib/icons";
+
+const CLOSE_DELAY_MS = 200;
 
 interface ServicesDropdownProps {
   triggerClassName?: string;
@@ -16,6 +18,26 @@ export function ServicesDropdown({
   triggerStyle,
 }: ServicesDropdownProps) {
   const [open, setOpen] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearCloseTimer = useCallback(() => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  }, []);
+
+  const openMenu = useCallback(() => {
+    clearCloseTimer();
+    setOpen(true);
+  }, [clearCloseTimer]);
+
+  const scheduleClose = useCallback(() => {
+    clearCloseTimer();
+    closeTimerRef.current = setTimeout(() => setOpen(false), CLOSE_DELAY_MS);
+  }, [clearCloseTimer]);
+
+  useEffect(() => () => clearCloseTimer(), [clearCloseTimer]);
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === "Escape") setOpen(false);
@@ -24,8 +46,8 @@ export function ServicesDropdown({
   return (
     <div
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={openMenu}
+      onMouseLeave={scheduleClose}
       onKeyDown={handleKeyDown}
     >
       <button
@@ -34,9 +56,11 @@ export function ServicesDropdown({
         style={triggerStyle}
         aria-expanded={open}
         aria-haspopup="true"
-        onFocus={() => setOpen(true)}
+        onFocus={openMenu}
         onBlur={(e) => {
-          if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpen(false);
+          if (!e.currentTarget.parentElement?.contains(e.relatedTarget as Node)) {
+            scheduleClose();
+          }
         }}
       >
         Services
@@ -44,22 +68,29 @@ export function ServicesDropdown({
       </button>
 
       {open && (
-        <div className="absolute top-[calc(100%+6px)] left-0 grid w-[520px] max-w-[calc(100vw-56px)] grid-cols-2 gap-1 rounded-card border border-cream-border bg-white p-3.5 shadow-menu">
-          {services.map((s) => {
-            const Icon = SERVICE_ICONS[s.icon];
-            return (
-              <Link
-                key={s.title}
-                href="/#services"
-                className="flex items-center gap-[11px] rounded-md2 px-3 py-2.5 text-[14.5px] font-semibold text-brand-blue no-underline transition hover:bg-cream"
-              >
-                <span className="grid size-[30px] flex-none place-items-center rounded-chip bg-brand-yellow-soft text-brand-blue-bright">
-                  <Icon size={17} aria-hidden />
-                </span>
-                {s.title}
-              </Link>
-            );
-          })}
+        <div
+          className="absolute top-full left-0 z-50 pt-2"
+          onMouseEnter={openMenu}
+          onMouseLeave={scheduleClose}
+        >
+          <div className="grid w-[520px] max-w-[calc(100vw-56px)] grid-cols-2 gap-1 rounded-card border border-cream-border bg-white p-3.5 shadow-menu">
+            {services.map((s) => {
+              const Icon = SERVICE_ICONS[s.icon];
+              return (
+                <Link
+                  key={s.title}
+                  href={`/#${s.anchorId}`}
+                  className="flex items-center gap-[11px] rounded-md2 px-3 py-2.5 text-[14.5px] font-semibold text-brand-blue no-underline transition hover:bg-cream"
+                  onClick={() => setOpen(false)}
+                >
+                  <span className="grid size-[30px] flex-none place-items-center rounded-chip bg-brand-yellow-soft text-brand-blue-bright">
+                    <Icon size={17} aria-hidden />
+                  </span>
+                  {s.title}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>

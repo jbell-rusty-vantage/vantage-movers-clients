@@ -13,11 +13,6 @@ export function FaqSection() {
     <section id="faq" className="bg-cream py-24">
       <Container className="grid items-start gap-14 lg:grid-cols-[.8fr_1.2fr]">
         <div className="lg:sticky lg:top-[120px]">
-          <p
-            className={`mb-3 text-[12px] font-bold tracking-[.12em] uppercase text-brand-blue-bright ${heroHeadingFont.className}`}
-          >
-            FAQs
-          </p>
           <h2
             className={`mb-[18px] text-balance leading-[1.08] font-extrabold -tracking-[.02em] text-brand-blue ${heroHeadingFont.className}`}
             style={{ fontSize: `clamp(30px, 3.4vw, ${HEADING_FONT_SIZE}px)` }}
@@ -27,7 +22,8 @@ export function FaqSection() {
           <p
             className={`mb-[26px] text-base leading-[1.6] text-[#64748B] ${heroBodyFont.className}`}
           >
-            Everything you need to know about working with a licensed moving broker.
+            Find answers to common questions and what to expect throughout the relocation
+            process.
           </p>
           <a
             href={business.phoneHref}

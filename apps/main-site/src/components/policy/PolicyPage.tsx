@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Clock, Info } from "lucide-react";
 import type { LegalBlock, LegalDoc } from "@/content/legal/docs";
 import { business } from "@/lib/content";
-import { ComplianceBar } from "@/components/layout/ComplianceBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
@@ -63,7 +62,6 @@ function ActionLink({
 export function PolicyPage({ doc }: { doc: LegalDoc }) {
   return (
     <>
-      <ComplianceBar />
       <Header />
       <main className="policy-copy bg-cream">
         <section className="bg-brand-blue py-16 text-white">

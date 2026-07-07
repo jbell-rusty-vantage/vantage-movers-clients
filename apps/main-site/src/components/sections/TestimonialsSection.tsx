@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { Testimonial } from "@vantage/api-client";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { testimonials as fallbackTestimonials } from "@/lib/content";
 import { heroHeadingFont, testimonialsBodyFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -16,6 +15,8 @@ import {
 
 const MAX_TEXT = 320;
 const CAROUSEL_GAP = 24;
+/** Smallest a card is allowed to get before we drop to fewer visible cards. */
+const MIN_CARD_WIDTH = 300;
 
 /** Playground args promoted to production — see TestimonialsSection.stories.tsx Playground. */
 const CAROUSEL_VISIBLE_COUNT = 3;
@@ -26,7 +27,7 @@ const CARD_SIZE = "default" as const;
 const CARD_RADIUS = "card" as const;
 const CARD_PADDING = 28;
 const STAR_SIZE = 14;
-const STAR_STYLE: StarStyleId = "outline";
+const STAR_STYLE: StarStyleId = "filled";
 const STAR_COLORS = resolveStarColors("amber");
 const SHOW_STARS = true;
 
@@ -57,16 +58,6 @@ function toCardData(items: Testimonial[]): CardData[] {
     name: t.reviewer_name || "Verified customer",
     sublabel: t.source ? `Verified review via ${t.source}` : "Verified review",
     rating: t.rating || 5,
-  }));
-}
-
-function fallbackCards(): CardData[] {
-  return fallbackTestimonials.map((t) => ({
-    key: t.name,
-    quote: t.quote,
-    name: t.name,
-    sublabel: t.route,
-    rating: 5,
   }));
 }
 
@@ -175,20 +166,15 @@ function TestimonialCard({
 
 function TestimonialsCarousel({
   trackCards,
-  visibleCount,
+  maxVisibleCount,
 }: {
   trackCards: CardData[];
-  visibleCount: number;
+  maxVisibleCount: number;
 }) {
   const [carouselIndex, setCarouselIndex] = useState(0);
-  const [prevVisibleCount, setPrevVisibleCount] = useState(visibleCount);
   const viewportRef = useRef<HTMLDivElement>(null);
   const [cardWidth, setCardWidth] = useState(0);
-
-  if (visibleCount !== prevVisibleCount) {
-    setPrevVisibleCount(visibleCount);
-    setCarouselIndex(0);
-  }
+  const [visibleCount, setVisibleCount] = useState(maxVisibleCount);
 
   useEffect(() => {
     const viewport = viewportRef.current;
@@ -197,7 +183,11 @@ function TestimonialsCarousel({
     const updateWidth = () => {
       const viewportWidth = viewport.clientWidth;
       if (viewportWidth <= 0) return;
-      const width = (viewportWidth - (visibleCount - 1) * CAROUSEL_GAP) / visibleCount;
+      // How many cards fit while keeping each at least MIN_CARD_WIDTH wide.
+      const fits = Math.floor((viewportWidth + CAROUSEL_GAP) / (MIN_CARD_WIDTH + CAROUSEL_GAP));
+      const nextVisible = Math.max(1, Math.min(maxVisibleCount, fits));
+      const width = (viewportWidth - (nextVisible - 1) * CAROUSEL_GAP) / nextVisible;
+      setVisibleCount(nextVisible);
       setCardWidth(width);
     };
 
@@ -205,10 +195,14 @@ function TestimonialsCarousel({
     const observer = new ResizeObserver(updateWidth);
     observer.observe(viewport);
     return () => observer.disconnect();
-  }, [visibleCount]);
+  }, [maxVisibleCount]);
 
   const slideStep = cardWidth > 0 ? cardWidth + CAROUSEL_GAP : 0;
   const maxStartIndex = Math.max(0, trackCards.length - visibleCount);
+
+  if (carouselIndex > maxStartIndex) {
+    setCarouselIndex(maxStartIndex);
+  }
 
   const goNext = () =>
     setCarouselIndex((index) => (index >= maxStartIndex ? 0 : index + 1));
@@ -268,8 +262,12 @@ interface TestimonialsSectionProps {
 }
 
 export function TestimonialsSection({ items = [] }: TestimonialsSectionProps) {
-  const sourceCards = items.length > 0 ? toCardData(items) : fallbackCards();
-  const carouselTrackCards = fillMarquee(sourceCards);
+  const publishedItems = items.filter((item) => item.published);
+  if (publishedItems.length === 0) {
+    return null;
+  }
+
+  const carouselTrackCards = fillMarquee(toCardData(publishedItems));
 
   return (
     <section className="relative overflow-hidden bg-brand-blue py-24">
@@ -286,20 +284,23 @@ export function TestimonialsSection({ items = [] }: TestimonialsSectionProps) {
             className={`mb-3 text-balance leading-[1.08] font-extrabold -tracking-[.02em] text-white ${heroHeadingFont.className}`}
             style={{ fontSize: "clamp(30px, 3.4vw, 44px)" }}
           >
-            Hear From Customers We&apos;ve Helped Coordinate
+            Hear From Customers
+            <br />
+            We&apos;ve Helped Move
           </h2>
           <p
             className={`text-on-dark-500 ${testimonialsBodyFont.className}`}
             style={{ fontSize: "15px" }}
           >
-            Feedback from long-distance relocations coordinated through Vantage.
+            Real feedback from customers who trusted Vantage to help coordinate their
+            long-distance relocations.
           </p>
         </div>
       </Container>
 
       <TestimonialsCarousel
         trackCards={carouselTrackCards}
-        visibleCount={CAROUSEL_VISIBLE_COUNT}
+        maxVisibleCount={CAROUSEL_VISIBLE_COUNT}
       />
     </section>
   );

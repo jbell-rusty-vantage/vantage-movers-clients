@@ -85,8 +85,9 @@ function authHeaders(): HeadersInit {
 }
 
 /**
- * Fetch published testimonials. Returns an empty array (never throws) so the
- * caller can gracefully fall back to static reviews if the API is unavailable.
+ * Fetch published testimonials. Returns an empty array (never throws) when the
+ * API is unavailable; callers should hide the testimonials UI rather than show
+ * placeholder copy.
  */
 export async function getTestimonials(
   options: { limit?: number; featured?: boolean } = {},

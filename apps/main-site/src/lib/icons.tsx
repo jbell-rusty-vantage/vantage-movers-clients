@@ -2,6 +2,7 @@ import type { ComponentType } from "react";
 import {
   Briefcase,
   Building2,
+  Car,
   DollarSign,
   FileText,
   Globe,
@@ -23,6 +24,7 @@ export const SERVICE_ICONS: Record<
   IconKey,
   ComponentType<{ size?: number; className?: string; strokeWidth?: number }>
 > = {
+  car: Car,
   truck: Truck,
   route: Route,
   home: Home,

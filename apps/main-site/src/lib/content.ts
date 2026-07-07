@@ -8,7 +8,7 @@ export const business = {
   phoneDisplay: "(888) 477-9232",
   phoneHref: "tel:8884779232",
   email: "support@vantagehomemovers.com",
-  hours: "Mon–Sun · 8am–11pm",
+  hours: "Mon-Sun . 8am-12am",
   dot: "4078939",
   mc: "1551322",
   address: ["1880 N Congress Ave Ste 401A", "Boynton Beach, FL 33426"],
@@ -25,9 +25,9 @@ export const headerChrome = {
 } as const;
 
 export const hero = {
-  headline: "Long-Distance Moving, Coordinated the Vantage Way",
+  headline: "Your Trusted Moving Partner",
   paragraph:
-    "Vantage Movers helps customers coordinate long-distance relocations through licensed and insured motor carriers. From quote review to carrier coordination, we make moving clearer, more organized, and easier to manage.",
+    "Vantage Movers provides affordable long-distance moving solutions for residential, commercial, and military relocations. Our team connects you with trusted full-service moving options that can include packing, loading/unloading, transportation, storage, and more, making your move easier from start to finish.",
   supportingLine:
     "Tell us where you are moving, when you are moving, and what you need moved. We will help coordinate a quote based on your relocation details.",
   primaryCta: "Request A Free Quote",
@@ -64,6 +64,7 @@ export interface TrustLogo {
   alt: string;
   width: number;
   height: number;
+  imgClass?: "getmovers";
 }
 
 export const trustStrip = {
@@ -88,10 +89,18 @@ export const trustStrip = {
       width: 99,
       height: 30,
     },
+    {
+      src: "/partnerlogos/getmovers.svg",
+      alt: "Get Movers",
+      width: 456,
+      height: 44,
+      imgClass: "getmovers",
+    },
   ] satisfies TrustLogo[],
 } as const;
 
 export type IconKey =
+  | "car"
   | "truck"
   | "route"
   | "home"
@@ -106,40 +115,46 @@ export interface Service {
   title: string;
   icon: IconKey;
   desc: string;
+  /** Hash target for nav links — must match an element id on the homepage. */
+  anchorId: string;
 }
 
 export const services: Service[] = [
   {
-    title: "Interstate Moving",
+    title: "Long Distance Moving",
     icon: "route",
-    desc: "Moving from one state to another involves inventory, route distance, carrier availability, pickup windows, and delivery timing. Vantage helps organize those details and connect customers with licensed motor carriers authorized for interstate household goods transportation.",
+    anchorId: "service-long-distance-moving",
+    desc: "Moving from state to state requires coordination around your inventory, travel distance, carrier availability, pickup window, and delivery schedule. Get a customized quote for an easy long distance move.",
   },
   {
-    title: "Residential Moving",
-    icon: "home",
-    desc: "Vantage helps homeowners, renters, and families coordinate long-distance residential moving services through authorized carriers — including transportation planning, packing options, inventory review, and move timing.",
-  },
-
-  {
-    title: "Commercial / Office Moving",
-    icon: "office",
-    desc: "Business moves require planning around equipment, furniture, office contents, downtime, and access at both locations. Vantage coordinates commercial relocation services by collecting move details and arranging transportation through authorized carriers.",
+    title: "Packing Services",
+    icon: "package-open",
+    anchorId: "service-packing-services",
+    desc: "Packing is one of the most important parts of a successful move, and Vantage Movers helps connect customers with professional packing services to help keep your belongings secure while giving you more time to focus on the rest of your move.",
   },
   {
-    title: "Military Moving",
-    icon: "shield",
-    desc: "Military families often move on strict timelines. Vantage helps military customers request moving estimates and coordinate services through authorized carriers by gathering move date, origin, destination, inventory, and packing needs.",
+    title: "Storage Options",
+    icon: "box",
+    anchorId: "service-storage-options",
+    desc: "Flexible storage solutions for residential and business needs. With secure warehousing, climate-controlled storage, and organized inventory support, your belongings can stay protected until you're ready for delivery.",
+  },
+  {
+    title: "Auto Transport",
+    icon: "car",
+    anchorId: "service-auto-transport",
+    desc: "Whether you're shipping one vehicle or multiple vehicles, our team helps coordinate safe, affordable, and customized transportation solutions designed to fit your schedule, route, and specific needs. Open and enclosed options available.",
   },
   {
     title: "Senior Moving",
     icon: "users",
+    anchorId: "service-senior-moving",
     desc: "Senior moves often require extra care and planning. Vantage helps seniors and their families coordinate long-distance relocation services by reviewing move details, timeline, destination, and any requested packing or handling needs.",
   },
-
   {
-    title: "Moving Coordination",
-    icon: "headphones",
-    desc: "A moving coordinator collects the details needed to arrange a long-distance move — origin, destination, move size, preferred dates, service needs, and contact information — then helps coordinate a quote and carrier assignment.",
+    title: "Commercial / Office Moving",
+    icon: "office",
+    anchorId: "service-commercial-office-moving",
+    desc: "Whether you're relocating a small office or a larger workspace, our goal is to help reduce disruption, keep your move organized, and get your business settled into its new location as efficiently as possible.",
   },
 ];
 
@@ -191,37 +206,6 @@ export const faqs: Faq[] = [
   },
 ];
 
-export interface Testimonial {
-  initials: string;
-  quote: string;
-  name: string;
-  route: string;
-}
-
-export const testimonials: Testimonial[] = [
-  {
-    initials: "MC",
-    quote:
-      "The coordinator explained everything up front and helped us understand what to expect from the assigned carrier on our cross-country move. The process felt organized from start to finish.",
-    name: "Marcus C.",
-    route: "FL → TX · Long Distance",
-  },
-  {
-    initials: "SR",
-    quote:
-      "As a military family, timing mattered. Vantage helped coordinate our PCS move and kept us updated throughout the planning process.",
-    name: "Sgt. Sarah R.",
-    route: "VA → CA · Military Move",
-  },
-  {
-    initials: "JL",
-    quote:
-      "We relocated our small office across three states. Vantage coordinated the estimate and carrier assignment, and communication stayed clear throughout.",
-    name: "Jenna L.",
-    route: "IL → GA · Office Move",
-  },
-];
-
 export const howItWorksSection = {
   tagline: "No hidden fees. No obligations. Just honest pricing.",
   eyebrow: "How It Works",
@@ -233,30 +217,35 @@ export const howItWorks = [
   {
     n: 1,
     title: "Request a Quote",
-    desc: "Call us or fill out the form. We'll ask a few questions about your move and provide a fast, free quote with no obligations.",
+    desc: "Call us or fill out the form to get started. We'll go through a thorough inventory and review the services needed for your move so we can provide the most accurate estimate possible.",
   },
   {
     n: 2,
-    title: "Book Your Date",
-    desc: "Pick a day that works for you — we're available 7 days a week. We'll confirm everything and lock in your time slot.",
+    title: "Set Your Target Move Date",
+    desc: "Choose your preferred pickup date or window. Your target date can remain flexible, and changes can be made with at least 7 days' notice without penalties.",
   },
   {
     n: 3,
-    title: "We Handle the Rest",
-    desc: "Our experienced crew shows up on time with all the equipment and supplies. We pack, load, transport, and unload with care.",
+    title: "Prepare for Moving Day",
+    desc: "Before pickup, review your item counts, label your boxes, separate important documents or valuables, and organize your travel plans so everything is ready when the movers arrive.",
   },
   {
     n: 4,
-    title: "Settle Into Your New Space",
-    desc: "We place everything where you want it and make sure you're completely satisfied before we leave. Moving made easy.",
+    title: "We Coordinate the Rest",
+    desc: "We handle the coordination with the assigned carrier and professional moving team to help ensure a smooth pickup, safe transport, and seamless delivery to your new location.",
   },
 ] as const;
 
 export const whyVantage = [
   {
-    icon: "shield" as const,
-    title: "Licensed Moving Broker",
-    desc: "FMCSA-licensed (DOT 4078939 · MC 1551322) and bonded. Vantage coordinates and arranges transportation through authorized motor carriers — we do not transport household goods directly.",
+    icon: "headphones" as const,
+    title: "Free Consultation & Quote",
+    desc: "Speak with a moving specialist to review your inventory, services, pickup details, and delivery needs. We'll build an accurate moving estimate and answer your questions with no obligation.",
+  },
+  {
+    icon: "users" as const,
+    title: "Highly Rated",
+    desc: "We are one of the highest-rated moving brokerages for household goods and auto transport services.",
   },
   {
     icon: "dollar-sign" as const,
@@ -264,19 +253,14 @@ export const whyVantage = [
     desc: "We help you understand what shapes your estimate — inventory, distance, services, and access conditions — so you can review anticipated charges before committing.",
   },
   {
-    icon: "globe" as const,
-    title: "Nationwide Coordination",
-    desc: "Vantage helps coordinate long-distance and interstate relocations across nearly every U.S. state by arranging transportation through licensed motor carriers.",
+    icon: "truck" as const,
+    title: "Auto Transport",
+    desc: "Whether you need to ship a car, SUV, truck, or specialty vehicle, we help arrange transport options designed to fit your schedule, route, and relocation needs.",
   },
   {
-    icon: "headphones" as const,
-    title: "Moving Coordination Support",
-    desc: "Real coordinators who collect move details, answer questions, and help keep your relocation organized from the first quote request through carrier assignment.",
-  },
-  {
-    icon: "briefcase" as const,
-    title: "Flexible Service Options",
-    desc: "Residential, military, corporate, and commercial relocations — with packing, loading, and related services available depending on the assigned carrier and move details.",
+    icon: "package" as const,
+    title: "Packing & Storage Services",
+    desc: "Full or partial packing services are available, along with storage options in climate-controlled warehouses to help keep your belongings protected and your move organized.",
   },
 ];
 
@@ -341,17 +325,29 @@ export const stateNames: Record<string, string> = {
 };
 
 export const coverageCopy = (stateName: string) =>
-  `Vantage helps coordinate long-distance and interstate moves to and from ${stateName} by reviewing your move details and arranging transportation through licensed, FMCSA-authorized motor carriers.`;
+  `Vantage Movers provides long distance moving services to and from ${stateName}, helping customers relocate across state lines with reliable coordination and nationwide coverage. From pickup planning to carrier assignment and delivery support, we help make your move easier from start to finish.`;
+
+export const coverageSection = {
+  eyebrow: "Nationwide Coverage",
+  title: "Serving Moves Across the Entire U.S.",
+  body: "With moving services available across all 50 states, we help make long distance relocations simple, affordable, and stress-free. Whether you're moving one state over or across the country, our nationwide carrier network allows us to coordinate reliable pickup, transportation, and delivery wherever life takes you.",
+} as const;
+
+export const servicesSection = {
+  eyebrow: "What We Do",
+  title: "Helping You Move With Confidence",
+  body: "At Vantage, we make long-distance moving easier with nationwide coverage, and a customer-focused team ready to help from start to finish. Backed by hundreds of 5/5 Star Reviews and moving solutions to help you plan your move with confidence and peace of mind.",
+} as const;
 
 export const featureRows = [
   {
     eyebrow: "Long-Distance Moving",
     title: "Long-Distance Moving, Coordinated Step by Step",
-    body: "Long-distance moves require planning, timing, and coordination across multiple stages. Vantage Movers helps customers arrange interstate moving services by reviewing the pickup location, delivery location, move size, preferred dates, and any additional service needs. Once those details are collected, Vantage works to coordinate transportation through authorized motor carriers. This helps customers get a clearer view of the moving process before committing to a route, estimate, or schedule.",
+    body: "Long-distance moves require careful planning, timing, and coordination from start to finish. Vantage Movers helps make the process easier by reviewing your pickup location, delivery location, move size, preferred dates, and any additional service needs before coordinating transportation with professional, licensed and insured carriers. From planning your estimate to preparing for pickup and delivery, our team is here to help you move with confidence.",
     checklist: [
-      "Pickup, delivery, and move-size details reviewed up front",
-      "Transportation arranged through authorized motor carriers",
-      "Moving coordination support from quote request through carrier assignment",
+      "Accurate & Detailed Moving Estimates",
+      "Reputable Network of Licensed and Insured Motor Carriers",
+      "Support from Initial Quote to Final Delivery",
     ],
     image: "longDistanceMoves" as const,
     imageAlt: "Long-distance moving truck on the highway",
@@ -360,12 +356,12 @@ export const featureRows = [
   },
   {
     eyebrow: "Military Moving",
-    title: "Military Moving Coordination",
-    body: "Military families often move on strict timelines and may need additional support coordinating long-distance transportation. Vantage Movers helps military customers and their families request moving estimates and coordinate services through authorized carriers. By gathering the move date, origin, destination, inventory, and packing needs, Vantage helps simplify the planning process for customers preparing for a duty-related or personal relocation.",
+    title: "Veteran & Military Moves",
+    body: "We understand how important a smooth, reliable moving experience is for military families. We help coordinate PCS relocations, veteran relocations, storage options, and long-distance moving services designed to make each transition easier. We are proud to support military members and families with dependable moving solutions tailored to their needs.",
     checklist: [
-      "Estimate requests coordinated for PCS and personal relocations",
-      "Move details reviewed around your timeline and orders",
-      "Packing options may be available through the assigned carrier",
+      "Weight Tickets Provided When Requested",
+      "Nationwide Long-Distance Coverage",
+      "Moves Organized Around Your Timeline And Orders",
     ],
     image: "militaryMoves" as const,
     imageAlt: "Military family preparing for a coordinated move",
@@ -376,8 +372,8 @@ export const featureRows = [
 
 export const aboutSection = {
   eyebrow: "Moving Coordination",
-  title: "Moving Coordination Support From Start to Finish",
-  body: "Long-distance moving involves many details, and Vantage Movers helps customers organize those details before the move is assigned to a carrier. A moving coordinator can help review the origin and destination, move size, requested services, preferred dates, and any special circumstances that may affect the estimate. While the assigned motor carrier is responsible for transporting the household goods, Vantage helps support the coordination process so customers better understand what to expect.",
+  title: "Trusted Moving Support From Start to Finish",
+  body: "At Vantage Movers, we help make the moving process easier by guiding you through every step of your relocation. From your first consultation and detailed inventory review to carrier coordination, pickup planning, transportation, and delivery support, our team is here to help keep your move organized from beginning to end. We focus on clear communication, accurate move details, and reliable coordination so you know what to expect before moving day arrives. From moving across state lines, to packing services, storage options, to specialty items that need extra care, Vantage helps connect you with the right moving solutions for your needs.",
 } as const;
 
 export const quoteSection = {
@@ -389,6 +385,7 @@ export const quoteSection = {
   imageAlt: "Vantage moving team with a loaded interstate moving truck",
   formTitle: "Get My Free Quote",
   formSubtitle: "No obligation · Most quotes in one call",
+  footerTrustItems: ["Free Estimate", "Binding Estimates", "No Hidden Fees"],
   rating: {
     value: 4.8,
     reviewCount: 530,
@@ -406,7 +403,7 @@ export const quoteSection = {
 export const finalCta = {
   badge: "Free · No Obligation",
   title: "Planning a Long-Distance Move?",
-  body: "A successful long-distance move starts with accurate information and clear coordination. Vantage Movers helps customers request estimates for interstate relocations by reviewing move details such as inventory, distance, dates, packing needs, and access conditions. Once your details are collected, Vantage can help arrange transportation through an authorized motor carrier and provide support during the planning process.",
+  body: "Every successful long-distance move begins with accurate details and organized coordination. Vantage Movers helps customers prepare for interstate relocations by reviewing important move information such as inventory, distance, preferred dates, packing needs, specialty items, and access conditions. Once your move details are confirmed, Vantage can help coordinate transportation through a reputable licensed motor carrier within our network and provide support throughout the planning process.",
   primaryCta: "Request Your Moving Quote",
   secondaryCta: "Speak With a Coordinator",
 } as const;
@@ -419,12 +416,18 @@ export const footerChrome = {
 
 export const whyVantageSection = {
   eyebrow: "Why Vantage",
-  heading: "A Licensed Moving Broker Built Around Clear Coordination",
+  heading: "A Moving Experience Built Around You",
   ctaTitle: "Ready to review your move details?",
   ctaBody: "Request a personalized moving estimate in under a minute.",
   ctaLabel: "Request a Free Moving Quote",
   /** Playground card icon overrides — see WhyVantageSection.stories.tsx Playground */
-  cardIcons: ["shield", "users", "globe", "headphones", "briefcase"] as const,
+  cardIcons: [
+    "headphones",
+    "users",
+    "dollar-sign",
+    "truck",
+    "package",
+  ] as const,
 } as const;
 
 export const footerServiceLinks = [

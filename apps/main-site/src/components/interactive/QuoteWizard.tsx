@@ -305,7 +305,7 @@ export function QuoteWizard({
   const resolvedFormId = formId ?? (isPanel ? undefined : "quote");
   const fieldIdPrefix = resolvedFormId ?? "quote";
   const panelPadding = isPanel ? "px-6 pt-0 pb-6" : "px-[30px] pt-[30px] pb-[26px]";
-  const headingFontClass = isPanel ? heroHeadingFont.className : "font-display";
+  const headingFontClass = heroHeadingFont.className;
   const bodyFontClass = isPanel ? heroBodyFont.className : "";
 
   return (
@@ -327,7 +327,9 @@ export function QuoteWizard({
         </div>
       ) : (
         <div className="mb-2 text-center">
-          <h2 className="mb-1.5 font-display text-[25px] font-extrabold -tracking-[.02em] text-brand-blue">
+          <h2
+            className={`mb-1.5 text-[25px] font-extrabold -tracking-[.02em] text-brand-blue ${headingFontClass}`}
+          >
             Request Your Moving Quote
           </h2>
           <p className="m-0 text-[14.5px] text-[#64748B]">
@@ -530,12 +532,21 @@ export function QuoteWizard({
         </>
       )}
 
-      <p className="mt-4 flex items-center justify-center gap-[7px] text-center text-[12.5px] text-[#94a3b8]">
-        <Check className="text-brand-blue-bright" size={13} strokeWidth={2.5} aria-hidden />
-        {isPanel
-          ? "We never sell your information."
-          : "Free estimate · No obligation · Broker-coordinated quote"}
-      </p>
+      {isPanel ? (
+        <p className="mt-4 flex items-center justify-center gap-[7px] text-center text-[12.5px] text-[#94a3b8]">
+          <Check className="text-brand-blue-bright" size={13} strokeWidth={2.5} aria-hidden />
+          We never sell your information.
+        </p>
+      ) : (
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-center text-[12.5px] text-[#94a3b8]">
+          {quoteSection.footerTrustItems.map((item) => (
+            <span key={item} className="inline-flex items-center gap-[5px]">
+              <Check className="text-brand-blue-bright" size={13} strokeWidth={2.5} aria-hidden />
+              {item}
+            </span>
+          ))}
+        </div>
+      )}
     </form>
   );
 }

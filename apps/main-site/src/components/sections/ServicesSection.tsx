@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { ArrowRight, Check } from "lucide-react";
-import { featureRows, services } from "@/lib/content";
+import { featureRows, services, servicesSection } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { resolveSiteImage } from "@/lib/images";
 import { SERVICE_ICONS } from "@/lib/icons";
@@ -56,20 +56,18 @@ export function ServicesSection() {
     <section id="services" className="bg-cream py-24">
       <Container>
         <div className="mx-auto mb-[52px] max-w-[680px] text-center">
-          <Eyebrow className="justify-center">What We Coordinate</Eyebrow>
+          <Eyebrow className="justify-center">{servicesSection.eyebrow}</Eyebrow>
           <h2
             className={`${accentClass} mb-4 text-balance leading-[1.08] font-extrabold -tracking-[.02em] text-brand-blue`}
             style={{ fontSize: `${SECTION_HEADING_FONT_SIZE}px` }}
           >
-            Long-Distance Moving Services, Arranged Through Authorized Carriers
+            {servicesSection.title}
           </h2>
           <p
             className={`${bodyClass} leading-[1.6] text-[#64748B]`}
             style={{ fontSize: `${SECTION_INTRO_FONT_SIZE}px` }}
           >
-            Vantage Movers is a licensed interstate household goods moving broker. We help customers
-            plan and coordinate relocations by reviewing move details and arranging transportation
-            through FMCSA-authorized motor carriers.
+            {servicesSection.body}
           </p>
         </div>
 
@@ -156,8 +154,9 @@ export function ServicesSection() {
             return (
               <a
                 key={s.title}
+                id={s.anchorId}
                 href="#quote"
-                className={`flex flex-col border border-cream-border-2 bg-white p-7 no-underline shadow-card transition duration-250 hover:-translate-y-1.5 hover:shadow-card-hover ${radiusClasses[CARD_RADIUS]}`}
+                className={`flex scroll-mt-28 flex-col border border-cream-border-2 bg-white p-7 no-underline shadow-card transition duration-250 hover:-translate-y-1.5 hover:shadow-card-hover ${radiusClasses[CARD_RADIUS]}`}
               >
                 <span
                   className={`mb-[18px] grid place-items-center bg-brand-yellow-soft text-brand-blue-bright ${radiusClasses[ICON_WRAPPER_RADIUS]}`}
