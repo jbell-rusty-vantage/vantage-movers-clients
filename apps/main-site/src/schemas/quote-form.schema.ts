@@ -58,6 +58,5 @@ export const STEP_FIELDS: Record<number, (keyof QuoteFormInput)[]> = {
 export interface QuoteResult {
   low: number;
   high: number;
-  miles: number;
   leadCaptured?: boolean;
 }

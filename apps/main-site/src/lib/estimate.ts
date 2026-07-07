@@ -13,8 +13,8 @@ export function estimate(data: QuoteFormValues): QuoteResult {
   const seed =
     Number(data.pickup) * 7 + Number(data.dest) * 13 + String(data.size).length * 5;
   const base = BASE_BY_SIZE[data.size] ?? 2000;
-  const miles = 380 + (seed % 9) * 110;
-  const low = Math.round((base + miles * 1.6) / 50) * 50;
+  const routeAdjustment = (seed % 9) * 175;
+  const low = Math.round((base + routeAdjustment) / 50) * 50;
   const high = Math.round((low * 1.34) / 50) * 50;
-  return { low, high, miles };
+  return { low, high };
 }

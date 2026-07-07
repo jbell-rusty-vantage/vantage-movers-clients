@@ -490,7 +490,7 @@ export function QuoteWizard({
             Request Received
           </h3>
           <p className="mb-3 text-[14.5px] leading-[1.55] text-[#64748B]">
-            {getValues("pickup")} → {getValues("dest")} · ~{result.miles} mi · {getValues("size")}
+            {getValues("pickup")} → {getValues("dest")} · {getValues("size")}
           </p>
           <p className="mb-[18px] text-[14.5px] leading-[1.55] text-[#64748B]">
             A Vantage moving coordinator will reach out shortly. To speak with someone now, call{" "}

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import {
   initializeBounceTracking,
   legalEventForHref,
+  trackSectionViewed,
   trackEvent,
   type AnalyticsProperties,
 } from "@/lib/analytics";
@@ -80,6 +81,31 @@ function propertiesForAnchor(anchor: HTMLAnchorElement): {
 
 export function SiteAnalytics() {
   useEffect(() => initializeBounceTracking(), []);
+
+  useEffect(() => {
+    if (!("IntersectionObserver" in window)) return;
+
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("main section"));
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+
+          const section = entry.target as HTMLElement;
+          const sectionIndex = sections.indexOf(section);
+          const sectionId = section.id || `section_${sectionIndex + 1}`;
+          trackSectionViewed(sectionId);
+          observer.unobserve(section);
+        }
+      },
+      { threshold: 0.45 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     function handleClick(event: MouseEvent) {
