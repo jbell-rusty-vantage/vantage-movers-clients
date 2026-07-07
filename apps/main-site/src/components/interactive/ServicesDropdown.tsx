@@ -82,6 +82,8 @@ export function ServicesDropdown({
                   href={`/#${s.anchorId}`}
                   className="flex items-center gap-[11px] rounded-md2 px-3 py-2.5 text-[14.5px] font-semibold text-brand-blue no-underline transition hover:bg-cream"
                   onClick={() => setOpen(false)}
+                  data-analytics-location="services_dropdown"
+                  data-analytics-move-type={s.title}
                 >
                   <span className="grid size-[30px] flex-none place-items-center rounded-chip bg-brand-yellow-soft text-brand-blue-bright">
                     <Icon size={17} aria-hidden />

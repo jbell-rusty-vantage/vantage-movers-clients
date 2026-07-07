@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   useForm,
+  useWatch,
   type FieldError,
   type UseFormRegister,
   type UseFormSetValue,
@@ -16,6 +17,7 @@ import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { radiusClasses } from "@/lib/playground/layout-playground";
 import { telHref } from "@/lib/format";
 import { MAIN_SITE } from "@/content/partners";
+import { quoteFormAnalytics, trackEvent, trackZipNotRecognized } from "@/lib/analytics";
 import {
   MOVE_SIZES,
   STEP_FIELDS,
@@ -36,6 +38,11 @@ const PANEL_STEPS = [
   { n: 1, label: "Your Move" },
   { n: 2, label: "Contact" },
   { n: 3, label: "Done" },
+] as const;
+
+const STEP_ANALYTICS = [
+  { step_number: 1, step_name: "moving_details" },
+  { step_number: 2, step_name: "contact_info" },
 ] as const;
 
 export interface QuoteWizardProps {
@@ -125,6 +132,7 @@ function ZipField({
   const [loading, setLoading] = useState(false);
   const [lookupError, setLookupError] = useState("");
   const [sessionToken] = useState(createSessionToken);
+  const reportedUnrecognizedZipsRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     const zip = displayValue.replace(/\D/g, "").slice(0, 5);
@@ -149,6 +157,15 @@ function ZipField({
           setLookupWarning(
             "We couldn't verify this ZIP automatically, but you can still continue.",
           );
+          const reportKey = `${fieldName}:${zip}`;
+          if (!reportedUnrecognizedZipsRef.current.has(reportKey)) {
+            reportedUnrecognizedZipsRef.current.add(reportKey);
+            trackZipNotRecognized({
+              field_name: fieldName,
+              zip,
+              suggestion_count: data.suggestions?.length ?? 0,
+            });
+          }
           return;
         }
 
@@ -164,6 +181,10 @@ function ZipField({
           setValue(fieldName, zip, { shouldDirty: true, shouldTouch: true, shouldValidate: true });
           setResolvedRegion("");
           setLookupError("ZIP lookup is unavailable. Please try again.");
+          trackEvent("zip_lookup_failed", {
+            ...quoteFormAnalytics,
+            field_name: fieldName,
+          });
         }
       } finally {
         if (!controller.signal.aborted) setLoading(false);
@@ -228,6 +249,8 @@ export function QuoteWizard({
   const [pickupZip, setPickupZip] = useState("");
   const [destZip, setDestZip] = useState("");
   const [internalRefNo] = useState(createMainSiteRefNo);
+  const formStartedRef = useRef(false);
+  const datePickerOpenedRef = useRef(false);
 
   const searchParams = useSearchParams();
   const inboundRefNo = searchParams.get("ref_no")?.trim();
@@ -236,9 +259,10 @@ export function QuoteWizard({
     register,
     trigger,
     getValues,
+    getFieldState,
     reset,
     setValue,
-    watch,
+    control,
     formState: { errors },
   } = useForm<QuoteFormInput, unknown, QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
@@ -247,9 +271,83 @@ export function QuoteWizard({
     shouldUnregister: false,
   });
 
+  const stepDisplay = step + 1;
+  const isPanel = variant === "panel";
+  const steps = isPanel ? PANEL_STEPS : STEPS;
+  const resolvedFormId = formId ?? (isPanel ? undefined : "quote");
+  const fieldIdPrefix = resolvedFormId ?? "quote";
+  const panelPadding = isPanel ? "px-6 pt-0 pb-6" : "px-[30px] pt-[30px] pb-[26px]";
+  const headingFontClass = heroHeadingFont.className;
+  const bodyFontClass = isPanel ? heroBodyFont.className : "";
+  const moveDate = useWatch({ control, name: "date" });
+
+  useEffect(() => {
+    const stepMeta = STEP_ANALYTICS[step];
+    if (!stepMeta) return;
+
+    trackEvent("form_step_viewed", {
+      ...quoteFormAnalytics,
+      ...stepMeta,
+      form_variant: variant,
+      form_id: resolvedFormId || "quote-panel",
+    });
+  }, [step, variant, resolvedFormId]);
+
+  function markFormStarted() {
+    if (formStartedRef.current) return;
+    formStartedRef.current = true;
+    trackEvent("form_started", {
+      ...quoteFormAnalytics,
+      form_variant: variant,
+      form_id: resolvedFormId || "quote-panel",
+    });
+  }
+
+  function trackDatePickerOpened() {
+    if (datePickerOpenedRef.current) return;
+    datePickerOpenedRef.current = true;
+    trackEvent("calendar_or_date_picker_opened", {
+      ...quoteFormAnalytics,
+      form_variant: variant,
+      form_id: resolvedFormId || "quote-panel",
+    });
+  }
+
+  function trackValidationErrors(stepNumber: number) {
+    const stepMeta = STEP_ANALYTICS[stepNumber];
+    if (!stepMeta) return;
+
+    const values = getValues();
+    for (const fieldName of STEP_FIELDS[stepNumber] || []) {
+      const fieldError = getFieldState(fieldName).error;
+      if (!fieldError) continue;
+
+      trackEvent("form_validation_error", {
+        ...quoteFormAnalytics,
+        ...stepMeta,
+        form_variant: variant,
+        form_id: resolvedFormId || "quote-panel",
+        field_name: fieldName,
+        error_type: values[fieldName] ? "invalid" : "required",
+      });
+    }
+  }
+
+  function safeQuoteMetadata() {
+    const values = getValues();
+    return {
+      ...quoteFormAnalytics,
+      form_variant: variant,
+      form_id: resolvedFormId || "quote-panel",
+      move_size: values.size || "unknown",
+      has_inbound_ref: Boolean(inboundRefNo),
+    };
+  }
+
   async function submitQuote() {
     setLoading(true);
     setSubmitError("");
+    trackEvent("form_submit_attempted", safeQuoteMetadata());
     try {
       const res = await fetch("/api/quote", {
         method: "POST",
@@ -265,8 +363,14 @@ export function QuoteWizard({
       if (!res.ok) throw new Error("Quote request failed");
       const data: QuoteResult = await res.json();
       setResult(data);
+      trackEvent(data.leadCaptured ? "form_submit_success" : "form_submit_failed", {
+        ...safeQuoteMetadata(),
+        error_type: data.leadCaptured ? null : "lead_capture_failed",
+      });
+      trackEvent("quote_estimate_viewed", safeQuoteMetadata());
       setStep(2);
     } catch {
+      trackEvent("form_submit_failed", safeQuoteMetadata());
       setSubmitError("Something went wrong. Please try again or give us a call.");
     } finally {
       setLoading(false);
@@ -280,7 +384,20 @@ export function QuoteWizard({
     const fieldsToValidate =
       step === 1 ? ([...STEP_FIELDS[0], ...STEP_FIELDS[1]] as (keyof QuoteFormInput)[]) : STEP_FIELDS[step];
     const valid = await trigger(fieldsToValidate);
-    if (!valid) return;
+    if (!valid) {
+      trackValidationErrors(step);
+      return;
+    }
+
+    const stepMeta = STEP_ANALYTICS[step];
+    if (stepMeta) {
+      trackEvent("form_step_completed", {
+        ...quoteFormAnalytics,
+        ...stepMeta,
+        form_variant: variant,
+        form_id: resolvedFormId || "quote-panel",
+      });
+    }
 
     if (step === 1) {
       await submitQuote();
@@ -299,20 +416,13 @@ export function QuoteWizard({
     setStep(0);
   }
 
-  const stepDisplay = step + 1;
-  const isPanel = variant === "panel";
-  const steps = isPanel ? PANEL_STEPS : STEPS;
-  const resolvedFormId = formId ?? (isPanel ? undefined : "quote");
-  const fieldIdPrefix = resolvedFormId ?? "quote";
-  const panelPadding = isPanel ? "px-6 pt-0 pb-6" : "px-[30px] pt-[30px] pb-[26px]";
-  const headingFontClass = heroHeadingFont.className;
-  const bodyFontClass = isPanel ? heroBodyFont.className : "";
-
   return (
     <form
       id={resolvedFormId}
       className={`${isPanel ? radiusClasses.md2 : "rounded-panel"} bg-white ${panelPadding} shadow-form-card ${bodyFontClass} ${className ?? ""}`}
       onSubmit={handleNext}
+      onChange={markFormStarted}
+      onFocus={markFormStarted}
       noValidate
     >
       {isPanel ? (
@@ -384,7 +494,11 @@ export function QuoteWizard({
           </p>
           <p className="mb-[18px] text-[14.5px] leading-[1.55] text-[#64748B]">
             A Vantage moving coordinator will reach out shortly. To speak with someone now, call{" "}
-            <a href={telHref(business.phoneDisplay)} className="font-semibold text-brand-blue-bright">
+            <a
+              href={telHref(business.phoneDisplay)}
+              className="font-semibold text-brand-blue-bright"
+              data-analytics-location="quote_result"
+            >
               {business.phoneDisplay}
             </a>
             .
@@ -424,21 +538,23 @@ export function QuoteWizard({
                 error={errors.dest}
               />
               <Field label="Estimated Move Date" error={errors.date?.message}>
-                <MoveDatePicker
-                  id={`${fieldIdPrefix}-move-date`}
-                  variant="main-site"
-                  value={watch("date")}
-                  hasError={!!errors.date}
-                  placeholder="Select move date"
-                  onChange={(nextDate) =>
-                    setValue("date", nextDate, {
-                      shouldDirty: true,
-                      shouldTouch: true,
-                      shouldValidate: true,
-                    })
-                  }
-                  onBlur={() => void trigger("date")}
-                />
+                <div onClick={trackDatePickerOpened} onFocusCapture={trackDatePickerOpened}>
+                  <MoveDatePicker
+                    id={`${fieldIdPrefix}-move-date`}
+                    variant="main-site"
+                    value={moveDate}
+                    hasError={!!errors.date}
+                    placeholder="Select move date"
+                    onChange={(nextDate) =>
+                      setValue("date", nextDate, {
+                        shouldDirty: true,
+                        shouldTouch: true,
+                        shouldValidate: true,
+                      })
+                    }
+                    onBlur={() => void trigger("date")}
+                  />
+                </div>
               </Field>
               <Field label="Move Size" error={errors.size?.message}>
                 <select

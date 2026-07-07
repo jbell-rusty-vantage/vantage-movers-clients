@@ -72,6 +72,8 @@ export function FinalCTASection() {
               backgroundColor: colors.primaryBtnBg,
               color: colors.primaryBtnText,
             }}
+            data-analytics-event="cta_clicked"
+            data-analytics-cta-location="final_cta"
           >
             {finalCta.primaryCta}
           </a>
@@ -83,6 +85,7 @@ export function FinalCTASection() {
               borderColor: colors.secondaryBtnBorder,
               color: colors.secondaryBtnText,
             }}
+            data-analytics-location="final_cta"
           >
             <Phone size={17} strokeWidth={2} aria-hidden />
             {finalCta.secondaryCta}

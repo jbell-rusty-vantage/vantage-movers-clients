@@ -86,6 +86,8 @@ export function Footer() {
                   href="/#services"
                   className={linkClassName}
                   style={{ color: colors.linkColor }}
+                  data-analytics-location="footer_services"
+                  data-analytics-move-type={label}
                 >
                   {label}
                 </Link>
@@ -111,6 +113,7 @@ export function Footer() {
                     href={link.href}
                     className={linkClassName}
                     style={{ color: colors.linkColor }}
+                    data-analytics-location="footer_company"
                   >
                     {link.label}
                   </Link>
@@ -120,6 +123,7 @@ export function Footer() {
                     href={link.href}
                     className={linkClassName}
                     style={{ color: colors.linkColor }}
+                    data-analytics-location="footer_company"
                   >
                     {link.label}
                   </a>
@@ -145,6 +149,7 @@ export function Footer() {
                   href={link.href}
                   className={linkClassName}
                   style={{ color: colors.linkColor }}
+                  data-analytics-location="footer_legal"
                 >
                   {link.label}
                 </Link>
@@ -187,10 +192,20 @@ export function Footer() {
         >
           <span>{business.copyright}</span>
           <span className="flex gap-5">
-            <a href="#" className={linkClassName} style={{ color: colors.linkColor }}>
+            <a
+              href="#"
+              className={linkClassName}
+              style={{ color: colors.linkColor }}
+              data-analytics-location="footer_utility"
+            >
               Sitemap
             </a>
-            <a href="#" className={linkClassName} style={{ color: colors.linkColor }}>
+            <a
+              href="#"
+              className={linkClassName}
+              style={{ color: colors.linkColor }}
+              data-analytics-location="footer_utility"
+            >
               Accessibility
             </a>
           </span>

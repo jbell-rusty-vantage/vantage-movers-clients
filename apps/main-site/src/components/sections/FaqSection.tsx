@@ -28,6 +28,7 @@ export function FaqSection() {
           <a
             href={business.phoneHref}
             className={`inline-flex items-center gap-2.5 border border-cream-border bg-white px-5 py-4 no-underline shadow-card ${radiusClasses.md2}`}
+            data-analytics-location="faq"
           >
             <span
               className={`grid size-[42px] flex-none place-items-center bg-brand-yellow-soft ${radiusClasses.md2}`}

@@ -124,12 +124,15 @@ export function HeroSection({ bodyPanel = false }: HeroSectionProps) {
             <a
               href="#quote"
               className={`${heroHeadingFont.className} inline-flex min-w-[285px] items-center justify-center gap-2.5 rounded-md2 px-[22px] py-[13px] text-base font-bold tracking-[.04em] uppercase no-underline transition hover:-translate-y-0.5 ${PRIMARY_CTA_CLASS}`}
+              data-analytics-event="cta_clicked"
+              data-analytics-cta-location="hero_primary"
             >
               {hero.primaryCta}
             </a>
             <a
               href={business.phoneHref}
               className={`${heroHeadingFont.className} inline-flex min-w-[285px] items-center justify-center gap-2.5 rounded-md2 px-[22px] py-[13px] text-base font-bold tracking-[.04em] uppercase no-underline transition hover:-translate-y-0.5 ${SECONDARY_CTA_CLASS}`}
+              data-analytics-location="hero_secondary"
             >
               <span
                 className={`grid size-[34px] shrink-0 place-items-center rounded-md2 ${SECONDARY_ICON_CIRCLE_CLASS}`}

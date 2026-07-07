@@ -4,6 +4,7 @@ import { useState } from "react";
 import { faqs } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { radiusClasses } from "@/lib/playground/layout-playground";
+import { trackEvent } from "@/lib/analytics";
 
 /** Playground args promoted to production — see FaqSection.stories.tsx Playground. */
 const QUESTION_FONT_SIZE = 17;
@@ -24,7 +25,13 @@ export function FaqAccordion() {
           >
             <button
               type="button"
-              onClick={() => setOpen(isOpen ? -1 : i)}
+              onClick={() => {
+                setOpen(isOpen ? -1 : i);
+                trackEvent(isOpen ? "faq_closed" : "faq_opened", {
+                  question: f.q.slice(0, 80),
+                  faq_index: i,
+                });
+              }}
               className={`flex w-full cursor-pointer items-center justify-between gap-4 border-none bg-transparent px-6 py-[22px] text-left font-bold text-brand-blue ${heroHeadingFont.className}`}
               style={{ fontSize: `${QUESTION_FONT_SIZE}px` }}
             >

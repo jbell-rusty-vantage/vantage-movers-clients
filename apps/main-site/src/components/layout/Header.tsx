@@ -38,6 +38,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className="rounded-none no-underline transition hover:bg-cream"
+                data-analytics-location="header_nav"
                 style={{
                   paddingLeft: `${NAV_SPACING.navPadX}px`,
                   paddingRight: `${NAV_SPACING.navPadX}px`,
@@ -54,6 +55,7 @@ export function Header() {
             <a
               href={business.phoneHref}
               className="hidden items-center gap-2.5 no-underline sm:flex"
+              data-analytics-location="header"
             >
               <span className="grid size-[38px] flex-none place-items-center rounded-md2 bg-brand-yellow-soft">
                 <Phone className="size-[17px] text-brand-blue" strokeWidth={2} aria-hidden />
@@ -70,6 +72,8 @@ export function Header() {
             <Link
               href="/#quote"
               className={`${heroHeadingFont.className} rounded-md2 bg-brand-blue-bright px-[22px] py-3.5 text-[15px] font-bold tracking-[.04em] text-white uppercase no-underline shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue`}
+              data-analytics-event="cta_clicked"
+              data-analytics-cta-location="header"
             >
               {headerChrome.ctaLabel}
             </Link>

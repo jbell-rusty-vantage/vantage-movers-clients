@@ -101,6 +101,9 @@ export function ServicesSection() {
                   href="#quote"
                   className={`${radiusClasses[BUTTON_RADIUS]} ${accentClass} bg-brand-blue-bright px-[26px] py-3.5 font-bold tracking-[.04em] text-white uppercase no-underline shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue`}
                   style={{ fontSize: `${CTA_FONT_SIZE}px` }}
+                  data-analytics-event="cta_clicked"
+                  data-analytics-cta-location="service_feature"
+                  data-analytics-move-type={row.title}
                 >
                   Request a Quote
                 </a>
@@ -108,6 +111,8 @@ export function ServicesSection() {
                   href="#services"
                   className={`${radiusClasses[BUTTON_RADIUS]} ${accentClass} border-[1.5px] border-cream-border bg-white px-6 py-[13px] font-bold tracking-[.04em] text-brand-blue uppercase no-underline transition hover:border-brand-blue`}
                   style={{ fontSize: `${CTA_FONT_SIZE}px` }}
+                  data-analytics-location="service_feature"
+                  data-analytics-move-type={row.title}
                 >
                   Learn More
                 </a>
@@ -157,6 +162,9 @@ export function ServicesSection() {
                 id={s.anchorId}
                 href="#quote"
                 className={`flex scroll-mt-28 flex-col border border-cream-border-2 bg-white p-7 no-underline shadow-card transition duration-250 hover:-translate-y-1.5 hover:shadow-card-hover ${radiusClasses[CARD_RADIUS]}`}
+                data-analytics-event="cta_clicked"
+                data-analytics-cta-location="service_card"
+                data-analytics-move-type={s.title}
               >
                 <span
                   className={`mb-[18px] grid place-items-center bg-brand-yellow-soft text-brand-blue-bright ${radiusClasses[ICON_WRAPPER_RADIUS]}`}

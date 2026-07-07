@@ -244,6 +244,7 @@ export function GetInTouchSection({ featuredTestimonial }: GetInTouchSectionProp
                         <a
                           href={item.href}
                           className="flex items-center gap-3.5 no-underline transition hover:opacity-90"
+                          data-analytics-location="get_in_touch"
                         >
                           {content}
                         </a>
