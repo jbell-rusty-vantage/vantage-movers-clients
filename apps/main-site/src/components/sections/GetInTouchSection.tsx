@@ -112,24 +112,14 @@ function ReviewSnippet({ quote, name, source, rating }: ReviewSnippetProps) {
 }
 
 function CompactTrustLogo({ logo }: { logo: TrustLogo }) {
-  const isGetmovers = logo.imgClass === "getmovers";
-
   return (
-    <span
-      className={`inline-flex shrink-0 items-center opacity-65 transition-opacity hover:opacity-90 ${
-        isGetmovers ? "h-[22px] w-[92px] justify-center" : ""
-      }`}
-    >
+    <span className="trust-logo trust-logo--compact">
       <Image
         src={logo.src}
         alt={logo.alt}
         width={logo.width}
         height={logo.height}
-        className={
-          isGetmovers
-            ? "h-auto max-h-[22px] w-full object-contain object-center brightness-0 invert"
-            : "h-[26px] w-auto brightness-0 invert"
-        }
+        className={`trust-logo__img${logo.wide ? " trust-logo__img--wide" : ""} brightness-0 invert`}
       />
     </span>
   );
@@ -139,13 +129,13 @@ function CompactTrustLogos() {
   const [row1, row2] = [trustStrip.logos.slice(0, 2), trustStrip.logos.slice(2)];
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      <div className="flex items-center justify-center gap-6">
+    <div className="flex flex-col items-center gap-2.5 sm:gap-3">
+      <div className="flex items-center justify-center gap-3 sm:gap-4">
         {row1.map((logo) => (
           <CompactTrustLogo key={logo.src} logo={logo} />
         ))}
       </div>
-      <div className="flex items-center justify-center gap-6">
+      <div className="flex items-center justify-center gap-3 sm:gap-4">
         {row2.map((logo) => (
           <CompactTrustLogo key={logo.src} logo={logo} />
         ))}

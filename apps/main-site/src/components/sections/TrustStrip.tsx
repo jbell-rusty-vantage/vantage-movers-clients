@@ -1,27 +1,26 @@
 import Image from "next/image";
-import { trustStrip } from "@/lib/content";
+import { trustStrip, type TrustLogo } from "@/lib/content";
 import { Container } from "@/components/ui/Container";
+
+function TrustLogoMark({ logo }: { logo: TrustLogo }) {
+  return (
+    <span className="trust-logo">
+      <Image
+        src={logo.src}
+        alt={logo.alt}
+        width={logo.width}
+        height={logo.height}
+        className={`trust-logo__img${logo.wide ? " trust-logo__img--wide" : ""}`}
+      />
+    </span>
+  );
+}
 
 function LogoRow({ keyPrefix }: { keyPrefix: string }) {
   return (
     <>
       {trustStrip.logos.map((logo) => (
-        <span
-          key={`${keyPrefix}-${logo.src}`}
-          className={`${logo.imgClass === "getmovers" ? "h-[34px] w-[146px] justify-center opacity-100" : "opacity-70"} inline-flex shrink-0 items-center transition-opacity hover:opacity-100`}
-        >
-          <Image
-            src={logo.src}
-            alt={logo.alt}
-            width={logo.width}
-            height={logo.height}
-            className={
-              logo.imgClass === "getmovers"
-                ? "h-auto max-h-[34px] w-full object-contain object-center contrast-110"
-                : "h-[42px] w-auto"
-            }
-          />
-        </span>
+        <TrustLogoMark key={`${keyPrefix}-${logo.src}`} logo={logo} />
       ))}
     </>
   );

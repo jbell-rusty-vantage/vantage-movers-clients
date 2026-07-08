@@ -83,7 +83,13 @@ body {
 }
 
 .trust-marquee {
-  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 7%,
+    #000 93%,
+    transparent
+  );
   overflow: hidden;
 }
 
@@ -91,10 +97,125 @@ body {
   animation: trust-marquee 34s linear infinite;
   display: flex;
   align-items: center;
-  gap: 64px;
-  padding-left: 64px;
+  gap: 42px;
+  padding-left: 42px;
   width: max-content;
   will-change: transform;
+}
+
+.trust-logo {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  opacity: 0.72;
+  transition: opacity 0.2s;
+}
+
+.trust-logo:not(.trust-logo--compact) {
+  width: clamp(88px, 24vw, 118px);
+}
+
+.trust-logo:hover {
+  opacity: 1;
+}
+
+.trust-logo__img {
+  display: block;
+  max-height: 26px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+/*
+ * Get Movers is ~10:1 — height-only sizing still leaves it very wide.
+ * Cap both height and max-width so it matches the others optically.
+ */
+.trust-logo__img--wide {
+  max-height: 16px;
+  max-width: min(100%, 116px);
+  width: auto;
+  object-fit: contain;
+  object-position: center;
+  filter: contrast(1.1);
+}
+
+/* Compact variant (Get In Touch / dark panels). */
+.trust-logo--compact {
+  height: 28px;
+  opacity: 0.65;
+}
+
+.trust-logo--compact .trust-logo__img {
+  height: 20px;
+}
+
+.trust-logo--compact .trust-logo__img--wide {
+  height: 14px;
+  max-width: 110px;
+}
+
+.trust-logo--compact:hover {
+  opacity: 0.92;
+}
+
+@media (min-width: 640px) {
+  .trust-marquee-track {
+    gap: 56px;
+    padding-left: 56px;
+  }
+
+  .trust-logo:not(.trust-logo--compact) {
+    width: 126px;
+    height: 36px;
+  }
+
+  .trust-logo:not(.trust-logo--compact) .trust-logo__img {
+    max-height: 28px;
+  }
+
+  .trust-logo:not(.trust-logo--compact) .trust-logo__img--wide {
+    max-height: 17px;
+    max-width: 122px;
+  }
+
+  .trust-logo--compact {
+    height: 30px;
+  }
+
+  .trust-logo--compact .trust-logo__img {
+    height: 24px;
+  }
+
+  .trust-logo--compact .trust-logo__img--wide {
+    height: 16px;
+    max-width: 124px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .trust-marquee-track {
+    gap: 72px;
+    padding-left: 72px;
+  }
+
+  .trust-logo:not(.trust-logo--compact) {
+    width: 136px;
+    height: 38px;
+  }
+
+  .trust-logo:not(.trust-logo--compact) .trust-logo__img {
+    max-height: 30px;
+  }
+
+  .trust-logo:not(.trust-logo--compact) .trust-logo__img--wide {
+    max-height: 18px;
+    max-width: 130px;
+  }
 }
 
 .trust-marquee:hover .trust-marquee-track {
@@ -111,7 +232,13 @@ body {
 }
 
 .testi-marquee {
-  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 4%,
+    #000 96%,
+    transparent
+  );
   overflow: hidden;
   padding: 10px 0;
 }
@@ -143,7 +270,9 @@ body {
   border-radius: var(--radius-card);
   box-shadow: 0 14px 36px rgba(4, 18, 38, 0.3);
   padding: 28px;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
   width: clamp(300px, 30vw, 390px);
 }
 

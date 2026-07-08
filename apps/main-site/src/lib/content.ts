@@ -64,13 +64,22 @@ export interface TrustLogo {
   alt: string;
   width: number;
   height: number;
-  imgClass?: "getmovers";
+  /**
+   * Ultra-wide wordmarks (Get Movers) use a shorter display height
+   * so optical weight matches the other marks.
+   */
+  wide?: boolean;
 }
 
 export const trustStrip = {
   label: "Trusted By",
   logos: [
-    { src: "/partnerlogos/tbm_leads.svg", alt: "TBM", width: 190, height: 50 },
+    {
+      src: "/partnerlogos/tbm_leads.svg",
+      alt: "TBM",
+      width: 190,
+      height: 50,
+    },
     {
       src: "/partnerlogos/tbm_prime_leads.svg",
       alt: "TBM Prime",
@@ -94,7 +103,7 @@ export const trustStrip = {
       alt: "Get Movers",
       width: 456,
       height: 44,
-      imgClass: "getmovers",
+      wide: true,
     },
   ] satisfies TrustLogo[],
 } as const;

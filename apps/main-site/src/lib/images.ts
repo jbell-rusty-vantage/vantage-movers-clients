@@ -19,12 +19,14 @@ export const SITE_IMAGES = {
   aboutCoordinators: "/customer_service_rep.webp",
   expertiseBanner: "/sitepictures/Truck%20Loaded.jpeg",
   autoTransport: "/sitepictures/autotransport.jpg",
-  coordinationSupport: "/customer_service_rep.webp",
+  coordinationSupport: "/customer_service_rep.png",
 } as const;
 
 export type SiteImageKey = keyof typeof SITE_IMAGES;
 
-export function resolveSiteImage(nameOrPath: SiteImageKey | HeroImageKey | string): string {
+export function resolveSiteImage(
+  nameOrPath: SiteImageKey | HeroImageKey | string,
+): string {
   if (!nameOrPath) return "";
   if (nameOrPath in HERO_IMAGES) return HERO_IMAGES[nameOrPath as HeroImageKey];
   if (nameOrPath in SITE_IMAGES) return SITE_IMAGES[nameOrPath as SiteImageKey];

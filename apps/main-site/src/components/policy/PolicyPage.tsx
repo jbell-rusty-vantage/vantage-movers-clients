@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Clock, Info } from "lucide-react";
+import { ArrowLeft, Clock, Info } from "lucide-react";
 import type { LegalBlock, LegalDoc } from "@/content/legal/docs";
 import { business } from "@/lib/content";
 import { Header } from "@/components/layout/Header";
@@ -69,9 +69,10 @@ export function PolicyPage({ doc }: { doc: LegalDoc }) {
             <div className="max-w-3xl">
               <Link
                 href="/"
-                className="mb-5 inline-flex text-sm font-semibold text-on-dark-300 no-underline hover:text-white"
+                className="mb-5 inline-flex items-center gap-2 text-sm font-semibold !text-white no-underline hover:!text-white hover:underline"
               >
-                Home / {doc.title}
+                <ArrowLeft className="size-4" strokeWidth={2.4} aria-hidden />
+                Home
               </Link>
               <h1 className="mb-5 font-display text-[clamp(38px,5vw,64px)] leading-[1.02] font-extrabold -tracking-[.02em]">
                 {doc.title}
