@@ -175,43 +175,51 @@ export interface Faq {
 export const faqs: Faq[] = [
   {
     q: "How do I request a moving quote?",
-    a: "You can request a moving quote by providing your pickup location, destination, preferred move date, move size, contact information, and any additional service needs such as packing or storage. The more accurate your inventory and move details are, the more useful your estimate will be. After your information is submitted, a representative can help review the details and coordinate next steps.",
+    a: `You can request a moving quote by calling us directly at ${business.phoneDisplay} or by clicking here to provide your pickup location, destination, preferred move date, move size, and contact information. Once submitted, one of our moving coordinators will reach out by phone to review your exact inventory, discuss any additional services needed, and go over the details of your move in order to prepare your free quote.`,
   },
   {
-    q: "Is Vantage Movers a moving company or a moving broker?",
-    a: "Vantage Movers is a licensed interstate household goods moving broker. This means Vantage does not directly transport household goods. Instead, Vantage helps arrange transportation through FMCSA-authorized motor carriers. Carrier charges are based on the carrier's published tariff and the details of the move.",
+    q: "Can I change my move date after reserving?",
+    a: "Yes. You can change your move date after reserving as long as you notify us at least 7 days in advance, with no penalties. Date changes requested within 7 days of the scheduled move date may be subject to a $250 rescheduling fee.",
   },
   {
-    q: "Who will transport my belongings?",
-    a: "Your belongings are transported by an authorized motor carrier assigned for your move, not directly by Vantage Movers. Vantage helps coordinate the transportation arrangement and provides customer support during the planning process. The assigned carrier is responsible for the physical transportation of the household goods.",
+    q: "Are packing services available?",
+    a: "Yes. Packing services are available and include both labor and materials. You may choose full-service white glove packing for your entire home or itemized packing for specific items you would like the movers to handle.",
   },
   {
-    q: "Are moving estimates guaranteed?",
-    a: "Moving estimates depend on the information provided at the time of the quote, including inventory, distance, services requested, access conditions, and timing. Final charges may vary if the inventory changes, additional services are requested, access conditions differ, or the move details are updated.",
+    q: "Need a few days or months of storage?",
+    a: "Storage options are available if you need extra time between pickup and delivery. Your belongings can be stored in a secure, climate-controlled warehouse until you are ready to schedule delivery to your new location.",
   },
   {
-    q: "What can change the final cost of my move?",
-    a: "The final cost may change if the actual inventory is larger than listed, if additional packing or labor is requested, if pickup or delivery conditions require extra services, or if the customer changes the move date, route, or destination. Customers should provide complete and accurate information during the quote process to help reduce surprises.",
+    q: "What type of estimates are provided?",
+    a: "We offer binding not-to-exceed moving estimates based on the estimated cubic feet and/or weight of your shipment and services requested. This means your estimate is built around the space and/or weight your inventory is expected to use, helping provide a clear price structure before moving day.",
   },
   {
-    q: "Can I change my move date?",
-    a: "Move-date changes may be possible depending on carrier availability, route scheduling, and how much notice is provided. Customers should contact Vantage as soon as possible if their pickup date, delivery address, inventory, or service needs change. Schedule changes are easier to coordinate when they are communicated early.",
+    q: "What could cause my moving estimate to change?",
+    a: "Your moving estimate may change if there are updates to the shipment size, item list, packing needs, long-carry distance, access conditions, or additional services requested. We work to provide the most accurate estimate possible and will clearly explain any changes so you understand exactly what affected the price.",
   },
   {
-    q: "Do you offer packing services?",
-    a: "Packing options may be available depending on the assigned carrier, move details, and requested service level. Customers should identify whether they need full packing, partial packing, fragile-only packing, or no packing support during the quote process. Packing services may affect the estimate and should be discussed before pickup.",
+    q: "Are deposits required to reserve a move?",
+    a: "Many moving companies require a deposit to reserve your move. Vantage Movers will walk you through the process and clearly explain any deposit requirements, payment terms, and reservation policies before you book.",
   },
   {
-    q: "What if my delivery is delayed?",
-    a: "Long-distance delivery timing can be affected by route distance, weather, traffic, carrier scheduling, mechanical issues, customer availability, and other logistics factors. If there is a delivery delay, customers should contact their coordinator or assigned carrier for updates. Delivery timing depends on route, carrier availability, and move conditions.",
+    q: "What services are offered by Vantage Movers?",
+    a: "We offer a wide range of moving solutions, including residential moves, commercial relocations, long-distance moving, packing services, storage options, and more. Our team works with you to create a moving plan tailored to your specific needs, schedule, and relocation details.",
   },
   {
-    q: "Do you handle military, corporate, or commercial moves?",
-    a: "Vantage Movers can help coordinate moving estimates for residential, military, corporate, and commercial relocations. The process begins by collecting the move details and identifying the services needed. Transportation is then arranged through authorized motor carriers based on availability, route, and move requirements.",
+    q: "Is Vantage Movers Licensed and Bonded?",
+    a: "Yes, Vantage Movers operates with full compliance to industry regulations. We are a licensed and bonded moving brokerage, providing peace of mind as we connect you with reputable moving companies.",
   },
   {
-    q: "Are there hidden fees?",
-    a: "Customers should receive information about anticipated charges based on the move details provided. However, additional charges may apply if the actual move conditions differ from the original estimate, if extra services are requested, or if inventory changes. A more accurate quote depends on accurate move information.",
+    q: "How do we know our carrier for the move and if they are reputable?",
+    a: "During your reservation call, you will sign a bill of lading with the carrier that best matches your scheduling needs, route, and move requirements. All carriers in our network are carefully vetted by our team to confirm proper licensing, insurance, service standards, and reputation. Each carrier also agrees to uphold the values, professionalism, and level of service we expect for every Vantage customer.",
+  },
+  {
+    q: "What if there is an issue during the move?",
+    a: "We take customer feedback seriously. If an issue arises during your move, our support team is here to listen, review the situation, and work with you toward a prompt and fair resolution.",
+  },
+  {
+    q: "Why Choose Vantage Movers?",
+    a: "Vantage Movers is committed to delivering a better moving experience through personalized service, competitive pricing, and access to a network of reputable moving professionals. We focus on clear communication, reliable coordination, and customer satisfaction from the first quote to final delivery.",
   },
 ];
 
