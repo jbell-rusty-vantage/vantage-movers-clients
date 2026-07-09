@@ -181,11 +181,11 @@ export function GetInTouchSection({ featuredTestimonial }: GetInTouchSectionProp
 
   return (
     <section id="get-quote" className="bg-cream py-20 lg:py-24">
-      <Container className="px-4 sm:px-7">
+      <Container className="px-3 min-[360px]:px-4 sm:px-7">
         <div
           className={`w-full max-w-full overflow-hidden bg-brand-blue shadow-[0_28px_64px_rgba(2,47,102,.22)] ${radiusClasses.md2}`}
         >
-          <div className="grid min-w-0 items-start gap-8 p-4 sm:p-6 lg:grid-cols-[1fr_1.05fr] lg:gap-12 lg:p-12">
+          <div className="grid min-w-0 items-start gap-8 p-3 min-[360px]:p-4 sm:p-6 lg:grid-cols-[1fr_1.05fr] lg:gap-12 lg:p-12">
             <div className="min-w-0">
               <div className="mb-5 flex items-center gap-3">
                 <span className="h-0.5 w-8 rounded-full bg-brand-yellow" aria-hidden />

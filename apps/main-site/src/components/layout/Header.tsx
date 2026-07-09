@@ -12,9 +12,9 @@ const NAV_SPACING = { py: 9, navPadX: 14, navPadY: 10 } as const;
 export function Header() {
   return (
     <header className="sticky top-0 z-[60] border-b border-cream-border-2 bg-white shadow-[0_2px_12px_rgba(2,71,153,.05)]">
-      <Container>
+      <Container className="px-4 sm:px-7">
         <div
-          className="flex items-center justify-between gap-6"
+          className="flex items-center justify-between gap-3 sm:gap-6"
           style={{
             paddingTop: `${NAV_SPACING.py}px`,
             paddingBottom: `${NAV_SPACING.py}px`,
@@ -71,15 +71,15 @@ export function Header() {
             </a>
             <a
               href={business.phoneHref}
-              className="grid size-[46px] flex-none place-items-center rounded-md2 bg-brand-yellow-soft no-underline shadow-card sm:hidden"
+              className={`${heroHeadingFont.className} flex h-10 flex-none items-center justify-center rounded-md2 bg-brand-yellow-soft px-3 text-[13px] leading-none font-extrabold tracking-[.03em] whitespace-nowrap text-brand-blue uppercase no-underline shadow-card sm:hidden`}
               aria-label={`Call ${business.name} at ${business.phoneDisplay}`}
               data-analytics-location="header_mobile"
             >
-              <Phone className="size-5 text-brand-blue" strokeWidth={2} aria-hidden />
+              Call
             </a>
             <Link
               href="/#quote"
-              className={`${heroHeadingFont.className} rounded-md2 bg-brand-blue-bright px-[22px] py-3.5 text-[15px] font-bold tracking-[.04em] text-white uppercase no-underline shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue`}
+              className={`${heroHeadingFont.className} flex h-10 flex-none items-center justify-center rounded-md2 bg-brand-blue-bright px-3 text-[13px] leading-none font-bold tracking-[.03em] whitespace-nowrap text-white uppercase no-underline shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue sm:h-auto sm:px-[22px] sm:py-3.5 sm:text-[15px] sm:tracking-[.04em]`}
               data-analytics-event="cta_clicked"
               data-analytics-cta-location="header"
             >

@@ -22,6 +22,11 @@ const colors = resolveFooterColors("light", {});
 
 const linkClassName =
   "no-underline transition-colors duration-150 hover:[color:var(--footer-link-hover)]";
+const carrierNetworkLinkClassName = `${linkClassName} font-extrabold`;
+
+function newTabProps(newTab?: boolean) {
+  return newTab ? { target: "_blank", rel: "noopener noreferrer" } : {};
+}
 
 export function Footer() {
   const accentClass = heroHeadingFont.className;
@@ -105,7 +110,12 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className={linkClassName}
+                    {...newTabProps("newTab" in link ? link.newTab : false)}
+                    className={
+                      link.label === "Join Our Carrier Network"
+                        ? carrierNetworkLinkClassName
+                        : linkClassName
+                    }
                     style={{ color: colors.linkColor }}
                     data-analytics-location="footer_company"
                   >
@@ -115,7 +125,12 @@ export function Footer() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className={linkClassName}
+                    {...newTabProps("newTab" in link ? link.newTab : false)}
+                    className={
+                      link.label === "Join Our Carrier Network"
+                        ? carrierNetworkLinkClassName
+                        : linkClassName
+                    }
                     style={{ color: colors.linkColor }}
                     data-analytics-location="footer_company"
                   >
@@ -141,6 +156,7 @@ export function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
+                  {...newTabProps("newTab" in link ? link.newTab : false)}
                   className={linkClassName}
                   style={{ color: colors.linkColor }}
                   data-analytics-location="footer_legal"

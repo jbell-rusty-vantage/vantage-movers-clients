@@ -36,7 +36,7 @@ export function FinalCTASection() {
           backgroundSize: "22px 22px",
         }}
       />
-      <Container className="relative mx-auto max-w-[1000px] text-center">
+      <Container className="relative mx-auto max-w-[1000px] px-4 text-center sm:px-7">
         <div
           className={`${accentClass} mb-[22px] inline-flex items-center gap-2 border px-[18px] py-2 font-bold tracking-[.08em] uppercase ${radiusClasses[BADGE_RADIUS]}`}
           style={{
@@ -66,7 +66,7 @@ export function FinalCTASection() {
         <div className="flex flex-wrap items-center justify-center gap-3.5">
           <a
             href="#quote"
-            className={`${accentClass} inline-flex items-center gap-2 px-8 py-[17px] font-bold tracking-[.04em] uppercase no-underline shadow-[0_10px_28px_rgba(255,192,46,.34)] transition hover:-translate-y-0.5 ${radiusClasses[PRIMARY_BUTTON_RADIUS]}`}
+            className={`${accentClass} inline-flex w-full items-center justify-center gap-2 px-6 py-[17px] text-center font-bold tracking-[.04em] uppercase no-underline shadow-[0_10px_28px_rgba(255,192,46,.34)] transition hover:-translate-y-0.5 min-[420px]:w-auto sm:px-8 ${radiusClasses[PRIMARY_BUTTON_RADIUS]}`}
             style={{
               fontSize: "16px",
               backgroundColor: colors.primaryBtnBg,
@@ -79,7 +79,7 @@ export function FinalCTASection() {
           </a>
           <a
             href={business.phoneHref}
-            className={`${accentClass} inline-flex items-center gap-2 border-[1.5px] px-[30px] py-4 font-bold tracking-[.04em] uppercase no-underline transition hover:bg-white/10 ${radiusClasses[SECONDARY_BUTTON_RADIUS]}`}
+            className={`${accentClass} inline-flex w-full items-center justify-center gap-2 border-[1.5px] px-6 py-4 text-center font-bold tracking-[.04em] uppercase no-underline transition hover:bg-white/10 min-[420px]:w-auto sm:px-[30px] ${radiusClasses[SECONDARY_BUTTON_RADIUS]}`}
             style={{
               fontSize: "16px",
               borderColor: colors.secondaryBtnBorder,

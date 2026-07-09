@@ -461,12 +461,23 @@ export const footerServiceLinks = [
 ];
 
 export const footerCompanyLinks = [
+  { label: "Join Our Carrier Network", href: "/carrier-contacts", newTab: true },
   { label: "About Us", href: "/#about" },
   { label: "Service Areas", href: "/#map" },
   { label: "FAQs", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
-  { label: "Join Our Carrier Network", href: "#" },
 ];
+
+export const carrierContactsPage = {
+  title: "Join Our Carrier Network",
+  description:
+    "Carriers interested in working with Vantage Movers can submit their company details through our carrier request form.",
+  eyebrow: "Carrier Network",
+  body: "If you are a licensed carrier and would like dispatch to review your company information, please complete the carrier request form. A member of our dispatch team will reach out after reviewing your submission.",
+  formUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSfP_MQmuGVulFRFeBJW6uf508_8b421HK_ryNh24AD_OKt0Qw/viewform",
+  ctaLabel: "Open Carrier Request Form",
+} as const;
 
 export const footerLegalLinks = [
   { label: "Privacy Policy", href: "/privacy" },
@@ -474,7 +485,7 @@ export const footerLegalLinks = [
   { label: "SMS Privacy Policy", href: "/sms-privacy" },
   { label: "SMS Terms", href: "/sms-terms" },
   { label: "Cancellation Policy", href: "/cancellation" },
-  { label: "Your Rights & Responsibilities", href: "/your-rights" },
-  { label: "Ready To Move", href: "/ready-to-move" },
-  { label: "Do Not Sell My Info", href: "/privacy#dns" },
+  { label: "Your Rights & Responsibilities", href: "/your-rights", newTab: true },
+  { label: "Ready To Move", href: "/ready-to-move", newTab: true },
+  { label: "Do Not Sell My Info", href: "/privacy#dns", newTab: true },
 ];

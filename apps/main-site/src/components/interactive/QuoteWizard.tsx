@@ -276,7 +276,7 @@ export function QuoteWizard({
   const steps = isPanel ? PANEL_STEPS : STEPS;
   const resolvedFormId = formId ?? (isPanel ? undefined : "quote");
   const fieldIdPrefix = resolvedFormId ?? "quote";
-  const panelPadding = isPanel ? "px-4 pt-0 pb-5 sm:px-6 sm:pb-6" : "px-[30px] pt-[30px] pb-[26px]";
+  const panelPadding = isPanel ? "px-3 pt-0 pb-5 min-[360px]:px-4 sm:px-6 sm:pb-6" : "px-[30px] pt-[30px] pb-[26px]";
   const headingFontClass = heroHeadingFont.className;
   const bodyFontClass = isPanel ? heroBodyFont.className : "";
   const moveDate = useWatch({ control, name: "date" });
@@ -426,7 +426,7 @@ export function QuoteWizard({
       noValidate
     >
       {isPanel ? (
-        <div className="-mx-4 mb-6 bg-brand-blue px-4 pt-6 pb-5 sm:-mx-6 sm:px-6">
+        <div className="-mx-3 mb-6 bg-brand-blue px-3 pt-6 pb-5 min-[360px]:-mx-4 min-[360px]:px-4 sm:-mx-6 sm:px-6">
           <h2
             className={`mb-1 text-[22px] font-extrabold -tracking-[.02em] text-white ${headingFontClass}`}
           >
@@ -449,7 +449,7 @@ export function QuoteWizard({
       )}
 
       <div
-        className={`my-[22px] mb-6 flex items-center ${isPanel ? "justify-between px-1" : "justify-center"}`}
+        className={`my-[22px] mb-6 flex items-center ${isPanel ? "justify-center gap-1 px-0 sm:justify-between sm:gap-0 sm:px-1" : "justify-center"}`}
       >
         {steps.map((s, i) => {
           const current = stepDisplay === s.n;
@@ -463,17 +463,17 @@ export function QuoteWizard({
             <div key={s.n} className="flex items-center">
               <div className="flex flex-col items-center gap-1.5">
                 <span
-                  className={`grid size-[34px] place-items-center rounded-full text-[15px] font-extrabold ${headingFontClass} ${dot}`}
+                  className={`grid place-items-center rounded-full font-extrabold ${isPanel ? "size-[30px] text-[13px] sm:size-[34px] sm:text-[15px]" : "size-[34px] text-[15px]"} ${headingFontClass} ${dot}`}
                 >
                   {s.n}
                 </span>
-                <span className="max-w-[88px] text-center text-xs leading-tight font-semibold text-[#64748B]">
+                <span className={`${isPanel ? "max-w-[64px] text-[10px] sm:max-w-[88px] sm:text-xs" : "max-w-[88px] text-xs"} text-center leading-tight font-semibold text-[#64748B]`}>
                   {s.label}
                 </span>
               </div>
               {i < steps.length - 1 && (
                 <span
-                  className={`mb-[18px] h-0.5 bg-cream-border ${isPanel ? "mx-2 w-[28px] lg:w-[40px]" : "mx-1.5 w-[46px]"}`}
+                  className={`mb-[18px] h-0.5 bg-cream-border ${isPanel ? "mx-1 w-[12px] min-[360px]:w-[18px] sm:mx-2 sm:w-[28px] lg:w-[40px]" : "mx-1.5 w-[46px]"}`}
                 />
               )}
             </div>
