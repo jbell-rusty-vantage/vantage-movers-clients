@@ -34,10 +34,31 @@ export interface Testimonial {
   featured: boolean;
 }
 
+export interface MovingCarrier {
+  id: string;
+  _id: string;
+  name: string;
+  dot_number: string;
+  mc_number: string;
+  active: boolean;
+}
+
 interface TestimonialListResponse {
   ok: boolean;
   data?: {
     items: Testimonial[];
+    page: number;
+    limit: number;
+    total: number;
+    has_next_page: boolean;
+  };
+  error?: string;
+}
+
+interface MovingCarrierListResponse {
+  ok: boolean;
+  data?: {
+    items: MovingCarrier[];
     page: number;
     limit: number;
     total: number;
@@ -116,6 +137,31 @@ export async function getTestimonials(
     return (body.data?.items ?? []).filter((item) => item.published);
   } catch (error) {
     console.error("[vantage] testimonials fetch error:", error);
+    return [];
+  }
+}
+
+/** Fetch active moving carriers with no cache so the footer stays current. */
+export async function getMovingCarriers(options: { limit?: number } = {}): Promise<MovingCarrier[]> {
+  const { limit = 250 } = options;
+  const params = new URLSearchParams({ active: "true", limit: String(limit) });
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/v1/moving-carriers?${params.toString()}`, {
+      method: "GET",
+      headers: authHeaders(),
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      console.error(`[vantage] moving carriers fetch failed: ${res.status}`);
+      return [];
+    }
+
+    const body = (await res.json()) as MovingCarrierListResponse;
+    return (body.data?.items ?? []).filter((item) => item.active);
+  } catch (error) {
+    console.error("[vantage] moving carriers fetch error:", error);
     return [];
   }
 }
