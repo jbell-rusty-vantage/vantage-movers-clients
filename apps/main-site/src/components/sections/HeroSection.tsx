@@ -5,6 +5,7 @@ import { business, hero, heroMetrics } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { SITE_IMAGES } from "@/lib/images";
 import { Container } from "@/components/ui/Container";
+import { QuoteWizardSkeleton } from "@/components/feedback/LoadingSkeletons";
 import { RollingNumber } from "@/components/ui/RollingNumber";
 import { QuoteWizard } from "@/components/interactive/QuoteWizard";
 import {
@@ -19,18 +20,6 @@ import {
   resolveHeroSecondaryCtaClasses,
   resolveHeroSecondaryIconCircleClasses,
 } from "@/lib/playground/hero-icons-playground";
-
-function QuoteWizardFallback() {
-  return (
-    <div
-      id="quote"
-      className="rounded-panel bg-white px-[30px] pt-[30px] pb-[26px] shadow-form-card"
-      aria-hidden
-    >
-      <div className="mb-6 h-[420px] animate-pulse rounded-lg2 bg-cream" />
-    </div>
-  );
-}
 
 /** Playground args promoted to production — see HeroSection.stories.tsx Playground. */
 const HERO_IMAGE_FILTER = resolveHeroImageFilter("muted", 70);
@@ -205,7 +194,7 @@ export function HeroSection({ bodyPanel = false }: HeroSectionProps) {
           </div>
         </div>
 
-        <Suspense fallback={<QuoteWizardFallback />}>
+        <Suspense fallback={<QuoteWizardSkeleton />}>
           <QuoteWizard />
         </Suspense>
       </Container>

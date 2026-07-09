@@ -5,6 +5,9 @@ import { termsConditions } from "@/content/legal/docs";
 export const metadata: Metadata = {
   title: termsConditions.title,
   description: termsConditions.description,
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsPage() {

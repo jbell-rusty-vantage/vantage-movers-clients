@@ -10,6 +10,9 @@ import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 export const metadata: Metadata = {
   title: `${carrierContactsPage.title} | ${business.name}`,
   description: carrierContactsPage.description,
+  alternates: {
+    canonical: "/carrier-contacts",
+  },
 };
 
 export default function CarrierContactsPage() {

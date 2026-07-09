@@ -1,4 +1,6 @@
 import type { Testimonial } from "@vantage/api-client";
+import { Suspense } from "react";
+import { TestimonialsSectionSkeleton } from "@/components/feedback/LoadingSkeletons";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -13,14 +15,34 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TrustBand } from "@/components/sections/TrustBand";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { WhyVantageSection } from "@/components/sections/WhyVantageSection";
+import { HomePageJsonLd } from "@/components/seo/HomePageJsonLd";
 
 interface HomePageProps {
   testimonials?: Testimonial[];
+  testimonialsPromise?: Promise<Testimonial[]>;
 }
 
-export function HomePage({ testimonials = [] }: HomePageProps) {
+async function TestimonialsStream({
+  testimonialsPromise,
+}: {
+  testimonialsPromise: Promise<Testimonial[]>;
+}) {
+  const testimonials = await testimonialsPromise;
+
+  return <TestimonialsSection items={testimonials} />;
+}
+
+export function HomePage({
+  testimonials = [],
+  testimonialsPromise = Promise.resolve(testimonials),
+}: HomePageProps) {
+  const featuredTestimonialPromise = testimonialsPromise.then(
+    (items) => items.find((item) => item.published) ?? null,
+  );
+
   return (
     <>
+      <HomePageJsonLd />
       <Header />
       <main>
         <HeroSection />
@@ -32,12 +54,12 @@ export function HomePage({ testimonials = [] }: HomePageProps) {
         <CoverageSection />
         <WhyVantageSection />
         <AboutSection />
-        <TestimonialsSection items={testimonials} />
+        <Suspense fallback={<TestimonialsSectionSkeleton />}>
+          <TestimonialsStream testimonialsPromise={testimonialsPromise} />
+        </Suspense>
         <FaqSection />
         <GetInTouchSection
-          featuredTestimonial={
-            testimonials.find((item) => item.published) ?? null
-          }
+          featuredTestimonialPromise={featuredTestimonialPromise}
         />
         <FinalCTASection />
       </main>

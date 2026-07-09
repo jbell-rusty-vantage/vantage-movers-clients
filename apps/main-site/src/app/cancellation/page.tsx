@@ -5,6 +5,9 @@ import { cancellationPolicy } from "@/content/legal/docs";
 export const metadata: Metadata = {
   title: cancellationPolicy.title,
   description: cancellationPolicy.description,
+  alternates: {
+    canonical: "/cancellation",
+  },
 };
 
 export default function CancellationPage() {

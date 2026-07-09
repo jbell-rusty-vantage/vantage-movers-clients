@@ -5,6 +5,9 @@ import { smsPrivacyPolicy } from "@/content/legal/docs";
 export const metadata: Metadata = {
   title: smsPrivacyPolicy.title,
   description: smsPrivacyPolicy.description,
+  alternates: {
+    canonical: "/sms-privacy",
+  },
 };
 
 export default function SmsPrivacyPage() {

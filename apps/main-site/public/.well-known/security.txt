@@ -1,0 +1,3 @@
+Contact: mailto:support@vantagehomemovers.com
+Preferred-Languages: en
+Canonical: https://vantagehomemovers.com/.well-known/security.txt

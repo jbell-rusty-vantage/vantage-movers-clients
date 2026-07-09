@@ -4,13 +4,56 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SiteAnalytics } from "@/components/analytics/SiteAnalytics";
 import { business } from "@/lib/content";
 import { siteBodyFont, siteDisplayFont } from "@/lib/fonts";
+import { siteDescription, siteKeywords, siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: `${business.name} | Nationwide Long-Distance Moving Broker`,
-  description:
-    "Licensed interstate moving broker helping families and businesses coordinate long-distance moves with FMCSA-authorized motor carriers.",
-  applicationName: business.name,
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: `${business.name} | Nationwide Long-Distance Moving Broker`,
+    template: `%s | ${business.name}`,
+  },
+  description: siteDescription,
+  applicationName: siteName,
+  keywords: siteKeywords,
+  authors: [{ name: business.name }],
+  creator: business.name,
+  publisher: business.name,
+  category: "Moving and relocation services",
+  alternates: {
+    canonical: "/",
+  },
+  formatDetection: {
+    telephone: true,
+    address: true,
+    email: true,
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName,
+    title: `${business.name} | Nationwide Long-Distance Moving Broker`,
+    description: siteDescription,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${business.name} moving coordination`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${business.name} | Nationwide Long-Distance Moving Broker`,
+    description: siteDescription,
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function RootLayout({

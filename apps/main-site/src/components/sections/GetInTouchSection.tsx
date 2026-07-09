@@ -2,6 +2,10 @@ import Image from "next/image";
 import { Suspense } from "react";
 import type { Testimonial } from "@vantage/api-client";
 import { Clock, Mail, Phone, Star } from "lucide-react";
+import {
+  FeaturedReviewSkeleton,
+  QuoteWizardSkeleton,
+} from "@/components/feedback/LoadingSkeletons";
 import { QuoteWizard } from "@/components/interactive/QuoteWizard";
 import { Container } from "@/components/ui/Container";
 import { business, quoteSection, trustStrip, type TrustLogo } from "@/lib/content";
@@ -57,21 +61,6 @@ function SoftStars({
   );
 }
 
-function QuoteWizardFallback() {
-  return (
-    <div
-      className={`bg-white px-6 pt-0 pb-6 shadow-form-card ${radiusClasses.md2}`}
-      aria-hidden
-    >
-      <div className="-mx-6 mb-6 bg-brand-blue px-6 pt-6 pb-5">
-        <div className="h-7 w-2/3 animate-pulse rounded bg-white/20" />
-        <div className="mt-2 h-4 w-1/2 animate-pulse rounded bg-white/10" />
-      </div>
-      <div className="h-[380px] animate-pulse rounded-lg2 bg-cream" />
-    </div>
-  );
-}
-
 interface ReviewSnippetProps {
   quote: string;
   name: string;
@@ -111,6 +100,29 @@ function ReviewSnippet({ quote, name, source, rating }: ReviewSnippetProps) {
   );
 }
 
+async function FeaturedReviewSnippet({
+  featuredTestimonialPromise,
+}: {
+  featuredTestimonialPromise?: Promise<Testimonial | null>;
+}) {
+  const featuredTestimonial = featuredTestimonialPromise
+    ? await featuredTestimonialPromise
+    : null;
+  const review =
+    featuredTestimonial && featuredTestimonial.review_text
+      ? {
+          quote: featuredTestimonial.review_text,
+          name: featuredTestimonial.reviewer_name || "Verified customer",
+          source: featuredTestimonial.source
+            ? `Verified review via ${featuredTestimonial.source}`
+            : "Verified review",
+          rating: featuredTestimonial.rating || 5,
+        }
+      : quoteSection.featuredReview;
+
+  return <ReviewSnippet {...review} />;
+}
+
 function CompactTrustLogo({ logo }: { logo: TrustLogo }) {
   return (
     <span className="trust-logo trust-logo--compact">
@@ -146,21 +158,15 @@ function CompactTrustLogos() {
 
 interface GetInTouchSectionProps {
   featuredTestimonial?: Testimonial | null;
+  featuredTestimonialPromise?: Promise<Testimonial | null>;
 }
 
-export function GetInTouchSection({ featuredTestimonial }: GetInTouchSectionProps) {
-  const review =
-    featuredTestimonial && featuredTestimonial.review_text
-      ? {
-          quote: featuredTestimonial.review_text,
-          name: featuredTestimonial.reviewer_name || "Verified customer",
-          source: featuredTestimonial.source
-            ? `Verified review via ${featuredTestimonial.source}`
-            : "Verified review",
-          rating: featuredTestimonial.rating || 5,
-        }
-      : quoteSection.featuredReview;
-
+export function GetInTouchSection({
+  featuredTestimonial,
+  featuredTestimonialPromise,
+}: GetInTouchSectionProps) {
+  const reviewPromise =
+    featuredTestimonialPromise ?? Promise.resolve(featuredTestimonial ?? null);
   const contactItems = [
     {
       icon: Phone,
@@ -259,7 +265,7 @@ export function GetInTouchSection({ featuredTestimonial }: GetInTouchSectionProp
             </div>
 
             <div className="min-w-0">
-              <Suspense fallback={<QuoteWizardFallback />}>
+              <Suspense fallback={<QuoteWizardSkeleton variant="panel" />}>
                 <QuoteWizard variant="panel" formId="quote-bottom" />
               </Suspense>
 
@@ -282,7 +288,9 @@ export function GetInTouchSection({ featuredTestimonial }: GetInTouchSectionProp
                   <CompactTrustLogos />
                 </div>
 
-                <ReviewSnippet {...review} />
+                <Suspense fallback={<FeaturedReviewSkeleton />}>
+                  <FeaturedReviewSnippet featuredTestimonialPromise={reviewPromise} />
+                </Suspense>
               </div>
             </div>
           </div>

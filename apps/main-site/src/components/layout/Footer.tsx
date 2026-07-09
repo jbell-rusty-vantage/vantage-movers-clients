@@ -202,22 +202,22 @@ export function Footer() {
         >
           <span>{business.copyright}</span>
           <span className="flex gap-5">
-            <a
-              href="#"
+            <Link
+              href="/sitemap.xml"
               className={linkClassName}
               style={{ color: colors.linkColor }}
               data-analytics-location="footer_utility"
             >
               Sitemap
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/accessibility"
               className={linkClassName}
               style={{ color: colors.linkColor }}
               data-analytics-location="footer_utility"
             >
               Accessibility
-            </a>
+            </Link>
           </span>
         </div>
       </Container>
