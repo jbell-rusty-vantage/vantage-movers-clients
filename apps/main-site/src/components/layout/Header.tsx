@@ -51,7 +51,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <a
               href={business.phoneHref}
               className="hidden items-center gap-2.5 no-underline sm:flex"
@@ -68,6 +68,14 @@ export function Header() {
                   {business.phoneDisplay}
                 </span>
               </span>
+            </a>
+            <a
+              href={business.phoneHref}
+              className="grid size-[46px] flex-none place-items-center rounded-md2 bg-brand-yellow-soft no-underline shadow-card sm:hidden"
+              aria-label={`Call ${business.name} at ${business.phoneDisplay}`}
+              data-analytics-location="header_mobile"
+            >
+              <Phone className="size-5 text-brand-blue" strokeWidth={2} aria-hidden />
             </a>
             <Link
               href="/#quote"

@@ -46,12 +46,6 @@ export function Footer() {
         >
           <div>
             <Logo variant="footer" />
-            <p
-              className="mt-[18px] max-w-xs leading-[1.6]"
-              style={{ fontSize: `${BODY_FONT_SIZE}px`, color: colors.bodyColor }}
-            >
-              {footerChrome.tagline}
-            </p>
             <div
               className="mt-[18px] leading-[1.8]"
               style={{ fontSize: `${addressFontSize}px`, color: colors.mutedColor }}

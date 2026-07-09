@@ -19,16 +19,13 @@ Autocheck the sms agreement disclosure
 Section Under Carousel
 
 Change what we coordinate to WHAT WE DO
-
 Helping You Move With Confidence
-
 At Vantage, we make long-distance moving easier with nationwide coverage, and a customer-focused team ready to help from start to finish. Backed by hundreds of 5/5 Star Reviews and moving solutions to help you plan your move with confidence and peace of mind.
 
 Long Distance Moving paragraph
 Long-distance moves require careful planning, timing, and coordination from start to finish. Vantage Movers helps make the process easier by reviewing your pickup location, delivery location, move size, preferred dates, and any additional service needs before coordinating transportation with professional, licensed and insured carriers. From planning your estimate to preparing for pickup and delivery, our team is here to help you move with confidence.
 Checkmarks:
 Accurate & Detailed Moving Estimates, Reputable Network of Licensed and Insured Motor Carriers, Support from Initial Quote to Final Delivery
-
 Veteran & Military Moves section
 We understand how important a smooth, reliable moving experience is for military families. We help coordinate PCS relocations, veteran relocations, storage options, and long-distance moving services designed to make each transition easier. We are proud to support military members and families with dependable moving solutions tailored to their needs.
 Checkmarks:
@@ -38,16 +35,12 @@ Long Distance Moving
 Moving from state to state requires coordination around your inventory, travel distance, carrier availability, pickup window, and delivery schedule. Get a customized quote for an easy long distance move.
 Packing Services
 Packing is one of the most important parts of a successful move, and Vantage Movers helps connect customers with professional packing services to help keep your belongings secure while giving you more time to focus on the rest of your move.
-
 Storage Options
 Flexible storage solutions for residential and business needs..With secure warehousing, climate-controlled storage, and organized inventory support, your belongings can stay protected until you’re ready for delivery.
-
 Auto Transport
 Whether you’re shipping one vehicle or multiple vehicles, our team helps coordinate safe, affordable, and customized transportation solutions designed to fit your schedule, route, and specific needs. Open and enclosed options available.
-
 Senior Moving
 Senior moves often require extra care and planning. Vantage helps seniors and their families coordinate long-distance relocation services by reviewing move details, timeline, destination, and any requested packing or handling needs.
-
 Commercial / Office Moving
 Whether you’re relocating a small office or a larger workspace, our goal is to help reduce disruption, keep your move organized, and get your business settled into its new location as efficiently as possible.
 
@@ -80,16 +73,15 @@ Vantage Movers provides long distance moving services to and from [State], helpi
 
 Why Vantage
 A Moving Experience Built Around You
-
--Free Consultation & Quote
+Free Consultation & Quote
 Speak with a moving specialist to review your inventory, services, pickup details, and delivery needs. We’ll build an accurate moving estimate and answer your questions with no obligation.
--Highly Rated
+Highly Rated
 We are one of the highest-rated moving brokerages for household goods and auto transport services.
--Clear quote review
+Clear quote review
 (keep as is)
--Auto Transport
+Auto Transport
 Whether you need to ship a car, SUV, truck, or specialty vehicle, we help arrange transport options designed to fit your schedule, route, and relocation needs.
--Packing & Storage Services
+Packing & Storage Services
 Full or partial packing services are available, along with storage options in climate-controlled warehouses to help keep your belongings protected and your move organized.
 
 Trusted Moving Support From Start to Finish
@@ -132,3 +124,17 @@ A: Vantage Movers is committed to delivering a better moving experience through 
 
 Planning a Long-Distance Move?
 Every successful long-distance move begins with accurate details and organized coordination. Vantage Movers helps customers prepare for interstate relocations by reviewing important move information such as inventory, distance, preferred dates, packing needs, specialty items, and access conditions. Once your move details are confirmed, Vantage can help coordinate transportation through a reputable licensed motor carrier within our network and provide support throughout the planning process.
+
+FOOTER
+Remove from below logo:
+A licensed interstate household goods moving broker helping families and businesses coordinate long-distance relocations through authorized motor carriers.
+
+Remove Moving Checklist from sitelinks
+
+Create a new page /new-carrier and map to sitelink Join Our Carrier Network
+This page will be very simple just header and footer with a form titled:
+New Carrier Inquiry
+Fields Company Name, DOT No, MC No, Email, Phone.
+Form fills should just send an email to dispatch@vantagehomemovers.com
+
+Have contact sitelink go to get in touch section

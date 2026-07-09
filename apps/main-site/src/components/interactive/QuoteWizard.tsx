@@ -276,7 +276,7 @@ export function QuoteWizard({
   const steps = isPanel ? PANEL_STEPS : STEPS;
   const resolvedFormId = formId ?? (isPanel ? undefined : "quote");
   const fieldIdPrefix = resolvedFormId ?? "quote";
-  const panelPadding = isPanel ? "px-6 pt-0 pb-6" : "px-[30px] pt-[30px] pb-[26px]";
+  const panelPadding = isPanel ? "px-4 pt-0 pb-5 sm:px-6 sm:pb-6" : "px-[30px] pt-[30px] pb-[26px]";
   const headingFontClass = heroHeadingFont.className;
   const bodyFontClass = isPanel ? heroBodyFont.className : "";
   const moveDate = useWatch({ control, name: "date" });
@@ -419,14 +419,14 @@ export function QuoteWizard({
   return (
     <form
       id={resolvedFormId}
-      className={`${isPanel ? radiusClasses.md2 : "rounded-panel"} bg-white ${panelPadding} shadow-form-card ${bodyFontClass} ${className ?? ""}`}
+      className={`${isPanel ? radiusClasses.md2 : "rounded-panel"} w-full min-w-0 bg-white ${panelPadding} shadow-form-card ${bodyFontClass} ${className ?? ""}`}
       onSubmit={handleNext}
       onChange={markFormStarted}
       onFocus={markFormStarted}
       noValidate
     >
       {isPanel ? (
-        <div className="-mx-6 mb-6 bg-brand-blue px-6 pt-6 pb-5">
+        <div className="-mx-4 mb-6 bg-brand-blue px-4 pt-6 pb-5 sm:-mx-6 sm:px-6">
           <h2
             className={`mb-1 text-[22px] font-extrabold -tracking-[.02em] text-white ${headingFontClass}`}
           >

@@ -466,7 +466,6 @@ export const footerCompanyLinks = [
   { label: "FAQs", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
   { label: "Join Our Carrier Network", href: "#" },
-  { label: "Moving Checklist", href: "#" },
 ];
 
 export const footerLegalLinks = [
