@@ -1,11 +1,17 @@
+import { getMovingCarriers } from "@vantage/api-client";
 import { Footer } from "./Footer";
 import { MovingCarriersSection } from "./MovingCarriersSection";
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  const carriers = await getMovingCarriers().catch((error) => {
+    console.error("[main-site moving-carriers]", error);
+    return [];
+  });
+
   return (
     <>
       <Footer />
-      <MovingCarriersSection defaultOpen />
+      <MovingCarriersSection carriers={carriers} defaultOpen />
     </>
   );
 }

@@ -57,3 +57,5 @@ internal_hidden_docs/
 **/*storybook.log
 **/debug-storybook.log
 **/storybook-static/
+
+.vercel

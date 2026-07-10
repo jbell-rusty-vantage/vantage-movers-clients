@@ -91,17 +91,24 @@ export interface CreateFormLeadResult {
   error?: string;
 }
 
-function requireSecret(): string {
-  if (!API_SECRET) {
-    throw new Error("VANTAGE_API_SECRET is not set");
+function readApiSecret(): string | null {
+  const secret = API_SECRET;
+  if (!secret) {
+    console.error("[vantage] moving carriers fetch skipped: VANTAGE_API_SECRET is not set");
+    return null;
   }
-  return API_SECRET;
+  return secret;
 }
 
 function authHeaders(): HeadersInit {
+  const secret = readApiSecret();
+  if (!secret) {
+    throw new Error("VANTAGE_API_SECRET is not set");
+  }
+
   return {
     "content-type": "application/json",
-    "x-api-secret": requireSecret(),
+    "x-api-secret": secret,
   };
 }
 
@@ -141,10 +148,14 @@ export async function getTestimonials(
   }
 }
 
-/** Fetch all active moving carriers with no cache so the footer stays current. */
+/** Fetch all active moving carriers; revalidate frequently so the footer stays current. */
 export async function getMovingCarriers(options: { pageSize?: number } = {}): Promise<MovingCarrier[]> {
   const { pageSize = 250 } = options;
   const carriers: MovingCarrier[] = [];
+
+  if (!readApiSecret()) {
+    return [];
+  }
 
   try {
     let page = 1;
@@ -157,14 +168,22 @@ export async function getMovingCarriers(options: { pageSize?: number } = {}): Pr
         page: String(page),
       });
 
-      const res = await fetch(`${API_BASE_URL}/api/v1/moving-carriers?${params.toString()}`, {
+      const init: NextFetchInit = {
         method: "GET",
         headers: authHeaders(),
-        cache: "no-store",
-      });
+        // The footer is rendered during prerender/build, so use ISR instead of
+        // `no-store` to keep pages static while still refreshing the carrier list.
+        next: { revalidate: 300, tags: ["moving-carriers"] },
+      };
+
+      const res = await fetch(`${API_BASE_URL}/api/v1/moving-carriers?${params.toString()}`, init);
 
       if (!res.ok) {
-        console.error(`[vantage] moving carriers fetch failed: ${res.status}`);
+        const errorBody = await res.text().catch(() => "");
+        console.error(
+          `[vantage] moving carriers fetch failed: ${res.status} ${res.statusText} (${API_BASE_URL})`,
+          errorBody.slice(0, 200),
+        );
         return page === 1 ? [] : carriers;
       }
 

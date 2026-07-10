@@ -1,0 +1,9 @@
+node_modules
+.turbo
+**/.next
+apps/clients
+packages/storybook
+**/*.md
+**/.git
+**/.env*
+carrier_data
