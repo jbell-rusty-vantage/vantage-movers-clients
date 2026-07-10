@@ -13,7 +13,7 @@ type MovingCarriersTableProps = {
 export function MovingCarriersTable({
   carriers,
   displayMode = "collapsible",
-  defaultOpen = false,
+  defaultOpen = true,
 }: MovingCarriersTableProps) {
   const [open, setOpen] = useState(defaultOpen || displayMode === "expanded");
   const isCollapsible = displayMode === "collapsible";
@@ -55,7 +55,7 @@ export function MovingCarriersTable({
       {showTable ? (
         <div className="border-t border-[#D7E4F5] px-3 pb-4 sm:px-5">
           <div className="overflow-hidden rounded-[18px] border border-[#E1EAF6] bg-white">
-            <div className="max-h-[520px] overflow-auto">
+            <div>
               <table className={`${heroBodyFont.className} min-w-full border-collapse text-left text-sm`}>
                 <thead className="sticky top-0 bg-[#F4F8FE] text-xs tracking-[.08em] text-brand-blue uppercase">
                   <tr>

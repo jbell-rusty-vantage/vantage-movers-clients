@@ -1,7 +1,7 @@
 import type { Testimonial } from "@vantage/api-client";
 import { Suspense } from "react";
 import { TestimonialsSectionSkeleton } from "@/components/feedback/LoadingSkeletons";
-import { Footer } from "@/components/layout/Footer";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Header } from "@/components/layout/Header";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { CoverageSection } from "@/components/sections/CoverageSection";
@@ -63,7 +63,7 @@ export function HomePage({
         />
         <FinalCTASection />
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }

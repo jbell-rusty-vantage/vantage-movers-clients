@@ -1,4 +1,4 @@
-import { Footer } from "@/components/layout/Footer";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/ui/Container";
 import { heroHeadingFont } from "@/lib/fonts";
@@ -180,7 +180,7 @@ export function HomePageSkeleton() {
         </section>
         <TestimonialsSectionSkeleton />
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }
@@ -217,7 +217,7 @@ export function PolicyPageSkeleton() {
           </article>
         </Container>
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }
@@ -252,7 +252,7 @@ export function CarrierContactsPageSkeleton() {
           </Container>
         </section>
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }

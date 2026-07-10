@@ -141,28 +141,43 @@ export async function getTestimonials(
   }
 }
 
-/** Fetch active moving carriers with no cache so the footer stays current. */
-export async function getMovingCarriers(options: { limit?: number } = {}): Promise<MovingCarrier[]> {
-  const { limit = 250 } = options;
-  const params = new URLSearchParams({ active: "true", limit: String(limit) });
+/** Fetch all active moving carriers with no cache so the footer stays current. */
+export async function getMovingCarriers(options: { pageSize?: number } = {}): Promise<MovingCarrier[]> {
+  const { pageSize = 250 } = options;
+  const carriers: MovingCarrier[] = [];
 
   try {
-    const res = await fetch(`${API_BASE_URL}/api/v1/moving-carriers?${params.toString()}`, {
-      method: "GET",
-      headers: authHeaders(),
-      cache: "no-store",
-    });
+    let page = 1;
+    let hasNextPage = true;
 
-    if (!res.ok) {
-      console.error(`[vantage] moving carriers fetch failed: ${res.status}`);
-      return [];
+    while (hasNextPage) {
+      const params = new URLSearchParams({
+        active: "true",
+        limit: String(pageSize),
+        page: String(page),
+      });
+
+      const res = await fetch(`${API_BASE_URL}/api/v1/moving-carriers?${params.toString()}`, {
+        method: "GET",
+        headers: authHeaders(),
+        cache: "no-store",
+      });
+
+      if (!res.ok) {
+        console.error(`[vantage] moving carriers fetch failed: ${res.status}`);
+        return page === 1 ? [] : carriers;
+      }
+
+      const body = (await res.json()) as MovingCarrierListResponse;
+      carriers.push(...(body.data?.items ?? []).filter((item) => item.active));
+      hasNextPage = body.data?.has_next_page === true;
+      page += 1;
     }
 
-    const body = (await res.json()) as MovingCarrierListResponse;
-    return (body.data?.items ?? []).filter((item) => item.active);
+    return carriers;
   } catch (error) {
     console.error("[vantage] moving carriers fetch error:", error);
-    return [];
+    return carriers;
   }
 }
 

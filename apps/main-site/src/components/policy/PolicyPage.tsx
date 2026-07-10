@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, Info } from "lucide-react";
 import type { LegalBlock, LegalDoc } from "@/content/legal/docs";
 import { business } from "@/lib/content";
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Container } from "@/components/ui/Container";
 
 function Block({ block }: { block: LegalBlock }) {
@@ -151,7 +151,7 @@ export function PolicyPage({ doc }: { doc: LegalDoc }) {
           </Container>
         </section>
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import {
   business,
   footerChrome,
@@ -10,7 +9,6 @@ import {
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "./Logo";
-import { MovingCarriersBand } from "./MovingCarriersBand";
 import {
   footerPaddingScale,
   resolveFooterColors,
@@ -197,10 +195,6 @@ export function Footer() {
             {business.brokerDisclaimer}
           </p>
         </div>
-
-        <Suspense fallback={null}>
-          <MovingCarriersBand displayMode="collapsible" />
-        </Suspense>
 
         <div
           className="flex flex-wrap items-center justify-between gap-4 pt-6"

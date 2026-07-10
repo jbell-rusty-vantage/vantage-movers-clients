@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Mail, Phone } from "lucide-react";
-import { Footer } from "@/components/layout/Footer";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/ui/Container";
 import { business } from "@/lib/content";
@@ -104,7 +104,7 @@ export default function AccessibilityPage() {
           </article>
         </Container>
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }
