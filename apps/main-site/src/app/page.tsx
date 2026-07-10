@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const testimonialsPromise = getTestimonials()
+  const testimonialsPromise = getTestimonials({ limit: 100 })
     .then((items) => items.filter((item) => item.published))
     .catch((error) => {
       console.error("[main-site testimonials]", error);
