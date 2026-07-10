@@ -1,5 +1,12 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "FORM_LEAD_ROUTE",
+    "GOOGLE_SERVICE_ACCOUNT_JSON",
+    "TBM_BACKFILL_UPDATED_SHEET_ID",
+    "VANTAGE_API_BASE_URL",
+    "VANTAGE_API_SECRET"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
