@@ -64,6 +64,7 @@ function toCardData(items: Testimonial[]): CardData[] {
 function fillMarquee(cards: CardData[]): CardData[] {
   const target = 12;
   if (cards.length === 0) return [];
+  if (cards.length >= target) return cards;
   return Array.from({ length: target }, (_, index) => ({
     ...cards[index % cards.length]!,
     key: `${cards[index % cards.length]!.key}-${index}`,
