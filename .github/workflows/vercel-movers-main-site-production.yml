@@ -31,6 +31,7 @@ env:
   VERCEL_GIT_COMMIT_REF: ${{ github.ref_name }}
   VERCEL_GIT_COMMIT_SHA: ${{ github.sha }}
   VERCEL_GIT_COMMIT_AUTHOR_LOGIN: ${{ github.actor }}
+  VANTAGE_API_SECRET: ${{ secrets.VANTAGE_API_SECRET }}
 
 jobs:
   deploy:
@@ -77,18 +78,8 @@ jobs:
           fs.writeFileSync(file, JSON.stringify(project, null, 2));
           '
 
-      - name: Pull main-site production environment
-        run: >-
-          vercel env pull apps/main-site/.env.production.local
-          --yes
-          --environment=production
-          --token="$VERCEL_TOKEN"
-
       - name: Verify main-site build API access
-        run: >-
-          node
-          --env-file=apps/main-site/.env.production.local
-          apps/main-site/scripts/verify-build-api.mjs
+        run: node apps/main-site/scripts/verify-build-api.mjs
 
       - name: Build prebuilt production output
         run: vercel build --prod --token="$VERCEL_TOKEN"
