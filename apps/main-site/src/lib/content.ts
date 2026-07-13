@@ -359,6 +359,7 @@ export const servicesSection = {
 export const featureRows = [
   {
     eyebrow: "Long-Distance Moving",
+    anchorId: "service-long-distance-feature",
     title: "Long-Distance Moving, Coordinated Step by Step",
     body: "Long-distance moves require careful planning, timing, and coordination from start to finish. Vantage Movers helps make the process easier by reviewing your pickup location, delivery location, move size, preferred dates, and any additional service needs before coordinating transportation with professional, licensed and insured carriers. From planning your estimate to preparing for pickup and delivery, our team is here to help you move with confidence.",
     checklist: [
@@ -373,6 +374,7 @@ export const featureRows = [
   },
   {
     eyebrow: "Military Moving",
+    anchorId: "service-military-moving",
     title: "Veteran & Military Moves",
     body: "We understand how important a smooth, reliable moving experience is for military families. We help coordinate PCS relocations, veteran relocations, storage options, and long-distance moving services designed to make each transition easier. We are proud to support military members and families with dependable moving solutions tailored to their needs.",
     checklist: [
@@ -448,20 +450,20 @@ export const whyVantageSection = {
 } as const;
 
 export const footerServiceLinks = [
-  "Long-Distance Moving",
-  "Interstate Moving",
-  "Residential Moving",
-  "Corporate Relocation",
-  "Commercial / Office Moving",
-  "Military Moving",
-  "Senior Moving",
-  "Packing Services",
-  "Loading & Unloading",
-  "Moving Coordination",
+  { label: "Long-Distance Moving", href: "/#service-long-distance-moving" },
+  { label: "Interstate Moving", href: "/#service-long-distance-moving" },
+  { label: "Residential Moving", href: "/#service-long-distance-moving" },
+  { label: "Corporate Relocation", href: "/#service-commercial-office-moving" },
+  { label: "Commercial / Office Moving", href: "/#service-commercial-office-moving" },
+  { label: "Military Moving", href: "/#service-military-moving" },
+  { label: "Senior Moving", href: "/#service-senior-moving" },
+  { label: "Packing Services", href: "/#service-packing-services" },
+  { label: "Loading & Unloading", href: "/#service-packing-services" },
+  { label: "Moving Coordination", href: "/#service-long-distance-feature" },
 ];
 
 export const footerCompanyLinks = [
-  { label: "Join Our Carrier Network", href: "/carrier-contacts", newTab: true },
+  { label: "Join Our Carrier Network", href: "/carrier-contacts" },
   { label: "Consumer Information", href: "/consumer-information" },
   { label: "About Us", href: "/#about" },
   { label: "Service Areas", href: "/#map" },

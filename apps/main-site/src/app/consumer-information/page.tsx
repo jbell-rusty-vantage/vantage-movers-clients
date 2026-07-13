@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getMovingCarriers } from "@vantage/api-client";
 import { ArrowLeft } from "lucide-react";
+import { ScrollToPageTop } from "@/components/interactive/ScrollToPageTop";
 import { Header } from "@/components/layout/Header";
 import { MovingCarriersSection } from "@/components/layout/MovingCarriersSection";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -24,6 +25,7 @@ export default async function ConsumerInformationPage() {
 
   return (
     <>
+      <ScrollToPageTop />
       <Header />
       <main className={`bg-cream ${heroBodyFont.className}`}>
         <section className="bg-brand-blue py-10 text-white sm:py-12">

@@ -85,16 +85,16 @@ export function Footer() {
               Services
             </h4>
             <div className="flex flex-col gap-[11px]" style={{ fontSize: `${BODY_FONT_SIZE}px` }}>
-              {footerServiceLinks.map((label) => (
+              {footerServiceLinks.map((link) => (
                 <Link
-                  key={label}
-                  href="/#services"
+                  key={link.label}
+                  href={link.href}
                   className={linkClassName}
                   style={{ color: colors.linkColor }}
                   data-analytics-location="footer_services"
-                  data-analytics-move-type={label}
+                  data-analytics-move-type={link.label}
                 >
-                  {label}
+                  {link.label}
                 </Link>
               ))}
             </div>
@@ -116,7 +116,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    {...newTabProps("newTab" in link ? link.newTab : false)}
+                    scroll={link.label === "Consumer Information" ? false : undefined}
                     className={companyLinkClassName(link.label)}
                     style={{ color: colors.linkColor }}
                     data-analytics-location="footer_company"
@@ -127,7 +127,6 @@ export function Footer() {
                   <a
                     key={link.label}
                     href={link.href}
-                    {...newTabProps("newTab" in link ? link.newTab : false)}
                     className={companyLinkClassName(link.label)}
                     style={{ color: colors.linkColor }}
                     data-analytics-location="footer_company"

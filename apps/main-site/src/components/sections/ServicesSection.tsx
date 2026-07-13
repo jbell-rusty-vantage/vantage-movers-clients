@@ -136,7 +136,8 @@ export function ServicesSection() {
           return (
             <div
               key={row.eyebrow}
-              className="mb-16 grid items-center gap-14 last:mb-[72px] md:grid-cols-2"
+              id={row.anchorId}
+              className="mb-16 grid scroll-mt-28 items-center gap-14 last:mb-[72px] md:grid-cols-2"
             >
               {row.imageFirst ? (
                 <>
