@@ -40,7 +40,6 @@ env:
   VERCEL_GIT_COMMIT_SHA: ${{ github.sha }}
   VERCEL_GIT_COMMIT_AUTHOR_LOGIN: ${{ github.actor }}
   VERCEL_GIT_PULL_REQUEST_ID: ${{ github.event.pull_request.number || '' }}
-  VANTAGE_API_SECRET: ${{ secrets.VANTAGE_API_SECRET }}
 
 jobs:
   deploy:
@@ -71,7 +70,12 @@ jobs:
         run: pnpm turbo typecheck --filter=@vantage/main-site
 
       - name: Pull Vercel preview environment
-        run: vercel pull --yes --environment=preview --token="$VERCEL_TOKEN"
+        run: >-
+          vercel pull
+          --yes
+          --environment=preview
+          --git-branch="$VERCEL_GIT_COMMIT_REF"
+          --token="$VERCEL_TOKEN"
 
       - name: Apply monorepo root directory for Vercel CLI
         run: |
@@ -89,9 +93,13 @@ jobs:
 
       - name: Verify main-site build API access
         run: node apps/main-site/scripts/verify-build-api.mjs
+        env:
+          VANTAGE_API_SECRET: ${{ secrets.VANTAGE_API_SECRET }}
 
       - name: Build prebuilt output
         run: vercel build --token="$VERCEL_TOKEN"
+        env:
+          VANTAGE_API_SECRET: ${{ secrets.VANTAGE_API_SECRET }}
 
       - name: Deploy prebuilt preview
         id: deploy
