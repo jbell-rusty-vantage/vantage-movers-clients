@@ -462,6 +462,7 @@ export const footerServiceLinks = [
 
 export const footerCompanyLinks = [
   { label: "Join Our Carrier Network", href: "/carrier-contacts", newTab: true },
+  { label: "Consumer Information", href: "/consumer-information" },
   { label: "About Us", href: "/#about" },
   { label: "Service Areas", href: "/#map" },
   { label: "FAQs", href: "/#faq" },

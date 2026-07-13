@@ -22,7 +22,13 @@ const colors = resolveFooterColors("light", {});
 
 const linkClassName =
   "no-underline transition-colors duration-150 hover:[color:var(--footer-link-hover)]";
-const carrierNetworkLinkClassName = `${linkClassName} font-extrabold`;
+const emphasizedLinkClassName = `${linkClassName} font-extrabold`;
+
+function companyLinkClassName(label: string) {
+  return label === "Join Our Carrier Network" || label === "Consumer Information"
+    ? emphasizedLinkClassName
+    : linkClassName;
+}
 
 function newTabProps(newTab?: boolean) {
   return newTab ? { target: "_blank", rel: "noopener noreferrer" } : {};
@@ -111,11 +117,7 @@ export function Footer() {
                     key={link.label}
                     href={link.href}
                     {...newTabProps("newTab" in link ? link.newTab : false)}
-                    className={
-                      link.label === "Join Our Carrier Network"
-                        ? carrierNetworkLinkClassName
-                        : linkClassName
-                    }
+                    className={companyLinkClassName(link.label)}
                     style={{ color: colors.linkColor }}
                     data-analytics-location="footer_company"
                   >
@@ -126,11 +128,7 @@ export function Footer() {
                     key={link.label}
                     href={link.href}
                     {...newTabProps("newTab" in link ? link.newTab : false)}
-                    className={
-                      link.label === "Join Our Carrier Network"
-                        ? carrierNetworkLinkClassName
-                        : linkClassName
-                    }
+                    className={companyLinkClassName(link.label)}
                     style={{ color: colors.linkColor }}
                     data-analytics-location="footer_company"
                   >

@@ -4,6 +4,7 @@ import { absoluteUrl } from "@/lib/site";
 const routes = [
   { path: "/", priority: 1, changeFrequency: "weekly" },
   { path: "/carrier-contacts", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/consumer-information", priority: 0.5, changeFrequency: "weekly" },
   { path: "/accessibility", priority: 0.3, changeFrequency: "yearly" },
   { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
   { path: "/terms", priority: 0.3, changeFrequency: "yearly" },

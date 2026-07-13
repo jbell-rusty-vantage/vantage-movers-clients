@@ -12,13 +12,9 @@ const colors = resolveFooterColors("light", {});
 
 type MovingCarriersSectionProps = {
   carriers: MovingCarrier[];
-  defaultOpen?: boolean;
 };
 
-export function MovingCarriersSection({
-  carriers,
-  defaultOpen = true,
-}: MovingCarriersSectionProps) {
+export function MovingCarriersSection({ carriers }: MovingCarriersSectionProps) {
   if (carriers.length === 0) {
     return null;
   }
@@ -35,11 +31,7 @@ export function MovingCarriersSection({
       aria-label="Active moving carriers"
     >
       <Container className="px-0">
-        <MovingCarriersTable
-          carriers={carriers}
-          displayMode="collapsible"
-          defaultOpen={defaultOpen}
-        />
+        <MovingCarriersTable carriers={carriers} />
       </Container>
     </section>
   );
