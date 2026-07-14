@@ -7,6 +7,7 @@ import type { QuoteFormValues, QuoteResult } from "@/schemas/quote-form.schema";
  */
 const BASE_BY_SIZE: Record<string, number> = {
   Studio: 1200,
+  "1 Bedroom": 1500,
   "2 Bedrooms": 1850,
   "3 Bedrooms": 2650,
   "4 Bedrooms": 3200,

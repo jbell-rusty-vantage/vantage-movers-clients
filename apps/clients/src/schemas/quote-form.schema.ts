@@ -13,6 +13,7 @@ import { z } from "zod";
  */
 export const MOVE_SIZES = [
   "Studio",
+  "1 Bedroom",
   "2 Bedrooms",
   "3 Bedrooms",
   "4 Bedrooms",
