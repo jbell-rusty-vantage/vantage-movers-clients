@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { ArrowRight, Check } from "lucide-react";
-import { featureRows, services, servicesSection } from "@/lib/content";
+import { featureRows, servicesSection } from "@/lib/content";
+import { englishServices } from "@/content/services/registry";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { resolveSiteImage } from "@/lib/images";
 import { SERVICE_ICONS } from "@/lib/icons";
@@ -108,7 +109,7 @@ export function ServicesSection() {
                   Request a Quote
                 </a>
                 <a
-                  href="#services"
+                  href={row.eyebrow === "Military Moving" ? "/services/military-moving" : "/services/long-distance-moving"}
                   className={`${radiusClasses[BUTTON_RADIUS]} ${accentClass} border-[1.5px] border-cream-border bg-white px-6 py-[13px] font-bold tracking-[.04em] text-brand-blue uppercase no-underline transition hover:border-brand-blue`}
                   style={{ fontSize: `${CTA_FONT_SIZE}px` }}
                   data-analytics-location="service_feature"
@@ -155,17 +156,16 @@ export function ServicesSection() {
         })}
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => {
-            const Icon = SERVICE_ICONS[s.icon];
+          {englishServices.map((s) => {
+            const Icon = SERVICE_ICONS[s.benefits[0]?.icon ?? "route"];
             return (
               <a
-                key={s.title}
-                id={s.anchorId}
-                href="#quote"
+                key={s.id}
+                id={`service-${s.id}`}
+                href={s.path}
                 className={`flex scroll-mt-28 flex-col border border-cream-border-2 bg-white p-7 no-underline shadow-card transition duration-250 hover:-translate-y-1.5 hover:shadow-card-hover ${radiusClasses[CARD_RADIUS]}`}
-                data-analytics-event="cta_clicked"
-                data-analytics-cta-location="service_card"
-                data-analytics-move-type={s.title}
+                data-analytics-location="service_card"
+                data-analytics-move-type={s.id}
               >
                 <span
                   className={`mb-[18px] grid place-items-center bg-brand-yellow-soft text-brand-blue-bright ${radiusClasses[ICON_WRAPPER_RADIUS]}`}
@@ -180,19 +180,19 @@ export function ServicesSection() {
                   className={`${accentClass} mb-2 font-extrabold -tracking-[.01em] text-brand-blue`}
                   style={{ fontSize: `${CARD_TITLE_FONT_SIZE}px` }}
                 >
-                  {s.title}
+                  {s.navLabel}
                 </h3>
                 <p
                   className={`${bodyClass} mb-[18px] flex-1 leading-[1.55] text-[#64748B]`}
                   style={{ fontSize: `${CARD_DESC_FONT_SIZE}px` }}
                 >
-                  {s.desc}
+                  {s.seo.description}
                 </p>
                 <span
                   className={`${accentClass} inline-flex items-center gap-[7px] font-bold text-brand-blue-bright`}
                   style={{ fontSize: `${Math.max(CTA_FONT_SIZE - 1, 12)}px` }}
                 >
-                  Request a Quote <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
+                  Explore Service <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
                 </span>
               </a>
             );

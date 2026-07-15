@@ -24,6 +24,7 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const placeId = url.searchParams.get("placeId")?.trim();
   const sessionToken = url.searchParams.get("sessionToken")?.trim();
+  const locale = url.searchParams.get("locale") === "es-US" ? "es-US" : "en-US";
 
   if (!placeId) {
     return NextResponse.json({ error: "placeId is required" }, { status: 400 });
@@ -33,6 +34,7 @@ export async function GET(req: Request) {
     const token = await getGoogleAccessToken();
     const detailsUrl = new URL(`https://places.googleapis.com/v1/places/${placeId}`);
     if (sessionToken) detailsUrl.searchParams.set("sessionToken", sessionToken);
+    detailsUrl.searchParams.set("languageCode", locale);
 
     const res = await fetch(detailsUrl, {
       headers: {

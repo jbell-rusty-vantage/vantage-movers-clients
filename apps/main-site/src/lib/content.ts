@@ -450,16 +450,14 @@ export const whyVantageSection = {
 } as const;
 
 export const footerServiceLinks = [
-  { label: "Long-Distance Moving", href: "/#service-long-distance-moving" },
-  { label: "Interstate Moving", href: "/#service-long-distance-moving" },
-  { label: "Residential Moving", href: "/#service-long-distance-moving" },
-  { label: "Corporate Relocation", href: "/#service-commercial-office-moving" },
-  { label: "Commercial / Office Moving", href: "/#service-commercial-office-moving" },
-  { label: "Military Moving", href: "/#service-military-moving" },
-  { label: "Senior Moving", href: "/#service-senior-moving" },
-  { label: "Packing Services", href: "/#service-packing-services" },
-  { label: "Loading & Unloading", href: "/#service-packing-services" },
-  { label: "Moving Coordination", href: "/#service-long-distance-feature" },
+  { label: "Long-Distance Moving", href: "/services/long-distance-moving" },
+  { label: "Residential Moving", href: "/services/residential-moving" },
+  { label: "Auto Transport", href: "/services/auto-transport" },
+  { label: "Corporate / Office Moving", href: "/services/corporate-office-moving" },
+  { label: "Military Moving", href: "/services/military-moving" },
+  { label: "Senior Moving", href: "/services/senior-moving" },
+  { label: "Packing Services", href: "/services/packing-services" },
+  { label: "Storage Options", href: "/services/storage-options" },
 ];
 
 export const footerCompanyLinks = [

@@ -1,15 +1,25 @@
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { Globe2, Phone } from "lucide-react";
 import { business, headerChrome, navLinks } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
 import { ServicesDropdown } from "@/components/interactive/ServicesDropdown";
 import { Logo } from "./Logo";
+import type { ServiceLocale } from "@/content/services/types";
+import { englishServices, spanishServices } from "@/content/services/registry";
 
 /** Default nav spacing — layout-playground spacingScale.default */
 const NAV_SPACING = { py: 9, navPadX: 14, navPadY: 10 } as const;
 
-export function Header() {
+export function Header({ locale = "en-US", alternatePath, quoteHref = "/#quote" }: { locale?: ServiceLocale; alternatePath?: string; quoteHref?: string }) {
+  const es = locale === "es-US";
+  const localizedNav = es
+    ? [
+        { label: "Cobertura", href: "/#map" }, { label: "Nosotros", href: "/#about" },
+        { label: "Preguntas", href: "/#faq" }, { label: "Contacto", href: "/#contact" },
+      ]
+    : navLinks;
+  const mobileServices = es ? spanishServices : englishServices;
   return (
     <header className="sticky top-0 z-[60] border-b border-cream-border-2 bg-white shadow-[0_2px_12px_rgba(2,71,153,.05)]">
       <Container className="px-4 sm:px-7">
@@ -26,6 +36,7 @@ export function Header() {
             className={`${heroHeadingFont.className} hidden items-center gap-1 text-[15.5px] font-semibold text-brand-blue lg:flex`}
           >
             <ServicesDropdown
+              locale={locale}
               triggerStyle={{
                 paddingLeft: `${NAV_SPACING.navPadX}px`,
                 paddingRight: `${NAV_SPACING.navPadX}px`,
@@ -33,7 +44,7 @@ export function Header() {
                 paddingBottom: `${NAV_SPACING.navPadY}px`,
               }}
             />
-            {navLinks.map((link) => (
+            {localizedNav.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -49,6 +60,11 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            {alternatePath ? (
+              <Link href={alternatePath} hrefLang={es ? "en-US" : "es-US"} className="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm no-underline hover:bg-cream" aria-label={es ? "View this page in English" : "Ver esta página en español"}>
+                <Globe2 className="size-4" aria-hidden /> {es ? "EN" : "ES"}
+              </Link>
+            ) : null}
           </nav>
 
           <div className="flex items-center gap-3 sm:gap-4">
@@ -75,17 +91,26 @@ export function Header() {
               aria-label={`Call ${business.name} at ${business.phoneDisplay}`}
               data-analytics-location="header_mobile"
             >
-              Call
+              {es ? "Llamar" : "Call"}
             </a>
             <Link
-              href="/#quote"
+              href={quoteHref}
               className={`${heroHeadingFont.className} flex h-10 flex-none items-center justify-center rounded-md2 bg-brand-blue-bright px-3 text-[13px] leading-none font-bold tracking-[.03em] whitespace-nowrap text-white uppercase no-underline shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue sm:h-auto sm:px-[22px] sm:py-3.5 sm:text-[15px] sm:tracking-[.04em]`}
               data-analytics-event="cta_clicked"
               data-analytics-cta-location="header"
             >
-              {headerChrome.ctaLabel}
+              {es ? "Cotización" : headerChrome.ctaLabel}
             </Link>
           </div>
+        </div>
+        <div className="flex items-center gap-4 border-t border-cream-border-2 py-2 lg:hidden">
+          <details className={`${heroHeadingFont.className} group relative flex-1`}>
+            <summary className="cursor-pointer list-none py-2 text-sm font-bold text-brand-blue">{es ? "Explorar servicios" : "Explore services"}</summary>
+            <div className="absolute top-full left-0 z-50 grid w-[min(92vw,520px)] grid-cols-1 gap-1 rounded-xl border border-cream-border bg-white p-3 shadow-menu sm:grid-cols-2">
+              {mobileServices.map((service) => <Link key={service.id} href={service.path} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-brand-blue no-underline hover:bg-cream">{service.navLabel}</Link>)}
+            </div>
+          </details>
+          {alternatePath ? <Link href={alternatePath} hrefLang={es ? "en-US" : "es-US"} className="inline-flex items-center gap-1 py-2 text-sm font-bold text-brand-blue no-underline"><Globe2 className="size-4" aria-hidden />{es ? "English" : "Español"}</Link> : null}
         </div>
       </Container>
     </header>
