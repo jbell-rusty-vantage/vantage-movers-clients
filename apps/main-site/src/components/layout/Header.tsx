@@ -11,7 +11,7 @@ import { englishServices, spanishServices } from "@/content/services/registry";
 /** Default nav spacing — layout-playground spacingScale.default */
 const NAV_SPACING = { py: 9, navPadX: 14, navPadY: 10 } as const;
 
-export function Header({ locale = "en-US", alternatePath, quoteHref = "/#quote" }: { locale?: ServiceLocale; alternatePath?: string; quoteHref?: string }) {
+export function Header({ locale = "en-US", alternatePath, quoteHref = "/#quote", showLocaleEntry = false }: { locale?: ServiceLocale; alternatePath?: string; quoteHref?: string; showLocaleEntry?: boolean }) {
   const es = locale === "es-US";
   const localizedNav = es
     ? [
@@ -20,6 +20,10 @@ export function Header({ locale = "en-US", alternatePath, quoteHref = "/#quote" 
       ]
     : navLinks;
   const mobileServices = es ? spanishServices : englishServices;
+  const localeHref = alternatePath ?? (showLocaleEntry ? spanishServices[0].path : undefined);
+  const localeAriaLabel = alternatePath
+    ? es ? "View this page in English" : "Ver esta página en español"
+    : "Explorar servicios en español";
   return (
     <header className="sticky top-0 z-[60] border-b border-cream-border-2 bg-white shadow-[0_2px_12px_rgba(2,71,153,.05)]">
       <Container className="px-4 sm:px-7">
@@ -60,8 +64,8 @@ export function Header({ locale = "en-US", alternatePath, quoteHref = "/#quote" 
                 {link.label}
               </Link>
             ))}
-            {alternatePath ? (
-              <Link href={alternatePath} hrefLang={es ? "en-US" : "es-US"} className="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm no-underline hover:bg-cream" aria-label={es ? "View this page in English" : "Ver esta página en español"}>
+            {localeHref ? (
+              <Link href={localeHref} hrefLang={es ? "en-US" : "es-US"} className="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm no-underline hover:bg-cream" aria-label={localeAriaLabel}>
                 <Globe2 className="size-4" aria-hidden /> {es ? "EN" : "ES"}
               </Link>
             ) : null}
@@ -110,7 +114,7 @@ export function Header({ locale = "en-US", alternatePath, quoteHref = "/#quote" 
               {mobileServices.map((service) => <Link key={service.id} href={service.path} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-brand-blue no-underline hover:bg-cream">{service.navLabel}</Link>)}
             </div>
           </details>
-          {alternatePath ? <Link href={alternatePath} hrefLang={es ? "en-US" : "es-US"} className="inline-flex items-center gap-1 py-2 text-sm font-bold text-brand-blue no-underline"><Globe2 className="size-4" aria-hidden />{es ? "English" : "Español"}</Link> : null}
+          {localeHref ? <Link href={localeHref} hrefLang={es ? "en-US" : "es-US"} className="inline-flex items-center gap-1 py-2 text-sm font-bold text-brand-blue no-underline"><Globe2 className="size-4" aria-hidden />{es ? "English" : "Español"}</Link> : null}
         </div>
       </Container>
     </header>
