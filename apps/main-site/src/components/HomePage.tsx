@@ -43,7 +43,7 @@ export function HomePage({
   return (
     <>
       <HomePageJsonLd />
-      <Header />
+      <Header showLocaleEntry />
       <main>
         <HeroSection />
         <TrustStrip />

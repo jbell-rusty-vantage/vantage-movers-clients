@@ -17,6 +17,7 @@ import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { radiusClasses } from "@/lib/playground/layout-playground";
 import { telHref } from "@/lib/format";
 import { MAIN_SITE } from "@/content/partners";
+import type { QuoteWizardCopy, ServiceId, ServiceLocale } from "@/content/services/types";
 import { quoteFormAnalytics, trackEvent, trackZipNotRecognized } from "@/lib/analytics";
 import {
   MOVE_SIZES,
@@ -49,6 +50,9 @@ export interface QuoteWizardProps {
   variant?: "hero" | "panel";
   formId?: string;
   className?: string;
+  copy?: QuoteWizardCopy;
+  locale?: ServiceLocale;
+  serviceId?: ServiceId;
 }
 
 const labelCls =
@@ -116,6 +120,7 @@ function ZipField({
   register,
   setValue,
   error,
+  locale = "en-US",
 }: {
   id: string;
   label: string;
@@ -126,6 +131,7 @@ function ZipField({
   register: UseFormRegister<QuoteFormInput>;
   setValue: UseFormSetValue<QuoteFormInput>;
   error?: FieldError;
+  locale?: ServiceLocale;
 }) {
   const [resolvedRegion, setResolvedRegion] = useState("");
   const [lookupWarning, setLookupWarning] = useState("");
@@ -144,7 +150,7 @@ function ZipField({
       setLookupError("");
       try {
         const res = await fetch(
-          `/api/places/autocomplete?input=${encodeURIComponent(zip)}&sessionToken=${encodeURIComponent(sessionToken)}`,
+          `/api/places/autocomplete?input=${encodeURIComponent(zip)}&sessionToken=${encodeURIComponent(sessionToken)}&locale=${encodeURIComponent(locale)}`,
           { signal: controller.signal },
         );
         if (!res.ok) throw new Error("Unable to resolve ZIP");
@@ -195,7 +201,7 @@ function ZipField({
       window.clearTimeout(timeout);
       controller.abort();
     };
-  }, [displayValue, fieldName, sessionToken, setValue]);
+  }, [displayValue, fieldName, locale, sessionToken, setValue]);
 
   return (
     <Field label={label} error={error?.message || lookupError}>
@@ -241,6 +247,9 @@ export function QuoteWizard({
   variant = "hero",
   formId,
   className = "",
+  copy,
+  locale = "en-US",
+  serviceId,
 }: QuoteWizardProps) {
   const [step, setStep] = useState(0);
   const [result, setResult] = useState<QuoteResult | null>(null);
@@ -273,13 +282,34 @@ export function QuoteWizard({
 
   const stepDisplay = step + 1;
   const isPanel = variant === "panel";
-  const steps = isPanel ? PANEL_STEPS : STEPS;
+  const steps = locale === "es-US"
+    ? isPanel
+      ? [{ n: 1, label: "Su mudanza" }, { n: 2, label: "Contacto" }, { n: 3, label: "Listo" }] as const
+      : [{ n: 1, label: "Detalles" }, { n: 2, label: "Contacto" }, { n: 3, label: "Confirmación" }] as const
+    : isPanel ? PANEL_STEPS : STEPS;
   const resolvedFormId = formId ?? (isPanel ? undefined : "quote");
   const fieldIdPrefix = resolvedFormId ?? "quote";
   const panelPadding = isPanel ? "px-3 pt-0 pb-5 min-[360px]:px-4 sm:px-6 sm:pb-6" : "px-[30px] pt-[30px] pb-[26px]";
   const headingFontClass = heroHeadingFont.className;
   const bodyFontClass = isPanel ? heroBodyFont.className : "";
   const moveDate = useWatch({ control, name: "date" });
+  const es = locale === "es-US";
+  const labels = es
+    ? {
+        pickup: "Origen (código postal)", destination: "Destino (código postal)",
+        pickupPlaceholder: "Código postal de origen", destinationPlaceholder: "Código postal de destino",
+        date: "Fecha estimada", datePlaceholder: "Seleccione la fecha", size: "Tamaño de la mudanza",
+        sizePlaceholder: "Seleccione el tamaño…", name: "Nombre completo", namePlaceholder: "Su nombre",
+        email: "Correo electrónico", phone: "Teléfono", back: "Atrás", submitting: "Enviando…",
+        startOver: "Comenzar de nuevo", privacy: "Nunca vendemos su información.",
+      }
+    : {
+        pickup: "Moving From (ZIP)", destination: "Moving To (ZIP)", pickupPlaceholder: "Pickup ZIP code",
+        destinationPlaceholder: "Destination ZIP code", date: "Estimated Move Date", datePlaceholder: "Select move date",
+        size: "Move Size", sizePlaceholder: "Select move size…", name: "Full Name", namePlaceholder: "Your name",
+        email: "Email", phone: "Phone", back: "Back", submitting: "Submitting…", startOver: "Start Over",
+        privacy: "We never sell your information.",
+      };
 
   useEffect(() => {
     const stepMeta = STEP_ANALYTICS[step];
@@ -290,8 +320,10 @@ export function QuoteWizard({
       ...stepMeta,
       form_variant: variant,
       form_id: resolvedFormId || "quote-panel",
+      service_id: serviceId ?? "general",
+      locale,
     });
-  }, [step, variant, resolvedFormId]);
+  }, [step, variant, resolvedFormId, serviceId, locale]);
 
   function markFormStarted() {
     if (formStartedRef.current) return;
@@ -300,6 +332,8 @@ export function QuoteWizard({
       ...quoteFormAnalytics,
       form_variant: variant,
       form_id: resolvedFormId || "quote-panel",
+      service_id: serviceId ?? "general",
+      locale,
     });
   }
 
@@ -341,6 +375,8 @@ export function QuoteWizard({
       form_id: resolvedFormId || "quote-panel",
       move_size: values.size || "unknown",
       has_inbound_ref: Boolean(inboundRefNo),
+      service_id: serviceId ?? "general",
+      locale,
     };
   }
 
@@ -419,7 +455,7 @@ export function QuoteWizard({
   return (
     <form
       id={resolvedFormId}
-      className={`${isPanel ? radiusClasses.md2 : "rounded-panel"} w-full min-w-0 bg-white ${panelPadding} shadow-form-card ${bodyFontClass} ${className ?? ""}`}
+      className={`${isPanel ? radiusClasses.md2 : "rounded-panel"} w-full min-w-0 scroll-mt-44 bg-white lg:scroll-mt-32 ${panelPadding} shadow-form-card ${bodyFontClass} ${className ?? ""}`}
       onSubmit={handleNext}
       onChange={markFormStarted}
       onFocus={markFormStarted}
@@ -430,9 +466,9 @@ export function QuoteWizard({
           <h2
             className={`mb-1 text-[22px] font-extrabold -tracking-[.02em] text-white ${headingFontClass}`}
           >
-            {quoteSection.formTitle}
+            {copy?.title ?? quoteSection.formTitle}
           </h2>
-          <p className="m-0 text-[13.5px] text-on-dark-500">{quoteSection.formSubtitle}</p>
+          <p className="m-0 text-[13.5px] text-on-dark-500">{copy?.subtitle ?? quoteSection.formSubtitle}</p>
           <div className="mt-4 h-0.5 w-full rounded-full bg-brand-yellow" />
         </div>
       ) : (
@@ -440,10 +476,10 @@ export function QuoteWizard({
           <h2
             className={`mb-1.5 text-[25px] font-extrabold -tracking-[.02em] text-brand-blue ${headingFontClass}`}
           >
-            Request Your Moving Quote
+            {copy?.title ?? "Request Your Moving Quote"}
           </h2>
           <p className="m-0 text-[14.5px] text-[#64748B]">
-            Tell us where you are moving, when, and what you need moved.
+            {copy?.subtitle ?? "Tell us where you are moving, when, and what you need moved."}
           </p>
         </div>
       )}
@@ -487,13 +523,13 @@ export function QuoteWizard({
             <Check className="text-brand-blue-bright" size={30} strokeWidth={2.5} />
           </span>
           <h3 className="mb-2 font-display text-[21px] font-extrabold text-brand-blue">
-            Request Received
+            {copy?.confirmationTitle ?? "Request Received"}
           </h3>
           <p className="mb-3 text-[14.5px] leading-[1.55] text-[#64748B]">
             {getValues("pickup")} → {getValues("dest")} · {getValues("size")}
           </p>
           <p className="mb-[18px] text-[14.5px] leading-[1.55] text-[#64748B]">
-            A Vantage moving coordinator will reach out shortly. To speak with someone now, call{" "}
+            {copy?.confirmationBody ?? "A Vantage moving coordinator will reach out shortly."} {es ? "Para hablar ahora, llame al" : "To speak with someone now, call"}{" "}
             <a
               href={telHref(business.phoneDisplay)}
               className="font-semibold text-brand-blue-bright"
@@ -508,7 +544,7 @@ export function QuoteWizard({
             onClick={handleReset}
             className="cursor-pointer rounded-lg2 border-[1.5px] border-cream-border bg-cream px-5 py-[11px] font-display text-sm font-bold tracking-[.04em] text-brand-blue uppercase"
           >
-            Start Over
+            {labels.startOver}
           </button>
         </div>
       ) : (
@@ -517,34 +553,36 @@ export function QuoteWizard({
             <div>
               <ZipField
                 id={`${fieldIdPrefix}-pickup-zip`}
-                label="Moving From (ZIP)"
+                label={labels.pickup}
                 fieldName="pickup"
-                placeholder="Pickup ZIP code"
+                placeholder={labels.pickupPlaceholder}
                 displayValue={pickupZip}
                 onDisplayChange={setPickupZip}
                 register={register}
                 setValue={setValue}
                 error={errors.pickup}
+                locale={locale}
               />
               <ZipField
                 id={`${fieldIdPrefix}-dest-zip`}
-                label="Moving To (ZIP)"
+                label={labels.destination}
                 fieldName="dest"
-                placeholder="Destination ZIP code"
+                placeholder={labels.destinationPlaceholder}
                 displayValue={destZip}
                 onDisplayChange={setDestZip}
                 register={register}
                 setValue={setValue}
                 error={errors.dest}
+                locale={locale}
               />
-              <Field label="Estimated Move Date" error={errors.date?.message}>
+              <Field label={labels.date} error={errors.date?.message}>
                 <div onClick={trackDatePickerOpened} onFocusCapture={trackDatePickerOpened}>
                   <MoveDatePicker
                     id={`${fieldIdPrefix}-move-date`}
                     variant="main-site"
                     value={moveDate}
                     hasError={!!errors.date}
-                    placeholder="Select move date"
+                    placeholder={labels.datePlaceholder}
                     onChange={(nextDate) =>
                       setValue("date", nextDate, {
                         shouldDirty: true,
@@ -556,14 +594,14 @@ export function QuoteWizard({
                   />
                 </div>
               </Field>
-              <Field label="Move Size" error={errors.size?.message}>
+              <Field label={labels.size} error={errors.size?.message}>
                 <select
                   className={`${inputCls} ${errors.size ? inputErrCls : ""}`}
                   defaultValue=""
                   {...register("size")}
                 >
                   <option value="" disabled>
-                    Select move size…
+                    {labels.sizePlaceholder}
                   </option>
                   {MOVE_SIZES.map((s) => (
                     <option key={s} value={s}>
@@ -577,14 +615,14 @@ export function QuoteWizard({
 
           {step === 1 && (
             <div>
-              <Field label="Full Name" error={errors.name?.message}>
+              <Field label={labels.name} error={errors.name?.message}>
                 <input
                   className={`${inputCls} ${errors.name ? inputErrCls : ""}`}
-                  placeholder="Your name"
+                  placeholder={labels.namePlaceholder}
                   {...register("name")}
                 />
               </Field>
-              <Field label="Email" error={errors.email?.message}>
+              <Field label={labels.email} error={errors.email?.message}>
                 <input
                   type="email"
                   className={`${inputCls} ${errors.email ? inputErrCls : ""}`}
@@ -592,7 +630,7 @@ export function QuoteWizard({
                   {...register("email")}
                 />
               </Field>
-              <Field label="Phone" error={errors.phone?.message} className="mb-3.5">
+              <Field label={labels.phone} error={errors.phone?.message} className="mb-3.5">
                 <input
                   type="tel"
                   inputMode="tel"
@@ -608,9 +646,9 @@ export function QuoteWizard({
                   {...register("smsConsent")}
                 />
                 <span className="text-[11.5px] leading-[1.5] text-[#64748B]">
-                  I agree to receive SMS messages from {business.name} about my moving quote
-                  request, scheduling updates, and customer support. Msg &amp; data rates may apply.
-                  Reply STOP to opt out. Consent is not required to submit a quote request.
+                  {es
+                    ? `Acepto recibir mensajes SMS de ${business.name} sobre mi solicitud, programación y soporte. Pueden aplicarse tarifas. Responda STOP para cancelar. El consentimiento no es obligatorio.`
+                    : `I agree to receive SMS messages from ${business.name} about my moving quote request, scheduling updates, and customer support. Msg & data rates may apply. Reply STOP to opt out. Consent is not required to submit a quote request.`}
                 </span>
               </label>
             </div>
@@ -628,7 +666,7 @@ export function QuoteWizard({
                 disabled={loading}
                 className={`${ghostBtn} px-5 py-3.5`}
               >
-                Back
+                {labels.back}
               </button>
             )}
             <button
@@ -637,12 +675,12 @@ export function QuoteWizard({
               className={`${step === 0 ? `${yellowBtn} w-full py-[15px]` : step === 1 ? "flex-1 cursor-pointer rounded-lg2 border-none bg-brand-blue-bright py-3.5 font-display text-base font-bold tracking-[.04em] text-white uppercase shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0" : yellowBtn} ${step === 1 ? "" : step > 0 ? "flex-1 py-3.5" : ""}`}
             >
               {loading
-                ? "Submitting…"
+                ? labels.submitting
                 : step === 1
                   ? isPanel
-                    ? "Get My Free Quote"
-                    : "Request Free Quote"
-                  : "Continue"}
+                    ? copy?.submitLabel ?? "Get My Free Quote"
+                    : copy?.submitLabel ?? "Request Free Quote"
+                  : copy?.continueLabel ?? "Continue"}
             </button>
           </div>
         </>
@@ -651,7 +689,7 @@ export function QuoteWizard({
       {isPanel ? (
         <p className="mt-4 flex items-center justify-center gap-[7px] text-center text-[12.5px] text-[#94a3b8]">
           <Check className="text-brand-blue-bright" size={13} strokeWidth={2.5} aria-hidden />
-          We never sell your information.
+          {labels.privacy}
         </p>
       ) : (
         <div className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-center text-[12.5px] text-[#94a3b8]">

@@ -2,11 +2,13 @@ import { Clock, Phone } from "lucide-react";
 import { business } from "@/lib/content";
 import { heroBodyFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
+import type { ServiceLocale } from "@/content/services/types";
 
 /** Relaxed spacing — layout-playground spacingScale.relaxed */
 const BAR_SPACING = { py: 12, gap: 24 } as const;
 
-export function ComplianceBar() {
+export function ComplianceBar({ locale = "en-US" }: { locale?: ServiceLocale }) {
+  const es = locale === "es-US";
   return (
     <div
       className={`${heroBodyFont.className} bg-brand-blue text-[12px] tracking-[.01em] text-on-dark-100`}
@@ -26,7 +28,7 @@ export function ComplianceBar() {
           >
             <span className="inline-flex items-center gap-[7px] font-semibold text-white">
               <span className="inline-block size-[7px] rounded-full bg-brand-yellow" aria-hidden />
-              {business.brokerLine}
+              {es ? "Corredor de mudanzas autorizado" : business.brokerLine}
             </span>
             <span className="text-on-dark-600">DOT {business.dot}</span>
             <span className="text-on-dark-600">MC {business.mc}</span>
