@@ -455,7 +455,7 @@ export function QuoteWizard({
   return (
     <form
       id={resolvedFormId}
-      className={`${isPanel ? radiusClasses.md2 : "rounded-panel"} w-full min-w-0 bg-white ${panelPadding} shadow-form-card ${bodyFontClass} ${className ?? ""}`}
+      className={`${isPanel ? radiusClasses.md2 : "rounded-panel"} w-full min-w-0 scroll-mt-44 bg-white lg:scroll-mt-32 ${panelPadding} shadow-form-card ${bodyFontClass} ${className ?? ""}`}
       onSubmit={handleNext}
       onChange={markFormStarted}
       onFocus={markFormStarted}
