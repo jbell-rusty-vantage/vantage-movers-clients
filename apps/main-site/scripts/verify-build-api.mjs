@@ -1,7 +1,25 @@
 const apiSecret = process.env.VANTAGE_API_SECRET?.trim();
-const apiBaseUrl =
-  process.env.VANTAGE_API_BASE_URL?.trim().replace(/\/+$/, "") ||
-  "https://vantage-movers-main-server.vercel.app";
+const defaultApiBaseUrl = "https://vantage-movers-main-server.vercel.app";
+
+function resolveApiBaseUrl(value) {
+  const configured = value?.trim().replace(/^(['"])(.*)\1$/, "$2");
+  if (!configured) {
+    return defaultApiBaseUrl;
+  }
+
+  const url = new URL(
+    /^[a-z][a-z\d+.-]*:\/\//i.test(configured) ? configured : `https://${configured}`,
+  );
+  if (url.protocol !== "http:" && url.protocol !== "https:") {
+    throw new Error("VANTAGE_API_BASE_URL must use http or https");
+  }
+  if (url.search || url.hash) {
+    throw new Error("VANTAGE_API_BASE_URL cannot contain a query string or fragment");
+  }
+  return url.toString().replace(/\/+$/, "");
+}
+
+const apiBaseUrl = resolveApiBaseUrl(process.env.VANTAGE_API_BASE_URL);
 
 if (!apiSecret) {
   throw new Error("VANTAGE_API_SECRET is required to build the main site");

@@ -80,11 +80,13 @@ jobs:
       - name: Verify main-site build API access
         run: node apps/main-site/scripts/verify-build-api.mjs
         env:
+          VANTAGE_API_BASE_URL: https://vantage-movers-main-server.vercel.app
           VANTAGE_API_SECRET: ${{ secrets.VANTAGE_API_SECRET }}
 
       - name: Build prebuilt production output
         run: vercel build --prod --token="$VERCEL_TOKEN"
         env:
+          VANTAGE_API_BASE_URL: https://vantage-movers-main-server.vercel.app
           VANTAGE_API_SECRET: ${{ secrets.VANTAGE_API_SECRET }}
 
       - name: Deploy prebuilt production
