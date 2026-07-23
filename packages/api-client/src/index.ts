@@ -80,6 +80,8 @@ export interface CreateFormLeadInput {
   move_size: string;
   move_date?: string;
   ref_no?: string;
+  lid?: string;
+  post_to_granot?: boolean;
   quoted?: boolean;
   sms_consent?: boolean;
 }
