@@ -9,6 +9,7 @@ const requestSchema = quoteFormSchema.extend({
   source_company: z.string().trim().optional(),
   source_company_site: z.string().trim().optional(),
   ref_no: z.string().trim().optional(),
+  lid: z.string().trim().regex(/^LID[0-9a-f]{13}$/),
   sms_consent: z.boolean().optional(),
 });
 
@@ -28,7 +29,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const { ref_no, sms_consent } = parsed.data;
+  const { ref_no, lid, sms_consent } = parsed.data;
   const quote = {
     pickup: parsed.data.pickup,
     dest: parsed.data.dest,
@@ -51,16 +52,22 @@ export async function POST(req: Request) {
     move_size: quote.size,
     move_date: quote.date,
     ref_no: ref_no || undefined,
+    lid,
+    post_to_granot: true,
     sms_consent: sms_consent ?? quote.smsConsent,
   };
 
   const leadResult = await createFormLead(leadPayload);
+  const result = estimate(quote);
   if (!leadResult.ok) {
     console.error(
       `[quote] form lead create failed (${leadResult.status}): ${leadResult.error}`,
     );
+    return NextResponse.json(
+      { ...result, leadCaptured: false },
+      { status: leadResult.status >= 400 ? leadResult.status : 502 },
+    );
   }
 
-  const result = estimate(quote);
-  return NextResponse.json({ ...result, leadCaptured: leadResult.ok });
+  return NextResponse.json({ ...result, leadCaptured: true });
 }

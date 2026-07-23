@@ -86,6 +86,21 @@ function createMainSiteRefNo() {
   return `MS-${date}-${random.toUpperCase()}`;
 }
 
+function createLeadId() {
+  const hex =
+    typeof crypto !== "undefined" && "getRandomValues" in crypto
+      ? Array.from(crypto.getRandomValues(new Uint8Array(7)), (byte) =>
+          byte.toString(16).padStart(2, "0"),
+        )
+          .join("")
+          .slice(0, 13)
+      : Array.from({ length: 13 }, () =>
+          Math.floor(Math.random() * 16).toString(16),
+        ).join("");
+
+  return `LID${hex}`;
+}
+
 function Field({
   label,
   error,
@@ -249,6 +264,7 @@ export function QuoteWizard({
   const [pickupZip, setPickupZip] = useState("");
   const [destZip, setDestZip] = useState("");
   const [internalRefNo] = useState(createMainSiteRefNo);
+  const [lid, setLid] = useState(createLeadId);
   const formStartedRef = useRef(false);
   const datePickerOpenedRef = useRef(false);
 
@@ -357,6 +373,7 @@ export function QuoteWizard({
           source_company: MAIN_SITE.sourceCompany,
           source_company_site: MAIN_SITE.sourceCompanySite,
           ref_no: refNo,
+          lid,
           sms_consent: getValues("smsConsent"),
         }),
       });
@@ -413,6 +430,7 @@ export function QuoteWizard({
     setDestZip("");
     setResult(null);
     setSubmitError("");
+    setLid(createLeadId());
     setStep(0);
   }
 
