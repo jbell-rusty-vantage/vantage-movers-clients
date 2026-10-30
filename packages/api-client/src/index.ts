@@ -9,9 +9,9 @@ import "server-only";
  * header is required by the API's `requireApiSecret` middleware.
  */
 
-const API_BASE_URL =
-  process.env.VANTAGE_API_BASE_URL?.trim().replace(/\/+$/, "") ||
-  "https://vantage-movers-main-server.vercel.app";
+import { resolveApiBaseUrl } from "./environment";
+
+const API_BASE_URL = resolveApiBaseUrl(process.env.VANTAGE_API_BASE_URL, process.env.VERCEL_ENV);
 
 const API_SECRET = process.env.VANTAGE_API_SECRET?.trim();
 
@@ -111,6 +111,7 @@ function authHeaders(): HeadersInit {
   return {
     "content-type": "application/json",
     "x-api-secret": secret,
+    ...(process.env.VANTAGE_API_PROTECTION_BYPASS ? { "x-vercel-protection-bypass": process.env.VANTAGE_API_PROTECTION_BYPASS } : {}),
   };
 }
 

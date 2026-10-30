@@ -70,7 +70,7 @@ jobs:
         run: pnpm turbo typecheck --filter=@vantage/clients
 
       - name: Pull Vercel preview environment
-        run: vercel pull --yes --environment=preview --token="$VERCEL_TOKEN"
+        run: vercel pull --yes --environment=preview --git-branch="$VERCEL_GIT_COMMIT_REF" --token="$VERCEL_TOKEN"
 
       - name: Apply monorepo root directory for Vercel CLI
         run: |

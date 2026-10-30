@@ -58,12 +58,16 @@ export async function POST(req: Request) {
   };
 
   const leadResult = await createFormLead(leadPayload);
+  const result = estimate(quote);
   if (!leadResult.ok) {
     console.error(
       `[quote] form lead create failed (${leadResult.status}): ${leadResult.error}`,
     );
+    return NextResponse.json(
+      { ...result, leadCaptured: false },
+      { status: leadResult.status >= 400 ? leadResult.status : 502 },
+    );
   }
 
-  const result = estimate(quote);
-  return NextResponse.json({ ...result, leadCaptured: leadResult.ok });
+  return NextResponse.json({ ...result, leadCaptured: true });
 }

@@ -46,11 +46,11 @@ In each Vercel project: set **Root Directory** to the app path, enable **Include
 
 ## Stack & Conventions (both apps)
 
-- **Next.js 16.2** App Router, **React 19**, **Tailwind CSS 4**, React Compiler (`reactCompiler: true`).
+- **Next.js 16.3** App Router, **React 19**, **Tailwind CSS 4**, React Compiler (`reactCompiler: true`).
 - Forms: **React Hook Form + Zod 4** (`@hookform/resolvers/zod`). Icons: **lucide-react**.
 - Vercel telemetry: `<Analytics />` and `<SpeedInsights />` mounted once in each app's root `layout.tsx`.
 - Path alias: `@/*` → `src/*`. Package manager: **pnpm** at the monorepo root.
-- Next.js docs for this version live in repo-root `.next-docs/` — see `NEXTJS_AGENTS.md` before assuming older Next APIs.
+- Bundled Next.js docs live in each app's `node_modules/next/dist/docs/` — see `AGENTS.md` before assuming older Next APIs. Dev-server MCP is configured in `.mcp.json`.
 
 ### Workspace commands
 
@@ -76,7 +76,7 @@ import { cn } from "@vantage/utils";
 @import "@vantage/styles/base.css";   /* used by clients; main-site has its own @theme tokens */
 ```
 
-Both apps list `@vantage/api-client` and `@vantage/utils` in `next.config.ts` `transpilePackages`.
+Both apps list `@vantage/api-client`, `@vantage/ui` and `@vantage/utils` in `next.config.ts` `transpilePackages`.
 
 ---
 
@@ -207,6 +207,8 @@ Set in `apps/clients/.env` and/or `apps/main-site/.env` (and matching Vercel pro
 | `VANTAGE_API_SECRET` | server | Backend auth |
 | `VANTAGE_API_BASE_URL` | server | API host (defaults to `https://vantage-movers-main-server.vercel.app`) |
 | `FORM_LEAD_ROUTE` | server | Override form-lead path |
+| `VANTAGE_API_PROTECTION_BYPASS` | server | Preview API automation bypass; never sent to browser |
+| `VERCEL_ENV` | server/platform | Preview mode rejects missing/invalid/live API origins |
 | `GOOGLE_SERVICE_ACCOUNT_JSON` | server | Places autocomplete/details |
 | `NEXT_PUBLIC_PROMO_*` | client | Promo modal toggles — **clients app only** (`content/promo.ts`) |
 
@@ -233,3 +235,7 @@ Set in `apps/clients/.env` and/or `apps/main-site/.env` (and matching Vercel pro
 | Change shared brand base tokens | clients primarily | `packages/styles/base.css` |
 
 After substantive changes, run `pnpm lint` and `pnpm typecheck` from the monorepo root (or filter to one app with `pnpm turbo typecheck --filter=@vantage/clients`).
+
+## Cloud site variations
+
+Start at `docs/cloud-site-variations.md` and the dated evidence in `docs/site-preview-status.md`. These supersede older route/font descriptions above where they differ from current source. Preview API setup is isolated from production; promote source by rebuilding on main, never by promoting a prebuilt preview artifact.

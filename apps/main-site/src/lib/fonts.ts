@@ -3,8 +3,8 @@ import {
   Hanken_Grotesk,
   Manrope,
   Red_Hat_Display,
-  Source_Sans_3,
 } from "next/font/google";
+import localFont from "next/font/local";
 
 /** Site-wide display font (nav, section headings, CTAs outside hero). */
 export const siteDisplayFont = Bricolage_Grotesque({
@@ -37,8 +37,8 @@ export const heroBodyFont = Manrope({
 });
 
 /** Testimonials body font — Source Sans 3 (Storybook Playground choice). */
-export const testimonialsBodyFont = Source_Sans_3({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+export const testimonialsBodyFont = localFont({
+  src: "../fonts/SourceSans3-variable.ttf",
+  weight: "200 900",
   display: "swap",
 });

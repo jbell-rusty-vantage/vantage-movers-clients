@@ -32,4 +32,32 @@ describe("POST /api/quote contract", () => {
       "source_company", "source_company_site",
     ]);
   });
+
+  it("returns a failure status when the lead was not captured", async () => {
+    createFormLead.mockResolvedValueOnce({
+      ok: false,
+      status: 503,
+      error: "CRM unavailable",
+    });
+    const { POST } = await import("./route");
+    const response = await POST(new Request("http://localhost/api/quote", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        pickup: "33426",
+        dest: "10001",
+        date: "2099-01-15",
+        size: "2 Bedrooms",
+        name: "Retry Test",
+        phone: "5615550100",
+        email: "retry@example.com",
+        smsConsent: false,
+        ref_no: "MS-RETRY",
+        lid: "LID6a6255e58ad8d",
+      }),
+    }));
+
+    expect(response.status).toBe(503);
+    await expect(response.json()).resolves.toMatchObject({ leadCaptured: false });
+  });
 });

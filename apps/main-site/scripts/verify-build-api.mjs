@@ -1,7 +1,7 @@
 const apiSecret = process.env.VANTAGE_API_SECRET?.trim();
-const apiBaseUrl =
-  process.env.VANTAGE_API_BASE_URL?.trim().replace(/\/+$/, "") ||
-  "https://vantage-movers-main-server.vercel.app";
+import { resolveApiBaseUrl } from "../../../packages/api-client/src/environment.ts";
+
+const apiBaseUrl = resolveApiBaseUrl(process.env.VANTAGE_API_BASE_URL, process.env.VERCEL_ENV);
 
 if (!apiSecret) {
   throw new Error("VANTAGE_API_SECRET is required to build the main site");
@@ -22,6 +22,7 @@ for (const check of checks) {
   const response = await fetch(`${apiBaseUrl}${check.path}`, {
     headers: {
       "x-api-secret": apiSecret,
+      ...(process.env.VANTAGE_API_PROTECTION_BYPASS ? { "x-vercel-protection-bypass": process.env.VANTAGE_API_PROTECTION_BYPASS } : {}),
     },
     signal: AbortSignal.timeout(15_000),
   });
