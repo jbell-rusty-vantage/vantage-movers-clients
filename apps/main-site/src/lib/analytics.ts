@@ -1,6 +1,7 @@
 "use client";
 
 import { track } from "@vercel/analytics";
+import { siteVariationContext } from "@/lib/site-variation";
 
 const FORM_NAME = "main_site_quote";
 const FORM_VERSION = "2026-07";
@@ -49,9 +50,25 @@ export const quoteFormAnalytics = {
 
 function getSessionStorage() {
   try {
-    return window.sessionStorage;
+    const storage = window.sessionStorage;
+    return {
+      getItem(key: string) {
+        try { return storage.getItem(key); } catch { return null; }
+      },
+      setItem(key: string, value: string) {
+        try { storage.setItem(key, value); } catch { /* Storage can be blocked or full. */ }
+      },
+    };
   } catch {
     return null;
+  }
+}
+
+function sendEvent(eventName: string, properties: AnalyticsProperties = {}) {
+  try {
+    track(eventName, { ...properties, ...siteVariationContext() });
+  } catch {
+    // Analytics is best-effort: a provider failure must never interrupt intake.
   }
 }
 
@@ -93,7 +110,7 @@ function markSessionEngaged(reason: string, properties: AnalyticsProperties = {}
   if (storage.getItem(SESSION_ENGAGED_KEY) === "true") return;
 
   storage.setItem(SESSION_ENGAGED_KEY, "true");
-  track("site_engaged", {
+  sendEvent("site_engaged", {
     ...sessionBaseProperties(),
     ...properties,
     engagement_reason: reason,
@@ -109,7 +126,7 @@ function markLeadIntent(eventName: string) {
 
   if (storage.getItem(SESSION_LEAD_INTENT_KEY) === "true") return;
   storage.setItem(SESSION_LEAD_INTENT_KEY, "true");
-  track("site_lead_intent", {
+  sendEvent("site_lead_intent", {
     ...sessionBaseProperties(),
     intent_event: eventName,
   });
@@ -133,7 +150,7 @@ export function trackEvent(eventName: string, properties: AnalyticsProperties = 
   } else if (ENGAGEMENT_EVENTS.has(eventName)) {
     markSessionEngaged(eventName, { engagement_event: eventName });
   }
-  track(eventName, properties);
+  sendEvent(eventName, properties);
 }
 
 export function initializeBounceTracking() {
@@ -158,7 +175,7 @@ export function initializeBounceTracking() {
     if (storage.getItem(BOUNCE_REPORTED_KEY) === "true") return;
 
     storage.setItem(BOUNCE_REPORTED_KEY, "true");
-    track("site_bounce", {
+    sendEvent("site_bounce", {
       ...sessionBaseProperties(),
       exit_reason: reason,
     });

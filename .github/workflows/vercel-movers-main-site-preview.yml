@@ -69,6 +69,14 @@ jobs:
       - name: Typecheck
         run: pnpm turbo typecheck --filter=@vantage/main-site
 
+      - name: Lint main site
+        run: pnpm --filter @vantage/main-site lint
+
+      - name: Verify quote and preview contracts
+        run: |
+          node --test packages/api-client/src/environment.test.mjs
+          pnpm --filter @vantage/main-site exec vitest run --config vitest.unit.config.mts
+
       - name: Pull Vercel preview environment
         run: >-
           vercel pull
@@ -114,3 +122,12 @@ jobs:
           echo "url=$url" >> "$GITHUB_OUTPUT"
           echo "### Main site preview deployment" >> "$GITHUB_STEP_SUMMARY"
           echo "$url" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Update A Route review URL
+        if: env.VERCEL_GIT_COMMIT_REF == 'agent/main-site-a-route'
+        env:
+          DEPLOYMENT_URL: ${{ steps.deploy.outputs.url }}
+        run: |
+          vercel alias set "$DEPLOYMENT_URL" vantage-main-site-a-route.vercel.app --token="$VERCEL_TOKEN"
+          echo "Review URL: https://vantage-main-site-a-route.vercel.app" >> "$GITHUB_STEP_SUMMARY"
+          echo "Deployed SHA: $VERCEL_GIT_COMMIT_SHA" >> "$GITHUB_STEP_SUMMARY"

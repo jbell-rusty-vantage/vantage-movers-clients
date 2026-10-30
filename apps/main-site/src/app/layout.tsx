@@ -62,7 +62,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${siteDisplayFont.variable} ${siteBodyFont.variable}`}>
+    <html
+      lang="en"
+      data-deployment-environment={process.env.VERCEL_ENV || "development"}
+      className={`${siteDisplayFont.variable} ${siteBodyFont.variable}`}
+    >
       <body className="antialiased">
         {children}
         <SiteAnalytics />
