@@ -34,11 +34,13 @@ Shared-package and lockfile changes can deploy both apps. Workflows run from the
 | `VANTAGE_API_BASE_URL` | `https://vantage-movers-main-server.vercel.app` | `https://vantage-sites-preview-api.vercel.app` |
 | `VANTAGE_API_SECRET` | Existing production secret | Unique preview secret; matches preview API |
 | `VANTAGE_API_PROTECTION_BYPASS` | Unset | Preview API's automation bypass; server-only |
-| `FORM_LEAD_ROUTE` | `api/v1/form-leads` | Same |
+| `FORM_LEAD_ROUTE` | Preserve the existing setting; default is `api/v1/form-leads` | Explicitly `api/v1/form-leads` |
 | `GOOGLE_SERVICE_ACCOUNT_JSON` | Existing Places credential | Places-enabled credential; prefer separately restricted preview credential |
 | `VERCEL_ENV` | Platform `production` | Platform `preview`; set explicitly for cloud/local preview builds |
 
 No secret gets a `NEXT_PUBLIC_` prefix. Populate the per-app local `.env` files from approved preview secrets, never copy a developer's production `.env`. `VERCEL_ENV=preview` is required locally to exercise the fail-closed origin policy. Turbo forwards/hashes the server environment inputs. Current production Google Places credentials remain configured in Preview too; those are not Mongo/CRM credentials, but the account/quota is shared until a restricted preview credential is supplied.
+
+The owner's local checkout has an ignored `.env.site-preview` containing only the website preview origin, API secret, bypass, route and mode. It is not committed or automatically loaded by Next.js. Transfer its values through the cloud environment's secret settings, not through prompts or Git. Supply a separately approved Places credential for local autocomplete testing.
 
 Main-site preview CI uses GitHub secrets `VANTAGE_PREVIEW_API_SECRET`, `VANTAGE_PREVIEW_API_PROTECTION_BYPASS`, and repository variable `VANTAGE_PREVIEW_API_BASE_URL`. Vercel Preview scope must contain matching runtime values. Both preview workflows pull branch-specific environment settings; audit overrides before trusting a URL. Build-time values alone do not prove runtime routing.
 
@@ -80,6 +82,7 @@ pnpm lint
 pnpm typecheck
 node --test packages/api-client/src/environment.test.mjs
 pnpm --filter @vantage/main-site exec vitest run --config vitest.unit.config.mts
+pnpm --filter @vantage/clients exec vitest run --config vitest.unit.config.mts
 pnpm turbo build --concurrency=1
 ```
 
