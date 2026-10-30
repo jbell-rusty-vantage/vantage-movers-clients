@@ -9,34 +9,9 @@ import "server-only";
  * header is required by the API's `requireApiSecret` middleware.
  */
 
-const DEFAULT_API_BASE_URL = "https://vantage-movers-main-server.vercel.app";
+import { resolveApiBaseUrl } from "./environment";
 
-function resolveApiBaseUrl(value: string | undefined): string {
-  const configured = value?.trim().replace(/^(['"])(.*)\1$/, "$2");
-  if (!configured) {
-    return DEFAULT_API_BASE_URL;
-  }
-
-  try {
-    const url = new URL(
-      /^[a-z][a-z\d+.-]*:\/\//i.test(configured) ? configured : `https://${configured}`,
-    );
-    if (url.protocol !== "http:" && url.protocol !== "https:") {
-      throw new Error(`unsupported protocol ${url.protocol}`);
-    }
-    if (url.search || url.hash) {
-      throw new Error("query strings and fragments are not allowed");
-    }
-    return url.toString().replace(/\/+$/, "");
-  } catch {
-    console.warn(
-      "[vantage] VANTAGE_API_BASE_URL is invalid; using the production API URL",
-    );
-    return DEFAULT_API_BASE_URL;
-  }
-}
-
-const API_BASE_URL = resolveApiBaseUrl(process.env.VANTAGE_API_BASE_URL);
+const API_BASE_URL = resolveApiBaseUrl(process.env.VANTAGE_API_BASE_URL, process.env.VERCEL_ENV);
 
 const API_SECRET = process.env.VANTAGE_API_SECRET?.trim();
 
@@ -136,6 +111,7 @@ function authHeaders(): HeadersInit {
   return {
     "content-type": "application/json",
     "x-api-secret": secret,
+    ...(process.env.VANTAGE_API_PROTECTION_BYPASS ? { "x-vercel-protection-bypass": process.env.VANTAGE_API_PROTECTION_BYPASS } : {}),
   };
 }
 

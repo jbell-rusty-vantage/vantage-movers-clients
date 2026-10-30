@@ -94,12 +94,18 @@ jobs:
       - name: Verify main-site build API access
         run: node apps/main-site/scripts/verify-build-api.mjs
         env:
-          VANTAGE_API_SECRET: ${{ secrets.VANTAGE_API_SECRET }}
+          VERCEL_ENV: preview
+          VANTAGE_API_BASE_URL: ${{ vars.VANTAGE_PREVIEW_API_BASE_URL }}
+          VANTAGE_API_SECRET: ${{ secrets.VANTAGE_PREVIEW_API_SECRET }}
+          VANTAGE_API_PROTECTION_BYPASS: ${{ secrets.VANTAGE_PREVIEW_API_PROTECTION_BYPASS }}
 
       - name: Build prebuilt output
         run: vercel build --token="$VERCEL_TOKEN"
         env:
-          VANTAGE_API_SECRET: ${{ secrets.VANTAGE_API_SECRET }}
+          VERCEL_ENV: preview
+          VANTAGE_API_BASE_URL: ${{ vars.VANTAGE_PREVIEW_API_BASE_URL }}
+          VANTAGE_API_SECRET: ${{ secrets.VANTAGE_PREVIEW_API_SECRET }}
+          VANTAGE_API_PROTECTION_BYPASS: ${{ secrets.VANTAGE_PREVIEW_API_PROTECTION_BYPASS }}
 
       - name: Deploy prebuilt preview
         id: deploy

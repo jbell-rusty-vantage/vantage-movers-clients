@@ -1,25 +1,7 @@
 const apiSecret = process.env.VANTAGE_API_SECRET?.trim();
-const defaultApiBaseUrl = "https://vantage-movers-main-server.vercel.app";
+import { resolveApiBaseUrl } from "../../../packages/api-client/src/environment.ts";
 
-function resolveApiBaseUrl(value) {
-  const configured = value?.trim().replace(/^(['"])(.*)\1$/, "$2");
-  if (!configured) {
-    return defaultApiBaseUrl;
-  }
-
-  const url = new URL(
-    /^[a-z][a-z\d+.-]*:\/\//i.test(configured) ? configured : `https://${configured}`,
-  );
-  if (url.protocol !== "http:" && url.protocol !== "https:") {
-    throw new Error("VANTAGE_API_BASE_URL must use http or https");
-  }
-  if (url.search || url.hash) {
-    throw new Error("VANTAGE_API_BASE_URL cannot contain a query string or fragment");
-  }
-  return url.toString().replace(/\/+$/, "");
-}
-
-const apiBaseUrl = resolveApiBaseUrl(process.env.VANTAGE_API_BASE_URL);
+const apiBaseUrl = resolveApiBaseUrl(process.env.VANTAGE_API_BASE_URL, process.env.VERCEL_ENV);
 
 if (!apiSecret) {
   throw new Error("VANTAGE_API_SECRET is required to build the main site");
@@ -40,6 +22,7 @@ for (const check of checks) {
   const response = await fetch(`${apiBaseUrl}${check.path}`, {
     headers: {
       "x-api-secret": apiSecret,
+      ...(process.env.VANTAGE_API_PROTECTION_BYPASS ? { "x-vercel-protection-bypass": process.env.VANTAGE_API_PROTECTION_BYPASS } : {}),
     },
     signal: AbortSignal.timeout(15_000),
   });
