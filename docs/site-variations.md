@@ -40,3 +40,5 @@ Vercel also supports choosing a Production Branch and assigning domains to previ
 ## Evidence
 
 Deployment and qualification evidence is appended here once the A Route preview is Ready. A working build or successful analytics network request does not establish dashboard receipt or full release qualification.
+
+Analytics retains existing event names and adds `variation_id`, `app`, `environment`, `page`, and `locale`. Only `/` is tagged `main-site-a-route`; other routes retain baseline identity. The root layout publishes the public environment on `<html>` and analytics reads it at event time. Filter by `environment=production` when examining released traffic; dashboard receipt and exclusion of preview traffic still require account-level verification. Each quote placement has a distinct form ID; the inherited wizard records its first step on mount even if the lower placement has not been scrolled into view.

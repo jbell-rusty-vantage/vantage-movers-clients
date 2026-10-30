@@ -128,6 +128,6 @@ jobs:
         env:
           DEPLOYMENT_URL: ${{ steps.deploy.outputs.url }}
         run: |
-          vercel alias set "$DEPLOYMENT_URL" vantage-main-site-a-route.vercel.app --token="$VERCEL_TOKEN"
+          vercel alias set "$DEPLOYMENT_URL" vantage-main-site-a-route.vercel.app --scope vantage-4d3db9ef --token="$VERCEL_TOKEN"
           echo "Review URL: https://vantage-main-site-a-route.vercel.app" >> "$GITHUB_STEP_SUMMARY"
           echo "Deployed SHA: $VERCEL_GIT_COMMIT_SHA" >> "$GITHUB_STEP_SUMMARY"
