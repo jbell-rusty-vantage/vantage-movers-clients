@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HomePage } from "@/components/HomePage";
+import { ARoutePage } from "@/components/a-route/ARoutePage";
 import { business } from "@/lib/content";
 import { siteDescription } from "@/lib/site";
 import { getTestimonials } from "@vantage/api-client";
@@ -20,5 +20,5 @@ export default function Home() {
       return [];
     });
 
-  return <HomePage testimonialsPromise={testimonialsPromise} />;
+  return <ARoutePage testimonialsPromise={testimonialsPromise} />;
 }
