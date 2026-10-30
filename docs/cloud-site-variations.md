@@ -6,13 +6,15 @@ Owner instruction, October 30, 2026. Build a workflow where the Owner can review
 
 Read `AGENTS.md`, `.cursor/rules/project-organization.mdc`, `docs/site-preview-status.md`, and `docs/website-operations-proposal.md`. The older operations proposal is broader future work, not authorization to implement marketing, resources, paid tooling or A/B assignment now.
 
-The server is a separate repository: `jbell-rusty-vantage/vantage-movers-server`. Read its `AGENTS.md`, `CLOUD_AGENTS.md`, `docs/site-preview-api.md`, `docs/knowledge/environment.md`, and `docs/knowledge/services/form-lead.md`. Backend business rules stay there. Both apps use `packages/api-client`; shared UI is in `packages/ui`. Keep a variation's visual composition local to its app while preserving these boundaries.
+The server is a separate repository: `jbell-rusty-vantage/vantage-movers-server`. The preview infrastructure is on `agent/site-preview-api`, not server `main`. Read that branch's `AGENTS.md`, `CLOUD_AGENTS.md`, `docs/site-preview-api.md`, `docs/knowledge/environment.md`, and `docs/knowledge/services/form-lead.md`. Backend business rules stay there. Both apps use `packages/api-client`; shared UI is in `packages/ui`. Keep a variation's visual composition local to its app while preserving these boundaries.
 
 ## Starting branch and owner workflow
 
 The only open variation PR at handoff is [draft PR #2](https://github.com/jbell-rusty-vantage/vantage-movers-clients/pull/2), branch `agent/main-site-service-expansion`: localized service-page expansion. It is not approved for production. Its Spanish legal/compliance review and schema approval gates remain open. Older `v0/*` branches exist; do not mistake them for current owner-selected variations or delete them without instruction.
 
 Maintain a small committed variation register: ID, purpose, branch/PR, source SHA, deployment URL, API SHA/origin, test evidence, owner decision and promotion status. Start with the existing variation. New variants should branch from current `main`; routinely merge current `main` into active variants and retest. Do not mix independent designs into one branch or silently merge PR #2 into production.
+
+Owner-supplied design references are committed at `site_variations_preview_HTMLS/Vantage Preview · A Route.html` and `site_variations_preview_HTMLS/Vantage Preview · C Concierge.html`. Treat them as visual inputs, not integrated Next.js applications or proof of analytics/API behavior. They are not deployed variations yet.
 
 Every preview needs a stable review URL and an immutable deployment URL tied to its SHA. A screenshot or local Storybook session is not a deployed variation. Keep existing ignored Storybook labs local; publish approved choices as normal application components.
 
