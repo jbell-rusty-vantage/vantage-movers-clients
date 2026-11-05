@@ -23,6 +23,7 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const input = normalizeZip(url.searchParams.get("input") || "");
   const sessionToken = url.searchParams.get("sessionToken")?.trim();
+  const locale = url.searchParams.get("locale") === "es-US" ? "es-US" : "en-US";
 
   if (input.length !== 5) {
     return NextResponse.json({ suggestions: [] });
@@ -41,7 +42,7 @@ export async function GET(req: Request) {
         input,
         includedRegionCodes: ["us"],
         includedPrimaryTypes: ["postal_code"],
-        languageCode: "en-US",
+        languageCode: locale,
         sessionToken,
       }),
     });

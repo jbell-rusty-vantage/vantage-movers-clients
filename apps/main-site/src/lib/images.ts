@@ -15,7 +15,7 @@ export const SITE_IMAGES = {
   longDistanceMoves: "/long_distance_traffic.webp",
   packingStorage: "/couple_with_boxes.jpg",
   officeMoves: "/moving_boxes_in_office.webp",
-  militaryMoves: "/military_moves.webp",
+  militaryMoves: "/military_moves.png",
   aboutCoordinators: "/customer_service_rep.webp",
   expertiseBanner: "/sitepictures/Truck%20Loaded.jpeg",
   autoTransport: "/sitepictures/autotransport.jpg",

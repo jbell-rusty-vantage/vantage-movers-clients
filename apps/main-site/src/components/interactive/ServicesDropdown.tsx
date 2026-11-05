@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import { services } from "@/lib/content";
+import { englishServices, spanishServices } from "@/content/services/registry";
+import type { ServiceLocale } from "@/content/services/types";
 import { SERVICE_ICONS } from "@/lib/icons";
 
 const CLOSE_DELAY_MS = 200;
@@ -11,11 +12,13 @@ const CLOSE_DELAY_MS = 200;
 interface ServicesDropdownProps {
   triggerClassName?: string;
   triggerStyle?: React.CSSProperties;
+  locale?: ServiceLocale;
 }
 
 export function ServicesDropdown({
   triggerClassName = "px-3.5 py-2.5",
   triggerStyle,
+  locale = "en-US",
 }: ServicesDropdownProps) {
   const [open, setOpen] = useState(false);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -43,6 +46,8 @@ export function ServicesDropdown({
     if (e.key === "Escape") setOpen(false);
   }, []);
 
+  const services = locale === "es-US" ? spanishServices : englishServices;
+
   return (
     <div
       className="relative"
@@ -63,7 +68,7 @@ export function ServicesDropdown({
           }
         }}
       >
-        Services
+        {locale === "es-US" ? "Servicios" : "Services"}
         <ChevronDown size={14} strokeWidth={2.4} aria-hidden />
       </button>
 
@@ -75,20 +80,20 @@ export function ServicesDropdown({
         >
           <div className="grid w-[520px] max-w-[calc(100vw-56px)] grid-cols-2 gap-1 rounded-card border border-cream-border bg-white p-3.5 shadow-menu">
             {services.map((s) => {
-              const Icon = SERVICE_ICONS[s.icon];
+              const Icon = SERVICE_ICONS[s.benefits[0]?.icon ?? "route"];
               return (
                 <Link
-                  key={s.title}
-                  href={`/#${s.anchorId}`}
+                  key={s.id}
+                  href={s.path}
                   className="flex items-center gap-[11px] rounded-md2 px-3 py-2.5 text-[14.5px] font-semibold text-brand-blue no-underline transition hover:bg-cream"
                   onClick={() => setOpen(false)}
                   data-analytics-location="services_dropdown"
-                  data-analytics-move-type={s.title}
+                  data-analytics-move-type={s.id}
                 >
                   <span className="grid size-[30px] flex-none place-items-center rounded-chip bg-brand-yellow-soft text-brand-blue-bright">
                     <Icon size={17} aria-hidden />
                   </span>
-                  {s.title}
+                  {s.navLabel}
                 </Link>
               );
             })}

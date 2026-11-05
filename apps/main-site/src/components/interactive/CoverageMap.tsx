@@ -99,6 +99,15 @@ function getLabelFill(abbr: string, active: string, hovered: string | null) {
   return COVERAGE_COLORS.mapDefaultLabel;
 }
 
+function shouldShowLabel(
+  abbr: string,
+  position: LabelPosition | undefined,
+  active: string,
+  hovered: string | null,
+) {
+  return active === abbr || hovered === abbr || (position?.fontSize ?? 0) >= 10;
+}
+
 export function CoverageMap() {
   const svgRef = useRef<SVGSVGElement>(null);
   const [labelPositions, setLabelPositions] = useState<Record<string, LabelPosition>>({});
@@ -214,21 +223,42 @@ export function CoverageMap() {
       </div>
 
       <div
-        className={`border p-5 shadow-card sm:p-6 ${radiusClasses.md2}`}
+        className={`border p-4 shadow-card sm:p-5 ${radiusClasses.md2}`}
         style={{
           backgroundColor: COVERAGE_COLORS.mapPanelBg,
           borderColor: COVERAGE_COLORS.mapPanelBorder,
         }}
       >
-        <div className="mb-4 flex items-center justify-between gap-3">
+        <div className="mb-3 flex items-center justify-between gap-3 sm:mb-4">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <span
+              className="grid size-8 place-items-center rounded-full"
+              style={{ backgroundColor: COVERAGE_COLORS.detailIconBg }}
+            >
+              <MapPin
+                className="size-4"
+                style={{ color: COVERAGE_COLORS.detailIconColor }}
+                strokeWidth={2.4}
+                aria-hidden
+              />
+            </span>
+            <div>
+              <p
+                className={`m-0 text-sm font-bold tracking-[.06em] uppercase ${heroHeadingFont.className}`}
+                style={{ color: COVERAGE_COLORS.headingColor }}
+              >
+                Service area
+              </p>
+              <p
+                className={`m-0 truncate text-xs ${heroBodyFont.className}`}
+                style={{ color: COVERAGE_COLORS.bodyColor }}
+              >
+                Nationwide moving coverage
+              </p>
+            </div>
+          </div>
           <p
-            className={`m-0 text-sm font-bold tracking-[.06em] uppercase ${heroHeadingFont.className}`}
-            style={{ color: COVERAGE_COLORS.headingColor }}
-          >
-            Coverage Map
-          </p>
-          <p
-            className={`m-0 truncate text-right text-sm font-extrabold transition-opacity duration-150 ${heroHeadingFont.className}`}
+            className={`m-0 min-w-0 truncate text-right text-sm font-extrabold transition-opacity duration-150 ${heroHeadingFont.className}`}
             style={{ color: COVERAGE_COLORS.headingColor }}
             aria-live="polite"
           >
@@ -240,16 +270,38 @@ export function CoverageMap() {
         </div>
 
         <div
-          className={`relative overflow-hidden border p-3 sm:p-4 ${radiusClasses.none}`}
+          className={`relative isolate aspect-[16/10] min-h-[220px] overflow-hidden border p-3 sm:p-5 ${radiusClasses.none}`}
           style={{
-            background: COVERAGE_COLORS.mapInnerBg,
+            backgroundImage: `
+              linear-gradient(rgba(2, 71, 153, 0.055) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(2, 71, 153, 0.055) 1px, transparent 1px),
+              ${COVERAGE_COLORS.mapInnerBg}
+            `,
+            backgroundPosition: "center",
+            backgroundSize: "24px 24px, 24px 24px, 100% 100%",
             borderColor: COVERAGE_COLORS.detailCardBorder,
           }}
         >
+          <div
+            className="pointer-events-none absolute top-0 right-0 size-40 -translate-y-1/2 translate-x-1/3 rounded-full blur-2xl"
+            style={{ backgroundColor: "rgba(255, 206, 69, 0.3)" }}
+            aria-hidden
+          />
+          <div
+            className={`absolute z-20 bottom-3 left-3 border px-2.5 py-1 text-[10px] font-bold tracking-[.08em] uppercase sm:bottom-4 sm:left-4 ${heroHeadingFont.className}`}
+            style={{
+              backgroundColor: COVERAGE_COLORS.mapPanelBg,
+              borderColor: COVERAGE_COLORS.mapPanelBorder,
+              color: COVERAGE_COLORS.headingColor,
+            }}
+          >
+            All 50 states
+          </div>
           <svg
             ref={svgRef}
             viewBox={usa.viewBox}
-            className="mx-auto block h-auto w-full max-h-[min(52vw,420px)]"
+            preserveAspectRatio="xMidYMid meet"
+            className="relative z-10 mx-auto block size-full"
             role="img"
             aria-label="Interactive map of United States coverage. Click a state to view details."
           >
@@ -269,6 +321,7 @@ export function CoverageMap() {
               const styles = getStateStyles(abbr, active, hovered);
               const isActive = active === abbr;
               const label = labelPositions[abbr];
+              const isLabelVisible = shouldShowLabel(abbr, label, active, hovered);
 
               return (
                 <g
@@ -290,6 +343,7 @@ export function CoverageMap() {
                     }
                   }}
                 >
+                  <title>{name}</title>
                   <path
                     id={`coverage-state-${abbr}`}
                     d={path}
@@ -299,7 +353,7 @@ export function CoverageMap() {
                     filter={styles.filter}
                     className="transition-[fill,stroke,stroke-width,filter] duration-150 ease-out focus:outline-none"
                   />
-                  {label ? (
+                  {label && isLabelVisible ? (
                     <text
                       x={label.x}
                       y={label.y}
@@ -325,7 +379,7 @@ export function CoverageMap() {
           className={`mt-3.5 mb-0 text-center text-[13px] ${heroBodyFont.className}`}
           style={{ color: COVERAGE_COLORS.bodyColor }}
         >
-          Hover to preview · Click to select your state
+          Select your state to see local moving details
         </p>
       </div>
     </div>
