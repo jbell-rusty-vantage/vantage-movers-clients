@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 const { sdkTrack } = vi.hoisted(() => ({ sdkTrack: vi.fn() }));
 vi.mock("@vercel/analytics", () => ({ track: sdkTrack }));
 import { configureAnalytics, trackEvent, trackZipNotRecognized } from "./analytics";
+import { telemetryMode } from "./telemetry-mode";
 
 function browser() {
   const storage = new Map<string, string>();
@@ -13,13 +14,13 @@ function browser() {
   };
 }
 
-afterEach(() => { vi.unstubAllGlobals(); sdkTrack.mockReset(); configureAnalytics(false); });
+afterEach(() => { vi.unstubAllGlobals(); sdkTrack.mockReset(); configureAnalytics("local"); });
 
 describe("analytics delivery", () => {
-  it("keeps preview diagnostics local and does not equate phone intent with capture", () => {
+  it("keeps local diagnostics offline and does not equate phone intent with capture", () => {
     const window = browser();
     vi.stubGlobal("window", window);
-    configureAnalytics(false);
+    configureAnalytics("local");
     trackEvent("phone_clicked");
     trackZipNotRecognized({ field_name: "dest", zip: "53703", suggestion_count: 0 });
     expect(sdkTrack).not.toHaveBeenCalled();
@@ -32,7 +33,7 @@ describe("analytics delivery", () => {
     const window = browser();
     window.sessionStorage.getItem = () => { throw new Error("blocked storage"); };
     vi.stubGlobal("window", window);
-    configureAnalytics(true);
+    configureAnalytics("production");
     sdkTrack.mockImplementation(() => { throw new Error("SDK unavailable"); });
     expect(() => trackEvent("form_submit_attempted")).not.toThrow();
     expect(sdkTrack).toHaveBeenCalledWith("form_submit_attempted", {
@@ -45,5 +46,27 @@ describe("analytics delivery", () => {
     vi.stubGlobal("window", window);
     for (let i = 0; i < 120; i++) trackEvent("form_step_viewed", { step_number: 1 });
     expect(window.__vantagePreviewEvents).toHaveLength(100);
+  });
+
+  it("collects deployed preview events with preview attribution and no private values", () => {
+    const window = browser();
+    window.location.pathname = "/es/servicios/mudanzas-larga-distancia";
+    vi.stubGlobal("window", window);
+    configureAnalytics("preview");
+    trackEvent("form_submit_success", { email: "private@example.com", ref_no: "private-ref" });
+    expect(sdkTrack.mock.calls.filter(([name]) => name === "form_submit_success")).toHaveLength(1);
+    expect(sdkTrack).toHaveBeenCalledWith("form_submit_success", {
+      context: "main-site-optimization|preview|long-distance-moving|es", detail: "none",
+    });
+    expect(window.__vantagePreviewEvents.filter(event => event.name === "form_submit_success")).toHaveLength(1);
+    expect(JSON.stringify(sdkTrack.mock.calls)).not.toMatch(/private@example|private-ref/);
+  });
+
+  it("requires an explicit deployment identity for preview collection", () => {
+    expect(telemetryMode("preview")).toBe("local");
+    expect(telemetryMode("preview", "invalid")).toBe("local");
+    expect(telemetryMode(undefined, "a".repeat(40))).toBe("local");
+    expect(telemetryMode("preview", "a".repeat(40))).toBe("preview");
+    expect(telemetryMode("production")).toBe("production");
   });
 });

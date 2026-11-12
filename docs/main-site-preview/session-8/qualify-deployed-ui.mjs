@@ -3,11 +3,11 @@
 import { createRequire } from "node:module";
 import { mkdir, stat } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { assertPreviewSite, check, checkUnusedReference, exactReferenceReadback, preflight, previewConnection, saveEvidence } from "./preview-qualification.mjs";
+import { assertPreviewSite, check, checkUnusedReference, evidenceDirectory, exactReferenceReadback, preflight, previewConnection, saveEvidence } from "./preview-qualification.mjs";
 
 const require = createRequire(new URL("../../../apps/main-site/package.json", import.meta.url));
 const { chromium } = require("playwright");
-const evidence = fileURLToPath(new URL("./evidence/", import.meta.url));
+const evidence = fileURLToPath(evidenceDirectory);
 let stage = "validate-target";
 let browser;
 let submittedReference;
@@ -30,15 +30,27 @@ try {
 
   stage = "open-protected-ui";
   browser = await chromium.launch();
-  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: "reduce", ...(process.env.SITE_PREVIEW_STORAGE_STATE ? { storageState: process.env.SITE_PREVIEW_STORAGE_STATE } : {}) });
+  // Standard Chromium UA lets the explicit synthetic Preview session exercise collectors
+  // that exclude HeadlessChrome. These are QA receipts, never real customer statistics.
+  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: "reduce", userAgent: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${browser.version()} Safari/537.36`, ...(process.env.SITE_PREVIEW_STORAGE_STATE ? { storageState: process.env.SITE_PREVIEW_STORAGE_STATE } : {}) });
   let submitted;
   let quotePosts = 0;
   const requestErrors = [];
+  const collectorRequests = [];
   await context.route("**/*", async route => {
     const request = route.request();
     const url = new URL(request.url());
     // Browser never contacts the backend API or sends secrets to third parties.
-    if (url.origin !== origin || url.pathname.startsWith("/_vercel/")) return route.abort();
+    if (url.origin !== origin) return route.abort();
+    const collector = url.pathname.startsWith("/_vercel/insights/") || url.pathname.startsWith("/_vercel/speed-insights/");
+    if (collector && request.method() === "POST") {
+      const body = request.postData() || "";
+      if (/preview-main-site-|example\.com|20255501|33426|53703|ref_no|MS-2026|Synthetic Main Site/i.test(body)) {
+        requestErrors.push("Private or test-form data was blocked from a collector");
+        return route.abort();
+      }
+      collectorRequests.push({ path: url.pathname, method: request.method() });
+    }
     if (request.method() === "POST" && url.pathname === "/api/quote") {
       quotePosts += 1;
       if (quotePosts > 1) { requestErrors.push("A second quote POST was blocked"); return route.abort(); }
@@ -52,7 +64,7 @@ try {
       submitted = payload;
       submittedReference = payload.ref_no;
       await saveEvidence("deployed-submission-attempt.json", { attemptedAt: new Date().toISOString(), site: origin, sourceSha: process.env.SITE_PREVIEW_SOURCE_SHA, reference: payload.ref_no, lid: payload.lid, consent: false, expectedSource: "main_site", note: "Attempt journal only; response/readback determine capture. Do not rerun submission to recover a failed readback." });
-    } else if (!["GET", "HEAD"].includes(request.method())) {
+    } else if (!["GET", "HEAD"].includes(request.method()) && !collector) {
       return route.abort();
     }
     const headers = { ...request.headers() };
@@ -115,8 +127,8 @@ try {
   const result = {
     checkedAt: new Date().toISOString(), site: origin, sourceSha: process.env.SITE_PREVIEW_SOURCE_SHA,
     anonymousProtectionStatus: anonymous.status, noindex: true, uiQuotePostCount: quotePosts, quoteHttpStatus: quoteResponse.status(), leadCaptured: quoteResult.leadCaptured,
-    reference: submitted.ref_no, consentSubmitted: false, placesConfirmed, pageErrors, diagnosticEvents, readback,
-    analytics: "Preview telemetry intentionally disabled/blocked; no collector receipt claimed.",
+    reference: submitted.ref_no, consentSubmitted: false, placesConfirmed, pageErrors, diagnosticEvents, collectorRequests, readback,
+    analytics: "Synthetic Preview session using standard Chromium UA. Collector requests are transport evidence only; query the Preview analytics dataset for receipts.",
     scope: "One real synthetic preview Form Lead via deployed UI. Invalid/retry contracts are separately mocked. No production submission.",
   };
   await saveEvidence("deployed-ui-qualification.json", result);

@@ -2,10 +2,11 @@
 
 import { track } from "@vercel/analytics";
 import { sanitizeAnalyticsEvent, type AnalyticsProperties, type SafeEvent } from "./analytics-contract";
+import type { TelemetryMode } from "./telemetry-mode";
 export type { AnalyticsProperties } from "./analytics-contract";
 
 export const quoteFormAnalytics = { form_name: "main_site_quote", form_version: "2026-11" } as const;
-let productionCollection = false;
+let collectionMode: TelemetryMode = "local";
 const KEY = "vantage_main_site_engagement_v2";
 const leadIntentEvents = new Set([
   "calendar_or_date_picker_opened", "cta_clicked", "email_clicked", "form_started",
@@ -16,21 +17,20 @@ declare global {
   interface Window { __vantagePreviewEvents?: SafeEvent[]; }
 }
 
-export function configureAnalytics(production: boolean) {
-  productionCollection = production;
+export function configureAnalytics(mode: TelemetryMode) {
+  collectionMode = mode;
 }
 
 function emit(name: string, properties: AnalyticsProperties = {}) {
   try {
-    const event = sanitizeAnalyticsEvent(name, properties, window.location.pathname, productionCollection);
+    const event = sanitizeAnalyticsEvent(name, properties, window.location.pathname, collectionMode === "production");
     if (!event) return;
-    if (productionCollection) {
-      track(event.name, event.properties);
-    } else {
-      // Local QA evidence only. No personal payload, persistent identifier, or network transport.
+    if (collectionMode !== "production") {
+      // Bounded diagnostics supplement deployed Preview receipts; never store form data.
       window.__vantagePreviewEvents = [...(window.__vantagePreviewEvents ?? []).slice(-99), event];
       window.dispatchEvent(new CustomEvent("vantage:analytics", { detail: event }));
     }
+    if (collectionMode !== "local") track(event.name, event.properties);
   } catch { /* Telemetry cannot interrupt quote intake, including storage/SDK failures. */ }
 }
 
@@ -47,7 +47,7 @@ function engage() { once("engaged", () => emit("site_engaged")); }
 export function trackEvent(eventName: string, properties: AnalyticsProperties = {}) {
   if (typeof window === "undefined") return;
   try {
-    if (!sanitizeAnalyticsEvent(eventName, properties, window.location.pathname, productionCollection)) return;
+    if (!sanitizeAnalyticsEvent(eventName, properties, window.location.pathname, collectionMode === "production")) return;
     if (leadIntentEvents.has(eventName)) {
       engage();
       once("intent", () => emit("site_lead_intent"));

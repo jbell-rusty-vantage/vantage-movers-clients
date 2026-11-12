@@ -1,6 +1,7 @@
 import { AnchorFocus } from "@/components/layout/AnchorFocus";
 import type { Metadata } from "next";
 import { SiteTelemetry } from "@/components/analytics/SiteTelemetry";
+import { telemetryMode } from "@/lib/telemetry-mode";
 import { business } from "@/lib/content";
 import { siteBodyFont, siteDisplayFont } from "@/lib/fonts";
 import { siteDescription, siteKeywords, siteName, siteUrl } from "@/lib/site";
@@ -64,7 +65,7 @@ export default function RootLayout({
     <html lang="en" className={`${siteDisplayFont.variable} ${siteBodyFont.variable}`}>
       <body className="antialiased">
         {children}<AnchorFocus />
-        <SiteTelemetry enabled={process.env.VERCEL_ENV === "production"} />
+        <SiteTelemetry mode={telemetryMode(process.env.VERCEL_ENV, process.env.VERCEL_GIT_COMMIT_SHA)} />
       </body>
     </html>
   );

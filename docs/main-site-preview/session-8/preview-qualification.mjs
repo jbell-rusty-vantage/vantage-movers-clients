@@ -9,7 +9,9 @@ export const previewDatabase = "testvantagemovers_sitepreview";
 const defaultPreviewEnv = new URL("../../../../vantage-movers-clients/.env.site-preview", import.meta.url);
 const defaultServerEnv = new URL("../../../../vantage-main-server/.env", import.meta.url);
 const serverRequire = createRequire(new URL("../../../../vantage-main-server/package.json", import.meta.url));
-const evidenceDirectory = new URL("./evidence/", import.meta.url);
+const evidenceRun = process.env.SITE_PREVIEW_EVIDENCE_RUN;
+if (evidenceRun && !/^[a-z0-9-]{1,60}$/.test(evidenceRun)) throw new Error("Invalid evidence run name");
+export const evidenceDirectory = new URL(evidenceRun ? `./evidence/${evidenceRun}/` : "./evidence/", import.meta.url);
 
 export function check(condition, message) {
   if (!condition) throw new Error(message);

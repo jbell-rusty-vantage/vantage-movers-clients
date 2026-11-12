@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import type { TelemetryMode } from "@/lib/telemetry-mode";
 import {
   configureAnalytics,
   initializeBounceTracking,
@@ -77,12 +78,12 @@ function propertiesForAnchor(anchor: HTMLAnchorElement): {
   return null;
 }
 
-export function SiteAnalytics({ enabled = false }: { enabled?: boolean }) {
+export function SiteAnalytics({ mode = "local" }: { mode?: TelemetryMode }) {
   const pathname = usePathname();
   useEffect(() => {
-    configureAnalytics(enabled);
+    configureAnalytics(mode);
     return initializeBounceTracking();
-  }, [enabled]);
+  }, [mode]);
 
   useEffect(() => {
     if (!("IntersectionObserver" in window)) return;
