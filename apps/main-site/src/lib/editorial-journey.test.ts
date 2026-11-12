@@ -16,7 +16,7 @@ describe("destination resource selection", () => {
       const links = guideLinksFor("es", mode);
       expect(links.madison).toBe(links.generic);
       expect(links.wisconsin).toBe(links.generic);
-      expect(links.generic).not.toContain("/destinos/");
+      expect(links.generic).toBe("/consumer-information");
     }
   });
 });

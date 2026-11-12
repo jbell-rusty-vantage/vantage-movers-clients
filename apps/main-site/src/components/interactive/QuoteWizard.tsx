@@ -322,6 +322,8 @@ export function QuoteWizard({
     shouldUnregister: false,
   });
 
+  const guideHref = guideLinks?.[destinationGuide(destination)] ?? guideLinks?.generic;
+  const guideInEnglish = locale === "es" && guideHref && !guideHref.startsWith("/es/");
   const stepDisplay = step + 1;
   const isPanel = variant === "panel";
   const steps = copy.steps.map((label, i) => ({ n: i + 1, label }));
@@ -793,8 +795,8 @@ export function QuoteWizard({
       {guideLinks && (step === 1 || result) && (
         <aside className="mt-5 rounded-lg2 bg-cream p-3 text-sm">
           {destination && <p className="mb-1 font-semibold">{destination.city || destination.state}, {destination.state}</p>}
-          <Link href={guideLinks[destinationGuide(destination)] ?? guideLinks.generic} onClick={saveDraft} className="font-semibold text-brand-blue underline">
-            {destination ? copy.guide : copy.genericGuide}
+          <Link href={guideHref ?? guideLinks.generic} onClick={saveDraft} className="font-semibold text-brand-blue underline">
+            {destination ? copy.guide : copy.genericGuide}{guideInEnglish ? " (en inglés)" : ""}
           </Link>
         </aside>
       )}
