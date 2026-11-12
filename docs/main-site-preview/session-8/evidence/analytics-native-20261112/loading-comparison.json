@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-11-12T15:41:54.813Z",
+  "sourceSha": "10ec4d24e6f816d4540c2314aad93e52ee795e69",
+  "method": "One cold browser context per origin/width; desktop Chromium, DPR1, reduced motion, no network/CPU throttling, five seconds after load. Cache/CDN warmth is uncontrolled. API content differs. Not a field score or statistical speed claim.",
+  "samples": [
+    {
+      "kind": "production-control",
+      "width": 1440,
+      "status": 200,
+      "errors": [],
+      "cls": 0.008101889618296682,
+      "lcp": 3648,
+      "documentWidth": 1440,
+      "heroLoaded": true,
+      "heroSource": "https://www.vantagehomemovers.com/_next/image?url=%2Fhero_image_enhanced.png&w=1920&q=75",
+      "heroTransferBytes": 66760,
+      "heroEncodedBytes": 66460,
+      "heroDurationMs": 220.29999999701977,
+      "domContentLoadedMs": 3307.7000000029802,
+      "loadMs": 3311.6000000089407
+    },
+    {
+      "kind": "preview",
+      "width": 1440,
+      "status": 200,
+      "errors": [],
+      "cls": 0.06747971598307291,
+      "lcp": 476,
+      "documentWidth": 1440,
+      "heroLoaded": true,
+      "heroSource": "https://vantage-movers-clients-main-site-6wze5e9bt-vantage-4d3db9ef.vercel.app/_next/image?url=%2Fimages%2Fpreview%2Fhome-inventory.webp&w=1920&q=75",
+      "heroTransferBytes": 77172,
+      "heroEncodedBytes": 76872,
+      "heroDurationMs": 115.5,
+      "domContentLoadedMs": 345.29999999701977,
+      "loadMs": 468.09999999403954
+    },
+    {
+      "kind": "production-control",
+      "width": 390,
+      "status": 200,
+      "errors": [],
+      "cls": 0.05326629568069001,
+      "lcp": 708,
+      "documentWidth": 390,
+      "heroLoaded": true,
+      "heroSource": "https://www.vantagehomemovers.com/_next/image?url=%2Fhero_image_enhanced.png&w=640&q=75",
+      "heroTransferBytes": 15966,
+      "heroEncodedBytes": 15666,
+      "heroDurationMs": 101.40000000596046,
+      "domContentLoadedMs": 565.6999999880791,
+      "loadMs": 699.6999999880791
+    },
+    {
+      "kind": "preview",
+      "width": 390,
+      "status": 200,
+      "errors": [],
+      "cls": 0.06361323869634554,
+      "lcp": 516,
+      "documentWidth": 390,
+      "heroLoaded": true,
+      "heroSource": "https://vantage-movers-clients-main-site-6wze5e9bt-vantage-4d3db9ef.vercel.app/_next/image?url=%2Fimages%2Fpreview%2Fhome-inventory.webp&w=640&q=75",
+      "heroTransferBytes": 21354,
+      "heroEncodedBytes": 21054,
+      "heroDurationMs": 323.79999999701977,
+      "domContentLoadedMs": 270.09999999403954,
+      "loadMs": 492.8999999910593
+    }
+  ]
+}

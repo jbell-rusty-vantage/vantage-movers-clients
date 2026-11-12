@@ -2,6 +2,10 @@
 
 The existing How It Works section now presents five customer steps with bilingual captions and manual controls. The local integrated browser checks pass at phone and desktop widths. Deployed performance, final source identity and Owner media selection remain separate release proofs.
 
+Update: the [deployed loading comparison](../session-8/README.md#matched-loading-comparison) now records actual production-control versus preview image bytes, LCP and layout shift. Preview hero bytes and layout shift were higher in the bounded sample; source-file compression alone is not evidence of a network improvement. Owner media selection remains open.
+
+The same ten process cases subsequently passed on immutable source `10ec4d2`: [deployed results and screenshots](../session-8/evidence/analytics-native-20261112/process/process-checks.json). Set `SITE_PREVIEW_URL`, `SITE_PREVIEW_SOURCE_SHA` and the origin-scoped protection credential to use this script against the allowlisted preview; otherwise its localhost-only behavior is unchanged. The deployed run blocks all non-GET/HEAD requests and telemetry.
+
 `components/interactive/MovingProcess.tsx` is the only interactive sequence component. `HowItWorksSection` retains the production section shell, palette, heading treatment and phone action, and accepts `locale="en" | "es"`.
 
 | Step | Asset | Meaning |

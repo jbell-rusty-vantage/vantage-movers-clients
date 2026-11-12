@@ -1,10 +1,10 @@
 # Measurement and companion workflow boundary
 
-November 12, 2026. Implemented on `agent/main-site-optimization`, Main Site only. The nearest proof still needed is the deployed bilingual journey with one confirmed isolated Form Lead, followed by a separately qualified analytics destination. Local diagnostics are not dashboard receipts or Booking attribution.
+November 12, 2026. Implemented on `agent/main-site-optimization`, Main Site only. [Actual Preview analytics and performance receipts are now qualified](analytics-qualification.md), including Production exclusion. Owner review and production selection remain open. Local diagnostics are not themselves dashboard receipts or Booking attribution.
 
 ## Implemented measurement
 
-`SiteTelemetry` mounts the existing Vercel Analytics and Speed Insights SDKs only when the server passes `enabled` for the Production environment. Preview and local sessions do not load either SDK. Their custom events stay in a bounded, in-memory `window.__vantagePreviewEvents` buffer (last 100 events) and the local `vantage:analytics` browser event. Nothing forwards that buffer to a remote service. This makes browser assertions possible without adding owner review traffic to production reporting.
+`SiteTelemetry` mounts the existing Vercel Analytics and Speed Insights SDKs in Production and identified CI Preview builds. The server passes an explicit mode, preserving Preview attribution. Local sessions without the CI deployment SHA load neither SDK. Preview/local diagnostics also remain available in a bounded, in-memory `window.__vantagePreviewEvents` buffer (last 100 events). Remote Preview collection is excluded from the default Production dashboard and Production-filtered queries; All Environments intentionally combines them.
 
 All custom events pass through `analytics-contract.ts`. Existing event names are retained, but arbitrary event names and dimensions are rejected. Each event has exactly two properties:
 
@@ -17,7 +17,7 @@ The page ID also identifies a service where applicable. The locale comes from th
 
 `phone_clicked` is intent only. It does not create a Call Lead or establish capture. The wizard owns first intentional interaction, step progression and `form_submit_success` after the site's API explicitly reports `leadCaptured: true`. A successful estimate calculation is not capture. Analytics and session-storage failures cannot throw into form submission. Existing bounce/engagement event names remain optional session-derived diagnostics and do not establish a Lead outcome.
 
-Two packed properties avoid assuming a higher custom-event property allowance, but do not qualify the account plan, dashboard visibility, filters, retention or receipt. Preview collection remains deliberately local until a separate preview destination or independently verified exclusion is configured. Do not enable remote preview collection by reusing the production switch.
+The existing Vantage Pro account accepted both bounded properties. The dashboard displayed English/Spanish context values, and exact deployment queries confirmed Preview delivery with zero matching Production receipts. See the qualification report for source, timestamps and limits. Retention and long-term performance are not inferred from this synthetic sample.
 
 ## Checks and remaining proof
 
@@ -33,7 +33,7 @@ The destination map explicitly represents planning interest, not coverage or a s
 
 `GetInTouchSection` no longer renders the fabricated Marcus C. fallback or a static 4.8/530-review aggregate. Its featured snippet requires a published testimonial from the API; absent content renders no endorsement. Testimonial stars use a valid supplied rating with an explicit numeric label; absent or invalid ratings are not defaulted to five. "Verified" labels were removed because a published flag alone does not prove independent verification. The quote panel also receives publication-gated guide links. Focused ESLint for these modified baseline components passed; the owning integration session performs the rendered comparison.
 
-Outstanding deployment qualification: deployed API response, isolated database record/readback, zero matching production records, runtime environment/protection/noindex, and browser event order. Outstanding analytics qualification: approved preview destination or verified exclusion, actual dashboard receipts for the corresponding event sequence, the account plan and dimensions accepted there. This work does not claim those receipts.
+Deployment and analytics qualification now include API capture, exact-reference readback, zero matching production records, protection/noindex, ordered browser events, actual dashboard values and Preview/Production aggregation receipts. The linked qualification report preserves the initial local-only and automated-browser limitations separately from the later native-browser result.
 
 For production outcome reporting, the server must own an approved bounded attribution snapshot and authoritative join from a Form Lead to the official Booking/Cancellation. A service page visit is reading interest, not a purchased service. Source Company stays `main_site`; do not use variation ID as Source Company, LID or Tracking Reference. RingCentral qualification continues to govern Call Leads. Partner attribution stays in `apps/clients` and its existing server contract.
 

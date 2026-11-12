@@ -1,0 +1,329 @@
+{
+  "query": {
+    "metric": "vercel.analytics.event.count",
+    "aggregation": "count",
+    "groupBy": [
+      "eventName"
+    ],
+    "filter": "(requestHostname:vantage-movers-clients-main-site-6wze5e9bt-vantage-4d3db9ef.vercel.app) AND (environment:preview)",
+    "startTime": "2026-11-12T15:32:00.000Z",
+    "endTime": "2026-11-12T15:38:00.000Z",
+    "granularity": {
+      "minutes": 1
+    },
+    "orderBy": "count",
+    "orderDirection": "desc"
+  },
+  "summary": [
+    {
+      "eventName": "form_step_viewed",
+      "vercel_analytics_event_count_count": 3
+    },
+    {
+      "eventName": "form_started",
+      "vercel_analytics_event_count_count": 2
+    },
+    {
+      "eventName": "form_step_completed",
+      "vercel_analytics_event_count_count": 2
+    },
+    {
+      "eventName": "nav_link_clicked",
+      "vercel_analytics_event_count_count": 2
+    },
+    {
+      "eventName": "calendar_or_date_picker_opened",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "eventName": "form_submit_attempted",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "eventName": "form_submit_success",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "eventName": "site_engaged",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "eventName": "site_lead_intent",
+      "vercel_analytics_event_count_count": 1
+    }
+  ],
+  "data": [
+    {
+      "timestamp": "2026-11-12T15:32:00.000Z",
+      "eventName": "form_step_viewed",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:32:00.000Z",
+      "eventName": "form_started",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:32:00.000Z",
+      "eventName": "form_step_completed",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:32:00.000Z",
+      "eventName": "nav_link_clicked",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:32:00.000Z",
+      "eventName": "calendar_or_date_picker_opened",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:32:00.000Z",
+      "eventName": "form_submit_attempted",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:32:00.000Z",
+      "eventName": "form_submit_success",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:32:00.000Z",
+      "eventName": "site_engaged",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:32:00.000Z",
+      "eventName": "site_lead_intent",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:33:00.000Z",
+      "eventName": "form_step_viewed",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:33:00.000Z",
+      "eventName": "form_started",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:33:00.000Z",
+      "eventName": "form_step_completed",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:33:00.000Z",
+      "eventName": "nav_link_clicked",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:33:00.000Z",
+      "eventName": "calendar_or_date_picker_opened",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:33:00.000Z",
+      "eventName": "form_submit_attempted",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:33:00.000Z",
+      "eventName": "form_submit_success",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:33:00.000Z",
+      "eventName": "site_engaged",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:33:00.000Z",
+      "eventName": "site_lead_intent",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:34:00.000Z",
+      "eventName": "form_step_viewed",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "timestamp": "2026-11-12T15:34:00.000Z",
+      "eventName": "form_started",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "timestamp": "2026-11-12T15:34:00.000Z",
+      "eventName": "form_step_completed",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:34:00.000Z",
+      "eventName": "nav_link_clicked",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:34:00.000Z",
+      "eventName": "calendar_or_date_picker_opened",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "timestamp": "2026-11-12T15:34:00.000Z",
+      "eventName": "form_submit_attempted",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:34:00.000Z",
+      "eventName": "form_submit_success",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:34:00.000Z",
+      "eventName": "site_engaged",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "timestamp": "2026-11-12T15:34:00.000Z",
+      "eventName": "site_lead_intent",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "timestamp": "2026-11-12T15:35:00.000Z",
+      "eventName": "form_step_viewed",
+      "vercel_analytics_event_count_count": 2
+    },
+    {
+      "timestamp": "2026-11-12T15:35:00.000Z",
+      "eventName": "form_started",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "timestamp": "2026-11-12T15:35:00.000Z",
+      "eventName": "form_step_completed",
+      "vercel_analytics_event_count_count": 2
+    },
+    {
+      "timestamp": "2026-11-12T15:35:00.000Z",
+      "eventName": "nav_link_clicked",
+      "vercel_analytics_event_count_count": 2
+    },
+    {
+      "timestamp": "2026-11-12T15:35:00.000Z",
+      "eventName": "calendar_or_date_picker_opened",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:35:00.000Z",
+      "eventName": "form_submit_attempted",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "timestamp": "2026-11-12T15:35:00.000Z",
+      "eventName": "form_submit_success",
+      "vercel_analytics_event_count_count": 1
+    },
+    {
+      "timestamp": "2026-11-12T15:35:00.000Z",
+      "eventName": "site_engaged",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:35:00.000Z",
+      "eventName": "site_lead_intent",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:36:00.000Z",
+      "eventName": "form_step_viewed",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:36:00.000Z",
+      "eventName": "form_started",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:36:00.000Z",
+      "eventName": "form_step_completed",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:36:00.000Z",
+      "eventName": "nav_link_clicked",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:36:00.000Z",
+      "eventName": "calendar_or_date_picker_opened",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:36:00.000Z",
+      "eventName": "form_submit_attempted",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:36:00.000Z",
+      "eventName": "form_submit_success",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:36:00.000Z",
+      "eventName": "site_engaged",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:36:00.000Z",
+      "eventName": "site_lead_intent",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:37:00.000Z",
+      "eventName": "form_step_viewed",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:37:00.000Z",
+      "eventName": "form_started",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:37:00.000Z",
+      "eventName": "form_step_completed",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:37:00.000Z",
+      "eventName": "nav_link_clicked",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:37:00.000Z",
+      "eventName": "calendar_or_date_picker_opened",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:37:00.000Z",
+      "eventName": "form_submit_attempted",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:37:00.000Z",
+      "eventName": "form_submit_success",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:37:00.000Z",
+      "eventName": "site_engaged",
+      "vercel_analytics_event_count_count": 0
+    },
+    {
+      "timestamp": "2026-11-12T15:37:00.000Z",
+      "eventName": "site_lead_intent",
+      "vercel_analytics_event_count_count": 0
+    }
+  ],
+  "orderBy": "count",
+  "orderDirection": "desc"
+}

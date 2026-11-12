@@ -12,8 +12,8 @@ Work from the branch and app identified in the [packet index](README.md). Each h
 | 4 | Resource/state/city routes, confirmed destination fallback, print, Back/reload/locale checks | Geolocation is not offered; manual entry works. No denied-permission scenario claimed |
 | 5 | Six generated editorial scenes, actual synthetic UI capture, manual bilingual process sequence | Owner media approval; model-specific Astra authorship not claimed |
 | 6 | Eight services × two locales, full route/link matrix, contact and consumer paths | Owner service/Spanish approval; dedicated careers and complaints workflows remain separate |
-| 7 | Privacy-limited intentional starts/progression/capture, local preview diagnostics; source-linked helper prototype; companion scopes | Analytics destination/dashboard receipts and authoritative Booking joins are not implemented by local diagnostics |
-| 8 | CI deployment, stable protected alias, deployed route audit and one isolated Form Lead receipt; final navigation-only follow-up retains unchanged quote code | Owner content/media review and production decision; analytics dashboard qualification remains separate |
+| 7 | Privacy-limited events; actual Preview dashboard receipts and Production exclusion; Speed Insights receipts; source-linked helper prototype and companion scopes | Authoritative Booking joins remain separate from browser analytics |
+| 8 | CI deployment, stable protected alias, deployed route audit and exact-source isolated Form Lead/analytics receipts on `10ec4d2` | Owner content/media review and production decision |
 
 Follow the per-stage evidence linked from the packet index. “Draft,” “tested locally,” “deployed” and “Owner approved” remain distinct states.
 

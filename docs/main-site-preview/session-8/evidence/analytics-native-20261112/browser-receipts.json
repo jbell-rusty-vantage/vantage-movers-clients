@@ -1,0 +1,118 @@
+{
+  "checkedAt": "2026-11-12T15:36:29.372Z",
+  "sourceSha": "10ec4d24e6f816d4540c2314aad93e52ee795e69",
+  "site": "https://vantage-movers-clients-main-site-6wze5e9bt-vantage-4d3db9ef.vercel.app",
+  "browser": "Signed-in in-app browser, ordinary UI interactions; no webdriver or user-agent override",
+  "reference": "MS-20261112-7D30920C03",
+  "lid": "LID4fe118fc9c2e0",
+  "consentSubmitted": false,
+  "quotePostCount": 1,
+  "quoteHttpStatus": 200,
+  "leadCaptured": true,
+  "visibleConfirmation": "Request Received",
+  "collectorPrivateDataAbsent": true,
+  "events": [
+    {
+      "name": "form_step_viewed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:1"
+      }
+    },
+    {
+      "name": "site_lead_intent",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "form_started",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "calendar_or_date_picker_opened",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "form_step_completed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:1"
+      }
+    },
+    {
+      "name": "form_step_viewed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:2"
+      }
+    },
+    {
+      "name": "form_step_completed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:2"
+      }
+    },
+    {
+      "name": "form_submit_attempted",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "form_submit_success",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "nav_link_clicked",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "form_step_viewed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|es",
+        "detail": "step:1"
+      }
+    },
+    {
+      "name": "form_started",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|es",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "nav_link_clicked",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|es",
+        "detail": "none"
+      }
+    }
+  ],
+  "speedCollectorHttp200": true,
+  "dashboard": {
+    "observedAt": "2026-11-12T15:38:00Z",
+    "environment": "Preview",
+    "event": "form_started",
+    "total": 2,
+    "contextValues": {
+      "main-site-optimization|preview|long-distance-moving|en": 1,
+      "main-site-optimization|preview|long-distance-moving|es": 1
+    }
+  }
+}

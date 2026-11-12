@@ -1,0 +1,10 @@
+{
+  "attemptedAt": "2026-11-12T15:33:21.608Z",
+  "site": "https://vantage-movers-clients-main-site-6wze5e9bt-vantage-4d3db9ef.vercel.app",
+  "sourceSha": "10ec4d24e6f816d4540c2314aad93e52ee795e69",
+  "reference": "MS-20261112-67847D7501-PREVIEW-1794497595913",
+  "lid": "LIDacbbc6abf0523",
+  "consent": false,
+  "expectedSource": "main_site",
+  "note": "Attempt journal only; response/readback determine capture. Do not rerun submission to recover a failed readback."
+}

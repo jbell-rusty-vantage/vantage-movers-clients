@@ -4,18 +4,21 @@ import { createRequire } from 'node:module';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
+import { assertPreviewSite } from '../session-8/preview-qualification.mjs';
 const require = createRequire(new URL('../../../apps/main-site/package.json', import.meta.url));
 const { chromium } = require('playwright');
-const origin = process.env.PROCESS_LOCAL_URL || 'http://localhost:3001';
-assert(['localhost', '127.0.0.1'].includes(new URL(origin).hostname), 'Local preview only');
-const output = new URL('./evidence/', import.meta.url);
+const deployed = Boolean(process.env.SITE_PREVIEW_URL);
+const origin = deployed ? assertPreviewSite(process.env.SITE_PREVIEW_URL) : process.env.PROCESS_LOCAL_URL || 'http://localhost:3001';
+if (!deployed) assert(['localhost', '127.0.0.1'].includes(new URL(origin).hostname), 'Local preview only');
+if (deployed) assert(/^[a-f0-9]{40}$/.test(process.env.SITE_PREVIEW_SOURCE_SHA || ''), 'Exact deployed source required');
+const output = new URL(deployed ? '../session-8/evidence/analytics-native-20261112/process/' : './evidence/', import.meta.url);
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ headless: true });
 const evidence = {
   capturedAt: new Date().toISOString(),
-  source: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
-  sourceState: 'Uncommitted integrated worktree; HEAD identifies its base, not the complete tested source.',
-  environment: 'Next development server, Chromium deviceScaleFactor=1, no network/CPU throttling; no physical-device claim.',
+  source: deployed ? process.env.SITE_PREVIEW_SOURCE_SHA : execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
+  sourceState: deployed ? 'Immutable deployed preview; source identity recorded separately in deployment.json.' : 'Uncommitted integrated worktree; HEAD identifies its base, not the complete tested source.',
+  environment: `${deployed ? 'Deployed preview' : 'Next development server'}, Chromium deviceScaleFactor=1, no network/CPU throttling; no physical-device claim.`,
   screenshotTreatment: 'Component-only screenshots hide sticky header, skip link and Next development portal during capture, without changing layout. They are not full-page screenshots.',
   mediaComparison: { originalHeroFileBytes: 1833644, selectedHeroFileBytes: 105142, boundary: 'Source asset sizes supplied by integration owner. Not a measured network transfer reduction or controlled performance comparison.' },
   cases: [],
@@ -32,7 +35,9 @@ async function contextFor(viewport, options = {}) {
     const req = route.request();
     if (!['GET', 'HEAD'].includes(req.method()) || /\/_vercel\/|vercel-insights|vitals\.vercel/.test(req.url())) return route.abort();
     if (failProcessImage && asset(req.url()) === '/images/preview/quote-request.webp') return route.abort();
-    return route.continue();
+    const headers = { ...req.headers() };
+    if (deployed && new URL(req.url()).origin === origin && process.env.SITE_PREVIEW_BYPASS) headers['x-vercel-protection-bypass'] = process.env.SITE_PREVIEW_BYPASS;
+    return route.continue({ headers });
   });
   return context;
 }

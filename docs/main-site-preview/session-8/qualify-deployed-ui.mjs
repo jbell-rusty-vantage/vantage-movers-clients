@@ -30,9 +30,9 @@ try {
 
   stage = "open-protected-ui";
   browser = await chromium.launch();
-  // Standard Chromium UA lets the explicit synthetic Preview session exercise collectors
-  // that exclude HeadlessChrome. These are QA receipts, never real customer statistics.
-  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: "reduce", userAgent: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${browser.version()} Safari/537.36`, ...(process.env.SITE_PREVIEW_STORAGE_STATE ? { storageState: process.env.SITE_PREVIEW_STORAGE_STATE } : {}) });
+  // Vercel excludes navigator.webdriver sessions. Use the native browser runbook
+  // for dashboard receipts; never alter browser automation signals to force collection.
+  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: "reduce", ...(process.env.SITE_PREVIEW_STORAGE_STATE ? { storageState: process.env.SITE_PREVIEW_STORAGE_STATE } : {}) });
   let submitted;
   let quotePosts = 0;
   const requestErrors = [];
@@ -128,7 +128,7 @@ try {
     checkedAt: new Date().toISOString(), site: origin, sourceSha: process.env.SITE_PREVIEW_SOURCE_SHA,
     anonymousProtectionStatus: anonymous.status, noindex: true, uiQuotePostCount: quotePosts, quoteHttpStatus: quoteResponse.status(), leadCaptured: quoteResult.leadCaptured,
     reference: submitted.ref_no, consentSubmitted: false, placesConfirmed, pageErrors, diagnosticEvents, collectorRequests, readback,
-    analytics: "Synthetic Preview session using standard Chromium UA. Collector requests are transport evidence only; query the Preview analytics dataset for receipts.",
+    analytics: "Automated Chromium session: Vercel intentionally excludes webdriver traffic. Native browser and aggregation evidence must qualify analytics separately.",
     scope: "One real synthetic preview Form Lead via deployed UI. Invalid/retry contracts are separately mocked. No production submission.",
   };
   await saveEvidence("deployed-ui-qualification.json", result);

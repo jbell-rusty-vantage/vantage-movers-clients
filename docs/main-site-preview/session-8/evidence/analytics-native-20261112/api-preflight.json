@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-11-12T15:36:41.097Z",
+  "origin": "https://vantage-sites-preview-api.vercel.app",
+  "database": "testvantagemovers_sitepreview",
+  "readyState": 1,
+  "invalidAuthentication": 401,
+  "content": [
+    {
+      "path": "/api/v1/testimonials?published=true",
+      "status": 200,
+      "fixtureCount": 1
+    },
+    {
+      "path": "/api/v1/moving-carriers?active=true",
+      "status": 200,
+      "fixtureCount": 1
+    }
+  ],
+  "restricted": [
+    {
+      "path": "/api/v1/analytics",
+      "status": 404
+    },
+    {
+      "path": "/api/cron/sheet-sync",
+      "status": 404
+    },
+    {
+      "path": "/api/v1/form-leads",
+      "status": 404
+    }
+  ],
+  "writes": 0
+}
