@@ -1,6 +1,6 @@
 # Main Site preview build
 
-**Current local mission:** [Florida and directed routes](location-mission-2026-11-12/README.md) implements the new bilingual location/route pilot, interactive map, 20-state architecture, service-card improvements and quote/navigation fixes. Local qualification is complete; preview release direction is pending. The stable deployed alias below still serves the final-polish candidate.
+**Current deployed preview:** [Florida and directed routes](location-mission-2026-11-12/README.md) delivers the bilingual location/route pilot, interactive map, 20-state architecture, service-card improvements and quote/navigation fixes at the [stable preview URL](https://vantage-main-site-optimization.vercel.app). Source `762b3b92` passed local checks and 532 deployed browser checks; the isolated API extension deployed first. Production is unchanged. Start with the [current handoff](location-mission-2026-11-12/NEXT-SESSION-PROMPT.md); earlier release records below describe earlier sources.
 
 **Latest Owner corrections:** [final visual polish](final-polish-2026-11-12/README.md) delivers the borderless provider ribbon, global license strip, quote privacy messages and six custom article posters. Start the [next session here](final-polish-2026-11-12/NEXT-SESSION-PROMPT.md). Earlier candidate records below remain historical evidence.
 

@@ -1,0 +1,38 @@
+{
+  "origin": "https://vantage-main-site-optimization.vercel.app",
+  "checks": [
+    {
+      "path": "/locations/florida-movers",
+      "status": 200,
+      "noindex": true,
+      "heading": "Your Florida move. A plan for every detail.",
+      "map": true,
+      "sources": true
+    },
+    {
+      "path": "/moving-routes/florida-to-north-carolina",
+      "status": 200,
+      "noindex": true,
+      "heading": "Moving from Florida to North Carolina",
+      "map": true,
+      "sources": true
+    },
+    {
+      "path": "/es/destinos/florida",
+      "status": 200,
+      "noindex": true,
+      "heading": "Su mudanza en Florida. Cada detalle, bien pensado.",
+      "map": true,
+      "sources": true
+    },
+    {
+      "path": "/es/rutas/florida-a-carolina-del-norte",
+      "status": 200,
+      "noindex": true,
+      "heading": "Mudarse de Florida a Carolina del Norte",
+      "map": true,
+      "sources": true
+    }
+  ],
+  "errors": []
+}

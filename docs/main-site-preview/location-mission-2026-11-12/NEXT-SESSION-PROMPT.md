@@ -1,17 +1,19 @@
-# Continue the location mission
+# Florida and route preview — deployed handoff
 
-Release authorization received: the Owner answered “Deploy the isolated preview” and clarified “To the preview url not the main url.” This supersedes the pending-approval notes below. The isolated API source `7f1cceca` is pushed; release qualification is in progress. Consult the final deployment evidence when present.
+The Owner authorized “Deploy the isolated preview” and clarified “To the preview url not the main url.” That release is complete. [Review the stable preview](https://vantage-main-site-optimization.vercel.app). Production website and API deployments remain unchanged.
 
-Read this packet's README, STATE-ROUTE-ARCHITECTURE and ATTRIBUTION-INTEGRATION. Owner objective: `C:/Users/Pinda/.codex/attachments/f5450eb8-537c-448b-bbcc-66d2d4db022c/goal-objective.md`.
+Read this packet's [README](README.md), [state/route architecture](STATE-ROUTE-ARCHITECTURE.md), [attribution integration](ATTRIBUTION-INTEGRATION.md), and [release identity](evidence/deployed/release-identity.json). Owner objective: `C:/Users/Pinda/.codex/attachments/f5450eb8-537c-448b-bbcc-66d2d4db022c/goal-objective.md`.
 
-Implementation and local qualification are finished in the current shared worktrees, uncommitted:
-- Site: `C:/Users/Pinda/Proyectos/vantage/main-site-optimization`, `agent/main-site-optimization`, baseline HEAD `e181329`.
-- Server: `C:/Users/Pinda/Proyectos/vantage/vantage-main-server`, `agent/site-preview-api`; only additive attribution allowlist, regression test and README changed by this mission.
+## Released sources
 
-An explicit question is pending to commit/push both candidates, deploy the isolated API first then site preview, qualify and update the stable alias. The server's branch workflow rule requires explicit commit/push/deploy direction. Do not treat elapsed time as approval. Check the conversation for the Owner's answer.
+- Site worktree: `C:/Users/Pinda/Proyectos/vantage/main-site-optimization`, branch `agent/main-site-optimization`, application source `762b3b92a01642349a86ec045291ecad60df0f05`, draft PR #4. CI merge `b54e39adb41a450e30a3aa741669769f2bbad687` has the identical application tree.
+- Server: `C:/Users/Pinda/Proyectos/vantage/vantage-main-server`, branch `agent/site-preview-api`, source `7f1cceca11d4f7d28d26085a00cfb37f445c0cdb`, draft PR #222. Additive attribution identities deployed before the site.
+- Site deployment: `dpl_FvingkCg3fuBxuCUbo74qioDLpd4`; API deployment: `dpl_BRbmdo7QmAKkfJvr4DjcYvTALrPe`. Both target Preview. Subsequent evidence-only commits do not change deployed application source.
 
-Local checks passed: site 55 tests, lint, typecheck/build, 532 final integration assertions; quote/pickup/navigation browser regressions; server 16 tests, distributed contract equality and typecheck excluding only the documented ignored audit scratch file. No Lead was created. The local dev server is stopped. Starting the built app was rejected by automatic approval review (“blocked by policy”); it was not retried. The public stable alias still serves final-polish source `f4b95c8`, not this mission.
+## Qualification and next decision
 
-On approved preview release, follow existing GitHub Actions workflows and exact deployment/SHA evidence. Preserve production and editorial gates. Recheck deployed interaction/noindex/source cards/map. When capturing full-page images after keyboard map tests, blur the focused map control and scroll instantly to the top first so sticky chrome does not appear midway through the capture. Do not replay old synthetic captures. No production direction has been supplied.
+Local site build/typecheck/lint and 55 tests passed; 532 deployed integration checks and mocked quote/pickup/navigation regressions passed. Final stable-alias checks passed for all four pilot pages. Server focused tests and clean CI typecheck passed; local scratch-file and Vercel builder limitations are documented. No Lead was created, no live Places qualification was repeated, and no newly persisted route-attribution receipt is claimed.
 
-The new map uses local Census-derived us-atlas geometry with ISC notice. Older homepage CoverageMap still uses the pre-existing noncommercial map dependency; resolve that separately before commercial promotion. The architecture documents expansion to 20 states/380 directed routes without mass publication.
+The requested implementation and isolated preview release are complete. The next decision is Owner review. All 36 localized entries remain drafts; production selection, publication, business/Spanish/media approval and claim evidence are separate. No production release direction has been supplied. Do not replay old synthetic captures.
+
+The new map uses local Census-derived us-atlas geometry with ISC notice. Older homepage CoverageMap still uses the pre-existing noncommercial dependency; resolve it separately before commercial promotion. The architecture documents expansion to 20 states/380 directed routes, including the additional source maintenance/admission work, without mass publication.

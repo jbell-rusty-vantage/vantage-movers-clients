@@ -1,6 +1,6 @@
 # Florida and route preview mission — November 12
 
-The Owner's requested changes are implemented locally. The Owner explicitly authorized committing/pushing the site and additive server attribution changes and deploying the isolated preview, reaffirming that the main production URL must remain unchanged. Preview release is in progress; exact deployment evidence will be recorded here before claiming the stable review alias is updated.
+The requested changes are deployed to the [stable isolated preview](https://vantage-main-site-optimization.vercel.app). The Owner authorized commit/push and isolated preview deployment, explicitly excluding the main production URL. The production website and API aliases were checked before and after release and remain unchanged.
 
 ## Reviewable result
 
@@ -29,10 +29,16 @@ Local paths: `/locations/florida-movers`, `/moving-routes/florida-to-north-carol
 
 The local build uses explicit Preview mode and a dead loopback API origin without credentials. It verifies compilation/static generation with expected content fallbacks, not live content retrieval, Places or deployed persistence. Build result and local review process are recorded in `evidence/build.md`.
 
-## Release and remaining decisions
+## Deployed release and remaining decisions
 
-The server repository requires explicit direction before commit/push/deploy. Release the isolated API allowlist first, then the site preview source through the existing workflows; verify exact source/deployment mapping before assigning the stable alias. Any real deployed synthetic capture requires a separately bounded test plan. No production deployment, editorial approval, indexing, campaign or business-data backfill occurred.
+The isolated API deployed first from `7f1cceca11d4f7d28d26085a00cfb37f445c0cdb`; [API workflow](https://github.com/jbell-rusty-vantage/vantage-movers-server/actions/runs/43323668464) succeeded. [Read-only qualification](evidence/deployed/api-readonly.json) verified source identity, test database and preview isolation without writes.
+
+Site source `762b3b92a01642349a86ec045291ecad60df0f05` deployed through the successful [site workflow](https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43324193801). CI merge `b54e39adb41a450e30a3aa741669769f2bbad687` has the identical application tree `994e86a5a23c2b2518aa97bed6f1e5f514309dac`. The [immutable deployment](https://vantage-movers-clients-main-site-ji4bm12lw-vantage-4d3db9ef.vercel.app) is Ready, target Preview, deployment `dpl_FvingkCg3fuBxuCUbo74qioDLpd4`. The stable alias now points there.
+
+[Deployed integration](evidence/deployed/integration/report.json) passed all 532 checks. Deployed [quote](evidence/deployed/quote/report.json), [pickup option](evidence/deployed/quote-option/results.json) and [navigation/input](evidence/deployed/navigation-input/report.json) regressions passed with writes mocked. The [final stable-alias check](evidence/deployed/stable/report.json) verified all four pilot pages return 200, remain noindex, show the map and sources, and have no browser errors. [Release identity](evidence/deployed/release-identity.json) records both unchanged production deployment IDs.
+
+No new Lead was created. Deployed persistence of the newly admitted route identities has not been exercised with a real capture; local contract tests and deployed exact-source/isolation evidence are the available proof. Any new synthetic capture requires a separately bounded test plan. No production deployment, editorial approval, indexing, campaign or business-data backfill occurred.
 
 All 36 localized entries remain drafts. Production selection, Spanish/business/media approval, pricing/transit evidence, the 50,000-count definition and refreshed BBB evidence remain separate. The older homepage map's pre-existing noncommercial dependency is documented in the architecture packet and needs replacement or licensing resolution before commercial promotion; the new map does not use it.
 
-No migration or environment change is required for the attribution extension. Roll back site and allowlist source together; retain historical attribution and qualification evidence. The prior stable preview remains available until a new deployment is explicitly recorded.
+No migration or environment change is required for the attribution extension. Roll back site and allowlist source together; retain historical attribution and qualification evidence. The previous stable deployment ID is preserved in the release identity record.

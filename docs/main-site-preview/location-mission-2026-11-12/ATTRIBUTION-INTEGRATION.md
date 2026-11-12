@@ -13,10 +13,10 @@ The server extension is additive. It needs no schema migration, backfill or envi
 
 ## Release boundary
 
-The Owner subsequently authorized commit/push and isolated preview deployment, explicitly excluding the main production URL. Server source `7f1cceca` is pushed to `agent/site-preview-api`; deployment qualification is in progress.
+The Owner authorized commit/push and isolated preview deployment, explicitly excluding the main production URL. Server source `7f1cceca11d4f7d28d26085a00cfb37f445c0cdb` deployed successfully through [the API workflow](https://github.com/jbell-rusty-vantage/vantage-movers-server/actions/runs/43323668464) to Preview deployment `dpl_BRbmdo7QmAKkfJvr4DjcYvTALrPe`. The stable API alias is `https://vantage-sites-preview-api.vercel.app`.
 
-These checks prove local contract behavior, not acceptance by the deployed API. Preview integration requires the isolated API to deploy this additive allowlist before the site uses it for persisted route attribution. The existing stable alias and prior capture evidence remain tied to the previous source until a new deployment is recorded.
+[Read-only deployed evidence](evidence/deployed/api-readonly.json) verifies the exact source, test database, content fixtures and denied non-preview surfaces. The API deployed before the site. Site source `762b3b92` is now at the stable preview alias; [release identity](evidence/deployed/release-identity.json) records the complete source/deployment mapping. Clean CI typecheck and tests passed; Vercel's builder still emits pre-existing unrelated ObjectId diagnostics, documented in the server attribution README.
 
-The server's `.cursor/rules/branch-test-vercel-workflow.mdc` requires explicit direction before committing, pushing or deploying. Complete the reviewable local candidate first, then obtain direction for the isolated preview release. Production is a separate selection and fresh build.
+No real quote capture was sent for this release. Local tests prove the new path admission; deployed exact-source and isolation checks establish integration, but do not establish newly persisted route attribution. Prior capture receipts remain evidence for their recorded source only. Production is a separate selection and fresh build; both production aliases remain unchanged.
 
 Rollback: revert the added identities and the corresponding site release together. An older server discards optional attribution with new paths while continuing valid quote intake; it must not be used to claim those captures retain location attribution. No stored evidence is rewritten.
