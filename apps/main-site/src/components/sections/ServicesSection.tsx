@@ -111,7 +111,7 @@ export function ServicesSection() {
                   Request a Quote
                 </a>
                 <a
-                  href="#services"
+                  href={entryById(row.serviceId, "en")?.path ?? "#quote"}
                   className={`${radiusClasses[BUTTON_RADIUS]} ${accentClass} border-[1.5px] border-cream-border bg-white px-6 py-[13px] font-bold tracking-[.04em] text-brand-blue uppercase no-underline transition hover:border-brand-blue`}
                   style={{ fontSize: `${CTA_FONT_SIZE}px` }}
                   data-analytics-location="service_feature"

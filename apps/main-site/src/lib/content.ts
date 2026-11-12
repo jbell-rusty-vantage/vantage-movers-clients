@@ -338,6 +338,7 @@ export const featureRows = [
   {
     eyebrow: "Long-Distance Moving",
     anchorId: "service-long-distance-feature",
+    serviceId: "long-distance-moving",
     title: "Long-Distance Moving, Coordinated Step by Step",
     body: "Start with your pickup and delivery locations, inventory, preferred dates and requested services. Vantage arranges transportation as a broker. Review the written estimate and identify the assigned motor carrier before pickup.",
     checklist: [
@@ -353,6 +354,7 @@ export const featureRows = [
   {
     eyebrow: "Military Moving",
     anchorId: "service-military-moving",
+    serviceId: "military-moving",
     title: "Veteran & Military Moves",
     body: "If you are moving around military orders, bring your reporting date and the instructions from your transportation office. Confirm approval, paperwork and any reimbursement requirements with that office before making arrangements.",
     checklist: [
