@@ -5,6 +5,30 @@ const check = { checkedAt: "2026-11-12", checkedBy: "Codex source check" };
 /** Source checks do not grant business, legal, translation or publication approval. */
 export const editorialSources: EditorialSource[] = [
   {
+    id: "fmcsa-costs", title: "FMCSA: How can I avoid unexpected moving costs?",
+    url: "https://www.fmcsa.dot.gov/consumer-protection/protect-your-move/how-can-i-avoid-unexpected-moving-costs",
+    section: "Written estimates and non-binding costs", scope: "Interstate household goods", ...check,
+    recheckTrigger: "Before publication or changed estimate guidance.",
+    finding: "Written estimates describe charges; non-binding estimates do not guarantee final costs.",
+    limitation: "Does not establish Vantage prices, terms or service availability.",
+  },
+  {
+    id: "fmcsa-hazardous", title: "FMCSA: Before requesting services from a mover",
+    url: "https://www.fmcsa.dot.gov/protect-your-move/how-to/subpartB",
+    section: "Hazardous materials shipper responsibilities", scope: "Interstate household goods", ...check,
+    recheckTrigger: "Before publication or changed hazardous-material guidance.",
+    finding: "Offering hazardous materials brings specific shipper requirements; use the carrier's instructions.",
+    limitation: "The editorial examples are a question list, not a legal classification or permission to ship.",
+  },
+  {
+    id: "fmcsa-documents", title: "FMCSA: Your Rights and Responsibilities When You Move",
+    url: "https://www.fmcsa.dot.gov/sites/fmcsa.dot.gov/files/RightsandResponsibilitiesBooklet_2022Update.pdf",
+    section: "Estimates, inventory and bill of lading", scope: "Interstate household goods", ...check,
+    recheckTrigger: "Before publication or a revised consumer booklet.",
+    finding: "Explains the written documents accompanying a household shipment.",
+    limitation: "Original folder organization is an editorial aid, not a replacement for applicable documents or legal advice.",
+  },
+  {
     id: "fmcsa-roles", title: "FMCSA: Movers vs. Brokers",
     url: "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
     section: "What's the difference between a mover and broker? / What do I do if I am working with a broker?",

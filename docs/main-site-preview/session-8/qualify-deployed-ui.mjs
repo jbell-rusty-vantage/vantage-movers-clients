@@ -75,6 +75,12 @@ try {
   const pageErrors = [];
   page.on("pageerror", error => pageErrors.push(error.name));
   const marker = `PREVIEW-${Date.now()}`;
+  if (process.env.SITE_PREVIEW_ATTRIBUTION_PROOF === "1") {
+    await page.goto(`${origin}/es/recursos/costos-de-mudanza?utm_source=review&utm_medium=review&utm_campaign=preview-qualification`);
+    await page.waitForFunction(() => Boolean(sessionStorage.getItem("vantage.website-attribution.v1")));
+    await page.goto(`${origin}/resources/moving-cost-guide`);
+    await page.locator("footer.bg-cream").waitFor();
+  }
   const response = await page.goto(`${origin}/services/long-distance-moving?ref_no=${marker}`);
   check(response?.status() === 200, "Protected service page did not render");
   const responseNoindex = response.headers()["x-robots-tag"]?.includes("noindex");
@@ -122,7 +128,13 @@ try {
   await page.screenshot({ path: `${evidence}/deployed-390-confirmation.png`, fullPage: false });
 
   stage = "exact-reference-readback";
-  const readback = await exactReferenceReadback(submitted.ref_no, api, { lid: submitted.lid, size: submitted.size });
+  if (process.env.SITE_PREVIEW_ATTRIBUTION_PROOF === "1") {
+    const attribution = submitted.website_attribution;
+    check(attribution?.first_touch?.content_id === "moving-cost-guide" && attribution.first_touch.locale === "es", "First resource/locale lost");
+    check(attribution.latest_non_direct_touch?.campaign?.name === "preview-qualification", "Campaign lost on direct/internal return");
+    check(attribution.capture_page?.content_id === "long-distance-moving" && attribution.capture_page.locale === "en", "Capture page/locale mismatch");
+  }
+  const readback = await exactReferenceReadback(submitted.ref_no, api, { lid: submitted.lid, size: submitted.size, websiteAttribution: submitted.website_attribution });
   await saveEvidence("deployed-readback.json", readback);
   const result = {
     checkedAt: new Date().toISOString(), site: origin, sourceSha: process.env.SITE_PREVIEW_SOURCE_SHA,

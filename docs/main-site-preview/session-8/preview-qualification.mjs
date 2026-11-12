@@ -33,7 +33,7 @@ export async function previewConnection() {
   return {
     origin: origin.origin,
     async get(path, invalidAuth = false) {
-      check(/^\/(db|health|api\/v1\/(testimonials(?:\?published=true)?|moving-carriers(?:\?active=true)?|analytics|form-leads(?:\/[a-f0-9]{24})?)|api\/cron\/sheet-sync)$/.test(path), "Unapproved API read path");
+      check(/^\/(db|health|api\/v1\/(site-preview\/website-outcomes|testimonials(?:\?published=true)?|moving-carriers(?:\?active=true)?|analytics|form-leads(?:\/[a-f0-9]{24})?)|api\/cron\/sheet-sync)$/.test(path), "Unapproved API read path");
       return fetch(new URL(path, origin), {
         method: "GET", redirect: "error", signal: AbortSignal.timeout(30000),
         headers: {
@@ -109,10 +109,15 @@ export async function exactReferenceReadback(reference, api, expected = {}) {
     const previewCount = await preview.collection("form_leads").countDocuments(filter, { limit: 2, maxTimeMS: 10000 });
     check(productionCount === 0, "Synthetic reference found in production; stop qualification");
     check(previewCount === 1, "Expected exactly one preview Form Lead");
-    const lead = await preview.collection("form_leads").findOne(filter, { projection: { _id: 1, source_company: 1, source_company_site: 1, lid: 1, move_size: 1, duplicate: 1, post_to_granot: 1, sheet_sync: 1 }, maxTimeMS: 10000 });
+    const lead = await preview.collection("form_leads").findOne(filter, { projection: { _id: 1, source_company: 1, source_company_site: 1, lid: 1, move_size: 1, duplicate: 1, post_to_granot: 1, sheet_sync: 1, website_attribution: 1 }, maxTimeMS: 10000 });
     check(lead.source_company === "main_site" && lead.source_company_site === "vantagehomemovers.com", "Incorrect persisted Main Site attribution");
     if (expected.lid) check(lead.lid === expected.lid, "Persisted LID mismatch");
     if (expected.size) check(lead.move_size === expected.size, "Persisted move-size mismatch");
+    if (expected.websiteAttribution) {
+      const { received_at, ...snapshot } = lead.website_attribution ?? {};
+      check(Boolean(received_at), "Server receipt timestamp missing");
+      check(JSON.stringify(snapshot) === JSON.stringify(expected.websiteAttribution), "Persisted website attribution mismatch");
+    }
     const id = String(lead._id);
     const read = await api.get(`/api/v1/form-leads/${id}`);
     check(read.status === 200, "Preview single-lead API readback failed");
@@ -128,6 +133,7 @@ export async function exactReferenceReadback(reference, api, expected = {}) {
       lidPreserved: expected.lid ? true : "not supplied", moveSize: lead.move_size, duplicate: lead.duplicate,
       postToGranot: lead.post_to_granot, previewLeadMessageCount: messageCount,
       sheetSyncEntryCount: Array.isArray(lead.sheet_sync) ? lead.sheet_sync.length : null,
+      websiteAttribution: lead.website_attribution ?? null,
       boundary: "Exact-reference counts and one synthetic preview Lead only. Site response does not expose CRM/messaging status; no such response receipt is inferred.",
     };
   });

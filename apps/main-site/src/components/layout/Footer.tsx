@@ -16,6 +16,7 @@ export function Footer({ locale = "en" }: { locale?: "en" | "es" }) {
   const services = entries.filter(e => e.kind === "service").map(e => ({ href: e.path, label: e.navLabel }));
   const resources = entries.filter(e => e.kind === "resource").map(e => ({ href: e.path, label: e.navLabel }));
   const guides = [
+    ...(resources.length ? [{ href: paths.resource, label: es ? "Todas las guías de mudanza" : "All moving articles & guides" }] : []),
     ...resources,
     { href: "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist", label: es ? "Lista de mudanza de FMCSA (inglés)" : "FMCSA moving checklist" },
     { href: "/ready-to-move", label: es ? "Prepárese para mudarse (inglés)" : "Ready to move checklist" },

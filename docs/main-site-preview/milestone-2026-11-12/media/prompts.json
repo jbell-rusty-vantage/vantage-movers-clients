@@ -1,0 +1,67 @@
+{
+  "generatedDate": "2026-11-12",
+  "sourceRoot": "C:/Users/Pinda/.codex/generated_images/01a1d0e0-a88d-7c50-8c73-fde282d9e89b",
+  "direction": "GPT-6 Astra delegated agent assigned by the Main Site packet",
+  "generator": "Built-in ChatGPT Images (image_gen); underlying image model/version not exposed",
+  "approval": "Owner review pending; proposed preview illustrations only",
+  "rightsAndProvenance": "Original AI-generated fictional scenes. No external stock, real customer/staff reference or company facility photograph used. Not testimonial or operational evidence. Owner publication/media qualification remains open.",
+  "entries": [
+    {
+      "name": "service-military-family-preparation-20261112",
+      "sourceFile": "exec-da00923e-3da2-4f1f-b747-50874cf3d04c.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: proposed editorial service-page illustration for a US interstate moving broker, not a real customer photograph.\nPrimary request: a civilian military-family move preparation scene, expressed entirely through ordinary household planning without military symbols. Two fictional parents and their school-age child prepare a move together at a wooden dining table in a modest lived-in home. One adult organizes an open plain document folder and a room inventory while the other discusses a small group of packed boxes; the child carefully places a favorite book into an open box.\nStyle/medium: high-resolution photorealistic editorial photography, landscape 3:2, natural skin texture and believable hands, candid rather than posed.\nComposition/framing: medium-wide eye-level view, entire family and planning activity clustered in the central 70 percent with comfortable edge margins; the main action survives a modest 16:10 centered crop. No image text overlay is intended.\nLighting/mood: soft morning window light, warm neutral home, restrained navy and beige everyday clothing, calm and practical.\nConstraints: civilian clothes only. Folder contents are indistinct blank or softly blurred sheets with no readable marks, prices or personal details. Plain boxes, no readable labels. Clear walking space. No uniforms, camouflage, flags, badges, insignia, government seals, certificates, official orders, weapons, vehicles, logos, endorsement poses, discounts, offers, watermark or Vantage-owned staff implication. All people and setting fictional.",
+      "placement": "Military / veteran / family service hero",
+      "purpose": "Ordinary civilian household preparation; military context belongs to reviewed page copy, not visual insignia.",
+      "alt": {
+        "en": "Illustration of a family organizing paperwork and packing a book for a move.",
+        "es": "Ilustración de una familia que organiza documentos y empaca un libro para una mudanza."
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.47
+      },
+      "crop": "Prefer full 3:2 frame with contain. If 16:10 is required, use top-aligned object-position 50% 0% to retain the father's hair and family; the bottom table margin may be cropped. Avoid square or portrait cover crops, which remove family members. Actual-page crop qualification pending.",
+      "inspection": "Fictional family, ordinary civilian clothing, blank paperwork, plain boxes; no uniform, flags, seals, offer, branding or endorsement. Faces and hands reviewed."
+    },
+    {
+      "name": "service-senior-downsizing-20261112",
+      "sourceFile": "exec-964f24cd-3f10-4a9e-91ba-0f41ebb3b963.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: proposed senior-moving service-page editorial illustration, not a real customer photograph.\nPrimary request: an older woman in her seventies confidently making her own downsizing choices in her familiar living room, with an adult daughter listening and helping. The older adult sits upright at a wooden table and holds a small ceramic keepsake, considering where to place it; she leads the conversation and her daughter follows her decision. On the table, a few carefully chosen books and family objects, plain packing paper and an open cardboard box; a second closed box beside the table. Keep possessions limited, carefully arranged and believable.\nStyle/medium: high-resolution photorealistic editorial photography, landscape 3:2, natural mature skin and wrinkles, authentic hands and ceramic textures. Respectful, capable, unhurried, not sentimental or patronizing.\nComposition/framing: medium-wide eye-level view, both faces and the older adult's hands comfortably inside the central 70 percent, sufficient margins for a modest centered 16:10 crop. No copy overlay.\nLighting/mood: gentle daylight in a modest warm neutral home, natural navy and beige casual clothing, quietly practical expressions, no camera-facing testimonial pose.\nConstraints: fictional people and home. Older adult visibly directing the decisions; no distress or helplessness. No medical equipment, caregiver uniforms, facilities, moving truck, staff, branding, readable text, prices, personal data, printed slogans, logos, watermark or implied endorsement. Any book spines and framed background images indistinct.",
+      "placement": "Senior moving service hero",
+      "purpose": "Show an older adult directing choices about belongings with family support.",
+      "alt": {
+        "en": "Illustration of an older woman choosing which belongings to keep while her daughter listens.",
+        "es": "Ilustración de una mujer mayor que decide qué pertenencias conservar mientras su hija la escucha."
+      },
+      "focalPoint": {
+        "x": 0.52,
+        "y": 0.43
+      },
+      "crop": "Prefer full 3:2 frame with contain. If 16:10 is required, use top-aligned object-position 50% 0% to preserve hair margins, both faces and the older adult's hands and keepsake. Avoid portrait cover crops. Actual-page crop qualification pending.",
+      "inspection": "Older adult visibly leads the conversation and holds the keepsake; family member listens. No medical or care-facility cues, branding, uniform, readable text or endorsement. Faces and hands reviewed."
+    },
+    {
+      "name": "service-storage-preparation-20261112",
+      "sourceFile": "exec-7234379b-5abe-4202-989b-dd54ee7ac6ab.png",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: proposed storage-preparation service-page editorial illustration for an interstate moving broker, not a real facility photograph.\nPrimary request: an organized corner of a modest home's living room where household items have been carefully prepared for temporary storage. Six plain taped cardboard boxes of varied realistic sizes stacked securely no more than three high, a small wooden side table protected with a clean moving blanket, two neatly folded blankets, and a single open box containing individually paper-wrapped ceramic dishes with cushioning. A plain folder with no marks rests on a nearby small table for inventory planning. The room still clearly looks like a home, with a domestic window and baseboard, ordinary wood flooring and a clear unobstructed walkway.\nStyle/medium: high-resolution photorealistic editorial still-life photograph, landscape 3:2. Realistic cardboard, paper folds, soft textile and wood texture; tidy but not a showroom.\nComposition/framing: medium-wide eye-level three-quarter view; the prepared group of items sits within the central 70 percent, keep all key household objects visible in a modest centered 16:10 crop, calm breathing room around the group. No text overlay.\nLighting/mood: natural soft window light, warm neutrals with a restrained navy blanket, practical and reassuring.\nConstraints: no people, readable labels, writing, logos, prices, certificates, warehouse aisles, commercial storage unit doors, vehicles, uniforms, security or climate-control equipment, watermarks or company-owned facility implication. No hazardous materials or uncovered fragile items inside boxes. Fictional home and belongings; not proof of a storage facility, safety guarantee or included service.",
+      "edit": {
+        "prompt": "Use case: precise-object-edit.\nEdit the storage-preparation image only: fully cover the one exposed white plate in the open foreground cardboard box with natural folded white packing paper, so every fragile item in that box is individually wrapped. Keep the plate's position and shape implied beneath paper. Preserve every other part of the photograph unchanged: room, all boxes, blankets, table, folder, lighting, framing, materials and colors. No readable text, logo, watermark or new objects. This remains a fictional editorial illustration, not evidence of a real company facility.",
+        "inputSourceFile": "exec-5715b074-f063-4e6b-ac30-08b2e427f41a.png",
+        "mechanism": "num_last_images_to_include: 1",
+        "reason": "Initial image exposed a plate; selected correction wraps it fully in paper."
+      },
+      "placement": "Storage service hero",
+      "purpose": "Show household preparation before storage without implying a Vantage-owned storage facility.",
+      "alt": {
+        "en": "Illustration of packed boxes, wrapped dishes and a covered table prepared for storage at home.",
+        "es": "Ilustración de cajas empacadas, platos envueltos y una mesa cubierta, preparados en casa para su almacenamiento."
+      },
+      "focalPoint": {
+        "x": 0.56,
+        "y": 0.49
+      },
+      "crop": "Preserve full generated frame, approximately 16:10, with contain. A 16:10 centered crop removes negligible edges. Do not use portrait cover crops that remove the protected table.",
+      "inspection": "Domestic living room, boxes stacked at most three high, dishes fully paper-wrapped after correction, clear foreground floor, no warehouse, commercial unit, company ownership, climate/security claim, readable writing or logos."
+    }
+  ]
+}

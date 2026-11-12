@@ -1,4 +1,5 @@
 "use client";
+import { captureWebsiteAttribution } from "@/lib/website-attribution";
 
 import { useEffect, useRef, useState, useCallback, useId, type ReactNode } from "react";
 import Link from "next/link";
@@ -455,6 +456,7 @@ export function QuoteWizard({
           source_company_site: MAIN_SITE.sourceCompanySite,
           ref_no: refNo,
           lid,
+          website_attribution: captureWebsiteAttribution(),
           sms_consent: getValues("smsConsent"),
         }),
       });

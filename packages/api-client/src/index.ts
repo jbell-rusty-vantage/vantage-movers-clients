@@ -10,6 +10,7 @@ import "server-only";
  */
 
 import { resolveApiBaseUrl } from "./environment";
+import type { WebsiteAttribution } from "./website-attribution";
 
 const API_BASE_URL = resolveApiBaseUrl(process.env.VANTAGE_API_BASE_URL, process.env.VERCEL_ENV);
 
@@ -68,6 +69,7 @@ interface MovingCarrierListResponse {
 }
 
 export interface CreateFormLeadInput {
+  website_attribution?: WebsiteAttribution;
   source_company: string;
   source_company_site?: string;
   name?: string;

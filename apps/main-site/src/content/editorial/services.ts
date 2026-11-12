@@ -1,4 +1,5 @@
 import { draft } from "./draft";
+import { servicePlanningQuestion } from "./service-preparation";
 import type { EditorialEntry, EditorialLocale, EditorialSection } from "./types";
 
 export const SERVICE_IDS = [
@@ -32,7 +33,7 @@ function service(locale: EditorialLocale, id: ServiceId, slug: string, entry: {
 }): EditorialEntry {
   return draft(locale, {
     ...entry, id, kind: "service", path: locale === "en" ? `/services/${slug}` : `/es/servicios/${slug}`,
-    sections: [...entry.sections.slice(0, 2), roles[locale], ...entry.sections.slice(2)],
+    sections: [...entry.sections.slice(0, 2), roles[locale], ...entry.sections.slice(2), ...servicePlanningQuestion(id, locale)],
     sourceIds: ["vantage-broker-baseline", "fmcsa-roles", "fmcsa-lookup", "fmcsa-checklist"],
   });
 }

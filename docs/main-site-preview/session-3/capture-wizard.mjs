@@ -8,7 +8,7 @@ const { chromium } = require("playwright");
 const sharp = createRequire(require.resolve("next/package.json"))("sharp");
 const base = process.env.MAIN_SITE_QA_URL || "http://localhost:3001";
 if (!["localhost", "127.0.0.1"].includes(new URL(base).hostname)) throw new Error("Mocked quote QA accepts localhost only");
-const evidence = fileURLToPath(new URL("./evidence/", import.meta.url));
+const evidence = fileURLToPath(new URL(process.env.MAIN_SITE_QA_OUTPUT || "./evidence/", import.meta.url));
 await mkdir(evidence, { recursive: true });
 const browser = await chromium.launch();
 const results = [];

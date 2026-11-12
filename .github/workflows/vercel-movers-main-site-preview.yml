@@ -69,6 +69,9 @@ jobs:
       - name: Typecheck
         run: pnpm turbo typecheck --filter=@vantage/main-site
 
+      - name: Main Site contract and publication checks
+        run: pnpm --filter @vantage/main-site exec vitest run --config vitest.unit.config.mts
+
       - name: Pull Vercel preview environment
         run: >-
           vercel pull

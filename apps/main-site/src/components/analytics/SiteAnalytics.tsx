@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { captureWebsiteAttribution } from "@/lib/website-attribution";
 import type { TelemetryMode } from "@/lib/telemetry-mode";
 import {
   configureAnalytics,
@@ -80,6 +81,7 @@ function propertiesForAnchor(anchor: HTMLAnchorElement): {
 
 export function SiteAnalytics({ mode = "local" }: { mode?: TelemetryMode }) {
   const pathname = usePathname();
+  useEffect(() => { captureWebsiteAttribution(); }, [pathname]);
   useEffect(() => {
     configureAnalytics(mode);
     return initializeBounceTracking();
