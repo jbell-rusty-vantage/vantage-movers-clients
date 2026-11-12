@@ -1,7 +1,6 @@
 import {
   Bricolage_Grotesque,
   Hanken_Grotesk,
-  Manrope,
   Red_Hat_Display,
 } from "next/font/google";
 import localFont from "next/font/local";
@@ -30,9 +29,9 @@ export const heroHeadingFont = Red_Hat_Display({
 });
 
 /** Hero body copy font — Manrope (Storybook Playground choice). */
-export const heroBodyFont = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+export const heroBodyFont = localFont({
+  src: "../fonts/Manrope-variable.ttf",
+  weight: "400 700",
   display: "swap",
 });
 

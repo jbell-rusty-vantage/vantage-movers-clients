@@ -1,7 +1,7 @@
 // Creates ONE synthetic Form Lead through an allowlisted deployed Preview UI.
 // Run only after the build's immutable URL and approved Preview configuration are known.
 import { createRequire } from "node:module";
-import { mkdir } from "node:fs/promises";
+import { mkdir, stat } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { assertPreviewSite, check, checkUnusedReference, exactReferenceReadback, preflight, previewConnection, saveEvidence } from "./preview-qualification.mjs";
 
@@ -14,6 +14,8 @@ let submittedReference;
 
 try {
   check(process.argv[2] === "--submit-one-preview-quote", "Explicit preview-submit mode required");
+  const priorAttempt = await stat(`${evidence}/deployed-submission-attempt.json`).then(() => true).catch(error => { if (error.code === "ENOENT") return false; throw error; });
+  check(!priorAttempt, "A submission attempt already exists; use exact-reference readback instead of resubmitting");
   const origin = assertPreviewSite(process.env.SITE_PREVIEW_URL || "");
   check(Boolean(process.env.SITE_PREVIEW_SOURCE_SHA?.match(/^[a-f0-9]{40}$/)), "Record the deployed source SHA before qualification");
   const api = await previewConnection();
@@ -91,6 +93,16 @@ try {
   check(quoteResponse.status() === 200 && quoteResult.leadCaptured === true, "Deployed UI did not confirm capture; do not resubmit automatically");
   await form.getByRole("heading", { name: "Request Received", exact: true }).waitFor();
   check(quotePosts === 1 && submitted && requestErrors.length === 0, "Unexpected submission behavior");
+  const diagnosticEvents = await page.evaluate(() => window.__vantagePreviewEvents ?? []);
+  const eventNames = diagnosticEvents.map(event => event.name);
+  const orderedEvents = ["form_started", "form_step_completed", "form_submit_attempted", "form_submit_success"];
+  let priorIndex = -1;
+  for (const name of orderedEvents) {
+    const index = eventNames.indexOf(name);
+    check(index > priorIndex, "Preview diagnostic event order failed");
+    priorIndex = index;
+  }
+  check(eventNames.filter(name => name === "form_submit_success").length === 1, "Expected exactly one capture diagnostic");
   await mkdir(evidence, { recursive: true });
   await page.screenshot({ path: `${evidence}/deployed-1440-confirmation.png`, fullPage: false });
   await page.setViewportSize({ width: 390, height: 844 });
@@ -103,7 +115,7 @@ try {
   const result = {
     checkedAt: new Date().toISOString(), site: origin, sourceSha: process.env.SITE_PREVIEW_SOURCE_SHA,
     anonymousProtectionStatus: anonymous.status, noindex: true, uiQuotePostCount: quotePosts, quoteHttpStatus: quoteResponse.status(), leadCaptured: quoteResult.leadCaptured,
-    reference: submitted.ref_no, consentSubmitted: false, placesConfirmed, pageErrors, readback,
+    reference: submitted.ref_no, consentSubmitted: false, placesConfirmed, pageErrors, diagnosticEvents, readback,
     analytics: "Preview telemetry intentionally disabled/blocked; no collector receipt claimed.",
     scope: "One real synthetic preview Form Lead via deployed UI. Invalid/retry contracts are separately mocked. No production submission.",
   };
