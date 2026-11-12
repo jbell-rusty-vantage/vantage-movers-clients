@@ -22,6 +22,11 @@ describe("Main Site measurement boundary", () => {
     expect(Object.keys(event!.properties)).toHaveLength(2);
   });
 
+  it("retains all four quote steps but excludes arbitrary step values", () => {
+    for (const step_number of [1, 2, 3, 4]) expect(sanitizeAnalyticsEvent("form_step_viewed", { step_number }, "/", false)?.properties.detail).toBe(`step:${step_number}`);
+    expect(sanitizeAnalyticsEvent("form_step_viewed", { step_number: 5 }, "/", false)?.properties.detail).toBe("none");
+  });
+
   it("cannot expose unknown event names, paths, or unbounded dimensions", () => {
     expect(sanitizeAnalyticsEvent("private@example.com", {}, "/", false)).toBeNull();
     expect(sanitizeAnalyticsEvent("phone_clicked", {

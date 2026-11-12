@@ -72,7 +72,7 @@ export function sanitizeAnalyticsEvent(
   if (!eventNames.has(name)) return null;
   const page = pageIdentity(pathname);
   const detail: string[] = [];
-  if (properties.step_number === 1 || properties.step_number === 2 || properties.step_number === 3) {
+  if (properties.step_number === 1 || properties.step_number === 2 || properties.step_number === 3 || properties.step_number === 4) {
     detail.push(`step:${properties.step_number}`);
   }
   if (typeof properties.field_name === "string" && fields.has(properties.field_name)) detail.push(`field:${properties.field_name}`);
