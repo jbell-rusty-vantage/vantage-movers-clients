@@ -8,12 +8,12 @@ Work from the branch and app identified in the [packet index](README.md). Each h
 |---|---|---|
 | 1 | Baseline and design complete; original evidence preserved | None for baseline scope |
 | 2 | 26 original EN/ES drafts, sources/claims, worked estimate and inventory sheets, Madison article | Owner is designated reviewer; locale approvals pending |
-| 3 | Navigation, services, full Spanish quote UI, persistent quote draft, retry/capture gates | Deployed UI receipt and Owner visual selection |
+| 3 | Navigation, services, full Spanish quote UI, persistent quote draft, retry/capture gates; deployed isolated capture receipt | Owner visual selection |
 | 4 | Resource/state/city routes, confirmed destination fallback, print, Back/reload/locale checks | Geolocation is not offered; manual entry works. No denied-permission scenario claimed |
 | 5 | Six generated editorial scenes, actual synthetic UI capture, manual bilingual process sequence | Owner media approval; model-specific Astra authorship not claimed |
 | 6 | Eight services × two locales, full route/link matrix, contact and consumer paths | Owner service/Spanish approval; dedicated careers and complaints workflows remain separate |
 | 7 | Privacy-limited intentional starts/progression/capture, local preview diagnostics; source-linked helper prototype; companion scopes | Analytics destination/dashboard receipts and authoritative Booking joins are not implemented by local diagnostics |
-| 8 | Frozen install, package contracts/typecheck/lint and optimized build; preview API isolation/readback preflight | Current deployed-source receipt, stable alias and Owner production decision |
+| 8 | CI deployment, stable protected alias, deployed route audit and one isolated Form Lead receipt; final navigation-only follow-up retains unchanged quote code | Owner content/media review and production decision; analytics dashboard qualification remains separate |
 
 Follow the per-stage evidence linked from the packet index. “Draft,” “tested locally,” “deployed” and “Owner approved” remain distinct states.
 

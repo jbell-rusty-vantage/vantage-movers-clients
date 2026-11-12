@@ -1,6 +1,6 @@
 # Deployed preview qualification
 
-The isolated API and readback path are ready for the integrated deployment. This is readiness evidence, not qualification of the new site build. The current [API preflight](evidence/api-preflight.json) passed on November 12, 2026: isolated database identity, published synthetic content reads, invalid-auth 401 and restricted-route 404. It performed zero writes.
+The integrated deployed UI has now passed one synthetic capture and exact-reference readback: see the [release evidence](README.md) and [deployed receipt](evidence/deployed-ui-qualification.json). Do not rerun the submission command: the attempt journal is retained and the script refuses another attempt. The current [API preflight](evidence/api-preflight.json) passed on November 12, 2026: isolated database identity, published synthetic content reads, invalid-auth 401 and restricted-route 404. The preflight itself performed zero writes.
 
 The [historical readback](evidence/historical-readback.json) verifies tooling against the already documented `PREVIEW-SITE-20261030` record: one preview Form Lead, zero exact-reference production matches, Main Site attribution, stored `post_to_granot: false`, no scoped Lead Message and no Sheet Sync entry. It does not qualify a November 12 build. A separate never-submitted sentinel reference also returned preview=0 / production=0, proving that the pre-submit count check can run.
 
