@@ -1,9 +1,11 @@
 import type { EditorialClaim, EditorialSource } from "./types";
+import { geographySources } from "./geography-sources";
 
 const check = { checkedAt: "2026-11-12", checkedBy: "Codex source check" };
 
 /** Source checks do not grant business, legal, translation or publication approval. */
 export const editorialSources: EditorialSource[] = [
+  ...geographySources,
   {
     id: "fmcsa-costs", title: "FMCSA: How can I avoid unexpected moving costs?",
     url: "https://www.fmcsa.dot.gov/consumer-protection/protect-your-move/how-can-i-avoid-unexpected-moving-costs",

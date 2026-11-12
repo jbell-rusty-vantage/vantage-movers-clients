@@ -19,22 +19,39 @@ export function entryById(id: string, locale: EditorialLocale, mode = process.en
 }
 
 export const directoryPaths = {
-  en: { home: "/", service: "/services", resource: "/resources", location: "/locations", contact: "/contact" },
-  es: { home: "/es", service: "/es/servicios", resource: "/es/recursos", location: "/es/destinos", contact: "/es/contacto" },
+  en: { home: "/", service: "/services", resource: "/resources", location: "/locations", route: "/moving-routes", contact: "/contact" },
+  es: { home: "/es", service: "/es/servicios", resource: "/es/recursos", location: "/es/destinos", route: "/es/rutas", contact: "/es/contacto" },
 } as const;
+
+export const directoryKinds = ["service", "resource", "location", "route"] as const;
+export type DirectoryKind = (typeof directoryKinds)[number];
+
+export function entriesForDirectory(locale: EditorialLocale, kind: DirectoryKind, mode = process.env.VERCEL_ENV) {
+  return entriesFor(locale, mode).filter(entry =>
+    kind === "location" ? entry.kind === "state" || entry.kind === "city" : entry.kind === kind,
+  );
+}
+
+export function directoryPathFor(locale: EditorialLocale, kind: DirectoryKind, mode = process.env.VERCEL_ENV) {
+  return entriesForDirectory(locale, kind, mode).length ? directoryPaths[locale][kind] : undefined;
+}
 
 export function alternateFor(entry: EditorialEntry) {
   return entryById(entry.id, entry.locale === "en" ? "es" : "en");
 }
 
-export function navigationFor(locale: EditorialLocale) {
+export function navigationFor(locale: EditorialLocale, mode = process.env.VERCEL_ENV) {
   const es = locale === "es";
   const paths = directoryPaths[locale];
-  const entries = entriesFor(locale);
+  const locations = directoryPathFor(locale, "location", mode);
+  const routes = directoryPathFor(locale, "route", mode);
+  const geographyLink = locations
+    ? { href: locations, label: es ? "Destinos" : "Locations" }
+    : routes && { href: routes, label: es ? "Rutas de mudanza" : "Moving routes" };
   return [
-    ...(entries.some((e) => e.kind === "service") ? [{ href: paths.service, label: es ? "Servicios" : "Services" }] : []),
-    ...(entries.some((e) => e.kind === "state") ? [{ href: paths.location, label: es ? "Destinos" : "Locations" }] : []),
-    ...(entries.some((e) => e.kind === "resource") ? [{ href: paths.resource, label: es ? "Recursos" : "Resources" }] : []),
+    ...(directoryPathFor(locale, "service", mode) ? [{ href: paths.service, label: es ? "Servicios" : "Services" }] : []),
+    ...(geographyLink ? [geographyLink] : []),
+    ...(directoryPathFor(locale, "resource", mode) ? [{ href: paths.resource, label: es ? "Recursos" : "Resources" }] : []),
     { href: `${paths.home}#faq`, label: es ? "Preguntas" : "FAQ" },
     { href: paths.contact, label: es ? "Contacto" : "Contact" },
   ];

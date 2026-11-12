@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-11-12T22:01:39.357Z",
+  "origin": "http://localhost:3001",
+  "scope": "Local uncommitted implementation, mocked browser location and provider seam, zero quote submissions. Not live geocoding qualification.",
+  "cases": [
+    {
+      "locale": "en",
+      "mode": "success",
+      "passed": true,
+      "locationRequests": 1,
+      "firstStepHasNoBack": true,
+      "locationStepHasBack": true,
+      "directContinueAfterPhoneCorrection": true,
+      "initialDisclosureHidden": true,
+      "disclosurePrecedesPermission": true
+    },
+    {
+      "locale": "en",
+      "mode": "denied",
+      "passed": true,
+      "locationRequests": 0,
+      "firstStepHasNoBack": true,
+      "locationStepHasBack": true,
+      "directContinueAfterPhoneCorrection": true,
+      "initialDisclosureHidden": true,
+      "disclosurePrecedesPermission": true
+    },
+    {
+      "locale": "en",
+      "mode": "unavailable",
+      "passed": true,
+      "locationRequests": 1,
+      "firstStepHasNoBack": true,
+      "locationStepHasBack": true,
+      "directContinueAfterPhoneCorrection": true,
+      "initialDisclosureHidden": true,
+      "disclosurePrecedesPermission": true
+    },
+    {
+      "locale": "en",
+      "mode": "editing-pending",
+      "passed": true,
+      "locationRequests": 0,
+      "firstStepHasNoBack": true,
+      "locationStepHasBack": true,
+      "directContinueAfterPhoneCorrection": true,
+      "initialDisclosureHidden": true,
+      "disclosurePrecedesPermission": true
+    },
+    {
+      "locale": "es",
+      "mode": "success",
+      "passed": true,
+      "locationRequests": 1,
+      "firstStepHasNoBack": true,
+      "locationStepHasBack": true,
+      "directContinueAfterPhoneCorrection": true,
+      "initialDisclosureHidden": true,
+      "disclosurePrecedesPermission": true
+    },
+    {
+      "locale": "es",
+      "mode": "denied",
+      "passed": true,
+      "locationRequests": 0,
+      "firstStepHasNoBack": true,
+      "locationStepHasBack": true,
+      "directContinueAfterPhoneCorrection": true,
+      "initialDisclosureHidden": true,
+      "disclosurePrecedesPermission": true
+    },
+    {
+      "locale": "es",
+      "mode": "unavailable",
+      "passed": true,
+      "locationRequests": 1,
+      "firstStepHasNoBack": true,
+      "locationStepHasBack": true,
+      "directContinueAfterPhoneCorrection": true,
+      "initialDisclosureHidden": true,
+      "disclosurePrecedesPermission": true
+    },
+    {
+      "locale": "es",
+      "mode": "editing-pending",
+      "passed": true,
+      "locationRequests": 0,
+      "firstStepHasNoBack": true,
+      "locationStepHasBack": true,
+      "directContinueAfterPhoneCorrection": true,
+      "initialDisclosureHidden": true,
+      "disclosurePrecedesPermission": true
+    }
+  ]
+}

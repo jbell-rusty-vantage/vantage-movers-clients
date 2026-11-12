@@ -15,8 +15,7 @@ export async function ServiceFollowThrough({ entry }: { entry: EditorialEntry })
     <TestimonialsSection items={testimonials} locale={entry.locale} />
     <CoverageSection locale={entry.locale} />
     <section className="bg-cream py-16" data-service-grid><Container>
-      <p className="mb-3 text-sm font-semibold text-brand-blue">{es ? "Explore nuestros servicios" : "Explore our services"}</p>
-      <h2 className="mb-8 font-display text-3xl font-extrabold text-brand-blue">{es ? "Más formas de ayudarle con su mudanza" : "More ways we can help you move"}</h2>
+      <h2 className="mb-8 text-balance text-center font-display text-3xl font-extrabold text-brand-blue sm:text-4xl">{es ? "Explore los servicios de mudanza" : "Explore moving services"}</h2>
       <EditorialCards entries={entriesFor(entry.locale).filter(item => item.kind === "service")} />
     </Container></section>
     <section id="faq" className="scroll-mt-36 bg-white py-16"><Container className="grid gap-10 lg:grid-cols-[.7fr_1.3fr]">

@@ -4,17 +4,31 @@ import { useEffect, useRef, useState } from "react";
 import { parseDestination, type ConfirmedDestination, type QuoteLocale } from "@/lib/quote-journey";
 
 const copy = {
-  en: { locate: "Suggest my pickup ZIP", working: "Finding a nearby ZIP…", notice: "Optional: share your approximate location with Google Maps to suggest a ZIP. Confirm it before use, or enter your ZIP above.", confirm: "Use this pickup ZIP", fallback: "Location is unavailable. Enter your pickup ZIP above.", decline: "Enter it myself" },
-  es: { locate: "Sugerir mi código postal de origen", working: "Buscando un código postal cercano…", notice: "Opcional: comparta su ubicación aproximada con Google Maps para sugerir un código postal. Confírmelo antes de usarlo o escríbalo arriba.", confirm: "Usar este código postal de origen", fallback: "La ubicación no está disponible. Escriba su código postal de origen arriba.", decline: "Escribirlo yo" },
+  en: { locate: "Suggest my pickup ZIP", share: "Share approximate location", working: "Finding a nearby ZIP…", notice: "Share your approximate location with Google Maps for a ZIP suggestion. You can confirm the ZIP before it’s used.", confirm: "Use this pickup ZIP", fallback: "Location is unavailable. Enter your pickup ZIP above.", decline: "Enter it myself" },
+  es: { locate: "Sugerir mi código postal de origen", share: "Compartir ubicación aproximada", working: "Buscando un código postal cercano…", notice: "Comparta su ubicación aproximada con Google Maps para recibir una sugerencia. Podrá confirmar el código postal antes de usarlo.", confirm: "Usar este código postal de origen", fallback: "La ubicación no está disponible. Escriba su código postal de origen arriba.", decline: "Escribirlo yo" },
 } as const;
 
 export function PickupLocationSuggestion({ locale, inputId, onConfirm }: { locale: QuoteLocale; inputId: string; onConfirm: (zip: string) => void }) {
   const text = copy[locale];
+  const [open, setOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
   const [suggestion, setSuggestion] = useState<ConfirmedDestination | null>(null);
   const pending = useRef<AbortController | null>(null);
   useEffect(() => () => pending.current?.abort(), []);
+
+  function close() {
+    pending.current?.abort();
+    setOpen(false);
+    setBusy(false);
+    setFailed(false);
+    setSuggestion(null);
+  }
+
+  function returnToZip() {
+    close();
+    document.getElementById(inputId)?.focus();
+  }
 
   async function locate() {
     if (pending.current && !pending.current.signal.aborted) return;
@@ -39,17 +53,56 @@ export function PickupLocationSuggestion({ locale, inputId, onConfirm }: { local
     finally { if (!controller.signal.aborted) setBusy(false); controller.abort(); }
   }
 
-  return <div className="mt-2 text-xs text-slate-600">
-    <button type="button" disabled={busy} onClick={locate} aria-describedby={`${inputId}-location-notice`} className="text-left font-semibold text-brand-blue underline disabled:opacity-60">{busy ? text.working : text.locate}</button>
-    <p id={`${inputId}-location-notice`} className="mt-1">{text.notice}</p>
-    <div role="status" aria-live="polite">
-      {failed && <p className="mt-1">{text.fallback}</p>}
-      {suggestion && <div className="mt-2 rounded border border-cream-border bg-white p-2">
-        <p>{suggestion.postalCode} · {suggestion.city || suggestion.state}, {suggestion.state}</p>
-        <p translate="no" className="my-1 whitespace-nowrap text-xs font-normal not-italic tracking-normal text-[#5e5e5e]">Google Maps</p>
-        <button type="button" className="mr-3 text-left font-semibold text-brand-blue underline" onClick={() => { onConfirm(suggestion.postalCode); document.getElementById(inputId)?.focus(); }}>{text.confirm}</button>
-        <button type="button" className="underline" onClick={() => { setSuggestion(null); document.getElementById(inputId)?.focus(); }}>{text.decline}</button>
-      </div>}
+  const panelId = `${inputId}-location-suggestion`;
+  const noticeId = `${inputId}-location-notice`;
+  const actionClass = "min-h-6 text-left font-semibold text-brand-blue underline";
+
+  return (
+    <div className="mt-1 text-xs text-slate-600">
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls={open ? panelId : undefined}
+        onClick={open ? close : () => setOpen(true)}
+        className={actionClass}
+      >
+        {text.locate}
+      </button>
+      {open && (
+        <div id={panelId} className="rounded border border-cream-border bg-white p-2">
+          {!suggestion && <p id={noticeId}>{text.notice}</p>}
+          <div role="status">
+            {busy && <p className="mt-1">{text.working}</p>}
+            {failed && <p className="mt-1">{text.fallback}</p>}
+            {suggestion && (
+              <>
+                <p>{suggestion.postalCode} · {[suggestion.city, suggestion.state].filter(Boolean).join(", ")}</p>
+                <p translate="no" className="my-1 whitespace-nowrap text-xs font-normal not-italic tracking-normal text-[#5e5e5e]">Google Maps</p>
+              </>
+            )}
+          </div>
+          <button
+            type="button"
+            aria-disabled={busy}
+            aria-describedby={suggestion ? undefined : noticeId}
+            onClick={() => {
+              if (busy) return;
+              if (suggestion) {
+                onConfirm(suggestion.postalCode);
+                returnToZip();
+              } else {
+                void locate();
+              }
+            }}
+            className={`${actionClass} mt-1 mr-3 aria-disabled:opacity-60`}
+          >
+            {suggestion ? text.confirm : text.share}
+          </button>
+          <button type="button" className="min-h-6 underline" onClick={returnToZip}>
+            {text.decline}
+          </button>
+        </div>
+      )}
     </div>
-  </div>;
+  );
 }

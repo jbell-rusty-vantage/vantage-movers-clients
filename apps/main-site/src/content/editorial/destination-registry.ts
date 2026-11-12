@@ -11,6 +11,7 @@ export interface DestinationResource {
   fallbackKey?: string;
 }
 export const destinationResources: readonly DestinationResource[] = [
+  { key: "florida", country: "US", state: "FL", entryId: "florida" },
   { key: "wisconsin", country: "US", state: "WI", entryId: "wisconsin" },
   { key: "madison", country: "US", state: "WI", city: "madison", entryId: "madison-wisconsin", fallbackKey: "wisconsin" },
 ];

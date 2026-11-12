@@ -102,12 +102,14 @@ function Field({
   id,
   label,
   error,
+  reserveErrorSpace = false,
   children,
   className = "mb-3",
 }: {
   id: string;
   label: string;
   error?: string;
+  reserveErrorSpace?: boolean;
   children: ReactNode;
   className?: string;
 }) {
@@ -115,7 +117,16 @@ function Field({
     <div className={className}>
       <label htmlFor={id} className={labelCls}>{label}</label>
       {children}
-      {error && <p id={`${id}-error`} role="alert" className="mt-1 text-[13px] text-red-500">{error}</p>}
+      {(error || reserveErrorSpace) && (
+        <p
+          id={`${id}-error`}
+          role={error ? "alert" : undefined}
+          aria-hidden={error ? undefined : true}
+          className={`mt-1 text-[13px] text-red-500 ${reserveErrorSpace ? "min-h-5 leading-5" : ""}`}
+        >
+          {error}
+        </p>
+      )}
     </div>
   );
 }
@@ -291,6 +302,7 @@ export function QuoteWizard({
   const lastInteraction = useRef(0);
   const completedStepsRef = useRef<number[]>([]);
   const [step, setStep] = useState(0);
+  const [reserveContactErrors, setReserveContactErrors] = useState(false);
   const [result, setResult] = useState<{ leadCaptured: true } | null>(null);
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -494,8 +506,10 @@ export function QuoteWizard({
     const valid = await trigger(fieldsToValidate);
     if (!valid) {
       trackValidationErrors(step);
+      if (step === 0) setReserveContactErrors(true);
       if (step === 3) {
         const invalidStep = [0, 1, 2].find(index => STEP_FIELDS[index].some(field => getFieldState(field).error));
+        if (invalidStep === 0) setReserveContactErrors(true);
         if (invalidStep !== undefined) setStep(invalidStep);
       }
       return;
@@ -518,6 +532,7 @@ export function QuoteWizard({
       return;
     }
 
+    if (step === 0) setReserveContactErrors(false);
     trackEvent("form_step_viewed", { ...quoteFormAnalytics, ...STEP_ANALYTICS[step + 1], locale, service_id: serviceId || "none" });
     setStep((s) => s + 1);
   }
@@ -710,7 +725,7 @@ export function QuoteWizard({
 
           {step === 0 && (
             <div>
-              <Field id={`${fieldIdPrefix}-name`} label={copy.name} error={quoteError(errors.name?.message, locale)}>
+              <Field id={`${fieldIdPrefix}-name`} label={copy.name} error={quoteError(errors.name?.message, locale)} reserveErrorSpace={reserveContactErrors}>
                 <input
                   className={`${inputCls} ${errors.name ? inputErrCls : ""}`}
                   placeholder={copy.namePlaceholder}
@@ -720,7 +735,7 @@ export function QuoteWizard({
                   {...register("name")}
                 />
               </Field>
-              <Field id={`${fieldIdPrefix}-email`} label={copy.email} error={quoteError(errors.email?.message, locale)}>
+              <Field id={`${fieldIdPrefix}-email`} label={copy.email} error={quoteError(errors.email?.message, locale)} reserveErrorSpace={reserveContactErrors}>
                 <input
                   type="email"
                   className={`${inputCls} ${errors.email ? inputErrCls : ""}`}
@@ -731,7 +746,7 @@ export function QuoteWizard({
                   {...register("email")}
                 />
               </Field>
-              <Field id={`${fieldIdPrefix}-phone`} label={copy.phone} error={quoteError(errors.phone?.message, locale)} className="mb-3.5">
+              <Field id={`${fieldIdPrefix}-phone`} label={copy.phone} error={quoteError(errors.phone?.message, locale)} reserveErrorSpace={reserveContactErrors} className="mb-3.5">
                 <input
                   type="tel"
                   inputMode="tel"

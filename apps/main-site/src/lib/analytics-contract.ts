@@ -14,6 +14,9 @@ const serviceSlugs = {
 };
 
 const pagePaths: Record<string, string> = {
+  "/locations/florida-movers": "florida", "/es/destinos/florida": "florida",
+  "/moving-routes": "moving-routes", "/es/rutas": "moving-routes",
+  "/moving-routes/florida-to-north-carolina": "florida-to-north-carolina", "/es/rutas/florida-a-carolina-del-norte": "florida-to-north-carolina",
   "/": "home", "/es": "home",
   "/services": "services", "/es/servicios": "services",
   "/locations": "locations", "/es/destinos": "locations",

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { editorialEntries } from "@/content/editorial";
 import { editorialSources } from "@/content/editorial/sources";
-import { canRenderEntry, entriesFor, entryAt } from "./publication";
+import { canRenderEntry, directoryPathFor, entriesFor, entriesForDirectory, entryAt, navigationFor } from "./publication";
 
 describe("editorial publication boundary", () => {
   it("keeps all unapproved locale entries out of production and unknown environments", () => {
@@ -30,5 +30,21 @@ describe("editorial publication boundary", () => {
   it("rejects unknown paths and publishes only available locale entries", () => {
     expect(entryAt("/services/not-a-service", "preview")).toBeUndefined();
     expect(entriesFor("es", "preview").every(e => e.path.startsWith("/es/"))).toBe(true);
+  });
+  it("publishes a route directory only in the locale with an approved route", () => {
+    const englishRoute = entryAt("/moving-routes/florida-to-north-carolina", "preview")!;
+    const draftReview = englishRoute.review;
+    englishRoute.review = { ...draftReview, status: "reviewed", reviewer: "Vantage reviewer" };
+    try {
+      expect(entriesForDirectory("en", "route", "production")).toEqual([englishRoute]);
+      expect(directoryPathFor("en", "route", "production")).toBe("/moving-routes");
+      expect(directoryPathFor("es", "route", "production")).toBeUndefined();
+      expect(directoryPathFor("es", "route", "preview")).toBe("/es/rutas");
+      expect(navigationFor("en", "production")).toContainEqual({ href: "/moving-routes", label: "Moving routes" });
+      expect(navigationFor("es", "production")).not.toContainEqual({ href: "/es/rutas", label: "Rutas de mudanza" });
+      expect(navigationFor("en", "preview")).toContainEqual({ href: "/locations", label: "Locations" });
+    } finally {
+      englishRoute.review = draftReview;
+    }
   });
 });

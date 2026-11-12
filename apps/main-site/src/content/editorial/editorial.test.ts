@@ -4,7 +4,7 @@ import { SERVICE_IDS } from "./services";
 
 describe("editorial publication queue integrity", () => {
   it("provides complete locale pairs with unique paths for the required publication queue", () => {
-    const expectedIds = [...SERVICE_IDS, "before-the-inventory-call", "comparing-moving-estimates", "who-handles-my-move", "moving-cost-guide", "items-to-check-before-packing", "moving-paperwork-guide", "wisconsin", "madison-wisconsin"];
+    const expectedIds = [...SERVICE_IDS, "before-the-inventory-call", "comparing-moving-estimates", "who-handles-my-move", "moving-cost-guide", "items-to-check-before-packing", "moving-paperwork-guide", "wisconsin", "madison-wisconsin", "florida", "florida-to-north-carolina"];
     expect(new Set(editorialEntries.map((entry) => entry.id))).toEqual(new Set(expectedIds));
     expect(new Set(editorialEntries.map((entry) => entry.path)).size).toBe(editorialEntries.length);
     for (const id of expectedIds) {

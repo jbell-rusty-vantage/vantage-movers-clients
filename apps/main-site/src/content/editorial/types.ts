@@ -1,5 +1,5 @@
 export type EditorialLocale = "en" | "es";
-export type EditorialKind = "service" | "resource" | "state" | "city";
+export type EditorialKind = "service" | "resource" | "state" | "city" | "route";
 
 export interface EditorialSection {
   heading: string;
@@ -37,6 +37,7 @@ export interface EditorialEntry {
   // Set only after the locale has been approved for publication.
   publishedAt?: string;
   worksheet?: EditorialWorksheet;
+  geography?: import("./geography-types").GeographyContent;
 }
 
 export interface EditorialSource {
