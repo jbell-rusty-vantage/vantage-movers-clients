@@ -331,6 +331,6 @@ body {
 .referral-window:hover .referral-track, .referral-window:focus-within .referral-track { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) {
   .referral-track { animation: none; width: auto; }
-  .referral-track > div:first-child { flex-wrap: wrap; }
+  .referral-track > div:first-child { width: 100%; flex-shrink: 1; flex-wrap: wrap; padding-right: 0; }
   .referral-track > div[aria-hidden] { display: none; }
 }
