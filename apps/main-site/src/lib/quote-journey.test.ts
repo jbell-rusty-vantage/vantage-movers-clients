@@ -3,7 +3,7 @@ import { destinationGuide, isCapturedResponse, parseDestination, parseQuoteDraft
 
 const now = 1800000000000;
 const draft: QuoteDraft = {
-  version: 1, savedAt: now, step: 1, internalRefNo: "MS-20261112-TEST", inboundRefNo: "", lid: "LID0123456789abc",
+  version: 2, savedAt: now, step: 1, internalRefNo: "MS-20261112-TEST", inboundRefNo: "", lid: "LID0123456789abc",
   started: true, completedSteps: [0],
   values: { pickup: "33426", dest: "53703", date: "2099-01-15", size: "2 Bedrooms", name: "Synthetic", email: "synthetic@example.com", phone: "2025550100", smsConsent: false },
   destination: { postalCode: "53703", city: "Madison", state: "WI", country: "US" },
@@ -12,6 +12,9 @@ const draft: QuoteDraft = {
 describe("preserved quote attempt", () => {
   it("retains false consent, step, reference and LID through serialization", () => {
     expect(parseQuoteDraft(JSON.stringify(draft), now)).toEqual(draft);
+  });
+  it("migrates old attempts without changing identity or consent", () => {
+    expect(parseQuoteDraft(JSON.stringify({ ...draft, version: 1, step: 1 }), now)).toEqual({ ...draft, step: 0, completedSteps: [] });
   });
   it("rejects expired, future, corrupt and oversized storage", () => {
     expect(parseQuoteDraft(JSON.stringify(draft), now + QUOTE_DRAFT_TTL + 1)).toBeNull();

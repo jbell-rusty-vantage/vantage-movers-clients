@@ -264,12 +264,14 @@ function TestimonialsCarousel({
 
 interface TestimonialsSectionProps {
   items?: Testimonial[];
+  locale?: "en" | "es";
 }
 
-export function TestimonialsSection({ items = [] }: TestimonialsSectionProps) {
+export function TestimonialsSection({ items = [], locale = "en" }: TestimonialsSectionProps) {
+  const es = locale === "es";
   const publishedItems = items.filter((item) => item.published);
   if (publishedItems.length === 0) {
-    return <section id="testimonials" className="bg-cream py-12"><Container><h2 className="font-display text-2xl font-bold text-brand-blue">Customer feedback</h2><p className="mt-3 text-ink-soft">There are no published reviews to display here right now.</p></Container></section>;
+    return <section id="testimonials" className="bg-cream py-12"><Container><h2 className="font-display text-2xl font-bold text-brand-blue">{es ? "Opiniones de clientes" : "Customer feedback"}</h2><p className="mt-3 text-ink-soft">{es ? "Actualmente no hay reseñas publicadas para mostrar aquí." : "There are no published reviews to display here right now."}</p></Container></section>;
   }
 
   const carouselTrackCards = fillMarquee(toCardData(publishedItems));
@@ -283,22 +285,19 @@ export function TestimonialsSection({ items = [] }: TestimonialsSectionProps) {
       <Container className="relative">
         <div className="mx-auto mb-12 max-w-[640px] text-center">
           <Eyebrow onDark className="justify-center">
-            Customer Feedback
+            {es ? "Opiniones de clientes" : "Customer Feedback"}
           </Eyebrow>
           <h2
             className={`mb-3 text-balance leading-[1.08] font-extrabold -tracking-[.02em] text-white ${heroHeadingFont.className}`}
             style={{ fontSize: "clamp(30px, 3.4vw, 44px)" }}
           >
-            Hear From Customers
-            <br />
-            We&apos;ve Helped Move
+            {es ? "Experiencias de clientes" : "Hear from customers we’ve helped move"}
           </h2>
           <p
             className={`text-on-dark-500 ${testimonialsBodyFont.className}`}
             style={{ fontSize: "15px" }}
           >
-            Real feedback from customers who trusted Vantage to help coordinate their
-            long-distance relocations.
+            {es ? "Opiniones sobre la coordinación de mudanzas con Vantage. Las reseñas conservan su idioma original." : "Feedback about coordinating a move with Vantage."}
           </p>
         </div>
       </Container>

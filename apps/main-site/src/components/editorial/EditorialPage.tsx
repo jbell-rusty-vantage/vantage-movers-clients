@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ServiceFollowThrough } from "./ServiceFollowThrough";
 import Image from "next/image";
 import { guideLinksFor } from "@/lib/editorial-journey";
 import { articleDetails } from "@/content/editorial/resource-center";
@@ -50,8 +51,8 @@ export function EditorialPage({ entry }: { entry: EditorialEntry }) {
         {entry.review.status === "draft" && <aside className="preview-note mb-8 rounded-lg2 border border-cream-border bg-cream p-4 text-sm" aria-label={es ? "Estado de revisión" : "Review status"}>{es ? "Vista previa editorial. Borrador pendiente de revisión de Vantage y del texto en español." : "Editorial preview. Draft awaiting Vantage review; Spanish approval is tracked separately."}</aside>}
         <div className={entry.kind === "service" ? "" : "grid items-start gap-10 lg:grid-cols-[1.15fr_.85fr]"}>
           <div id="service-details" className="min-w-0 scroll-mt-36">
-            {entry.kind === "resource" && <nav aria-label={es ? "En esta guía" : "In this guide"} className="mb-8 rounded-2xl bg-cream p-6"><p className="mb-3 font-bold text-brand-blue">{es ? "En esta guía" : "In this guide"}</p><ul className="space-y-3">{entry.sections.map((section, i) => <li key={section.heading}><a href={`#section-${i}`}>{section.heading}</a></li>)}</ul></nav>}
-            {entry.sections.map((section, i) => <section key={section.heading} className={entry.kind === "service" ? "mb-6 rounded-2xl border border-cream-border bg-cream/50 p-6 sm:p-8" : "mb-10"} aria-labelledby={`section-${i}`}>
+            {entry.kind === "resource" && <nav aria-label={es ? "En esta guía" : "In this guide"} className="mb-8 rounded-2xl bg-cream p-6"><p className="mb-3 font-bold text-brand-blue">{es ? "En esta guía" : "In this guide"}</p><ul className="space-y-3">{entry.sections.filter(section => entry.kind !== "service" || !section.heading.endsWith("?")).map((section, i) => <li key={section.heading}><a href={`#section-${i}`}>{section.heading}</a></li>)}</ul></nav>}
+            {entry.sections.filter(section => entry.kind !== "service" || !section.heading.endsWith("?")).map((section, i) => <section key={section.heading} className={entry.kind === "service" ? "mb-6 rounded-2xl border border-cream-border bg-cream/50 p-6 sm:p-8" : "mb-10"} aria-labelledby={`section-${i}`}>
               {entry.kind === "service" && <p className="mb-3 text-xs font-bold tracking-widest text-brand-blue-bright">{String(i + 1).padStart(2, "0")} / {entry.navLabel}</p>}
               <h2 id={`section-${i}`} className="scroll-mt-36 mb-4 font-display text-2xl font-extrabold text-brand-blue">{section.heading}</h2>
               {section.paragraphs.map(p => <p key={p} className="mb-4 text-base leading-[1.8] text-ink-soft">{p}</p>)}
@@ -79,6 +80,7 @@ export function EditorialPage({ entry }: { entry: EditorialEntry }) {
       </Container>
       {entry.kind === "service" && <HowItWorksSection locale={entry.locale} />}
       {entry.id === "military-moving" && <MilitaryAppreciation locale={entry.locale} servicePage />}
+      {entry.kind === "service" && <Suspense><ServiceFollowThrough entry={entry} /></Suspense>}
       {entry.kind === "service" && <section className="bg-cream py-14"><Container className="flex flex-wrap items-center justify-between gap-6"><h2 className="max-w-2xl font-display text-3xl font-extrabold text-brand-blue">{es ? "Su próximo capítulo empieza con una conversación." : "Your next chapter starts with a conversation."}</h2><a href="#quote" className="editorial-cta">{es ? "Planifique su mudanza →" : "Let’s plan your move →"}</a></Container></section>}
     </main><SiteFooter locale={entry.locale} />
   </>;

@@ -31,7 +31,7 @@ export function ServiceHero({ entry }: { entry: EditorialEntry }) {
         <div className="pt-44 text-white sm:pt-48 lg:pt-40">
           <nav aria-label={es ? "Ruta de navegación" : "Breadcrumb"} className="mb-8 flex gap-3 text-sm"><Link className="text-white" href={paths.home}>{es ? "Inicio" : "Home"}</Link><span aria-hidden>/</span><Link className="text-white" href={paths.service}>{es ? "Servicios" : "Services"}</Link></nav>
           <p className="mb-4 text-sm font-bold tracking-widest text-brand-yellow uppercase">Vantage Movers · {entry.navLabel}</p>
-          <h1 className="font-display text-[clamp(30px,3.5vw,50px)] leading-[1.1] font-extrabold">{entry.title}</h1>
+          <h1 className="font-display text-[clamp(30px,3.5vw,50px)] leading-[1.1] font-extrabold">{entry.navLabel}</h1>
           <p className="mt-6 text-lg leading-relaxed">{entry.description}</p>
           <p className="mt-6 text-sm leading-relaxed">{es ? "Vantage coordina mudanzas interestatales como intermediario. El transportista asignado realiza la recogida, el transporte y la entrega." : "Vantage coordinates interstate moves as a broker. Your assigned motor carrier performs pickup, transport and delivery."}</p>
           <Link href="#service-details" className="mt-7 inline-block font-semibold text-white">{es ? "Explore el servicio" : "Explore this service"} ↓</Link>

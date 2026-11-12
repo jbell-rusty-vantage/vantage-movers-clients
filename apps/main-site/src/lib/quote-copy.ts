@@ -2,8 +2,8 @@ import type { QuoteLocale } from "./quote-journey";
 
 export const quoteCopy = {
   en: {
-    title: "Request Your Moving Quote", subtitle: "Tell us where you are moving, when, and what you need moved.",
-    steps: ["Moving Details", "Contact Info", "Confirmation"],
+    title: "Request Your Moving Quote", subtitle: "Four short steps. No obligation.",
+    steps: ["Contact", "Location", "Details", "Quote"],
     pickup: "Moving From (ZIP)", destination: "Moving To (ZIP)", pickupPlaceholder: "Pickup ZIP code", destinationPlaceholder: "Destination ZIP code",
     date: "Estimated Move Date", datePlaceholder: "Select move date", size: "Move Size", sizePlaceholder: "Select move size…",
     name: "Full Name", namePlaceholder: "Your name", email: "Email", phone: "Phone", continue: "Continue", back: "Back", submit: "Request Free Quote", submitting: "Submitting…",
@@ -15,8 +15,8 @@ export const quoteCopy = {
     confirmDestination: "Confirm delivery location", guide: "Plan for your destination", genericGuide: "Moving preparation guide", draft: "Your progress stays in this tab for up to one hour. Clear it when using a shared device.", clearDraft: "Clear saved progress",
   },
   es: {
-    title: "Solicite su cotización de mudanza", subtitle: "Cuéntenos adónde se muda, cuándo y qué necesita trasladar.",
-    steps: ["Su mudanza", "Contacto", "Confirmación"],
+    title: "Cotice su mudanza", subtitle: "Cuatro pasos breves. Sin compromiso.",
+    steps: ["Contacto", "Ruta", "Detalles", "Cotización"],
     pickup: "Origen (código postal)", destination: "Destino (código postal)", pickupPlaceholder: "Código postal de origen", destinationPlaceholder: "Código postal de destino",
     date: "Fecha prevista de mudanza", datePlaceholder: "Elija la fecha", size: "Tamaño de la mudanza", sizePlaceholder: "Seleccione el tamaño…",
     name: "Nombre completo", namePlaceholder: "Su nombre", email: "Correo electrónico", phone: "Teléfono", continue: "Continuar", back: "Atrás", submit: "Solicitar cotización gratis", submitting: "Enviando…",

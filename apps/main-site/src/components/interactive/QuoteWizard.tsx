@@ -33,14 +33,16 @@ import {
 } from "@/schemas/quote-form.schema";
 
 const STEP_ANALYTICS = [
-  { step_number: 1, step_name: "moving_details" },
-  { step_number: 2, step_name: "contact_info" },
+  { step_number: 1, step_name: "contact_info" },
+  { step_number: 2, step_name: "location" },
+  { step_number: 3, step_name: "moving_details" },
+  { step_number: 4, step_name: "quote_review" },
 ] as const;
 
 export interface QuoteWizardProps {
   locale?: QuoteLocale;
   serviceId?: string;
-  guideLinks?: { madison: string; wisconsin: string; generic: string };
+  guideLinks?: Record<string, string>;
   variant?: "hero" | "panel";
   formId?: string;
   className?: string;
@@ -49,7 +51,7 @@ export interface QuoteWizardProps {
 const labelCls =
   "mb-[7px] block font-display text-[13.5px] font-semibold text-brand-blue";
 const inputCls =
-  "mb-1 w-full rounded-lg2 border-[1.5px] border-cream-border bg-cream px-3.5 py-[13px] text-[15px] text-ink outline-none transition focus:border-[#2E86DE] focus:bg-white focus:shadow-[0_0_0_3px_rgba(46,134,222,.16)]";
+  "mb-1 w-full rounded-lg2 border-[1.5px] border-cream-border bg-cream px-3.5 py-[10px] text-[15px] text-ink outline-none transition focus:border-[#2E86DE] focus:bg-white focus:shadow-[0_0_0_3px_rgba(46,134,222,.16)]";
 const inputErrCls = "border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(239,68,68,.16)]";
 const yellowBtn =
   "cursor-pointer rounded-lg2 border-none bg-brand-yellow font-display text-base font-bold tracking-[.04em] text-black uppercase shadow-[0_8px_22px_rgba(255,192,46,.3)] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0";
@@ -101,7 +103,7 @@ function Field({
   label,
   error,
   children,
-  className = "mb-4",
+  className = "mb-3",
 }: {
   id: string;
   label: string;
@@ -325,7 +327,7 @@ export function QuoteWizard({
   const steps = copy.steps.map((label, i) => ({ n: i + 1, label }));
   const resolvedFormId = formId ?? (isPanel ? undefined : "quote");
   const fieldIdPrefix = resolvedFormId ?? "quote";
-  const panelPadding = isPanel ? "px-3 pt-0 pb-5 min-[360px]:px-4 sm:px-6 sm:pb-6" : "px-[30px] pt-[30px] pb-[26px]";
+  const panelPadding = isPanel ? "px-3 pt-0 pb-5 min-[360px]:px-4 sm:px-6 sm:pb-6" : "px-4 pt-5 pb-5 sm:px-6";
   const headingFontClass = heroHeadingFont.className;
   const bodyFontClass = isPanel ? heroBodyFont.className : "";
   const moveDate = useWatch({ control, name: "date" });
@@ -366,7 +368,7 @@ export function QuoteWizard({
     if (!draftReady.current || !activeForm.current || result) return;
     try {
       const draft: QuoteDraft = {
-        version: 1, savedAt: lastInteraction.current, step: step === 1 ? 1 : 0,
+        version: 2, savedAt: lastInteraction.current, step: Math.min(step, 3),
         internalRefNo, inboundRefNo: inboundRefNo || "", lid,
         started: formStartedRef.current, completedSteps: completedStepsRef.current,
         values: { ...getValues(), smsConsent: getValues("smsConsent") ?? true }, destination,
@@ -471,7 +473,7 @@ export function QuoteWizard({
         ...safeQuoteMetadata(),
         error_type: data.leadCaptured ? null : "lead_capture_failed",
       });
-      setStep(2);
+      setStep(3);
     } catch {
       trackEvent("form_submit_failed", safeQuoteMetadata());
       setSubmitError(copy.failure);
@@ -486,11 +488,14 @@ export function QuoteWizard({
     if (loading) return;
 
     const fieldsToValidate =
-      step === 1 ? ([...STEP_FIELDS[0], ...STEP_FIELDS[1]] as (keyof QuoteFormInput)[]) : STEP_FIELDS[step];
+      step === 3 ? Object.values(STEP_FIELDS).flat() : STEP_FIELDS[step];
     const valid = await trigger(fieldsToValidate);
     if (!valid) {
       trackValidationErrors(step);
-      if (step === 1 && STEP_FIELDS[0].some((field) => getFieldState(field).error)) setStep(0);
+      if (step === 3) {
+        const invalidStep = [0, 1, 2].find(index => STEP_FIELDS[index].some(field => getFieldState(field).error));
+        if (invalidStep !== undefined) setStep(invalidStep);
+      }
       return;
     }
 
@@ -506,12 +511,12 @@ export function QuoteWizard({
       });
     }
 
-    if (step === 1) {
+    if (step === 3) {
       await submitQuote();
       return;
     }
 
-    trackEvent("form_step_viewed", { ...quoteFormAnalytics, ...STEP_ANALYTICS[1], locale, service_id: serviceId || "none" });
+    trackEvent("form_step_viewed", { ...quoteFormAnalytics, ...STEP_ANALYTICS[step + 1], locale, service_id: serviceId || "none" });
     setStep((s) => s + 1);
   }
 
@@ -568,18 +573,18 @@ export function QuoteWizard({
       )}
 
       <div
-        className={`my-[22px] mb-6 flex items-center ${isPanel ? "justify-center gap-1 px-0 sm:justify-between sm:gap-0 sm:px-1" : "justify-center"}`}
+        className={`my-4 grid grid-cols-4 items-start ${isPanel ? "justify-center gap-1 px-0 sm:justify-between sm:gap-0 sm:px-1" : "justify-center"}`}
       >
-        {steps.map((s, i) => {
+        {steps.map((s) => {
           const current = stepDisplay === s.n;
-          const done = stepDisplay > s.n || (step === 2 && result);
+          const done = stepDisplay > s.n || Boolean(result);
           const dot = current
             ? "bg-brand-yellow text-black shadow-[0_4px_12px_rgba(255,192,46,.4)]"
             : done
               ? "bg-brand-blue-bright text-white"
               : "bg-cream-border-2 text-[#94a3b8]";
           return (
-            <div key={s.n} className="flex items-center">
+            <div key={s.n} aria-current={current ? "step" : undefined} className="flex justify-center">
               <div className="flex flex-col items-center gap-1.5">
                 <span
                   className={`grid place-items-center rounded-full font-extrabold ${isPanel ? "size-[30px] text-[13px] sm:size-[34px] sm:text-[15px]" : "size-[34px] text-[15px]"} ${headingFontClass} ${dot}`}
@@ -590,17 +595,13 @@ export function QuoteWizard({
                   {s.label}
                 </span>
               </div>
-              {i < steps.length - 1 && (
-                <span
-                  className={`mb-[18px] h-0.5 bg-cream-border ${isPanel ? "mx-1 w-[12px] min-[360px]:w-[18px] sm:mx-2 sm:w-[28px] lg:w-[40px]" : "mx-1.5 w-[46px]"}`}
-                />
-              )}
+
             </div>
           );
         })}
       </div>
 
-      {step === 2 && result ? (
+      {result ? (
         <div className="px-2 pt-6 pb-3.5 text-center">
           <span className="mx-auto mb-4 grid size-[60px] place-items-center rounded-full bg-brand-yellow-soft">
             <Check className="text-brand-blue-bright" size={30} strokeWidth={2.5} />
@@ -632,7 +633,7 @@ export function QuoteWizard({
         </div>
       ) : (
         <>
-          {step === 0 && (
+          {step === 1 && (
             <div>
               <ZipField
                 id={`${fieldIdPrefix}-pickup-zip`}
@@ -659,6 +660,10 @@ export function QuoteWizard({
                 setValue={setValue}
                 error={errors.dest}
               />
+            </div>
+          )}
+          {step === 2 && (
+            <div>
               <Field id={`${fieldIdPrefix}-move-date`} label={copy.date} error={quoteError(errors.date?.message, locale)}>
                 <div onClick={trackDatePickerOpened} onFocusCapture={trackDatePickerOpened}>
                   <MoveDatePicker
@@ -701,7 +706,7 @@ export function QuoteWizard({
             </div>
           )}
 
-          {step === 1 && (
+          {step === 0 && (
             <div>
               <Field id={`${fieldIdPrefix}-name`} label={copy.name} error={quoteError(errors.name?.message, locale)}>
                 <input
@@ -736,6 +741,16 @@ export function QuoteWizard({
                   {...register("phone")}
                 />
               </Field>
+            </div>
+          )}
+          {step === 3 && (
+            <div>
+              <h3 className="mb-3 font-display text-lg font-bold text-brand-blue">{locale === "es" ? "Revise su solicitud" : "Review your request"}</h3>
+              <dl className="mb-4 space-y-2 rounded-xl bg-cream p-4 text-sm">
+                <div><dt className="font-semibold">{copy.steps[0]}</dt><dd className="break-words">{getValues("name")} · {getValues("email")} · {getValues("phone")}</dd></div>
+                <div><dt className="font-semibold">{copy.steps[1]}</dt><dd>{pickupZip} → {destZip}</dd></div>
+                <div><dt className="font-semibold">{copy.steps[2]}</dt><dd>{getValues("date")} · {moveSizeLabel(getValues("size"), locale)}</dd></div>
+              </dl>
               <label className="mb-4 flex gap-2.5 text-left">
                 <input
                   type="checkbox"
@@ -767,23 +782,23 @@ export function QuoteWizard({
             <button
               type="submit"
               disabled={loading}
-              className={`${step === 0 ? `${yellowBtn} w-full py-[15px]` : step === 1 ? "flex-1 cursor-pointer rounded-lg2 border-none bg-brand-blue-bright py-3.5 font-display text-base font-bold tracking-[.04em] text-white uppercase shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0" : yellowBtn} ${step === 1 ? "" : step > 0 ? "flex-1 py-3.5" : ""}`}
+              className={`${yellowBtn} flex-1 px-3 py-3.5`}
             >
-              {loading ? copy.submitting : step === 1 ? copy.submit : copy.continue}
+              {loading ? copy.submitting : step === 3 ? copy.submit : copy.continue}
             </button>
           </div>
         </>
       )}
 
-      {guideLinks && (
+      {guideLinks && (step === 1 || result) && (
         <aside className="mt-5 rounded-lg2 bg-cream p-3 text-sm">
           {destination && <p className="mb-1 font-semibold">{destination.city || destination.state}, {destination.state}</p>}
-          <Link href={guideLinks[destinationGuide(destination)]} onClick={saveDraft} className="font-semibold text-brand-blue underline">
+          <Link href={guideLinks[destinationGuide(destination)] ?? guideLinks.generic} onClick={saveDraft} className="font-semibold text-brand-blue underline">
             {destination ? copy.guide : copy.genericGuide}
           </Link>
         </aside>
       )}
-      {!result && <p className="mt-4 text-xs text-slate-600">{copy.draft} <button type="button" className="underline" onClick={handleReset} disabled={loading}>{copy.clearDraft}</button></p>}
+      {!result && <details className="mt-3 text-xs text-slate-600"><summary className="cursor-pointer">{locale === "es" ? "Su progreso guardado" : "Your saved progress"}</summary><p className="mt-2">{copy.draft} <button type="button" className="underline" onClick={handleReset} disabled={loading}>{copy.clearDraft}</button></p></details>}
       <div className="mt-4 flex flex-wrap justify-center gap-x-3 gap-y-1 text-center text-xs text-slate-600">
         {copy.trust.map((item) => <span key={item}>{item}</span>)}
       </div>

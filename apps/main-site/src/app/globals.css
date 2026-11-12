@@ -324,3 +324,13 @@ body {
     animation: none !important;
   }
 }
+
+/* Two identical groups keep the referral strip continuous without duplicate announcements. */
+@keyframes referral-cycle { to { transform: translateX(-50%); } }
+.referral-track { animation: referral-cycle 28s linear infinite; }
+.referral-window:hover .referral-track, .referral-window:focus-within .referral-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .referral-track { animation: none; width: auto; }
+  .referral-track > div:first-child { flex-wrap: wrap; }
+  .referral-track > div[aria-hidden] { display: none; }
+}

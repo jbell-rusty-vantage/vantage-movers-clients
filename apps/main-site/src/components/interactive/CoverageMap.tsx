@@ -99,7 +99,8 @@ function getLabelFill(abbr: string, active: string, hovered: string | null) {
   return COVERAGE_COLORS.mapDefaultLabel;
 }
 
-export function CoverageMap() {
+export function CoverageMap({ locale = "en" }: { locale?: "en" | "es" }) {
+  const es = locale === "es";
   const svgRef = useRef<SVGSVGElement>(null);
   const [labelPositions, setLabelPositions] = useState<Record<string, LabelPosition>>({});
   const [active, setActive] = useState(DEFAULT_STATE);
@@ -151,7 +152,7 @@ export function CoverageMap() {
   return (
     <div className="grid items-center gap-14 max-md:grid-cols-1 md:grid-cols-[.95fr_1.05fr]">
       <div>
-        <Eyebrow className={heroHeadingFont.className}>{coverageSection.eyebrow}</Eyebrow>
+        <Eyebrow className={heroHeadingFont.className}>{es ? "Planifique su destino" : coverageSection.eyebrow}</Eyebrow>
         <h2
           className={`mb-4 text-balance leading-[1.08] font-extrabold -tracking-[.02em] ${heroHeadingFont.className}`}
           style={{
@@ -159,13 +160,13 @@ export function CoverageMap() {
             color: COVERAGE_COLORS.headingColor,
           }}
         >
-          {coverageSection.title}
+          {es ? "Hablemos de su ruta" : coverageSection.title}
         </h2>
         <p
           className={`mb-7 leading-[1.6] ${heroBodyFont.className}`}
           style={{ fontSize: `${INTRO_FONT_SIZE}px`, color: COVERAGE_COLORS.bodyColor }}
         >
-          {coverageSection.body}
+          {es ? "Seleccione un estado para preparar las preguntas sobre su mudanza. Confirme la disponibilidad y las condiciones de su ruta con un coordinador." : coverageSection.body}
         </p>
         <div
           key={active}
@@ -198,7 +199,7 @@ export function CoverageMap() {
             className={`mb-[18px] text-[15px] leading-[1.6] ${heroBodyFont.className}`}
             style={{ color: COVERAGE_COLORS.bodyColor }}
           >
-            {coverageCopy(selName)}
+            {es ? `¿Su destino es ${selName}? Confirme el acceso, las fechas y los servicios para su ruta. El mapa no confirma cobertura ni una oficina local.` : coverageCopy(selName)}
           </p>
           <a
             href="#quote"
@@ -208,7 +209,7 @@ export function CoverageMap() {
               color: COVERAGE_COLORS.ctaText,
             }}
           >
-            Discuss Your Route <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
+            {es ? "Consulte su ruta" : "Discuss Your Route"} <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
           </a>
         </div>
       </div>
@@ -225,7 +226,7 @@ export function CoverageMap() {
             className={`m-0 text-sm font-bold tracking-[.06em] uppercase ${heroHeadingFont.className}`}
             style={{ color: COVERAGE_COLORS.headingColor }}
           >
-            Destination Map
+            {es ? "Mapa de destinos" : "Destination Map"}
           </p>
           <p
             className={`m-0 truncate text-right text-sm font-extrabold transition-opacity duration-150 ${heroHeadingFont.className}`}
@@ -325,7 +326,7 @@ export function CoverageMap() {
           className={`mt-3.5 mb-0 text-center text-[13px] ${heroBodyFont.className}`}
           style={{ color: COVERAGE_COLORS.bodyColor }}
         >
-          Hover to preview · Click to select your state
+          {es ? "Seleccione un estado para explorar" : "Hover to preview · Click to select your state"}
         </p>
       </div>
     </div>
