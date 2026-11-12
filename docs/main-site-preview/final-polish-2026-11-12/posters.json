@@ -1,0 +1,43 @@
+{
+  "method": "Built-in image_gen",
+  "review": "Owner review pending; illustrative editorial posters",
+  "commonPrompt": "Use case: illustration-story. Create ONE bespoke editorial cover illustration for a Vantage Movers consumer moving-guide article. Wide landscape 1536x1024 composition, safe central composition usable in both 16:10 card crop and wide 16:7 article header. Premium contemporary magazine illustration, tactile paper sculpture with clean geometric forms, softly beveled edges, subtle paper grain, sophisticated studio lighting and shadows, crisp and polished. [SUBJECT] Objects must be large and instantly legible at thumbnail size, ample clean negative space, strong visual hierarchy. No people, no stock moving photographs, no generic moving-room scene, no lettering, no brand logos, no watermark. An original topic-specific composition rather than an icon sheet or collage.",
+  "posters": [
+    {
+      "id": "inventory",
+      "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d176-f3a4-7db1-b50d-4c1e3e9ba1e3\\exec-357b9a75-ac6d-408b-ad93-9586138e1cc5.png",
+      "asset": "apps/main-site/public/images/editorial/20261112/inventory.webp",
+      "subject": "A sculptural cutaway dollhouse floor plan viewed from above at an angle, with tiny individual household objects deliberately separated into a neat inventory grid and a large blue pencil checking a single cream checklist. Main colors cobalt, cream, a little sunflower yellow. Concept: making a room-by-room inventory before a coordinator call."
+    },
+    {
+      "id": "estimates",
+      "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d176-f3a4-7db1-b50d-4c1e3e9ba1e3\\exec-8e07edbc-9762-46c2-bea7-aef792d68d0c.png",
+      "asset": "apps/main-site/public/images/editorial/20261112/estimates.webp",
+      "subject": "Two large distinct cream estimate sheets side by side, their rows connected by neat cobalt comparison lines, a single yellow magnifying lens highlights corresponding line items. Abstract non-readable lines only. Background pale warm blue. Concept: comparing equivalent inventories and services, not just the totals."
+    },
+    {
+      "id": "roles",
+      "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d176-f3a4-7db1-b50d-4c1e3e9ba1e3\\exec-824564af-b242-45a9-9e00-0e58936a41ad.png",
+      "asset": "apps/main-site/public/images/editorial/20261112/roles.webp",
+      "subject": "Three sculptural stations connected along a single elegant curved path: a small home on the left, a blue telephone and coordination desk in the center, a miniature yellow and navy freight truck on the right. Clear spatial separation. Concept: customer, coordinating broker, transporting carrier have different roles. Deep navy background."
+    },
+    {
+      "id": "costs",
+      "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d176-f3a4-7db1-b50d-4c1e3e9ba1e3\\exec-4fe02b1a-532f-456f-b673-7946fb44e565.png",
+      "asset": "apps/main-site/public/images/editorial/20261112/costs.webp",
+      "subject": "A sculptural cobalt calculator, three stacked yellow coins, a folded route map with a winding cobalt line, and three small differently sized cream parcels form one deliberate editorial still life. No dollar amounts or readable digits. Pale mint background. Concept: distance, shipment size and services determine moving costs."
+    },
+    {
+      "id": "packing",
+      "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d176-f3a4-7db1-b50d-4c1e3e9ba1e3\\exec-68e03764-75f1-4ec7-aac5-fe06d651a9ca.png",
+      "asset": "apps/main-site/public/images/editorial/20261112/packing.webp",
+      "subject": "An open cream packing case divided into compartments, a blue battery, small sealed paint tin, plant and medicine bottle arranged OUTSIDE the case with separate subtle yellow question-mark tokens. No text labels, no hazard misinformation or implied definitive list. Soft coral background. Concept: check what can be packed before loading, ask about restricted items."
+    },
+    {
+      "id": "paperwork",
+      "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d176-f3a4-7db1-b50d-4c1e3e9ba1e3\\exec-237e9a56-c046-44cb-b69d-5ea144c159f1.png",
+      "asset": "apps/main-site/public/images/editorial/20261112/paperwork.webp",
+      "subject": "An elegant exploded stack of four cream document folios with cobalt tabs, a navy pen and yellow paperclip, one sheet showing a simple inventory grid, one showing a route line, one showing an abstract signature stroke. Lilac background. Concept: keeping estimate, inventory, transport paperwork and receipts organized."
+    }
+  ]
+}

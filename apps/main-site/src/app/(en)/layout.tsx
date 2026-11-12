@@ -1,3 +1,4 @@
+import { ComplianceBar } from "@/components/layout/ComplianceBar";
 import { AnchorFocus } from "@/components/layout/AnchorFocus";
 import type { Metadata } from "next";
 import { SiteTelemetry } from "@/components/analytics/SiteTelemetry";
@@ -64,6 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${siteDisplayFont.variable} ${siteBodyFont.variable}`}>
       <body className="antialiased">
+        <ComplianceBar />
         {children}<AnchorFocus />
         <SiteTelemetry mode={telemetryMode(process.env.VERCEL_ENV, process.env.VERCEL_GIT_COMMIT_SHA)} />
       </body>

@@ -12,7 +12,7 @@ import {
   type UseFormSetValue,
 } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Check, MapPin } from "lucide-react";
+import { Check, MapPin, LockKeyhole, ShieldCheck } from "lucide-react";
 import { MoveDatePicker } from "@vantage/ui";
 import { business } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
@@ -800,9 +800,13 @@ export function QuoteWizard({
           </Link>
         </aside>
       )}
-      {!result && <details className="mt-3 text-xs text-slate-600"><summary className="cursor-pointer">{locale === "es" ? "Su progreso guardado" : "Your saved progress"}</summary><p className="mt-2">{copy.draft} <button type="button" className="underline" onClick={handleReset} disabled={loading}>{copy.clearDraft}</button></p></details>}
+
       <div className="mt-4 flex flex-wrap justify-center gap-x-3 gap-y-1 text-center text-xs text-slate-600">
         {copy.trust.map((item) => <span key={item}>{item}</span>)}
+      </div>
+      <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-cream-border pt-3 text-[11px] font-semibold text-brand-blue" data-quote-security>
+        <span className="inline-flex items-center gap-1.5"><LockKeyhole size={14} aria-hidden />{locale === "es" ? "Sus datos están seguros" : "Your Data is Secure"}</span>
+        <Link href="/privacy" className="inline-flex items-center gap-1.5 text-brand-blue no-underline hover:underline"><ShieldCheck size={15} aria-hidden />{locale === "es" ? "Su privacidad es nuestra prioridad" : "Privacy is our Priority"}</Link>
       </div>
     </form>
   );

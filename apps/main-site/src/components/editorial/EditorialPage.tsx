@@ -46,7 +46,7 @@ export function EditorialPage({ entry }: { entry: EditorialEntry }) {
         </Container>
       </section>}
       <Container className="py-10 sm:py-14">
-        {entry.kind === "resource" && <figure className="mb-10"><div className="relative aspect-[16/7] overflow-hidden rounded-3xl"><Image src={articleDetails(entry).poster} alt="" fill sizes="(min-width: 1280px) 1200px, 100vw" className="object-cover" /></div><figcaption className="mt-2 text-xs text-ink-soft">{es ? "Imagen ilustrativa · Guía editorial de Vantage" : "Illustrative image · Vantage editorial guide"}</figcaption></figure>}
+        {entry.kind === "resource" && <figure className="mb-10"><div className="relative mx-auto aspect-[3/2] max-w-4xl overflow-hidden rounded-3xl"><Image src={articleDetails(entry).poster} alt="" fill sizes="(min-width: 1280px) 1200px, 100vw" className="object-cover" /></div><figcaption className="mt-2 text-xs text-ink-soft">{es ? "Imagen ilustrativa · Guía editorial de Vantage" : "Illustrative image · Vantage editorial guide"}</figcaption></figure>}
         {entry.id === "long-distance-moving" && <PricingContext locale={entry.locale} />}
         {entry.review.status === "draft" && <aside className="preview-note mb-8 rounded-lg2 border border-cream-border bg-cream p-4 text-sm" aria-label={es ? "Estado de revisión" : "Review status"}>{es ? "Vista previa editorial. Borrador pendiente de revisión de Vantage y del texto en español." : "Editorial preview. Draft awaiting Vantage review; Spanish approval is tracked separately."}</aside>}
         <div className={entry.kind === "service" ? "" : "grid items-start gap-10 lg:grid-cols-[1.15fr_.85fr]"}>
