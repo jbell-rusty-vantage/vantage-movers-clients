@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 const require = createRequire(new URL('../../../apps/main-site/package.json', import.meta.url));
 const { chromium } = require('playwright');
 const base = new URL(process.env.FEEDBACK_URL || 'http://localhost:3001');
-const output = new URL('./evidence/', import.meta.url);
+const output = new URL(process.env.FEEDBACK_OUTPUT || './evidence/', import.meta.url);
 await mkdir(output, { recursive: true });
 const report = { source: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(), capturedAt: new Date().toISOString(), base: base.origin, note: 'Read-only Chromium viewport emulation. No quote submitted; telemetry blocked. Local capture may include uncommitted changes.', checks: [], failures: [] };
 function check(ok, name, details = {}) { report.checks.push({ name, ok, ...details }); if (!ok) report.failures.push({ name, ...details }); }

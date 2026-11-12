@@ -14,11 +14,13 @@ The structure was informed by the Owner's supplied [Safe Ship homepage](https://
 
 ## Verification and evidence
 
-- Typecheck and focused lint passed; all 37 existing Main Site unit/contract tests passed.
+- Typecheck and full Main Site lint passed; all 37 existing Main Site unit/contract tests passed.
 - [Browser capture script](capture-feedback.mjs) exercises both locales, all 16 service routes at 1440/390/320px, hover-to-panel movement, keyboard activation/Escape focus return, mobile menu selection, image loading, document overflow and footer route/fragment targets. Local result: 212 checks, zero failures. PDF redirect targets retain their existing configuration and are excluded from browser navigation checks.
 - Local captures use development mode without API credentials, so customer reviews use their empty state and Next displays the expected missing-testimonials-credential development indicator. This is not a deployed API failure. Viewport emulation is not a physical-device test or actual browser 200% zoom qualification.
 - No quote was submitted during this visual revision. Existing isolated quote/geolocation evidence remains tied to `76b9a86`; actual analytics dashboard receipts remain tied to `10ec4d2`. This revision does not claim a new Lead or analytics receipt.
-- Deployed verification and source/alias identity will be recorded in this directory after CI. The stable review URL remains [the protected preview](https://vantage-main-site-optimization.vercel.app).
+- The same 212 checks passed against the immutable deployed preview, with no browser exceptions. [Deployed results](evidence/deployed/results.json) and [deployment identity](evidence/deployment.json) record source `1dd5b3188428ffb340ce02a5138de196a3f69e82`, CI test-merge `62443ad6cb4c81ba2ac3796dfa50c50e807a2ba6`, successful [CI build/deploy](https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43266067680), and the verified stable alias. The stable service route returned HTTP 200 with the revised hero. [Review the protected preview](https://vantage-main-site-optimization.vercel.app).
+
+Deployed screenshots: [hover menu](evidence/deployed/navigation-desktop.png), [service desktop](evidence/deployed/service-en-1440.png), [service phone EN](evidence/deployed/service-en-390.png) / [ES](evidence/deployed/service-es-390.png), [military appreciation](evidence/deployed/military-desktop.png), [referral trust grid](evidence/deployed/trust-desktop.png), [footer desktop](evidence/deployed/footer-desktop.png), [footer phone EN](evidence/deployed/footer-en-390.png) / [ES](evidence/deployed/footer-es-390.png).
 
 ## Next session considerations
 

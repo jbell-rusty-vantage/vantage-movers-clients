@@ -1,0 +1,1259 @@
+{
+  "source": "1dd5b3188428ffb340ce02a5138de196a3f69e82",
+  "capturedAt": "2026-11-12T17:09:29.005Z",
+  "base": "https://vantage-movers-clients-main-site-1vyq4koga-vantage-4d3db9ef.vercel.app",
+  "note": "Read-only Chromium viewport emulation. No quote submitted; telemetry blocked. Local capture may include uncommitted changes.",
+  "checks": [
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "name": "Eight service links",
+      "ok": true,
+      "locale": "en"
+    },
+    {
+      "name": "Hover opens service cards",
+      "ok": true,
+      "locale": "en"
+    },
+    {
+      "name": "Menu stays open crossing header gap",
+      "ok": true,
+      "locale": "en"
+    },
+    {
+      "name": "Escape returns focus",
+      "ok": true,
+      "locale": "en"
+    },
+    {
+      "name": "Keyboard opens service cards",
+      "ok": true,
+      "locale": "en"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/long-distance-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/residential-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/corporate-office-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/military-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/senior-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/packing-services",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/storage-options",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/auto-transport",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/long-distance-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/residential-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/corporate-office-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/military-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/senior-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/packing-services",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/storage-options",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/auto-transport",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "name": "Mobile menu opens on tap",
+      "ok": true,
+      "locale": "en"
+    },
+    {
+      "name": "Mobile link closes menu",
+      "ok": true,
+      "locale": "en"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/long-distance-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/residential-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/corporate-office-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/military-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/senior-moving",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/packing-services",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/storage-options",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/auto-transport",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es",
+      "status": 200
+    },
+    {
+      "name": "Eight service links",
+      "ok": true,
+      "locale": "es"
+    },
+    {
+      "name": "Hover opens service cards",
+      "ok": true,
+      "locale": "es"
+    },
+    {
+      "name": "Menu stays open crossing header gap",
+      "ok": true,
+      "locale": "es"
+    },
+    {
+      "name": "Escape returns focus",
+      "ok": true,
+      "locale": "es"
+    },
+    {
+      "name": "Keyboard opens service cards",
+      "ok": true,
+      "locale": "es"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-residenciales",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-militares",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/servicios-de-embalaje",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/transporte-de-autos",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-residenciales",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-militares",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/servicios-de-embalaje",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/transporte-de-autos",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "name": "Mobile menu opens on tap",
+      "ok": true,
+      "locale": "es"
+    },
+    {
+      "name": "Mobile link closes menu",
+      "ok": true,
+      "locale": "es"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-residenciales",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-militares",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/servicios-de-embalaje",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/transporte-de-autos",
+      "status": 200
+    },
+    {
+      "name": "Hero image visible without blue overlay",
+      "ok": true,
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "name": "No horizontal overflow",
+      "ok": true,
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/long-distance-moving",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/residential-moving",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/corporate-office-moving",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/military-moving",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/senior-moving",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/packing-services",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/storage-options",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/services/auto-transport",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/resources/comparing-moving-estimates",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/resources/before-the-inventory-call",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/resources/who-handles-my-move",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "name": "Footer fragment exists",
+      "ok": true,
+      "href": "/#faq"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "name": "Footer fragment exists",
+      "ok": true,
+      "href": "/#testimonials"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "name": "Footer fragment exists",
+      "ok": true,
+      "href": "/#about"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "name": "Footer fragment exists",
+      "ok": true,
+      "href": "/#military-appreciation"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "name": "Footer fragment exists",
+      "ok": true,
+      "href": "/#quote"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/locations",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/consumer-information",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/carrier-contacts",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/accessibility",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/contact",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/privacy",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/terms",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/sms-privacy",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/sms-terms",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/cancellation",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/privacy",
+      "status": 200
+    },
+    {
+      "name": "Footer fragment exists",
+      "ok": true,
+      "href": "/privacy#dns"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-residenciales",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-militares",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/servicios-de-embalaje",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/servicios/transporte-de-autos",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/recursos/comparar-presupuestos",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/recursos/preparar-inventario",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es",
+      "status": 200
+    },
+    {
+      "name": "Footer fragment exists",
+      "ok": true,
+      "href": "/es#military-appreciation"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es",
+      "status": 200
+    },
+    {
+      "name": "Footer fragment exists",
+      "ok": true,
+      "href": "/es#quote"
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/destinos",
+      "status": 200
+    },
+    {
+      "name": "Route renders",
+      "ok": true,
+      "path": "/es/contacto",
+      "status": 200
+    }
+  ],
+  "failures": []
+}
