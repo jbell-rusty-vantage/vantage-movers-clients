@@ -29,6 +29,7 @@ page.on('pageerror', error => report.failures.push({ name: 'Browser exception', 
 async function go(path) {
   const response = await page.goto(new URL(path, base).href);
   await page.locator('main').waitFor(); await page.evaluate(() => document.fonts.ready);
+  await page.mouse.move(4, 700); await page.keyboard.press('Escape');
   check(response.status() === 200, 'Route renders', { path });
 }
 async function layout(path, width) {

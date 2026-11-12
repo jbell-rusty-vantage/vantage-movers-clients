@@ -22,7 +22,7 @@ The homepage and all eight service types use shared image-composition and hero-f
 
 The Owner then instructed: “No but use 50000 … You could use BBB … No Trust Pilot account.” The shared hero now uses **50,000 moves coordinated** as the Owner-supplied preview figure, the BBB customer-review score, interstate coordination and a free quote request. The count's period, definition and supporting data are still unknown. It is guarded by explicit preview mode, with a nonnumeric fallback in production/unknown modes. This authorizes the review mockup, not an independently verified customer count or production publication.
 
-BBB was matched by legal name, address, USDOT 4078939 and MC1551322. A fresh Firecrawl scrape of the linked customer-reviews page on 2026-11-12 returned **4.48/5 from 423 reviews**. Cached web-search content returned older values (4.43/362), which were not used. The displayed score is explicitly labeled **BBB customer reviews**, dated and linked. It is not BBB's business grade or accreditation. The separate profile reports B- and not accredited; no accreditation logo, endorsement badge, A+ or Trustpilot claim was added. Refresh the score/count and date together before publication, and confirm any use of BBB brand assets before adding a logo. This implementation uses plain text and a source link.
+BBB was matched by legal name, address, USDOT 4078939 and MC1551322. A fresh Firecrawl scrape of the linked customer-reviews page on 2026-11-12 returned **4.48/5 from 423 reviews**. Cached web-search content returned older values (4.43/362), which were not used. The displayed score is explicitly labeled **BBB customer reviews**, dated and linked. It is not BBB's business grade or accreditation. The separate cached profile reported B-; a direct profile scrape confirmed not accredited; no accreditation logo, endorsement badge, A+ or Trustpilot claim was added. Refresh the score/count and date together before publication, and confirm any use of BBB brand assets before adding a logo. This implementation uses plain text and a source link.
 
 BBB sources: https://www.bbb.org/us/fl/boynton-beach/profile/moving-brokers/vantage-movers-llc-0633-92031922 and its `/customer-reviews` page. Acquisition receipt: Firecrawl scrape `01a1d158-21b7-77fa-8ab8-fdf1125387a5`, 2026-11-12. No customer review quotations were copied.
 
@@ -55,7 +55,18 @@ Safe Ship's customer counts, ratings, rate ranges, nationwide coverage, binding-
 
 ## Qualification and deployment
 
-Local structural qualification passed 802 checks with zero failures. The first run targeted a hidden Places input in its focus assertion; the corrected test targets the visible field. The final Owner-supplied hero count and refreshed BBB snapshot will be qualified on the deployed build. Deployment receipts and immutable source mapping will be added after the existing preview workflow completes.
+The final isolated preview passed **878 read-only deployed checks with zero failures**. These cover both languages, both homepages and all service heroes at 1440/768/390/320px, all resource articles at 1440/390/320px, image loading, nonoverlapping form/copy layout, hero count/BBB snapshot, resource and service menus, FAQ targets, article metadata/contents, floating-call visibility/focus/dismissal and print exclusion. [Machine report](evidence/deployed/report.json) and screenshots are retained. This is viewport-based Chromium qualification, not every physical browser/device or an actual-zoom test.
+
+- [Stable review preview](https://vantage-main-site-optimization.vercel.app)
+- [Immutable deployment](https://vantage-movers-clients-main-site-y81nykpkv-vantage-4d3db9ef.vercel.app)
+- Deployment: `dpl_HmYiC1iDGhgSAQkeoJ1zp4M4zjaC`, target **preview**, READY.
+- Application source: `cd462dad2e3ec9d015f787ca42f44b8a862f6323`.
+- CI test merge: `c8283690ae1c19b58ea0b5be95be4e9fb130b07f`; both trees equal `e84b5c342cf33453d44bd49d377e7c4d39685413`.
+- [CI workflow](https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43296545911), attempt 2 succeeded. Attempt 1 hit an unchanged Next.js font-loader failure; [diagnosis and recovery](BUILD-RECOVERY.md).
+- Stable alias inspection resolved to that exact deployment. [Readback](evidence/stable-alias.json) confirmed updated home/resource/office/Spanish pages, HTTP 200 and effective `noindex, nofollow` headers. The English homepage uses the HTTP robots header; it need not duplicate it in HTML.
+- [Hero source record](evidence/hero-proof-sources.json) distinguishes the fresh BBB snapshot from the Owner-supplied, unverified move count.
+
+Local structural qualification passed 802 checks. The initial test's focus assertion targeted a hidden Places input; the corrected test targets the visible field. The subsequent final deployed run also checks the Owner-supplied count, BBB snapshot and print exclusion. Follow-up evidence-only commits do not change the pinned application deployment.
 
 Local checks: Main Site unit/contract/publication suite (47 tests); workspace lint (no errors; two existing partner-app warnings); workspace typecheck; mocked quote regression at 390px and 1440px, including saved draft, locale changes, destination fallback, false-success and retry responses, identical retry payloads, false consent retention and clearing after capture. No real Lead or phone call was created in this round.
 

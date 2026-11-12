@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-11-12T20:09:24.452Z",
+  "deploymentId": "dpl_HmYiC1iDGhgSAQkeoJ1zp4M4zjaC",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "robotsHeader": "noindex, nofollow",
+      "noindex": true,
+      "updatedContent": true
+    },
+    {
+      "path": "/resources",
+      "status": 200,
+      "robotsHeader": "noindex, nofollow",
+      "noindex": true,
+      "updatedContent": true
+    },
+    {
+      "path": "/services/corporate-office-moving",
+      "status": 200,
+      "robotsHeader": "noindex, nofollow",
+      "noindex": true,
+      "updatedContent": true
+    },
+    {
+      "path": "/es",
+      "status": 200,
+      "robotsHeader": "noindex, nofollow",
+      "noindex": true,
+      "updatedContent": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-11-12",
+  "company": "Vantage Movers, LLC",
+  "identityMatch": { "usdot": "4078939", "mc": "1551322", "city": "Boynton Beach, FL" },
+  "customerReviews": {
+    "url": "https://www.bbb.org/us/fl/boynton-beach/profile/moving-brokers/vantage-movers-llc-0633-92031922/customer-reviews",
+    "scoreOutOfFive": 4.48,
+    "count": 423,
+    "acquisition": "Firecrawl direct scrape",
+    "scrapeId": "01a1d158-21b7-77fa-8ab8-fdf1125387a5"
+  },
+  "profile": {
+    "url": "https://www.bbb.org/us/fl/boynton-beach/profile/moving-brokers/vantage-movers-llc-0633-92031922",
+    "accredited": false,
+    "scrapeId": "01a1d15a-4ee6-71e1-8582-03d7ae177307"
+  },
+  "limitations": [
+    "A customer-review score is separate from BBB business grading and accreditation.",
+    "Older search-cached score/count were not used.",
+    "Refresh score, count and date together before publication.",
+    "No BBB logo or endorsement badge included."
+  ],
+  "ownerSuppliedMoveCount": {
+    "value": 50000,
+    "receivedAt": "2026-11-12",
+    "displayLabel": "Moves coordinated",
+    "independentlyVerified": false,
+    "period": null,
+    "definition": null,
+    "publicationMode": "preview only"
+  }
+}
