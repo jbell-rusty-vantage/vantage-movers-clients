@@ -20,6 +20,7 @@ import { telHref } from "@/lib/format";
 import { MAIN_SITE } from "@/content/partners";
 import { quoteFormAnalytics, trackEvent, trackZipNotRecognized } from "@/lib/analytics";
 import { quoteCopy, quoteError, moveSizeLabel } from "@/lib/quote-copy";
+import { PickupLocationSuggestion } from "./PickupLocationSuggestion";
 import { QUOTE_DRAFT_KEY, parseQuoteDraft, parseDestination, destinationGuide, isCapturedResponse, type QuoteLocale, type QuoteDraft, type ConfirmedDestination } from "@/lib/quote-journey";
 import {
   MOVE_SIZES,
@@ -265,6 +266,7 @@ function ZipField({
       {!loading && lookupWarning && (
         <p className="mt-1 text-[12.5px] text-amber-600">{lookupWarning}</p>
       )}
+      {fieldName === "pickup" && <PickupLocationSuggestion key={`${locale}:${displayValue}`} locale={locale} inputId={id} onConfirm={zip => { onDisplayChange(zip); setValue(fieldName, zip, { shouldDirty: true, shouldTouch: true, shouldValidate: true }); }} />}
     </Field>
   );
 }

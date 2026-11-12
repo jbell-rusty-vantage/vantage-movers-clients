@@ -10,7 +10,8 @@ interface GoogleTokenResponse {
   expires_in?: number;
 }
 
-let cachedToken: { value: string; expiresAt: number } | null = null;
+type GooglePurpose = "places" | "pickup-location";
+const cachedTokens = new Map<GooglePurpose, { value: string; expiresAt: number }>();
 
 function base64Url(input: string | Buffer) {
   return Buffer.from(input)
@@ -34,12 +35,12 @@ function readServiceAccount() {
   return serviceAccount;
 }
 
-function createJwt(serviceAccount: GoogleServiceAccount) {
+function createJwt(serviceAccount: GoogleServiceAccount, purpose: GooglePurpose) {
   const now = Math.floor(Date.now() / 1000);
   const header = { alg: "RS256", typ: "JWT" };
   const claims = {
     iss: serviceAccount.client_email,
-    scope: "https://www.googleapis.com/auth/cloud-platform",
+    scope: purpose === "pickup-location" ? "https://www.googleapis.com/auth/maps-platform.geocode.location" : "https://www.googleapis.com/auth/cloud-platform",
     aud: "https://oauth2.googleapis.com/token",
     exp: now + 3600,
     iat: now,
@@ -54,14 +55,16 @@ function createJwt(serviceAccount: GoogleServiceAccount) {
   return `${unsignedJwt}.${base64Url(signature)}`;
 }
 
-export async function getGoogleAccessToken() {
+export async function getGoogleAccessToken(purpose: GooglePurpose = "places") {
+  const cachedToken = cachedTokens.get(purpose);
   if (cachedToken && cachedToken.expiresAt > Date.now() + 60_000) {
     return cachedToken.value;
   }
 
-  const assertion = createJwt(readServiceAccount());
+  const assertion = createJwt(readServiceAccount(), purpose);
   const res = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
+    signal: AbortSignal.timeout(8000),
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
       grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
@@ -78,10 +81,10 @@ export async function getGoogleAccessToken() {
     throw new Error("Google token response did not include an access token");
   }
 
-  cachedToken = {
+  const nextToken = {
     value: data.access_token,
     expiresAt: Date.now() + (data.expires_in ?? 3600) * 1000,
   };
-
-  return cachedToken.value;
+  cachedTokens.set(purpose, nextToken);
+  return nextToken.value;
 }

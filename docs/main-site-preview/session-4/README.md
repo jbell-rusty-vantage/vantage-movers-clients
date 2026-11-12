@@ -61,3 +61,13 @@ Direct original-byte downloads of the current handbook and brochure were attempt
 ## Remaining proof
 
 Destination edit/fallback, saved wizard progress and consent/capture behavior belong to the quote-flow evidence in Session 3. This script does not simulate or submit a quote. Media sequence qualification is separate from these page captures. Final preview acceptance still needs the exact deployed revision, live isolated Form Lead readback, zero production matches, measurement receipts where supported, and the Owner's content/design decision.
+
+## Pickup-location implementation follow-up — November 12, 2026
+
+The optional pickup-location control now requests browser permission only after an explicit click, sends three-decimal approximate coordinates in a same-origin POST, and offers a US ZIP/city/state suggestion for confirmation. Editing the ZIP cancels pending work. Denial, timeout, provider failure, an imprecise position or a non-US result leaves manual entry available. Coordinates are not added to saved progress, quote payloads or analytics. The server sends Google's required location URL only to Google, with no-store caching and no coordinate/error logging. A separate reverse-geocoding OAuth scope leaves the existing Places token behavior unchanged.
+
+[Eight local browser cases](evidence/pickup-location/results.json) passed in EN/ES: confirmation before filling, denied permission, unavailable lookup and editing during pending permission. [English confirmation](evidence/pickup-location/en-confirm.png) and [Spanish confirmation](evidence/pickup-location/es-confirm.png) use synthetic coordinates and a mocked provider seam; they are not deployed geocoding proof. Reproduce with `node docs/main-site-preview/session-4/check-pickup-location.mjs` against localhost:3001. All 37 Main Site contracts, lint and typecheck passed after the implementation. No quote was submitted.
+
+The existing Vercel Maps credential is sensitive and was not exposed by the environment readback API. Live reverse-geocoding availability must therefore be tested through the deployed server route; no Google service enablement or credential expansion was performed. The stable reviewed deployment still identifies its earlier source until the follow-up deployment qualifies. Updated privacy/terms explain this optional lookup and remain subject to Owner review.
+
+Implementation references: [Google reverse geocoding](https://developers.google.com/maps/documentation/geocoding/reverse-geocoding) and [Google Maps attribution](https://developers.google.com/maps/documentation/geocoding/policies). The compact suggestion box separates provider content and displays its required Google Maps attribution.
