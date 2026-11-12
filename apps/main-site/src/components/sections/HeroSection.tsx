@@ -1,6 +1,7 @@
-import Image from "next/image";
+import { HeroBackdrop } from "./HeroBackdrop";
+import { HeroFacts } from "./HeroFacts";
 import { Suspense } from "react";
-import { Headphones, Package, Users } from "lucide-react";
+import { Headphones } from "lucide-react";
 import { business, hero as englishHero } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { SITE_IMAGES } from "@/lib/images";
@@ -12,8 +13,6 @@ import {
   heroBodyTextShadowStyles,
   heroContentColorPresets,
   heroTextShadowStyles,
-  resolveHeroImageFilter,
-  resolveHeroOverlayBackground,
 } from "@/lib/playground/hero-playground";
 import {
   resolveHeroPrimaryCtaClasses,
@@ -22,8 +21,6 @@ import {
 } from "@/lib/playground/hero-icons-playground";
 
 /** Playground args promoted to production — see HeroSection.stories.tsx Playground. */
-const HERO_IMAGE_FILTER = resolveHeroImageFilter("muted", 70);
-const HERO_OVERLAY = resolveHeroOverlayBackground("solidBlue", 20);
 const HERO_COLORS = heroContentColorPresets.highContrast;
 const HERO_HEADLINE_SHADOW = heroTextShadowStyles.strong;
 const HERO_BODY_SHADOW = heroBodyTextShadowStyles.strong;
@@ -69,32 +66,10 @@ export function HeroSection({ bodyPanel = false, locale = "en" }: HeroSectionPro
       id="top"
       className="relative overflow-hidden bg-[#04122a]"
     >
-      <Image
-        src={SITE_IMAGES.hero}
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-contain object-top xl:object-cover xl:object-center"
-        style={HERO_IMAGE_FILTER ? { filter: HERO_IMAGE_FILTER } : undefined}
-      />
-
-      {/* Blend the top-anchored image into the brand background below the fold at narrower widths. */}
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-2/3 bg-gradient-to-t from-[#04122a] via-[#04122a]/70 to-transparent xl:hidden"
-        aria-hidden
-      />
-
-      {HERO_OVERLAY && (
-        <div
-          className="pointer-events-none absolute inset-0 z-[1]"
-          style={{ background: HERO_OVERLAY }}
-          aria-hidden
-        />
-      )}
+      <HeroBackdrop src={SITE_IMAGES.hero} position="65% 20%" mobilePosition="65% 20%" />
 
       <Container className="relative z-[2] grid items-center gap-14 py-12 pb-16 lg:grid-cols-[1.05fr_.95fr]">
-        <div className={heroBodyFont.className}>
+        <div className={`${heroBodyFont.className} pt-44 sm:pt-48 lg:pt-40`}>
           <h1
             className={`${heroHeadingFont.className} mb-5 text-balance font-extrabold -tracking-[.02em]`}
             style={{ color: HERO_COLORS.headline, textShadow: HERO_HEADLINE_SHADOW }}
@@ -142,54 +117,7 @@ export function HeroSection({ bodyPanel = false, locale = "en" }: HeroSectionPro
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-4">
-            <div className="min-w-[190px] flex-1 rounded-md2 border border-white/25 bg-[rgba(4,18,38,.55)] px-[22px] py-[18px] shadow-[0_8px_24px_rgba(0,0,0,.22)] backdrop-blur-md">
-              <div className="mb-2 flex items-center gap-2.5">
-                <span className="grid size-[34px] place-items-center rounded-md2 bg-[rgba(255,192,46,.22)]">
-                  <Users
-                    className="size-[18px] text-brand-yellow"
-                    strokeWidth={2}
-                    aria-hidden
-                  />
-                </span>
-                <span
-                  className={`${heroHeadingFont.className} text-[24px] leading-none font-black`}
-                  style={{ color: HERO_COLORS.stats, textShadow: HERO_BODY_SHADOW }}
-                >
-                  {es ? "Su inventario" : "Your inventory"}
-                </span>
-              </div>
-              <div
-                className="text-[15px] leading-snug font-semibold"
-                style={{ color: HERO_COLORS.statsLabel, textShadow: HERO_BODY_SHADOW }}
-              >
-                {es ? "Revise qué llevará" : "Review what you are taking"}
-              </div>
-            </div>
-            <div className="min-w-[190px] flex-1 rounded-md2 border border-white/25 bg-[rgba(4,18,38,.55)] px-[22px] py-[18px] shadow-[0_8px_24px_rgba(0,0,0,.22)] backdrop-blur-md">
-              <div className="mb-2 flex items-center gap-2.5">
-                <span className="grid size-[34px] place-items-center rounded-md2 bg-[rgba(46,134,222,.28)]">
-                  <Package
-                    className="size-[18px] text-[#7eb8f5]"
-                    strokeWidth={2}
-                    aria-hidden
-                  />
-                </span>
-                <span
-                  className={`${heroHeadingFont.className} text-[24px] leading-none font-black`}
-                  style={{ color: HERO_COLORS.stats, textShadow: HERO_BODY_SHADOW }}
-                >
-                  {es ? "Su ruta" : "Your route"}
-                </span>
-              </div>
-              <div
-                className="text-[15px] leading-snug font-semibold"
-                style={{ color: HERO_COLORS.statsLabel, textShadow: HERO_BODY_SHADOW }}
-              >
-                {es ? "Confirme acceso y fechas" : "Confirm access and dates"}
-              </div>
-            </div>
-          </div>
+          <HeroFacts locale={locale} />
         </div>
 
         <Suspense fallback={<QuoteWizardSkeleton />}>

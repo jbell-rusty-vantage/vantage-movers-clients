@@ -5,6 +5,7 @@ import { directoryPaths, entriesFor, navigationFor } from "@/lib/publication";
 import type { EditorialLocale } from "@/content/editorial/types";
 import { Container } from "@/components/ui/Container";
 import { BrowseNavigation } from "./BrowseNavigation";
+import { FloatingCall } from "./FloatingCall";
 import { Logo } from "./Logo";
 
 export function Header({ locale = "en", alternatePath, quoteHref }: {
@@ -13,7 +14,7 @@ export function Header({ locale = "en", alternatePath, quoteHref }: {
   const es = locale === "es";
   const alternate = alternatePath ?? (entriesFor(es ? "en" : "es").length ? (es ? "/" : "/es") : undefined);
   return (
-    <header className="site-header sticky top-0 z-[60] border-b border-cream-border-2 bg-white shadow-[0_2px_12px_rgba(2,71,153,.05)]">
+    <><header className="site-header sticky top-0 z-[60] border-b border-cream-border-2 bg-white shadow-[0_2px_12px_rgba(2,71,153,.05)]">
       <a className="skip-link" href="#main-content">{es ? "Ir al contenido" : "Skip to content"}</a>
       <Container className="px-4 sm:px-7">
         <div className={`${heroHeadingFont.className} flex min-h-[66px] flex-wrap items-center justify-between gap-2 py-2 font-semibold text-brand-blue`}>
@@ -25,6 +26,6 @@ export function Header({ locale = "en", alternatePath, quoteHref }: {
           </div>
         </div>
       </Container>
-    </header>
+    </header><FloatingCall locale={locale} /></>
   );
 }

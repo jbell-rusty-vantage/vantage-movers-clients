@@ -34,7 +34,8 @@ export function navigationFor(locale: EditorialLocale) {
   return [
     ...(entries.some((e) => e.kind === "service") ? [{ href: paths.service, label: es ? "Servicios" : "Services" }] : []),
     ...(entries.some((e) => e.kind === "state") ? [{ href: paths.location, label: es ? "Destinos" : "Locations" }] : []),
-    ...(entries.some((e) => e.kind === "resource") ? [{ href: paths.resource, label: es ? "Guías" : "Resources" }] : []),
+    ...(entries.some((e) => e.kind === "resource") ? [{ href: paths.resource, label: es ? "Recursos" : "Resources" }] : []),
+    { href: `${paths.home}#faq`, label: es ? "Preguntas" : "FAQ" },
     { href: paths.contact, label: es ? "Contacto" : "Contact" },
   ];
 }

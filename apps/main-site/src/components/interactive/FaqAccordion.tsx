@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { faqs } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { radiusClasses } from "@/lib/playground/layout-playground";
@@ -11,12 +11,13 @@ const QUESTION_FONT_SIZE = 17;
 const ANSWER_FONT_SIZE = 15.5;
 const TOGGLE_SIZE = 30;
 
-export function FaqAccordion() {
+export function FaqAccordion({ items = faqs }: { items?: { q: string; a: string }[] }) {
+  const id = useId();
   const [open, setOpen] = useState(0);
 
   return (
     <div className="flex flex-col gap-3.5">
-      {faqs.map((f, i) => {
+      {items.map((f, i) => {
         const isOpen = open === i;
         return (
           <div
@@ -25,6 +26,8 @@ export function FaqAccordion() {
           >
             <button
               type="button"
+              aria-expanded={isOpen}
+              aria-controls={`${id}-${i}`}
               onClick={() => {
                 setOpen(isOpen ? -1 : i);
                 trackEvent(isOpen ? "faq_closed" : "faq_opened", {
@@ -45,6 +48,7 @@ export function FaqAccordion() {
             </button>
             {isOpen && (
               <div
+                id={`${id}-${i}`}
                 className={`px-6 pb-6 leading-[1.65] text-[#64748B] ${heroBodyFont.className}`}
                 style={{ fontSize: `${ANSWER_FONT_SIZE}px` }}
               >

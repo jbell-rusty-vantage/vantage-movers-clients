@@ -37,3 +37,7 @@ Deployed screenshots: [hover menu](evidence/deployed/navigation-desktop.png), [s
 | Release | Owner still reviews EN/ES content, imagery and design. All 26 editorial locale entries remain drafts. Production selection, actual 200% zoom, final media/content qualification and the broader measurement/server-attribution stage are still separate work. |
 
 Handoff boundary: present this revised preview for feedback, record corrections, and stop. Do not automatically continue the backend roadmap, create unrequested service campaigns, or promote to production.
+
+## Follow-up: resource center and shared heroes (2026-11-12)
+
+The Owner subsequently requested a more complete article/resource structure, resource-type navigation, homepage-like service heroes with carefully composed imagery and a repeated proof row, long-distance pricing context, FAQ navigation and a floating call control. See [the follow-up implementation and decision record](../resource-center-2026-11-12/README.md) for current behavior, qualification, pending business facts and the destination-resource expansion direction. This supersedes the earlier full-frame side-image hero decision; it does not approve draft content or production publication.

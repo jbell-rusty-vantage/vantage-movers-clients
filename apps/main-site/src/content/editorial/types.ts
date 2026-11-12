@@ -34,6 +34,8 @@ export interface EditorialEntry {
     checkedAt: string;
     notes: string[];
   };
+  // Set only after the locale has been approved for publication.
+  publishedAt?: string;
   worksheet?: EditorialWorksheet;
 }
 

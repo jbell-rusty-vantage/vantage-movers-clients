@@ -52,7 +52,7 @@ const eventNames = new Set([
 const fields = new Set(["pickup", "dest", "date", "size", "name", "phone", "email", "smsConsent"]);
 const errors = new Set(["required", "invalid", "lead_capture_failed"]);
 const locations = new Set([
-  "header", "header_nav", "header_mobile", "hero_primary", "hero_secondary", "service_feature",
+  "floating_call", "header", "header_nav", "header_mobile", "hero_primary", "hero_secondary", "service_feature",
   "service_card", "services_dropdown", "footer", "footer_services", "footer_company", "footer_legal",
   "contact", "final_cta", "resources", "service", "mobile_nav", "quote_confirmation",
 ]);

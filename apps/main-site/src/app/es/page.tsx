@@ -1,3 +1,4 @@
+import { FaqSection } from "@/components/sections/FaqSection";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -19,5 +20,6 @@ export default function SpanishHome() {
     <MilitaryAppreciation locale="es" />
     <section className="py-16"><Container><h2 className="mb-8 font-display text-3xl font-extrabold text-brand-blue">Prepare su inventario y compare propuestas</h2><EditorialCards entries={entries.filter(e => e.kind === "resource")} /></Container></section>
     <section className="bg-cream py-16"><Container><h2 className="mb-8 font-display text-3xl font-extrabold text-brand-blue">Conozca su destino</h2><EditorialCards entries={entries.filter(e => e.kind === "state" || e.kind === "city")} /></Container></section>
+    <FaqSection locale="es" />
   </main><SiteFooter locale="es" /></>;
 }
