@@ -91,6 +91,9 @@ try {
     await page.evaluate(() => scrollTo(0, 650)); await page.waitForTimeout(200);
     check(await page.locator('[data-floating-call]').isVisible(), 'Call control appears after scroll', { locale });
     check((await page.locator('[data-floating-call] a').getAttribute('href')).startsWith('tel:'), 'Call control is a telephone link only', { locale });
+    await page.emulateMedia({ media: 'print' });
+    check(await page.locator('[data-floating-call]').isHidden(), 'Call control excluded from printable resources', { locale });
+    await page.emulateMedia({ media: 'screen' });
     await page.locator('form input:visible').first().focus(); await page.waitForTimeout(100);
     check(await page.locator('[data-floating-call]').count() === 0, 'Call control hides for form editing', { locale });
     await page.locator('h1').click(); await page.evaluate(() => scrollTo(0, 700)); await page.waitForTimeout(200);
