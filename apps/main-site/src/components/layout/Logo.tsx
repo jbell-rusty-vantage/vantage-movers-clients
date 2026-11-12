@@ -4,13 +4,14 @@ import { business } from "@/lib/content";
 
 interface LogoProps {
   variant?: "header" | "footer";
+  href?: string;
 }
 
-export function Logo({ variant = "header" }: LogoProps) {
+export function Logo({ variant = "header", href = "/#top" }: LogoProps) {
   const isFooter = variant === "footer";
 
   return (
-    <Link href="/#top" className="flex items-center no-underline" aria-label={business.name}>
+    <Link href={href} className="flex items-center no-underline" aria-label={business.name}>
       <Image
         className={isFooter ? "h-[52px] w-auto" : "h-[36px] w-auto"}
         src="/vantage-movers-logo-refined-smaller-text.svg"

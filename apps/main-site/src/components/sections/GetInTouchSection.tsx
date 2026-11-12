@@ -11,6 +11,7 @@ import { Container } from "@/components/ui/Container";
 import { business, quoteSection, trustStrip, type TrustLogo } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { resolveSiteImage } from "@/lib/images";
+import { entryById } from "@/lib/publication";
 import { radiusClasses } from "@/lib/playground/layout-playground";
 import {
   resolveStarColors,
@@ -18,7 +19,6 @@ import {
 
 /** Playground args promoted to production — see GetInTouchSection.stories.tsx Playground. */
 const HEADING_FONT_SIZE = 36;
-const STAR_SIZE = 18;
 const REVIEW_STAR_SIZE = 14;
 const STAR_COLORS = resolveStarColors("gold");
 
@@ -31,11 +31,11 @@ function initials(name: string): string {
 
 function SoftStars({
   size,
-  value = 5,
+  value,
   className,
 }: {
   size: number;
-  value?: number;
+  value: number;
   className?: string;
 }) {
   return (
@@ -51,12 +51,13 @@ function SoftStars({
           style={{
             color: STAR_COLORS.stroke,
             fill: STAR_COLORS.fill,
-            opacity: i < value ? 1 : 0.25,
+            opacity: i < Math.floor(value) ? 1 : 0.25,
           }}
           strokeWidth={1.5}
           aria-hidden
         />
       ))}
+      <span className="ml-1 text-xs">{value}/5</span>
     </div>
   );
 }
@@ -65,7 +66,7 @@ interface ReviewSnippetProps {
   quote: string;
   name: string;
   source: string;
-  rating: number;
+  rating: number | null;
 }
 
 function ReviewSnippet({ quote, name, source, rating }: ReviewSnippetProps) {
@@ -94,7 +95,7 @@ function ReviewSnippet({ quote, name, source, rating }: ReviewSnippetProps) {
             </span>
           </span>
         </div>
-        <SoftStars size={REVIEW_STAR_SIZE} value={rating} className="shrink-0" />
+        {rating !== null && <SoftStars size={REVIEW_STAR_SIZE} value={rating} className="shrink-0" />}
       </figcaption>
     </figure>
   );
@@ -108,17 +109,16 @@ async function FeaturedReviewSnippet({
   const featuredTestimonial = featuredTestimonialPromise
     ? await featuredTestimonialPromise
     : null;
-  const review =
-    featuredTestimonial && featuredTestimonial.review_text
-      ? {
+  if (!featuredTestimonial?.published || !featuredTestimonial.review_text) return null;
+  const review = {
           quote: featuredTestimonial.review_text,
-          name: featuredTestimonial.reviewer_name || "Verified customer",
+          name: featuredTestimonial.reviewer_name || "Customer",
           source: featuredTestimonial.source
-            ? `Verified review via ${featuredTestimonial.source}`
-            : "Verified review",
-          rating: featuredTestimonial.rating || 5,
-        }
-      : quoteSection.featuredReview;
+            ? `Review via ${featuredTestimonial.source}`
+            : "Customer feedback",
+          rating: Number.isFinite(featuredTestimonial.rating) && featuredTestimonial.rating >= 1 && featuredTestimonial.rating <= 5
+            ? featuredTestimonial.rating : null,
+        };
 
   return <ReviewSnippet {...review} />;
 }
@@ -165,6 +165,12 @@ export function GetInTouchSection({
   featuredTestimonial,
   featuredTestimonialPromise,
 }: GetInTouchSectionProps) {
+  const genericGuide = entryById("who-handles-my-move", "en")?.path;
+  const guideLinks = genericGuide ? {
+    generic: genericGuide,
+    wisconsin: entryById("wisconsin", "en")?.path ?? genericGuide,
+    madison: entryById("madison-wisconsin", "en")?.path ?? genericGuide,
+  } : undefined;
   const reviewPromise =
     featuredTestimonialPromise ?? Promise.resolve(featuredTestimonial ?? null);
   const contactItems = [
@@ -266,19 +272,10 @@ export function GetInTouchSection({
 
             <div className="min-w-0">
               <Suspense fallback={<QuoteWizardSkeleton variant="panel" />}>
-                <QuoteWizard variant="panel" formId="quote-bottom" />
+                <QuoteWizard variant="panel" formId="quote-bottom" guideLinks={guideLinks} />
               </Suspense>
 
               <div className="mt-7 flex flex-col gap-5">
-                <div className="flex flex-col items-center gap-2 text-center">
-                  <SoftStars size={STAR_SIZE} />
-                  <p
-                    className={`text-[14px] font-semibold text-white ${heroHeadingFont.className}`}
-                  >
-                    {quoteSection.rating.label}
-                  </p>
-                </div>
-
                 <div>
                   <p
                     className={`mb-3 text-center text-[11px] font-bold tracking-[0.14em] text-on-dark-500 uppercase ${heroHeadingFont.className}`}

@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
+import { entryById, entriesFor } from "@/lib/publication";
 import { ArrowRight, Check } from "lucide-react";
 import { featureRows, services, servicesSection } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
@@ -69,6 +71,7 @@ export function ServicesSection() {
           >
             {servicesSection.body}
           </p>
+          {entriesFor("en").some(e => e.kind === "service") && <Link href="/services" className="mt-5 inline-block font-bold text-brand-blue">Browse all moving services →</Link>}
         </div>
 
         {featureRows.map((row, rowIndex) => {
@@ -161,7 +164,7 @@ export function ServicesSection() {
               <a
                 key={s.title}
                 id={s.anchorId}
-                href="#quote"
+                href={entryById(s.anchorId.replace("service-", "").replace("commercial-office", "corporate-office"), "en")?.path ?? "#quote"}
                 className={`flex scroll-mt-28 flex-col border border-cream-border-2 bg-white p-7 no-underline shadow-card transition duration-250 hover:-translate-y-1.5 hover:shadow-card-hover ${radiusClasses[CARD_RADIUS]}`}
                 data-analytics-event="cta_clicked"
                 data-analytics-cta-location="service_card"
@@ -192,7 +195,7 @@ export function ServicesSection() {
                   className={`${accentClass} inline-flex items-center gap-[7px] font-bold text-brand-blue-bright`}
                   style={{ fontSize: `${Math.max(CTA_FONT_SIZE - 1, 12)}px` }}
                 >
-                  Request a Quote <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
+                  Explore this service <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
                 </span>
               </a>
             );

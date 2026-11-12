@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { entriesFor, navigationFor } from "@/lib/publication";
 import {
   business,
   footerChrome,
@@ -85,7 +86,7 @@ export function Footer() {
               Services
             </h4>
             <div className="flex flex-col gap-[11px]" style={{ fontSize: `${BODY_FONT_SIZE}px` }}>
-              {footerServiceLinks.map((link) => (
+              {(entriesFor("en").filter(e => e.kind === "service").map(e => ({ label: e.navLabel, href: e.path })).length ? entriesFor("en").filter(e => e.kind === "service").map(e => ({ label: e.navLabel, href: e.path })) : footerServiceLinks).map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
@@ -111,7 +112,7 @@ export function Footer() {
               Company
             </h4>
             <div className="flex flex-col gap-[11px]" style={{ fontSize: `${BODY_FONT_SIZE}px` }}>
-              {footerCompanyLinks.map((link) =>
+              {[...navigationFor("en"), ...footerCompanyLinks.filter(l => !navigationFor("en").some(n => n.href === l.href || n.label === l.label))].map((link) =>
                 link.href.startsWith("/") ? (
                   <Link
                     key={link.label}
@@ -186,7 +187,7 @@ export function Footer() {
             </div>
           </div>
           <p
-            className="min-w-[340px] flex-1 leading-[1.7]"
+            className="min-w-0 basis-[340px] flex-1 leading-[1.7]"
             style={{ fontSize: "12.5px", color: colors.mutedColor }}
           >
             {business.brokerDisclaimer}

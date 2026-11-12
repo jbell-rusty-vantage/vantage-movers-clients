@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
-import { business, howItWorks, howItWorksSection } from "@/lib/content";
+import { business, howItWorksSection } from "@/lib/content";
+import { MovingProcess } from "@/components/interactive/MovingProcess";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
 import { radiusClasses, spacingScale } from "@/lib/playground/layout-playground";
@@ -7,14 +8,12 @@ import { resolveHowItWorksColors } from "@/lib/playground/how-it-works-playgroun
 
 /** Playground args promoted to production — see HowItWorksSection.stories.tsx Playground. */
 const HEADING_FONT_SIZE = 44;
-const STEP_TITLE_FONT_SIZE = 18;
-const STEP_DESC_FONT_SIZE = 14.5;
-const STEP_NUMBER_SIZE = 22;
 const PHONE_BUTTON_RADIUS = "full" as const;
 const SPACING = spacingScale.default;
 const colors = resolveHowItWorksColors("production", {});
 
-export function HowItWorksSection() {
+export function HowItWorksSection({ locale = "en" }: { locale?: "en" | "es" }) {
+  const es = locale === "es";
   const accentClass = heroHeadingFont.className;
   const bodyClass = heroBodyFont.className;
 
@@ -37,7 +36,7 @@ export function HowItWorksSection() {
             className={`${bodyClass} font-medium`}
             style={{ fontSize: "15px", color: colors.taglineColor }}
           >
-            {howItWorksSection.tagline}
+            {es ? "Revise el inventario, los servicios y las condiciones escritas antes de decidir." : howItWorksSection.tagline}
           </p>
           <a
             href={business.phoneHref}
@@ -73,7 +72,7 @@ export function HowItWorksSection() {
                 style={{ backgroundColor: colors.stepNumberColor }}
                 aria-hidden
               />
-              {howItWorksSection.eyebrow}
+              {es ? "Cómo funciona" : howItWorksSection.eyebrow}
             </div>
             <h2
               className={`${accentClass} leading-[1.1] font-extrabold -tracking-[.02em]`}
@@ -82,61 +81,15 @@ export function HowItWorksSection() {
                 color: colors.titleColor,
               }}
             >
-              {howItWorksSection.titleLead}
+              {es ? "Su mudanza en" : howItWorksSection.titleLead}
               <br />
               <span style={{ color: colors.titleAccent, fontStyle: "italic" }}>
-                {howItWorksSection.titleAccent}
+                {es ? "5 pasos de preparación" : "5 planning steps"}
               </span>
             </h2>
           </div>
 
-          <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-            <div
-              className="pointer-events-none absolute top-7 right-[12.5%] left-[12.5%] hidden h-px lg:block"
-              style={{ backgroundColor: colors.connectorLine }}
-              aria-hidden
-            />
-
-            {howItWorks.map((step) => (
-              <div key={step.n} className="relative flex flex-col items-center text-center">
-                <div
-                  className="relative z-10 mb-5 grid size-14 place-items-center rounded-full border"
-                  style={{
-                    borderColor: colors.stepCircleBorder,
-                    backgroundColor: colors.stepCircleBg,
-                  }}
-                >
-                  <span
-                    className={`${accentClass} leading-none font-black`}
-                    style={{
-                      fontSize: `${STEP_NUMBER_SIZE}px`,
-                      color: colors.stepNumberColor,
-                    }}
-                  >
-                    {step.n}
-                  </span>
-                </div>
-                <h3
-                  className={`${accentClass} mb-2.5 font-extrabold`}
-                  style={{
-                    fontSize: `${STEP_TITLE_FONT_SIZE}px`,
-                    color: colors.stepTitleColor,
-                  }}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  className={`${bodyClass} max-w-[240px] leading-[1.65]`}
-                  style={{
-                    fontSize: `${STEP_DESC_FONT_SIZE}px`,
-                    color: colors.stepDescColor,
-                  }}
-                >
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+          <MovingProcess locale={locale} />
         </div>
       </Container>
     </section>

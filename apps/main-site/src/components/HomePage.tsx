@@ -44,7 +44,7 @@ export function HomePage({
     <>
       <HomePageJsonLd />
       <Header />
-      <main>
+      <main id="main-content" data-content-id="home">
         <HeroSection />
         <TrustStrip />
 
@@ -58,9 +58,9 @@ export function HomePage({
           <TestimonialsStream testimonialsPromise={testimonialsPromise} />
         </Suspense>
         <FaqSection />
-        <GetInTouchSection
-          featuredTestimonialPromise={featuredTestimonialPromise}
-        />
+        <Suspense fallback={<section id="contact" className="bg-cream px-6 py-12"><h2 className="font-display text-2xl font-bold text-brand-blue">Contact Vantage</h2><a href="tel:8884779232">(888) 477-9232</a></section>}>
+          <GetInTouchSection featuredTestimonialPromise={featuredTestimonialPromise} />
+        </Suspense>
         <FinalCTASection />
       </main>
       <SiteFooter />

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, useCallback, useId, type ReactNode } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
   useForm,
@@ -12,12 +13,14 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, MapPin } from "lucide-react";
 import { MoveDatePicker } from "@vantage/ui";
-import { business, quoteSection } from "@/lib/content";
+import { business } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { radiusClasses } from "@/lib/playground/layout-playground";
 import { telHref } from "@/lib/format";
 import { MAIN_SITE } from "@/content/partners";
 import { quoteFormAnalytics, trackEvent, trackZipNotRecognized } from "@/lib/analytics";
+import { quoteCopy, quoteError, moveSizeLabel } from "@/lib/quote-copy";
+import { QUOTE_DRAFT_KEY, parseQuoteDraft, parseDestination, destinationGuide, isCapturedResponse, type QuoteLocale, type QuoteDraft, type ConfirmedDestination } from "@/lib/quote-journey";
 import {
   MOVE_SIZES,
   STEP_FIELDS,
@@ -25,20 +28,7 @@ import {
   quoteFormSchema,
   type QuoteFormInput,
   type QuoteFormValues,
-  type QuoteResult,
 } from "@/schemas/quote-form.schema";
-
-const STEPS = [
-  { n: 1, label: "Moving Details" },
-  { n: 2, label: "Contact Info" },
-  { n: 3, label: "Confirmation" },
-] as const;
-
-const PANEL_STEPS = [
-  { n: 1, label: "Your Move" },
-  { n: 2, label: "Contact" },
-  { n: 3, label: "Done" },
-] as const;
 
 const STEP_ANALYTICS = [
   { step_number: 1, step_name: "moving_details" },
@@ -46,6 +36,9 @@ const STEP_ANALYTICS = [
 ] as const;
 
 export interface QuoteWizardProps {
+  locale?: QuoteLocale;
+  serviceId?: string;
+  guideLinks?: { madison: string; wisconsin: string; generic: string };
   variant?: "hero" | "panel";
   formId?: string;
   className?: string;
@@ -102,11 +95,13 @@ function createLeadId() {
 }
 
 function Field({
+  id,
   label,
   error,
   children,
   className = "mb-4",
 }: {
+  id: string;
   label: string;
   error?: string;
   children: ReactNode;
@@ -114,14 +109,16 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label className={labelCls}>{label}</label>
+      <label htmlFor={id} className={labelCls}>{label}</label>
       {children}
-      {error && <p className="mt-1 text-[13px] text-red-500">{error}</p>}
+      {error && <p id={`${id}-error`} role="alert" className="mt-1 text-[13px] text-red-500">{error}</p>}
     </div>
   );
 }
 
 function ZipField({
+  locale,
+  onResolved,
   id,
   label,
   fieldName,
@@ -132,6 +129,8 @@ function ZipField({
   setValue,
   error,
 }: {
+  locale: QuoteLocale;
+  onResolved?: (place: ConfirmedDestination | null) => void;
   id: string;
   label: string;
   fieldName: LocationFieldName;
@@ -142,6 +141,8 @@ function ZipField({
   setValue: UseFormSetValue<QuoteFormInput>;
   error?: FieldError;
 }) {
+  const copy = quoteCopy[locale];
+  const [candidate, setCandidate] = useState<ConfirmedDestination | null>(null);
   const [resolvedRegion, setResolvedRegion] = useState("");
   const [lookupWarning, setLookupWarning] = useState("");
   const [loading, setLoading] = useState(false);
@@ -159,7 +160,7 @@ function ZipField({
       setLookupError("");
       try {
         const res = await fetch(
-          `/api/places/autocomplete?input=${encodeURIComponent(zip)}&sessionToken=${encodeURIComponent(sessionToken)}`,
+          `/api/places/autocomplete?input=${encodeURIComponent(zip)}&sessionToken=${encodeURIComponent(sessionToken)}&locale=${locale}`,
           { signal: controller.signal },
         );
         if (!res.ok) throw new Error("Unable to resolve ZIP");
@@ -170,7 +171,7 @@ function ZipField({
           setValue(fieldName, zip, { shouldDirty: true, shouldTouch: true, shouldValidate: true });
           setResolvedRegion("");
           setLookupWarning(
-            "We couldn't verify this ZIP automatically, but you can still continue.",
+            copy.unverified,
           );
           const reportKey = `${fieldName}:${zip}`;
           if (!reportedUnrecognizedZipsRef.current.has(reportKey)) {
@@ -191,11 +192,18 @@ function ZipField({
         });
         setResolvedRegion(match.text);
         setLookupWarning("");
+        if (onResolved) {
+          const details = await fetch(`/api/places/details?placeId=${encodeURIComponent(match.placeId)}&sessionToken=${encodeURIComponent(sessionToken)}&locale=${locale}`, { signal: controller.signal });
+          if (details.ok) {
+            const place = parseDestination(await details.json());
+            setCandidate(place?.postalCode === zip ? place : null);
+          }
+        }
       } catch {
         if (!controller.signal.aborted) {
           setValue(fieldName, zip, { shouldDirty: true, shouldTouch: true, shouldValidate: true });
           setResolvedRegion("");
-          setLookupError("ZIP lookup is unavailable. Please try again.");
+          setLookupError(copy.lookupFailed);
           trackEvent("zip_lookup_failed", {
             ...quoteFormAnalytics,
             field_name: fieldName,
@@ -210,10 +218,10 @@ function ZipField({
       window.clearTimeout(timeout);
       controller.abort();
     };
-  }, [displayValue, fieldName, sessionToken, setValue]);
+  }, [displayValue, fieldName, sessionToken, setValue, locale, copy, onResolved]);
 
   return (
-    <Field label={label} error={error?.message || lookupError}>
+    <Field id={id} label={label} error={quoteError(error?.message, locale) || lookupError}>
       <input type="hidden" {...register(fieldName)} />
       <div className="relative">
         <MapPin
@@ -228,9 +236,13 @@ function ZipField({
           autoComplete="postal-code"
           inputMode="numeric"
           maxLength={5}
+          aria-invalid={!!error}
+          aria-describedby={error || lookupError ? `${id}-error` : undefined}
           onChange={(e) => {
             const nextZip = e.target.value.replace(/\D/g, "").slice(0, 5);
             onDisplayChange(nextZip);
+            setCandidate(null);
+            onResolved?.(null);
             setResolvedRegion("");
             setLookupWarning("");
             setLookupError("");
@@ -240,10 +252,15 @@ function ZipField({
         />
       </div>
       {loading && (
-        <p className="mt-1 text-[12.5px] text-[#64748B]">Resolving ZIP…</p>
+        <p className="mt-1 text-[12.5px] text-[#64748B]">{copy.resolving}</p>
       )}
       {!loading && resolvedRegion && (
         <p className="mt-1 text-[12.5px] font-semibold text-ink">{resolvedRegion}</p>
+      )}
+      {!loading && candidate && onResolved && (
+        <button type="button" className="mt-2 text-left text-sm font-semibold text-brand-blue underline" onClick={() => { onResolved(candidate); setCandidate(null); }}>
+          {copy.confirmDestination}: {candidate.city || candidate.state}, {candidate.state}
+        </button>
       )}
       {!loading && lookupWarning && (
         <p className="mt-1 text-[12.5px] text-amber-600">{lookupWarning}</p>
@@ -253,23 +270,35 @@ function ZipField({
 }
 
 export function QuoteWizard({
+  locale = "en",
+  serviceId,
+  guideLinks,
   variant = "hero",
   formId,
   className = "",
 }: QuoteWizardProps) {
+  const copy = quoteCopy[locale];
+  const [destination, setDestination] = useState<ConfirmedDestination | null>(null);
+  const onDestinationResolved = useCallback((place: ConfirmedDestination | null) => setDestination(place), []);
+  const draftReady = useRef(false);
+  const activeForm = useRef(false);
+  const instanceId = useId();
+  const lastInteraction = useRef(0);
+  const completedStepsRef = useRef<number[]>([]);
   const [step, setStep] = useState(0);
-  const [result, setResult] = useState<QuoteResult | null>(null);
+  const [result, setResult] = useState<{ leadCaptured: true } | null>(null);
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [pickupZip, setPickupZip] = useState("");
   const [destZip, setDestZip] = useState("");
-  const [internalRefNo] = useState(createMainSiteRefNo);
+  const [internalRefNo, setInternalRefNo] = useState(createMainSiteRefNo);
   const [lid, setLid] = useState(createLeadId);
   const formStartedRef = useRef(false);
   const datePickerOpenedRef = useRef(false);
 
   const searchParams = useSearchParams();
-  const inboundRefNo = searchParams.get("ref_no")?.trim();
+  const [savedInboundRef, setSavedInboundRef] = useState("");
+  const inboundRefNo = searchParams.get("ref_no")?.trim().slice(0, 24) || savedInboundRef;
   const refNo = inboundRefNo ? `${internalRefNo}-${inboundRefNo.slice(0, 24)}` : internalRefNo;
   const {
     register,
@@ -279,6 +308,7 @@ export function QuoteWizard({
     reset,
     setValue,
     control,
+    subscribe,
     formState: { errors },
   } = useForm<QuoteFormInput, unknown, QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
@@ -289,7 +319,7 @@ export function QuoteWizard({
 
   const stepDisplay = step + 1;
   const isPanel = variant === "panel";
-  const steps = isPanel ? PANEL_STEPS : STEPS;
+  const steps = copy.steps.map((label, i) => ({ n: i + 1, label }));
   const resolvedFormId = formId ?? (isPanel ? undefined : "quote");
   const fieldIdPrefix = resolvedFormId ?? "quote";
   const panelPadding = isPanel ? "px-3 pt-0 pb-5 min-[360px]:px-4 sm:px-6 sm:pb-6" : "px-[30px] pt-[30px] pb-[26px]";
@@ -298,22 +328,68 @@ export function QuoteWizard({
   const moveDate = useWatch({ control, name: "date" });
 
   useEffect(() => {
-    const stepMeta = STEP_ANALYTICS[step];
-    if (!stepMeta) return;
+    try {
+      const draft = parseQuoteDraft(sessionStorage.getItem(QUOTE_DRAFT_KEY));
+      if (draft) {
+        reset({ ...draft.values, size: draft.values.size || emptyQuote.size });
+        // Hydrate this server-rendered form from the browser's optional external draft store.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setPickupZip(draft.values.pickup);
+        setDestZip(draft.values.dest);
+        setStep(draft.step);
+        setInternalRefNo(draft.internalRefNo);
+        setSavedInboundRef(draft.inboundRefNo);
+        setLid(draft.lid);
+        setDestination(draft.destination);
+        formStartedRef.current = draft.started;
+        completedStepsRef.current = draft.completedSteps;
+        lastInteraction.current = draft.savedAt;
+      } else {
+        sessionStorage.removeItem(QUOTE_DRAFT_KEY);
+      }
+    } catch { /* Storage is optional; manual form entry still works. */ }
+    draftReady.current = true;
+  }, [reset]);
 
-    trackEvent("form_step_viewed", {
-      ...quoteFormAnalytics,
-      ...stepMeta,
-      form_variant: variant,
-      form_id: resolvedFormId || "quote-panel",
-    });
-  }, [step, variant, resolvedFormId]);
+  useEffect(() => {
+    const deactivateOtherForm = (event: Event) => {
+      if ((event as CustomEvent<string>).detail !== instanceId) activeForm.current = false;
+    };
+    window.addEventListener("vantage-quote-active", deactivateOtherForm);
+    return () => window.removeEventListener("vantage-quote-active", deactivateOtherForm);
+  }, [instanceId]);
+
+  const saveDraft = useCallback(() => {
+    if (!draftReady.current || !activeForm.current || result) return;
+    try {
+      const draft: QuoteDraft = {
+        version: 1, savedAt: lastInteraction.current, step: step === 1 ? 1 : 0,
+        internalRefNo, inboundRefNo: inboundRefNo || "", lid,
+        started: formStartedRef.current, completedSteps: completedStepsRef.current,
+        values: { ...getValues(), smsConsent: getValues("smsConsent") ?? true }, destination,
+      };
+      sessionStorage.setItem(QUOTE_DRAFT_KEY, JSON.stringify(draft));
+    } catch { /* A denied or full store must not stop quote intake. */ }
+  }, [step, internalRefNo, inboundRefNo, lid, getValues, destination, result]);
+
+  useEffect(() => {
+    const unsubscribe = subscribe({ formState: { values: true }, callback: () => saveDraft() });
+    saveDraft();
+    window.addEventListener("pagehide", saveDraft);
+    return () => { unsubscribe(); window.removeEventListener("pagehide", saveDraft); };
+  }, [subscribe, saveDraft]);
 
   function markFormStarted() {
+    if (result) return;
+    if (!activeForm.current) window.dispatchEvent(new CustomEvent("vantage-quote-active", { detail: instanceId }));
+    activeForm.current = true;
+    lastInteraction.current = Date.now();
     if (formStartedRef.current) return;
     formStartedRef.current = true;
+    trackEvent("form_step_viewed", { ...quoteFormAnalytics, ...STEP_ANALYTICS[step], locale, service_id: serviceId || "none" });
     trackEvent("form_started", {
       ...quoteFormAnalytics,
+      locale, service_id: serviceId || "none",
       form_variant: variant,
       form_id: resolvedFormId || "quote-panel",
     });
@@ -324,6 +400,7 @@ export function QuoteWizard({
     datePickerOpenedRef.current = true;
     trackEvent("calendar_or_date_picker_opened", {
       ...quoteFormAnalytics,
+      locale, service_id: serviceId || "none",
       form_variant: variant,
       form_id: resolvedFormId || "quote-panel",
     });
@@ -340,6 +417,7 @@ export function QuoteWizard({
 
       trackEvent("form_validation_error", {
         ...quoteFormAnalytics,
+      locale, service_id: serviceId || "none",
         ...stepMeta,
         form_variant: variant,
         form_id: resolvedFormId || "quote-panel",
@@ -353,6 +431,7 @@ export function QuoteWizard({
     const values = getValues();
     return {
       ...quoteFormAnalytics,
+      locale, service_id: serviceId || "none",
       form_variant: variant,
       form_id: resolvedFormId || "quote-panel",
       move_size: values.size || "unknown",
@@ -378,17 +457,20 @@ export function QuoteWizard({
         }),
       });
       if (!res.ok) throw new Error("Quote request failed");
-      const data: QuoteResult = await res.json();
+      const data: unknown = await res.json();
+      if (!isCapturedResponse(data)) throw new Error("Lead capture unconfirmed");
       setResult(data);
+      activeForm.current = false;
+      window.dispatchEvent(new CustomEvent("vantage-quote-active", { detail: "captured" }));
+      try { sessionStorage.removeItem(QUOTE_DRAFT_KEY); } catch { /* Optional storage. */ }
       trackEvent(data.leadCaptured ? "form_submit_success" : "form_submit_failed", {
         ...safeQuoteMetadata(),
         error_type: data.leadCaptured ? null : "lead_capture_failed",
       });
-      trackEvent("quote_estimate_viewed", safeQuoteMetadata());
       setStep(2);
     } catch {
       trackEvent("form_submit_failed", safeQuoteMetadata());
-      setSubmitError("Something went wrong. Please try again or give us a call.");
+      setSubmitError(copy.failure);
     } finally {
       setLoading(false);
     }
@@ -396,6 +478,7 @@ export function QuoteWizard({
 
   async function handleNext(e: React.FormEvent) {
     e.preventDefault();
+    markFormStarted();
     if (loading) return;
 
     const fieldsToValidate =
@@ -403,13 +486,16 @@ export function QuoteWizard({
     const valid = await trigger(fieldsToValidate);
     if (!valid) {
       trackValidationErrors(step);
+      if (step === 1 && STEP_FIELDS[0].some((field) => getFieldState(field).error)) setStep(0);
       return;
     }
 
     const stepMeta = STEP_ANALYTICS[step];
-    if (stepMeta) {
+    if (stepMeta && !completedStepsRef.current.includes(step)) {
+      completedStepsRef.current.push(step);
       trackEvent("form_step_completed", {
         ...quoteFormAnalytics,
+      locale, service_id: serviceId || "none",
         ...stepMeta,
         form_variant: variant,
         form_id: resolvedFormId || "quote-panel",
@@ -421,10 +507,19 @@ export function QuoteWizard({
       return;
     }
 
+    trackEvent("form_step_viewed", { ...quoteFormAnalytics, ...STEP_ANALYTICS[1], locale, service_id: serviceId || "none" });
     setStep((s) => s + 1);
   }
 
   function handleReset() {
+    activeForm.current = false;
+    window.dispatchEvent(new CustomEvent("vantage-quote-active", { detail: "cleared" }));
+    formStartedRef.current = false;
+    datePickerOpenedRef.current = false;
+    completedStepsRef.current = [];
+    setDestination(null);
+    setInternalRefNo(createMainSiteRefNo());
+    try { sessionStorage.removeItem(QUOTE_DRAFT_KEY); } catch { /* Optional storage. */ }
     reset(emptyQuote);
     setPickupZip("");
     setDestZip("");
@@ -440,7 +535,9 @@ export function QuoteWizard({
       className={`${isPanel ? radiusClasses.md2 : "rounded-panel"} w-full min-w-0 bg-white ${panelPadding} shadow-form-card ${bodyFontClass} ${className ?? ""}`}
       onSubmit={handleNext}
       onChange={markFormStarted}
-      onFocus={markFormStarted}
+      onPointerDown={markFormStarted}
+      onKeyDown={markFormStarted}
+      lang={locale}
       noValidate
     >
       {isPanel ? (
@@ -448,9 +545,9 @@ export function QuoteWizard({
           <h2
             className={`mb-1 text-[22px] font-extrabold -tracking-[.02em] text-white ${headingFontClass}`}
           >
-            {quoteSection.formTitle}
+            {copy.title}
           </h2>
-          <p className="m-0 text-[13.5px] text-on-dark-500">{quoteSection.formSubtitle}</p>
+          <p className="m-0 text-[13.5px] text-on-dark-500">{copy.subtitle}</p>
           <div className="mt-4 h-0.5 w-full rounded-full bg-brand-yellow" />
         </div>
       ) : (
@@ -458,10 +555,10 @@ export function QuoteWizard({
           <h2
             className={`mb-1.5 text-[25px] font-extrabold -tracking-[.02em] text-brand-blue ${headingFontClass}`}
           >
-            Request Your Moving Quote
+            {copy.title}
           </h2>
           <p className="m-0 text-[14.5px] text-[#64748B]">
-            Tell us where you are moving, when, and what you need moved.
+            {copy.subtitle}
           </p>
         </div>
       )}
@@ -505,13 +602,13 @@ export function QuoteWizard({
             <Check className="text-brand-blue-bright" size={30} strokeWidth={2.5} />
           </span>
           <h3 className="mb-2 font-display text-[21px] font-extrabold text-brand-blue">
-            Request Received
+            {copy.received}
           </h3>
           <p className="mb-3 text-[14.5px] leading-[1.55] text-[#64748B]">
-            {getValues("pickup")} → {getValues("dest")} · {getValues("size")}
+            {getValues("pickup")} → {getValues("dest")} · {moveSizeLabel(getValues("size"), locale)}
           </p>
           <p className="mb-[18px] text-[14.5px] leading-[1.55] text-[#64748B]">
-            A Vantage moving coordinator will reach out shortly. To speak with someone now, call{" "}
+            {copy.confirmation}{" "}
             <a
               href={telHref(business.phoneDisplay)}
               className="font-semibold text-brand-blue-bright"
@@ -526,7 +623,7 @@ export function QuoteWizard({
             onClick={handleReset}
             className="cursor-pointer rounded-lg2 border-[1.5px] border-cream-border bg-cream px-5 py-[11px] font-display text-sm font-bold tracking-[.04em] text-brand-blue uppercase"
           >
-            Start Over
+            {copy.reset}
           </button>
         </div>
       ) : (
@@ -535,9 +632,10 @@ export function QuoteWizard({
             <div>
               <ZipField
                 id={`${fieldIdPrefix}-pickup-zip`}
-                label="Moving From (ZIP)"
+                label={copy.pickup}
+                locale={locale}
                 fieldName="pickup"
-                placeholder="Pickup ZIP code"
+                placeholder={copy.pickupPlaceholder}
                 displayValue={pickupZip}
                 onDisplayChange={setPickupZip}
                 register={register}
@@ -546,23 +644,26 @@ export function QuoteWizard({
               />
               <ZipField
                 id={`${fieldIdPrefix}-dest-zip`}
-                label="Moving To (ZIP)"
+                label={copy.destination}
+                locale={locale}
+                onResolved={onDestinationResolved}
                 fieldName="dest"
-                placeholder="Destination ZIP code"
+                placeholder={copy.destinationPlaceholder}
                 displayValue={destZip}
                 onDisplayChange={setDestZip}
                 register={register}
                 setValue={setValue}
                 error={errors.dest}
               />
-              <Field label="Estimated Move Date" error={errors.date?.message}>
+              <Field id={`${fieldIdPrefix}-move-date`} label={copy.date} error={quoteError(errors.date?.message, locale)}>
                 <div onClick={trackDatePickerOpened} onFocusCapture={trackDatePickerOpened}>
                   <MoveDatePicker
                     id={`${fieldIdPrefix}-move-date`}
                     variant="main-site"
+                    locale={locale}
                     value={moveDate}
                     hasError={!!errors.date}
-                    placeholder="Select move date"
+                    placeholder={copy.datePlaceholder}
                     onChange={(nextDate) =>
                       setValue("date", nextDate, {
                         shouldDirty: true,
@@ -574,18 +675,21 @@ export function QuoteWizard({
                   />
                 </div>
               </Field>
-              <Field label="Move Size" error={errors.size?.message}>
+              <Field id={`${fieldIdPrefix}-size`} label={copy.size} error={quoteError(errors.size?.message, locale)}>
                 <select
+                  id={`${fieldIdPrefix}-size`}
+                  aria-invalid={!!errors.size}
+                  aria-describedby={errors.size ? `${fieldIdPrefix}-size-error` : undefined}
                   className={`${inputCls} ${errors.size ? inputErrCls : ""}`}
                   defaultValue=""
                   {...register("size")}
                 >
                   <option value="" disabled>
-                    Select move size…
+                    {copy.sizePlaceholder}
                   </option>
                   {MOVE_SIZES.map((s) => (
                     <option key={s} value={s}>
-                      {s}
+                      {moveSizeLabel(s, locale)}
                     </option>
                   ))}
                 </select>
@@ -595,27 +699,36 @@ export function QuoteWizard({
 
           {step === 1 && (
             <div>
-              <Field label="Full Name" error={errors.name?.message}>
+              <Field id={`${fieldIdPrefix}-name`} label={copy.name} error={quoteError(errors.name?.message, locale)}>
                 <input
                   className={`${inputCls} ${errors.name ? inputErrCls : ""}`}
-                  placeholder="Your name"
+                  placeholder={copy.namePlaceholder}
+                  id={`${fieldIdPrefix}-name`}
+                  aria-invalid={!!errors.name}
+                  aria-describedby={errors.name ? `${fieldIdPrefix}-name-error` : undefined}
                   {...register("name")}
                 />
               </Field>
-              <Field label="Email" error={errors.email?.message}>
+              <Field id={`${fieldIdPrefix}-email`} label={copy.email} error={quoteError(errors.email?.message, locale)}>
                 <input
                   type="email"
                   className={`${inputCls} ${errors.email ? inputErrCls : ""}`}
                   placeholder="you@email.com"
+                  id={`${fieldIdPrefix}-email`}
+                  aria-invalid={!!errors.email}
+                  aria-describedby={errors.email ? `${fieldIdPrefix}-email-error` : undefined}
                   {...register("email")}
                 />
               </Field>
-              <Field label="Phone" error={errors.phone?.message} className="mb-3.5">
+              <Field id={`${fieldIdPrefix}-phone`} label={copy.phone} error={quoteError(errors.phone?.message, locale)} className="mb-3.5">
                 <input
                   type="tel"
                   inputMode="tel"
                   className={`${inputCls} ${errors.phone ? inputErrCls : ""}`}
                   placeholder="(000) 000-0000"
+                  id={`${fieldIdPrefix}-phone`}
+                  aria-invalid={!!errors.phone}
+                  aria-describedby={errors.phone ? `${fieldIdPrefix}-phone-error` : undefined}
                   {...register("phone")}
                 />
               </Field>
@@ -626,16 +739,14 @@ export function QuoteWizard({
                   {...register("smsConsent")}
                 />
                 <span className="text-[11.5px] leading-[1.5] text-[#64748B]">
-                  I agree to receive SMS messages from {business.name} about my moving quote
-                  request, scheduling updates, and customer support. Msg &amp; data rates may apply.
-                  Reply STOP to opt out. Consent is not required to submit a quote request.
+                  {copy.consent}
                 </span>
               </label>
             </div>
           )}
 
           {submitError && (
-            <p className="mb-3 text-center text-[13.5px] text-red-500">{submitError}</p>
+            <p role="alert" className="mb-3 text-center text-[13.5px] text-red-500">{submitError}</p>
           )}
 
           <div className="flex gap-3">
@@ -646,7 +757,7 @@ export function QuoteWizard({
                 disabled={loading}
                 className={`${ghostBtn} px-5 py-3.5`}
               >
-                Back
+                {copy.back}
               </button>
             )}
             <button
@@ -654,33 +765,24 @@ export function QuoteWizard({
               disabled={loading}
               className={`${step === 0 ? `${yellowBtn} w-full py-[15px]` : step === 1 ? "flex-1 cursor-pointer rounded-lg2 border-none bg-brand-blue-bright py-3.5 font-display text-base font-bold tracking-[.04em] text-white uppercase shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0" : yellowBtn} ${step === 1 ? "" : step > 0 ? "flex-1 py-3.5" : ""}`}
             >
-              {loading
-                ? "Submitting…"
-                : step === 1
-                  ? isPanel
-                    ? "Get My Free Quote"
-                    : "Request Free Quote"
-                  : "Continue"}
+              {loading ? copy.submitting : step === 1 ? copy.submit : copy.continue}
             </button>
           </div>
         </>
       )}
 
-      {isPanel ? (
-        <p className="mt-4 flex items-center justify-center gap-[7px] text-center text-[12.5px] text-[#94a3b8]">
-          <Check className="text-brand-blue-bright" size={13} strokeWidth={2.5} aria-hidden />
-          We never sell your information.
-        </p>
-      ) : (
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-center text-[12.5px] text-[#94a3b8]">
-          {quoteSection.footerTrustItems.map((item) => (
-            <span key={item} className="inline-flex items-center gap-[5px]">
-              <Check className="text-brand-blue-bright" size={13} strokeWidth={2.5} aria-hidden />
-              {item}
-            </span>
-          ))}
-        </div>
+      {guideLinks && (
+        <aside className="mt-5 rounded-lg2 bg-cream p-3 text-sm">
+          {destination && <p className="mb-1 font-semibold">{destination.city || destination.state}, {destination.state}</p>}
+          <Link href={guideLinks[destinationGuide(destination)]} onClick={saveDraft} className="font-semibold text-brand-blue underline">
+            {destination ? copy.guide : copy.genericGuide}
+          </Link>
+        </aside>
       )}
+      {!result && <p className="mt-4 text-xs text-slate-600">{copy.draft} <button type="button" className="underline" onClick={handleReset} disabled={loading}>{copy.clearDraft}</button></p>}
+      <div className="mt-4 flex flex-wrap justify-center gap-x-3 gap-y-1 text-center text-xs text-slate-600">
+        {copy.trust.map((item) => <span key={item}>{item}</span>)}
+      </div>
     </form>
   );
 }

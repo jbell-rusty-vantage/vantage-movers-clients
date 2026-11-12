@@ -63,7 +63,7 @@ export function PolicyPage({ doc }: { doc: LegalDoc }) {
   return (
     <>
       <Header />
-      <main className="policy-copy bg-cream">
+      <main id="main-content" className="policy-copy bg-cream">
         <section className="bg-brand-blue py-16 text-white">
           <Container>
             <div className="max-w-3xl">

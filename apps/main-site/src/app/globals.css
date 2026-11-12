@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+.skip-link { position:absolute; left:1rem; top:-10rem; padding:1rem; background:white; color:#024799; z-index:100; }
+.skip-link:focus { top:.5rem; }
+:focus-visible { outline:3px solid #1763cf; outline-offset:4px; }
+a, main p { overflow-wrap:anywhere; }
+.worksheet table { table-layout:fixed; overflow-wrap:anywhere; }
+.worksheet th, .worksheet td { padding: .75rem; }
+@media (max-width: 400px) { .worksheet th, .worksheet td { padding:.5rem; font-size:.8rem; } }
+.editorial-cta { display:inline-flex; align-items:center; justify-content:center; border-radius:11px; background:#ffc02e; color:#10233e; padding:.9rem 1.25rem; font-weight:800; text-decoration:none; cursor:pointer; }
+.quote-entry, #quote, [id^="section-"] { scroll-margin-top:140px; }
+@media print {
+  .site-header, footer, .quote-entry, .preview-note, .editorial-cta { display:none !important; }
+  .editorial-page section { background:white !important; color:black !important; padding-top:1rem; padding-bottom:1rem; }
+  .editorial-page { font-size:11pt; }
+  .editorial-page table { width:100%; }
+  .editorial-page tr { break-inside:avoid; }
+  .editorial-page .overflow-x-auto { overflow:visible; }
+  .editorial-page a { color:black; }
+}
+
 @theme inline {
   --color-brand-blue: #024799;
   --color-brand-blue-bright: #1763cf;

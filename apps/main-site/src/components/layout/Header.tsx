@@ -1,90 +1,27 @@
 import Link from "next/link";
-import { Phone } from "lucide-react";
-import { business, headerChrome, navLinks } from "@/lib/content";
-import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
+import { business } from "@/lib/content";
+import { heroHeadingFont } from "@/lib/fonts";
+import { directoryPaths, entriesFor, navigationFor } from "@/lib/publication";
+import type { EditorialLocale } from "@/content/editorial/types";
 import { Container } from "@/components/ui/Container";
-import { ServicesDropdown } from "@/components/interactive/ServicesDropdown";
+import { BrowseNavigation } from "./BrowseNavigation";
 import { Logo } from "./Logo";
 
-/** Default nav spacing — layout-playground spacingScale.default */
-const NAV_SPACING = { py: 9, navPadX: 14, navPadY: 10 } as const;
-
-export function Header() {
+export function Header({ locale = "en", alternatePath, quoteHref }: {
+  locale?: EditorialLocale; alternatePath?: string; quoteHref?: string;
+}) {
+  const es = locale === "es";
+  const alternate = alternatePath ?? (entriesFor(es ? "en" : "es").length ? (es ? "/" : "/es") : undefined);
   return (
-    <header className="sticky top-0 z-[60] border-b border-cream-border-2 bg-white shadow-[0_2px_12px_rgba(2,71,153,.05)]">
+    <header className="site-header sticky top-0 z-[60] border-b border-cream-border-2 bg-white shadow-[0_2px_12px_rgba(2,71,153,.05)]">
+      <a className="skip-link" href="#main-content">{es ? "Ir al contenido" : "Skip to content"}</a>
       <Container className="px-4 sm:px-7">
-        <div
-          className="flex items-center justify-between gap-3 sm:gap-6"
-          style={{
-            paddingTop: `${NAV_SPACING.py}px`,
-            paddingBottom: `${NAV_SPACING.py}px`,
-          }}
-        >
-          <Logo />
-
-          <nav
-            className={`${heroHeadingFont.className} hidden items-center gap-1 text-[15.5px] font-semibold text-brand-blue lg:flex`}
-          >
-            <ServicesDropdown
-              triggerStyle={{
-                paddingLeft: `${NAV_SPACING.navPadX}px`,
-                paddingRight: `${NAV_SPACING.navPadX}px`,
-                paddingTop: `${NAV_SPACING.navPadY}px`,
-                paddingBottom: `${NAV_SPACING.navPadY}px`,
-              }}
-            />
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-none no-underline transition hover:bg-cream"
-                data-analytics-location="header_nav"
-                style={{
-                  paddingLeft: `${NAV_SPACING.navPadX}px`,
-                  paddingRight: `${NAV_SPACING.navPadX}px`,
-                  paddingTop: `${NAV_SPACING.navPadY}px`,
-                  paddingBottom: `${NAV_SPACING.navPadY}px`,
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3 sm:gap-4">
-            <a
-              href={business.phoneHref}
-              className="hidden items-center gap-2.5 no-underline sm:flex"
-              data-analytics-location="header"
-            >
-              <span className="grid size-[38px] flex-none place-items-center rounded-md2 bg-brand-yellow-soft">
-                <Phone className="size-[17px] text-brand-blue" strokeWidth={2} aria-hidden />
-              </span>
-              <span className={`${heroBodyFont.className} flex flex-col leading-[1.15]`}>
-                <span className="text-[11px] font-semibold text-[#64748B]">
-                  {headerChrome.phoneLabel}
-                </span>
-                <span className={`${heroHeadingFont.className} text-[15px] font-extrabold text-brand-blue`}>
-                  {business.phoneDisplay}
-                </span>
-              </span>
-            </a>
-            <a
-              href={business.phoneHref}
-              className={`${heroHeadingFont.className} flex h-10 flex-none items-center justify-center rounded-md2 bg-brand-yellow-soft px-3 text-[13px] leading-none font-extrabold tracking-[.03em] whitespace-nowrap text-brand-blue uppercase no-underline shadow-card sm:hidden`}
-              aria-label={`Call ${business.name} at ${business.phoneDisplay}`}
-              data-analytics-location="header_mobile"
-            >
-              Call
-            </a>
-            <Link
-              href="/#quote"
-              className={`${heroHeadingFont.className} flex h-10 flex-none items-center justify-center rounded-md2 bg-brand-blue-bright px-3 text-[13px] leading-none font-bold tracking-[.03em] whitespace-nowrap text-white uppercase no-underline shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue sm:h-auto sm:px-[22px] sm:py-3.5 sm:text-[15px] sm:tracking-[.04em]`}
-              data-analytics-event="cta_clicked"
-              data-analytics-cta-location="header"
-            >
-              {headerChrome.ctaLabel}
-            </Link>
+        <div className={`${heroHeadingFont.className} flex min-h-[66px] flex-wrap items-center justify-between gap-2 py-2 font-semibold text-brand-blue`}>
+          <Logo href={directoryPaths[locale].home} />
+          <BrowseNavigation locale={locale} links={navigationFor(locale)} services={entriesFor(locale).filter(e => e.kind === "service").map(e => ({ href: e.path, label: e.navLabel }))} alternatePath={alternate} alternateIsHome={!alternatePath} />
+          <div className="flex items-center gap-2">
+            <a href={business.phoneHref} className="rounded-md2 bg-brand-yellow-soft px-3 py-2.5 text-sm no-underline" data-analytics-location="header"><span className="hidden xl:inline">{business.phoneDisplay}</span><span className="xl:hidden">{es ? "Llamar" : "Call"}</span></a>
+            <Link href={quoteHref ?? `${directoryPaths[locale].home}#quote`} className="rounded-md2 bg-brand-blue-bright px-3 py-2.5 text-sm text-white no-underline" data-analytics-event="cta_clicked" data-analytics-cta-location="header">{es ? "Cotización" : "Free Quote"}</Link>
           </div>
         </div>
       </Container>

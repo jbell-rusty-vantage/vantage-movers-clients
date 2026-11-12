@@ -150,7 +150,7 @@ Hybrid CSS — do **not** convert existing sections to utility-only Tailwind.
 
 ## App: `apps/main-site` — Vantage Organic Main Site
 
-**Single-page marketing site** for Vantage Movers' owned organic traffic. Richer information architecture than partner landings — coverage map, FAQ accordion, services dropdown, multi-section scroll experience.
+**Organic marketing site** for Vantage Movers' owned organic traffic. Richer information architecture than partner landings — coverage map, FAQ accordion, services dropdown, multi-section scroll experience.
 
 ### Folder ownership
 
@@ -158,7 +158,7 @@ Hybrid CSS — do **not** convert existing sections to utility-only Tailwind.
 |------|------|
 | `src/app/` | Root route, `layout.tsx`, `globals.css` (@theme tokens), API route handlers |
 | `src/components/` | `HomePage` orchestrator + layout, sections, interactive widgets, UI primitives |
-| `src/lib/content.ts` | **All** site copy and structured data (business info, services, FAQ, testimonials fallback, etc.) |
+| `src/lib/content.ts` | Existing homepage/business copy; source-reviewed editorial drafts live in `src/content/editorial/` |
 | `src/content/partners.ts` | Lead source config (`MAIN_SITE` only — `source_company: main_site`) |
 | `src/schemas/` | Quote form Zod schema (`quote-form.schema.ts`) |
 | `src/lib/` | Helpers (`format`, `estimate`, `images`, `icons`) |
@@ -239,3 +239,10 @@ After substantive changes, run `pnpm lint` and `pnpm typecheck` from the monorep
 ## Cloud site variations
 
 Start at `docs/cloud-site-variations.md` and the dated evidence in `docs/site-preview-status.md`. These supersede older route/font descriptions above where they differ from current source. Preview API setup is isolated from production; promote source by rebuilding on main, never by promoting a prebuilt preview artifact.
+
+
+## Main Site optimization integration (November 12, 2026)
+
+The active packet is `docs/main-site-preview/README.md`. English page routes live under `src/app/(en)` and Spanish under `src/app/es`, with separate root HTML language layouts. API, robots, sitemap and PDF routes retain their public paths. The editorial registry owns eight bilingual services, three resources and Wisconsin/Madison. `lib/publication.ts` gates lookup, navigation and alternates: drafts render only in explicit Preview mode; production requires locale review and a named reviewer. Sitemap enumerates reviewed entries only.
+
+QuoteWizard keeps the established schema/payload and stores an expiring session-only draft across guide/language navigation. Destination guide links require confirmed Places city/state identity; reading a guide does not alter the quote. Preview analytics is a sanitized local diagnostic buffer, not a production collector or dashboard receipt. Static images are in `public/images/preview`; generated actors are illustrations. The Owner is the designated content/media reviewer. Production remains subject to source selection and a rebuild with Production settings.

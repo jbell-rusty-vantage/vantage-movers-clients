@@ -48,16 +48,16 @@ interface CardData {
   quote: string;
   name: string;
   sublabel: string;
-  rating: number;
+  rating: number | null;
 }
 
 function toCardData(items: Testimonial[]): CardData[] {
   return items.map((t) => ({
     key: t.id,
     quote: truncate(t.review_text),
-    name: t.reviewer_name || "Verified customer",
-    sublabel: t.source ? `Verified review via ${t.source}` : "Verified review",
-    rating: t.rating || 5,
+    name: t.reviewer_name || "Customer",
+    sublabel: t.source ? `Review via ${t.source}` : "Customer feedback",
+    rating: Number.isFinite(t.rating) && t.rating >= 1 && t.rating <= 5 ? t.rating : null,
   }));
 }
 
@@ -76,12 +76,14 @@ function TestimonialStars({
   style,
   fill,
   stroke,
+  rating,
   className,
 }: {
   size: number;
   style: StarStyleId;
   fill: string;
   stroke: string;
+  rating: number;
   className?: string;
 }) {
   const starProps =
@@ -92,17 +94,18 @@ function TestimonialStars({
         : { className: "fill-current opacity-35", strokeWidth: 1.5 };
 
   return (
-    <div className={`flex gap-0.5 ${className ?? ""}`} aria-label="5 out of 5 stars">
+    <div className={`flex gap-0.5 ${className ?? ""}`} aria-label={`${rating} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
           size={size}
           className={starProps.className}
-          style={{ color: stroke, fill: style === "outline" ? "none" : fill }}
+          style={{ color: stroke, fill: style === "outline" || i >= Math.floor(rating) ? "none" : fill }}
           strokeWidth={starProps.strokeWidth}
           aria-hidden
         />
       ))}
+      <span className="ml-1 text-xs text-brand-blue">{rating}/5</span>
     </div>
   );
 }
@@ -122,8 +125,9 @@ function TestimonialCard({
         padding: `${CARD_PADDING}px`,
       }}
     >
-      {SHOW_STARS && (
+      {SHOW_STARS && data.rating !== null && (
         <TestimonialStars
+          rating={data.rating}
           size={STAR_SIZE}
           style={STAR_STYLE}
           fill={STAR_COLORS.fill}

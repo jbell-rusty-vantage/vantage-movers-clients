@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/site";
+import { editorialEntries } from "@/content/editorial";
+import { canRenderEntry, directoryPaths } from "@/lib/publication";
 
 const routes = [
   { path: "/", priority: 1, changeFrequency: "weekly" },
@@ -18,12 +20,15 @@ const routes = [
 }>;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-
-  return routes.map((route) => ({
+  const reviewed = editorialEntries.filter(e => canRenderEntry(e, "production"));
+  const contentRoutes: MetadataRoute.Sitemap = reviewed.map(e => ({
+    url: absoluteUrl(e.path), lastModified: e.review.checkedAt,
+    alternates: { languages: Object.fromEntries(reviewed.filter(a => a.id === e.id).map(a => [a.locale, absoluteUrl(a.path)])) },
+  }));
+  const directories = (["en", "es"] as const).flatMap(locale => (["service", "resource", "location"] as const).filter(kind => reviewed.some(e => e.locale === locale && (kind === "location" ? e.kind === "state" || e.kind === "city" : e.kind === kind))).map(kind => ({ url: absoluteUrl(directoryPaths[locale][kind]) })));
+  return [...routes.map((route) => ({
     url: absoluteUrl(route.path),
-    lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
-  }));
+  })), ...directories, ...contentRoutes];
 }

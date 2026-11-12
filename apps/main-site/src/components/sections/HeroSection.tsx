@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { Suspense } from "react";
 import { Headphones, Package, Users } from "lucide-react";
-import { business, hero, heroMetrics } from "@/lib/content";
+import { business, hero as englishHero } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { SITE_IMAGES } from "@/lib/images";
+import { entryById } from "@/lib/publication";
 import { Container } from "@/components/ui/Container";
 import { QuoteWizardSkeleton } from "@/components/feedback/LoadingSkeletons";
-import { RollingNumber } from "@/components/ui/RollingNumber";
 import { QuoteWizard } from "@/components/interactive/QuoteWizard";
 import {
   heroBodyTextShadowStyles,
@@ -33,9 +33,19 @@ const SECONDARY_ICON_CIRCLE_CLASS = resolveHeroSecondaryIconCircleClasses("glass
 
 interface HeroSectionProps {
   bodyPanel?: boolean;
+  locale?: "en" | "es";
 }
 
-export function HeroSection({ bodyPanel = false }: HeroSectionProps) {
+export function HeroSection({ bodyPanel = false, locale = "en" }: HeroSectionProps) {
+  const es = locale === "es";
+  const genericGuide = entryById("who-handles-my-move", locale)?.path;
+  const guideLinks = genericGuide ? { generic: genericGuide, wisconsin: entryById("wisconsin", locale)?.path ?? genericGuide, madison: entryById("madison-wisconsin", locale)?.path ?? genericGuide } : undefined;
+  const hero = es ? {
+    headline: "Prepare su mudanza de un estado a otro",
+    paragraph: "Empiece con los detalles: qué llevará, dónde se muda y cuándo estará listo. Revise el inventario, los accesos y los servicios antes de elegir una propuesta.",
+    supportingLine: "Vantage coordina mudanzas como intermediario. El transportista asignado realiza la recogida, el transporte y la entrega.",
+    primaryCta: "Solicitar una cotización", secondaryCta: "Hablar con Vantage",
+  } : englishHero;
   const bodyCopy = (
     <>
       <p
@@ -143,23 +153,17 @@ export function HeroSection({ bodyPanel = false }: HeroSectionProps) {
                   />
                 </span>
                 <span
-                  className={`${heroHeadingFont.className} text-[30px] leading-none font-black`}
+                  className={`${heroHeadingFont.className} text-[24px] leading-none font-black`}
                   style={{ color: HERO_COLORS.stats, textShadow: HERO_BODY_SHADOW }}
                 >
-                  <RollingNumber
-                    fallback={heroMetrics.familiesMoved.fallback}
-                    min={heroMetrics.familiesMoved.min}
-                    max={heroMetrics.familiesMoved.max}
-                    suffix={heroMetrics.familiesMoved.suffix}
-                    className="min-w-[6.5em]"
-                  />
+                  {es ? "Su inventario" : "Your inventory"}
                 </span>
               </div>
               <div
                 className="text-[15px] leading-snug font-semibold"
                 style={{ color: HERO_COLORS.statsLabel, textShadow: HERO_BODY_SHADOW }}
               >
-                {heroMetrics.familiesMoved.label}
+                {es ? "Revise qué llevará" : "Review what you are taking"}
               </div>
             </div>
             <div className="min-w-[190px] flex-1 rounded-md2 border border-white/25 bg-[rgba(4,18,38,.55)] px-[22px] py-[18px] shadow-[0_8px_24px_rgba(0,0,0,.22)] backdrop-blur-md">
@@ -172,30 +176,24 @@ export function HeroSection({ bodyPanel = false }: HeroSectionProps) {
                   />
                 </span>
                 <span
-                  className={`${heroHeadingFont.className} text-[30px] leading-none font-black`}
+                  className={`${heroHeadingFont.className} text-[24px] leading-none font-black`}
                   style={{ color: HERO_COLORS.stats, textShadow: HERO_BODY_SHADOW }}
                 >
-                  <RollingNumber
-                    fallback={heroMetrics.recentMoves.fallback}
-                    min={heroMetrics.recentMoves.min}
-                    max={heroMetrics.recentMoves.max}
-                    suffix={heroMetrics.recentMoves.suffix}
-                    className="min-w-[2.5ch]"
-                  />
+                  {es ? "Su ruta" : "Your route"}
                 </span>
               </div>
               <div
                 className="text-[15px] leading-snug font-semibold"
                 style={{ color: HERO_COLORS.statsLabel, textShadow: HERO_BODY_SHADOW }}
               >
-                {heroMetrics.recentMoves.label}
+                {es ? "Confirme acceso y fechas" : "Confirm access and dates"}
               </div>
             </div>
           </div>
         </div>
 
         <Suspense fallback={<QuoteWizardSkeleton />}>
-          <QuoteWizard />
+          <QuoteWizard locale={locale} guideLinks={guideLinks} />
         </Suspense>
       </Container>
     </section>

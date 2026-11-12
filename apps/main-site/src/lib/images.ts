@@ -11,10 +11,10 @@ export const HERO_IMAGES = {
 export type HeroImageKey = keyof typeof HERO_IMAGES;
 
 export const SITE_IMAGES = {
-  hero: HERO_IMAGES.enhanced,
+  hero: "/images/preview/home-inventory.webp",
   longDistanceMoves: "/long_distance_traffic.webp",
-  packingStorage: "/couple_with_boxes.jpg",
-  officeMoves: "/moving_boxes_in_office.webp",
+  packingStorage: "/images/preview/packing-detail.webp",
+  officeMoves: "/images/preview/office-preparation.webp",
   militaryMoves: "/military_moves.webp",
   aboutCoordinators: "/customer_service_rep.webp",
   expertiseBanner: "/sitepictures/Truck%20Loaded.jpeg",

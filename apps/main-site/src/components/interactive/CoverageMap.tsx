@@ -208,7 +208,7 @@ export function CoverageMap() {
               color: COVERAGE_COLORS.ctaText,
             }}
           >
-            Get a {selName} Estimate <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
+            Discuss Your Route <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
           </a>
         </div>
       </div>
@@ -225,7 +225,7 @@ export function CoverageMap() {
             className={`m-0 text-sm font-bold tracking-[.06em] uppercase ${heroHeadingFont.className}`}
             style={{ color: COVERAGE_COLORS.headingColor }}
           >
-            Coverage Map
+            Destination Map
           </p>
           <p
             className={`m-0 truncate text-right text-sm font-extrabold transition-opacity duration-150 ${heroHeadingFont.className}`}
@@ -251,7 +251,7 @@ export function CoverageMap() {
             viewBox={usa.viewBox}
             className="mx-auto block h-auto w-full max-h-[min(52vw,420px)]"
             role="img"
-            aria-label="Interactive map of United States coverage. Click a state to view details."
+            aria-label="United States destination planning map. Select a state for planning questions, not confirmed service availability."
           >
             <defs>
               <filter id="coverage-state-shadow" x="-20%" y="-20%" width="140%" height="140%">

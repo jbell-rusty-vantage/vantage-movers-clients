@@ -2,6 +2,21 @@
 
 Work from the branch and app identified in the [packet index](README.md). Each heading below is a separate chat brief. “Done” means the listed output and proof exist in the repo or linked PR. Record any pending evidence explicitly. The present packet completes initial research and planning. The sessions below implement and qualify the site.
 
+## Integrated progress — November 12, 2026
+
+| Stage | Implemented / tested | Remaining qualification |
+|---|---|---|
+| 1 | Baseline and design complete; original evidence preserved | None for baseline scope |
+| 2 | 26 original EN/ES drafts, sources/claims, worked estimate and inventory sheets, Madison article | Owner is designated reviewer; locale approvals pending |
+| 3 | Navigation, services, full Spanish quote UI, persistent quote draft, retry/capture gates | Deployed UI receipt and Owner visual selection |
+| 4 | Resource/state/city routes, confirmed destination fallback, print, Back/reload/locale checks | Geolocation is not offered; manual entry works. No denied-permission scenario claimed |
+| 5 | Six generated editorial scenes, actual synthetic UI capture, manual bilingual process sequence | Owner media approval; model-specific Astra authorship not claimed |
+| 6 | Eight services × two locales, full route/link matrix, contact and consumer paths | Owner service/Spanish approval; dedicated careers and complaints workflows remain separate |
+| 7 | Privacy-limited intentional starts/progression/capture, local preview diagnostics; source-linked helper prototype; companion scopes | Analytics destination/dashboard receipts and authoritative Booking joins are not implemented by local diagnostics |
+| 8 | Frozen install, package contracts/typecheck/lint and optimized build; preview API isolation/readback preflight | Current deployed-source receipt, stable alias and Owner production decision |
+
+Follow the per-stage evidence linked from the packet index. “Draft,” “tested locally,” “deployed” and “Owner approved” remain distinct states.
+
 ### 1. Baseline and implementation design
 
 **Complete — November 12, 2026.** [Evidence and Session 2 handoff](session-1/README.md). Local rendering is current-main source in development mode with empty API content; production captures are separate. Retry/confirmation browser evidence is mocked, not Lead persistence. No runtime integration or production selection is implied.

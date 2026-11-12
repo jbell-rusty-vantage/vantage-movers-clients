@@ -17,4 +17,8 @@ Use the repository **jbell-rusty-vantage/vantage-movers-clients**, branch **agen
 
 To launch the first chat, say “Use the Main Site optimization branch, read docs/main-site-preview/README.md, execute Session 1 in sessions.md, and leave the evidence for Session 2.”
 
-**Session 1 completed November 12, 2026:** [baseline evidence and Session 2 handoff](session-1/README.md), [annotated desktop/phone layouts](session-1/layouts.html), [quote/route inventory](session-1/inventory-and-quote-flow.md), and [selective integration plan](session-1/reuse-and-integration.md). Next: Session 2 editorial production. Public runtime remains the production control.
+**Integrated implementation — November 12, 2026:** the branch now contains the bilingual service/resource/destination journey, preserved quote progress, process imagery and isolated preview diagnostics. The Owner designated themselves as content reviewer. All 26 editorial locale entries remain drafts until that review; production lookup/navigation/sitemap exclude them. Text stays in the versioned content registry and optimized assets in `public`; the Owner's existing Blob pipeline can replace asset storage without introducing a second publishing system.
+
+Evidence: [Session 1 baseline](session-1/README.md), [editorial drafts and sources](session-2/README.md), [bilingual quote walkthrough](session-3/wizard-evidence.md), [publishing/browser checks](session-4/README.md), [media review](session-5/README.md), [route matrix](session-6/route-matrix.md), [measurement boundary](session-7/README.md), and [deployed qualification runbook](session-8/qualification-runbook.md).
+
+The next release proof is the integrated deployment's own synthetic Form Lead receipt, followed by Owner review of EN/ES copy, images and design. Preview diagnostics are deliberately local: analytics dashboard delivery is not qualified. No production selection or production deployment is implied by the implementation checks.
