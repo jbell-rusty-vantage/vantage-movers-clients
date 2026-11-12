@@ -2,6 +2,8 @@
 
 Owner direction · November 12, 2026
 
+**Current review work:** the [Owner feedback revision and next-session handoff](owner-feedback/README.md) replaces Browse + with hover-open service cards, improves service-page composition and adds military appreciation, a fuller bilingual footer and a referral trust grid. This is a bounded preview-stage revision; review and production selection remain with the Owner.
+
 Optimize the Main Site customers use today. Keep its recognizable Vantage UI, make services and destinations independently browsable, and ship one integrated preview that the Owner can exercise and select for production. Safe Ship’s organic site supplies the navigation and content reference. Vantage supplies the visual language, service facts, people, editorial voice, contact paths and quote flow.
 
 ## Start a session

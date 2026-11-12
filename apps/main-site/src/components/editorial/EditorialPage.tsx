@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Suspense } from "react";
 import type { EditorialEntry, EditorialLocale } from "@/content/editorial/types";
 import { editorialSources } from "@/content/editorial/sources";
@@ -12,6 +11,9 @@ import { PrintButton } from "./PrintButton";
 import { EditorialCards } from "./EditorialCards";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { absoluteUrl } from "@/lib/site";
+import { ServiceHero } from "./ServiceHero";
+import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { MilitaryAppreciation } from "@/components/sections/MilitaryAppreciation";
 
 export function guideLinksFor(locale: EditorialLocale) {
   const generic = entryById("who-handles-my-move", locale)?.path ?? directoryPaths[locale].resource;
@@ -33,8 +35,7 @@ export function EditorialPage({ entry }: { entry: EditorialEntry }) {
     <JsonLd data={{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: es ? "Inicio" : "Home", item: absoluteUrl(paths.home) }, { "@type": "ListItem", position: 2, name: directoryName, item: absoluteUrl(directory) }, { "@type": "ListItem", position: 3, name: entry.navLabel, item: absoluteUrl(entry.path) }] }} />
     <Header locale={entry.locale} alternatePath={alternateFor(entry)?.path} quoteHref="#quote" />
     <main id="main-content" data-content-id={entry.id} className="editorial-page">
-      <section className="relative overflow-hidden bg-brand-blue py-10 text-white sm:py-16">
-        {entry.kind === "service" && <><Image src={entry.id === "packing-services" ? "/images/preview/packing-detail.webp" : "/images/preview/home-inventory.webp"} alt="" fill priority sizes="100vw" className="object-cover object-right opacity-25" /><div className="absolute inset-0 bg-gradient-to-r from-brand-blue via-brand-blue/85 to-brand-blue/30" /></>}
+      {entry.kind === "service" ? <ServiceHero entry={entry} /> : <section className="relative overflow-hidden bg-brand-blue py-10 text-white sm:py-16">
         <Container className="relative">
           <nav aria-label={es ? "Ruta de navegación" : "Breadcrumb"} className="mb-7 flex flex-wrap gap-2 text-sm text-white/85">
             <Link href={paths.home}>{es ? "Inicio" : "Home"}</Link><span aria-hidden>/</span><Link href={directory}>{directoryName}</Link>
@@ -45,12 +46,13 @@ export function EditorialPage({ entry }: { entry: EditorialEntry }) {
           <p className="mt-6 max-w-[760px] text-lg leading-relaxed">{entry.description}</p>
           <div className="mt-7 flex flex-wrap gap-4"><a className="editorial-cta" href="#quote">{es ? "Solicitar una cotización" : "Request a moving quote"}</a><Link className="self-center text-white" href={paths.resource}>{es ? "Explorar guías" : "Explore moving guides"}</Link></div>
         </Container>
-      </section>
+      </section>}
       <Container className="py-10 sm:py-14">
         {entry.review.status === "draft" && <aside className="preview-note mb-8 rounded-lg2 border border-cream-border bg-cream p-4 text-sm" aria-label={es ? "Estado de revisión" : "Review status"}>{es ? "Vista previa editorial. Borrador pendiente de revisión de Vantage y del texto en español." : "Editorial preview. Draft awaiting Vantage review; Spanish approval is tracked separately."}</aside>}
         <div className="grid items-start gap-10 lg:grid-cols-[1.15fr_.85fr]">
-          <div className="min-w-0">
-            {entry.sections.map((section, i) => <section key={section.heading} className="mb-10" aria-labelledby={`section-${i}`}>
+          <div id="service-details" className="min-w-0 scroll-mt-36">
+            {entry.sections.map((section, i) => <section key={section.heading} className={entry.kind === "service" ? "mb-6 rounded-2xl border border-cream-border bg-cream/50 p-6 sm:p-8" : "mb-10"} aria-labelledby={`section-${i}`}>
+              {entry.kind === "service" && <p className="mb-3 text-xs font-bold tracking-widest text-brand-blue-bright">{String(i + 1).padStart(2, "0")} / {entry.navLabel}</p>}
               <h2 id={`section-${i}`} className="mb-4 font-display text-2xl font-extrabold text-brand-blue">{section.heading}</h2>
               {section.paragraphs.map(p => <p key={p} className="mb-4 text-base leading-[1.8] text-ink-soft">{p}</p>)}
               {section.bullets && <ul className="list-disc space-y-3 pl-6 leading-[1.75] text-ink-soft">{section.bullets.map(b => <li key={b}>{b}</li>)}</ul>}
@@ -75,6 +77,9 @@ export function EditorialPage({ entry }: { entry: EditorialEntry }) {
         </section>
         {related.length > 0 && <section className="mt-12"><h2 className="mb-6 font-display text-2xl font-bold text-brand-blue">{es ? "Siguiente paso" : "Your next step"}</h2><EditorialCards entries={related} /></section>}
       </Container>
+      {entry.kind === "service" && <HowItWorksSection locale={entry.locale} />}
+      {entry.id === "military-moving" && <MilitaryAppreciation locale={entry.locale} servicePage />}
+      {entry.kind === "service" && <section className="bg-cream py-14"><Container className="flex flex-wrap items-center justify-between gap-6"><h2 className="max-w-2xl font-display text-3xl font-extrabold text-brand-blue">{es ? "Su próximo capítulo empieza con una conversación." : "Your next chapter starts with a conversation."}</h2><a href="#quote" className="editorial-cta">{es ? "Planifique su mudanza →" : "Let’s plan your move →"}</a></Container></section>}
     </main><SiteFooter locale={entry.locale} />
   </>;
 }

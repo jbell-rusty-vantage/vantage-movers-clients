@@ -14,6 +14,7 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TrustBand } from "@/components/sections/TrustBand";
 import { TrustStrip } from "@/components/sections/TrustStrip";
+import { MilitaryAppreciation } from "@/components/sections/MilitaryAppreciation";
 import { WhyVantageSection } from "@/components/sections/WhyVantageSection";
 import { HomePageJsonLd } from "@/components/seo/HomePageJsonLd";
 
@@ -54,6 +55,7 @@ export function HomePage({
         <CoverageSection />
         <WhyVantageSection />
         <AboutSection />
+        <MilitaryAppreciation />
         <Suspense fallback={<TestimonialsSectionSkeleton />}>
           <TestimonialsStream testimonialsPromise={testimonialsPromise} />
         </Suspense>

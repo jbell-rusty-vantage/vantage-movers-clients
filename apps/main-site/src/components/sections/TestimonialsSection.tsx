@@ -269,13 +269,13 @@ interface TestimonialsSectionProps {
 export function TestimonialsSection({ items = [] }: TestimonialsSectionProps) {
   const publishedItems = items.filter((item) => item.published);
   if (publishedItems.length === 0) {
-    return null;
+    return <section id="testimonials" className="bg-cream py-12"><Container><h2 className="font-display text-2xl font-bold text-brand-blue">Customer feedback</h2><p className="mt-3 text-ink-soft">There are no published reviews to display here right now.</p></Container></section>;
   }
 
   const carouselTrackCards = fillMarquee(toCardData(publishedItems));
 
   return (
-    <section className="relative overflow-hidden bg-brand-blue py-24">
+    <section id="testimonials" className="relative overflow-hidden bg-brand-blue py-24">
       <div
         className="absolute -top-[100px] -left-[100px] size-[420px] rounded-full bg-[radial-gradient(circle,rgba(46,134,222,.22),transparent_65%)]"
         aria-hidden
