@@ -1,6 +1,6 @@
 // Credentials remain in this Node process. Never import this module into browser code.
 import { readFile, mkdir, writeFile } from "node:fs/promises";
-import { parseEnv } from "node:util";
+import { parseEnv, isDeepStrictEqual } from "node:util";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import dns from "node:dns";
@@ -116,7 +116,7 @@ export async function exactReferenceReadback(reference, api, expected = {}) {
     if (expected.websiteAttribution) {
       const { received_at, ...snapshot } = lead.website_attribution ?? {};
       check(Boolean(received_at), "Server receipt timestamp missing");
-      check(JSON.stringify(snapshot) === JSON.stringify(expected.websiteAttribution), "Persisted website attribution mismatch");
+      check(isDeepStrictEqual(snapshot, expected.websiteAttribution), "Persisted website attribution mismatch");
     }
     const id = String(lead._id);
     const read = await api.get(`/api/v1/form-leads/${id}`);

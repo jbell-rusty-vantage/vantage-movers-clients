@@ -29,7 +29,7 @@ page.on('pageerror', e => report.failures.push({ name: 'Browser exception', erro
 const internal = new Set();
 async function go(path) {
   const response = await page.goto(new URL(path, base).href);
-  await page.locator('footer.bg-cream').waitFor();
+  await page.locator('footer.bg-cream:visible').waitFor();
   await page.evaluate(() => document.fonts.ready);
   check(response.status() === 200, 'Route renders', { path, status: response.status() });
 }
@@ -44,9 +44,9 @@ async function shot(name, locator) {
 for (const locale of ['en', 'es']) {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await go(locale === 'en' ? '/' : '/es');
-  const services = await page.locator(`footer.bg-cream nav[aria-label="${locale === 'en' ? 'Services' : 'Servicios'}"] a`).evaluateAll(els => els.map(e => e.getAttribute('href')));
+  const services = await page.locator(`footer.bg-cream:visible nav[aria-label="${locale === 'en' ? 'Services' : 'Servicios'}"] a`).evaluateAll(els => els.map(e => e.getAttribute('href')));
   check(services.length === 8, 'Eight service links', { locale });
-  for (const href of await page.locator('footer.bg-cream a').evaluateAll(els => els.map(e => e.getAttribute('href')))) if (href.startsWith('/')) internal.add(href);
+  for (const href of await page.locator('footer.bg-cream:visible a').evaluateAll(els => els.map(e => e.getAttribute('href')))) if (href.startsWith('/')) internal.add(href);
   const trigger = page.getByRole('button', { name: locale === 'en' ? 'Services' : 'Servicios', exact: true });
   await trigger.hover();
   const menu = page.getByRole('navigation', { name: locale === 'en' ? 'Moving services' : 'Servicios de mudanza', exact: true });
@@ -64,7 +64,7 @@ for (const locale of ['en', 'es']) {
   if (locale === 'en') {
     await shot('trust-desktop', page.locator('main > section').filter({ hasText: 'You may have found us here.' }));
     await shot('military-desktop', page.locator('#military-appreciation'));
-    await shot('footer-desktop', page.locator('footer.bg-cream'));
+    await shot('footer-desktop', page.locator('footer.bg-cream:visible'));
   }
   for (const width of [1440, 390, 320]) {
     await page.setViewportSize({ width, height: width === 1440 ? 1000 : 844 });
@@ -83,7 +83,7 @@ for (const locale of ['en', 'es']) {
       check(await mobileMenu.isVisible(), 'Mobile menu opens on tap', { locale });
       await mobileMenu.locator('a').last().click();
       check(await mobileMenu.count() === 0, 'Mobile link closes menu', { locale });
-      await shot(`footer-${locale}-390`, page.locator('footer.bg-cream'));
+      await shot(`footer-${locale}-390`, page.locator('footer.bg-cream:visible'));
     }
   }
 }

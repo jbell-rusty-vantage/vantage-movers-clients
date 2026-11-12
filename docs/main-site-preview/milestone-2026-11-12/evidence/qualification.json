@@ -1,0 +1,38 @@
+{
+  "site_application_sha": "73b4d7c7494e3f43cc006b2e88137596860ef0b1",
+  "site_ci_merge_sha": "261f71f1c0820f25899ef10548760e74fef4cf2a",
+  "application_tree_equal": true,
+  "main_site_tests": 43,
+  "partner_tests": 5,
+  "api_origin_tests": 2,
+  "workspace_typecheck": "passed",
+  "workspace_lint": "passed; two pre-existing Clients warnings",
+  "server_focused_tests": 15,
+  "server_route_scope_tests": 3,
+  "deployed_service_navigation_footer": 220,
+  "deployed_resource_media": 158,
+  "browser_failures": 0,
+  "actual_200_percent_browser_zoom": {
+    "status": "unverified",
+    "surface": "supported in-app browser",
+    "attempt": "Ctrl-plus; exposed API has no actual zoom setting",
+    "observed_before_and_after": {
+      "devicePixelRatio": 1,
+      "visualViewportScale": 1,
+      "innerWidth": 757
+    },
+    "not_substituted": [
+      "viewport resizing",
+      "CDP scale emulation",
+      "unsupported native Firefox control"
+    ]
+  },
+  "publication": {
+    "localized_entries": 32,
+    "status": "draft",
+    "owner_approval": false,
+    "production_deployment": false
+  },
+  "analytics_dashboard": "Prior session receipts retain original source; no fresh dashboard receipt claimed for automated Chromium",
+  "local_database_proof": "canonical Lead/replay/immutable correction/Booking/Cancellation/report passed on disposable loopback replica"
+}

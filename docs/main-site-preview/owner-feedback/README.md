@@ -1,5 +1,7 @@
 # Owner feedback — preview design revision
 
+**Follow-up completed for review:** the [November 12 milestone](../milestone-2026-11-12/README.md) addresses the independently actionable service/media/footer/resource work below and adds bounded server attribution. This original feedback record and its source receipts remain intact. Unsupported business claims and content/media publication approval remain with the Owner.
+
 November 12, 2026. The next outcome is Owner review of this visual revision, followed by a bounded page/content refinement session. This closes the first feedback pass within the existing preview stage. It does not complete the five-stage website operations roadmap or authorize production publication.
 
 ## Implemented

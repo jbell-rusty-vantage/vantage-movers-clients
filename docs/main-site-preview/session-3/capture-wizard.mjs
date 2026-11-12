@@ -65,7 +65,7 @@ try {
     await page.locator(".vdp__day-btn:not(.vdp__day-btn--disabled):not(.vdp__day-btn--outside)").last().click();
     await form.getByLabel("Move Size", { exact: true }).selectOption("2 Bedrooms");
     const requestCapture = await form.screenshot({ path: `${evidence}/wizard-${width}-request.png` });
-    if (width === 1440) {
+    if (width === 1440 && process.env.MAIN_SITE_QA_UPDATE_ASSET === "1") {
       const assetDirectory = fileURLToPath(new URL("../../../apps/main-site/public/images/preview/", import.meta.url));
       await mkdir(assetDirectory, { recursive: true });
       await sharp(requestCapture).webp({ quality: 85 }).toFile(`${assetDirectory}/quote-request.webp`);

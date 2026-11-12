@@ -1,5 +1,7 @@
 # Measurement and companion workflow boundary
 
+**November 12 follow-up:** the [attribution milestone](../milestone-2026-11-12/README.md) closes the server implementation gap in isolated preview: optional bounded Form Lead snapshots and canonical Booking/Cancellation reporting. Earlier dashboard receipts below retain their original source identity; they are not a new receipt for the milestone source. Production design selection remains open.
+
 November 12, 2026. Implemented on `agent/main-site-optimization`, Main Site only. [Actual Preview analytics and performance receipts are now qualified](analytics-qualification.md), including Production exclusion. Owner review and production selection remain open. Local diagnostics are not themselves dashboard receipts or Booking attribution.
 
 ## Implemented measurement

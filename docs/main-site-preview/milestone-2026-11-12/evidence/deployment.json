@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-11-12T18:21:23.398Z",
+  "site": {
+    "application_sha": "73b4d7c7494e3f43cc006b2e88137596860ef0b1",
+    "ci_test_merge_sha": "261f71f1c0820f25899ef10548760e74fef4cf2a",
+    "tree_equal": true,
+    "workflow_url": "https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43276970391",
+    "workflow_status": "success",
+    "deployment_id": "dpl_EEgWHKJ66vG8DN7fQUc5Wc1sdZLi",
+    "immutable_url": "https://vantage-movers-clients-main-site-4oxm9wd0i-vantage-4d3db9ef.vercel.app",
+    "stable_alias": "https://vantage-main-site-optimization.vercel.app",
+    "alias_verified": true,
+    "target": "preview",
+    "state": "READY"
+  },
+  "api": {
+    "application_sha": "5ba8164df5ac63b2061ba3e5ba8c1af2532c6ab2",
+    "workflow_url": "https://github.com/jbell-rusty-vantage/vantage-movers-server/actions/runs/43278194506",
+    "workflow_status": "success",
+    "deployment_id": "dpl_8FXvvSEzuSULthUkvBZXkG7Hdfcb",
+    "immutable_url": "https://vantage-sites-preview-fponqu4t0-vantage-4d3db9ef.vercel.app",
+    "stable_alias": "https://vantage-sites-preview-api.vercel.app",
+    "runtime_sha_verified": true,
+    "target": "preview",
+    "state": "READY",
+    "database": "testvantagemovers_sitepreview"
+  },
+  "capture": {
+    "api_sha": "e94a27a6ba9e9c02fd65b3429f9f24fb0c18d4a2",
+    "reference": "MS-20261112-4223D384CF-PREVIEW-1794507284047",
+    "preview_count": 1,
+    "production_count": 0,
+    "new_submissions": 1,
+    "final_api_reread_new_submissions": 0,
+    "evidence": "../../session-8/evidence/attribution-20261112/final-api-readback.json"
+  },
+  "partner_preview": {
+    "workflow_url": "https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43276970304",
+    "status": "success",
+    "reason": "Existing workflow triggered by shared package change"
+  },
+  "server_quality": {
+    "workflow_url": "https://github.com/jbell-rusty-vantage/vantage-movers-server/actions/runs/43278205508",
+    "status": "success",
+    "typecheck": "passed",
+    "lint": "passed",
+    "full_test_suite": "passed",
+    "quality_tests": "passed",
+    "completed_at": "2026-11-12T18:23:22Z"
+  },
+  "release_boundary": {
+    "production_deployed": false,
+    "editorial_entries_approved": 0,
+    "localized_draft_entries": 32,
+    "growth_campaigns_started": false,
+    "actual_200_percent_zoom": "unverified"
+  }
+}

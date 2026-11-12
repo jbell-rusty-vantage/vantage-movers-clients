@@ -1,0 +1,1287 @@
+{
+  "source": "73b4d7c7494e3f43cc006b2e88137596860ef0b1",
+  "capturedAt": "2026-11-12T18:14:04.314Z",
+  "base": "https://vantage-movers-clients-main-site-4oxm9wd0i-vantage-4d3db9ef.vercel.app",
+  "checks": [
+    {
+      "ok": true,
+      "name": "Six resource destinations",
+      "detail": {
+        "locale": "en",
+        "paths": [
+          "/resources/comparing-moving-estimates",
+          "/resources/before-the-inventory-call",
+          "/resources/who-handles-my-move",
+          "/resources/moving-cost-guide",
+          "/resources/items-to-check-before-packing",
+          "/resources/moving-paperwork-guide"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/comparing-moving-estimates",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/before-the-inventory-call",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/who-handles-my-move",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/moving-cost-guide",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/items-to-check-before-packing",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/resources/moving-paperwork-guide",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Six resource destinations",
+      "detail": {
+        "locale": "es",
+        "paths": [
+          "/es/recursos/comparar-presupuestos",
+          "/es/recursos/preparar-inventario",
+          "/es/recursos/quien-organiza-mi-mudanza",
+          "/es/recursos/costos-de-mudanza",
+          "/es/recursos/articulos-antes-de-embalar",
+          "/es/recursos/documentos-de-mudanza"
+        ]
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/comparar-presupuestos",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/preparar-inventario",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/quien-organiza-mi-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/articulos-antes-de-embalar",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource renders",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "One resource heading",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Resource has quote return",
+      "detail": {
+        "path": "/es/recursos/documentos-de-mudanza",
+        "width": 320
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image loaded",
+      "detail": {
+        "path": "military-moving",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image preserves full frame",
+      "detail": {
+        "path": "military-moving",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image loaded",
+      "detail": {
+        "path": "military-moving",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image preserves full frame",
+      "detail": {
+        "path": "military-moving",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image loaded",
+      "detail": {
+        "path": "senior-moving",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image preserves full frame",
+      "detail": {
+        "path": "senior-moving",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image loaded",
+      "detail": {
+        "path": "senior-moving",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image preserves full frame",
+      "detail": {
+        "path": "senior-moving",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image loaded",
+      "detail": {
+        "path": "storage-options",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image preserves full frame",
+      "detail": {
+        "path": "storage-options",
+        "width": 1440
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image loaded",
+      "detail": {
+        "path": "storage-options",
+        "width": 390
+      }
+    },
+    {
+      "ok": true,
+      "name": "Service image preserves full frame",
+      "detail": {
+        "path": "storage-options",
+        "width": 390
+      }
+    }
+  ],
+  "failures": [],
+  "zoom": "Viewport emulation only; actual browser zoom is separately unverified."
+}
