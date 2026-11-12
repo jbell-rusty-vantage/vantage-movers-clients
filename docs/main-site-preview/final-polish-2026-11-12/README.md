@@ -19,3 +19,15 @@ Final WebP assets: `apps/main-site/public/images/editorial/20261112/` (`inventor
 51 unit/contract/publication tests, Main Site lint and typecheck passed. Quote regressions at 320/390/1440px passed with all responses mocked: validation, destination selection, guide/back, locale/reload, optional consent false, identical retries, explicit capture and draft clearing. No Lead was created. One parallel dev-server run timed out at the first step; the isolated rerun passed without an application change.
 
 The focused browser harness covers both locales, all services/articles, home/resources and policy/error templates at desktop/phone widths; logo animation/pause/reduced motion, transparent logo wrappers, license identifiers, quote security links and removal of the disclosure. Initial image checks needed to scroll/decode lazy-loaded posters before asserting; the harness was corrected. Final deployment identity, complete results and handoff follow below.
+
+## Qualified preview
+
+[Stable review preview](https://vantage-main-site-optimization.vercel.app) · [Articles](https://vantage-main-site-optimization.vercel.app/resources) · [Immutable deployment](https://vantage-movers-clients-main-site-pu707ilbg-vantage-4d3db9ef.vercel.app)
+
+- Application source `f4b95c8f79b30c0e85ae56b740c49041758735d7`; CI test merge `ef1e6bd7ea18c1a19b3fb09300555886466a5289`, identical tree `511ccac803e2499f84a74251c5f53878164d8e9b`.
+- [CI build and deploy](https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43308911847) succeeded. Vercel deployment `dpl_D4agsdR9v52yQkz6q2vUXjjob1Qa` is READY, target preview. The stable alias was assigned and inspected against this exact deployment. [Identity record](evidence/deployment.json).
+- [602 local checks](evidence/local/report.json) and [602 deployed checks](evidence/deployed/report.json), zero failures. [Eight stable-alias checks](evidence/deployed/stable-report.json) verify both archives, noindex, license strip and six decoded posters. All screenshot captures now wait for lazy images to decode; blank initial captures were replaced.
+- [Mocked quote recovery evidence](evidence/quote/report.json) passed at all three widths. No real Lead, phone call or production change. Local development content used its expected no-credential fallback; deployed checks had no browser exceptions.
+- Visually inspected the [phone license strip](evidence/deployed/en-mobile-home.png), [quote privacy treatment](evidence/deployed/en-mobile-form.png), [borderless provider ribbon](evidence/deployed/en-referrals.png), [English article posters](evidence/deployed/en-articles.png) and Spanish equivalents.
+
+The checkout is handed off for the Owner’s next session. [Next-session prompt](NEXT-SESSION-PROMPT.md). Draft editorial/media status and prior production gates remain unchanged. Evidence-only commits following the application source do not redeploy the application.

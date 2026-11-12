@@ -23,7 +23,7 @@ try{
   await go(archive);const articles=await page.locator('#articles a').evaluateAll(els=>els.map(e=>e.getAttribute('href')));
   const posters=await page.locator('#articles img').evaluateAll(els=>els.map(e=>new URL(e.src).searchParams.get('url')||e.getAttribute('src')));
   check(posters.length===6&&new Set(posters).size===6&&posters.every(p=>p.includes('/images/editorial/20261112/')),'Six distinct custom posters',{locale});
-  await page.locator('#articles img').first().waitFor();await shot(`${locale}-articles`,page.locator('#articles'));
+  for(const img of await page.locator('#articles img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>e.decode());} await shot(`${locale}-articles`,page.locator('#articles'));
   for(const width of [1440,390,320]){
    await page.setViewportSize({width,height:1000});
    for(const path of [home,...services,...articles,archive]){
@@ -49,7 +49,7 @@ try{
    if(width===1440)await shot(`${locale}-referrals`,page.locator('.referral-window').locator('xpath=../../..'));
    await page.emulateMedia({reducedMotion:'reduce'});
    check(await track.evaluate(e=>{const b=e.parentElement.getBoundingClientRect();return [...e.firstElementChild.children].filter(c=>c.getAttribute('aria-hidden')!=='true').every(c=>{const r=c.getBoundingClientRect();return r.left>=b.left&&r.right<=b.right+1;});}),'All logos visible with reduced motion',{locale,width});
-   if(width===390){await shot(`${locale}-mobile-home`);await shot(`${locale}-mobile-form`,page.locator('form').first());}
+   if(width===390){await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await page.waitForTimeout(100);await shot(`${locale}-mobile-home`);await shot(`${locale}-mobile-form`,page.locator('form').first());}
   }
  }
  await page.setViewportSize({width:390,height:844});

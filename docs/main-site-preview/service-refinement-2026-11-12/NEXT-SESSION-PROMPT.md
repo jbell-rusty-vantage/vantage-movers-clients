@@ -1,5 +1,7 @@
 # Next session: Owner review of service refinement
 
+The subsequent Owner corrections are complete. Continue from [final visual polish](../final-polish-2026-11-12/README.md) and its [next-session prompt](../final-polish-2026-11-12/NEXT-SESSION-PROMPT.md). The instructions below preserve the preceding handoff.
+
 Work in `C:/Users/Pinda/Proyectos/vantage/main-site-optimization`, branch `agent/main-site-optimization`. Verify branch, HEAD, clean/dirty status, draft PR #4 and the actual stable alias deployment. The README identifies deployed application source separately from later evidence-only commits.
 
 Read `AGENTS.md`, applicable `.cursor/rules`, `docs/cloud-site-variations.md`, this packet’s `README.md` and deployment evidence, `docs/main-site-preview/resource-center-2026-11-12/README.md`, and `docs/website-operations-proposal.md` section 9.

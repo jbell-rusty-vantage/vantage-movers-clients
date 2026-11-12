@@ -1,5 +1,7 @@
 # Main Site preview build
 
+**Latest Owner corrections:** [final visual polish](final-polish-2026-11-12/README.md) delivers the borderless provider ribbon, global license strip, quote privacy messages and six custom article posters. Start the [next session here](final-polish-2026-11-12/NEXT-SESSION-PROMPT.md). Earlier candidate records below remain historical evidence.
+
 Owner direction · November 12, 2026
 
 **Latest review candidate:** [service and quote refinement](service-refinement-2026-11-12/README.md) implements the four-part quote flow, complete service-page sequence, cycling referral strip, preview pricing examples and destination registry. Use its exact deployment evidence and [next-session prompt](service-refinement-2026-11-12/NEXT-SESSION-PROMPT.md). Genuine 200% Chromium zoom is now qualified on a representative service page; earlier unverified-zoom notes below are historical.
