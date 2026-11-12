@@ -1,0 +1,110 @@
+{
+  "capturedAt": "2026-11-12T15:52:36.227Z",
+  "baseSha": "b59f18233992d8df5c5ecbf6ca8904945208b549",
+  "sourceState": "Uncommitted local working tree, including optional geolocation UI. Not deployed 10ec4d2. HEAD is base only.",
+  "method": "390x844 Chromium, DPR1, reduced motion, no throttling. Only current home-inventory image response is substituted; no application edit. Non-GET/HEAD and telemetry blocked. No quote submitted. Hero screenshots hide header/skip-link/dev portal without layout changes.",
+  "cases": [
+    {
+      "locale": "en",
+      "variant": "current",
+      "dimensions": {
+        "naturalWidth": 390,
+        "naturalHeight": 260,
+        "objectFit": "contain",
+        "objectPosition": "50% 0%"
+      },
+      "heroBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1955.453125
+      },
+      "intercepted": [],
+      "blocked": [
+        {
+          "method": "POST",
+          "path": "/__nextjs_original-stack-frames"
+        },
+        {
+          "method": "POST",
+          "path": "/__nextjs_original-stack-frames"
+        }
+      ],
+      "errors": [],
+      "horizontalOverflow": false
+    },
+    {
+      "locale": "en",
+      "variant": "proposal",
+      "dimensions": {
+        "naturalWidth": 438,
+        "naturalHeight": 658,
+        "objectFit": "contain",
+        "objectPosition": "50% 0%"
+      },
+      "heroBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1955.453125
+      },
+      "intercepted": [
+        "/_next/image?url=%2Fimages%2Fpreview%2Fhome-inventory.webp&w=640&q=75"
+      ],
+      "blocked": [
+        {
+          "method": "POST",
+          "path": "/__nextjs_original-stack-frames"
+        },
+        {
+          "method": "POST",
+          "path": "/__nextjs_original-stack-frames"
+        }
+      ],
+      "errors": [],
+      "horizontalOverflow": false
+    },
+    {
+      "locale": "es",
+      "variant": "current",
+      "dimensions": {
+        "naturalWidth": 390,
+        "naturalHeight": 260,
+        "objectFit": "contain",
+        "objectPosition": "50% 0%"
+      },
+      "heroBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1913.40625
+      },
+      "intercepted": [],
+      "blocked": [],
+      "errors": [],
+      "horizontalOverflow": false
+    },
+    {
+      "locale": "es",
+      "variant": "proposal",
+      "dimensions": {
+        "naturalWidth": 438,
+        "naturalHeight": 658,
+        "objectFit": "contain",
+        "objectPosition": "50% 0%"
+      },
+      "heroBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1913.40625
+      },
+      "intercepted": [
+        "/_next/image?url=%2Fimages%2Fpreview%2Fhome-inventory.webp&w=640&q=75"
+      ],
+      "blocked": [],
+      "errors": [],
+      "horizontalOverflow": false
+    }
+  ]
+}

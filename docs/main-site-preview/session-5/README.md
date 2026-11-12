@@ -32,3 +32,7 @@ All prompts requested natural editorial photography, landscape 1536×1024, warm 
 6. **Office:** Two fictional colleagues in a modest contemporary office organizing monitor cables and inventory beside plain boxes and an office chair. Clear passage, equipment on desk, ordinary smart-casual clothing, no readable screens, branding or actual-staff implication.
 
 The Owner can approve or replace any selected scene. Generated people are not used as testimonial portraits. [Process behavior](process.md) records keyboard, fallback and loading implementation; browser evidence supplements it.
+
+## Astra-directed phone composition follow-up
+
+A separately spawned GPT-6 Astra agent directed a new ChatGPT Images phone composition from the existing home reference. [Provenance and actual-layout comparison](astra-review/README.md) records the exact model selection, prompt, generated original and optimized files. Four EN/ES mobile comparison cases passed loading/overflow checks, but visual inspection found that the proposed faces overlap body copy and the inventory falls behind buttons. Retain the current hero; the proposal remains a reviewable alternative in `public/images/preview/astra-review` and is not selected or deployed as the hero. This establishes new Astra-directed production work without retroactively attributing the earlier six images to Astra. Owner media approval remains open.
