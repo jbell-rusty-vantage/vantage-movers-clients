@@ -4,6 +4,8 @@ Work from the branch and app identified in the [packet index](README.md). Each h
 
 ### 1. Baseline and implementation design
 
+**Complete — November 12, 2026.** [Evidence and Session 2 handoff](session-1/README.md). Local rendering is current-main source in development mode with empty API content; production captures are separate. Retry/confirmation browser evidence is mocked, not Lead persistence. No runtime integration or production selection is implied.
+
 Capture current production and local main at phone and desktop widths. Trace HomePage → HeroSection → QuoteWizard → /api/quote → shared server-only API client. Record how true capture, validation failure and retry are represented. Inventory existing service, legal, consumer and carrier routes, contact destinations, tokens, media, navigation and current analytics. Read the app AGENTS guidance and installed Next docs before coding. Compare origin/agent/main-site-service-expansion with current main, specifically src/content/services/registry.ts, localized app routes, tests, schema and navigation. Identify reusable changes file by file. Produce a current route map, component reuse table, annotated desktop/mobile layouts for the page types in the specification and a scoped integration diff plan. The baseline proof is a reproducible current-main render and trace, with the first prototype route chosen.
 
 ### 2. Evidence and original editorial production
