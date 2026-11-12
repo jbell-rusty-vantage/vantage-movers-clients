@@ -9,11 +9,11 @@ Work from the branch and app identified in the [packet index](README.md). Each h
 | 1 | Baseline and design complete; original evidence preserved | None for baseline scope |
 | 2 | 26 original EN/ES drafts, sources/claims, worked estimate and inventory sheets, Madison article | Owner is designated reviewer; locale approvals pending |
 | 3 | Navigation, services, full Spanish quote UI, persistent quote draft, retry/capture gates; deployed isolated capture receipt | Owner visual selection |
-| 4 | Resource/state/city routes, confirmed destination fallback, print, Back/reload/locale checks | Geolocation is not offered; manual entry works. No denied-permission scenario claimed |
-| 5 | Six generated editorial scenes, actual synthetic UI capture, manual bilingual process sequence | Owner media approval; model-specific Astra authorship not claimed |
+| 4 | Resource/state/city routes, confirmed destination fallback, print, Back/reload/locale checks; deployed optional pickup geolocation, confirmation and denial/failure fallback; real provider receipt | Owner review; no physical-device location-accuracy claim |
+| 5 | Six generated editorial scenes, actual synthetic UI capture, manual bilingual process sequence; explicitly Astra-directed phone proposal and actual-layout comparison | Owner media approval; earlier scenes retain their original provenance; portrait proposal not selected |
 | 6 | Eight services × two locales, full route/link matrix, contact and consumer paths | Owner service/Spanish approval; dedicated careers and complaints workflows remain separate |
 | 7 | Privacy-limited events; actual Preview dashboard receipts and Production exclusion; Speed Insights receipts; source-linked helper prototype and companion scopes | Authoritative Booking joins remain separate from browser analytics |
-| 8 | CI deployment, stable protected alias, deployed route audit and exact-source isolated Form Lead/analytics receipts on `10ec4d2` | Owner content/media review and production decision |
+| 8 | CI deployment and stable alias on `76b9a86`, exact-source isolated Form Lead and location receipts; earlier route/process/analytics evidence retained at its source | Actual 200% browser zoom; Owner content/media review and production decision |
 
 Follow the per-stage evidence linked from the packet index. “Draft,” “tested locally,” “deployed” and “Owner approved” remain distinct states.
 

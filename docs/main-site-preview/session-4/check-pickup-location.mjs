@@ -2,12 +2,17 @@
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { mkdir, writeFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { assertPreviewSite } from '../session-8/preview-qualification.mjs';
 const require = createRequire(new URL('../../../apps/main-site/package.json', import.meta.url));
 const { chromium } = require('playwright');
-const output = new URL('./evidence/pickup-location/', import.meta.url);
+const deployed = Boolean(process.env.SITE_PREVIEW_URL);
+const origin = deployed ? assertPreviewSite(process.env.SITE_PREVIEW_URL) : 'http://localhost:3001';
+if (deployed) assert(/^[a-f0-9]{40}$/.test(process.env.SITE_PREVIEW_SOURCE_SHA || ''), 'Deployed source identity required');
+const output = new URL(deployed ? '../session-8/evidence/pickup-location/' : './evidence/pickup-location/', import.meta.url);
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch();
-const report = { checkedAt: new Date().toISOString(), scope: 'Local uncommitted implementation, mocked browser location and provider seam, zero quote submissions. Not live geocoding qualification.', cases: [] };
+const report = { checkedAt: new Date().toISOString(), source: process.env.SITE_PREVIEW_SOURCE_SHA, origin, scope: `${deployed ? 'Deployed preview' : 'Local uncommitted implementation'}, mocked browser location and provider seam, zero quote submissions. Not live geocoding qualification.`, cases: [] };
 try {
   for (const locale of ['en', 'es']) {
     for (const mode of ['success', 'denied', 'unavailable', 'editing-pending']) {
@@ -30,11 +35,14 @@ try {
         }
         if (url.pathname.startsWith('/api/places/')) return route.fulfill({ json: { suggestions: [] } });
         if (!['GET', 'HEAD'].includes(request.method()) || url.pathname.startsWith('/_vercel/')) return route.abort();
-        return route.continue();
+        const headers = { ...request.headers() };
+        if (deployed && url.origin === origin && process.env.SITE_PREVIEW_BYPASS) headers['x-vercel-protection-bypass'] = process.env.SITE_PREVIEW_BYPASS;
+        return route.continue({ headers });
       });
       const page = await context.newPage();
-      const response = await page.goto(`http://localhost:3001${locale === 'es' ? '/es/servicios/mudanzas-larga-distancia' : '/services/long-distance-moving'}`, { waitUntil: 'networkidle' });
+      const response = await page.goto(`${origin}${locale === 'es' ? '/es/servicios/mudanzas-larga-distancia' : '/services/long-distance-moving'}`, { waitUntil: 'networkidle' });
       assert.equal(response.status(), 200);
+      if (deployed) assert.match(response.headers()['x-robots-tag'], /noindex/);
       assert.match(response.headers()['permissions-policy'], /geolocation=\(self\)/);
       assert.equal(await page.evaluate(() => window.__locationCalls), 0);
       const pickup = page.getByLabel(locale === 'es' ? 'Origen (código postal)' : 'Moving From (ZIP)', { exact: true });
@@ -46,7 +54,7 @@ try {
       } else if (mode === 'success') {
         const confirm = page.getByRole('button', { name: locale === 'es' ? 'Usar este código postal de origen' : 'Use this pickup ZIP', exact: true });
         await confirm.waitFor(); assert.equal(await pickup.inputValue(), '');
-        await page.screenshot({ path: new URL(`${locale}-confirm.png`, output).pathname.replace(/^\/(.:)/, '$1'), fullPage: false });
+        await page.screenshot({ path: fileURLToPath(new URL(`${locale}-confirm.png`, output)), fullPage: false });
         await confirm.click(); assert.equal(await pickup.inputValue(), '53703');
         assert.equal(await pickup.evaluate(el => el === document.activeElement), true);
         await pickup.fill('33426'); assert.equal(await pickup.inputValue(), '33426');

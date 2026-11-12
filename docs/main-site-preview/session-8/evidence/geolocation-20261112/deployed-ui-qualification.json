@@ -1,0 +1,115 @@
+{
+  "checkedAt": "2026-11-12T15:56:23.414Z",
+  "site": "https://vantage-movers-clients-main-site-90ai3mhog-vantage-4d3db9ef.vercel.app",
+  "sourceSha": "76b9a8671f855391c17c01a72305e5def32dc5a3",
+  "anonymousProtectionStatus": 302,
+  "noindex": true,
+  "uiQuotePostCount": 1,
+  "quoteHttpStatus": 200,
+  "leadCaptured": true,
+  "reference": "MS-20261112-B8903E0AA2-PREVIEW-1794498978452",
+  "consentSubmitted": false,
+  "placesConfirmed": true,
+  "pageErrors": [],
+  "diagnosticEvents": [
+    {
+      "name": "site_visit",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "site_engaged",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "form_step_viewed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:1"
+      }
+    },
+    {
+      "name": "site_lead_intent",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "form_started",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "calendar_or_date_picker_opened",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "form_step_completed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:1"
+      }
+    },
+    {
+      "name": "form_step_viewed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:2"
+      }
+    },
+    {
+      "name": "form_step_completed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:2"
+      }
+    },
+    {
+      "name": "form_submit_attempted",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "form_submit_success",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    }
+  ],
+  "collectorRequests": [],
+  "readback": {
+    "checkedAt": "2026-11-12T15:56:23.410Z",
+    "reference": "MS-20261112-B8903E0AA2-PREVIEW-1794498978452",
+    "leadId": "6af5e1a5ef3cfb8486845818",
+    "previewDatabase": "testvantagemovers_sitepreview",
+    "previewCount": 1,
+    "productionDatabase": "vantagemovers",
+    "productionCount": 0,
+    "apiReadback": "passed",
+    "sourceCompany": "main_site",
+    "sourceCompanySite": "vantagehomemovers.com",
+    "lidPreserved": true,
+    "moveSize": "Studio",
+    "duplicate": false,
+    "postToGranot": false,
+    "previewLeadMessageCount": 0,
+    "sheetSyncEntryCount": 0,
+    "boundary": "Exact-reference counts and one synthetic preview Lead only. Site response does not expose CRM/messaging status; no such response receipt is inferred."
+  },
+  "analytics": "Automated Chromium session: Vercel intentionally excludes webdriver traffic. Native browser and aggregation evidence must qualify analytics separately.",
+  "scope": "One real synthetic preview Form Lead via deployed UI. Invalid/retry contracts are separately mocked. No production submission."
+}
