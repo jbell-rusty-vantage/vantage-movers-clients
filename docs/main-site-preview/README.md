@@ -2,7 +2,9 @@
 
 Owner direction · November 12, 2026
 
-**Current review work:** the [November 12 implementation milestone](milestone-2026-11-12/README.md) finishes service/media/resource refinements and connects bounded website attribution to saved Form Leads and canonical outcome reporting. The [Owner feedback revision](owner-feedback/README.md) remains the design foundation. Review and production selection remain with the Owner.
+**Latest review candidate:** [service and quote refinement](service-refinement-2026-11-12/README.md) implements the four-part quote flow, complete service-page sequence, cycling referral strip, preview pricing examples and destination registry. Use its exact deployment evidence and [next-session prompt](service-refinement-2026-11-12/NEXT-SESSION-PROMPT.md). Genuine 200% Chromium zoom is now qualified on a representative service page; earlier unverified-zoom notes below are historical.
+
+**Previous review work:** the [November 12 implementation milestone](milestone-2026-11-12/README.md) finishes service/media/resource refinements and connects bounded website attribution to saved Form Leads and canonical outcome reporting. The [Owner feedback revision](owner-feedback/README.md) remains the design foundation. Review and production selection remain with the Owner.
 
 Optimize the Main Site customers use today. Keep its recognizable Vantage UI, make services and destinations independently browsable, and ship one integrated preview that the Owner can exercise and select for production. Safe Ship’s organic site supplies the navigation and content reference. Vantage supplies the visual language, service facts, people, editorial voice, contact paths and quote flow.
 

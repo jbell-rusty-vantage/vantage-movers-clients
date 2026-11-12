@@ -13,7 +13,7 @@ Verified clean branch `agent/main-site-optimization`, HEAD and remote draft PR #
 - All service pages have tailored supporting sections, the published-review component (with its honest empty state), interactive map, full eight-service grid and service-specific expandable FAQs. Questions move from repeated prose into the FAQ area. The map is planning context, not a coverage or office claim.
 - The referral-logo strip cycles again, with pause/resume and reduced-motion support. The three identity/written-details/telephone cards remain naturally below it. Logos are referral channels, not press endorsements.
 - Long-distance pricing presents the supplied route/range/transit table **only in explicit preview mode**, identifies its third-party provenance and limits, adds cost drivers and practical comparison guidance, and links Vantage’s cost guide and quote. It makes no promise of binding estimates, carrier bidding or delivery timing.
-- Destination resources now have a central country/state/city registry. Confirmed Places identity selects city → state → generic. Link resolution applies publication gates and requested-locale → English fallback at each level. Wisconsin/Madison remain the only destination pilots; no new routes or attribution IDs, mass pages or backend changes. D.C. and territories remain separately scoped.
+- Destination resources now have a central country/state/city registry. Confirmed Places identity selects city → state → generic. Link resolution applies publication gates and requested-locale → English fallback at each level. When no resource is published, the generic link reaches existing consumer information; Spanish identifies English fallback links. Wisconsin/Madison remain the only destination pilots; no new routes or attribution IDs, mass pages or backend changes. D.C. and territories remain separately scoped.
 
 ## Reference and claim decisions
 
@@ -25,7 +25,7 @@ The earlier 50,000 Owner-supplied preview count and dated BBB customer-review sn
 
 ## Verification
 
-- 50 Main Site unit/contract/publication tests passed, including draft migration and destination country/state/city and publication boundaries.
+- 51 Main Site unit/contract/publication tests passed, including all four bounded telemetry steps, draft migration and destination country/state/city and publication boundaries.
 - Workspace lint and typecheck passed; two unchanged partner-app lint warnings remain.
 - Local quote regression passed at 320/390/1440px: contact validation, no early POST, city/state/generic selection, guide/back, locale/reload, false consent, identical retries after HTTP 200 with capture false and HTTP 503, explicit capture success and draft clearing. The two homepage forms preserve the active attempt. Every quote/Places response was mocked; no Lead or call was created.
 - Existing responsive/navigation/resource suite: 878 local checks, zero failures. Final deployed qualification and exact source mapping are recorded below when available.
@@ -34,3 +34,19 @@ The existing isolated backend attribution and Booking/Cancellation qualification
 
 - Focused service/strip checks: 349 passed, zero failures. Both languages/all eight services at 1440/390/320px include the full grid, reviews, map, FAQs, three contact fields, compact card and no horizontal overflow. Earlier harness errors counted decorative SVG icons as maps and carried reduced-motion mode into the next locale; both selectors/state were corrected. The Spanish heading was shortened after its 320px height exceeded the target.
 - Genuine Chromium 200% browser zoom now qualified locally via `chrome.tabs.setZoom(2)`: unchanged 1440px viewport, `devicePixelRatio` 1 → 2 and `innerWidth` 1440 → 720. No horizontal overflow; form remains editable. This closes the earlier unsupported-zoom-tool gap for Chromium on the representative long-distance page, not every browser/device.
+
+## Qualified deployment and handoff
+
+[Review the stable preview](https://vantage-main-site-optimization.vercel.app) · [Immutable preview](https://vantage-movers-clients-main-site-egbiygydl-vantage-4d3db9ef.vercel.app) · [Successful CI build/deploy](https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43304329997)
+
+- Application source: `a3c8d9e439768480231c01c42ebee9bd5dc6c8b4`.
+- CI test merge: `aa3ea3337e27ab9a272cfa8a515e8081f7de588c`; identical tree `d48d982212eeaa7db9a752b8168ef0bdede52f4e`.
+- Deployment `dpl_88hW99Gsoq3gedURzDYXXZQw7eXe`, target **preview**, READY. Stable alias inspection resolves to that exact deployment.
+- [878 deployed responsive/resource/navigation checks](evidence/deployed/report.json), zero failures; [351 deployed service/strip/zoom checks](evidence/deployed-sections/report.json), zero failures. Both languages/all services retain compact contact forms, full service grids, reviews, interactive maps and working FAQs. Reduced-motion now wraps all five referral logos; visual inspection caught and corrected clipping in the intermediate candidate.
+- [Actual zoom receipt and layout metrics](evidence/deployed-zoom/report.json), [200% page](evidence/deployed-zoom/actual-200-percent.png), [200% editable form](evidence/deployed-zoom/actual-200-percent-form.png). `chrome.tabs.setZoom(2)` changes DPR 1 → 2 and CSS width 1440 → 720 without changing the configured viewport. The scrolled capture uses native CDP viewport capture: Playwright’s clipped screenshot at real zoom produced an offset artifact despite correct DOM bounds, so those misleading captures were removed. The native screenshot confirms the visible form and header. This proves representative Chromium zoom/reflow, not all physical devices or browsers.
+- [Stable HTTP checks](evidence/stable-alias.json) and [rendered form checks](evidence/stable-rendered.json): HTTP 200, effective `noindex, nofollow`, new contact-first four-step form in home and EN/ES service samples. The raw HTTP compact-copy flags are false because the wizard hydrates inside Suspense; browser-rendered checks verify the actual form.
+- [Final mocked quote regression](evidence/quote/report.json) repeated after the destination/telemetry updates. No real quote POST, Lead, phone call or production mutation was made. Localhost used no content API credential and displayed the documented testimonial empty state/development diagnostic; final preview built against the authenticated isolated API and had no browser exceptions.
+
+Visual review: [service hero](evidence/deployed-sections/en-hero.png), [pricing](evidence/deployed-sections/en-pricing.png), [referral cards in reduced-motion mode](evidence/deployed-sections/en-referral-strip.png), [service grid](evidence/deployed-sections/en-services.png), [map](evidence/deployed-sections/en-map.png), [FAQs](evidence/deployed-sections/en-faq.png). Spanish equivalents and phone captures are in the evidence directories. The strip cycles in normal-motion mode; the static wrapped capture records its accessibility alternative.
+
+The next blocker is Owner review, not additional backend work. All 32 localized entries remain drafts. No production deployment, indexing of unapproved content, historical backfill, editorial self-approval or growth campaign occurred. Stage 2 production selection/release and Stage 3 reviewed publication/revision recovery remain open. See [next-session prompt](NEXT-SESSION-PROMPT.md). Later evidence-only commits do not change the pinned application source.

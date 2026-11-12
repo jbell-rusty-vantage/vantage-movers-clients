@@ -1,5 +1,7 @@
 # Next session: Vantage Main Site review and resource readiness
 
+This prompt was executed with the Owner’s subsequent service/form feedback. Continue from [the new handoff](../service-refinement-2026-11-12/NEXT-SESSION-PROMPT.md) and [qualified refinement record](../service-refinement-2026-11-12/README.md). The instructions below preserve the prior session boundary.
+
 Work in `C:/Users/Pinda/Proyectos/vantage/main-site-optimization` on `agent/main-site-optimization`. Verify branch, HEAD, worktree status, remote PR and actual deployment source before editing. The shell may start in an unrelated server worktree; always use an explicit working directory.
 
 Read first:

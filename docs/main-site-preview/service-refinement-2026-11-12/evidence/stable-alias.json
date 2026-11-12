@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-11-12T20:54:58.198Z",
+  "reports": [
+    {
+      "path": "/",
+      "status": 200,
+      "robots": "noindex, nofollow",
+      "hasCompactCopy": false,
+      "hasServiceGrid": false,
+      "hasPricing": false
+    },
+    {
+      "path": "/services/long-distance-moving",
+      "status": 200,
+      "robots": "noindex, nofollow",
+      "hasCompactCopy": false,
+      "hasServiceGrid": true,
+      "hasPricing": true
+    },
+    {
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "status": 200,
+      "robots": "noindex, nofollow",
+      "hasCompactCopy": false,
+      "hasServiceGrid": true,
+      "hasPricing": false
+    },
+    {
+      "path": "/services/packing-services",
+      "status": 200,
+      "robots": "noindex, nofollow",
+      "hasCompactCopy": false,
+      "hasServiceGrid": true,
+      "hasPricing": false
+    },
+    {
+      "path": "/resources",
+      "status": 200,
+      "robots": "noindex, nofollow",
+      "hasCompactCopy": false,
+      "hasServiceGrid": false,
+      "hasPricing": false
+    }
+  ]
+}
