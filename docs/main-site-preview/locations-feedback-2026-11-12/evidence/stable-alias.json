@@ -1,0 +1,29 @@
+{
+  "base": "https://vantage-main-site-optimization.vercel.app",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "expectedCopy": true,
+      "noindex": true
+    },
+    {
+      "path": "/locations",
+      "status": 200,
+      "expectedCopy": true,
+      "noindex": true
+    },
+    {
+      "path": "/es/destinos",
+      "status": 200,
+      "expectedCopy": true,
+      "noindex": true
+    },
+    {
+      "path": "/services/long-distance-moving",
+      "status": 200,
+      "expectedCopy": true,
+      "noindex": true
+    }
+  ]
+}

@@ -1,0 +1,1174 @@
+{
+  "base": "http://localhost:3001",
+  "checks": [
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/"
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 1440,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 1440,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 1440,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 1440,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 1440,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 1440,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 1440,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 1440,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 1440,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 1440,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Card height remains stable across all steps",
+      "locale": "en",
+      "width": 1440,
+      "heights": [
+        516.484375,
+        516.484375,
+        516.484375,
+        516.484375,
+        516.484375
+      ]
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/locations"
+    },
+    {
+      "ok": true,
+      "name": "50 state quote cards",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "50 map targets",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Every state has a unique card and full name",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Every map state resolves to its card",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One primary heading",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All state cards lead to localized quote",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Keyboard map link reaches Wisconsin card",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/"
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 768,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 768,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 768,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 768,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 768,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 768,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 768,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 768,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 768,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 768,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Card height remains stable across all steps",
+      "locale": "en",
+      "width": 768,
+      "heights": [
+        589.75,
+        589.75,
+        589.75,
+        589.75,
+        589.75
+      ]
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/locations"
+    },
+    {
+      "ok": true,
+      "name": "50 state quote cards",
+      "locale": "en",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "50 map targets",
+      "locale": "en",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "Every state has a unique card and full name",
+      "locale": "en",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "Every map state resolves to its card",
+      "locale": "en",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "locale": "en",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "One primary heading",
+      "locale": "en",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "All state cards lead to localized quote",
+      "locale": "en",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "Keyboard map link reaches Wisconsin card",
+      "locale": "en",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/"
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 390,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 390,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 390,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 390,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 390,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 390,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 390,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 390,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 390,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 390,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Card height remains stable across all steps",
+      "locale": "en",
+      "width": 390,
+      "heights": [
+        421.5,
+        421.5,
+        421.5,
+        421.5,
+        421.5
+      ]
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/locations"
+    },
+    {
+      "ok": true,
+      "name": "50 state quote cards",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "50 map targets",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Every state has a unique card and full name",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Every map state resolves to its card",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One primary heading",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All state cards lead to localized quote",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Keyboard map link reaches Wisconsin card",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/"
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 320,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 320,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 320,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 320,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 320,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 320,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 320,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 320,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "en",
+      "width": 320,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "en",
+      "width": 320,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Card height remains stable across all steps",
+      "locale": "en",
+      "width": 320,
+      "heights": [
+        423.75,
+        423.75,
+        423.75,
+        423.75,
+        423.75
+      ]
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/locations"
+    },
+    {
+      "ok": true,
+      "name": "50 state quote cards",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "50 map targets",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Every state has a unique card and full name",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Every map state resolves to its card",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One primary heading",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All state cards lead to localized quote",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Keyboard map link reaches Wisconsin card",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/services/long-distance-moving"
+    },
+    {
+      "ok": true,
+      "name": "Stray Wisconsin promo removed",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "Coverage promo opens locations directory",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "State quote CTA reaches actual quote form",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/es"
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 1440,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 1440,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 1440,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 1440,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 1440,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 1440,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 1440,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 1440,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 1440,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 1440,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Card height remains stable across all steps",
+      "locale": "es",
+      "width": 1440,
+      "heights": [
+        516.484375,
+        516.484375,
+        516.484375,
+        516.484375,
+        516.484375
+      ]
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/es/destinos"
+    },
+    {
+      "ok": true,
+      "name": "50 state quote cards",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "50 map targets",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Every state has a unique card and full name",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Every map state resolves to its card",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One primary heading",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All state cards lead to localized quote",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Keyboard map link reaches Wisconsin card",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/es"
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 768,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 768,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 768,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 768,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 768,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 768,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 768,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 768,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 768,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 768,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Card height remains stable across all steps",
+      "locale": "es",
+      "width": 768,
+      "heights": [
+        589.75,
+        589.75,
+        589.75,
+        589.75,
+        589.75
+      ]
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/es/destinos"
+    },
+    {
+      "ok": true,
+      "name": "50 state quote cards",
+      "locale": "es",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "50 map targets",
+      "locale": "es",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "Every state has a unique card and full name",
+      "locale": "es",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "Every map state resolves to its card",
+      "locale": "es",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "locale": "es",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "One primary heading",
+      "locale": "es",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "All state cards lead to localized quote",
+      "locale": "es",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "Keyboard map link reaches Wisconsin card",
+      "locale": "es",
+      "width": 768
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/es"
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 390,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 390,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 390,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 390,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 390,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 390,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 390,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 390,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 390,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 390,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Card height remains stable across all steps",
+      "locale": "es",
+      "width": 390,
+      "heights": [
+        421.5,
+        421.5,
+        421.5,
+        421.5,
+        421.5
+      ]
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/es/destinos"
+    },
+    {
+      "ok": true,
+      "name": "50 state quote cards",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "50 map targets",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Every state has a unique card and full name",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Every map state resolves to its card",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One primary heading",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All state cards lead to localized quote",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Keyboard map link reaches Wisconsin card",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/es"
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 320,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 320,
+      "step": 1
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 320,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 320,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 320,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 320,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 320,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 320,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Consistent landscape image frame",
+      "locale": "es",
+      "width": 320,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Step image loads",
+      "locale": "es",
+      "width": 320,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Card height remains stable across all steps",
+      "locale": "es",
+      "width": 320,
+      "heights": [
+        439.75,
+        439.75,
+        439.75,
+        439.75,
+        439.75
+      ]
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/es/destinos"
+    },
+    {
+      "ok": true,
+      "name": "50 state quote cards",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "50 map targets",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Every state has a unique card and full name",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Every map state resolves to its card",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One primary heading",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All state cards lead to localized quote",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Keyboard map link reaches Wisconsin card",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "HTTP 200",
+      "path": "/es/servicios/mudanzas-larga-distancia"
+    },
+    {
+      "ok": true,
+      "name": "Stray Wisconsin promo removed",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "Coverage promo opens locations directory",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "State quote CTA reaches actual quote form",
+      "locale": "es"
+    }
+  ],
+  "errors": []
+}

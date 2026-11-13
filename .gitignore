@@ -26,6 +26,7 @@ node_modules
 .turbo
 
 # misc
+.firecrawl/
 .DS_Store
 *.pem
 
