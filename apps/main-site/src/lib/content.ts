@@ -278,6 +278,7 @@ export const stateNames: Record<string, string> = {
   DE: "Delaware",
   FL: "Florida",
   GA: "Georgia",
+  HI: "Hawaii",
   ID: "Idaho",
   IL: "Illinois",
   IN: "Indiana",

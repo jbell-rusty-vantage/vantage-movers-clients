@@ -55,6 +55,8 @@ try {
       await go(locations);
       check(await page.locator('#states a[id^="state-"]').count() === 50, '50 state quote cards', { locale, width });
       check(await page.locator('svg a[href^="#state-"]').count() === 50, '50 map targets', { locale, width });
+      check(await page.locator('#states a').evaluateAll(links => new Set(links.map(link => link.id)).size === 50 && links.every(link => link.querySelector('span.block')?.textContent.trim())), 'Every state has a unique card and full name', { locale, width });
+      check(await page.locator('svg a[href^="#state-"]').evaluateAll(links => links.every(link => document.querySelector(link.getAttribute('href')))), 'Every map state resolves to its card', { locale, width });
       check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'No horizontal overflow', { locale, width });
       check(await page.locator('h1').count() === 1, 'One primary heading', { locale, width });
       check(await page.locator('#states a').evaluateAll((links, href) => links.every(link => link.getAttribute('href') === href), `${home}#quote`), 'All state cards lead to localized quote', { locale, width });
