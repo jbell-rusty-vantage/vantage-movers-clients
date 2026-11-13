@@ -49,7 +49,12 @@ try {
         heights.push(figure.height);
         check(Math.abs(size.width / size.height - 1.6) < .01, 'Consistent landscape image frame', { locale, width, step: i + 1 });
         check(await slot.locator('img').evaluate(async img => { await img.decode().catch(() => {}); return img.naturalWidth > 0; }), 'Step image loads', { locale, width, step: i + 1 });
-        if ((width === 1440 || width === 390) && i < 2) await process.screenshot({ path: fileURLToPath(new URL(`${locale}-step-${i + 1}-${width}.png`, output)) });
+        if ((width === 1440 || width === 390) && i < 2) {
+          // A viewport capture keeps the real sticky header at the top. Element screenshots
+          // of this taller-than-viewport region can composite it over the form illustration.
+          await process.evaluate(el => scrollTo(0, scrollY + el.getBoundingClientRect().top - 160));
+          await page.screenshot({ path: fileURLToPath(new URL(`${locale}-step-${i + 1}-${width}.png`, output)) });
+        }
       }
       check(Math.max(...heights) - Math.min(...heights) < 2, 'Card height remains stable across all steps', { locale, width, heights });
       await go(locations);

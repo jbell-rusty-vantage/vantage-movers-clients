@@ -1,5 +1,5 @@
 {
-  "base": "https://vantage-movers-clients-main-site-kmpbfyxgy-vantage-4d3db9ef.vercel.app",
+  "base": "https://vantage-main-site-optimization.vercel.app",
   "checks": [
     {
       "ok": true,
