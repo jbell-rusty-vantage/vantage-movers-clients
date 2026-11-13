@@ -72,8 +72,8 @@ describe("preview content rendering", () => {
     expect(resolveContent("A customer's own review", { es: "Changed" }, "reviews", "en", "text", fields)).toBe("A customer's own review");
   });
   it("renders edited children and native option/placeholder attributes in the initial HTML", () => {
-    const html = renderToStaticMarkup(createElement(ContentProvider, { children: undefined, locale: "en", fields, values: { form: "Choose your move", studio: "Studio apartment" } },
-      createElement(ContentScope, { children: undefined, source: "lib/quote-copy.ts|schemas/quote-form.schema.ts" },
+    const html = renderToStaticMarkup(createElement(ContentProvider, { locale: "en", fields, values: { form: "Choose your move", studio: "Studio apartment" } },
+      createElement(ContentScope, { source: "lib/quote-copy.ts|schemas/quote-form.schema.ts" },
         createElement(CmsText, { scope: "quote" }, "Request Your Moving Quote"),
         createElement(CmsElement, { element: "input", scope: "quote", placeholder: "Request Your Moving Quote" }),
         createElement(CmsElement, { element: "option", scope: "quote", value: "Studio" }, "Studio"))));

@@ -7,11 +7,11 @@ import { resolveContent, resolveContactHref, resolveLegalMarkup, type ContentLoc
 
 const ContentContext = createContext<{ values: ContentValues; locale: ContentLocale; dataScope?: string; fields: ContentField[] }>({ values: {}, locale: "en", fields: [] });
 
-export function ContentProvider({ values, locale, fields = [], children }: { values: ContentValues; locale: ContentLocale; fields?: ContentField[]; children: ReactNode }) {
+export function ContentProvider({ values, locale, fields = [], children }: { values: ContentValues; locale: ContentLocale; fields?: ContentField[]; children?: ReactNode }) {
   return <ContentContext.Provider value={{ values, locale, fields }}>{children}</ContentContext.Provider>;
 }
 
-export function ContentScope({ source, children }: { source: string; children: ReactNode }) {
+export function ContentScope({ source, children }: { source: string; children?: ReactNode }) {
   const content = useContext(ContentContext);
   return <ContentContext.Provider value={{ ...content, dataScope: source }}>{children}</ContentContext.Provider>;
 }
