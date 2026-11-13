@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "origin": "https://vantage-movers-clients-main-site-lfohjsb75-vantage-4d3db9ef.vercel.app",
+  "checks": [
+    "English hero override renders without Spanish leakage",
+    "quote title changes while same-phrase contact CTA remains original",
+    "numeric-looking hero copy is editable",
+    "English navigation appendix field renders",
+    "dynamic count preserved and legal template cannot rewrite shared contact headings",
+    "uploaded hero reaches rendered image source and same-origin media bytes match",
+    "edited business contact labels and actions agree",
+    "excluded review disappears from carousel and contact feature",
+    "Spanish hero, navigation and shared contact override render",
+    "legal heading changes independently of footer and contacts stay synchronized",
+    "resource title renders its CMS override",
+    "original content and review policy restored"
+  ]
+}

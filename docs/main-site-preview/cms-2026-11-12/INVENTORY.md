@@ -6,6 +6,8 @@ The editable catalog contains exact defaults grouped by their source section. Id
 
 Route paths, component layout, customer review words/ratings, publication approvals, dates, carrier records and schema/telemetry identifiers remain operational data. Editorial wording is editable; its review status is separate. Metadata-only and unused source fields are excluded from the editor. Logos and photographs are editable image slots; inline UI icons and the geographic map remain components.
 
+The registered manifest has 2,161 descriptors: 2,130 text entries and 31 image placements. Four historical keyboard constants (`text.ecf744d6189c940f`, `text.91c1a43bc5577791`, `text.c42573a836deb67a`, `text.8a15b2620682f2bb`) remain in the immutable manifest but are hidden from editing because they are component behavior, not copy. The Owner therefore sees 2,126 copy fields and 31 image placements. Eleven navigation labels were appended without changing the original 2,150 descriptors; the installed manifest SHA256 is `707061fc9db45d19e4be1839b8b1356ca83ee2ee10e5107184c7d234edc3353e`.
+
 ## Pages
 
 - [/](https://vantage-main-site-optimization.vercel.app/)
