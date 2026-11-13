@@ -37,17 +37,25 @@ env:
   VERCEL_GIT_REPO_SLUG: ${{ github.event.repository.name }}
   VERCEL_GIT_REPO_OWNER: ${{ github.repository_owner }}
   VERCEL_GIT_COMMIT_REF: ${{ github.head_ref || github.ref_name }}
-  VERCEL_GIT_COMMIT_SHA: ${{ github.sha }}
+  VERCEL_GIT_COMMIT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
   VERCEL_GIT_COMMIT_AUTHOR_LOGIN: ${{ github.actor }}
   VERCEL_GIT_PULL_REQUEST_ID: ${{ github.event.pull_request.number || '' }}
 
 jobs:
   deploy:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     name: Build and deploy main-site preview
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.VERCEL_GIT_COMMIT_SHA }}
+
+      - name: Verify the checked-out source and attach its branch
+        run: |
+          test "$(git rev-parse HEAD)" = "$VERCEL_GIT_COMMIT_SHA"
+          git switch -C "$VERCEL_GIT_COMMIT_REF" "$VERCEL_GIT_COMMIT_SHA"
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v5
@@ -98,7 +106,11 @@ jobs:
           '
 
       - name: Verify main-site build API access
-        run: node apps/main-site/scripts/verify-build-api.mjs
+        run: |
+          test "$VANTAGE_API_BASE_URL" = 'https://vantage-sites-preview-api.vercel.app'
+          test -n "$VANTAGE_API_PROTECTION_BYPASS"
+          node --env-file=.vercel/.env.preview.local -e 'if (process.env.FORM_LEAD_ROUTE !== "api/v1/form-leads") throw new Error("Preview Form Lead route is incorrect")'
+          node apps/main-site/scripts/verify-build-api.mjs
         env:
           VERCEL_ENV: preview
           VANTAGE_API_BASE_URL: ${{ vars.VANTAGE_PREVIEW_API_BASE_URL }}
@@ -116,7 +128,55 @@ jobs:
       - name: Deploy prebuilt preview
         id: deploy
         run: |
-          url="$(vercel deploy --prebuilt --archive=tgz --token="$VERCEL_TOKEN")"
+          url="$(vercel deploy --prebuilt --archive=tgz --token="$VERCEL_TOKEN" \
+            --meta githubDeployment=1 \
+            --meta "githubCommitRef=$VERCEL_GIT_COMMIT_REF" \
+            --meta "githubCommitSha=$VERCEL_GIT_COMMIT_SHA")"
           echo "url=$url" >> "$GITHUB_OUTPUT"
           echo "### Main site preview deployment" >> "$GITHUB_STEP_SUMMARY"
+          echo "Source: $VERCEL_GIT_COMMIT_REF at $VERCEL_GIT_COMMIT_SHA" >> "$GITHUB_STEP_SUMMARY"
           echo "$url" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify Canyon and update its review URL
+        if: env.VERCEL_GIT_COMMIT_REF == 'agent/main-site-canyon'
+        shell: bash
+        env:
+          DEPLOYMENT_URL: ${{ steps.deploy.outputs.url }}
+          REVIEW_ALIAS: vantage-main-site-canyon.vercel.app
+        run: |
+          deployment_id="$(vercel api "/v13/deployments/${DEPLOYMENT_URL#https://}" \
+            --scope vantage-4d3db9ef --token="$VERCEL_TOKEN" --raw |
+            node -e '
+              const deployment = JSON.parse(require("node:fs").readFileSync(0, "utf8"));
+              const { env } = process;
+              if (!deployment.id || deployment.projectId !== env.VERCEL_PROJECT_ID ||
+                  (deployment.target !== null && deployment.target !== "preview") ||
+                  deployment.customEnvironment || deployment.readyState !== "READY" ||
+                  deployment.meta?.githubCommitRef !== env.VERCEL_GIT_COMMIT_REF ||
+                  deployment.meta?.githubCommitSha !== env.VERCEL_GIT_COMMIT_SHA) {
+                throw new Error("Unexpected Canyon deployment project, target, state, branch or SHA");
+              }
+              console.log(deployment.id);
+            ')"
+
+          headers="$RUNNER_TEMP/canyon-headers"
+          body="$RUNNER_TEMP/canyon-consumer-information.html"
+          vercel curl /consumer-information --deployment "$DEPLOYMENT_URL" \
+            --scope vantage-4d3db9ef --token="$VERCEL_TOKEN" -- \
+            --fail --silent --show-error --max-time 30 --dump-header "$headers" --output "$body"
+          grep -Eiq '^x-robots-tag:.*noindex' "$headers"
+          grep -Fq 'data-presentation="canyon"' "$body"
+          grep -Fq 'Preview fixture — not a real carrier' "$body"
+
+          branch_head="$(git ls-remote --exit-code origin "refs/heads/$VERCEL_GIT_COMMIT_REF" | cut -f 1)"
+          if [ "$branch_head" != "$VERCEL_GIT_COMMIT_SHA" ]; then
+            echo "A newer Canyon source is available. The review URL stays on its current deployment."
+            exit 0
+          fi
+
+          vercel alias set "$DEPLOYMENT_URL" "$REVIEW_ALIAS" --scope vantage-4d3db9ef --token="$VERCEL_TOKEN"
+          alias_deployment_id="$(vercel api "/v4/aliases/$REVIEW_ALIAS" \
+            --scope vantage-4d3db9ef --token="$VERCEL_TOKEN" --raw |
+            node -p 'JSON.parse(require("node:fs").readFileSync(0, "utf8")).deploymentId')"
+          test "$alias_deployment_id" = "$deployment_id"
+          echo "Canyon review: https://$REVIEW_ALIAS" >> "$GITHUB_STEP_SUMMARY"

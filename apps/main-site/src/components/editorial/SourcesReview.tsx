@@ -16,10 +16,10 @@ export function SourcesReview({ entry }: { entry: EditorialEntry }) {
   });
 
   return (
-    <section className="my-12 rounded-card border border-cream-border bg-cream p-6 sm:p-8" aria-labelledby="sources-review-heading">
+    <section className="editorial-panel my-12 rounded-card border border-cream-border bg-cream p-6 sm:p-8" aria-labelledby="sources-review-heading">
       <div className="mb-6 flex flex-wrap items-start justify-between gap-x-6 gap-y-4">
         <div className="flex items-center gap-4">
-          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-yellow-soft text-brand-blue">
+          <span className="editorial-card-icon grid size-11 shrink-0 place-items-center rounded-xl bg-brand-yellow-soft text-brand-blue">
             <BookOpen size={22} aria-hidden />
           </span>
           <h2 id="sources-review-heading" className="font-display text-2xl font-extrabold text-brand-blue">

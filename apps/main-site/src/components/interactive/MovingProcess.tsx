@@ -5,6 +5,7 @@ import { CmsElement, CmsText } from "@/components/cms/Content";
 import { CmsImage as Image } from "@/components/cms/Content";
 import { useId, useState, type KeyboardEvent } from "react";
 import { ArrowLeft, ArrowRight, ImageOff } from "lucide-react";
+import { sitePresentation } from "@/lib/presentation";
 
 const frames = [
   { id: "request", image: "", screenshot: true,
@@ -40,8 +41,24 @@ export function MovingProcess({ locale = "en" }: { locale?: "en" | "es" }) {
     if (event.key === "ArrowLeft") { event.preventDefault(); change(-1); }
   }
 
+  // Keep the card order and keyboard order aligned in the Canyon layout.
+  const steps = (
+    <CmsElement element="ol" scope="components/interactive/MovingProcess.tsx" className="process-steps m-0 list-none space-y-3 p-0" aria-label={es ? "Todos los pasos" : "All steps"}>
+      {frames.map((item, stepIndex) => (
+        <li key={item.id} data-selected={stepIndex === index} className={`process-step rounded-card border p-4 ${stepIndex === index ? "border-brand-yellow bg-white/10" : "border-white/15"}`}>
+          <button type="button" onClick={() => setIndex(stepIndex)} aria-current={index === stepIndex ? "step" : undefined}
+            aria-controls={captionId} className="process-step-action flex w-full items-start gap-3 text-left font-display font-bold text-white">
+            <span className="process-step-number grid size-8 shrink-0 place-items-center rounded-full bg-brand-yellow text-brand-blue" aria-hidden><CmsText scope="components/interactive/MovingProcess.tsx">{stepIndex + 1}</CmsText></span>
+            <span className="pt-1"><CmsText scope="components/interactive/MovingProcess.tsx">{item[locale].title}</CmsText></span>
+          </button>
+          <p className="process-step-copy mt-2 pl-11 text-sm leading-relaxed text-on-dark-100"><CmsText scope="components/interactive/MovingProcess.tsx">{item[locale].caption}</CmsText></p>
+        </li>
+      ))}
+    </CmsElement>
+  );
+
   return <CmsElement element="div" scope="components/interactive/MovingProcess.tsx"
-    className="grid gap-8 lg:grid-cols-[1.15fr_1fr]"
+    className="moving-process grid gap-8 lg:grid-cols-[1.15fr_1fr]"
     role="region"
     aria-roledescription={es ? "secuencia de imágenes" : "image sequence"}
     aria-label={es ? "Los cinco pasos de su mudanza" : "The five steps of your move"}
@@ -49,8 +66,9 @@ export function MovingProcess({ locale = "en" }: { locale?: "en" | "es" }) {
     onKeyDown={handleKey}
     data-testid="moving-process"
   >
-    <div className="min-w-0">
-      <figure className="overflow-hidden rounded-card border border-white/20 bg-white text-ink">
+    {sitePresentation.id === "canyon" && steps}
+    <div className="process-preview min-w-0">
+      <figure className="process-figure overflow-hidden rounded-card border border-white/20 bg-white text-ink">
         <div className="relative aspect-[16/10] w-full bg-cream" data-testid="process-image-slot">
           <CmsText scope="components/interactive/MovingProcess.tsx">{failed.includes(frame.id) ? <div className="flex h-full flex-col items-center justify-center gap-3 p-8 text-center text-brand-blue" role="status">
             <ImageOff size={32} aria-hidden />
@@ -85,28 +103,19 @@ export function MovingProcess({ locale = "en" }: { locale?: "en" | "es" }) {
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
         <CmsElement element="button" scope="components/interactive/MovingProcess.tsx" type="button" onClick={() => change(-1)} aria-disabled={index === 0}
           aria-label={es ? "Paso anterior" : "Previous step"} aria-controls={captionId}
-          className="inline-flex min-h-11 items-center gap-2 rounded-lg2 border border-white/40 px-4 py-2 font-semibold text-white transition-colors hover:bg-white/10 aria-disabled:cursor-not-allowed aria-disabled:opacity-40 motion-reduce:transition-none">
+          className="process-previous inline-flex min-h-11 items-center gap-2 rounded-lg2 border border-white/40 px-4 py-2 font-semibold text-white transition-colors hover:bg-white/10 aria-disabled:cursor-not-allowed aria-disabled:opacity-40 motion-reduce:transition-none">
           <ArrowLeft size={18} aria-hidden /><CmsText scope="components/interactive/MovingProcess.tsx">{es ? "Anterior" : "Previous"}</CmsText>
         </CmsElement>
-        <span className="text-sm text-on-dark-100" data-testid="process-position"><CmsText scope="components/interactive/MovingProcess.tsx">{index + 1}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{" / "}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{frames.length}</CmsText></span>
+        <span className="process-position text-sm text-on-dark-100" data-testid="process-position"><CmsText scope="components/interactive/MovingProcess.tsx">{index + 1}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{" / "}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{frames.length}</CmsText></span>
         <CmsElement element="button" scope="components/interactive/MovingProcess.tsx" type="button" onClick={() => change(1)} aria-disabled={index === frames.length - 1}
           aria-label={es ? "Paso siguiente" : "Next step"} aria-controls={captionId}
-          className="inline-flex min-h-11 items-center gap-2 rounded-lg2 bg-brand-yellow px-4 py-2 font-semibold text-ink transition-colors hover:bg-brand-yellow-soft aria-disabled:cursor-not-allowed aria-disabled:opacity-40 motion-reduce:transition-none">
+          className="process-next inline-flex min-h-11 items-center gap-2 rounded-lg2 bg-brand-yellow px-4 py-2 font-semibold text-ink transition-colors hover:bg-brand-yellow-soft aria-disabled:cursor-not-allowed aria-disabled:opacity-40 motion-reduce:transition-none">
           <CmsText scope="components/interactive/MovingProcess.tsx">{es ? "Siguiente" : "Next"}</CmsText><ArrowRight size={18} aria-hidden />
         </CmsElement>
       </div>
     </div>
 
     {/* Always-rendered text keeps the sequence useful before hydration and without images. */}
-    <CmsElement element="ol" scope="components/interactive/MovingProcess.tsx" className="m-0 list-none space-y-3 p-0" aria-label={es ? "Todos los pasos" : "All steps"}>
-      <CmsText scope="components/interactive/MovingProcess.tsx">{frames.map((item, stepIndex) => <li key={item.id} className={`rounded-card border p-4 ${stepIndex === index ? "border-brand-yellow bg-white/10" : "border-white/15"}`}>
-        <button type="button" onClick={() => setIndex(stepIndex)} aria-current={index === stepIndex ? "step" : undefined}
-          aria-controls={captionId} className="flex w-full items-start gap-3 text-left font-display font-bold text-white">
-          <span className="grid size-8 shrink-0 place-items-center rounded-full bg-brand-yellow text-brand-blue" aria-hidden><CmsText scope="components/interactive/MovingProcess.tsx">{stepIndex + 1}</CmsText></span>
-          <span className="pt-1"><CmsText scope="components/interactive/MovingProcess.tsx">{item[locale].title}</CmsText></span>
-        </button>
-        <p className="mt-2 pl-11 text-sm leading-relaxed text-on-dark-100"><CmsText scope="components/interactive/MovingProcess.tsx">{item[locale].caption}</CmsText></p>
-      </li>)}</CmsText>
-    </CmsElement>
+    {sitePresentation.id !== "canyon" && steps}
   </CmsElement>;
 }

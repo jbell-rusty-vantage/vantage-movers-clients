@@ -68,8 +68,8 @@ function getStateStyles(
 
   if (isActive) {
     return {
-      fill: COVERAGE_COLORS.mapActiveFill,
-      stroke: COVERAGE_COLORS.mapActiveStroke,
+      fill: `var(--coverage-state-active, ${COVERAGE_COLORS.mapActiveFill})`,
+      stroke: `var(--coverage-state-active-line, ${COVERAGE_COLORS.mapActiveStroke})`,
       strokeWidth: 1.6,
       filter: "url(#coverage-state-shadow)",
     };
@@ -77,16 +77,16 @@ function getStateStyles(
 
   if (isHovered) {
     return {
-      fill: COVERAGE_COLORS.mapHoverFill,
-      stroke: COVERAGE_COLORS.mapHoverStroke,
+      fill: `var(--coverage-state-hover, ${COVERAGE_COLORS.mapHoverFill})`,
+      stroke: `var(--coverage-state-hover-line, ${COVERAGE_COLORS.mapHoverStroke})`,
       strokeWidth: 1.2,
       filter: undefined,
     };
   }
 
   return {
-    fill: COVERAGE_COLORS.mapDefaultFill,
-    stroke: COVERAGE_COLORS.mapDefaultStroke,
+    fill: `var(--coverage-state, ${COVERAGE_COLORS.mapDefaultFill})`,
+    stroke: `var(--coverage-state-line, ${COVERAGE_COLORS.mapDefaultStroke})`,
     strokeWidth: 0.85,
     filter: undefined,
   };
@@ -96,9 +96,9 @@ function getLabelFill(abbr: string, active: string, hovered: string | null) {
   const isActive = active === abbr;
   const isHovered = hovered === abbr && !isActive;
 
-  if (isActive) return COVERAGE_COLORS.mapActiveLabel;
-  if (isHovered) return COVERAGE_COLORS.mapHoverLabel;
-  return COVERAGE_COLORS.mapDefaultLabel;
+  if (isActive) return `var(--coverage-active-label, ${COVERAGE_COLORS.mapActiveLabel})`;
+  if (isHovered) return `var(--coverage-hover-label, ${COVERAGE_COLORS.mapHoverLabel})`;
+  return `var(--coverage-label, ${COVERAGE_COLORS.mapDefaultLabel})`;
 }
 
 export function CoverageMap({ locale = "en" }: { locale?: "en" | "es" }) {
@@ -152,62 +152,64 @@ export function CoverageMap({ locale = "en" }: { locale?: "en" | "es" }) {
   }, []);
 
   return (
-    <div className="grid items-center gap-14 max-md:grid-cols-1 md:grid-cols-[.95fr_1.05fr]">
-      <div>
-        <Eyebrow className={heroHeadingFont.className}><CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{es ? "Planifique su destino" : coverageSection.eyebrow}</CmsText></Eyebrow>
-        <h2
-          className={`mb-4 text-balance leading-[1.08] font-extrabold -tracking-[.02em] ${heroHeadingFont.className}`}
-          style={{
-            fontSize: `clamp(30px, 3.4vw, ${HEADING_FONT_SIZE}px)`,
-            color: COVERAGE_COLORS.headingColor,
-          }}
-        >
-          <CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{es ? "Hablemos de su ruta" : coverageSection.title}</CmsText>
-        </h2>
-        <p
-          className={`mb-7 leading-[1.6] ${heroBodyFont.className}`}
-          style={{ fontSize: `${INTRO_FONT_SIZE}px`, color: COVERAGE_COLORS.bodyColor }}
-        >
-          <CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{es ? "Seleccione un estado para preparar las preguntas sobre su mudanza. Confirme la disponibilidad y las condiciones de su ruta con un coordinador." : coverageSection.body}</CmsText>
-        </p>
+    <div className="coverage-layout grid items-center gap-14 max-md:grid-cols-1 md:grid-cols-[.95fr_1.05fr]">
+      <div className="coverage-copy">
+        <div className="coverage-intro">
+          <Eyebrow className={`coverage-eyebrow ${heroHeadingFont.className}`}><CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{es ? "Planifique su destino" : coverageSection.eyebrow}</CmsText></Eyebrow>
+          <h2
+            className={`mb-4 text-balance leading-[1.08] font-extrabold -tracking-[.02em] ${heroHeadingFont.className}`}
+            style={{
+              fontSize: `clamp(30px, 3.4vw, ${HEADING_FONT_SIZE}px)`,
+              color: `var(--coverage-heading, ${COVERAGE_COLORS.headingColor})`,
+            }}
+          >
+            <CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{es ? "Hablemos de su ruta" : coverageSection.title}</CmsText>
+          </h2>
+          <p
+            className={`mb-7 leading-[1.6] ${heroBodyFont.className}`}
+            style={{ fontSize: `${INTRO_FONT_SIZE}px`, color: `var(--coverage-body, ${COVERAGE_COLORS.bodyColor})` }}
+          >
+            <CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{es ? "Seleccione un estado para preparar las preguntas sobre su mudanza. Confirme la disponibilidad y las condiciones de su ruta con un coordinador." : coverageSection.body}</CmsText>
+          </p>
+        </div>
         <div
           key={active}
-          className={`border p-[26px] shadow-card ${radiusClasses.none}`}
+          className={`coverage-detail border p-[26px] shadow-card ${radiusClasses.none}`}
           style={{
-            backgroundColor: COVERAGE_COLORS.detailCardBg,
-            borderColor: COVERAGE_COLORS.detailCardBorder,
+            backgroundColor: `var(--coverage-detail-bg, ${COVERAGE_COLORS.detailCardBg})`,
+            borderColor: `var(--coverage-detail-line, ${COVERAGE_COLORS.detailCardBorder})`,
           }}
         >
           <div className="mb-3 flex items-center gap-3">
             <span
               className={`grid size-11 place-items-center ${radiusClasses.lg2}`}
-              style={{ backgroundColor: COVERAGE_COLORS.detailIconBg }}
+              style={{ backgroundColor: `var(--coverage-detail-icon-bg, ${COVERAGE_COLORS.detailIconBg})` }}
             >
               <MapPin
                 className="size-[22px]"
-                style={{ color: COVERAGE_COLORS.detailIconColor }}
+                style={{ color: `var(--coverage-detail-icon, ${COVERAGE_COLORS.detailIconColor})` }}
                 strokeWidth={2}
                 aria-hidden
               />
             </span>
             <h3
               className={`m-0 text-[23px] font-extrabold ${heroHeadingFont.className}`}
-              style={{ color: COVERAGE_COLORS.detailTitleColor }}
+              style={{ color: `var(--coverage-detail-title, ${COVERAGE_COLORS.detailTitleColor})` }}
             >
               <CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{selName}</CmsText>
             </h3>
           </div>
           <p
             className={`mb-[18px] text-[15px] leading-[1.6] ${heroBodyFont.className}`}
-            style={{ color: COVERAGE_COLORS.bodyColor }}
+            style={{ color: `var(--coverage-detail-text, ${COVERAGE_COLORS.bodyColor})` }}
           >
             <CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{es ? `¿Su destino es ${selName}? Confirme el acceso, las fechas y los servicios para su ruta. El mapa no confirma cobertura ni una oficina local.` : coverageCopy(selName)}</CmsText>
           </p>
           <CmsElement element="a" scope="components/interactive/CoverageMap.tsx|lib/content.ts"
             href="#quote"
-            className={`inline-flex items-center gap-2 px-5 py-3 text-sm font-bold tracking-[.04em] uppercase no-underline transition hover:opacity-90 ${radiusClasses.md2} ${heroHeadingFont.className}`}
+            className={`coverage-action inline-flex items-center gap-2 px-5 py-3 text-sm font-bold tracking-[.04em] uppercase no-underline transition hover:opacity-90 ${radiusClasses.md2} ${heroHeadingFont.className}`}
             style={{
-              backgroundColor: COVERAGE_COLORS.ctaBg,
+              backgroundColor: `var(--coverage-action-bg, ${COVERAGE_COLORS.ctaBg})`,
               color: COVERAGE_COLORS.ctaText,
             }}
           >
@@ -217,26 +219,26 @@ export function CoverageMap({ locale = "en" }: { locale?: "en" | "es" }) {
       </div>
 
       <div
-        className={`border p-5 shadow-card sm:p-6 ${radiusClasses.md2}`}
+        className={`coverage-map-panel border p-5 shadow-card sm:p-6 ${radiusClasses.md2}`}
         style={{
-          backgroundColor: COVERAGE_COLORS.mapPanelBg,
-          borderColor: COVERAGE_COLORS.mapPanelBorder,
+          backgroundColor: `var(--coverage-panel-bg, ${COVERAGE_COLORS.mapPanelBg})`,
+          borderColor: `var(--coverage-panel-line, ${COVERAGE_COLORS.mapPanelBorder})`,
         }}
       >
         <div className="mb-4 flex items-center justify-between gap-3">
           <p
             className={`m-0 text-sm font-bold tracking-[.06em] uppercase ${heroHeadingFont.className}`}
-            style={{ color: COVERAGE_COLORS.headingColor }}
+            style={{ color: `var(--coverage-heading, ${COVERAGE_COLORS.headingColor})` }}
           >
             <CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{es ? "Mapa de destinos" : "Destination Map"}</CmsText>
           </p>
           <p
             className={`m-0 truncate text-right text-sm font-extrabold transition-opacity duration-150 ${heroHeadingFont.className}`}
-            style={{ color: COVERAGE_COLORS.headingColor }}
+            style={{ color: `var(--coverage-heading, ${COVERAGE_COLORS.headingColor})` }}
             aria-live="polite"
           >
             <CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{previewName}</CmsText>
-            <span className="ml-1.5 font-bold" style={{ color: COVERAGE_COLORS.bodyColor }}>
+            <span className="ml-1.5 font-bold" style={{ color: `var(--coverage-body, ${COVERAGE_COLORS.bodyColor})` }}>
               <CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{previewAbbr}</CmsText>
             </span>
           </p>
@@ -245,8 +247,8 @@ export function CoverageMap({ locale = "en" }: { locale?: "en" | "es" }) {
         <div
           className={`relative overflow-hidden border p-3 sm:p-4 ${radiusClasses.none}`}
           style={{
-            background: COVERAGE_COLORS.mapInnerBg,
-            borderColor: COVERAGE_COLORS.detailCardBorder,
+            background: `var(--coverage-map-bg, ${COVERAGE_COLORS.mapInnerBg})`,
+            borderColor: `var(--coverage-panel-line, ${COVERAGE_COLORS.detailCardBorder})`,
           }}
         >
           <CmsElement element="svg" scope="components/interactive/CoverageMap.tsx|lib/content.ts"
@@ -262,7 +264,7 @@ export function CoverageMap({ locale = "en" }: { locale?: "en" | "es" }) {
                   dx="0"
                   dy="2"
                   stdDeviation="2.5"
-                  floodColor="#024799"
+                  floodColor="var(--coverage-shadow, #024799)"
                   floodOpacity="0.28"
                 />
               </filter>
@@ -326,7 +328,7 @@ export function CoverageMap({ locale = "en" }: { locale?: "en" | "es" }) {
 
         <p
           className={`mt-3.5 mb-0 text-center text-[13px] ${heroBodyFont.className}`}
-          style={{ color: COVERAGE_COLORS.bodyColor }}
+          style={{ color: `var(--coverage-body, ${COVERAGE_COLORS.bodyColor})` }}
         >
           <CmsText scope="components/interactive/CoverageMap.tsx|lib/content.ts">{es ? "Seleccione un estado para explorar" : "Hover to preview · Click to select your state"}</CmsText>
         </p>

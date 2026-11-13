@@ -22,10 +22,10 @@ export function MovingCarriersSection({ carriers }: MovingCarriersSectionProps) 
 
   return (
     <CmsElement element="section" scope="components/layout/MovingCarriersSection.tsx"
-      className={`${heroBodyFont.className} border-t px-7`}
+      className={`${heroBodyFont.className} editorial-carrier-network border-t px-7`}
       style={{
-        backgroundColor: colors.footerBg,
-        borderColor: colors.borderColor,
+        backgroundColor: `var(--editorial-carrier-bg, ${colors.footerBg})`,
+        borderColor: `var(--editorial-carrier-border, ${colors.borderColor})`,
         paddingTop: `${PADDING.pt}px`,
         paddingBottom: `${PADDING.pb}px`,
       }}

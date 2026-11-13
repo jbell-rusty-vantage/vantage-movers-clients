@@ -10,7 +10,7 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={cn("mx-auto w-full max-w-[1200px] px-7", className)}>
+    <div className={cn("site-container mx-auto w-full max-w-[1200px] px-7", className)}>
       <CmsText scope="components/ui/Container.tsx">{children}</CmsText>
     </div>
   );

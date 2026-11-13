@@ -11,7 +11,7 @@ export function Logo({ variant = "header", href = "/#top" }: LogoProps) {
   const isFooter = variant === "footer";
 
   return (
-    <Link scope="components/layout/Logo.tsx" href={href} className="flex items-center no-underline" aria-label={business.name}>
+    <Link scope="components/layout/Logo.tsx" href={href} className="site-logo flex items-center no-underline" aria-label={business.name}>
       <Image scope="components/layout/Logo.tsx"
         className={isFooter ? "h-[52px] w-auto" : "h-[36px] w-auto"}
         src="/vantage-movers-logo-refined-smaller-text.svg"

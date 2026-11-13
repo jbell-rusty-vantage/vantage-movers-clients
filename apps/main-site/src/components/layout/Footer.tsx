@@ -35,9 +35,9 @@ export function Footer({ locale = "en" }: { locale?: "en" | "es" }) {
     { href: "/accessibility", label: es ? "Accesibilidad (inglés)" : "Accessibility" },
   ];
   const legalLabels = ["Privacidad", "Términos y condiciones", "Privacidad de SMS", "Términos de SMS", "Cancelaciones", "Derechos y responsabilidades", "Prepárese para mudarse", "No vender mi información"];
-  return <footer className="border-t border-cream-border bg-cream">
+  return <footer className="site-footer border-t border-cream-border bg-cream">
     <Container className="py-12 sm:py-16">
-      <div className="mb-12 flex flex-wrap items-center justify-between gap-6 border-b border-cream-border pb-8"><div><Logo href={paths.home} /><p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft"><CmsText scope="components/layout/Footer.tsx">{es ? "Su próximo capítulo comienza con un plan. Hablemos de los detalles." : "Your next chapter starts with a plan. Let’s talk through the details."}</CmsText></p></div><CmsElement element="a" scope="components/layout/Footer.tsx" href={business.phoneHref} className="rounded-full bg-brand-blue px-7 py-4 font-display text-xl font-bold text-white no-underline"><CmsText scope="components/layout/Footer.tsx">{business.phoneDisplay}</CmsText></CmsElement></div>
+      <div className="mb-12 flex flex-wrap items-center justify-between gap-6 border-b border-cream-border pb-8"><div><Logo href={paths.home} /><p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft"><CmsText scope="components/layout/Footer.tsx">{es ? "Su próximo capítulo comienza con un plan. Hablemos de los detalles." : "Your next chapter starts with a plan. Let’s talk through the details."}</CmsText></p></div><CmsElement element="a" scope="components/layout/Footer.tsx" href={business.phoneHref} className="site-footer__phone rounded-full bg-brand-blue px-7 py-4 font-display text-xl font-bold text-white no-underline"><CmsText scope="components/layout/Footer.tsx">{business.phoneDisplay}</CmsText></CmsElement></div>
       <div className="grid gap-10 sm:grid-cols-2 xl:grid-cols-[1fr_1.2fr_1fr_1.1fr]">
         <LinkColumn title={es ? "Servicios" : "Services"} links={services.length ? services : footerServiceLinks} />
         <LinkColumn title={es ? "Guías y recursos" : "Guides & resources"} links={guides} />

@@ -27,7 +27,7 @@ export function WhyVantageSection() {
   const bodyClass = heroBodyFont.className;
 
   return (
-    <section className="py-24" style={{ backgroundColor: colors.sectionBg }}>
+    <section className="broker-benefits py-24" style={{ backgroundColor: `var(--benefits-bg, ${colors.sectionBg})` }}>
       <Container>
         <div className="mx-auto mb-[52px] max-w-[640px] text-center">
           <Eyebrow className="justify-center"><CmsText scope="components/sections/WhyVantageSection.tsx">{whyVantageSection.eyebrow}</CmsText></Eyebrow>
@@ -35,7 +35,7 @@ export function WhyVantageSection() {
             className={`${accentClass} text-balance leading-[1.08] font-extrabold -tracking-[.02em]`}
             style={{
               fontSize: `clamp(30px, 3.4vw, ${HEADING_FONT_SIZE}px)`,
-              color: colors.headingColor,
+              color: `var(--benefits-title, ${colors.headingColor})`,
             }}
           >
             <CmsText scope="components/sections/WhyVantageSection.tsx">{whyVantageSection.heading}</CmsText>
@@ -52,21 +52,21 @@ export function WhyVantageSection() {
                 key={item.title}
                 className={`border p-7 shadow-card ${radiusClasses[CARD_RADIUS]}`}
                 style={{
-                  backgroundColor: colors.cardBg,
-                  borderColor: colors.cardBorder,
+                  backgroundColor: `var(--benefits-card-bg, ${colors.cardBg})`,
+                  borderColor: `var(--benefits-line, ${colors.cardBorder})`,
                 }}
               >
                 <span
                   className={`mb-4 grid size-12 place-items-center ${radiusClasses[ICON_WRAPPER_RADIUS]}`}
-                  style={{ backgroundColor: colors.iconWrapperBg }}
+                  style={{ backgroundColor: `var(--benefits-icon-bg, ${colors.iconWrapperBg})` }}
                 >
-                  <Icon size={ICON_SIZE} style={{ color: colors.iconColor }} strokeWidth={2} />
+                  <Icon size={ICON_SIZE} style={{ color: `var(--benefits-icon, ${colors.iconColor})` }} strokeWidth={2} aria-hidden />
                 </span>
                 <h3
                   className={`${accentClass} mb-2 font-extrabold`}
                   style={{
                     fontSize: `${CARD_TITLE_FONT_SIZE}px`,
-                    color: colors.cardTitleColor,
+                    color: `var(--benefits-title, ${colors.cardTitleColor})`,
                   }}
                 >
                   <CmsText scope="components/sections/WhyVantageSection.tsx">{item.title}</CmsText>
@@ -75,7 +75,7 @@ export function WhyVantageSection() {
                   className={`${bodyClass} leading-[1.55]`}
                   style={{
                     fontSize: `${CARD_DESC_FONT_SIZE}px`,
-                    color: colors.cardDescColor,
+                    color: `var(--benefits-body, ${colors.cardDescColor})`,
                   }}
                 >
                   <CmsText scope="components/sections/WhyVantageSection.tsx">{item.desc}</CmsText>
@@ -85,9 +85,9 @@ export function WhyVantageSection() {
           })}</CmsText>
 
           <div
-            className={`flex flex-col justify-center p-7 shadow-[0_12px_30px_rgba(2,71,153,.22)] ${radiusClasses[CARD_RADIUS]}`}
+            className={`broker-benefits-cta flex flex-col justify-center p-7 shadow-[0_12px_30px_rgba(2,71,153,.22)] ${radiusClasses[CARD_RADIUS]}`}
             style={{
-              backgroundImage: `linear-gradient(140deg, ${colors.ctaGradientStart}, ${colors.ctaGradientEnd})`,
+              background: `var(--benefits-cta-bg, linear-gradient(140deg, ${colors.ctaGradientStart}, ${colors.ctaGradientEnd}))`,
             }}
           >
             <h3
@@ -103,18 +103,18 @@ export function WhyVantageSection() {
               className={`${bodyClass} mb-[18px] leading-[1.55]`}
               style={{
                 fontSize: `${CARD_DESC_FONT_SIZE}px`,
-                color: colors.ctaBodyColor,
+                color: `var(--benefits-cta-text, ${colors.ctaBodyColor})`,
               }}
             >
               <CmsText scope="components/sections/WhyVantageSection.tsx">{whyVantageSection.ctaBody}</CmsText>
             </p>
             <CmsElement element="a" scope="components/sections/WhyVantageSection.tsx"
               href="#quote"
-              className={`${accentClass} self-start px-[22px] py-3 font-bold tracking-[.04em] uppercase no-underline transition hover:-translate-y-0.5 ${radiusClasses[CTA_BUTTON_RADIUS]}`}
+              className={`broker-benefits-action ${accentClass} self-start px-[22px] py-3 font-bold tracking-[.04em] uppercase no-underline transition hover:-translate-y-0.5 ${radiusClasses[CTA_BUTTON_RADIUS]}`}
               style={{
                 fontSize: "14px",
-                backgroundColor: colors.ctaButtonBg,
-                color: colors.ctaButtonText,
+                backgroundColor: `var(--benefits-action-bg, ${colors.ctaButtonBg})`,
+                color: `var(--benefits-action-text, ${colors.ctaButtonText})`,
               }}
             >
               <CmsText scope="components/sections/WhyVantageSection.tsx">{whyVantageSection.ctaLabel}</CmsText>

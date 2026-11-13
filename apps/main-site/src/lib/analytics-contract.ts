@@ -1,3 +1,5 @@
+import { websiteDesign } from "./website-design";
+
 /** Public, bounded dimensions only. Never serialize arbitrary DOM text or form values. */
 export type AnalyticsProperties = Record<string, string | number | boolean | null>;
 export type SafeEvent = { name: string; properties: { context: string; detail: string } };
@@ -85,7 +87,7 @@ export function sanitizeAnalyticsEvent(
   return {
     name,
     properties: {
-      context: `main-site-optimization|${production ? "production" : "preview"}|${page.id}|${page.locale}`,
+      context: `${websiteDesign.id}|${production ? "production" : "preview"}|${page.id}|${page.locale}`,
       detail: detail.join("|") || "none",
     },
   };

@@ -5,10 +5,10 @@ import { business } from "@/lib/content";
 
 export function TrustBand() {
   return (
-    <section className="border-b border-cream-border-2 bg-white">
+    <section className="broker-trust-band border-b border-cream-border-2 bg-white">
       <Container className="flex flex-wrap items-center justify-between gap-8 py-[30px]">
         <div className="flex flex-wrap items-center gap-4">
-          <div className="text-[14.5px] text-[#64748B]">
+          <div className="broker-trust-copy text-[14.5px] text-[#64748B]">
             <b className="font-display text-brand-blue"><CmsText scope="components/sections/TrustBand.tsx">{"Know your coordinator. Know your carrier."}</CmsText></b>
           </div>
         </div>

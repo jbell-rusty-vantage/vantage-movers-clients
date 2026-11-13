@@ -121,10 +121,10 @@ function TestimonialCard({
 }) {
   return (
     <figure
-      className={`flex-none bg-white shadow-[0_14px_36px_rgba(4,18,38,0.3)] transition duration-250 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(4,18,38,0.36)] ${radiusClasses[CARD_RADIUS]}`}
+      className={`testimonial-card flex-none bg-white shadow-[0_14px_36px_rgba(4,18,38,0.3)] transition duration-250 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(4,18,38,0.36)] ${radiusClasses[CARD_RADIUS]}`}
       style={{
         width: fixedWidth !== undefined ? `${fixedWidth}px` : cardSizeWidths[CARD_SIZE],
-        padding: `${CARD_PADDING}px`,
+        padding: `var(--testimonial-padding, ${CARD_PADDING}px)`,
       }}
     >
       <CmsText scope="components/sections/TestimonialsSection.tsx">{SHOW_STARS && data.rating !== null && (
@@ -138,7 +138,7 @@ function TestimonialCard({
         />
       )}</CmsText>
       <blockquote
-        className={`mb-5 italic text-ink-soft ${testimonialsBodyFont.className}`}
+        className={`testimonial-quote mb-5 italic text-ink-soft ${testimonialsBodyFont.className}`}
         style={{
           fontSize: `${QUOTE_FONT_SIZE}px`,
           lineHeight: 1.65,
@@ -146,7 +146,7 @@ function TestimonialCard({
       ><CmsText scope="components/sections/TestimonialsSection.tsx">{"\u201c"}</CmsText>{data.quote}<CmsText scope="components/sections/TestimonialsSection.tsx">{"\u201d"}</CmsText></blockquote>
       <figcaption className="flex items-center gap-3">
         <span
-          className={`grid size-11 place-items-center rounded-full bg-gradient-to-br from-[#2E86DE] to-brand-blue-bright text-[15px] font-extrabold text-white ${heroHeadingFont.className}`}
+          className={`testimonial-avatar grid size-11 place-items-center rounded-full bg-gradient-to-br from-[#2E86DE] to-brand-blue-bright text-[15px] font-extrabold text-white ${heroHeadingFont.className}`}
         >
           <CmsText scope="components/sections/TestimonialsSection.tsx">{initials(data.name)}</CmsText>
         </span>
@@ -215,12 +215,12 @@ function TestimonialsCarousel({
     setCarouselIndex((index) => (index <= 0 ? maxStartIndex : index - 1));
 
   return (
-    <div className="relative mx-auto max-w-[1400px] px-4">
-      <div className="flex items-center gap-4">
+    <div className="testimonial-carousel relative mx-auto max-w-[1400px] px-4">
+      <div className="testimonial-carousel-row flex items-center gap-4">
         <CmsElement element="button" scope="components/sections/TestimonialsSection.tsx"
           type="button"
           onClick={goPrev}
-          className="grid size-11 shrink-0 place-items-center rounded-full border border-white/25 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow"
+          className="testimonial-control testimonial-previous grid size-11 shrink-0 place-items-center rounded-full border border-white/25 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow"
           aria-label="Show previous testimonial"
         >
           <ChevronLeft size={22} strokeWidth={2.4} aria-hidden />
@@ -228,11 +228,11 @@ function TestimonialsCarousel({
 
         <CmsElement element="div" scope="components/sections/TestimonialsSection.tsx"
           ref={viewportRef}
-          className="min-w-0 flex-1 overflow-hidden py-2.5 [mask-image:linear-gradient(90deg,transparent,#000_3%,#000_97%,transparent)]"
+          className="testimonial-viewport min-w-0 flex-1 overflow-hidden py-2.5 [mask-image:linear-gradient(90deg,transparent,#000_3%,#000_97%,transparent)]"
           aria-label={`Customer testimonials carousel, ${visibleCount} visible`}
         >
           <div
-            className="flex transition-transform duration-350 ease-out"
+            className="flex transition-transform duration-350 ease-out motion-reduce:transition-none"
             style={{
               gap: `${CAROUSEL_GAP}px`,
               transform:
@@ -252,7 +252,7 @@ function TestimonialsCarousel({
         <CmsElement element="button" scope="components/sections/TestimonialsSection.tsx"
           type="button"
           onClick={goNext}
-          className="grid size-11 shrink-0 place-items-center rounded-full border border-white/25 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow"
+          className="testimonial-control testimonial-next grid size-11 shrink-0 place-items-center rounded-full border border-white/25 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow"
           aria-label="Show next testimonial"
         >
           <ChevronRight size={22} strokeWidth={2.4} aria-hidden />
@@ -271,30 +271,30 @@ export function TestimonialsSection({ items = [], locale = "en" }: TestimonialsS
   const es = locale === "es";
   const publishedItems = items.filter((item) => item.published);
   if (publishedItems.length === 0) {
-    return <section id="testimonials" className="bg-cream py-12"><Container><h2 className="font-display text-2xl font-bold text-brand-blue"><CmsText scope="components/sections/TestimonialsSection.tsx">{es ? "Opiniones de clientes" : "Customer feedback"}</CmsText></h2><p className="mt-3 text-ink-soft"><CmsText scope="components/sections/TestimonialsSection.tsx">{es ? "Actualmente no hay reseñas publicadas para mostrar aquí." : "There are no published reviews to display here right now."}</CmsText></p></Container></section>;
+    return <section id="testimonials" className="testimonials-section bg-cream py-12"><Container><h2 className="font-display text-2xl font-bold text-brand-blue"><CmsText scope="components/sections/TestimonialsSection.tsx">{es ? "Opiniones de clientes" : "Customer feedback"}</CmsText></h2><p className="mt-3 text-ink-soft"><CmsText scope="components/sections/TestimonialsSection.tsx">{es ? "Actualmente no hay reseñas publicadas para mostrar aquí." : "There are no published reviews to display here right now."}</CmsText></p></Container></section>;
   }
 
   const carouselTrackCards = fillMarquee(toCardData(publishedItems));
 
   return (
-    <section id="testimonials" className="relative overflow-hidden bg-brand-blue py-24">
+    <section id="testimonials" className="testimonials-section relative overflow-hidden bg-brand-blue py-24">
       <div
-        className="absolute -top-[100px] -left-[100px] size-[420px] rounded-full bg-[radial-gradient(circle,rgba(46,134,222,.22),transparent_65%)]"
+        className="testimonials-backdrop absolute -top-[100px] -left-[100px] size-[420px] rounded-full bg-[radial-gradient(circle,rgba(46,134,222,.22),transparent_65%)]"
         aria-hidden
       />
       <Container className="relative">
-        <div className="mx-auto mb-12 max-w-[640px] text-center">
-          <Eyebrow onDark className="justify-center">
+        <div className="testimonials-heading mx-auto mb-12 max-w-[640px] text-center">
+          <Eyebrow onDark className="testimonials-eyebrow justify-center">
             <CmsText scope="components/sections/TestimonialsSection.tsx">{es ? "Opiniones de clientes" : "Customer Feedback"}</CmsText>
           </Eyebrow>
           <h2
-            className={`mb-3 text-balance leading-[1.08] font-extrabold -tracking-[.02em] text-white ${heroHeadingFont.className}`}
+            className={`testimonials-title mb-3 text-balance leading-[1.08] font-extrabold -tracking-[.02em] text-white ${heroHeadingFont.className}`}
             style={{ fontSize: "clamp(30px, 3.4vw, 44px)" }}
           >
             <CmsText scope="components/sections/TestimonialsSection.tsx">{es ? "Experiencias de clientes" : "Hear from customers we’ve helped move"}</CmsText>
           </h2>
           <p
-            className={`text-on-dark-500 ${testimonialsBodyFont.className}`}
+            className={`testimonials-intro text-on-dark-500 ${testimonialsBodyFont.className}`}
             style={{ fontSize: "15px" }}
           >
             <CmsText scope="components/sections/TestimonialsSection.tsx">{es ? "Opiniones sobre la coordinación de mudanzas con Vantage. Las reseñas conservan su idioma original." : "Feedback about coordinating a move with Vantage."}</CmsText>

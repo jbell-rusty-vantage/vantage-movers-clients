@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { CmsElement, CmsText, ContentProvider, ContentScope } from "@/components/cms/Content";
+import { CmsElement, CmsText, CmsHeadline, ContentProvider, ContentScope } from "@/components/cms/Content";
 import { resolveContent, resolveContactHref, resolveLegalMarkup, isContentImage, type ContentField } from "./resolve";
 import { contentBindings } from "./snapshot";
 import actualCatalog from "@/content/cms/catalog.json";
@@ -16,6 +16,12 @@ const fields: ContentField[] = [
 ];
 
 describe("preview content rendering", () => {
+  it("formats an edited headline without splitting its CMS identity", () => {
+    const headline = { key: "headline", defaultValue: "Your Trusted Moving Partner", sourceFile: "lib/content.ts", locale: "en", kind: "text" } as ContentField;
+    const html = renderToStaticMarkup(createElement(ContentProvider, { locale: "en", fields: [headline], values: { headline: "A thoughtful plan for your next chapter" } },
+      createElement(CmsHeadline, { scope: "lib/content.ts", accentLastWords: 2, accentClassName: "accent", text: headline.defaultValue })));
+    expect(html).toBe('A thoughtful plan for your <span class="accent">next chapter</span>');
+  });
   it("resolves the new resource cover library and bilingual editorial identity", () => {
     const resourceSource = "content/editorial/resource-center.ts";
     const posters = actualCatalog.filter(field => field.kind === "image" && field.defaultValue.includes("/still-life-20261112/"));

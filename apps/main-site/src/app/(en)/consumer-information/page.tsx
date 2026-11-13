@@ -30,19 +30,19 @@ export default async function ConsumerInformationPage() {
       <ScrollToPageTop />
       <Header />
       <main id="main-content" className={`bg-cream ${heroBodyFont.className}`}>
-        <section className="bg-brand-blue py-10 text-white sm:py-12">
+        <section className="editorial-masthead bg-brand-blue py-10 text-white sm:py-12">
           <Container>
             <Link scope="app/(en)/consumer-information/page.tsx"
               href="/"
-              className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-white! no-underline hover:text-white! hover:underline"
+              className="editorial-breadcrumb mb-5 inline-flex items-center gap-2 text-sm font-semibold text-white no-underline hover:underline"
             >
               <ArrowLeft className="size-4" strokeWidth={2.4} aria-hidden /><CmsText scope="app/(en)/consumer-information/page.tsx">{"Back to Home"}</CmsText></Link>
             <h1
-              className={`text-[clamp(38px,5vw,64px)] leading-[1.02] font-extrabold tracking-[-0.02em] ${heroHeadingFont.className}`}
+              className={`editorial-page-title text-[clamp(38px,5vw,64px)] leading-[1.02] font-extrabold tracking-[-0.02em] ${heroHeadingFont.className}`}
             ><CmsText scope="app/(en)/consumer-information/page.tsx">{"Consumer Information"}</CmsText></h1>
           </Container>
         </section>
-        <Container className="py-10"><FederalMovingResources /><Link href="/resources" className="font-semibold text-brand-blue">Explore Vantage’s moving guides →</Link></Container>
+        <Container className="py-10"><FederalMovingResources /><Link href="/resources" className="editorial-inline-link font-semibold text-brand-blue">Explore Vantage’s moving guides →</Link></Container>
         <MovingCarriersSection carriers={carriers} />
       </main>
       <SiteFooter />

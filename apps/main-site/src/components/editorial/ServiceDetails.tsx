@@ -57,8 +57,8 @@ export function ServiceDetails({ entry }: { entry: EditorialEntry }) {
         <CmsText scope="components/editorial/ServiceDetails.tsx">{sections.map((section, index) => {
           const Icon = icons[index] ?? ClipboardList;
           return (
-            <div key={section.heading} className="rounded-card border border-cream-border bg-white p-6 shadow-card sm:p-7">
-              <span className="mb-5 grid size-12 place-items-center rounded-xl bg-brand-yellow-soft text-brand-blue">
+            <div key={section.heading} className="editorial-card rounded-card border border-cream-border bg-white p-6 shadow-card sm:p-7">
+              <span className="editorial-card-icon mb-5 grid size-12 place-items-center rounded-xl bg-brand-yellow-soft text-brand-blue">
                 <Icon size={24} aria-hidden />
               </span>
               <h3 className="mb-3 text-balance font-display text-xl font-extrabold leading-snug text-brand-blue"><CmsText scope="components/editorial/ServiceDetails.tsx">{section.heading}</CmsText></h3>

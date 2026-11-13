@@ -19,6 +19,7 @@ import { TrustStrip } from "@/components/sections/TrustStrip";
 import { MilitaryAppreciation } from "@/components/sections/MilitaryAppreciation";
 import { WhyVantageSection } from "@/components/sections/WhyVantageSection";
 import { HomePageJsonLd } from "@/components/seo/HomePageJsonLd";
+import { sitePresentation } from "@/lib/presentation";
 
 interface HomePageProps {
   testimonials?: Testimonial[];
@@ -42,6 +43,12 @@ export function HomePage({
   const featuredTestimonialPromise = testimonialsPromise.then(
     (items) => items.find((item) => item.published) ?? null,
   );
+  const testimonialsSection = (
+    <Suspense fallback={<TestimonialsSectionSkeleton />}>
+      <TestimonialsStream testimonialsPromise={testimonialsPromise} />
+    </Suspense>
+  );
+  const canyon = sitePresentation.id === "canyon";
 
   return (
     <>
@@ -51,16 +58,17 @@ export function HomePage({
         <HeroSection />
         <TrustStrip />
 
+        {canyon && <HowItWorksSection />}
         <ServicesSection />
         <TrustBand />
-        <HowItWorksSection />
+        {!canyon && <HowItWorksSection />}
+        {canyon && testimonialsSection}
         <CoverageSection />
-        <WhyVantageSection />
+        {!canyon && <WhyVantageSection />}
         <AboutSection />
+        {canyon && <WhyVantageSection />}
         <MilitaryAppreciation />
-        <Suspense fallback={<TestimonialsSectionSkeleton />}>
-          <TestimonialsStream testimonialsPromise={testimonialsPromise} />
-        </Suspense>
+        {!canyon && testimonialsSection}
         <FaqSection />
         <Suspense fallback={<section id="contact" className="bg-cream px-6 py-12"><h2 className="font-display text-2xl font-bold text-brand-blue"><CmsText scope="components/HomePage.tsx">{"Contact Vantage"}</CmsText></h2><CmsElement element="a" scope="components/HomePage.tsx" href="tel:8884779232"><CmsText scope="components/HomePage.tsx">{"(888) 477-9232"}</CmsText></CmsElement></section>}>
           <GetInTouchSection featuredTestimonialPromise={featuredTestimonialPromise} />

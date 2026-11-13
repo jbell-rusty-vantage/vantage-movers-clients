@@ -5,6 +5,7 @@ import { estimate } from "@/lib/estimate";
 import { MAIN_SITE } from "@/content/partners";
 import { createFormLead, type CreateFormLeadInput } from "@vantage/api-client";
 import { parseWebsiteAttribution } from "@vantage/api-client/website-attribution";
+import { websiteDesign } from "@/lib/website-design";
 
 const requestSchema = quoteFormSchema.extend({
   source_company: z.string().trim().optional(),
@@ -60,7 +61,7 @@ export async function POST(req: Request) {
   };
   const attribution = req.headers.get("sec-gpc") === "1" || req.headers.get("dnt") === "1"
     ? undefined : parseWebsiteAttribution(parsed.data.website_attribution);
-  if (attribution) leadPayload.website_attribution = attribution;
+  if (attribution?.design === websiteDesign) leadPayload.website_attribution = attribution;
 
   const leadResult = await createFormLead(leadPayload);
   const result = estimate(quote);

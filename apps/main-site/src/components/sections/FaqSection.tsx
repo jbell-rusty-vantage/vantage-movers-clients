@@ -20,9 +20,9 @@ const spanishFaqs = [
 export function FaqSection({ locale = "en" }: { locale?: "en" | "es" }) {
   const es = locale === "es";
   return (
-    <section id="faq" className="scroll-mt-36 bg-cream py-24">
-      <Container className="grid items-start gap-14 lg:grid-cols-[.8fr_1.2fr]">
-        <div className="lg:sticky lg:top-[120px]">
+    <section id="faq" className="home-faq scroll-mt-36 bg-cream py-24">
+      <Container className="faq-layout grid items-start gap-14 lg:grid-cols-[.8fr_1.2fr]">
+        <div className="faq-intro lg:sticky lg:top-[120px]">
           <h2
             className={`mb-[18px] text-balance leading-[1.08] font-extrabold -tracking-[.02em] text-brand-blue ${heroHeadingFont.className}`}
             style={{ fontSize: `clamp(30px, 3.4vw, ${HEADING_FONT_SIZE}px)` }}
@@ -36,7 +36,7 @@ export function FaqSection({ locale = "en" }: { locale?: "en" | "es" }) {
           </p>
           <CmsElement element="a" scope="components/sections/FaqSection.tsx"
             href={business.phoneHref}
-            className={`inline-flex items-center gap-2.5 border border-cream-border bg-white px-5 py-4 no-underline shadow-card ${radiusClasses.md2}`}
+            className={`faq-call inline-flex items-center gap-2.5 border border-cream-border bg-white px-5 py-4 no-underline shadow-card ${radiusClasses.md2}`}
             data-analytics-location="faq"
           >
             <span
@@ -57,7 +57,7 @@ export function FaqSection({ locale = "en" }: { locale?: "en" | "es" }) {
           </CmsElement>
         </div>
 
-        <FaqAccordion items={es ? spanishFaqs : undefined} />
+        <div className="faq-answers min-w-0"><FaqAccordion items={es ? spanishFaqs : undefined} /></div>
       </Container>
     </section>
   );

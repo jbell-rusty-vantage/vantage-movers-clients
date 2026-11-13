@@ -26,6 +26,18 @@ export function CmsText({ scope, children }: { scope: string; children?: ReactNo
   return <>{resolve(children)}</>;
 }
 
+/** Style a headline after resolution so an Owner edit remains one complete field. */
+export function CmsHeadline({ scope, text: originalText, accentLastWords = 0, accentClassName }: {
+  scope: string; text: string; accentLastWords?: number; accentClassName?: string;
+}) {
+  const { values, locale, dataScope, fields } = useContext(ContentContext);
+  const text = resolveContent(originalText, values, `${scope}|${dataScope ?? ""}`, locale, "text", fields);
+  const words = text.match(/\S+\s*/g) ?? [];
+  if (accentLastWords <= 0 || words.length <= accentLastWords) return <>{text}</>;
+  const split = words.length - accentLastWords;
+  return <>{words.slice(0, split).join("")}<span className={accentClassName}>{words.slice(split).join("")}</span></>;
+}
+
 /** Preserve native element semantics; only audited display attributes are editable. */
 export function CmsElement({ element, scope, children, ...props }: { element: string; scope: string; children?: ReactNode; [key: string]: unknown }) {
   const { values, locale, dataScope, fields } = useContext(ContentContext);

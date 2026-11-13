@@ -9,6 +9,7 @@ import { business } from "@/lib/content";
 import { siteBodyFont, siteDisplayFont } from "@/lib/fonts";
 import { siteDescription, siteKeywords, siteName, siteUrl } from "@/lib/site";
 import "../globals.css";
+import { sitePresentation } from "@/lib/presentation";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -66,7 +67,7 @@ export default async function RootLayout({
 }>) {
   const content = await getSiteContent();
   return (
-    <html lang="en" className={`${siteDisplayFont.variable} ${siteBodyFont.variable}`}>
+    <html lang="en" data-presentation={sitePresentation.id} className={`${siteDisplayFont.variable} ${siteBodyFont.variable}`}>
       <body className="antialiased">
         <ContentProvider values={content.values} fields={content.fields} locale="en"><ComplianceBar />
         {children}<AnchorFocus /></ContentProvider>

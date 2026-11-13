@@ -29,7 +29,7 @@ function Block({ block }: { block: LegalBlock }) {
   }
 
   return (
-    <div className="flex gap-3 rounded-card border border-brand-blue-bright/20 bg-blue-50 p-5 text-brand-blue">
+    <div className="policy-notice flex gap-3 rounded-card border border-brand-blue-bright/20 bg-[var(--editorial-policy-notice,#eff6ff)] p-5 text-brand-blue">
       <Info className="mt-0.5 size-5 shrink-0" strokeWidth={2.2} aria-hidden />
       <CmsElement element="p" scope="components/policy/PolicyPage.tsx" className="m-0 text-[15.5px] leading-[1.7]" dangerouslySetInnerHTML={{ __html: block.html }} />
     </div>
@@ -43,8 +43,8 @@ function ActionLink({
 }) {
   const cls =
     action.variant === "gold"
-      ? "rounded-lg2 bg-brand-yellow px-5 py-3 font-display text-sm font-extrabold tracking-[.04em] text-black uppercase no-underline shadow-cta-yellow transition hover:-translate-y-0.5"
-      : "rounded-lg2 border border-cream-border bg-white px-5 py-3 font-display text-sm font-extrabold tracking-[.04em] text-brand-blue uppercase no-underline transition hover:-translate-y-0.5 hover:border-brand-blue-bright";
+      ? "policy-action policy-action-primary rounded-lg2 bg-brand-yellow px-5 py-3 font-display text-sm font-extrabold tracking-[.04em] text-black uppercase no-underline shadow-cta-yellow transition hover:-translate-y-0.5"
+      : "policy-action policy-action-secondary rounded-lg2 border border-cream-border bg-white px-5 py-3 font-display text-sm font-extrabold tracking-[.04em] text-brand-blue uppercase no-underline transition hover:-translate-y-0.5 hover:border-brand-blue-bright";
 
   if (action.href.startsWith("/") && !action.href.startsWith("//")) {
     return (
@@ -66,19 +66,19 @@ export function PolicyPage({ doc }: { doc: LegalDoc }) {
     <>
       <Header />
       <main id="main-content" className="policy-copy bg-cream"><ContentScope source="content/legal/docs.ts">
-        <section className="bg-brand-blue py-16 text-white">
+        <section className="editorial-masthead bg-brand-blue py-16 text-white">
           <Container>
             <div className="max-w-3xl">
               <Link scope="components/policy/PolicyPage.tsx"
                 href="/"
-                className="mb-5 inline-flex items-center gap-2 text-sm font-semibold !text-white no-underline hover:!text-white hover:underline"
+                className="editorial-breadcrumb policy-home-link mb-5 inline-flex items-center gap-2 text-sm font-semibold no-underline hover:underline"
               >
                 <ArrowLeft className="size-4" strokeWidth={2.4} aria-hidden /><CmsText scope="components/policy/PolicyPage.tsx">{"Home"}</CmsText></Link>
-              <h1 className="mb-5 font-display text-[clamp(38px,5vw,64px)] leading-[1.02] font-extrabold -tracking-[.02em]">
+              <h1 className="editorial-page-title mb-5 font-display text-[clamp(38px,5vw,64px)] leading-[1.02] font-extrabold -tracking-[.02em]">
                 <CmsText scope="components/policy/PolicyPage.tsx">{doc.title}</CmsText>
               </h1>
-              <div className="flex flex-wrap items-center gap-3 text-on-dark-100">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold">
+              <div className="policy-date flex flex-wrap items-center gap-3 text-on-dark-100">
+                <span className="policy-date-chip inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold">
                   <Clock className="size-4 text-brand-yellow" aria-hidden /><CmsText scope="components/policy/PolicyPage.tsx">{"Last updated: "}</CmsText><CmsText scope="components/policy/PolicyPage.tsx">{doc.lastUpdated}</CmsText>
                 </span>
                 <span className="text-sm"><CmsText scope="components/policy/PolicyPage.tsx">{doc.heroNote}</CmsText></span>
@@ -87,15 +87,15 @@ export function PolicyPage({ doc }: { doc: LegalDoc }) {
           </Container>
         </section>
 
-        <Container className="grid gap-8 py-14 lg:grid-cols-[280px_1fr]">
-          <aside className="h-fit rounded-card border border-cream-border bg-white p-5 shadow-card lg:sticky lg:top-28">
+        <Container className="policy-layout grid gap-8 py-14 lg:grid-cols-[280px_1fr]">
+          <aside className="policy-index h-fit rounded-card border border-cream-border bg-white p-5 shadow-card lg:sticky lg:top-28">
             <div className="mb-4 font-display text-sm font-extrabold tracking-[.08em] text-brand-blue uppercase"><CmsText scope="components/policy/PolicyPage.tsx">{"On This Page"}</CmsText></div>
             <ol className="space-y-2 text-sm">
               <CmsText scope="components/policy/PolicyPage.tsx">{doc.sections.map((section) => (
                 <li key={section.id}>
                   <CmsElement element="a" scope="components/policy/PolicyPage.tsx"
                     href={`#${section.id}`}
-                    className="block rounded-md2 px-3 py-2 text-[#64748B] no-underline transition hover:bg-cream hover:text-brand-blue"
+                    className="block rounded-md2 px-3 py-2 text-[color:var(--tone-muted,#64748b)] no-underline transition hover:bg-cream hover:text-brand-blue"
                   >
                     <CmsText scope="components/policy/PolicyPage.tsx">{section.title}</CmsText>
                   </CmsElement>
@@ -104,7 +104,7 @@ export function PolicyPage({ doc }: { doc: LegalDoc }) {
             </ol>
           </aside>
 
-          <article className="rounded-panel border border-cream-border bg-white p-7 shadow-card md:p-10">
+          <article className="policy-document rounded-panel border border-cream-border bg-white p-7 shadow-card md:p-10">
             <p className="mb-10 text-[18px] leading-[1.75] text-ink-soft"><CmsText scope="components/policy/PolicyPage.tsx">{doc.lead}</CmsText></p>
 
             <div className="space-y-10">
@@ -123,11 +123,11 @@ export function PolicyPage({ doc }: { doc: LegalDoc }) {
               ))}</CmsText>
             </div>
 
-            <div className="mt-12 rounded-card bg-brand-blue p-6 text-white md:flex md:items-center md:justify-between md:gap-8">
+            <div className="policy-contact mt-12 rounded-card bg-brand-blue p-6 text-white md:flex md:items-center md:justify-between md:gap-8">
               <div>
                 <h3 className="mb-2 font-display text-[24px] font-extrabold"><CmsText scope="components/policy/PolicyPage.tsx">{doc.contact.heading}</CmsText></h3>
                 <CmsElement element="p" scope="components/policy/PolicyPage.tsx"
-                  className="text-on-dark-200"
+                  className="policy-contact-copy text-on-dark-200"
                   dangerouslySetInnerHTML={{ __html: doc.contact.bodyHtml }}
                 />
               </div>
@@ -142,7 +142,7 @@ export function PolicyPage({ doc }: { doc: LegalDoc }) {
 
         <section className="bg-white py-10">
           <Container>
-            <p className="text-center text-[13px] leading-[1.7] text-[#64748B]">
+            <p className="text-center text-[13px] leading-[1.7] text-[color:var(--tone-muted,#64748b)]">
               <CmsText scope="components/policy/PolicyPage.tsx">{business.brokerLine}</CmsText><CmsText scope="components/policy/PolicyPage.tsx">{" - DOT "}</CmsText><CmsText scope="components/policy/PolicyPage.tsx">{business.dot}</CmsText><CmsText scope="components/policy/PolicyPage.tsx">{" - MC "}</CmsText><CmsText scope="components/policy/PolicyPage.tsx">{business.mc}</CmsText>
             </p>
           </Container>

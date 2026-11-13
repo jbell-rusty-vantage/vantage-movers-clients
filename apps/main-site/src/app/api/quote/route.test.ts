@@ -71,15 +71,19 @@ describe("POST /api/quote contract", () => {
   it("forwards bounded attribution while malformed tracking and privacy opt-out preserve capture", async () => {
     const { POST } = await import("./route");
     const base = { pickup: "33426", dest: "53703", date: "2099-01-15", size: "Studio", name: "Synthetic", phone: "2025550100", email: "synthetic@example.com", smsConsent: false, ref_no: "MS-ATTRIBUTION", lid: "LID6a6255e58ad8d" };
-    const attribution = { version: 1, first_touch: { path: "/resources/moving-cost-guide", occurred_at: new Date().toISOString(), channel: "campaign", referring_host: "none", campaign: { source: "review", medium: "review", name: "preview-qualification" } }, capture_page: { path: "/es" }, design: { id: "main-site-optimization", version: "2026-11-12" }, email: "private@example.com", experiment: "fake" };
-    for (const [value, disabled, expected] of [[attribution, false, true], [attribution, true, false], ["malformed", false, false]] as const) {
+    const attribution = { version: 1, first_touch: { path: "/resources/moving-cost-guide", occurred_at: new Date().toISOString(), channel: "campaign", referring_host: "none", campaign: { source: "review", medium: "review", name: "preview-qualification" } }, capture_page: { path: "/es" }, design: { id: "main-site-canyon", version: "2026-11-13" }, email: "private@example.com", experiment: "fake" };
+    const optimization = { ...attribution, design: { id: "main-site-optimization", version: "2026-11-12" } };
+    for (const [value, disabled, expected] of [[attribution, false, true], [attribution, true, false], [optimization, false, false], ["malformed", false, false]] as const) {
       const response = await POST(new Request("https://preview.example/api/quote", { method: "POST", headers: { "content-type": "application/json", ...(disabled ? { "sec-gpc": "1" } : {}) }, body: JSON.stringify({ ...base, website_attribution: value }) }));
       expect(response.status).toBe(200);
       const payload = createFormLead.mock.calls.at(-1)![0];
       expect(Boolean(payload.website_attribution)).toBe(expected);
       expect(payload).toMatchObject({ source_company: "main_site", ref_no: base.ref_no, lid: base.lid, sms_consent: false });
       expect(JSON.stringify(payload.website_attribution) ?? "").not.toMatch(/private|experiment/);
-      if (expected) expect(payload.website_attribution.capture_page).toEqual({ path: "/es", content_id: "home", locale: "es" });
+      if (expected) expect(payload.website_attribution).toMatchObject({
+        capture_page: { path: "/es", content_id: "home", locale: "es" },
+        design: attribution.design,
+      });
     }
   });
 });

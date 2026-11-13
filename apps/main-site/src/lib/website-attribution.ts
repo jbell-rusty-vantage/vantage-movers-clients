@@ -1,12 +1,16 @@
 import {
   CAMPAIGN_MEDIA, CAMPAIGN_NAMES, CAMPAIGN_SOURCES, REFERRING_HOSTS,
-  parseWebsiteAttribution, websitePage, WEBSITE_DESIGN,
+  parseWebsiteAttribution, websitePage,
   type WebsiteAttribution, type WebsiteTouch,
 } from "@vantage/api-client/website-attribution";
+import { websiteDesign } from "./website-design";
 
 export const WEBSITE_ATTRIBUTION_KEY = "vantage.website-attribution.v1";
 type Storage = Pick<globalThis.Storage, "getItem" | "setItem" | "removeItem">;
-const ownHosts = new Set(["vantagehomemovers.com", "www.vantagehomemovers.com", "vantage-main-site-optimization.vercel.app"]);
+const ownHosts = new Set([
+  "vantagehomemovers.com", "www.vantagehomemovers.com",
+  "vantage-main-site-optimization.vercel.app", "vantage-main-site-canyon.vercel.app",
+]);
 function allowed<T extends string>(value: string | null, values: readonly T[], fallback: T): T {
   return values.includes(value as T) ? value as T : fallback;
 }
@@ -22,7 +26,10 @@ export function updateWebsiteAttribution(input: {
     const page = websitePage(url.pathname);
     if (!page) return;
     let previous: WebsiteAttribution | undefined;
-    try { previous = parseWebsiteAttribution(JSON.parse(input.storage.getItem(WEBSITE_ATTRIBUTION_KEY) ?? "null"), now); } catch { /* Expired or corrupt storage starts a new bounded session. */ }
+    try {
+      const stored = parseWebsiteAttribution(JSON.parse(input.storage.getItem(WEBSITE_ATTRIBUTION_KEY) ?? "null"), now);
+      if (stored?.design === websiteDesign) previous = stored;
+    } catch { /* Expired or corrupt storage starts a new bounded session. */ }
     let externalHost = "";
     try {
       const ref = new URL(input.referrer);
@@ -45,7 +52,7 @@ export function updateWebsiteAttribution(input: {
     const latest = current.channel !== "direct" ? current : previous?.latest_non_direct_touch;
     const snapshot: WebsiteAttribution = {
       version: 1, first_touch: previous?.first_touch ?? current,
-      ...(latest ? { latest_non_direct_touch: latest } : {}), capture_page: page, design: WEBSITE_DESIGN,
+      ...(latest ? { latest_non_direct_touch: latest } : {}), capture_page: page, design: websiteDesign,
     };
     input.storage.setItem(WEBSITE_ATTRIBUTION_KEY, JSON.stringify(snapshot));
     return snapshot;

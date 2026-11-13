@@ -50,7 +50,7 @@ export function BrowseNavigation({ locale, links, services, locations, alternate
   }, [open, mobile]);
   return <div
     ref={root}
-    className="order-last w-full lg:order-none lg:w-auto"
+    className="browse-navigation order-last w-full lg:order-none lg:w-auto"
     onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) close(); }}
     onPointerEnter={event => {
       if (event.pointerType === "mouse" && leaveTimer.current) clearTimeout(leaveTimer.current);
