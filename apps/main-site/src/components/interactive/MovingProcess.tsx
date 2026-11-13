@@ -5,9 +5,9 @@ import { useId, useState, type KeyboardEvent } from "react";
 import { ArrowLeft, ArrowRight, ImageOff } from "lucide-react";
 
 const frames = [
-  { id: "request", image: "quote-request.webp", screenshot: true,
-    en: { title: "Request a quote", caption: "Tell Vantage the basics: pickup and delivery ZIPs, your preferred date and move size.", alt: "The Vantage quote form filled with fictional move details" },
-    es: { title: "Solicite una cotización", caption: "Comparta los datos básicos: códigos postales de origen y destino, fecha preferida y tamaño de la mudanza.", alt: "Formulario de cotización de Vantage con datos ficticios de una mudanza" } },
+  { id: "request", image: "", screenshot: true,
+    en: { title: "Request a quote", caption: "Start with your contact details, then share pickup and delivery ZIPs, your preferred date and move size.", alt: "Complete Vantage quote form contact step with fictional name, email and phone details" },
+    es: { title: "Solicite una cotización", caption: "Empiece con sus datos de contacto y después comparta los códigos postales, la fecha preferida y el tamaño de la mudanza.", alt: "Paso completo de contacto del formulario Vantage con nombre, correo y teléfono ficticios" } },
   { id: "inventory", image: "inventory-call.webp", screenshot: false,
     en: { title: "Review your inventory", caption: "Discuss your belongings and access at both addresses with your coordinator.", alt: "Illustrative scene of a resident reviewing an inventory during a phone conversation" },
     es: { title: "Revise su inventario", caption: "Converse con su coordinador sobre sus pertenencias y el acceso a ambos domicilios.", alt: "Escena ilustrativa de una persona que revisa un inventario mientras habla por teléfono" } },
@@ -49,19 +49,20 @@ export function MovingProcess({ locale = "en" }: { locale?: "en" | "es" }) {
   >
     <div className="min-w-0">
       <figure className="overflow-hidden rounded-card border border-white/20 bg-white text-ink">
-        <div className="relative aspect-[16/10] w-full bg-cream" data-testid="process-image-slot">
+        <div className={`relative w-full bg-cream ${frame.screenshot ? "aspect-[1034/1176]" : "aspect-[16/10]"}`} data-testid="process-image-slot">
           {failed.includes(frame.id) ? <div className="flex h-full flex-col items-center justify-center gap-3 p-8 text-center text-brand-blue" role="status">
             <ImageOff size={32} aria-hidden />
             <p className="font-semibold">{es ? "La imagen no está disponible" : "Image unavailable"}</p>
             <p>{copy.caption}</p>
           </div> : <Image
             key={frame.id}
-            src={`/images/preview/${frame.image}`}
+            src={frame.screenshot ? `/images/selected-20261112/quote-request-${locale}.webp` : `/images/preview/${frame.image}`}
             alt={copy.alt}
-            width={1280}
-            height={800}
+            width={frame.screenshot ? 1034 : 1280}
+            height={frame.screenshot ? 1176 : 800}
             sizes="(min-width: 1024px) 620px, (min-width: 640px) 90vw, 100vw"
             loading={index === 0 ? "lazy" : "eager"}
+            unoptimized={frame.screenshot}
             className={`h-full w-full ${frame.screenshot ? "object-contain" : "object-cover"}`}
             onError={() => setFailed((previous) => previous.includes(frame.id) ? previous : [...previous, frame.id])}
           />}

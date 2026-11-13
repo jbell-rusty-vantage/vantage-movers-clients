@@ -16,14 +16,14 @@ export const heroImageOptions = {
 export type HeroImageOptionId = keyof typeof heroImageOptions;
 
 export const heroImageLabels: Record<HeroImageOptionId, string> = {
-  heroEnhanced: "Hero — enhanced PNG (production)",
-  heroWebp: "Hero — WebP alternate",
-  longDistance: "Long-distance traffic",
-  packingStorage: "Couple with boxes",
+  heroEnhanced: "Home arrival",
+  heroWebp: "Home arrival — WebP",
+  longDistance: "New city arrival",
+  packingStorage: "Careful packing",
   officeMoves: "Office move",
   militaryMoves: "Military move",
   aboutCoordinators: "Customer service rep",
-  expertiseBanner: "Truck loaded",
+  expertiseBanner: "Home entry with boxes",
   autoTransport: "Auto transport",
   coordinationSupport: "Coordination support",
 };

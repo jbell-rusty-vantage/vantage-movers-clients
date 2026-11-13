@@ -66,7 +66,7 @@ export function HeroSection({ bodyPanel = false, locale = "en" }: HeroSectionPro
       id="top"
       className="relative overflow-hidden bg-[#04122a]"
     >
-      <HeroBackdrop src={SITE_IMAGES.hero} position="65% 20%" mobilePosition="65% 20%" />
+      <HeroBackdrop src={SITE_IMAGES.hero} position="75% 40%" mobilePosition="85% 40%" />
 
       <Container className="relative z-[2] grid items-center gap-14 py-12 pb-16 lg:grid-cols-[1.05fr_.95fr]">
         <div className={`${heroBodyFont.className} pt-44 sm:pt-48 lg:pt-40`}>

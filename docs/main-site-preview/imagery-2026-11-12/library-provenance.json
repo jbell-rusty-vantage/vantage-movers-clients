@@ -1,0 +1,129 @@
+{
+  "sourceFolder": "C:/Users/Pinda/Proyectos/vantage/image-options-2026-11-12",
+  "sourceChat": "Create Vantage Movers site images",
+  "sourceThread": "01a1d04a-b261-75d2-b317-d58dc449a6fb",
+  "originalLibrary": {
+    "generator": "Built-in image_gen",
+    "date": "2026-11-12",
+    "source": "https://www.vantagehomemovers.com/",
+    "images": [
+      {
+        "n": 1,
+        "name": "hero-new-beginning",
+        "use": "Homepage hero / residential",
+        "prompt": "Wide landscape editorial photograph, 16:9. A bright, attainable American home on move-in morning, oak flooring, warm white walls, a large window with leafy garden beyond, a few neatly sealed brown moving boxes, a cream linen sofa, one small indoor plant. On the right third a couple in their late 30s casually unpack one box together, a candid quiet interaction rather than posing, relaxed ordinary clothing in soft blues and natural colors. Left third is calm mostly open wall and soft shadow suitable for an HTML headline. Real textures, lived-in realism, restrained warmth, sophisticated architectural lifestyle photography, 35mm lens, natural morning light. The idea is relief and a fresh start.\nUse case: photorealistic-natural. Create ONE standalone finished photographic website asset, not a collage or webpage mockup. Image for Vantage Movers, a moving coordination business. Absolutely NO moving trucks, box trucks, vans, semitrucks, trailers or freight vehicles anywhere, including in distance, windows, reflections, illustrations or packaging. No added words, captions, overlays, logos, watermarks or fabricated branding. Avoid glossy AI appearance, plastic skin, exaggerated smiles, theatrical lighting, oversaturation and excessive shallow focus. Keep important subject comfortably inside frame for responsive crops.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-1d34676b-775a-4397-8f3a-a5159f421bfe.png",
+        "file": "01-hero-new-beginning.png"
+      },
+      {
+        "n": 2,
+        "name": "hero-quiet-arrival",
+        "use": "Alternative homepage hero / no people",
+        "prompt": "Wide landscape 16:9 architectural editorial photograph with NO PEOPLE. View from inside a welcoming new home toward an open deep blue front door and sunlit porch, modest mature greenery outside. Three neatly closed moving boxes, a small potted olive tree and a canvas tote in the foreground near the entrance, one navy moving blanket folded on a box. Beautiful natural afternoon light falls across pale oak floor. Warm white textured walls and restrained deep navy accents. Sophisticated but attainable home, not a mansion. Airy generous negative space in left half for future HTML headline, actual doorway and moving still life in right half. Crisp realistic materials, gentle shadows, subtle film grain, no fake glow. This is a calm image about arriving home.\nUse case: photorealistic-natural. Create ONE standalone finished photographic website asset, not a collage or webpage mockup. Image for Vantage Movers, a moving coordination business. Absolutely NO moving trucks, box trucks, vans, semitrucks, trailers or freight vehicles anywhere, including in distance, windows, reflections, illustrations or packaging. No added words, captions, overlays, logos, watermarks or fabricated branding. Avoid glossy AI appearance, plastic skin, exaggerated smiles, theatrical lighting, oversaturation and excessive shallow focus. Keep important subject comfortably inside frame for responsive crops.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-7d8b1c82-6c4e-4204-8c75-9eefa9502870.png",
+        "file": "02-hero-quiet-arrival.png"
+      },
+      {
+        "n": 3,
+        "name": "packing-care",
+        "use": "Packing services",
+        "prompt": "Landscape 3:2 close editorial photograph of careful packing at a real household dining table. A worker's two anatomically natural hands carefully wrapping a simple ceramic bowl in clean crumpled packing paper beside a sturdy open corrugated box with padded individual dishes. Plain navy work shirt partially visible, face out of frame. Focus on skilled care, tactile cardboard, paper folds and ceramic texture. Window light, warm neutral home in soft focus behind, restrained natural colors, 50mm photographic lens. Objects arranged practically with room for hands, believable packing process, premium documentary photography.\nUse case: photorealistic-natural. Create ONE standalone finished photographic website asset, not a collage or webpage mockup. Image for Vantage Movers, a moving coordination business. Absolutely NO moving trucks, box trucks, vans, semitrucks, trailers or freight vehicles anywhere, including in distance, windows, reflections, illustrations or packaging. No added words, captions, overlays, logos, watermarks or fabricated branding. Avoid glossy AI appearance, plastic skin, exaggerated smiles, theatrical lighting, oversaturation and excessive shallow focus. Keep important subject comfortably inside frame for responsive crops.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-e539890a-8b54-4faf-91e1-05c1534a45fe.png",
+        "file": "03-packing-care.png"
+      },
+      {
+        "n": 4,
+        "name": "senior-next-chapter",
+        "use": "Senior moving",
+        "prompt": "Landscape 3:2 candid editorial photograph of a capable woman in her early 70s with natural silver hair and her adult daughter in a bright comfortable apartment on moving day. They sit at a table together looking fondly at a framed family photograph while sorting a small open moving box, unposed subtle smiles and ordinary faces, no eye contact with camera. Warm afternoon window light, soft blue cardigan, white linen, real wrinkles and skin texture. A few orderly boxes and a houseplant in background, optimistic respectful image of choice and a next chapter, not frailty or caregiving. Medium-wide human composition, fine natural detail.\nUse case: photorealistic-natural. Create ONE standalone finished photographic website asset, not a collage or webpage mockup. Image for Vantage Movers, a moving coordination business. Absolutely NO moving trucks, box trucks, vans, semitrucks, trailers or freight vehicles anywhere, including in distance, windows, reflections, illustrations or packaging. No added words, captions, overlays, logos, watermarks or fabricated branding. Avoid glossy AI appearance, plastic skin, exaggerated smiles, theatrical lighting, oversaturation and excessive shallow focus. Keep important subject comfortably inside frame for responsive crops.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-1e91beb7-5300-4f8a-a6a5-596d87a9fd5d.png",
+        "file": "04-senior-next-chapter.png"
+      },
+      {
+        "n": 5,
+        "name": "military-family-home",
+        "use": "Military and veteran moves",
+        "prompt": "Landscape 3:2 candid natural editorial photograph of a military family settling into a modest American home. A service member in a plain olive green t-shirt and civilian trousers with short neat hair, their partner in a pale blue everyday shirt, and one school-age child, all engaged in opening a box together on the living room floor, natural quiet happy interaction, none looking at camera. A plain olive military-style duffel sits beside packed boxes and a pair of boots by the entry; a small US flag on the front porch is subtly visible through a window. No uniforms or insignia. Modern everyday family, soft clear daylight, realistic skin, believable hands, restrained blue and warm neutral color story. Moving-day story more than patriotic pose.\nUse case: photorealistic-natural. Create ONE standalone finished photographic website asset, not a collage or webpage mockup. Image for Vantage Movers, a moving coordination business. Absolutely NO moving trucks, box trucks, vans, semitrucks, trailers or freight vehicles anywhere, including in distance, windows, reflections, illustrations or packaging. No added words, captions, overlays, logos, watermarks or fabricated branding. Avoid glossy AI appearance, plastic skin, exaggerated smiles, theatrical lighting, oversaturation and excessive shallow focus. Keep important subject comfortably inside frame for responsive crops.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-6c855634-0164-4226-86f9-50d9a1becb68.png",
+        "file": "05-military-family-home.png"
+      },
+      {
+        "n": 6,
+        "name": "personal-move-coordinator",
+        "use": "Moving coordination / contact",
+        "prompt": "Landscape 3:2 documentary business editorial photograph of a thoughtful female moving coordinator in her early 40s at a tidy small-office desk, in a simple navy blouse, wearing a discreet professional headset and listening attentively during a customer call, subtle friendly expression rather than broad staged grin. Three-quarter medium shot, natural face and skin texture, hand resting naturally beside a notebook. Laptop display turned away from camera, paper inventory sheets with no legible writing, pen and glass of water. Soft window light, warm white wall, small green plant, calm approachable working environment, no call-center rows, no posing, real photography aesthetic.\nUse case: photorealistic-natural. Create ONE standalone finished photographic website asset, not a collage or webpage mockup. Image for Vantage Movers, a moving coordination business. Absolutely NO moving trucks, box trucks, vans, semitrucks, trailers or freight vehicles anywhere, including in distance, windows, reflections, illustrations or packaging. No added words, captions, overlays, logos, watermarks or fabricated branding. Avoid glossy AI appearance, plastic skin, exaggerated smiles, theatrical lighting, oversaturation and excessive shallow focus. Keep important subject comfortably inside frame for responsive crops.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-e1c0e1f3-94e0-45be-9dff-8b0bb4e63233.png",
+        "file": "06-personal-move-coordinator.png"
+      },
+      {
+        "n": 7,
+        "name": "office-fresh-start",
+        "use": "Commercial / office relocation",
+        "prompt": "Landscape 3:2 architectural editorial photo of a small modern office being thoughtfully set up after relocation. Two colleagues in smart casual everyday clothing, seen naturally in middle ground, placing a desktop monitor on an oak desk and arranging a plant. Closed unmarked moving boxes beside desks, a monitor carefully protected with foam sleeves on a nearby table. Bright windows, navy upholstered desk chair, neutral walls, organized and practical scene. No visible computer UI or writing. Inviting natural daylight, restrained contrast, believable equipment cables and anatomy, realistic medium-wide 35mm photograph. Convey organized transition and readiness for work.\nUse case: photorealistic-natural. Create ONE standalone finished photographic website asset, not a collage or webpage mockup. Image for Vantage Movers, a moving coordination business. Absolutely NO moving trucks, box trucks, vans, semitrucks, trailers or freight vehicles anywhere, including in distance, windows, reflections, illustrations or packaging. No added words, captions, overlays, logos, watermarks or fabricated branding. Avoid glossy AI appearance, plastic skin, exaggerated smiles, theatrical lighting, oversaturation and excessive shallow focus. Keep important subject comfortably inside frame for responsive crops.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-d6f67ea0-5561-415e-8d15-20766c1d9faf.png",
+        "file": "07-office-fresh-start.png"
+      },
+      {
+        "n": 8,
+        "name": "storage-protected-belongings",
+        "use": "Storage options",
+        "prompt": "Landscape 3:2 high-quality documentary interior photograph of household belongings organized inside a clean professional storage space, no people. Foreground: a small dresser fully protected by a neatly fitted navy quilted moving blanket secured with straps, closed cardboard boxes neatly arranged at safe low heights, one framed artwork protected with cardboard corners and wrapping, clear walking aisle. Neutral clean interior walls and practical storage shelving, no loading dock and no exterior view. Balanced soft overhead lighting with natural color rendition, real corrugation and fabric stitching, crisp believable furniture dimensions. Focus on order and care, not an enormous warehouse or an exaggerated security claim.\nUse case: photorealistic-natural. Create ONE standalone finished photographic website asset, not a collage or webpage mockup. Image for Vantage Movers, a moving coordination business. Absolutely NO moving trucks, box trucks, vans, semitrucks, trailers or freight vehicles anywhere, including in distance, windows, reflections, illustrations or packaging. No added words, captions, overlays, logos, watermarks or fabricated branding. Avoid glossy AI appearance, plastic skin, exaggerated smiles, theatrical lighting, oversaturation and excessive shallow focus. Keep important subject comfortably inside frame for responsive crops.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-4ccea65a-f116-4b7f-9933-9e3efa4ef9a8.png",
+        "file": "08-storage-protected-belongings.png"
+      },
+      {
+        "n": 9,
+        "name": "auto-transport-arrival",
+        "use": "Auto transport",
+        "prompt": "Landscape 3:2 polished but natural editorial photograph of a clean unbranded silver four-door passenger sedan parked on the driveway of an attractive modest American home during a household relocation. Vehicle front three-quarter view occupies right two-thirds, tasteful architecture and porch in the background, two neatly closed moving boxes just inside open front doorway as a subtle moving cue. No people. Soft clear morning daylight, realistic automotive proportions and reflections, leafy garden, restrained blue-gray and warm stone tones. Passenger car only, no transport rig, no trailer, no trucks anywhere. No visible brand badge, no readable license plate. Trustworthy aspirational everyday car ownership, not a luxury advertisement.\nUse case: photorealistic-natural. Create ONE standalone finished photographic website asset, not a collage or webpage mockup. Image for Vantage Movers, a moving coordination business. Absolutely NO moving trucks, box trucks, vans, semitrucks, trailers or freight vehicles anywhere, including in distance, windows, reflections, illustrations or packaging. No added words, captions, overlays, logos, watermarks or fabricated branding. Avoid glossy AI appearance, plastic skin, exaggerated smiles, theatrical lighting, oversaturation and excessive shallow focus. Keep important subject comfortably inside frame for responsive crops.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-1a38591c-a627-4b6e-8329-609a4e76d171.png",
+        "file": "09-auto-transport-arrival.png"
+      },
+      {
+        "n": 10,
+        "name": "long-distance-new-view",
+        "use": "Long-distance relocation",
+        "prompt": "Wide landscape 16:9 candid editorial photograph viewed from inside a bright new apartment, behind a couple in ordinary casual clothing standing near tall windows and looking out over a believable leafy American city neighborhood with distant mid-rise buildings. One person rests a hand gently on the other's shoulder. Three closed moving boxes, a rolled rug and a single small plant in foreground communicate recent relocation. People placed toward right, broad quiet space and soft window shadows left, natural morning light, restrained blue and neutral palette, tactile wood floor, realistic everyday apartment, no luxury penthouse. Sense of arrival somewhere new and possibility after a long-distance move. Human-scale photography, subtle film grain, natural unposed posture.\nUse case: photorealistic-natural. Create ONE standalone finished photographic website asset, not a collage or webpage mockup. Image for Vantage Movers, a moving coordination business. Absolutely NO moving trucks, box trucks, vans, semitrucks, trailers or freight vehicles anywhere, including in distance, windows, reflections, illustrations or packaging. No added words, captions, overlays, logos, watermarks or fabricated branding. Avoid glossy AI appearance, plastic skin, exaggerated smiles, theatrical lighting, oversaturation and excessive shallow focus. Keep important subject comfortably inside frame for responsive crops.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-824f5b48-155a-4275-914e-14d9bd79526b.png",
+        "file": "10-long-distance-new-view.png"
+      }
+    ]
+  },
+  "militaryLibrary": {
+    "generator": "Built-in image_gen",
+    "images": [
+      {
+        "n": 1,
+        "name": "military-family-new-door",
+        "label": "Arriving at a new home",
+        "prompt": "A candid welcoming scene of a young American military family entering their new modest suburban home on moving day. Seen from inside the open front doorway, an adult father wearing a neatly fitted contemporary muted camouflage utility uniform with plain unmarked chest, no headgear indoors, gently holds the door while his partner in everyday civilian clothing carries a small potted plant and their eight-year-old daughter steps inside carrying a small stuffed bear. Two sealed moving boxes and a practical olive duffel just inside the entry. Their attention is on each other and their new space, not the camera. Medium-wide eye-level composition. Fresh clear daylight, navy front door, warm white walls, realistic attainable family home. Strong visual story of a military household relocating, respectful and understated, unposed. Create ONE standalone realistic photographic website image, landscape 3:2. For Vantage Movers military moving service. Editorial commercial photography with believable anatomy, natural skin texture, authentic household details and natural daylight. No moving trucks, box trucks, vans, trailers, semitrucks or other freight vehicles anywhere, even in background or reflections. No added text, marketing copy, watermarks, logos, fabricated badges or readable name tapes. No weapons. No webpage layout or collage. Keep subjects within comfortable crop margins. Avoid exaggerated smiles, plastic skin, glossy AI aesthetic, excessive blur, theatrical lighting or luxury real estate staging.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-2855a792-66b4-452d-b83f-c040b598b1d4.png",
+        "file": "01-military-family-new-door.png"
+      },
+      {
+        "n": 2,
+        "name": "servicewoman-family-unpacking",
+        "label": "Making the new place home",
+        "prompt": "A candid warm medium-wide photograph of a Black American servicewoman in her early 30s in a muted modern camouflage utility uniform with plain unmarked chest, sleeves naturally worn, no hat indoors, unpacking a few books with her civilian husband and their young son in their newly occupied bright apartment. She kneels beside a waist-low open moving box while her son places a book on a low shelf and her husband in a light gray t-shirt opens another box nearby. Anatomically natural separate hands, no confusing overlapping limbs. A rolled rug, military-style olive duffel and a few closed boxes establish moving day. Simple furniture, white walls, soft navy accent, realistic middle-income home. Daylight, slightly documentary composition, genuine small expressions and purposeful action. No posing. Create ONE standalone realistic photographic website image, landscape 3:2. For Vantage Movers military moving service. Editorial commercial photography with believable anatomy, natural skin texture, authentic household details and natural daylight. No moving trucks, box trucks, vans, trailers, semitrucks or other freight vehicles anywhere, even in background or reflections. No added text, marketing copy, watermarks, logos, fabricated badges or readable name tapes. No weapons. No webpage layout or collage. Keep subjects within comfortable crop margins. Avoid exaggerated smiles, plastic skin, glossy AI aesthetic, excessive blur, theatrical lighting or luxury real estate staging.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-2f0c8a04-def6-4772-8fa7-0b4b6ef08b9a.png",
+        "file": "02-servicewoman-family-unpacking.png"
+      },
+      {
+        "n": 3,
+        "name": "military-packing-for-next-post",
+        "label": "Preparing for the next move",
+        "prompt": "Documentary editorial photograph of an American military couple preparing their household for relocation in a modest dining room. A female service member with neatly tied hair wears a muted camouflage utility uniform with plain unmarked chest, no hat. Her male civilian partner in a navy sweatshirt carefully folds clean white packing paper around a framed family photograph on a dining table while she seals a modest-size cardboard box with a handheld tape dispenser. Several secure closed boxes and an olive duffel sit behind them, home already partially packed. They are focused naturally on the work, no camera smiles. Medium-wide 35mm view, cooler crisp morning light with natural warm skin tones, practical household, visible tactile paper, cardboard and uniform fabric. Keep action clear and plausible, no equipment that implies a moving company military affiliation. Create ONE standalone realistic photographic website image, landscape 3:2. For Vantage Movers military moving service. Editorial commercial photography with believable anatomy, natural skin texture, authentic household details and natural daylight. No moving trucks, box trucks, vans, trailers, semitrucks or other freight vehicles anywhere, even in background or reflections. No added text, marketing copy, watermarks, logos, fabricated badges or readable name tapes. No weapons. No webpage layout or collage. Keep subjects within comfortable crop margins. Avoid exaggerated smiles, plastic skin, glossy AI aesthetic, excessive blur, theatrical lighting or luxury real estate staging.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-546e0f5c-ae8d-40cf-b451-6d7f7193bdbb.png",
+        "file": "03-military-packing-for-next-post.png"
+      },
+      {
+        "n": 4,
+        "name": "military-family-porch",
+        "label": "A fresh start together",
+        "prompt": "A relaxed environmental portrait of an American military family on the porch of their new modest single-story home after moving. A father with natural medium tan skin wears a muted contemporary camouflage utility uniform, no headgear, plain unmarked chest without readable badges; mother in a simple soft blue blouse and jeans sits on the porch step next to their school-age child. Father is seated beside them, the family shares an easy spontaneous laugh with one another rather than looking at camera. Through the open front door behind them, a few neat moving boxes and an olive duffel make relocation evident. A small properly proportioned American flag is mounted at the far edge of the porch, secondary rather than dominant. Comfortable wide composition, leafy garden edges, clear late afternoon light without heavy orange tint, believable human faces and hands, welcoming grounded ordinary home, no driveway vehicles. Create ONE standalone realistic photographic website image, landscape 3:2. For Vantage Movers military moving service. Editorial commercial photography with believable anatomy, natural skin texture, authentic household details and natural daylight. No moving trucks, box trucks, vans, trailers, semitrucks or other freight vehicles anywhere, even in background or reflections. No added text, marketing copy, watermarks, logos, fabricated badges or readable name tapes. No weapons. No webpage layout or collage. Keep subjects within comfortable crop margins. Avoid exaggerated smiles, plastic skin, glossy AI aesthetic, excessive blur, theatrical lighting or luxury real estate staging.",
+        "source": "C:\\Users\\Pinda\\.codex\\generated_images\\01a1d04a-b261-75d2-b317-d58dc449a6fb\\exec-14a9578b-3929-431b-934d-76eca3a3e91a.png",
+        "file": "04-military-family-porch.png"
+      }
+    ]
+  }
+}

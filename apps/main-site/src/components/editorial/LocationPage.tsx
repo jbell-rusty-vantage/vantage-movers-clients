@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { ArrowRight, Boxes, Building2, CalendarDays, ClipboardCheck, FileCheck2, HeartHandshake, MapPin, PackageCheck, Route, ShieldCheck, Truck } from "lucide-react";
+import { ArrowRight, Boxes, Building2, CalendarDays, ClipboardCheck, FileCheck2, HeartHandshake, MapPin, PackageCheck, Route, ShieldCheck } from "lucide-react";
 import type { EditorialEntry } from "@/content/editorial/types";
 import { alternateFor, directoryPaths, entryById } from "@/lib/publication";
 import { guideLinksFor } from "@/lib/editorial-journey";
@@ -14,7 +14,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { SourcesReview } from "./SourcesReview";
 
 const planningIcons = [ClipboardCheck, Building2, CalendarDays, HeartHandshake];
-const serviceIcons = [Truck, Building2, Boxes, ShieldCheck, HeartHandshake, PackageCheck, CalendarDays, Route];
+const serviceIcons = [Route, Building2, Boxes, ShieldCheck, HeartHandshake, PackageCheck, CalendarDays, Route];
 
 export function LocationPage({ entry }: { entry: EditorialEntry }) {
   const content = entry.geography!;

@@ -9,7 +9,6 @@ import {
   Package,
   Route,
   Shield,
-  Truck,
   Users,
   type LucideIcon,
 } from "lucide-react";
@@ -38,7 +37,7 @@ export type HeroIconId = (typeof heroIconIds)[number];
 export const heroExtraIconLabels: Record<HeroExtraIconId, string> = {
   users: "Users / families",
   package: "Package / boxes",
-  truck: "Truck",
+  truck: "Route / transportation",
   globe: "Globe / nationwide",
   mapPin: "Map pin",
   home: "Home",
@@ -58,7 +57,7 @@ export const heroIconLabels: Record<HeroIconId, string> = {
 const heroExtraIcons: Record<HeroExtraIconId, LucideIcon> = {
   users: Users,
   package: Package,
-  truck: Truck,
+  truck: Route,
   globe: Globe,
   mapPin: MapPin,
   home: Home,

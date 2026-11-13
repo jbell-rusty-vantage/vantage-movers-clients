@@ -42,7 +42,7 @@ export function AboutSection() {
 
         <ImageTile
           src={SITE_IMAGES.aboutCoordinators}
-          alt="Vantage moving coordinators reviewing relocation details with a customer"
+          alt="Illustrative scene of a move coordinator with a headset, laptop and paperwork"
         />
       </Container>
     </section>
