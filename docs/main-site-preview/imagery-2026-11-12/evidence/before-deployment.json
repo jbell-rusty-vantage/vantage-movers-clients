@@ -1,0 +1,16 @@
+{
+  "vantage-main-site-optimization.vercel.app": {
+    "id": "dpl_FvingkCg3fuBxuCUbo74qioDLpd4",
+    "url": "vantage-movers-clients-main-site-ji4bm12lw-vantage-4d3db9ef.vercel.app",
+    "state": "READY",
+    "target": null,
+    "sha": "b54e39adb41a450e30a3aa741669769f2bbad687"
+  },
+  "vantagehomemovers.com": {
+    "id": "dpl_4jzUYdiummhMzTXkwCkYvHdB61fC",
+    "url": "vantage-movers-clients-main-site-bpuxndl7r-vantage-4d3db9ef.vercel.app",
+    "state": "READY",
+    "target": "production",
+    "sha": "e316488c61aab9ccee9aa89026f27fd6dbda2077"
+  }
+}

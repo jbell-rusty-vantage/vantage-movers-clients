@@ -31,3 +31,18 @@ Step 1 now shows a fresh, complete English or Spanish capture of the current con
 Main Site lint, typecheck and all 55 existing unit/contract/publication tests pass. The focused browser harness checks English and Spanish home pages, all eight services and resource archives at 1440, 390 and 320 pixels. It checks image decoding, curated sources, absence of truck icons/retired imagery, all five process steps, native screenshot aspect ratio and overflow. All browser writes and telemetry are blocked; no Lead or call is created.
 
 Local development uses the isolated preview API origin without credentials, so content fetches use the established fallback. Final build/deployment and browser evidence are recorded below after release.
+
+The final responsive implementation passed [400 local checks](evidence/local/report.json), zero failures. Earlier harness iterations attempted to decode hidden duplicated referral logos and encountered a local Next image-optimizer stall; visibility filtering, bounded decode waiting and restarting the local development server resolved those checks. Final screenshot selection uses the figure rather than a tall process container so sticky page chrome cannot obscure the capture. Development chrome is excluded from the source form captures themselves. These are verification-tool corrections; they do not change customer form behavior.
+
+## Deployed and verified
+
+[Stable review site](https://vantage-main-site-optimization.vercel.app/) · [Immutable deployment](https://vantage-movers-clients-main-site-3nb0hm6w2-vantage-4d3db9ef.vercel.app) · [Successful build and deploy](https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43333972831).
+
+- Application source `d6156f1d2f373a850fa9e9546513772ca0865aed`; CI merge `2309ef5cd03c0d7e7b015ba12f1dc7405068d020` has the identical tree `674b4680af8a2ea46cc7e19a1a928942d6cb3695`.
+- Preview deployment `dpl_AbTgiNPGGiWH2r7RNrtdkZtrz8pj` is READY. The stable alias resolves to that exact deployment. [Identity record](evidence/deployment.json).
+- [400 deployed checks](evidence/deployed/report.json), zero failures. The first deployed harness run had two Spanish-home image assertions affected by changing `:visible` nth indexes during scrolling; retaining actual element handles resolved the scan. No application modification was required.
+- [18 stable-URL checks](evidence/stable/report.json), zero failures, confirm both home pages, resource archives and auto-transport pages, the phone-specific form captures, six loaded photographic previews and effective noindex.
+- Visually inspected [new resource photography](evidence/stable/en-resources.png), [English phone form](evidence/stable/en-process-phone.png), [Spanish phone form](evidence/stable/es-process-phone.png) and [truck-free auto hero](evidence/stable/en-auto-phone.png), plus the desktop service compositions.
+- Production still resolves to its prior deployment `dpl_4jzUYdiummhMzTXkwCkYvHdB61fC`. No production promotion, quote submission, Lead, phone call or editorial approval occurred.
+
+The requested image refinement is complete on the review URL. Owner review of this preview is the next decision; the broader production/publication gates remain in the existing handoff. Documentation-only follow-ups do not change the pinned application build.

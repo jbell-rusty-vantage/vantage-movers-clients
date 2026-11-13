@@ -32,7 +32,9 @@ async function inspect(path, width) {
   check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'No horizontal overflow', { path, width });
   check(await page.locator('svg.lucide-truck').count() === 0, 'No truck icons', { path, width });
   const images = page.locator('main img:visible');
-  for (const image of await images.all()) {
+  // Retain elements: nth locators over :visible can shift while scrolling.
+  for (const image of await page.locator('main img').elementHandles()) {
+    if (!(await image.isVisible())) continue;
     await image.scrollIntoViewIfNeeded();
     // Responsive srcset can replace an in-flight decode after a viewport change.
     await image.evaluate(async element => {
