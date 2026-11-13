@@ -51,7 +51,7 @@ export function MovingProcess({ locale = "en" }: { locale?: "en" | "es" }) {
   >
     <div className="min-w-0">
       <figure className="overflow-hidden rounded-card border border-white/20 bg-white text-ink">
-        <div className={`relative w-full bg-cream ${frame.screenshot ? `${es ? "aspect-[668/1226]" : "aspect-[668/1250]"} sm:aspect-[1034/1176]` : "aspect-[16/10]"}`} data-testid="process-image-slot">
+        <div className="relative aspect-[16/10] w-full bg-cream" data-testid="process-image-slot">
           <CmsText scope="components/interactive/MovingProcess.tsx">{failed.includes(frame.id) ? <div className="flex h-full flex-col items-center justify-center gap-3 p-8 text-center text-brand-blue" role="status">
             <ImageOff size={32} aria-hidden />
             <p className="font-semibold"><CmsText scope="components/interactive/MovingProcess.tsx">{es ? "La imagen no está disponible" : "Image unavailable"}</CmsText></p>
@@ -71,12 +71,15 @@ export function MovingProcess({ locale = "en" }: { locale?: "en" | "es" }) {
             onError={() => setFailed((previous) => previous.includes(frame.id) ? previous : [...previous, frame.id])}
           /></picture>}</CmsText>
         </div>
-        <figcaption id={captionId} className="min-h-[152px] p-5" aria-live="polite" aria-atomic="true">
-          <p className="mb-1 text-sm font-semibold text-brand-blue"><CmsText scope="components/interactive/MovingProcess.tsx">{es ? "Paso" : "Step"}</CmsText> <CmsText scope="components/interactive/MovingProcess.tsx">{index + 1}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{" / "}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{frames.length}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{" · "}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{copy.title}</CmsText></p>
-          <p className="leading-relaxed"><CmsText scope="components/interactive/MovingProcess.tsx">{copy.caption}</CmsText></p>
-          <p className="mt-3 text-xs text-slate-600"><CmsText scope="components/interactive/MovingProcess.tsx">{frame.screenshot
+        <figcaption id={captionId} className="grid p-5" aria-live="polite" aria-atomic="true">
+          {/* Shared grid cell reserves the tallest translated caption without clipping enlarged text. */}
+          {frames.map((item, stepIndex) => <div key={item.id} className={`col-start-1 row-start-1 ${stepIndex === index ? "" : "invisible"}`} aria-hidden={stepIndex !== index}>
+          <p className="mb-1 text-sm font-semibold text-brand-blue"><CmsText scope="components/interactive/MovingProcess.tsx">{es ? "Paso" : "Step"}</CmsText> <CmsText scope="components/interactive/MovingProcess.tsx">{stepIndex + 1}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{" / "}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{frames.length}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{" · "}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{item[locale].title}</CmsText></p>
+          <p className="leading-relaxed"><CmsText scope="components/interactive/MovingProcess.tsx">{item[locale].caption}</CmsText></p>
+          <p className="mt-3 text-xs text-slate-600"><CmsText scope="components/interactive/MovingProcess.tsx">{item.screenshot
             ? (es ? "Formulario real con datos ficticios." : "Actual form with fictional details.")
             : (es ? "Imagen ilustrativa generada; no representa a clientes ni personal de Vantage." : "Generated illustration; not a depiction of Vantage customers or staff.")}</CmsText></p>
+          </div>)}
         </figcaption>
       </figure>
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">

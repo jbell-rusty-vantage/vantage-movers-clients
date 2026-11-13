@@ -21608,5 +21608,525 @@
     "defaultValue": "Contact",
     "sourceFile": "lib/publication.ts",
     "sourceLine": 56
+  },
+  {
+    "key": "text.e47774bba6c28ad1",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Ruta de navegación",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Ruta de navegación",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 27
+  },
+  {
+    "key": "text.3d8591a85203cc62",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Breadcrumb",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Breadcrumb",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 27
+  },
+  {
+    "key": "text.88bd2c3567bef4c9",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Inicio",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Inicio",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 28
+  },
+  {
+    "key": "text.50780410bb5d4f62",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Home",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Home",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 28
+  },
+  {
+    "key": "text.38935e8431e64fb1",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Todos los destinos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Todos los destinos",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 29
+  },
+  {
+    "key": "text.4a55183e01506240",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · All locations",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "All locations",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 29
+  },
+  {
+    "key": "text.a2347d6f521343e6",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Su próximo destino",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Su próximo destino",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 31
+  },
+  {
+    "key": "text.6ccb60da8cc0bc79",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Your next destination",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Your next destination",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 31
+  },
+  {
+    "key": "text.e8d8fe24288fdc55",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · 50 estados. Un nuevo comienzo.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "50 estados. Un nuevo comienzo.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 32
+  },
+  {
+    "key": "text.3e0064b643729238",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · 50 states. A fresh start.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "50 states. A fresh start.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 32
+  },
+  {
+    "key": "text.9491ed52a8bb0f81",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Elija un destino y empiece a preparar su mudanza interestatal. Vantage le a",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Elija un destino y empiece a preparar su mudanza interestatal. Vantage le ayuda a coordinar los detalles con un transportista autorizado según su ruta, inventario y fechas.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 33
+  },
+  {
+    "key": "text.17ade2832794a5aa",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Choose a destination and start planning your interstate move. Vantage helps",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Choose a destination and start planning your interstate move. Vantage helps coordinate the details with an authorized carrier around your route, inventory and dates.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 33
+  },
+  {
+    "key": "text.c798caf151377162",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Encuentre su estado",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Encuentre su estado",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 34
+  },
+  {
+    "key": "text.573c3b8018e3abe9",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Find your state",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Find your state",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 34
+  },
+  {
+    "key": "text.9ce84e134a6833ec",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Vantage es un intermediario de mudanzas interestatales. Confirme disponibil",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Vantage es un intermediario de mudanzas interestatales. Confirme disponibilidad y servicios para su ruta al solicitar la cotización.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 35
+  },
+  {
+    "key": "text.58c97a8cfeb5554a",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Vantage is an interstate moving broker. Confirm carrier availability and se",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Vantage is an interstate moving broker. Confirm carrier availability and services for your route when requesting your quote.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 35
+  },
+  {
+    "key": "text.27c7a85064e66ccb",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Explore el mapa",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Explore el mapa",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 42
+  },
+  {
+    "key": "text.803f633d67fd8c08",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Explore the map",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Explore the map",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 42
+  },
+  {
+    "key": "text.c9c509fd84b686a3",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · ¿Adónde se muda?",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "¿Adónde se muda?",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 43
+  },
+  {
+    "key": "text.c2e0589c39b96514",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Where are you headed?",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Where are you headed?",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 43
+  },
+  {
+    "key": "text.a86fde118058edc0",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Seleccione un estado en el mapa o use las regiones para encontrar su tarjet",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Seleccione un estado en el mapa o use las regiones para encontrar su tarjeta.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 44
+  },
+  {
+    "key": "text.0c13f2d991e372f5",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Select a state on the map, or browse the regions to find your state below.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Select a state on the map, or browse the regions to find your state below.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 44
+  },
+  {
+    "key": "text.30c7b57a01bbe7bf",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Mapa de los 50 estados",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Mapa de los 50 estados",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 47
+  },
+  {
+    "key": "text.d233c5f3f4e641a9",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Map of all 50 states",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Map of all 50 states",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 47
+  },
+  {
+    "key": "text.5bf919cfe450a0b7",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Regiones",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Regiones",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 54
+  },
+  {
+    "key": "text.06e1907ceb458dc5",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Regions",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Regions",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 54
+  },
+  {
+    "key": "text.cb8bff37c8af5b67",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Los 50 estados",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Los 50 estados",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 62
+  },
+  {
+    "key": "text.eef922af6b19eefc",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · All 50 states",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "All 50 states",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 62
+  },
+  {
+    "key": "text.b3a4ac5568eed18e",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Empiece por su estado",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Empiece por su estado",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 63
+  },
+  {
+    "key": "text.a49fbfe848a0d1d9",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Start with your state",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Start with your state",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 63
+  },
+  {
+    "key": "text.006a15981d633e0e",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Solicite una cotización con sus códigos postales, inventario y fechas prefe",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Solicite una cotización con sus códigos postales, inventario y fechas preferidas.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 64
+  },
+  {
+    "key": "text.4f68f10eb1dca73e",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Request a quote with your pickup and delivery ZIPs, inventory and preferred",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Request a quote with your pickup and delivery ZIPs, inventory and preferred dates.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 64
+  },
+  {
+    "key": "text.9301472509958051",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Solicitar cotización",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Solicitar cotización",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 68
+  },
+  {
+    "key": "text.6ee3cefded94f731",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Get a quote",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Get a quote",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 68
+  },
+  {
+    "key": "text.50e31ae10859fe78",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Get a Quote",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Get a Quote",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 70
+  },
+  {
+    "key": "text.63b8910ca46599cf",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Prepare su ruta",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Prepare su ruta",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 79
+  },
+  {
+    "key": "text.edbca1d2a25776c4",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Plan the route ahead",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Plan the route ahead",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 79
+  },
+  {
+    "key": "text.7aa3f3a700bd11a2",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Servicios para su mudanza",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Servicios para su mudanza",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 83
+  },
+  {
+    "key": "text.eae2afeffa92175a",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Make room for the services you need",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Make room for the services you need",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 83
+  },
+  {
+    "key": "text.6930f277320e53fa",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Conozca su destino",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Conozca su destino",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 87
+  },
+  {
+    "key": "text.bbff4506c63e50da",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Get to know your destination",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Get to know your destination",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 87
+  },
+  {
+    "key": "text.fdb249d0b1ae5d47",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Explore nuestras guías para preparar su llegada.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Explore nuestras guías para preparar su llegada.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 88
+  },
+  {
+    "key": "text.a29a63a8aca34ba2",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Explore our destination guides as you get ready for arrival.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Explore our destination guides as you get ready for arrival.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 88
+  },
+  {
+    "key": "text.b13de48cb87be200",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · El próximo capítulo empieza con un plan.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "El próximo capítulo empieza con un plan.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 92
+  },
+  {
+    "key": "text.25ddf1a131e87883",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Your next chapter starts with a plan.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Your next chapter starts with a plan.",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 92
+  },
+  {
+    "key": "text.7e9c184636fbce83",
+    "section": "editorial / LocationsDirectory",
+    "label": "Copy · Get your moving quote",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Get your moving quote",
+    "sourceFile": "components/editorial/LocationsDirectory.tsx",
+    "sourceLine": 93
+  },
+  {
+    "key": "text.882d8b6d484e3017",
+    "section": "sections / CoverageSection",
+    "label": "Copy · ¿Cuál es su próximo destino?",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "¿Cuál es su próximo destino?",
+    "sourceFile": "components/sections/CoverageSection.tsx",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.f1d482298d2dc252",
+    "section": "sections / CoverageSection",
+    "label": "Copy · Where will your next chapter take you?",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Where will your next chapter take you?",
+    "sourceFile": "components/sections/CoverageSection.tsx",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.4e017ec030e1947b",
+    "section": "sections / CoverageSection",
+    "label": "Copy · Explore los 50 estados y empiece a planificar su mudanza.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Explore los 50 estados y empiece a planificar su mudanza.",
+    "sourceFile": "components/sections/CoverageSection.tsx",
+    "sourceLine": 16
+  },
+  {
+    "key": "text.95bb034e223ca64d",
+    "section": "sections / CoverageSection",
+    "label": "Copy · Explore all 50 states and start planning your move.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Explore all 50 states and start planning your move.",
+    "sourceFile": "components/sections/CoverageSection.tsx",
+    "sourceLine": 16
+  },
+  {
+    "key": "text.383b724c46383788",
+    "section": "sections / CoverageSection",
+    "label": "Copy · Ver todos los destinos →",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Ver todos los destinos →",
+    "sourceFile": "components/sections/CoverageSection.tsx",
+    "sourceLine": 17
+  },
+  {
+    "key": "text.9902e99d496d597b",
+    "section": "sections / CoverageSection",
+    "label": "Copy · Explore all locations →",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Explore all locations →",
+    "sourceFile": "components/sections/CoverageSection.tsx",
+    "sourceLine": 17
   }
 ]

@@ -17,9 +17,11 @@ export function AnchorFocus() {
     }
     function click(event: MouseEvent) {
       if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      const link = (event.target as Element).closest<HTMLAnchorElement>("a[href]");
+      if (!(event.target instanceof Element)) return;
+      const link = event.target.closest("a[href]");
       if (!link) return;
-      const url = new URL(link.href);
+      // SVG anchors expose href as SVGAnimatedString, unlike HTML anchors.
+      const url = new URL(link.getAttribute("href")!, document.baseURI);
       if (url.origin === location.origin && url.pathname === location.pathname && url.hash) requestAnimationFrame(focusHash);
     }
     window.addEventListener("hashchange", focusHash);

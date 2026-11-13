@@ -15,6 +15,7 @@ function property(node) { for(let p=node.parent;p;p=p.parent) { if(ts.isProperty
 function locale(node,file) { for(let p=node;p;p=p.parent) { if(ts.isCallExpression(p)&&p.arguments[0]&&ts.isStringLiteral(p.arguments[0])&&['en','es'].includes(p.arguments[0].text))return p.arguments[0].text; if(ts.isObjectLiteralExpression(p)) {const l=p.properties.find(x=>ts.isPropertyAssignment(x)&&x.name.getText()==='locale');if(l&&ts.isStringLiteral(l.initializer)&&['en','es'].includes(l.initializer.text))return l.initializer.text;} } if(file.startsWith('app/es/')) return 'es'; for(let p=node;p?.parent;p=p.parent) { const q=p.parent; if(ts.isPropertyAssignment(q)&&['en','es'].includes(q.name.getText())) return q.name.getText(); if(ts.isConditionalExpression(q)&&/\bes\b|locale\s*===\s*["']es/.test(q.condition.getText())) return p===q.whenTrue?'es':p===q.whenFalse?'en':'shared'; } return /lib\/content|content\/legal/.test(file)?'en':'shared'; }
 function jsxText(value) { const lines=value.replace(/\r/g,'').split('\n'); return lines.map((line,i)=>{ let s=line.replace(/\t/g,' '); if(i>0)s=s.replace(/^ +/,''); if(i<lines.length-1)s=s.replace(/ +$/,''); return s; }).filter(Boolean).join(' '); }
 function add(value,node,file,kind='text') {
+  if (property(node) === 'scope') return; // Renderer binding, not Owner-facing copy.
   if(value.includes('{{')&&!/[A-Za-z]{2}/.test(value.replace(/\{\{\d+\}\}/g,'')))return;
   if(file==='lib/publication.ts'&&value==='Services')return; // Active nav reuses the historic Services field.
   if(!value.trim()||value==='use client'||value==='use server'||/^(?:randomUUID|getRandomValues|onTouched|POST|GET|application\/json)$/.test(value))return;
@@ -65,7 +66,12 @@ for(const filename of ['inventory','estimates','roles','costs','packing','paperw
 const catalog=[...rows.values()].sort((a,b)=>a.section.localeCompare(b.section)||a.sourceLine-b.sourceLine);
 fs.mkdirSync(path.join(root,'content/cms'),{recursive:true});
 const catalogPath=path.join(root,'content/cms/catalog.json');
-const existing=process.argv.includes('--append-navigation')?JSON.parse(fs.readFileSync(catalogPath,'utf8')):[];
-const output=process.argv.includes('--append-navigation')?[...existing,...catalog.filter(row=>row.sourceFile==='lib/publication.ts'&&!existing.some(old=>old.key===row.key))]:catalog;
+// Append only explicitly selected source modules; immutable descriptors retain Owner overrides.
+const appendSources = process.argv.filter(arg => arg.startsWith('--append-source=')).map(arg => arg.slice('--append-source='.length));
+if (process.argv.includes('--append-navigation')) appendSources.push('lib/publication.ts');
+const existing = appendSources.length ? JSON.parse(fs.readFileSync(catalogPath, 'utf8')) : [];
+const output = appendSources.length
+  ? [...existing, ...catalog.filter(row => appendSources.includes(row.sourceFile) && !existing.some(old => old.key === row.key))]
+  : catalog;
 fs.writeFileSync(catalogPath,JSON.stringify(output,null,2)+'\n');
 console.log(JSON.stringify({fields:output.length,text:output.filter(r=>r.kind==='text').length,images:output.filter(r=>r.kind==='image').length}));
