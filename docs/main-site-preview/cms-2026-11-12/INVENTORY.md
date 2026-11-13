@@ -31567,3 +31567,52 @@ Vantage Movers is a licensed interstate moving broker. Vantage is not a motor ca
 
 © 2026 Vantage Movers. All rights reserved.
 
+
+## Active navigation bindings
+
+These labels are appended to the immutable initial inventory. The English Services menu deliberately adopts the historic `text.4cb6665920a2416d` field; it is now an active Header control. Navigation destinations and publication gates remain source-owned.
+
+**es** (`text.e7bc088838942b15`)
+
+> Destinos
+
+**en** (`text.1ea7160f73e19551`)
+
+> Locations
+
+**es** (`text.d9dc59d29c697ca7`)
+
+> Rutas de mudanza
+
+**en** (`text.4d694d3c4296998f`)
+
+> Moving routes
+
+**es** (`text.eb652b8961472ed0`)
+
+> Servicios
+
+**es** (`text.0bda2f74969cf5f0`)
+
+> Recursos
+
+**en** (`text.3e9d1512334607ea`)
+
+> Resources
+
+**es** (`text.f55216e34c5a971f`)
+
+> Preguntas
+
+**en** (`text.7cd8c8c051557929`)
+
+> FAQ
+
+**es** (`text.9b37073e02019025`)
+
+> Contacto
+
+**en** (`text.7c0dcd3d87eea90d`)
+
+> Contact
+

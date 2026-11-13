@@ -21498,5 +21498,115 @@
     "defaultValue": "{{0}} out of 5 stars",
     "sourceFile": "components/ui/Stars.tsx",
     "sourceLine": 16
+  },
+  {
+    "key": "text.e7bc088838942b15",
+    "section": "publication",
+    "label": "label · Destinos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Destinos",
+    "sourceFile": "lib/publication.ts",
+    "sourceLine": 49
+  },
+  {
+    "key": "text.1ea7160f73e19551",
+    "section": "publication",
+    "label": "label · Locations",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Locations",
+    "sourceFile": "lib/publication.ts",
+    "sourceLine": 49
+  },
+  {
+    "key": "text.d9dc59d29c697ca7",
+    "section": "publication",
+    "label": "label · Rutas de mudanza",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Rutas de mudanza",
+    "sourceFile": "lib/publication.ts",
+    "sourceLine": 50
+  },
+  {
+    "key": "text.4d694d3c4296998f",
+    "section": "publication",
+    "label": "label · Moving routes",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Moving routes",
+    "sourceFile": "lib/publication.ts",
+    "sourceLine": 50
+  },
+  {
+    "key": "text.eb652b8961472ed0",
+    "section": "publication",
+    "label": "label · Servicios",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Servicios",
+    "sourceFile": "lib/publication.ts",
+    "sourceLine": 52
+  },
+  {
+    "key": "text.0bda2f74969cf5f0",
+    "section": "publication",
+    "label": "label · Recursos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Recursos",
+    "sourceFile": "lib/publication.ts",
+    "sourceLine": 54
+  },
+  {
+    "key": "text.3e9d1512334607ea",
+    "section": "publication",
+    "label": "label · Resources",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Resources",
+    "sourceFile": "lib/publication.ts",
+    "sourceLine": 54
+  },
+  {
+    "key": "text.f55216e34c5a971f",
+    "section": "publication",
+    "label": "label · Preguntas",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Preguntas",
+    "sourceFile": "lib/publication.ts",
+    "sourceLine": 55
+  },
+  {
+    "key": "text.7cd8c8c051557929",
+    "section": "publication",
+    "label": "label · FAQ",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "FAQ",
+    "sourceFile": "lib/publication.ts",
+    "sourceLine": 55
+  },
+  {
+    "key": "text.9b37073e02019025",
+    "section": "publication",
+    "label": "label · Contacto",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Contacto",
+    "sourceFile": "lib/publication.ts",
+    "sourceLine": 56
+  },
+  {
+    "key": "text.7c0dcd3d87eea90d",
+    "section": "publication",
+    "label": "label · Contact",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Contact",
+    "sourceFile": "lib/publication.ts",
+    "sourceLine": 56
   }
 ]

@@ -6,7 +6,7 @@ const require = createRequire(new URL('../apps/main-site/package.json', import.m
 const ts = require('typescript');
 const root = path.resolve('apps/main-site/src');
 const walk = dir => fs.readdirSync(dir, {withFileTypes:true}).flatMap(e => e.isDirectory() ? walk(path.join(dir,e.name)) : [path.join(dir,e.name)]);
-const files = walk(root).filter(p => /\.(ts|tsx)$/.test(p) && !/test\.|stories|playground|[\\/]cms[\\/]|geography[\\/]|api[\\/]|analytics|fonts.ts|estimate.ts|website-attribution|quote-journey|telemetry|seo[\\/]|publication.ts|editorial-routes|site.ts|manifest.ts|opengraph-image|editorial[\\/]draft.ts|editorial[\\/]types.ts/.test(p));
+const files = walk(root).filter(p => /\.(ts|tsx)$/.test(p) && !/test\.|stories|playground|[\\/]cms[\\/]|geography[\\/]|api[\\/]|analytics|fonts.ts|estimate.ts|website-attribution|quote-journey|telemetry|seo[\\/]|editorial-routes|site.ts|manifest.ts|opengraph-image|editorial[\\/]draft.ts|editorial[\\/]types.ts/.test(p));
 const rows = new Map();
 const allSource=files.map(f=>({file:f,source:fs.readFileSync(f,'utf8')}));
 const usedExport=(name,file)=>allSource.some(f=>f.file!==file&&new RegExp('\\b'+name+'\\b').test(f.source)) || (fs.readFileSync(file,'utf8').match(new RegExp('\\b'+name+'\\b','g'))??[]).length>1;
@@ -16,6 +16,7 @@ function locale(node,file) { for(let p=node;p;p=p.parent) { if(ts.isCallExpressi
 function jsxText(value) { const lines=value.replace(/\r/g,'').split('\n'); return lines.map((line,i)=>{ let s=line.replace(/\t/g,' '); if(i>0)s=s.replace(/^ +/,''); if(i<lines.length-1)s=s.replace(/ +$/,''); return s; }).filter(Boolean).join(' '); }
 function add(value,node,file,kind='text') {
   if(value.includes('{{')&&!/[A-Za-z]{2}/.test(value.replace(/\{\{\d+\}\}/g,'')))return;
+  if(file==='lib/publication.ts'&&value==='Services')return; // Active nav reuses the historic Services field.
   if(!value.trim()||value==='use client'||value==='use server'||/^(?:randomUUID|getRandomValues|onTouched|POST|GET|application\/json)$/.test(value))return;
   if(kind==='text'&&/<[^>]+>/.test(value)) { for(const part of value.split(/<[^>]+>/g)) add(part,node,file);return; }
   if(kind==='text' && ((/^[\s\d.,/%·©—–+()$-]+$/.test(value)&&!['50,000','4.48/5','(888) 477-9232'].includes(value)) || value.length<2 || /(?:^|\s)(?:border-|focus:|px-|py-|pt-|pb-|min-|max-|justify-|items-|gap-|sm:|lg:)/.test(value) || /^[a-z]+[A-Z][a-zA-Z]*$/.test(value) || /^(?:https?:|mailto:|tel:|\/|#|@|--)/.test(value) || /\b(?:bg-|text-|flex|grid|rounded-|margin|padding|rgba\(|linear-gradient|font-|hover:|object-)/.test(value) || /^[a-z_][a-z\d_.:-]*$/.test(value))) return;
@@ -63,5 +64,8 @@ for(const src of ['quote-request-en.webp','quote-request-es.webp','quote-request
 for(const filename of ['inventory','estimates','roles','costs','packing','paperwork'])add(`/images/editorial/photography-20261112/${filename}.webp`,processAst,'content/editorial/resource-center.ts','image');
 const catalog=[...rows.values()].sort((a,b)=>a.section.localeCompare(b.section)||a.sourceLine-b.sourceLine);
 fs.mkdirSync(path.join(root,'content/cms'),{recursive:true});
-fs.writeFileSync(path.join(root,'content/cms/catalog.json'),JSON.stringify(catalog,null,2)+'\n');
-console.log(JSON.stringify({fields:catalog.length,text:catalog.filter(r=>r.kind==='text').length,images:catalog.filter(r=>r.kind==='image').length}));
+const catalogPath=path.join(root,'content/cms/catalog.json');
+const existing=process.argv.includes('--append-navigation')?JSON.parse(fs.readFileSync(catalogPath,'utf8')):[];
+const output=process.argv.includes('--append-navigation')?[...existing,...catalog.filter(row=>row.sourceFile==='lib/publication.ts'&&!existing.some(old=>old.key===row.key))]:catalog;
+fs.writeFileSync(catalogPath,JSON.stringify(output,null,2)+'\n');
+console.log(JSON.stringify({fields:output.length,text:output.filter(r=>r.kind==='text').length,images:output.filter(r=>r.kind==='image').length}));

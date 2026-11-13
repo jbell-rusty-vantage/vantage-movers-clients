@@ -16,6 +16,17 @@ const fields: ContentField[] = [
 ];
 
 describe("preview content rendering", () => {
+  it("binds active bilingual navigation without borrowing quote-form labels", () => {
+    const source = "components/layout/BrowseNavigation.tsx|lib/publication.ts|components/interactive/ServicesDropdown.tsx";
+    const faq = actualCatalog.find(field => field.sourceFile === "lib/publication.ts" && field.defaultValue === "FAQ")!;
+    const resources = actualCatalog.find(field => field.sourceFile === "lib/publication.ts" && field.defaultValue === "Recursos")!;
+    const quoteContact = actualCatalog.find(field => field.sourceFile === "lib/quote-copy.ts" && field.defaultValue === "Contact")!;
+    const snapshot = contentBindings(actualCatalog, { [faq.key]: "Common questions", [resources.key]: "Guías", "text.4cb6665920a2416d": "Moving services", [quoteContact.key]: "Your details" });
+    expect(resolveContent("FAQ", snapshot.values, source, "en", "text", snapshot.fields)).toBe("Common questions");
+    expect(resolveContent("Recursos", snapshot.values, source, "es", "text", snapshot.fields)).toBe("Guías");
+    expect(resolveContent("Services", snapshot.values, source, "en", "text", snapshot.fields)).toBe("Moving services");
+    expect(resolveContent("Contact", snapshot.values, source, "en", "text", snapshot.fields)).toBe("Contact");
+  });
   it("retains unedited source siblings in the actual compact browser snapshot", () => {
     const snapshot = contentBindings(fields, { home: "Contact us" });
     expect(snapshot.fields.map(field => field.key)).toEqual(["home", "form"]);
