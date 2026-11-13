@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-11-13T17:06:54.696Z",
+  "url": "https://vantage-main-site-canyon.vercel.app",
+  "applicationSource": "089ca90246ec260b0082d4a6039964f1179d6ed6",
+  "deployment": "dpl_HYYfgXhLat9Au3b7TJpy3VLkWvmk",
+  "desktop": {
+    "viewport": 1440,
+    "documentWidth": 1425,
+    "presentation": "canyon",
+    "heroSizes": "100vw",
+    "fontPreloads": [
+      "Inter_variable.woff2",
+      "PlusJakartaSans_variable.woff2"
+    ]
+  },
+  "mobile": {
+    "viewport": 390,
+    "documentWidth": 375,
+    "locales": [
+      "en",
+      "es"
+    ]
+  },
+  "screenshots": [
+    "desktop-home.jpg",
+    "mobile-home.jpg",
+    "mobile-spanish.jpg",
+    "desktop-resources.jpg"
+  ],
+  "focus": "Keyboard focus on hero secondary link showed the dark outline and light inner ring",
+  "limitations": [
+    "Viewport emulation is not physical-device testing",
+    "Actual browser zoom was not assessed"
+  ]
+}

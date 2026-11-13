@@ -27,5 +27,6 @@
   "backendPosts": 1,
   "httpStatus": 200,
   "leadCaptured": true,
-  "receiptVisible": true
+  "receiptVisible": true,
+  "draftEmptyAfterReload": true
 }

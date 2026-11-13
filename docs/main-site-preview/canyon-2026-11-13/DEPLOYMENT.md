@@ -26,6 +26,13 @@ The exact Tracking Reference now matches one Form Lead in `testvantagemovers_sit
 
 The first workflow failed after deployment when its CLI forwarded a token option to curl. Commit `4f0c68efaa90b3a17ed4e6a61dc56607bc4852fc` moved smoke authentication to the CLI's environment. That run stopped before deployment on the existing intermittent Bricolage remote font parsing failure. [Initial Main Site run](https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43467203243) · [Workflow correction run](https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43467652330) · [Successful Partner Clients Preview](https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43467203227).
 
+## Qualified review deployment
+
+- Source `089ca90246ec260b0082d4a6039964f1179d6ed6` localized the presentation fonts. CI passed lint, typecheck, contract and publication checks, authenticated API preflight, the build, and all automated Canyon alias checks. [Successful CI](https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43469046771).
+- Vercel deployment `dpl_HYYfgXhLat9Au3b7TJpy3VLkWvmk` was Ready in the Main Site project's Preview environment. Vercel metadata recorded `agent/main-site-canyon` and the exact source SHA. The stable URL resolved to that deployment after the workflow updated the alias. [Stable review URL](https://vantage-main-site-canyon.vercel.app) · [Immutable deployment](https://vantage-movers-clients-main-site-mw2ktz471-vantage-4d3db9ef.vercel.app).
+- Authenticated stable reads returned Canyon, noindex, the isolated carrier fixture, and a Places result for ZIP 27601. The English and Spanish home responses each sent two same-origin WOFF2 font preloads in the HTTP `Link` header. Inter was 216,256 bytes and Plus Jakarta Sans was 55,520 bytes, totaling 271,776 bytes.
+- The optimization alias resolved to `dpl_FmWZfS29WdoBuXMghcoJhNaeiEq4` and the Main Site Production alias to `dpl_4jzUYdiummhMzTXkwCkYvHdB61fC`. The public Main Site returned HTTP 200 after its existing redirect. The API alias still resolved to `dpl_EMKkp6QcLeXz3Sd1tR97A9LLKCiX` with the same source and isolated database.
+
 ## Verify a Canyon deployment
 
 ```sh
