@@ -1,3 +1,5 @@
+import { CmsElement } from "@/components/cms/Content";
+import { CmsText } from "@/components/cms/Content";
 import type { Testimonial } from "@vantage/api-client";
 import { Suspense } from "react";
 import { TestimonialsSectionSkeleton } from "@/components/feedback/LoadingSkeletons";
@@ -60,7 +62,7 @@ export function HomePage({
           <TestimonialsStream testimonialsPromise={testimonialsPromise} />
         </Suspense>
         <FaqSection />
-        <Suspense fallback={<section id="contact" className="bg-cream px-6 py-12"><h2 className="font-display text-2xl font-bold text-brand-blue">Contact Vantage</h2><a href="tel:8884779232">(888) 477-9232</a></section>}>
+        <Suspense fallback={<section id="contact" className="bg-cream px-6 py-12"><h2 className="font-display text-2xl font-bold text-brand-blue"><CmsText scope="components/HomePage.tsx">{"Contact Vantage"}</CmsText></h2><CmsElement element="a" scope="components/HomePage.tsx" href="tel:8884779232"><CmsText scope="components/HomePage.tsx">{"(888) 477-9232"}</CmsText></CmsElement></section>}>
           <GetInTouchSection featuredTestimonialPromise={featuredTestimonialPromise} />
         </Suspense>
         <FinalCTASection />

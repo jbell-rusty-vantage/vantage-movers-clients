@@ -1,4 +1,6 @@
 "use client";
+import { CmsText } from "@/components/cms/Content";
+
 
 import { useEffect, useRef, useState } from "react";
 import { parseDestination, type ConfirmedDestination, type QuoteLocale } from "@/lib/quote-journey";
@@ -66,20 +68,20 @@ export function PickupLocationSuggestion({ locale, inputId, onConfirm }: { local
         onClick={open ? close : () => setOpen(true)}
         className={actionClass}
       >
-        {text.locate}
+        <CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{text.locate}</CmsText>
       </button>
-      {open && (
+      <CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{open && (
         <div id={panelId} className="rounded border border-cream-border bg-white p-2">
-          {!suggestion && <p id={noticeId}>{text.notice}</p>}
+          <CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{!suggestion && <p id={noticeId}><CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{text.notice}</CmsText></p>}</CmsText>
           <div role="status">
-            {busy && <p className="mt-1">{text.working}</p>}
-            {failed && <p className="mt-1">{text.fallback}</p>}
-            {suggestion && (
+            <CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{busy && <p className="mt-1"><CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{text.working}</CmsText></p>}</CmsText>
+            <CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{failed && <p className="mt-1"><CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{text.fallback}</CmsText></p>}</CmsText>
+            <CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{suggestion && (
               <>
-                <p>{suggestion.postalCode} · {[suggestion.city, suggestion.state].filter(Boolean).join(", ")}</p>
-                <p translate="no" className="my-1 whitespace-nowrap text-xs font-normal not-italic tracking-normal text-[#5e5e5e]">Google Maps</p>
+                <p><CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{suggestion.postalCode}</CmsText><CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{" · "}</CmsText><CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{[suggestion.city, suggestion.state].filter(Boolean).join(", ")}</CmsText></p>
+                <p translate="no" className="my-1 whitespace-nowrap text-xs font-normal not-italic tracking-normal text-[#5e5e5e]"><CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{"Google Maps"}</CmsText></p>
               </>
-            )}
+            )}</CmsText>
           </div>
           <button
             type="button"
@@ -96,13 +98,13 @@ export function PickupLocationSuggestion({ locale, inputId, onConfirm }: { local
             }}
             className={`${actionClass} mt-1 mr-3 aria-disabled:opacity-60`}
           >
-            {suggestion ? text.confirm : text.share}
+            <CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{suggestion ? text.confirm : text.share}</CmsText>
           </button>
           <button type="button" className="min-h-6 underline" onClick={returnToZip}>
-            {text.decline}
+            <CmsText scope="components/interactive/PickupLocationSuggestion.tsx">{text.decline}</CmsText>
           </button>
         </div>
-      )}
+      )}</CmsText>
     </div>
   );
 }

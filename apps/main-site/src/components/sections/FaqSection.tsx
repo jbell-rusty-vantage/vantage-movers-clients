@@ -1,3 +1,5 @@
+import { CmsElement } from "@/components/cms/Content";
+import { CmsText } from "@/components/cms/Content";
 import { Phone } from "lucide-react";
 import { FaqAccordion } from "@/components/interactive/FaqAccordion";
 import { Container } from "@/components/ui/Container";
@@ -25,14 +27,14 @@ export function FaqSection({ locale = "en" }: { locale?: "en" | "es" }) {
             className={`mb-[18px] text-balance leading-[1.08] font-extrabold -tracking-[.02em] text-brand-blue ${heroHeadingFont.className}`}
             style={{ fontSize: `clamp(30px, 3.4vw, ${HEADING_FONT_SIZE}px)` }}
           >
-            {es ? "Preguntas frecuentes" : "Frequently Asked Questions"}
+            <CmsText scope="components/sections/FaqSection.tsx">{es ? "Preguntas frecuentes" : "Frequently Asked Questions"}</CmsText>
           </h2>
           <p
             className={`mb-[26px] text-base leading-[1.6] text-[#64748B] ${heroBodyFont.className}`}
           >
-            {es ? "Resuelva las preguntas importantes antes de planificar su mudanza." : "Find answers to common questions and what to expect throughout the relocation process."}
+            <CmsText scope="components/sections/FaqSection.tsx">{es ? "Resuelva las preguntas importantes antes de planificar su mudanza." : "Find answers to common questions and what to expect throughout the relocation process."}</CmsText>
           </p>
-          <a
+          <CmsElement element="a" scope="components/sections/FaqSection.tsx"
             href={business.phoneHref}
             className={`inline-flex items-center gap-2.5 border border-cream-border bg-white px-5 py-4 no-underline shadow-card ${radiusClasses.md2}`}
             data-analytics-location="faq"
@@ -44,15 +46,15 @@ export function FaqSection({ locale = "en" }: { locale?: "en" | "es" }) {
             </span>
             <span>
               <span className={`block text-[13px] text-[#64748B] ${heroBodyFont.className}`}>
-                {es ? "¿Tiene más preguntas?" : "Still have questions?"}
+                <CmsText scope="components/sections/FaqSection.tsx">{es ? "¿Tiene más preguntas?" : "Still have questions?"}</CmsText>
               </span>
               <span
                 className={`block text-[17px] font-extrabold text-brand-blue ${heroHeadingFont.className}`}
               >
-                {business.phoneDisplay}
+                <CmsText scope="components/sections/FaqSection.tsx">{business.phoneDisplay}</CmsText>
               </span>
             </span>
-          </a>
+          </CmsElement>
         </div>
 
         <FaqAccordion items={es ? spanishFaqs : undefined} />

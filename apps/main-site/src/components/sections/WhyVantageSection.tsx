@@ -1,3 +1,5 @@
+import { CmsElement } from "@/components/cms/Content";
+import { CmsText } from "@/components/cms/Content";
 import { whyVantage, whyVantageSection } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
@@ -28,7 +30,7 @@ export function WhyVantageSection() {
     <section className="py-24" style={{ backgroundColor: colors.sectionBg }}>
       <Container>
         <div className="mx-auto mb-[52px] max-w-[640px] text-center">
-          <Eyebrow className="justify-center">{whyVantageSection.eyebrow}</Eyebrow>
+          <Eyebrow className="justify-center"><CmsText scope="components/sections/WhyVantageSection.tsx">{whyVantageSection.eyebrow}</CmsText></Eyebrow>
           <h2
             className={`${accentClass} text-balance leading-[1.08] font-extrabold -tracking-[.02em]`}
             style={{
@@ -36,12 +38,12 @@ export function WhyVantageSection() {
               color: colors.headingColor,
             }}
           >
-            {whyVantageSection.heading}
+            <CmsText scope="components/sections/WhyVantageSection.tsx">{whyVantageSection.heading}</CmsText>
           </h2>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {whyVantage.map((item, index) => {
+          <CmsText scope="components/sections/WhyVantageSection.tsx">{whyVantage.map((item, index) => {
             const iconId = (CARD_ICONS[index] ?? CARD_ICONS[0]) as WhyVantageIconId;
             const Icon = whyVantageIcons[iconId];
 
@@ -67,7 +69,7 @@ export function WhyVantageSection() {
                     color: colors.cardTitleColor,
                   }}
                 >
-                  {item.title}
+                  <CmsText scope="components/sections/WhyVantageSection.tsx">{item.title}</CmsText>
                 </h3>
                 <p
                   className={`${bodyClass} leading-[1.55]`}
@@ -76,11 +78,11 @@ export function WhyVantageSection() {
                     color: colors.cardDescColor,
                   }}
                 >
-                  {item.desc}
+                  <CmsText scope="components/sections/WhyVantageSection.tsx">{item.desc}</CmsText>
                 </p>
               </div>
             );
-          })}
+          })}</CmsText>
 
           <div
             className={`flex flex-col justify-center p-7 shadow-[0_12px_30px_rgba(2,71,153,.22)] ${radiusClasses[CARD_RADIUS]}`}
@@ -95,7 +97,7 @@ export function WhyVantageSection() {
                 color: colors.ctaTitleColor,
               }}
             >
-              {whyVantageSection.ctaTitle}
+              <CmsText scope="components/sections/WhyVantageSection.tsx">{whyVantageSection.ctaTitle}</CmsText>
             </h3>
             <p
               className={`${bodyClass} mb-[18px] leading-[1.55]`}
@@ -104,9 +106,9 @@ export function WhyVantageSection() {
                 color: colors.ctaBodyColor,
               }}
             >
-              {whyVantageSection.ctaBody}
+              <CmsText scope="components/sections/WhyVantageSection.tsx">{whyVantageSection.ctaBody}</CmsText>
             </p>
-            <a
+            <CmsElement element="a" scope="components/sections/WhyVantageSection.tsx"
               href="#quote"
               className={`${accentClass} self-start px-[22px] py-3 font-bold tracking-[.04em] uppercase no-underline transition hover:-translate-y-0.5 ${radiusClasses[CTA_BUTTON_RADIUS]}`}
               style={{
@@ -115,8 +117,8 @@ export function WhyVantageSection() {
                 color: colors.ctaButtonText,
               }}
             >
-              {whyVantageSection.ctaLabel}
-            </a>
+              <CmsText scope="components/sections/WhyVantageSection.tsx">{whyVantageSection.ctaLabel}</CmsText>
+            </CmsElement>
           </div>
         </div>
       </Container>

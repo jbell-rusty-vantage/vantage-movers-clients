@@ -1,3 +1,5 @@
+import { CmsElement } from "@/components/cms/Content";
+import { CmsText } from "@/components/cms/Content";
 import { Phone } from "lucide-react";
 import { business, howItWorksSection } from "@/lib/content";
 import { MovingProcess } from "@/components/interactive/MovingProcess";
@@ -36,9 +38,9 @@ export function HowItWorksSection({ locale = "en" }: { locale?: "en" | "es" }) {
             className={`${bodyClass} font-medium`}
             style={{ fontSize: "15px", color: colors.taglineColor }}
           >
-            {es ? "Revise el inventario, los servicios y las condiciones escritas antes de decidir." : howItWorksSection.tagline}
+            <CmsText scope="components/sections/HowItWorksSection.tsx">{es ? "Revise el inventario, los servicios y las condiciones escritas antes de decidir." : howItWorksSection.tagline}</CmsText>
           </p>
-          <a
+          <CmsElement element="a" scope="components/sections/HowItWorksSection.tsx"
             href={business.phoneHref}
             className={`${accentClass} inline-flex items-center gap-2.5 px-5 py-2.5 font-bold no-underline shadow-cta-yellow transition hover:-translate-y-0.5 ${radiusClasses[PHONE_BUTTON_RADIUS]}`}
             style={{
@@ -48,8 +50,8 @@ export function HowItWorksSection({ locale = "en" }: { locale?: "en" | "es" }) {
             }}
           >
             <Phone size={16} strokeWidth={2.25} aria-hidden />
-            {business.phoneDisplay}
-          </a>
+            <CmsText scope="components/sections/HowItWorksSection.tsx">{business.phoneDisplay}</CmsText>
+          </CmsElement>
         </div>
 
         <div
@@ -72,7 +74,7 @@ export function HowItWorksSection({ locale = "en" }: { locale?: "en" | "es" }) {
                 style={{ backgroundColor: colors.stepNumberColor }}
                 aria-hidden
               />
-              {es ? "Cómo funciona" : howItWorksSection.eyebrow}
+              <CmsText scope="components/sections/HowItWorksSection.tsx">{es ? "Cómo funciona" : howItWorksSection.eyebrow}</CmsText>
             </div>
             <h2
               className={`${accentClass} leading-[1.1] font-extrabold -tracking-[.02em]`}
@@ -81,10 +83,10 @@ export function HowItWorksSection({ locale = "en" }: { locale?: "en" | "es" }) {
                 color: colors.titleColor,
               }}
             >
-              {es ? "Su mudanza en" : howItWorksSection.titleLead}
+              <CmsText scope="components/sections/HowItWorksSection.tsx">{es ? "Su mudanza en" : howItWorksSection.titleLead}</CmsText>
               <br />
               <span style={{ color: colors.titleAccent, fontStyle: "italic" }}>
-                {es ? "5 pasos de preparación" : "5 planning steps"}
+                <CmsText scope="components/sections/HowItWorksSection.tsx">{es ? "5 pasos de preparación" : "5 planning steps"}</CmsText>
               </span>
             </h2>
           </div>

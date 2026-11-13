@@ -1,6 +1,8 @@
 "use client";
+import { CmsElement, CmsText } from "@/components/cms/Content";
 
-import Image from "next/image";
+
+import { CmsImage as Image } from "@/components/cms/Content";
 import { useId, useState, type KeyboardEvent } from "react";
 import { ArrowLeft, ArrowRight, ImageOff } from "lucide-react";
 
@@ -38,7 +40,7 @@ export function MovingProcess({ locale = "en" }: { locale?: "en" | "es" }) {
     if (event.key === "ArrowLeft") { event.preventDefault(); change(-1); }
   }
 
-  return <div
+  return <CmsElement element="div" scope="components/interactive/MovingProcess.tsx"
     className="grid gap-8 lg:grid-cols-[1.15fr_1fr]"
     role="region"
     aria-roledescription={es ? "secuencia de imágenes" : "image sequence"}
@@ -50,13 +52,13 @@ export function MovingProcess({ locale = "en" }: { locale?: "en" | "es" }) {
     <div className="min-w-0">
       <figure className="overflow-hidden rounded-card border border-white/20 bg-white text-ink">
         <div className={`relative w-full bg-cream ${frame.screenshot ? `${es ? "aspect-[668/1226]" : "aspect-[668/1250]"} sm:aspect-[1034/1176]` : "aspect-[16/10]"}`} data-testid="process-image-slot">
-          {failed.includes(frame.id) ? <div className="flex h-full flex-col items-center justify-center gap-3 p-8 text-center text-brand-blue" role="status">
+          <CmsText scope="components/interactive/MovingProcess.tsx">{failed.includes(frame.id) ? <div className="flex h-full flex-col items-center justify-center gap-3 p-8 text-center text-brand-blue" role="status">
             <ImageOff size={32} aria-hidden />
-            <p className="font-semibold">{es ? "La imagen no está disponible" : "Image unavailable"}</p>
-            <p>{copy.caption}</p>
+            <p className="font-semibold"><CmsText scope="components/interactive/MovingProcess.tsx">{es ? "La imagen no está disponible" : "Image unavailable"}</CmsText></p>
+            <p><CmsText scope="components/interactive/MovingProcess.tsx">{copy.caption}</CmsText></p>
           </div> : <picture className="block h-full w-full">
-            {frame.screenshot && <source media="(max-width: 639px)" srcSet={`/images/selected-20261112/quote-request-${locale}-mobile.webp`} />}
-            <Image
+            <CmsText scope="components/interactive/MovingProcess.tsx">{frame.screenshot && <CmsElement element="source" scope="components/interactive/MovingProcess.tsx" media="(max-width: 639px)" srcSet={`/images/selected-20261112/quote-request-${locale}-mobile.webp`} />}</CmsText>
+            <Image scope="components/interactive/MovingProcess.tsx"
             key={frame.id}
             src={frame.screenshot ? `/images/selected-20261112/quote-request-${locale}.webp` : `/images/preview/${frame.image}`}
             alt={copy.alt}
@@ -67,41 +69,41 @@ export function MovingProcess({ locale = "en" }: { locale?: "en" | "es" }) {
             unoptimized={frame.screenshot}
             className={`h-full w-full ${frame.screenshot ? "object-contain" : "object-cover"}`}
             onError={() => setFailed((previous) => previous.includes(frame.id) ? previous : [...previous, frame.id])}
-          /></picture>}
+          /></picture>}</CmsText>
         </div>
         <figcaption id={captionId} className="min-h-[152px] p-5" aria-live="polite" aria-atomic="true">
-          <p className="mb-1 text-sm font-semibold text-brand-blue">{es ? "Paso" : "Step"} {index + 1} / {frames.length} · {copy.title}</p>
-          <p className="leading-relaxed">{copy.caption}</p>
-          <p className="mt-3 text-xs text-slate-600">{frame.screenshot
+          <p className="mb-1 text-sm font-semibold text-brand-blue"><CmsText scope="components/interactive/MovingProcess.tsx">{es ? "Paso" : "Step"}</CmsText> <CmsText scope="components/interactive/MovingProcess.tsx">{index + 1}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{" / "}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{frames.length}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{" · "}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{copy.title}</CmsText></p>
+          <p className="leading-relaxed"><CmsText scope="components/interactive/MovingProcess.tsx">{copy.caption}</CmsText></p>
+          <p className="mt-3 text-xs text-slate-600"><CmsText scope="components/interactive/MovingProcess.tsx">{frame.screenshot
             ? (es ? "Formulario real con datos ficticios." : "Actual form with fictional details.")
-            : (es ? "Imagen ilustrativa generada; no representa a clientes ni personal de Vantage." : "Generated illustration; not a depiction of Vantage customers or staff.")}</p>
+            : (es ? "Imagen ilustrativa generada; no representa a clientes ni personal de Vantage." : "Generated illustration; not a depiction of Vantage customers or staff.")}</CmsText></p>
         </figcaption>
       </figure>
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-        <button type="button" onClick={() => change(-1)} aria-disabled={index === 0}
+        <CmsElement element="button" scope="components/interactive/MovingProcess.tsx" type="button" onClick={() => change(-1)} aria-disabled={index === 0}
           aria-label={es ? "Paso anterior" : "Previous step"} aria-controls={captionId}
           className="inline-flex min-h-11 items-center gap-2 rounded-lg2 border border-white/40 px-4 py-2 font-semibold text-white transition-colors hover:bg-white/10 aria-disabled:cursor-not-allowed aria-disabled:opacity-40 motion-reduce:transition-none">
-          <ArrowLeft size={18} aria-hidden />{es ? "Anterior" : "Previous"}
-        </button>
-        <span className="text-sm text-on-dark-100" data-testid="process-position">{index + 1} / {frames.length}</span>
-        <button type="button" onClick={() => change(1)} aria-disabled={index === frames.length - 1}
+          <ArrowLeft size={18} aria-hidden /><CmsText scope="components/interactive/MovingProcess.tsx">{es ? "Anterior" : "Previous"}</CmsText>
+        </CmsElement>
+        <span className="text-sm text-on-dark-100" data-testid="process-position"><CmsText scope="components/interactive/MovingProcess.tsx">{index + 1}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{" / "}</CmsText><CmsText scope="components/interactive/MovingProcess.tsx">{frames.length}</CmsText></span>
+        <CmsElement element="button" scope="components/interactive/MovingProcess.tsx" type="button" onClick={() => change(1)} aria-disabled={index === frames.length - 1}
           aria-label={es ? "Paso siguiente" : "Next step"} aria-controls={captionId}
           className="inline-flex min-h-11 items-center gap-2 rounded-lg2 bg-brand-yellow px-4 py-2 font-semibold text-ink transition-colors hover:bg-brand-yellow-soft aria-disabled:cursor-not-allowed aria-disabled:opacity-40 motion-reduce:transition-none">
-          {es ? "Siguiente" : "Next"}<ArrowRight size={18} aria-hidden />
-        </button>
+          <CmsText scope="components/interactive/MovingProcess.tsx">{es ? "Siguiente" : "Next"}</CmsText><ArrowRight size={18} aria-hidden />
+        </CmsElement>
       </div>
     </div>
 
     {/* Always-rendered text keeps the sequence useful before hydration and without images. */}
-    <ol className="m-0 list-none space-y-3 p-0" aria-label={es ? "Todos los pasos" : "All steps"}>
-      {frames.map((item, stepIndex) => <li key={item.id} className={`rounded-card border p-4 ${stepIndex === index ? "border-brand-yellow bg-white/10" : "border-white/15"}`}>
+    <CmsElement element="ol" scope="components/interactive/MovingProcess.tsx" className="m-0 list-none space-y-3 p-0" aria-label={es ? "Todos los pasos" : "All steps"}>
+      <CmsText scope="components/interactive/MovingProcess.tsx">{frames.map((item, stepIndex) => <li key={item.id} className={`rounded-card border p-4 ${stepIndex === index ? "border-brand-yellow bg-white/10" : "border-white/15"}`}>
         <button type="button" onClick={() => setIndex(stepIndex)} aria-current={index === stepIndex ? "step" : undefined}
           aria-controls={captionId} className="flex w-full items-start gap-3 text-left font-display font-bold text-white">
-          <span className="grid size-8 shrink-0 place-items-center rounded-full bg-brand-yellow text-brand-blue" aria-hidden>{stepIndex + 1}</span>
-          <span className="pt-1">{item[locale].title}</span>
+          <span className="grid size-8 shrink-0 place-items-center rounded-full bg-brand-yellow text-brand-blue" aria-hidden><CmsText scope="components/interactive/MovingProcess.tsx">{stepIndex + 1}</CmsText></span>
+          <span className="pt-1"><CmsText scope="components/interactive/MovingProcess.tsx">{item[locale].title}</CmsText></span>
         </button>
-        <p className="mt-2 pl-11 text-sm leading-relaxed text-on-dark-100">{item[locale].caption}</p>
-      </li>)}
-    </ol>
-  </div>;
+        <p className="mt-2 pl-11 text-sm leading-relaxed text-on-dark-100"><CmsText scope="components/interactive/MovingProcess.tsx">{item[locale].caption}</CmsText></p>
+      </li>)}</CmsText>
+    </CmsElement>
+  </CmsElement>;
 }

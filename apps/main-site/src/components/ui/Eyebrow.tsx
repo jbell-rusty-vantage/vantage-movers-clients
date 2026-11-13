@@ -1,3 +1,4 @@
+import { CmsText } from "@/components/cms/Content";
 import type { ReactNode } from "react";
 import { Check } from "lucide-react";
 import { cn } from "@vantage/utils";
@@ -18,7 +19,7 @@ export function Eyebrow({ children, onDark, className }: EyebrowProps) {
       )}
     >
       <Check className="size-3.5 text-brand-yellow" strokeWidth={3} aria-hidden />
-      {children}
+      <CmsText scope="components/ui/Eyebrow.tsx">{children}</CmsText>
     </div>
   );
 }

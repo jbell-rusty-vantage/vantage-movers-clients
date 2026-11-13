@@ -1,6 +1,8 @@
 "use client";
+import { CmsElement, CmsText } from "@/components/cms/Content";
 
-import Link from "next/link";
+
+import { CmsLink as Link } from "@/components/cms/Content";
 import { ChevronDown, ArrowUpRight, Menu, X, MapPin } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { resourceTypes } from "@/content/editorial/resource-center";
@@ -58,8 +60,8 @@ export function BrowseNavigation({ locale, links, services, locations, alternate
     }}
   >
     <div className="flex items-center justify-between gap-5">
-      <nav aria-label={es ? "Principal" : "Main"} className="hidden items-center gap-5 text-sm lg:flex">
-        {links.map(link => {
+      <CmsElement element="nav" scope="components/layout/BrowseNavigation.tsx" aria-label={es ? "Principal" : "Main"} className="hidden items-center gap-5 text-sm lg:flex">
+        <CmsText scope="components/layout/BrowseNavigation.tsx">{links.map(link => {
           const type = (Object.keys(panels) as Panel[]).find(key => panels[key].path === link.href && panels[key].cards.length);
           return type ? (
             <button
@@ -72,22 +74,22 @@ export function BrowseNavigation({ locale, links, services, locations, alternate
               aria-controls={`${id}-${type}`}
               className="flex cursor-pointer items-center gap-1 py-4 hover:text-brand-blue-bright"
             >
-              {link.label}<ChevronDown size={15} aria-hidden />
+              <CmsText scope="components/layout/BrowseNavigation.tsx">{link.label}</CmsText><ChevronDown size={15} aria-hidden />
             </button>
           ) : (
-            <Link key={link.href} href={link.href} onClick={close} onPointerEnter={event => { if (event.pointerType === "mouse") hoverPanel(null); }} className="py-4 no-underline hover:underline">{link.label}</Link>
+            <Link scope="components/layout/BrowseNavigation.tsx" key={link.href} href={link.href} onClick={close} onPointerEnter={event => { if (event.pointerType === "mouse") hoverPanel(null); }} className="py-4 no-underline hover:underline"><CmsText scope="components/layout/BrowseNavigation.tsx">{link.label}</CmsText></Link>
           );
-        })}
-      </nav>
-      <button ref={mobileTrigger} type="button" className="flex items-center gap-2 rounded-md2 border border-cream-border px-3 py-2 text-sm lg:hidden" aria-expanded={mobile} aria-controls={`${id}-mobile`} onClick={() => setMobile(v => !v)}>{mobile ? <X size={18} aria-hidden /> : <Menu size={18} aria-hidden />}{es ? "Menú" : "Menu"}</button>
-      {alternatePath && <Link href={alternatePath} hrefLang={es ? "en" : "es"} lang={es ? "en" : "es"} className="text-sm" aria-label={alternateIsHome ? (es ? "English home" : "Inicio en español") : (es ? "Read this page in English" : "Leer esta página en español")}>{es ? "English" : "Español"}</Link>}
+        })}</CmsText>
+      </CmsElement>
+      <button ref={mobileTrigger} type="button" className="flex items-center gap-2 rounded-md2 border border-cream-border px-3 py-2 text-sm lg:hidden" aria-expanded={mobile} aria-controls={`${id}-mobile`} onClick={() => setMobile(v => !v)}><CmsText scope="components/layout/BrowseNavigation.tsx">{mobile ? <X size={18} aria-hidden /> : <Menu size={18} aria-hidden />}{es ? "Menú" : "Menu"}</CmsText></button>
+      <CmsText scope="components/layout/BrowseNavigation.tsx">{alternatePath && <Link scope="components/layout/BrowseNavigation.tsx" href={alternatePath} hrefLang={es ? "en" : "es"} lang={es ? "en" : "es"} className="text-sm" aria-label={alternateIsHome ? (es ? "English home" : "Inicio en español") : (es ? "Read this page in English" : "Leer esta página en español")}><CmsText scope="components/layout/BrowseNavigation.tsx">{es ? "English" : "Español"}</CmsText></Link>}</CmsText>
     </div>
-    {open && panel && <nav id={`${id}-${open}`} aria-label={panel.label} className="absolute inset-x-0 top-full hidden max-h-[75dvh] overflow-auto border-b border-cream-border bg-white p-8 shadow-menu lg:block">
+    <CmsText scope="components/layout/BrowseNavigation.tsx">{open && panel && <CmsElement element="nav" scope="components/layout/BrowseNavigation.tsx" id={`${id}-${open}`} aria-label={panel.label} className="absolute inset-x-0 top-full hidden max-h-[75dvh] overflow-auto border-b border-cream-border bg-white p-8 shadow-menu lg:block">
       <div className="mx-auto grid max-w-[1200px] gap-8 lg:grid-cols-[.65fr_2fr]">
-        <div><p className="mb-3 text-xs tracking-widest uppercase">{es ? "Su próximo capítulo" : "Your next chapter"}</p><p className="font-display text-3xl font-extrabold">{panel.title}</p><Link href={panel.path} onClick={close} className="mt-5 inline-block text-sm">{panel.cta} →</Link></div>
-        <div className="grid gap-3 sm:grid-cols-2">{panel.cards.map((link, i) => <Link key={link.href} href={link.href} onClick={close} className="flex items-center gap-4 rounded-xl border border-cream-border bg-cream p-5 no-underline transition-colors hover:border-brand-blue hover:bg-brand-yellow-soft">{open === "locations" ? <MapPin size={22} aria-hidden /> : <span className="text-xs text-brand-blue/60">0{i + 1}</span>}<span className="flex-1">{link.label}{"description" in link && <span className="mt-2 block text-xs leading-relaxed font-normal text-ink-soft">{String(link.description)}</span>}</span><ArrowUpRight size={18} aria-hidden /></Link>)}</div>
+        <div><p className="mb-3 text-xs tracking-widest uppercase"><CmsText scope="components/layout/BrowseNavigation.tsx">{es ? "Su próximo capítulo" : "Your next chapter"}</CmsText></p><p className="font-display text-3xl font-extrabold"><CmsText scope="components/layout/BrowseNavigation.tsx">{panel.title}</CmsText></p><Link scope="components/layout/BrowseNavigation.tsx" href={panel.path} onClick={close} className="mt-5 inline-block text-sm"><CmsText scope="components/layout/BrowseNavigation.tsx">{panel.cta}</CmsText><CmsText scope="components/layout/BrowseNavigation.tsx">{" →"}</CmsText></Link></div>
+        <div className="grid gap-3 sm:grid-cols-2"><CmsText scope="components/layout/BrowseNavigation.tsx">{panel.cards.map((link, i) => <Link scope="components/layout/BrowseNavigation.tsx" key={link.href} href={link.href} onClick={close} className="flex items-center gap-4 rounded-xl border border-cream-border bg-cream p-5 no-underline transition-colors hover:border-brand-blue hover:bg-brand-yellow-soft"><CmsText scope="components/layout/BrowseNavigation.tsx">{open === "locations" ? <MapPin size={22} aria-hidden /> : <span className="text-xs text-brand-blue/60"><CmsText scope="components/layout/BrowseNavigation.tsx">{"0"}</CmsText><CmsText scope="components/layout/BrowseNavigation.tsx">{i + 1}</CmsText></span>}</CmsText><span className="flex-1"><CmsText scope="components/layout/BrowseNavigation.tsx">{link.label}{"description" in link && <span className="mt-2 block text-xs leading-relaxed font-normal text-ink-soft"><CmsText scope="components/layout/BrowseNavigation.tsx">{String(link.description)}</CmsText></span>}</CmsText></span><ArrowUpRight size={18} aria-hidden /></Link>)}</CmsText></div>
       </div>
-    </nav>}
-    {mobile && <nav id={`${id}-mobile`} aria-label={es ? "Navegación móvil" : "Mobile navigation"} className="absolute inset-x-0 top-full max-h-[70dvh] overflow-auto border-b border-cream-border bg-white p-5 shadow-menu lg:hidden"><div className="mb-5 flex flex-wrap gap-5">{links.map(link => <Link key={link.href} href={link.href} onClick={close}>{link.label}</Link>)}</div>{(Object.keys(panels) as Panel[]).filter(key => panels[key].cards.length && links.some(link => link.href === panels[key].path)).map(key => <section key={key} className="mb-5"><h2 className="mb-3 text-xs tracking-widest uppercase">{panels[key].label}</h2><div className="grid gap-2 sm:grid-cols-2">{panels[key].cards.map(link => <Link key={link.href} href={link.href} onClick={close} className="flex items-center justify-between gap-3 rounded-xl bg-cream p-4 no-underline">{link.label}<ArrowUpRight size={16} aria-hidden /></Link>)}</div></section>)}</nav>}
+    </CmsElement>}</CmsText>
+    <CmsText scope="components/layout/BrowseNavigation.tsx">{mobile && <CmsElement element="nav" scope="components/layout/BrowseNavigation.tsx" id={`${id}-mobile`} aria-label={es ? "Navegación móvil" : "Mobile navigation"} className="absolute inset-x-0 top-full max-h-[70dvh] overflow-auto border-b border-cream-border bg-white p-5 shadow-menu lg:hidden"><div className="mb-5 flex flex-wrap gap-5"><CmsText scope="components/layout/BrowseNavigation.tsx">{links.map(link => <Link scope="components/layout/BrowseNavigation.tsx" key={link.href} href={link.href} onClick={close}><CmsText scope="components/layout/BrowseNavigation.tsx">{link.label}</CmsText></Link>)}</CmsText></div><CmsText scope="components/layout/BrowseNavigation.tsx">{(Object.keys(panels) as Panel[]).filter(key => panels[key].cards.length && links.some(link => link.href === panels[key].path)).map(key => <section key={key} className="mb-5"><h2 className="mb-3 text-xs tracking-widest uppercase"><CmsText scope="components/layout/BrowseNavigation.tsx">{panels[key].label}</CmsText></h2><div className="grid gap-2 sm:grid-cols-2"><CmsText scope="components/layout/BrowseNavigation.tsx">{panels[key].cards.map(link => <Link scope="components/layout/BrowseNavigation.tsx" key={link.href} href={link.href} onClick={close} className="flex items-center justify-between gap-3 rounded-xl bg-cream p-4 no-underline"><CmsText scope="components/layout/BrowseNavigation.tsx">{link.label}</CmsText><ArrowUpRight size={16} aria-hidden /></Link>)}</CmsText></div></section>)}</CmsText></CmsElement>}</CmsText>
   </div>;
 }

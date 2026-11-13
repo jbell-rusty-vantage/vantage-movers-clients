@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { CmsElement, CmsText } from "@/components/cms/Content";
+import { CmsImage as Image } from "@/components/cms/Content";
 import { Suspense } from "react";
 import type { Testimonial } from "@vantage/api-client";
 import { Clock, Mail, Phone, Star } from "lucide-react";
@@ -39,11 +40,11 @@ function SoftStars({
   className?: string;
 }) {
   return (
-    <div
+    <CmsElement element="div" scope="components/sections/GetInTouchSection.tsx"
       className={`flex gap-0.5 ${className ?? ""}`}
       aria-label={`${value} out of 5 stars`}
     >
-      {Array.from({ length: 5 }).map((_, i) => (
+      <CmsText scope="components/sections/GetInTouchSection.tsx">{Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
           size={size}
@@ -56,9 +57,9 @@ function SoftStars({
           strokeWidth={1.5}
           aria-hidden
         />
-      ))}
-      <span className="ml-1 text-xs">{value}/5</span>
-    </div>
+      ))}</CmsText>
+      <span className="ml-1 text-xs"><CmsText scope="components/sections/GetInTouchSection.tsx">{value}</CmsText><CmsText scope="components/sections/GetInTouchSection.tsx">{"/5"}</CmsText></span>
+    </CmsElement>
   );
 }
 
@@ -74,9 +75,7 @@ function ReviewSnippet({ quote, name, source, rating }: ReviewSnippetProps) {
     <figure className="rounded-card border border-white/12 bg-white/6 px-5 py-4 backdrop-blur-sm">
       <blockquote
         className={`mb-3.5 text-[14px] leading-[1.6] text-on-dark-100 italic ${heroBodyFont.className}`}
-      >
-        &ldquo;{quote}&rdquo;
-      </blockquote>
+      ><CmsText scope="components/sections/GetInTouchSection.tsx">{"\u201c"}</CmsText>{quote}<CmsText scope="components/sections/GetInTouchSection.tsx">{"\u201d"}</CmsText></blockquote>
       <figcaption className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <span
@@ -91,11 +90,11 @@ function ReviewSnippet({ quote, name, source, rating }: ReviewSnippetProps) {
               {name}
             </span>
             <span className={`block text-[12.5px] text-on-dark-500 ${heroBodyFont.className}`}>
-              {source}
+              <CmsText scope="components/sections/GetInTouchSection.tsx">{source}</CmsText>
             </span>
           </span>
         </div>
-        {rating !== null && <SoftStars size={REVIEW_STAR_SIZE} value={rating} className="shrink-0" />}
+        <CmsText scope="components/sections/GetInTouchSection.tsx">{rating !== null && <SoftStars size={REVIEW_STAR_SIZE} value={rating} className="shrink-0" />}</CmsText>
       </figcaption>
     </figure>
   );
@@ -126,7 +125,7 @@ async function FeaturedReviewSnippet({
 function CompactTrustLogo({ logo }: { logo: TrustLogo }) {
   return (
     <span className="trust-logo trust-logo--compact">
-      <Image
+      <Image scope="components/sections/GetInTouchSection.tsx"
         src={logo.src}
         alt={logo.alt}
         width={logo.width}
@@ -143,14 +142,14 @@ function CompactTrustLogos() {
   return (
     <div className="flex flex-col items-center gap-2.5 sm:gap-3">
       <div className="flex items-center justify-center gap-3 sm:gap-4">
-        {row1.map((logo) => (
+        <CmsText scope="components/sections/GetInTouchSection.tsx">{row1.map((logo) => (
           <CompactTrustLogo key={logo.src} logo={logo} />
-        ))}
+        ))}</CmsText>
       </div>
       <div className="flex items-center justify-center gap-3 sm:gap-4">
-        {row2.map((logo) => (
+        <CmsText scope="components/sections/GetInTouchSection.tsx">{row2.map((logo) => (
           <CompactTrustLogo key={logo.src} logo={logo} />
-        ))}
+        ))}</CmsText>
       </div>
     </div>
   );
@@ -204,7 +203,7 @@ export function GetInTouchSection({
                 <span
                   className={`text-[13px] font-bold tracking-[0.14em] text-brand-yellow uppercase ${heroHeadingFont.className}`}
                 >
-                  {quoteSection.eyebrow}
+                  <CmsText scope="components/sections/GetInTouchSection.tsx">{quoteSection.eyebrow}</CmsText>
                 </span>
               </div>
 
@@ -212,18 +211,18 @@ export function GetInTouchSection({
                 className={`mb-4 text-balance leading-[1.1] font-extrabold -tracking-[.02em] text-white ${heroHeadingFont.className}`}
                 style={{ fontSize: `clamp(28px, 3.2vw, ${HEADING_FONT_SIZE}px)` }}
               >
-                {quoteSection.title}{" "}
-                <span className="text-brand-yellow">{quoteSection.titleAccent}</span>
+                <CmsText scope="components/sections/GetInTouchSection.tsx">{quoteSection.title}{" "}</CmsText>
+                <span className="text-brand-yellow"><CmsText scope="components/sections/GetInTouchSection.tsx">{quoteSection.titleAccent}</CmsText></span>
               </h2>
 
               <p
                 className={`mb-8 max-w-[480px] text-[15.5px] leading-[1.65] text-on-dark-300 ${heroBodyFont.className}`}
               >
-                {quoteSection.body}
+                <CmsText scope="components/sections/GetInTouchSection.tsx">{quoteSection.body}</CmsText>
               </p>
 
               <ul className="mb-8 flex flex-col gap-4">
-                {contactItems.map((item) => {
+                <CmsText scope="components/sections/GetInTouchSection.tsx">{contactItems.map((item) => {
                   const Icon = item.icon;
                   const content = (
                     <>
@@ -235,31 +234,31 @@ export function GetInTouchSection({
                       <span
                         className={`text-[15px] font-semibold text-white ${heroHeadingFont.className}`}
                       >
-                        {item.label}
+                        <CmsText scope="components/sections/GetInTouchSection.tsx">{item.label}</CmsText>
                       </span>
                     </>
                   );
 
                   return (
                     <li key={item.label}>
-                      {item.href ? (
-                        <a
+                      <CmsText scope="components/sections/GetInTouchSection.tsx">{item.href ? (
+                        <CmsElement element="a" scope="components/sections/GetInTouchSection.tsx"
                           href={item.href}
                           className="flex items-center gap-3.5 no-underline transition hover:opacity-90"
                           data-analytics-location="get_in_touch"
                         >
-                          {content}
-                        </a>
+                          <CmsText scope="components/sections/GetInTouchSection.tsx">{content}</CmsText>
+                        </CmsElement>
                       ) : (
-                        <div className="flex items-center gap-3.5">{content}</div>
-                      )}
+                        <div className="flex items-center gap-3.5"><CmsText scope="components/sections/GetInTouchSection.tsx">{content}</CmsText></div>
+                      )}</CmsText>
                     </li>
                   );
-                })}
+                })}</CmsText>
               </ul>
 
               <div className={`relative min-w-0 overflow-hidden shadow-tile ${radiusClasses.card}`}>
-                <Image
+                <Image scope="components/sections/GetInTouchSection.tsx"
                   src={resolveSiteImage(quoteSection.image)}
                   alt={quoteSection.imageAlt}
                   width={640}
@@ -280,7 +279,7 @@ export function GetInTouchSection({
                   <p
                     className={`mb-3 text-center text-[11px] font-bold tracking-[0.14em] text-on-dark-500 uppercase ${heroHeadingFont.className}`}
                   >
-                    {trustStrip.label}
+                    <CmsText scope="components/sections/GetInTouchSection.tsx">{trustStrip.label}</CmsText>
                   </p>
                   <CompactTrustLogos />
                 </div>

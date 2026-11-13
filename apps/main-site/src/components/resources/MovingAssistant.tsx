@@ -1,3 +1,5 @@
+import { CmsElement } from "@/components/cms/Content";
+import { CmsText } from "@/components/cms/Content";
 import { business } from "@/lib/content";
 
 const answers = {
@@ -17,13 +19,13 @@ const answers = {
 export function MovingAssistant({ locale = "en" }: { locale?: "en" | "es" }) {
   const es = locale === "es";
   return <section className="rounded-card border border-cream-border bg-cream p-6" aria-labelledby="moving-questions-title">
-    <h2 id="moving-questions-title" className="mb-4 font-display text-2xl font-bold text-brand-blue">{es ? "Preguntas para preparar su mudanza" : "Questions to help plan your move"}</h2>
-    <p className="mb-4">{es ? "Orientación general. Para fechas, servicios o condiciones de su envío, consulte sus documentos y hable con una persona de nuestro equipo." : "General planning guidance. For shipment dates, services or terms, check your paperwork and speak with our team."}</p>
-    {answers[locale].map((item) => <details key={item.question} className="border-t border-cream-border py-4">
-      <summary className="cursor-pointer font-semibold text-brand-blue">{item.question}</summary>
-      <p className="my-3 leading-relaxed">{item.answer}</p>
-      <a href={item.href} target="_blank" rel="noopener noreferrer" className="underline">{item.source} <span className="text-sm">({es ? "nueva pestaña" : "new tab"})</span></a>
-    </details>)}
-    <a href={business.phoneHref} className="mt-4 inline-block rounded-lg2 bg-brand-blue px-5 py-3 font-bold text-white" data-analytics-location="resources">{es ? "Hablar con Vantage" : "Speak with Vantage"}: {business.phoneDisplay}</a>
+    <h2 id="moving-questions-title" className="mb-4 font-display text-2xl font-bold text-brand-blue"><CmsText scope="components/resources/MovingAssistant.tsx">{es ? "Preguntas para preparar su mudanza" : "Questions to help plan your move"}</CmsText></h2>
+    <p className="mb-4"><CmsText scope="components/resources/MovingAssistant.tsx">{es ? "Orientación general. Para fechas, servicios o condiciones de su envío, consulte sus documentos y hable con una persona de nuestro equipo." : "General planning guidance. For shipment dates, services or terms, check your paperwork and speak with our team."}</CmsText></p>
+    <CmsText scope="components/resources/MovingAssistant.tsx">{answers[locale].map((item) => <details key={item.question} className="border-t border-cream-border py-4">
+      <summary className="cursor-pointer font-semibold text-brand-blue"><CmsText scope="components/resources/MovingAssistant.tsx">{item.question}</CmsText></summary>
+      <p className="my-3 leading-relaxed"><CmsText scope="components/resources/MovingAssistant.tsx">{item.answer}</CmsText></p>
+      <CmsElement element="a" scope="components/resources/MovingAssistant.tsx" href={item.href} target="_blank" rel="noopener noreferrer" className="underline"><CmsText scope="components/resources/MovingAssistant.tsx">{item.source}</CmsText> <span className="text-sm"><CmsText scope="components/resources/MovingAssistant.tsx">{"("}</CmsText><CmsText scope="components/resources/MovingAssistant.tsx">{es ? "nueva pestaña" : "new tab"}</CmsText><CmsText scope="components/resources/MovingAssistant.tsx">{")"}</CmsText></span></CmsElement>
+    </details>)}</CmsText>
+    <CmsElement element="a" scope="components/resources/MovingAssistant.tsx" href={business.phoneHref} className="mt-4 inline-block rounded-lg2 bg-brand-blue px-5 py-3 font-bold text-white" data-analytics-location="resources"><CmsText scope="components/resources/MovingAssistant.tsx">{es ? "Hablar con Vantage" : "Speak with Vantage"}</CmsText><CmsText scope="components/resources/MovingAssistant.tsx">{": "}</CmsText><CmsText scope="components/resources/MovingAssistant.tsx">{business.phoneDisplay}</CmsText></CmsElement>
   </section>;
 }

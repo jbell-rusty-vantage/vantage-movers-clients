@@ -1,3 +1,4 @@
+import { CmsText } from "@/components/cms/Content";
 import type { ReactNode } from "react";
 import { cn } from "@vantage/utils";
 
@@ -10,7 +11,7 @@ export function Container({
 }) {
   return (
     <div className={cn("mx-auto w-full max-w-[1200px] px-7", className)}>
-      {children}
+      <CmsText scope="components/ui/Container.tsx">{children}</CmsText>
     </div>
   );
 }

@@ -1,5 +1,7 @@
+import { CmsElement } from "@/components/cms/Content";
+import { CmsText } from "@/components/cms/Content";
 import type { ReactNode } from "react";
-import Link from "next/link";
+import { CmsLink as Link } from "@/components/cms/Content";
 import { entryById, entriesFor } from "@/lib/publication";
 import { ArrowRight, Check } from "lucide-react";
 import { featureRows, services, servicesSection } from "@/lib/content";
@@ -45,7 +47,7 @@ function ServicesCheckListItem({
       <span className="grid size-6 flex-none place-items-center rounded-full bg-brand-yellow-soft">
         <Check className="size-3 text-brand-blue-bright" strokeWidth={3} aria-hidden />
       </span>
-      {children}
+      <CmsText scope="components/sections/ServicesSection.tsx">{children}</CmsText>
     </div>
   );
 }
@@ -58,67 +60,63 @@ export function ServicesSection() {
     <section id="services" className="bg-cream py-24">
       <Container>
         <div className="mx-auto mb-[52px] max-w-[680px] text-center">
-          <Eyebrow className="justify-center">{servicesSection.eyebrow}</Eyebrow>
+          <Eyebrow className="justify-center"><CmsText scope="components/sections/ServicesSection.tsx">{servicesSection.eyebrow}</CmsText></Eyebrow>
           <h2
             className={`${accentClass} mb-4 text-balance leading-[1.08] font-extrabold -tracking-[.02em] text-brand-blue`}
             style={{ fontSize: `${SECTION_HEADING_FONT_SIZE}px` }}
           >
-            {servicesSection.title}
+            <CmsText scope="components/sections/ServicesSection.tsx">{servicesSection.title}</CmsText>
           </h2>
           <p
             className={`${bodyClass} leading-[1.6] text-[#64748B]`}
             style={{ fontSize: `${SECTION_INTRO_FONT_SIZE}px` }}
           >
-            {servicesSection.body}
+            <CmsText scope="components/sections/ServicesSection.tsx">{servicesSection.body}</CmsText>
           </p>
-          {entriesFor("en").some(e => e.kind === "service") && <Link href="/services" className="mt-5 inline-block font-bold text-brand-blue">Browse all moving services →</Link>}
+          <CmsText scope="components/sections/ServicesSection.tsx">{entriesFor("en").some(e => e.kind === "service") && <Link scope="components/sections/ServicesSection.tsx" href="/services" className="mt-5 inline-block font-bold text-brand-blue"><CmsText scope="components/sections/ServicesSection.tsx">{"Browse all moving services →"}</CmsText></Link>}</CmsText>
         </div>
 
-        {featureRows.map((row, rowIndex) => {
+        <CmsText scope="components/sections/ServicesSection.tsx">{featureRows.map((row, rowIndex) => {
           const badgeIconKey = FEATURE_BADGE_ICONS[rowIndex] ?? row.badge.icon;
           const BadgeIcon = SERVICE_ICONS[badgeIconKey];
           const content = (
             <div>
-              <Eyebrow>{row.eyebrow}</Eyebrow>
+              <Eyebrow><CmsText scope="components/sections/ServicesSection.tsx">{row.eyebrow}</CmsText></Eyebrow>
               <h3
                 className={`${accentClass} mb-4 text-balance leading-[1.1] font-extrabold -tracking-[.02em] text-brand-blue`}
                 style={{ fontSize: `${FEATURE_TITLE_FONT_SIZE}px` }}
               >
-                {row.title}
+                <CmsText scope="components/sections/ServicesSection.tsx">{row.title}</CmsText>
               </h3>
               <p
                 className={`${bodyClass} mb-[22px] leading-[1.65] text-[#475569]`}
                 style={{ fontSize: `${FEATURE_BODY_FONT_SIZE}px` }}
               >
-                {row.body}
+                <CmsText scope="components/sections/ServicesSection.tsx">{row.body}</CmsText>
               </p>
               <div className="mb-7 flex flex-col gap-3">
-                {row.checklist.map((item) => (
+                <CmsText scope="components/sections/ServicesSection.tsx">{row.checklist.map((item) => (
                   <ServicesCheckListItem key={item} bodyClassName={bodyClass}>
-                    {item}
+                    <CmsText scope="components/sections/ServicesSection.tsx">{item}</CmsText>
                   </ServicesCheckListItem>
-                ))}
+                ))}</CmsText>
               </div>
               <div className="flex flex-wrap items-center gap-3.5">
-                <a
+                <CmsElement element="a" scope="components/sections/ServicesSection.tsx"
                   href="#quote"
                   className={`${radiusClasses[BUTTON_RADIUS]} ${accentClass} bg-brand-blue-bright px-[26px] py-3.5 font-bold tracking-[.04em] text-white uppercase no-underline shadow-cta transition hover:-translate-y-0.5 hover:bg-brand-blue`}
                   style={{ fontSize: `${CTA_FONT_SIZE}px` }}
                   data-analytics-event="cta_clicked"
                   data-analytics-cta-location="service_feature"
                   data-analytics-move-type={row.title}
-                >
-                  Request a Quote
-                </a>
-                <a
+                ><CmsText scope="components/sections/ServicesSection.tsx">{"Request a Quote"}</CmsText></CmsElement>
+                <CmsElement element="a" scope="components/sections/ServicesSection.tsx"
                   href={entryById(row.serviceId, "en")?.path ?? "#quote"}
                   className={`${radiusClasses[BUTTON_RADIUS]} ${accentClass} border-[1.5px] border-cream-border bg-white px-6 py-[13px] font-bold tracking-[.04em] text-brand-blue uppercase no-underline transition hover:border-brand-blue`}
                   style={{ fontSize: `${CTA_FONT_SIZE}px` }}
                   data-analytics-location="service_feature"
                   data-analytics-move-type={row.title}
-                >
-                  Learn More
-                </a>
+                ><CmsText scope="components/sections/ServicesSection.tsx">{"Learn More"}</CmsText></CmsElement>
               </div>
             </div>
           );
@@ -130,7 +128,7 @@ export function ServicesSection() {
               className={radiusClasses[IMAGE_TILE_RADIUS]}
               badge={
                 <TileBadge icon={<BadgeIcon size={BADGE_ICON_SIZE} strokeWidth={2} />}>
-                  {row.badge.label}
+                  <CmsText scope="components/sections/ServicesSection.tsx">{row.badge.label}</CmsText>
                 </TileBadge>
               }
             />
@@ -142,26 +140,26 @@ export function ServicesSection() {
               id={row.anchorId}
               className="mb-16 grid scroll-mt-28 items-center gap-14 last:mb-[72px] md:grid-cols-2"
             >
-              {row.imageFirst ? (
+              <CmsText scope="components/sections/ServicesSection.tsx">{row.imageFirst ? (
                 <>
-                  {image}
-                  {content}
+                  <CmsText scope="components/sections/ServicesSection.tsx">{image}</CmsText>
+                  <CmsText scope="components/sections/ServicesSection.tsx">{content}</CmsText>
                 </>
               ) : (
                 <>
-                  {content}
-                  {image}
+                  <CmsText scope="components/sections/ServicesSection.tsx">{content}</CmsText>
+                  <CmsText scope="components/sections/ServicesSection.tsx">{image}</CmsText>
                 </>
-              )}
+              )}</CmsText>
             </div>
           );
-        })}
+        })}</CmsText>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => {
+          <CmsText scope="components/sections/ServicesSection.tsx">{services.map((s) => {
             const Icon = SERVICE_ICONS[s.icon];
             return (
-              <a
+              <CmsElement element="a" scope="components/sections/ServicesSection.tsx"
                 key={s.title}
                 id={s.anchorId}
                 href={entryById(s.anchorId.replace("service-", "").replace("commercial-office", "corporate-office"), "en")?.path ?? "#quote"}
@@ -183,23 +181,22 @@ export function ServicesSection() {
                   className={`${accentClass} mb-2 font-extrabold -tracking-[.01em] text-brand-blue`}
                   style={{ fontSize: `${CARD_TITLE_FONT_SIZE}px` }}
                 >
-                  {s.title}
+                  <CmsText scope="components/sections/ServicesSection.tsx">{s.title}</CmsText>
                 </h3>
                 <p
                   className={`${bodyClass} mb-[18px] flex-1 leading-[1.55] text-[#64748B]`}
                   style={{ fontSize: `${CARD_DESC_FONT_SIZE}px` }}
                 >
-                  {s.desc}
+                  <CmsText scope="components/sections/ServicesSection.tsx">{s.desc}</CmsText>
                 </p>
                 <span
                   className={`${accentClass} inline-flex items-center gap-[7px] font-bold text-brand-blue-bright`}
                   style={{ fontSize: `${Math.max(CTA_FONT_SIZE - 1, 12)}px` }}
-                >
-                  Explore this service <ArrowRight size={15} strokeWidth={2.4} aria-hidden />
+                ><CmsText scope="components/sections/ServicesSection.tsx">{"Explore this service "}</CmsText><ArrowRight size={15} strokeWidth={2.4} aria-hidden />
                 </span>
-              </a>
+              </CmsElement>
             );
-          })}
+          })}</CmsText>
         </div>
       </Container>
     </section>

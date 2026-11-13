@@ -1,5 +1,7 @@
+import { CmsElement } from "@/components/cms/Content";
+import { CmsText } from "@/components/cms/Content";
 import type { Metadata } from "next";
-import Link from "next/link";
+import { CmsLink as Link } from "@/components/cms/Content";
 import { ArrowLeft, ExternalLink, FileText, ShieldCheck } from "lucide-react";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Header } from "@/components/layout/Header";
@@ -27,25 +29,23 @@ export default function CarrierContactsPage() {
           <Container>
             <div className="grid items-center gap-7 lg:grid-cols-[1fr_430px]">
               <div className="min-w-0">
-                <Link
+                <Link scope="app/(en)/carrier-contacts/page.tsx"
                   href="/"
                   className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-white! no-underline hover:text-white! hover:underline"
                 >
-                  <ArrowLeft className="size-4" strokeWidth={2.4} aria-hidden />
-                  Home
-                </Link>
+                  <ArrowLeft className="size-4" strokeWidth={2.4} aria-hidden /><CmsText scope="app/(en)/carrier-contacts/page.tsx">{"Home"}</CmsText></Link>
                 <p
                   className={`mb-3 text-sm font-extrabold tracking-[.14em] text-brand-yellow uppercase ${headingClass}`}
                 >
-                  {carrierContactsPage.eyebrow}
+                  <CmsText scope="app/(en)/carrier-contacts/page.tsx">{carrierContactsPage.eyebrow}</CmsText>
                 </p>
                 <h1
                   className={`mb-4 text-[clamp(34px,5vw,56px)] leading-[1.02] font-extrabold tracking-[-0.02em] ${headingClass}`}
                 >
-                  {carrierContactsPage.title}
+                  <CmsText scope="app/(en)/carrier-contacts/page.tsx">{carrierContactsPage.title}</CmsText>
                 </h1>
                 <p className="max-w-2xl text-[16px] leading-[1.7] text-on-dark-100 sm:text-[17px]">
-                  {carrierContactsPage.body}
+                  <CmsText scope="app/(en)/carrier-contacts/page.tsx">{carrierContactsPage.body}</CmsText>
                 </p>
               </div>
 
@@ -55,37 +55,27 @@ export default function CarrierContactsPage() {
                 </div>
                 <h2
                   className={`mb-3 text-[clamp(25px,3vw,34px)] leading-tight font-extrabold text-brand-blue ${headingClass}`}
-                >
-                  Start Here
-                </h2>
-                <p className="mb-5 text-[15.5px] leading-[1.7] text-ink-soft">
-                  Submit your company details through the carrier request form. Dispatch will
-                  review your information and reach out.
-                </p>
-                <a
+                ><CmsText scope="app/(en)/carrier-contacts/page.tsx">{"Start Here"}</CmsText></h2>
+                <p className="mb-5 text-[15.5px] leading-[1.7] text-ink-soft"><CmsText scope="app/(en)/carrier-contacts/page.tsx">{"Submit your company details through the carrier request form. Dispatch will review your information and reach out."}</CmsText></p>
+                <CmsElement element="a" scope="app/(en)/carrier-contacts/page.tsx"
                   href={carrierContactsPage.formUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`inline-flex w-full items-center justify-center gap-2 rounded-lg2 bg-brand-yellow px-5 py-4 text-center text-sm font-extrabold tracking-[.04em] text-black uppercase no-underline shadow-cta-yellow transition hover:-translate-y-0.5 sm:w-auto ${headingClass}`}
                   data-analytics-location="carrier_contacts"
                 >
-                  {carrierContactsPage.ctaLabel}
+                  <CmsText scope="app/(en)/carrier-contacts/page.tsx">{carrierContactsPage.ctaLabel}</CmsText>
                   <ExternalLink className="size-4" strokeWidth={2.3} aria-hidden />
-                </a>
+                </CmsElement>
 
                 <div className="mt-6 border-t border-cream-border pt-5">
                   <div className="mb-3 flex items-center gap-3">
                     <span className="grid size-10 place-items-center rounded-md2 bg-brand-blue text-brand-yellow">
                       <ShieldCheck className="size-5" strokeWidth={2.2} aria-hidden />
                     </span>
-                    <h2 className={`text-lg font-extrabold text-brand-blue ${headingClass}`}>
-                      Information Requested
-                    </h2>
+                    <h2 className={`text-lg font-extrabold text-brand-blue ${headingClass}`}><CmsText scope="app/(en)/carrier-contacts/page.tsx">{"Information Requested"}</CmsText></h2>
                   </div>
-                  <p className="text-[14px] leading-[1.7] text-ink-soft">
-                    Company name, DOT number, MC number, contact details, and licensed service
-                    types.
-                  </p>
+                  <p className="text-[14px] leading-[1.7] text-ink-soft"><CmsText scope="app/(en)/carrier-contacts/page.tsx">{"Company name, DOT number, MC number, contact details, and licensed service types."}</CmsText></p>
                 </div>
               </article>
             </div>
@@ -100,16 +90,11 @@ export default function CarrierContactsPage() {
                   <span className="grid size-11 place-items-center rounded-md2 bg-brand-blue text-brand-yellow">
                     <ShieldCheck className="size-5" strokeWidth={2.2} aria-hidden />
                   </span>
-                  <h2 className={`text-xl font-extrabold text-brand-blue ${headingClass}`}>
-                    Carrier Network Note
-                  </h2>
+                  <h2 className={`text-xl font-extrabold text-brand-blue ${headingClass}`}><CmsText scope="app/(en)/carrier-contacts/page.tsx">{"Carrier Network Note"}</CmsText></h2>
                 </div>
-                <p className="mb-4 text-[15px] leading-[1.7] text-ink-soft">
-                  Please do not submit passwords or sensitive credentials through the carrier
-                  request form.
-                </p>
+                <p className="mb-4 text-[15px] leading-[1.7] text-ink-soft"><CmsText scope="app/(en)/carrier-contacts/page.tsx">{"Please do not submit passwords or sensitive credentials through the carrier request form."}</CmsText></p>
                 <p className="text-[13px] leading-[1.7] text-[#64748B]">
-                  {business.brokerLine} - DOT {business.dot} - MC {business.mc}
+                  <CmsText scope="app/(en)/carrier-contacts/page.tsx">{business.brokerLine}</CmsText><CmsText scope="app/(en)/carrier-contacts/page.tsx">{" - DOT "}</CmsText><CmsText scope="app/(en)/carrier-contacts/page.tsx">{business.dot}</CmsText><CmsText scope="app/(en)/carrier-contacts/page.tsx">{" - MC "}</CmsText><CmsText scope="app/(en)/carrier-contacts/page.tsx">{business.mc}</CmsText>
                 </p>
               </aside>
             </div>

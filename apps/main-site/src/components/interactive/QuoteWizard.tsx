@@ -1,8 +1,10 @@
 "use client";
+import { CmsText, CmsElement } from "@/components/cms/Content";
+
 import { captureWebsiteAttribution } from "@/lib/website-attribution";
 
 import { useEffect, useRef, useState, useCallback, useId, type ReactNode } from "react";
-import Link from "next/link";
+import { CmsLink as Link } from "@/components/cms/Content";
 import { useSearchParams } from "next/navigation";
 import {
   useForm,
@@ -115,18 +117,18 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label htmlFor={id} className={labelCls}>{label}</label>
-      {children}
-      {(error || reserveErrorSpace) && (
+      <label htmlFor={id} className={labelCls}><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{label}</CmsText></label>
+      <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{children}</CmsText>
+      <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{(error || reserveErrorSpace) && (
         <p
           id={`${id}-error`}
           role={error ? "alert" : undefined}
           aria-hidden={error ? undefined : true}
           className={`mt-1 text-[13px] text-red-500 ${reserveErrorSpace ? "min-h-5 leading-5" : ""}`}
         >
-          {error}
+          <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{error}</CmsText>
         </p>
-      )}
+      )}</CmsText>
     </div>
   );
 }
@@ -243,7 +245,7 @@ function ZipField({
           className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-[#94a3b8]"
           aria-hidden
         />
-        <input
+        <CmsElement element="input" scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts"
           id={id}
           className={`${inputCls} pl-10 ${error || lookupError ? inputErrCls : ""}`}
           placeholder={placeholder}
@@ -253,7 +255,7 @@ function ZipField({
           maxLength={5}
           aria-invalid={!!error}
           aria-describedby={error || lookupError ? `${id}-error` : undefined}
-          onChange={(e) => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const nextZip = e.target.value.replace(/\D/g, "").slice(0, 5);
             onDisplayChange(nextZip);
             setCandidate(null);
@@ -266,21 +268,21 @@ function ZipField({
           }}
         />
       </div>
-      {loading && (
-        <p className="mt-1 text-[12.5px] text-[#64748B]">{copy.resolving}</p>
-      )}
-      {!loading && resolvedRegion && (
-        <p className="mt-1 text-[12.5px] font-semibold text-ink">{resolvedRegion}</p>
-      )}
-      {!loading && candidate && onResolved && (
+      <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{loading && (
+        <p className="mt-1 text-[12.5px] text-[#64748B]"><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.resolving}</CmsText></p>
+      )}</CmsText>
+      <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{!loading && resolvedRegion && (
+        <p className="mt-1 text-[12.5px] font-semibold text-ink"><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{resolvedRegion}</CmsText></p>
+      )}</CmsText>
+      <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{!loading && candidate && onResolved && (
         <button type="button" className="mt-2 text-left text-sm font-semibold text-brand-blue underline" onClick={() => { onResolved(candidate); setCandidate(null); }}>
-          {copy.confirmDestination}: {candidate.city || candidate.state}, {candidate.state}
+          <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.confirmDestination}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{": "}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{candidate.city || candidate.state}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{", "}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{candidate.state}</CmsText>
         </button>
-      )}
-      {!loading && lookupWarning && (
-        <p className="mt-1 text-[12.5px] text-amber-600">{lookupWarning}</p>
-      )}
-      {fieldName === "pickup" && <PickupLocationSuggestion key={`${locale}:${displayValue}`} locale={locale} inputId={id} onConfirm={zip => { onDisplayChange(zip); setValue(fieldName, zip, { shouldDirty: true, shouldTouch: true, shouldValidate: true }); }} />}
+      )}</CmsText>
+      <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{!loading && lookupWarning && (
+        <p className="mt-1 text-[12.5px] text-amber-600"><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{lookupWarning}</CmsText></p>
+      )}</CmsText>
+      <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{fieldName === "pickup" && <PickupLocationSuggestion key={`${locale}:${displayValue}`} locale={locale} inputId={id} onConfirm={zip => { onDisplayChange(zip); setValue(fieldName, zip, { shouldDirty: true, shouldTouch: true, shouldValidate: true }); }} />}</CmsText>
     </Field>
   );
 }
@@ -566,14 +568,14 @@ export function QuoteWizard({
       lang={locale}
       noValidate
     >
-      {isPanel ? (
+      <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{isPanel ? (
         <div className="-mx-3 mb-6 bg-brand-blue px-3 pt-6 pb-5 min-[360px]:-mx-4 min-[360px]:px-4 sm:-mx-6 sm:px-6">
           <h2
             className={`mb-1 text-[22px] font-extrabold -tracking-[.02em] text-white ${headingFontClass}`}
           >
-            {copy.title}
+            <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.title}</CmsText>
           </h2>
-          <p className="m-0 text-[13.5px] text-on-dark-500">{copy.subtitle}</p>
+          <p className="m-0 text-[13.5px] text-on-dark-500"><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.subtitle}</CmsText></p>
           <div className="mt-4 h-0.5 w-full rounded-full bg-brand-yellow" />
         </div>
       ) : (
@@ -581,18 +583,18 @@ export function QuoteWizard({
           <h2
             className={`mb-1.5 text-[25px] font-extrabold -tracking-[.02em] text-brand-blue ${headingFontClass}`}
           >
-            {copy.title}
+            <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.title}</CmsText>
           </h2>
           <p className="m-0 text-[14.5px] text-[#64748B]">
-            {copy.subtitle}
+            <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.subtitle}</CmsText>
           </p>
         </div>
-      )}
+      )}</CmsText>
 
       <div
         className={`my-4 grid grid-cols-4 items-start ${isPanel ? "justify-center gap-1 px-0 sm:justify-between sm:gap-0 sm:px-1" : "justify-center"}`}
       >
-        {steps.map((s) => {
+        <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{steps.map((s) => {
           const current = stepDisplay === s.n;
           const done = stepDisplay > s.n || Boolean(result);
           const dot = current
@@ -606,51 +608,49 @@ export function QuoteWizard({
                 <span
                   className={`grid place-items-center rounded-full font-extrabold ${isPanel ? "size-[30px] text-[13px] sm:size-[34px] sm:text-[15px]" : "size-[34px] text-[15px]"} ${headingFontClass} ${dot}`}
                 >
-                  {s.n}
+                  <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{s.n}</CmsText>
                 </span>
                 <span className={`${isPanel ? "max-w-[64px] text-[10px] sm:max-w-[88px] sm:text-xs" : "max-w-[88px] text-xs"} text-center leading-tight font-semibold text-[#64748B]`}>
-                  {s.label}
+                  <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{s.label}</CmsText>
                 </span>
               </div>
 
             </div>
           );
-        })}
+        })}</CmsText>
       </div>
 
-      {result ? (
+      <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{result ? (
         <div className="px-2 pt-6 pb-3.5 text-center">
           <span className="mx-auto mb-4 grid size-[60px] place-items-center rounded-full bg-brand-yellow-soft">
             <Check className="text-brand-blue-bright" size={30} strokeWidth={2.5} />
           </span>
           <h3 className="mb-2 font-display text-[21px] font-extrabold text-brand-blue">
-            {copy.received}
+            <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.received}</CmsText>
           </h3>
           <p className="mb-3 text-[14.5px] leading-[1.55] text-[#64748B]">
-            {getValues("pickup")} → {getValues("dest")} · {moveSizeLabel(getValues("size"), locale)}
+            <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{getValues("pickup")}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{" → "}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{getValues("dest")}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{" · "}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{moveSizeLabel(getValues("size"), locale)}</CmsText>
           </p>
           <p className="mb-[18px] text-[14.5px] leading-[1.55] text-[#64748B]">
-            {copy.confirmation}{" "}
-            <a
+            <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.confirmation}{" "}</CmsText>
+            <CmsElement element="a" scope="components/interactive/QuoteWizard.tsx"
               href={telHref(business.phoneDisplay)}
               className="font-semibold text-brand-blue-bright"
               data-analytics-location="quote_result"
             >
-              {business.phoneDisplay}
-            </a>
-            .
-          </p>
+              <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{business.phoneDisplay}</CmsText>
+            </CmsElement><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{"."}</CmsText></p>
           <button
             type="button"
             onClick={handleReset}
             className="cursor-pointer rounded-lg2 border-[1.5px] border-cream-border bg-cream px-5 py-[11px] font-display text-sm font-bold tracking-[.04em] text-brand-blue uppercase"
           >
-            {copy.reset}
+            <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.reset}</CmsText>
           </button>
         </div>
       ) : (
         <>
-          {step === 1 && (
+          <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{step === 1 && (
             <div>
               <ZipField
                 id={`${fieldIdPrefix}-pickup-zip`}
@@ -678,8 +678,8 @@ export function QuoteWizard({
                 error={errors.dest}
               />
             </div>
-          )}
-          {step === 2 && (
+          )}</CmsText>
+          <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{step === 2 && (
             <div>
               <Field id={`${fieldIdPrefix}-move-date`} label={copy.date} error={quoteError(errors.date?.message, locale)}>
                 <div onClick={trackDatePickerOpened} onFocusCapture={trackDatePickerOpened}>
@@ -710,23 +710,23 @@ export function QuoteWizard({
                   defaultValue=""
                   {...register("size")}
                 >
-                  <option value="" disabled>
+                  <CmsElement element="option" scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts" value="" disabled>
                     {copy.sizePlaceholder}
-                  </option>
-                  {MOVE_SIZES.map((s) => (
-                    <option key={s} value={s}>
+                  </CmsElement>
+                  <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{MOVE_SIZES.map((s) => (
+                    <CmsElement element="option" scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts" key={s} value={s}>
                       {moveSizeLabel(s, locale)}
-                    </option>
-                  ))}
+                    </CmsElement>
+                  ))}</CmsText>
                 </select>
               </Field>
             </div>
-          )}
+          )}</CmsText>
 
-          {step === 0 && (
+          <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{step === 0 && (
             <div>
               <Field id={`${fieldIdPrefix}-name`} label={copy.name} error={quoteError(errors.name?.message, locale)} reserveErrorSpace={reserveContactErrors}>
-                <input
+                <CmsElement element="input" scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts"
                   className={`${inputCls} ${errors.name ? inputErrCls : ""}`}
                   placeholder={copy.namePlaceholder}
                   id={`${fieldIdPrefix}-name`}
@@ -736,7 +736,7 @@ export function QuoteWizard({
                 />
               </Field>
               <Field id={`${fieldIdPrefix}-email`} label={copy.email} error={quoteError(errors.email?.message, locale)} reserveErrorSpace={reserveContactErrors}>
-                <input
+                <CmsElement element="input" scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts"
                   type="email"
                   className={`${inputCls} ${errors.email ? inputErrCls : ""}`}
                   placeholder="you@email.com"
@@ -747,7 +747,7 @@ export function QuoteWizard({
                 />
               </Field>
               <Field id={`${fieldIdPrefix}-phone`} label={copy.phone} error={quoteError(errors.phone?.message, locale)} reserveErrorSpace={reserveContactErrors} className="mb-3.5">
-                <input
+                <CmsElement element="input" scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts"
                   type="tel"
                   inputMode="tel"
                   className={`${inputCls} ${errors.phone ? inputErrCls : ""}`}
@@ -759,14 +759,14 @@ export function QuoteWizard({
                 />
               </Field>
             </div>
-          )}
-          {step === 3 && (
+          )}</CmsText>
+          <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{step === 3 && (
             <div>
-              <h3 className="mb-3 font-display text-lg font-bold text-brand-blue">{locale === "es" ? "Revise su solicitud" : "Review your request"}</h3>
+              <h3 className="mb-3 font-display text-lg font-bold text-brand-blue"><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{locale === "es" ? "Revise su solicitud" : "Review your request"}</CmsText></h3>
               <dl className="mb-4 space-y-2 rounded-xl bg-cream p-4 text-sm">
-                <div><dt className="font-semibold">{copy.steps[0]}</dt><dd className="break-words">{getValues("name")} · {getValues("email")} · {getValues("phone")}</dd></div>
-                <div><dt className="font-semibold">{copy.steps[1]}</dt><dd>{pickupZip} → {destZip}</dd></div>
-                <div><dt className="font-semibold">{copy.steps[2]}</dt><dd>{getValues("date")} · {moveSizeLabel(getValues("size"), locale)}</dd></div>
+                <div><dt className="font-semibold"><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.steps[0]}</CmsText></dt><dd className="break-words"><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{getValues("name")}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{" · "}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{getValues("email")}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{" · "}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{getValues("phone")}</CmsText></dd></div>
+                <div><dt className="font-semibold"><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.steps[1]}</CmsText></dt><dd><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{pickupZip}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{" → "}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{destZip}</CmsText></dd></div>
+                <div><dt className="font-semibold"><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.steps[2]}</CmsText></dt><dd><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{getValues("date")}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{" · "}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{moveSizeLabel(getValues("size"), locale)}</CmsText></dd></div>
               </dl>
               <label className="mb-4 flex gap-2.5 text-left">
                 <input
@@ -775,53 +775,53 @@ export function QuoteWizard({
                   {...register("smsConsent")}
                 />
                 <span className="text-[11.5px] leading-[1.5] text-[#64748B]">
-                  {copy.consent}
+                  <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.consent}</CmsText>
                 </span>
               </label>
             </div>
-          )}
+          )}</CmsText>
 
-          {submitError && (
-            <p role="alert" className="mb-3 text-center text-[13.5px] text-red-500">{submitError}</p>
-          )}
+          <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{submitError && (
+            <p role="alert" className="mb-3 text-center text-[13.5px] text-red-500"><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{submitError}</CmsText></p>
+          )}</CmsText>
 
           <div className="flex gap-3">
-            {step > 0 && (
+            <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{step > 0 && (
               <button
                 type="button"
                 onClick={() => setStep((s) => s - 1)}
                 disabled={loading}
                 className={`${ghostBtn} px-5 py-3.5`}
               >
-                {copy.back}
+                <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.back}</CmsText>
               </button>
-            )}
+            )}</CmsText>
             <button
               type="submit"
               disabled={loading}
               className={`${yellowBtn} flex-1 px-3 py-3.5`}
             >
-              {loading ? copy.submitting : step === 3 ? copy.submit : copy.continue}
+              <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{loading ? copy.submitting : step === 3 ? copy.submit : copy.continue}</CmsText>
             </button>
           </div>
         </>
-      )}
+      )}</CmsText>
 
-      {guideLinks && (step === 1 || result) && (
+      <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{guideLinks && (step === 1 || result) && (
         <aside className="mt-5 rounded-lg2 bg-cream p-3 text-sm">
-          {destination && <p className="mb-1 font-semibold">{destination.city || destination.state}, {destination.state}</p>}
-          <Link href={guideHref ?? guideLinks.generic} onClick={saveDraft} className="font-semibold text-brand-blue underline">
-            {destination ? copy.guide : copy.genericGuide}{guideInEnglish ? " (en inglés)" : ""}
+          <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{destination && <p className="mb-1 font-semibold"><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{destination.city || destination.state}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{", "}</CmsText><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{destination.state}</CmsText></p>}</CmsText>
+          <Link scope="components/interactive/QuoteWizard.tsx" href={guideHref ?? guideLinks.generic} onClick={saveDraft} className="font-semibold text-brand-blue underline">
+            <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{destination ? copy.guide : copy.genericGuide}{guideInEnglish ? " (en inglés)" : ""}</CmsText>
           </Link>
         </aside>
-      )}
+      )}</CmsText>
 
       <div className="mt-4 flex flex-wrap justify-center gap-x-3 gap-y-1 text-center text-xs text-slate-600">
-        {copy.trust.map((item) => <span key={item}>{item}</span>)}
+        <CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{copy.trust.map((item) => <span key={item}><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{item}</CmsText></span>)}</CmsText>
       </div>
       <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 border-t border-cream-border pt-3 text-[11px] font-semibold text-brand-blue" data-quote-security>
-        <span className="inline-flex items-center gap-1.5"><LockKeyhole size={14} aria-hidden />{locale === "es" ? "Sus datos están seguros" : "Your Data is Secure"}</span>
-        <Link href="/privacy" className="inline-flex items-center gap-1.5 text-brand-blue no-underline hover:underline"><ShieldCheck size={15} aria-hidden />{locale === "es" ? "Su privacidad es nuestra prioridad" : "Privacy is our Priority"}</Link>
+        <span className="inline-flex items-center gap-1.5"><LockKeyhole size={14} aria-hidden /><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{locale === "es" ? "Sus datos están seguros" : "Your Data is Secure"}</CmsText></span>
+        <Link scope="components/interactive/QuoteWizard.tsx" href="/privacy" className="inline-flex items-center gap-1.5 text-brand-blue no-underline hover:underline"><ShieldCheck size={15} aria-hidden /><CmsText scope="components/interactive/QuoteWizard.tsx|lib/quote-copy.ts|schemas/quote-form.schema.ts">{locale === "es" ? "Su privacidad es nuestra prioridad" : "Privacy is our Priority"}</CmsText></Link>
       </div>
     </form>
   );

@@ -1,4 +1,6 @@
 "use client";
+import { CmsText, CmsElement } from "@/components/cms/Content";
+
 
 import { useEffect, useState } from "react";
 import { Phone, X } from "lucide-react";
@@ -19,7 +21,7 @@ export function FloatingCall({ locale }: { locale: EditorialLocale }) {
   if (!visible || dismissed) return null;
   const es = locale === "es";
   return <div data-floating-call className="fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex max-w-[calc(100%-2rem)] items-center overflow-hidden rounded-full border border-white/30 bg-brand-blue text-white shadow-lg">
-    <a href={business.phoneHref} data-analytics-location="floating_call" className="flex min-h-12 items-center gap-2 px-4 text-sm font-semibold text-white no-underline"><Phone size={17} aria-hidden />{es ? "Llame a Vantage" : "Call Vantage"}</a>
-    <button type="button" onClick={() => setDismissed(true)} aria-label={es ? "Ocultar botón de llamada" : "Dismiss call button"} className="grid min-h-12 min-w-11 place-items-center border-l border-white/25"><X size={16} aria-hidden /></button>
+    <CmsElement element="a" scope="components/layout/FloatingCall.tsx" href={business.phoneHref} data-analytics-location="floating_call" className="flex min-h-12 items-center gap-2 px-4 text-sm font-semibold text-white no-underline"><Phone size={17} aria-hidden /><CmsText scope="components/layout/FloatingCall.tsx">{es ? "Llame a Vantage" : "Call Vantage"}</CmsText></CmsElement>
+    <CmsElement element="button" scope="components/layout/FloatingCall.tsx" type="button" onClick={() => setDismissed(true)} aria-label={es ? "Ocultar botón de llamada" : "Dismiss call button"} className="grid min-h-12 min-w-11 place-items-center border-l border-white/25"><X size={16} aria-hidden /></CmsElement>
   </div>;
 }

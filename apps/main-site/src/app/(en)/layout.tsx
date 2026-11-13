@@ -1,3 +1,5 @@
+import { getSiteContent } from "@/lib/cms/server";
+import { ContentProvider } from "@/components/cms/Content";
 import { ComplianceBar } from "@/components/layout/ComplianceBar";
 import { AnchorFocus } from "@/components/layout/AnchorFocus";
 import type { Metadata } from "next";
@@ -57,16 +59,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const content = await getSiteContent();
   return (
     <html lang="en" className={`${siteDisplayFont.variable} ${siteBodyFont.variable}`}>
       <body className="antialiased">
-        <ComplianceBar />
-        {children}<AnchorFocus />
+        <ContentProvider values={content.values} fields={content.fields} locale="en"><ComplianceBar />
+        {children}<AnchorFocus /></ContentProvider>
         <SiteTelemetry mode={telemetryMode(process.env.VERCEL_ENV, process.env.VERCEL_GIT_COMMIT_SHA)} />
       </body>
     </html>

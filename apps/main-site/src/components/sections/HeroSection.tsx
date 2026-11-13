@@ -1,3 +1,5 @@
+import { CmsElement } from "@/components/cms/Content";
+import { CmsText } from "@/components/cms/Content";
 import { HeroBackdrop } from "./HeroBackdrop";
 import { HeroFacts } from "./HeroFacts";
 import { Suspense } from "react";
@@ -49,14 +51,14 @@ export function HeroSection({ bodyPanel = false, locale = "en" }: HeroSectionPro
         className={`${bodyPanel ? "mb-3" : "mb-4"} max-w-[620px] text-[17px] leading-[1.65]`}
         style={{ color: HERO_COLORS.paragraph, textShadow: HERO_BODY_SHADOW }}
       >
-        {hero.paragraph}
+        <CmsText scope="components/sections/HeroSection.tsx">{hero.paragraph}</CmsText>
       </p>
 
       <p
         className="m-0 max-w-[580px] text-[16px] leading-[1.6] font-semibold"
         style={{ color: HERO_COLORS.supporting, textShadow: HERO_BODY_SHADOW }}
       >
-        {hero.supportingLine}
+        <CmsText scope="components/sections/HeroSection.tsx">{hero.supportingLine}</CmsText>
       </p>
     </>
   );
@@ -74,36 +76,34 @@ export function HeroSection({ bodyPanel = false, locale = "en" }: HeroSectionPro
             className={`${heroHeadingFont.className} mb-5 text-balance font-extrabold -tracking-[.02em]`}
             style={{ color: HERO_COLORS.headline, textShadow: HERO_HEADLINE_SHADOW }}
           >
-            <span className="block -translate-x-2 text-[clamp(20px,2.2vw,30px)] leading-none font-extrabold tracking-[.03em] text-white">
-              Vantage Movers
-            </span>
+            <span className="block -translate-x-2 text-[clamp(20px,2.2vw,30px)] leading-none font-extrabold tracking-[.03em] text-white"><CmsText scope="components/sections/HeroSection.tsx">{"Vantage Movers"}</CmsText></span>
             <span
               className="my-4 block h-px w-full max-w-[420px] bg-gradient-to-r from-brand-yellow via-white/55 to-transparent"
               aria-hidden
             />
             <span className="block max-w-[650px] text-[clamp(28px,3vw,42px)] leading-[1.1] tracking-[.015em] uppercase">
-              {hero.headline}
+              <CmsText scope="components/sections/HeroSection.tsx">{hero.headline}</CmsText>
             </span>
           </h1>
 
-          {bodyPanel ? (
+          <CmsText scope="components/sections/HeroSection.tsx">{bodyPanel ? (
             <div className="mb-7 max-w-[660px] rounded-md2 border border-white/20 bg-[rgba(4,18,38,.45)] px-5 py-4 shadow-[0_8px_24px_rgba(0,0,0,.2)] backdrop-blur-md">
-              {bodyCopy}
+              <CmsText scope="components/sections/HeroSection.tsx">{bodyCopy}</CmsText>
             </div>
           ) : (
-            <div className="mb-7">{bodyCopy}</div>
-          )}
+            <div className="mb-7"><CmsText scope="components/sections/HeroSection.tsx">{bodyCopy}</CmsText></div>
+          )}</CmsText>
 
           <div className="mb-9 flex flex-wrap items-center gap-3.5">
-            <a
+            <CmsElement element="a" scope="components/sections/HeroSection.tsx"
               href="#quote"
               className={`${heroHeadingFont.className} inline-flex min-w-[285px] items-center justify-center gap-2.5 rounded-md2 px-[22px] py-[13px] text-base font-bold tracking-[.04em] uppercase no-underline transition hover:-translate-y-0.5 ${PRIMARY_CTA_CLASS}`}
               data-analytics-event="cta_clicked"
               data-analytics-cta-location="hero_primary"
             >
-              {hero.primaryCta}
-            </a>
-            <a
+              <CmsText scope="components/sections/HeroSection.tsx">{hero.primaryCta}</CmsText>
+            </CmsElement>
+            <CmsElement element="a" scope="components/sections/HeroSection.tsx"
               href={business.phoneHref}
               className={`${heroHeadingFont.className} inline-flex min-w-[285px] items-center justify-center gap-2.5 rounded-md2 px-[22px] py-[13px] text-base font-bold tracking-[.04em] uppercase no-underline transition hover:-translate-y-0.5 ${SECONDARY_CTA_CLASS}`}
               data-analytics-location="hero_secondary"
@@ -113,8 +113,8 @@ export function HeroSection({ bodyPanel = false, locale = "en" }: HeroSectionPro
               >
                 <Headphones className="size-[17px]" strokeWidth={2.25} aria-hidden />
               </span>
-              {hero.secondaryCta}
-            </a>
+              <CmsText scope="components/sections/HeroSection.tsx">{hero.secondaryCta}</CmsText>
+            </CmsElement>
           </div>
 
           <HeroFacts locale={locale} />

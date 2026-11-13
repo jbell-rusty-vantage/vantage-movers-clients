@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { HomePage } from "@/components/HomePage";
 import { business } from "@/lib/content";
 import { siteDescription } from "@/lib/site";
-import { getTestimonials } from "@vantage/api-client";
+import { getMainSiteTestimonials } from "@vantage/api-client";
 import { entriesFor } from "@/lib/publication";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const testimonialsPromise = getTestimonials({ limit: 100 })
+  const testimonialsPromise = getMainSiteTestimonials({ limit: 100 })
     .then((items) => items.filter((item) => item.published))
     .catch((error) => {
       console.error("[main-site testimonials]", error);

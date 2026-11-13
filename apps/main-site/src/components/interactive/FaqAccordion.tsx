@@ -1,4 +1,6 @@
 "use client";
+import { CmsText } from "@/components/cms/Content";
+
 
 import { useId, useState } from "react";
 import { faqs } from "@/lib/content";
@@ -17,7 +19,7 @@ export function FaqAccordion({ items = faqs }: { items?: { q: string; a: string 
 
   return (
     <div className="flex flex-col gap-3.5">
-      {items.map((f, i) => {
+      <CmsText scope="components/interactive/FaqAccordion.tsx|lib/content.ts">{items.map((f, i) => {
         const isOpen = open === i;
         return (
           <div
@@ -38,26 +40,26 @@ export function FaqAccordion({ items = faqs }: { items?: { q: string; a: string 
               className={`flex w-full cursor-pointer items-center justify-between gap-4 border-none bg-transparent px-6 py-[22px] text-left font-bold text-brand-blue ${heroHeadingFont.className}`}
               style={{ fontSize: `${QUESTION_FONT_SIZE}px` }}
             >
-              {f.q}
+              <CmsText scope="components/interactive/FaqAccordion.tsx|lib/content.ts">{f.q}</CmsText>
               <span
                 className={`grid flex-none place-items-center bg-cream text-xl font-bold text-brand-blue-bright ${radiusClasses.md2}`}
                 style={{ width: `${TOGGLE_SIZE}px`, height: `${TOGGLE_SIZE}px` }}
               >
-                {isOpen ? "\u2212" : "+"}
+                <CmsText scope="components/interactive/FaqAccordion.tsx|lib/content.ts">{isOpen ? "\u2212" : "+"}</CmsText>
               </span>
             </button>
-            {isOpen && (
+            <CmsText scope="components/interactive/FaqAccordion.tsx|lib/content.ts">{isOpen && (
               <div
                 id={`${id}-${i}`}
                 className={`px-6 pb-6 leading-[1.65] text-[#64748B] ${heroBodyFont.className}`}
                 style={{ fontSize: `${ANSWER_FONT_SIZE}px` }}
               >
-                {f.a}
+                <CmsText scope="components/interactive/FaqAccordion.tsx|lib/content.ts">{f.a}</CmsText>
               </div>
-            )}
+            )}</CmsText>
           </div>
         );
-      })}
+      })}</CmsText>
     </div>
   );
 }

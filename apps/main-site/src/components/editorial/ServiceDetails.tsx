@@ -1,3 +1,4 @@
+import { CmsText } from "@/components/cms/Content";
 import {
   ArrowLeftRight, CalendarDays, Car, Check, ClipboardList, DoorOpen, FileCheck,
   FileText, FolderLock, House, KeyRound, MapPin, Monitor, PackageCheck,
@@ -50,33 +51,33 @@ export function ServiceDetails({ entry }: { entry: EditorialEntry }) {
   return (
     <section id="service-details" className="scroll-mt-36" aria-labelledby="service-details-heading">
       <h2 id="service-details-heading" className="mx-auto mb-8 max-w-3xl text-balance text-center font-display text-3xl font-extrabold leading-tight text-brand-blue sm:mb-10 sm:text-4xl">
-        {heading[entry.locale]}
+        <CmsText scope="components/editorial/ServiceDetails.tsx">{heading[entry.locale]}</CmsText>
       </h2>
       <div className="grid gap-5 lg:grid-cols-3">
-        {sections.map((section, index) => {
+        <CmsText scope="components/editorial/ServiceDetails.tsx">{sections.map((section, index) => {
           const Icon = icons[index] ?? ClipboardList;
           return (
             <div key={section.heading} className="rounded-card border border-cream-border bg-white p-6 shadow-card sm:p-7">
               <span className="mb-5 grid size-12 place-items-center rounded-xl bg-brand-yellow-soft text-brand-blue">
                 <Icon size={24} aria-hidden />
               </span>
-              <h3 className="mb-3 text-balance font-display text-xl font-extrabold leading-snug text-brand-blue">{section.heading}</h3>
+              <h3 className="mb-3 text-balance font-display text-xl font-extrabold leading-snug text-brand-blue"><CmsText scope="components/editorial/ServiceDetails.tsx">{section.heading}</CmsText></h3>
               <div className="space-y-4 leading-relaxed text-ink-soft">
-                {section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
-                {section.bullets && (
+                <CmsText scope="components/editorial/ServiceDetails.tsx">{section.paragraphs.map(paragraph => <p key={paragraph}><CmsText scope="components/editorial/ServiceDetails.tsx">{paragraph}</CmsText></p>)}</CmsText>
+                <CmsText scope="components/editorial/ServiceDetails.tsx">{section.bullets && (
                   <ul className="space-y-2 border-t border-cream-border pt-4 text-sm">
-                    {section.bullets.map(bullet => (
+                    <CmsText scope="components/editorial/ServiceDetails.tsx">{section.bullets.map(bullet => (
                       <li key={bullet} className="flex items-start gap-3">
                         <Check className="mt-0.5 size-4 shrink-0 text-brand-blue-bright" aria-hidden />
-                        <span>{bullet}</span>
+                        <span><CmsText scope="components/editorial/ServiceDetails.tsx">{bullet}</CmsText></span>
                       </li>
-                    ))}
+                    ))}</CmsText>
                   </ul>
-                )}
+                )}</CmsText>
               </div>
             </div>
           );
-        })}
+        })}</CmsText>
       </div>
     </section>
   );
