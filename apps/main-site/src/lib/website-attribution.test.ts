@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { editorialEntries } from "@/content/editorial";
-import { parseWebsiteAttribution, websitePage } from "@vantage/api-client/website-attribution";
+import { CANYON_WEBSITE_DESIGN, WEBSITE_DESIGN, parseWebsiteAttribution, websitePage } from "@vantage/api-client/website-attribution";
 import { updateWebsiteAttribution, WEBSITE_ATTRIBUTION_KEY } from "./website-attribution";
+import { websiteDesign } from "./website-design";
+
+const otherDesign = websiteDesign === CANYON_WEBSITE_DESIGN ? WEBSITE_DESIGN : CANYON_WEBSITE_DESIGN;
 
 const now = Date.parse("2026-11-12T18:00:00Z");
 function storage() {
@@ -18,20 +21,20 @@ describe("bounded website attribution", () => {
     expect(moved?.first_touch).toEqual(first?.first_touch);
     expect(direct?.latest_non_direct_touch).toEqual(first?.first_touch);
     expect(moved?.capture_page).toMatchObject({ content_id: "long-distance-moving", locale: "es" });
-    expect(direct?.design).toEqual({ id: "main-site-canyon", version: "2026-11-13" });
+    expect(direct?.design).toEqual(websiteDesign);
     expect(JSON.stringify(moved)).not.toMatch(/private|email=|search\?|utm_/);
   });
-  it("starts a Canyon session when storage contains an optimization snapshot", () => {
+  it("starts a fresh session when storage contains another presentation's snapshot", () => {
     const store = storage();
     const previous = updateWebsiteAttribution({ href, referrer: "", storage: store, now });
-    store.setItem(WEBSITE_ATTRIBUTION_KEY, JSON.stringify({ ...previous, design: { id: "main-site-optimization", version: "2026-11-12" } }));
+    store.setItem(WEBSITE_ATTRIBUTION_KEY, JSON.stringify({ ...previous, design: otherDesign }));
     const next = updateWebsiteAttribution({
       href: "https://vantage-main-site-canyon.vercel.app/es",
       referrer: "https://vantage-main-site-optimization.vercel.app/",
       storage: store, now: now + 1000,
     });
     expect(next?.first_touch).toMatchObject({ path: "/es", channel: "direct", referring_host: "none" });
-    expect(next?.design.id).toBe("main-site-canyon");
+    expect(next?.design).toEqual(websiteDesign);
   });
   it("keeps first touch when a later external referral replaces latest non-direct", () => {
     const store = storage();

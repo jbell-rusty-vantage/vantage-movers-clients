@@ -1,4 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { CANYON_WEBSITE_DESIGN, WEBSITE_DESIGN } from "@vantage/api-client/website-attribution";
+import { websiteDesign } from "@/lib/website-design";
 
 const { createFormLead } = vi.hoisted(() => ({ createFormLead: vi.fn() }));
 vi.mock("@vantage/api-client", () => ({ createFormLead }));
@@ -71,9 +73,9 @@ describe("POST /api/quote contract", () => {
   it("forwards bounded attribution while malformed tracking and privacy opt-out preserve capture", async () => {
     const { POST } = await import("./route");
     const base = { pickup: "33426", dest: "53703", date: "2099-01-15", size: "Studio", name: "Synthetic", phone: "2025550100", email: "synthetic@example.com", smsConsent: false, ref_no: "MS-ATTRIBUTION", lid: "LID6a6255e58ad8d" };
-    const attribution = { version: 1, first_touch: { path: "/resources/moving-cost-guide", occurred_at: new Date().toISOString(), channel: "campaign", referring_host: "none", campaign: { source: "review", medium: "review", name: "preview-qualification" } }, capture_page: { path: "/es" }, design: { id: "main-site-canyon", version: "2026-11-13" }, email: "private@example.com", experiment: "fake" };
-    const optimization = { ...attribution, design: { id: "main-site-optimization", version: "2026-11-12" } };
-    for (const [value, disabled, expected] of [[attribution, false, true], [attribution, true, false], [optimization, false, false], ["malformed", false, false]] as const) {
+    const attribution = { version: 1, first_touch: { path: "/resources/moving-cost-guide", occurred_at: new Date().toISOString(), channel: "campaign", referring_host: "none", campaign: { source: "review", medium: "review", name: "preview-qualification" } }, capture_page: { path: "/es" }, design: websiteDesign, email: "private@example.com", experiment: "fake" };
+    const otherPresentation = { ...attribution, design: websiteDesign === CANYON_WEBSITE_DESIGN ? WEBSITE_DESIGN : CANYON_WEBSITE_DESIGN };
+    for (const [value, disabled, expected] of [[attribution, false, true], [attribution, true, false], [otherPresentation, false, false], ["malformed", false, false]] as const) {
       const response = await POST(new Request("https://preview.example/api/quote", { method: "POST", headers: { "content-type": "application/json", ...(disabled ? { "sec-gpc": "1" } : {}) }, body: JSON.stringify({ ...base, website_attribution: value }) }));
       expect(response.status).toBe(200);
       const payload = createFormLead.mock.calls.at(-1)![0];

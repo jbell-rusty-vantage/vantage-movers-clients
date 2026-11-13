@@ -1,0 +1,105 @@
+{
+  "serverSha": "b926311ee9b8ceb16be57dad9435624f1ad8beac",
+  "apiBoundary": {
+    "checkedAt": "2026-11-13T16:57:24.971Z",
+    "origin": "https://vantage-sites-preview-api.vercel.app",
+    "database": "testvantagemovers_sitepreview",
+    "readyState": 1,
+    "invalidAuthentication": 401,
+    "content": [
+      {
+        "path": "/api/v1/testimonials?published=true",
+        "status": 200,
+        "fixtureCount": 1
+      },
+      {
+        "path": "/api/v1/moving-carriers?active=true",
+        "status": 200,
+        "fixtureCount": 1
+      }
+    ],
+    "restricted": [
+      {
+        "path": "/api/v1/analytics",
+        "status": 404
+      },
+      {
+        "path": "/api/cron/sheet-sync",
+        "status": 404
+      },
+      {
+        "path": "/api/v1/form-leads",
+        "status": 404
+      }
+    ],
+    "writes": 0
+  },
+  "checkedAt": "2026-11-13T16:57:25.785Z",
+  "reference": "MS-20261113-DFAAEA25A4-CANYON-20261113-01",
+  "leadId": "6af7414b5b336d648be20791",
+  "previewDatabase": "testvantagemovers_sitepreview",
+  "previewCount": 1,
+  "productionDatabase": "vantagemovers",
+  "productionCount": 0,
+  "apiReadback": "passed",
+  "sourceCompany": "main_site",
+  "sourceCompanySite": "vantagehomemovers.com",
+  "lidPreserved": true,
+  "moveSize": "2 Bedrooms",
+  "duplicate": false,
+  "postToGranot": false,
+  "previewLeadMessageCount": 0,
+  "sheetSyncEntryCount": 0,
+  "websiteAttribution": {
+    "version": 1,
+    "first_touch": {
+      "path": "/",
+      "content_id": "home",
+      "locale": "en",
+      "occurred_at": "2026-11-13T16:55:15.282Z",
+      "channel": "campaign",
+      "referring_host": "none",
+      "campaign": {
+        "source": "review",
+        "medium": "review",
+        "name": "preview-qualification"
+      }
+    },
+    "latest_non_direct_touch": {
+      "path": "/",
+      "content_id": "home",
+      "locale": "en",
+      "occurred_at": "2026-11-13T16:55:15.282Z",
+      "channel": "campaign",
+      "referring_host": "none",
+      "campaign": {
+        "source": "review",
+        "medium": "review",
+        "name": "preview-qualification"
+      }
+    },
+    "capture_page": {
+      "path": "/",
+      "content_id": "home",
+      "locale": "en"
+    },
+    "design": {
+      "id": "main-site-canyon",
+      "version": "2026-11-13"
+    },
+    "received_at": "2026-11-13T16:56:43.530Z"
+  },
+  "boundary": "Exact-reference counts and one synthetic preview Lead only. Site response does not expose CRM/messaging status; no such response receipt is inferred.",
+  "outcomeGroup": {
+    "designId": "main-site-canyon",
+    "designVersion": "2026-11-13",
+    "channel": "campaign",
+    "source": "review",
+    "campaign": "preview-qualification",
+    "landingContent": "home",
+    "landingLocale": "en",
+    "captureContent": "home",
+    "captureLocale": "en",
+    "attributedLeads": 1
+  }
+}

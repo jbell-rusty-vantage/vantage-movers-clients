@@ -7,6 +7,8 @@
 .skip-link { position:absolute; left:1rem; top:-10rem; padding:1rem; background:white; color:#024799; z-index:100; }
 .skip-link:focus { top:.5rem; }
 :focus-visible { outline:3px solid var(--tone-focus); outline-offset:4px; }
+/* The light inner ring remains visible against Canyon's dark photographs and footer. */
+html[data-presentation="canyon"] :focus-visible { outline-offset:3px; box-shadow:0 0 0 6px white; }
 a, main p { overflow-wrap:anywhere; }
 .worksheet table { table-layout:fixed; overflow-wrap:anywhere; }
 .worksheet th, .worksheet td { padding: .75rem; }

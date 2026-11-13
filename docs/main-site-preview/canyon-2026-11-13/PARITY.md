@@ -19,6 +19,19 @@ The supplied `Desktop · Canyon-html/Main-Canyon.dc.html` selects the Canyon pal
 
 The artboard's sample metrics, reviews, quote inputs, coverage claims and placeholder links are illustrative. Existing Vantage copy and CMS defaults supply the implemented content. Mobile and Spanish use the existing language and page structure with responsive Canyon treatments.
 
+## HTTP route parity
+
+The production-mode local Canyon build matched the pinned optimization preview on all 56 HTML pages. Each route returned HTTP 200 with noindex, the expected locale, one identical primary heading, the same normalized copy phrases and audited display-attribute values, the same link targets, and the same original media source URLs. The verifier reconstructs completed React Suspense boundaries, strips scripts and styles, normalizes Unicode and whitespace, and compares phrase counts so section reordering retains the words within each phrase. It reads both HTML trees over GET. The test covers server-rendered content and leaves CSS visibility, hydrated interactions, CMS writes, form capture, print rendering and PDF responses to their own checks. [Local route evidence](evidence/local-route-parity.json)
+
+Run the same comparison against the protected review deployment with Python and `beautifulsoup4` plus the authenticated Vercel CLI.
+
+```sh
+python docs/main-site-preview/canyon-2026-11-13/verify-route-parity.py \
+  https://vantage-main-site-canyon.vercel.app \
+  docs/main-site-preview/canyon-2026-11-13/evidence/deployed-route-parity.json \
+  --baseline-vercel --candidate-vercel --include-utility
+```
+
 ## Route and interaction matrix
 
 The baseline includes 56 HTML pages. The [CMS baseline inventory](../cms-2026-11-12/baseline-pages.json) lists exact URLs and the geographic license asset. The current route registry is in `apps/main-site/src/content/editorial/` and `apps/main-site/src/lib/publication.ts`. Each bilingual pair retains the document language, alternate switch, canonical and one primary heading. Test 320, 390, 768 and 1440px widths and actual zoom separately.

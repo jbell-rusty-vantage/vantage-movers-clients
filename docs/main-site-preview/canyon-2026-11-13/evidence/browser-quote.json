@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-11-13T16:56:53.002Z",
+  "deployment": "dpl_B7yiXktnAZzGVcJCfgpHdgatUydz",
+  "applicationSource": "9f884e255ccc1856a0f3627f51f25e8b65ca555a",
+  "ref_no": "MS-20261113-DFAAEA25A4-CANYON-20261113-01",
+  "lid": "LIDd40fb1ed18ad2",
+  "design": {
+    "id": "main-site-canyon",
+    "version": "2026-11-13"
+  },
+  "confirmedLocations": [
+    "Boynton Beach, FL 33426, USA",
+    "Raleigh, NC 27601, USA"
+  ],
+  "date": "2026-12-07",
+  "size": "2 Bedrooms",
+  "smsConsent": false,
+  "bilingualDraftPreserved": true,
+  "simulatedFailures": [
+    503,
+    {
+      "status": 200,
+      "leadCaptured": false
+    }
+  ],
+  "identicalRetryPayload": true,
+  "backendPosts": 1,
+  "httpStatus": 200,
+  "leadCaptured": true,
+  "receiptVisible": true
+}

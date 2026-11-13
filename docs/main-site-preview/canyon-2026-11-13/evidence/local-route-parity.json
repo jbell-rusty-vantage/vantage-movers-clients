@@ -1,0 +1,1635 @@
+{
+  "baseline": "https://vantage-main-site-optimization.vercel.app",
+  "baselineCheckedAt": "2026-11-13T16:53:46.421706+00:00",
+  "candidate": "http://127.0.0.1:3002",
+  "candidateCheckedAt": "2026-11-13T16:53:51.970239+00:00",
+  "copyComparison": "normalized rendered phrase multiset after React stream replacement",
+  "passed": true,
+  "routes": 56,
+  "results": [
+    {
+      "path": "/",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Vantage MoversYour Trusted Moving Partner"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "881f3e1a23d3e49e306c46f8988366f32e08049024f81347fced7424e1a86574",
+          "attributes": "960244c4834a46aee6911af11536e868da58904f4527e04b8c74030e80751d3b",
+          "links": "a82ca34034d03a9cbdda1160421a6560bd943bf76e88863ebc9f928d6065f454",
+          "media": "296c8befca1741b577045ed3f54a190b730256837a8389fcf61c12574116dbac"
+        }
+      }
+    },
+    {
+      "path": "/accessibility",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Accessibility Statement"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "e26d374e1ba22856b599b7f189b7af4584df561e1a5e60ea290301d206f4523d",
+          "attributes": "8b2a0a2d0cbb286878b487505551cf67ebabfd3a92a5a2b10456c35fab7a89c5",
+          "links": "47cd454dc75f16e2a61d0538a4b9751de63da565901e80427b49beb2f817aa55",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/cancellation",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Cancellation Policy"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "2d312585a8dadebf82e80a31a5863e6db7757d9d40930c394f7d4717650925d9",
+          "attributes": "8b2a0a2d0cbb286878b487505551cf67ebabfd3a92a5a2b10456c35fab7a89c5",
+          "links": "8c5868ed0b43824796bd720a12756a2ec8592d3a153aabf6be9c893d98aeca59",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/carrier-contacts",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Join Our Carrier Network"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "be71a315a4acc98e514e08650bf6100fc8c15cd2a8d5e97bb52a7742091a7316",
+          "attributes": "8b2a0a2d0cbb286878b487505551cf67ebabfd3a92a5a2b10456c35fab7a89c5",
+          "links": "1e482c91b609dd578ab102c843522d18718754acb55e16e23d4ae60e6a04e46a",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/consumer-information",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Consumer Information"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "3be2b270d8838ffbed3536ec7833bacbb6dbcbc641755c28853f3f02e9383505",
+          "attributes": "8e2474b0e4e37ec080e8e161804774fb4e824557c81a176447928565fa594778",
+          "links": "e7cd30a35621c5fbe6227acb0e6c9c15b1a80fd26d57eeb8916d379d181e1c32",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/contact",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Contact Vantage"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "91718178b1f5a68f5bc2cca6d023e2f485df76724b3baa8ee0ef7083ac048067",
+          "attributes": "6708978af97e0ea8a4ea4b4eb802da5dcf860c40132388b5dabab25790e50535",
+          "links": "94328fcf2df14e48a3a29c7ba6c083bee127a86a89b101f5871a0443e2b9e2f9",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/es",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Vantage MoversPrepare su mudanza de un estado a otro"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "646ff08d416105d2d091f0e52aef5ac0a3568bb92a17052c9bfd2b5f1dec494d",
+          "attributes": "e68062e5c92992114c75efa94e6933364221e7cd17227bbfb028625656bc0881",
+          "links": "0d2892eed89621172c29cb176b6c7432aa69a3e3e9150e391d1bbad7d540a55c",
+          "media": "6fb37e89cb91ce16afcdb71e3985509511b9eda9c885594457081c9924fa2854"
+        }
+      }
+    },
+    {
+      "path": "/es/contacto",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Contacte con Vantage"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "7910a8c37c126f20c9d1035f6e3c07b77f6a780a3da3aedc17aafe5adb69020e",
+          "attributes": "344a8d3ff934a7ed0457407dfcde2e1382b91af9e88f6695ec6f4a3a8fd5b75e",
+          "links": "a3e45398c1c8f47f5ae685880cb53b4e49b1b9fb241e3a07434ac0b536e7c38a",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/es/destinos",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "50 estados. Un nuevo comienzo."
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "73e0be51d5f67da2e4857a90906c8f215229a48a4b1999165930196ad90c305e",
+          "attributes": "8ee3ccbcab7c75760d994f785bb7acdff6dbd5025f5da0f9ccee36d55ebe2f27",
+          "links": "337b4ad53bc9a36407eb22e2520d30b0d50854514d0858b841f5a3fb88481fcb",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/es/destinos/florida",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Su mudanza en Florida. Cada detalle, bien pensado."
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "eebacfb6ac7bf6ceaade46ffa2c26eb742266c6042c42561215abf75fd9a671b",
+          "attributes": "74a33678e811807f6a53c534356335f4ae244f36f9337969381aae997dcef782",
+          "links": "c366f8065e00851db62e8160d650a644a22ec0bb361626b186ec21d9f7e05deb",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/es/destinos/wisconsin",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Prepárese para mudarse a Wisconsin"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "be4338c4fc0723d28db16882c85a3d0fe85dec34a16bd8c5252e1cfdf743dc41",
+          "attributes": "226f46a2640edc8c76857ecf9f85da36418a368269bd1eade2aeca7c06c70453",
+          "links": "3ddd61ae02d9a7b598587d2a0ab6f9c99f01fba861dc480324b0114b9fc65094",
+          "media": "029055bccce0a5f546e26b00bac1059057d0c7ed928e99aa40c405faf087979d"
+        }
+      }
+    },
+    {
+      "path": "/es/destinos/wisconsin/madison",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Cómo prepararse para mudarse a Madison, Wisconsin"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "a4fbf3165afc911fcb0686839bba17b9b67c7a770d5860a58b0f5632a3fb3d1b",
+          "attributes": "226f46a2640edc8c76857ecf9f85da36418a368269bd1eade2aeca7c06c70453",
+          "links": "6b5b12831330b392288f8dcab63df283416b098ed05b557a9d5c78ae3752009b",
+          "media": "029055bccce0a5f546e26b00bac1059057d0c7ed928e99aa40c405faf087979d"
+        }
+      }
+    },
+    {
+      "path": "/es/recursos",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Información clara. Una mejor mudanza."
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "b966b3837870469f6ac7c706f1262158697d5db07628e14d8e15552f63dcb641",
+          "attributes": "a744ce7cede57b346763e643fabeb412a11212a89420e49e2ff432f97111f103",
+          "links": "915003c690b6f0e7215ebe4af632d4e78e92cce7576048db4c5636f047f9c26b",
+          "media": "1c42277396c880b1d399221d7553055f2db65953679d29383e59202e5106505d"
+        }
+      }
+    },
+    {
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "¿Qué conviene dejar fuera de las cajas hasta consultar?"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "dbe6281a1d931f651fe059a5a89ed25782d7aac257dadc9e3c0853819f915c3b",
+          "attributes": "0a38b1428fa51458f507fec4716dc72da269e2586caff3b6cc01d16f08ca4d04",
+          "links": "7d11b9b2c928f681fee1ce19704ba63933c0461d6251079b29c24d5e1d519862",
+          "media": "dad66ce3688f61acb10ecc075a48268cd01b7955a6f44e9963c408b82eb29187"
+        }
+      }
+    },
+    {
+      "path": "/es/recursos/comparar-presupuestos",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Cómo comparar dos presupuestos escritos de mudanza"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "500a37730e16d334256182e17cfd5e04ec8c7227e051496f32b4c9fbccc3ea5e",
+          "attributes": "0a38b1428fa51458f507fec4716dc72da269e2586caff3b6cc01d16f08ca4d04",
+          "links": "25d423d826847c6309872c91f4227fb7d5be118f2a58105ff6c3f996ee598ff3",
+          "media": "e515fc00da2a219fea7d18a929b40c9d60f32b8fe5639235ed16c4adf9c6f540"
+        }
+      }
+    },
+    {
+      "path": "/es/recursos/costos-de-mudanza",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "¿Qué puede cambiar el costo de su mudanza?"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "7c4c122f7b681f921c7406126df02aa87056824b264d262e80552af194911764",
+          "attributes": "0a38b1428fa51458f507fec4716dc72da269e2586caff3b6cc01d16f08ca4d04",
+          "links": "dd263660539b0ad703b8d7e0e31d57c213bc32ecd44463ff6fad07868a5d9d6a",
+          "media": "54ce3c536cb1cf714468da05e91491224c98b1cfe7a7a28021a09d4a6b24f5b4"
+        }
+      }
+    },
+    {
+      "path": "/es/recursos/documentos-de-mudanza",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Mantenga sus documentos a mano desde la cotización hasta la entrega."
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "85c298da3103675715d6ea5ead3c7313d9be0a33fb861536267c79eb3bdf3c6a",
+          "attributes": "0a38b1428fa51458f507fec4716dc72da269e2586caff3b6cc01d16f08ca4d04",
+          "links": "a9a9038812c7186c36166313463a6aedb9fa2b27dd80ec0d5993e0200a31d60b",
+          "media": "903916c232c10111664c861af490de0dfa33c050a6ee54bde2cbb891b04c8017"
+        }
+      }
+    },
+    {
+      "path": "/es/recursos/preparar-inventario",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Antes de la llamada: inventario habitación por habitación"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "df039a59d2380ccef67ced8b7857569493043ef982a2250cc66704d11a7d8dc5",
+          "attributes": "0a38b1428fa51458f507fec4716dc72da269e2586caff3b6cc01d16f08ca4d04",
+          "links": "9700878325e2e2f307270bc6b01aa81288558508c87b97a50ae2764b19792ca0",
+          "media": "c5acbda62c815e2c27164ded5260ef57d1185e94e8f700b0dfa4acc64d112317"
+        }
+      }
+    },
+    {
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "¿Quién se encarga de mi mudanza después de pedir una cotización?"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "0560b391ed611df91166f738be75703468dd39c1400b59f8a85dc9135d651ba8",
+          "attributes": "0a38b1428fa51458f507fec4716dc72da269e2586caff3b6cc01d16f08ca4d04",
+          "links": "02e8a42bc82942dfa1b56723e4a71ff89ebacf956e9ba7d5442671ce7ded36cc",
+          "media": "e515fc00da2a219fea7d18a929b40c9d60f32b8fe5639235ed16c4adf9c6f540"
+        }
+      }
+    },
+    {
+      "path": "/es/rutas",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Dos estados. Un plan que los conecta."
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "bc9cfd10dd90fab0da595bc5e5cf3a78a99ad7ec29332d7776487a49498c8747",
+          "attributes": "344a8d3ff934a7ed0457407dfcde2e1382b91af9e88f6695ec6f4a3a8fd5b75e",
+          "links": "62d1bfa10c26069a20353096801d9a5ad62fbd7b6f9e398dff3609d6cc8f8737",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/es/rutas/florida-a-carolina-del-norte",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Mudarse de Florida a Carolina del Norte"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "40074c1df1286bd65183d188469c6b3e6ab3e429c41229b536536d3d3fdbd68f",
+          "attributes": "74a33678e811807f6a53c534356335f4ae244f36f9337969381aae997dcef782",
+          "links": "43f00779674257b4c7db4484e0587ec088513390c8edb8536051ad0a3e5f9404",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/es/servicios",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Prepare la mudanza que necesita"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "620d3c5fd43624c15ef566fefde0b3f2925fd9364075acea4f185ca4221e0d5a",
+          "attributes": "344a8d3ff934a7ed0457407dfcde2e1382b91af9e88f6695ec6f4a3a8fd5b75e",
+          "links": "65886468652b67716a66bb73899c1c3a1dcec08392358224003c821eef837aa7",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Mudanzas de oficina"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "2cd80cc6cbfeb09a61e1708fcdb43ecfb63e63385715fbd4b8243809b2cae6cd",
+          "attributes": "2fd151a9fc241c871cc5cad17acc2409b140662186caaef2bc61fdf2a83d4e2c",
+          "links": "1bc5c609aaca023544b099d63c236bd22f2b704b8ea24d54e7eab463fd1b9e8c",
+          "media": "c654d48f002d8333ff8a01cf8aca3fa1a96de8ec68b22df757050c626482a0e4"
+        }
+      }
+    },
+    {
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Mudanzas de larga distancia"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "2a014c005e4e48a22387ca2c524368a43c7585beacb25ed3ba5c414c4365bb28",
+          "attributes": "2fd151a9fc241c871cc5cad17acc2409b140662186caaef2bc61fdf2a83d4e2c",
+          "links": "451fc35ef8f2d74f02e9982680768c0fe2fd08a4b67035d01af955c11ebbfc38",
+          "media": "862b344de8b31a02c81a39eac98154bbca2cc14567b278c9bc33c0bb888f877d"
+        }
+      }
+    },
+    {
+      "path": "/es/servicios/mudanzas-militares",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Mudanzas de militares y veteranos"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "bbeeb704e83435e1530fe008bbf2d25496c92c2a008903edcc56c8dbf6777d37",
+          "attributes": "2fd151a9fc241c871cc5cad17acc2409b140662186caaef2bc61fdf2a83d4e2c",
+          "links": "f29ea05af3e51a972f7c9561524cbbb9193096a0867e24730b1098ff84c21c2d",
+          "media": "6576ccea6f05532a8c19d11e0a9c01d4ef3433144bf7c55e8e1ce6fd5dc7a7fd"
+        }
+      }
+    },
+    {
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Mudanzas para personas mayores"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "0462b30a7bf2341534146f57e71b80e6d8be1248c8a2d852e45b035fd6d7bd4f",
+          "attributes": "2fd151a9fc241c871cc5cad17acc2409b140662186caaef2bc61fdf2a83d4e2c",
+          "links": "3a10373e9627cb53105931cb661ca05b4416adbf998858aa0a5a2da71548a948",
+          "media": "05fe606ed69cc2f0851f6f4c043b5cb433d70e0d394736d8d32557ff53d903b1"
+        }
+      }
+    },
+    {
+      "path": "/es/servicios/mudanzas-residenciales",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Mudanzas residenciales"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "26e4ae3a004eb29e0dd8dfd3d156bbc72bc4c3af715e90c87e5b6cb7a8af5e94",
+          "attributes": "2fd151a9fc241c871cc5cad17acc2409b140662186caaef2bc61fdf2a83d4e2c",
+          "links": "5e80e1503361e6e3f1fcce94f0d9e6f7d4d8b16eab286e2d775f899a94cffb72",
+          "media": "3653aba7a2e5690761ee33a34210b1bb89697fd91cce855d639407ea41da02a4"
+        }
+      }
+    },
+    {
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Preguntas sobre almacenamiento"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "50e5b2ac30b23672b0a58b95484200b0cc1070481f45bf3559e54c7e0dc223f0",
+          "attributes": "2fd151a9fc241c871cc5cad17acc2409b140662186caaef2bc61fdf2a83d4e2c",
+          "links": "dc60d21751ca3c15db38e408348932c247a6cb4ede53aca48c774e44ba01bb76",
+          "media": "2a11df7dba5612718756aaff37c0517e7a4fe1328442c504fb5ae7e49c3d63ae"
+        }
+      }
+    },
+    {
+      "path": "/es/servicios/servicios-de-embalaje",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Servicios de embalaje"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "586907345003808a9a015d152a34b1a9aaaef601f3b907e6e02d95545968580d",
+          "attributes": "2fd151a9fc241c871cc5cad17acc2409b140662186caaef2bc61fdf2a83d4e2c",
+          "links": "0fbaab66a930bcb3e2388039ef3a3ba59e2b6b7fbbdd868fa78106aa76ddb2de",
+          "media": "9654f2ebfd51108869751275f4779d45e6f9904c6c1636d2c5777ffc8699b78f"
+        }
+      }
+    },
+    {
+      "path": "/es/servicios/transporte-de-autos",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Preguntas sobre transporte de autos"
+        ],
+        "lang": "es",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "8e8a051a060da7872ee0a709f24fc49c52a3e8ab99f9301da1df05538d48d444",
+          "attributes": "2fd151a9fc241c871cc5cad17acc2409b140662186caaef2bc61fdf2a83d4e2c",
+          "links": "69ae2026e0e96916bc9ecfaf5dd11fb7c65fa56108122f3e1c52e846785d93f3",
+          "media": "f800d113db21bb38bd8f4c882cb7fdc64f9746a700ffc8754dbfe236bb16a2fd"
+        }
+      }
+    },
+    {
+      "path": "/locations",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "50 states. A fresh start."
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "d6c26510d2bf6df96aed6e0504cc5069ccc07c726ad37f4b17d0954fbc67288e",
+          "attributes": "4e43e559124a5712252bfd987a938bd17e0c6dcae9e642e831ed7a4e421a263e",
+          "links": "73be3febbf2b5095344a87648e6a71c91027de2ed3b84ea68d3824efac58be70",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/locations/florida-movers",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Your Florida move. A plan for every detail."
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "b1a4bbc093c2799f928456b5aea0a73c14b9e9eecf3c4179bd144bcd6c99b05a",
+          "attributes": "d8323deddc89562fe681296f0e3c0ef2665263842faed10ca345662f0386920d",
+          "links": "f50507464a749eb6f64bf2a461f299a9507bbb28fafdafe518025bfdd0cfe482",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/locations/wisconsin-movers",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Getting ready for your move to Wisconsin"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "e4b2f141b846d8c93ad1de61cb030072fa171303d3a52b1804e9edd7d54de3ba",
+          "attributes": "3f4852d1c71f57327da82b65f73d28362efe35427fb1f73911cc894b2d4adbc1",
+          "links": "cebcfc119909d8bb446aa02b7592bb2f82a2c64d5ab6f6be245998fa269dcad1",
+          "media": "029055bccce0a5f546e26b00bac1059057d0c7ed928e99aa40c405faf087979d"
+        }
+      }
+    },
+    {
+      "path": "/locations/wisconsin-movers/madison",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Getting ready to move to Madison, Wisconsin"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "9dc769b2ead36ef081f8200682021284f3548b404c62a7056acf4a32d6774eb2",
+          "attributes": "3f4852d1c71f57327da82b65f73d28362efe35427fb1f73911cc894b2d4adbc1",
+          "links": "93fb393b790d6689e706900f23ac3757928531af2ae94fd6a8bf9f0486f8c08a",
+          "media": "029055bccce0a5f546e26b00bac1059057d0c7ed928e99aa40c405faf087979d"
+        }
+      }
+    },
+    {
+      "path": "/moving-routes",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Two states. A plan that connects them."
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "59d72f8c6f5b9ee3a799af10458e076383fc90706d8d1fc32288260fad5293e2",
+          "attributes": "6708978af97e0ea8a4ea4b4eb802da5dcf860c40132388b5dabab25790e50535",
+          "links": "2db03ecdd0a27cb45aeed42d1ff3957246c8167c32924ac35cae90f6f610e7dd",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/moving-routes/florida-to-north-carolina",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Moving from Florida to North Carolina"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "d6d710677530bf2bc3d3d87fbad71bdf36a3cc22dd09baa88b108b49314033b1",
+          "attributes": "d8323deddc89562fe681296f0e3c0ef2665263842faed10ca345662f0386920d",
+          "links": "849b4a9f8646ac66f3eb191b0b72272fa030ba200766717dad7bb3152e63dedc",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/privacy",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Privacy Policy"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "06027eb65aa93ef6eb773d936dec7490e5c1e5f1152c20ba501799f9924b4b3b",
+          "attributes": "8b2a0a2d0cbb286878b487505551cf67ebabfd3a92a5a2b10456c35fab7a89c5",
+          "links": "b8cbd9e6d865bdbedb288bb20058c9292e3db13245d546e2344fd64d74a13bf1",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/resources",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Good information. A better move."
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "b08ef27c0426e84454395ac031102dc1c1ddb54ec74a2cd4f94efac737c3d894",
+          "attributes": "a36c4d12ad748fd4bdf02c4c9f09c1a669f427043c8cdabd36ec379446eb1c5b",
+          "links": "266efc19129ce9a8b2477478da9411e3acbb0b0d0b8e7b7f26abb799c9ace691",
+          "media": "1c42277396c880b1d399221d7553055f2db65953679d29383e59202e5106505d"
+        }
+      }
+    },
+    {
+      "path": "/resources/before-the-inventory-call",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Before the inventory call: a room-by-room checklist"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "ec516c7fb7f0cd6bef95be06bb88d798f53063f55fc14b0da0a2f038677111e8",
+          "attributes": "b0eb7eb7156e1dd05c496ff95b0fdb2a88c04ee9db98d603095c329350e04ab5",
+          "links": "17deb8a32646673f0a048fbeac21f2810687f8a399dc08807731304ab27f1879",
+          "media": "c5acbda62c815e2c27164ded5260ef57d1185e94e8f700b0dfa4acc64d112317"
+        }
+      }
+    },
+    {
+      "path": "/resources/comparing-moving-estimates",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Comparing two written moving estimates"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "23f558010783099c3aa3a36f41d740f5433c799ac8f6dd1bda64abf8fca8d152",
+          "attributes": "b0eb7eb7156e1dd05c496ff95b0fdb2a88c04ee9db98d603095c329350e04ab5",
+          "links": "be9e8c30f594c5961f396ae700c403c992370494890df305c0914ca11b03f547",
+          "media": "e515fc00da2a219fea7d18a929b40c9d60f32b8fe5639235ed16c4adf9c6f540"
+        }
+      }
+    },
+    {
+      "path": "/resources/items-to-check-before-packing",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "What should stay out of a moving box until you ask?"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "d781716c4b917454c003f42d3cd22719ab9c4df61fdec9aa8a3ed5455e273212",
+          "attributes": "b0eb7eb7156e1dd05c496ff95b0fdb2a88c04ee9db98d603095c329350e04ab5",
+          "links": "6ed7e712870ddb3b9a56c5e15260ca4086ca471bd66450b7ecb375585402c8f4",
+          "media": "dad66ce3688f61acb10ecc075a48268cd01b7955a6f44e9963c408b82eb29187"
+        }
+      }
+    },
+    {
+      "path": "/resources/moving-cost-guide",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "What can change the cost of your move?"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "101df195889ed6983a683837dca37003f2c7cbc80f8638b8bb297347d6dba438",
+          "attributes": "b0eb7eb7156e1dd05c496ff95b0fdb2a88c04ee9db98d603095c329350e04ab5",
+          "links": "cb1401d42a1e95a79131d9f8ddad780db4d9a22a612121bb75f999c1b2a05374",
+          "media": "54ce3c536cb1cf714468da05e91491224c98b1cfe7a7a28021a09d4a6b24f5b4"
+        }
+      }
+    },
+    {
+      "path": "/resources/moving-paperwork-guide",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Keep your moving paperwork useful from quote to delivery."
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "f046fc12bd6c7c0fb49b6942e1b1b27d4a3be3bda27303fcb025600ed30363c5",
+          "attributes": "b0eb7eb7156e1dd05c496ff95b0fdb2a88c04ee9db98d603095c329350e04ab5",
+          "links": "3fa835e829da368b56a540d501b7ca6d9a68deaafe68920eea6cbdbdd035cc0b",
+          "media": "903916c232c10111664c861af490de0dfa33c050a6ee54bde2cbb891b04c8017"
+        }
+      }
+    },
+    {
+      "path": "/resources/who-handles-my-move",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Who handles my move after I request a quote?"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "3613143af8ba525c7f6493969857f254c289f2322265415d12ec3bebf7fe0f68",
+          "attributes": "b0eb7eb7156e1dd05c496ff95b0fdb2a88c04ee9db98d603095c329350e04ab5",
+          "links": "e8e4a03c77c0e8ba29b47f125acfebe78c9f7c5698dc8717ede09ff441576ebf",
+          "media": "e515fc00da2a219fea7d18a929b40c9d60f32b8fe5639235ed16c4adf9c6f540"
+        }
+      }
+    },
+    {
+      "path": "/services",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Plan the move you need"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "f9f422746a4e1deee8dea0592e764d93bfe6ec6086d4babd71c1a671d165a4b9",
+          "attributes": "6708978af97e0ea8a4ea4b4eb802da5dcf860c40132388b5dabab25790e50535",
+          "links": "207cfa2d596823bf129490b5d6c883a76904b52092f3eddad970cc10fe36f509",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/services/auto-transport",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Vehicle transport questions"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "11ecef135c908e4e32a5eaec10fcef644438568b48ddb7168fc67d19df1af3aa",
+          "attributes": "3e612a81c601202164957e423c4873389b5e9d438f151a264e6bbab7cb0275c0",
+          "links": "79e2bc61693c88c6ae25bdeaef4c339b64a18abfe4879a76c1893ee4184ed752",
+          "media": "087199953f24b8b2b634840db10815d3d45d6cb5b61c7479a511e9a5b931ac57"
+        }
+      }
+    },
+    {
+      "path": "/services/corporate-office-moving",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Office moving"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "c6da45fa824e9b20dd7f1edd5644cfe87b24b59b2ece7f7475b8349979d50e0f",
+          "attributes": "3e612a81c601202164957e423c4873389b5e9d438f151a264e6bbab7cb0275c0",
+          "links": "09df7d5223c0eddb95e0fb8885dfb1d427e939861f9542fbd277695056a13d96",
+          "media": "161d2ed28dfe1c43e7a3e48814d7725bb1ff7dfb3f0b99ddebe27637c73fe2f5"
+        }
+      }
+    },
+    {
+      "path": "/services/long-distance-moving",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Long-distance moving"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "47a2acf8a2bf981745a50d6d62f385205d31cb0013a4cbad33786e57995f3f64",
+          "attributes": "3e612a81c601202164957e423c4873389b5e9d438f151a264e6bbab7cb0275c0",
+          "links": "0b1bdc6d4bce4dacc60af77058fa2a7d6e8539fa4548595a1826a5cade47b123",
+          "media": "58db212aacf9c2989d199d0a683c50035661c1371eee741b9d19dc661443f99f"
+        }
+      }
+    },
+    {
+      "path": "/services/military-moving",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Military and veteran moves"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "2575971af487af5a6f238cdf8ceac0c75137ad4d4b5bf9316e18728ff11a30f3",
+          "attributes": "3e612a81c601202164957e423c4873389b5e9d438f151a264e6bbab7cb0275c0",
+          "links": "2195d2be20ee8749ceea38fb1885582abbc4e051ccaa0b7ed5a3387523cd89d5",
+          "media": "f398ea2ba8ba8d6be70ff797f6190078b3cbe083cdf56c628dbb1bdaa3e36eea"
+        }
+      }
+    },
+    {
+      "path": "/services/packing-services",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Packing services"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "795132cda72a94a180f0228a6e4999f1a39d17d5ab30bf5b1fc986e6abf30039",
+          "attributes": "3e612a81c601202164957e423c4873389b5e9d438f151a264e6bbab7cb0275c0",
+          "links": "38424ca3fff6c8278a2fb1b8fec8bd39dee19f0b8e1f7f47ce1588a7c1d61747",
+          "media": "37c00854bc89ce798ef81f5a132e73086fcd7c718303ec836ff04820d79af943"
+        }
+      }
+    },
+    {
+      "path": "/services/residential-moving",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Residential moving"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "a302781f62799627b22e260f14c34c6bf65ec056c93fc44506e3371ab50e055e",
+          "attributes": "3e612a81c601202164957e423c4873389b5e9d438f151a264e6bbab7cb0275c0",
+          "links": "e7ed3bed16b9c6465eae1b4d3558fd460a32e2c5e0c1697e3a523ff08d8c6d7c",
+          "media": "8c6f0a20a7616085d13a269d1fe8da7ee6b5b694c8b29e0a063f1ae9642a12e5"
+        }
+      }
+    },
+    {
+      "path": "/services/senior-moving",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Senior moving"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "3f8c2269307f77d69a388aac967deb7de7706fdc3703c7335653432a213c42fb",
+          "attributes": "3e612a81c601202164957e423c4873389b5e9d438f151a264e6bbab7cb0275c0",
+          "links": "1a1b236e0adc70a7dea595838e5761b997621ed8ddd5aa6e54c861b554a36674",
+          "media": "1f4aa0eeed7183f750122c1e265caa492b1863b17636de9a197436bae73d7023"
+        }
+      }
+    },
+    {
+      "path": "/services/storage-options",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Storage questions"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "61b03ee12bde0911affdec132eecb1bbd20b7ec9b141466a2df45f2943a4ee4c",
+          "attributes": "3e612a81c601202164957e423c4873389b5e9d438f151a264e6bbab7cb0275c0",
+          "links": "77e4d8fb4030d3b7cb566cbc52779b216696b147d821fb8507b90a69747c1dc7",
+          "media": "cb74a53d2685c013b620257cd8c05f43e7de2b3c258a4a21121022bd69c8fb32"
+        }
+      }
+    },
+    {
+      "path": "/sms-privacy",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "SMS Privacy Policy"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "61af3ad216c3815c78220e56325522e3a803f6d67a5c104e514eb825bc5c20e6",
+          "attributes": "8b2a0a2d0cbb286878b487505551cf67ebabfd3a92a5a2b10456c35fab7a89c5",
+          "links": "8c1253e9f59ee0166745df36bea31f550398507ca9c4c51c82cb1ed4e949d4fd",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/sms-terms",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "SMS Terms & Conditions"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "aa207eca0d4c2dd9bb0706a18d10212e4eda1f1a2d5347fb0c91ab5c57b20551",
+          "attributes": "8b2a0a2d0cbb286878b487505551cf67ebabfd3a92a5a2b10456c35fab7a89c5",
+          "links": "3f72b09fb66d68ff064dca636c668e7780c7f53d2bc5d1ae2b3a6124194d2953",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    },
+    {
+      "path": "/terms",
+      "passed": true,
+      "checks": {
+        "status": true,
+        "noindex": true,
+        "language": true,
+        "canyon": true,
+        "h1": true,
+        "text": true,
+        "attributes": true,
+        "links": true,
+        "media": true
+      },
+      "baseline": {
+        "headings": [
+          "Terms & Conditions"
+        ],
+        "lang": "en",
+        "noindex": true,
+        "status": 200,
+        "fingerprints": {
+          "text": "16f24903b806f7e486c044458a3f2f4467e3c376ea8c1a65f2d4354f2d822ec5",
+          "attributes": "8b2a0a2d0cbb286878b487505551cf67ebabfd3a92a5a2b10456c35fab7a89c5",
+          "links": "79b32d2a45af8a37a8713aee8d386e0870e84826f399a0394a5bc1c13d3b88cb",
+          "media": "b937031663101b783360d36f9d43b067195b414773095a21d288e27c97395342"
+        }
+      }
+    }
+  ]
+}

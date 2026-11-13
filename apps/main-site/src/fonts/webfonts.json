@@ -1,0 +1,62 @@
+{
+  "license": "SIL Open Font License 1.1",
+  "converter": "fontTools 4.61.1",
+  "fonts": [
+    {
+      "file": "BricolageGrotesque-variable.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/29b4ec6df2522a8aee279414b78a07910b065874/ofl/bricolagegrotesque/BricolageGrotesque%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+      "license": "OFL-BricolageGrotesque.txt",
+      "processing": "WOFF2; opsz 96 and wdth 100, variable wght",
+      "bytes": 66544,
+      "sha256": "98169aeac329e471c552907a28dd038eb2962d6ab24a1bf8e069a2e741bbf524"
+    },
+    {
+      "file": "HankenGrotesk-variable.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/29b4ec6df2522a8aee279414b78a07910b065874/ofl/hankengrotesk/HankenGrotesk%5Bwght%5D.ttf",
+      "license": "OFL-HankenGrotesk.txt",
+      "processing": "WOFF2; full upstream glyph coverage",
+      "bytes": 57260,
+      "sha256": "515697e2d4f91e01b3f9c21282b8ded937e932f5d4353c77abfcacf1068d59cf"
+    },
+    {
+      "file": "RedHatDisplay-variable.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/29b4ec6df2522a8aee279414b78a07910b065874/ofl/redhatdisplay/RedHatDisplay%5Bwght%5D.ttf",
+      "license": "OFL-RedHatDisplay.txt",
+      "processing": "WOFF2; full upstream glyph coverage",
+      "bytes": 40936,
+      "sha256": "c8f016025e9111590e28a31fc74b5f2cf2ea134ccffde4df4598cb70f03b1ba7"
+    },
+    {
+      "file": "Inter-variable.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/29b4ec6df2522a8aee279414b78a07910b065874/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "license": "OFL-Inter.txt",
+      "processing": "WOFF2 Latin subset with punctuation, symbols and combining marks",
+      "bytes": 216256,
+      "sha256": "cacd1204492b3648617393050c84aa0f49bccfd43f1a0e2928a27fd2d5e66859"
+    },
+    {
+      "file": "PlusJakartaSans-variable.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/29b4ec6df2522a8aee279414b78a07910b065874/ofl/plusjakartasans/PlusJakartaSans%5Bwght%5D.ttf",
+      "license": "OFL-PlusJakartaSans.txt",
+      "processing": "WOFF2 Latin subset with punctuation, symbols and combining marks",
+      "bytes": 55520,
+      "sha256": "44c500723c67bf65d831a13433991be368940df9fb3f944caba0bf787203674a"
+    },
+    {
+      "file": "Manrope-variable.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/29b4ec6df2522a8aee279414b78a07910b065874/ofl/manrope/Manrope%5Bwght%5D.ttf",
+      "license": "OFL-Manrope.txt",
+      "processing": "WOFF2; full upstream glyph coverage",
+      "bytes": 53892,
+      "sha256": "30b83738add8c9edd9e3450b98036a9a8fb5668d0cbd4eb0ce5fe6761197f21f"
+    },
+    {
+      "file": "SourceSans3-variable.woff2",
+      "source": "https://raw.githubusercontent.com/adobe-fonts/source-sans/ed1808970eb3c7301c9a523bee26473ba0bb62fa/WOFF2/VF/SourceSans3VF-Upright.ttf.woff2",
+      "license": "OFL-SourceSans3.txt",
+      "processing": "Upstream WOFF2; full upstream glyph coverage",
+      "bytes": 170188,
+      "sha256": "5f16566f7a40d39b339ad26be151fa5a1ab1f0c2574c7a2e619765584a1acbd8"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ const { sdkTrack } = vi.hoisted(() => ({ sdkTrack: vi.fn() }));
 vi.mock("@vercel/analytics", () => ({ track: sdkTrack }));
 import { configureAnalytics, trackEvent, trackZipNotRecognized } from "./analytics";
 import { telemetryMode } from "./telemetry-mode";
+import { websiteDesign } from "./website-design";
 
 function browser() {
   const storage = new Map<string, string>();
@@ -37,7 +38,7 @@ describe("analytics delivery", () => {
     sdkTrack.mockImplementation(() => { throw new Error("SDK unavailable"); });
     expect(() => trackEvent("form_submit_attempted")).not.toThrow();
     expect(sdkTrack).toHaveBeenCalledWith("form_submit_attempted", {
-      context: "main-site-canyon|production|home|en", detail: "none",
+      context: `${websiteDesign.id}|production|home|en`, detail: "none",
     });
   });
 
@@ -56,7 +57,7 @@ describe("analytics delivery", () => {
     trackEvent("form_submit_success", { email: "private@example.com", ref_no: "private-ref" });
     expect(sdkTrack.mock.calls.filter(([name]) => name === "form_submit_success")).toHaveLength(1);
     expect(sdkTrack).toHaveBeenCalledWith("form_submit_success", {
-      context: "main-site-canyon|preview|long-distance-moving|es", detail: "none",
+      context: `${websiteDesign.id}|preview|long-distance-moving|es`, detail: "none",
     });
     expect(window.__vantagePreviewEvents.filter(event => event.name === "form_submit_success")).toHaveLength(1);
     expect(JSON.stringify(sdkTrack.mock.calls)).not.toMatch(/private@example|private-ref/);

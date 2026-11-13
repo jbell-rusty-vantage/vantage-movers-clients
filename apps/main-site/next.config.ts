@@ -1,5 +1,6 @@
 import path from "node:path";
 import type { NextConfig } from "next";
+import { sitePresentation } from "./src/lib/presentation";
 
 const monorepoRoot = path.join(__dirname, "../..");
 
@@ -10,6 +11,8 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   turbopack: {
     root: monorepoRoot,
+    // Select the module before next/font builds its preload manifest.
+    resolveAlias: sitePresentation.id === "optimized" ? { "@/lib/fonts": "./src/lib/fonts-optimized.ts" } : {},
   },
   images: {
     dangerouslyAllowSVG: true,

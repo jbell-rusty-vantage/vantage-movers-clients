@@ -1,0 +1,371 @@
+{
+  "deployment": "dpl_B7yiXktnAZzGVcJCfgpHdgatUydz",
+  "scope": "Browser collector requests and HTTP responses, not dashboard ingestion",
+  "requests": [
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "r": "",
+        "en": "form_step_viewed",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "step:1"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "r": "",
+        "en": "site_engaged",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "r": "",
+        "en": "site_lead_intent",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "r": "",
+        "en": "form_started",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "r": "",
+        "en": "form_step_completed",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "step:1"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "r": "",
+        "en": "form_step_viewed",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "step:2"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "r": "",
+        "en": "nav_link_clicked",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/view",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/es",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/es"
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/es",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/es",
+        "en": "form_step_viewed",
+        "ed": {
+          "context": "main-site-canyon|preview|home|es",
+          "detail": "step:2"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/es",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/es",
+        "en": "nav_link_clicked",
+        "ed": {
+          "context": "main-site-canyon|preview|home|es",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/view",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/"
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "form_step_completed",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "step:2"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "form_step_viewed",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "step:3"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "calendar_or_date_picker_opened",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "form_step_completed",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "step:3"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "form_step_viewed",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "step:4"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "form_step_completed",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "step:4"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "form_submit_attempted",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "form_submit_failed",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "form_submit_attempted",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "form_submit_failed",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "form_submit_attempted",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    },
+    {
+      "path": "/_vercel/insights/event",
+      "payload": {
+        "o": "https://vantage-movers-clients-main-site-3mtqeohor-vantage-4d3db9ef.vercel.app/",
+        "sv": "0.1.3",
+        "sdkn": "@vercel/analytics/next",
+        "sdkv": "2.0.1",
+        "dp": "/",
+        "en": "form_submit_success",
+        "ed": {
+          "context": "main-site-canyon|preview|home|en",
+          "detail": "none"
+        }
+      },
+      "status": 200
+    }
+  ]
+}

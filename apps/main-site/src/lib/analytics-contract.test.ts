@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { pageIdentity, sanitizeAnalyticsEvent, sanitizeTelemetryUrl } from "./analytics-contract";
 import { editorialEntries } from "@/content/editorial";
+import { websiteDesign } from "./website-design";
 
 describe("Main Site measurement boundary", () => {
   it("identifies every localized editorial route without importing prose into client telemetry", () => {
@@ -16,7 +17,7 @@ describe("Main Site measurement boundary", () => {
       link_href: "/?name=Private", current_path: "/private@example.com", service_id: "unbounded",
     }, "/es/servicios/mudanzas-larga-distancia", false);
     expect(event).toEqual({ name: "form_validation_error", properties: {
-      context: "main-site-canyon|preview|long-distance-moving|es",
+      context: `${websiteDesign.id}|preview|long-distance-moving|es`,
       detail: "step:2|field:phone|error:invalid",
     } });
     expect(Object.keys(event!.properties)).toHaveLength(2);
@@ -32,7 +33,7 @@ describe("Main Site measurement boundary", () => {
     expect(sanitizeAnalyticsEvent("phone_clicked", {
       field_name: "private@example.com", step_number: 5551234567, cta_location: "private@example.com",
     }, "/private@example.com", true)).toEqual({ name: "phone_clicked", properties: {
-      context: "main-site-canyon|production|other|en", detail: "none",
+      context: `${websiteDesign.id}|production|other|en`, detail: "none",
     } });
   });
 
