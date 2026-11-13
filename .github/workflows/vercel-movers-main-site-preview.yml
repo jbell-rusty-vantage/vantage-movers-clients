@@ -161,8 +161,7 @@ jobs:
 
           headers="$RUNNER_TEMP/canyon-headers"
           body="$RUNNER_TEMP/canyon-consumer-information.html"
-          vercel curl /consumer-information --deployment "$DEPLOYMENT_URL" \
-            --scope vantage-4d3db9ef --token="$VERCEL_TOKEN" -- \
+          vercel --scope vantage-4d3db9ef curl /consumer-information --deployment "$DEPLOYMENT_URL" -- \
             --fail --silent --show-error --max-time 30 --dump-header "$headers" --output "$body"
           grep -Eiq '^x-robots-tag:.*noindex' "$headers"
           grep -Fq 'data-presentation="canyon"' "$body"
