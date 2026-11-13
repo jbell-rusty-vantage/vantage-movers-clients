@@ -49,12 +49,14 @@ export function MovingProcess({ locale = "en" }: { locale?: "en" | "es" }) {
   >
     <div className="min-w-0">
       <figure className="overflow-hidden rounded-card border border-white/20 bg-white text-ink">
-        <div className={`relative w-full bg-cream ${frame.screenshot ? "aspect-[1034/1176]" : "aspect-[16/10]"}`} data-testid="process-image-slot">
+        <div className={`relative w-full bg-cream ${frame.screenshot ? `${es ? "aspect-[668/1226]" : "aspect-[668/1250]"} sm:aspect-[1034/1176]` : "aspect-[16/10]"}`} data-testid="process-image-slot">
           {failed.includes(frame.id) ? <div className="flex h-full flex-col items-center justify-center gap-3 p-8 text-center text-brand-blue" role="status">
             <ImageOff size={32} aria-hidden />
             <p className="font-semibold">{es ? "La imagen no está disponible" : "Image unavailable"}</p>
             <p>{copy.caption}</p>
-          </div> : <Image
+          </div> : <picture className="block h-full w-full">
+            {frame.screenshot && <source media="(max-width: 639px)" srcSet={`/images/selected-20261112/quote-request-${locale}-mobile.webp`} />}
+            <Image
             key={frame.id}
             src={frame.screenshot ? `/images/selected-20261112/quote-request-${locale}.webp` : `/images/preview/${frame.image}`}
             alt={copy.alt}
@@ -65,7 +67,7 @@ export function MovingProcess({ locale = "en" }: { locale?: "en" | "es" }) {
             unoptimized={frame.screenshot}
             className={`h-full w-full ${frame.screenshot ? "object-contain" : "object-cover"}`}
             onError={() => setFailed((previous) => previous.includes(frame.id) ? previous : [...previous, frame.id])}
-          />}
+          /></picture>}
         </div>
         <figcaption id={captionId} className="min-h-[152px] p-5" aria-live="polite" aria-atomic="true">
           <p className="mb-1 text-sm font-semibold text-brand-blue">{es ? "Paso" : "Step"} {index + 1} / {frames.length} · {copy.title}</p>

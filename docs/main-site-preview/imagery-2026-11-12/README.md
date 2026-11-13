@@ -24,7 +24,7 @@ The shared `SERVICE_IMAGES` registry controls service choices and responsive foc
 
 Six new resource photographs were generated with the **built-in image_gen tool**, one per article: inventory, written estimates, carrier handoff, moving budget, careful packing and document organization. [Exact generation prompts](prompts.json). Workspace assets: `apps/main-site/public/images/editorial/photography-20261112/`. The resource archive, related cards and article pages all use the new registry paths. These are illustrative generated scenes, not actual Vantage customers or employees.
 
-Step 1 now shows a fresh, complete English or Spanish capture of the current contact-first form, using fictional details and no submission. The lossless WebP captures use their native 1034:1176 aspect ratio and bypass lossy image optimization so their text remains clear. The heading, progress steps, all fields, Continue button and privacy footer are visible. Its caption now matches the current contact-first workflow. Steps 2–5 retain their appropriate truck-free photography.
+Step 1 now shows a fresh, complete English or Spanish capture of the current contact-first form, using fictional details and no submission. Desktop and phone each receive a capture of their actual responsive form layout. The lossless WebP captures use native aspect ratios (desktop 1034:1176, phone 668:1250 EN / 668:1226 ES) and bypass lossy image optimization so their text remains clear. The heading, progress steps, all fields, Continue button and privacy footer are visible. Its caption now matches the current contact-first workflow. Steps 2–5 retain their appropriate truck-free photography.
 
 ## Verification
 

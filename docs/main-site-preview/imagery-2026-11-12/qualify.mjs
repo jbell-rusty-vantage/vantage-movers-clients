@@ -71,7 +71,7 @@ try {
         if (path === home) {
           const process = page.getByTestId('moving-process');
           const image = process.locator('img');
-          check((await image.getAttribute('src')).endsWith(`quote-request-${locale}.webp`), 'Localized complete quote screenshot', { locale, width });
+          check((await image.evaluate(element => element.currentSrc)).endsWith(`quote-request-${locale}${width < 640 ? '-mobile' : ''}.webp`), 'Localized complete quote screenshot with responsive composition', { locale, width });
           check(await image.evaluate(element => Math.abs(element.clientWidth / element.clientHeight - element.naturalWidth / element.naturalHeight) < .01 && getComputedStyle(element).objectFit === 'contain'), 'Form displayed at uncropped native aspect ratio', { locale, width });
           if (width !== 320) {
             const figure = process.locator('figure');
