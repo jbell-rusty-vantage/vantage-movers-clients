@@ -22,7 +22,7 @@ try {
     await page.evaluate(() => document.fonts.ready);
     await form.getByRole('heading').first().click();
     // Capture the entire current form, without sticky page chrome covering its top.
-    await page.locator('header').evaluateAll(elements => elements.forEach(element => element.style.visibility = 'hidden'));
+    await page.locator('header, nextjs-portal').evaluateAll(elements => elements.forEach(element => element.style.visibility = 'hidden'));
     const buffer = await form.screenshot();
     await sharp(buffer).webp({ lossless: true }).toFile(fileURLToPath(new URL(`../../../apps/main-site/public/images/selected-20261112/quote-request-${locale}${suffix}.webp`, import.meta.url)));
     const metadata = await sharp(buffer).metadata();
