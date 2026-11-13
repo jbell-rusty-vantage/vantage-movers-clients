@@ -24,4 +24,16 @@ Main Site lint and typecheck pass. All 67 unit/contract/publication/CMS tests pa
 
 Browser control checked the local desktop library, 390px English library and 320px Spanish library/article. Search, topic selection, empty results and reset work; all six covers load; no horizontal document overflow at tested widths. Worksheet anchors and article byline are present. Consumer Information contains the same four targets, all `_blank` with `noopener noreferrer`. Local console only reported the expected missing-secret carrier fallback, not hydration failures. No quote or customer communication was submitted.
 
-Preview deployment and final verification are recorded below when completed. Owner visual/content review, Spanish editorial approval and production selection remain separate.
+## Deployed review candidate
+
+[Resources](https://vantage-main-site-optimization.vercel.app/resources) · [Spanish resources](https://vantage-main-site-optimization.vercel.app/es/recursos) · [Consumer Information](https://vantage-main-site-optimization.vercel.app/consumer-information).
+
+- Application source: `bd70189e824a4426ae9b608769648575f3e77e43`.
+- [Successful CI](https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43351050388), attempt 2: lint, typecheck, 67 tests, authenticated build API preflight, full optimized build and deployment passed. Attempt 1 encountered the previously recorded Bricolage Google-font/Turbopack loader failure in unchanged font code; the identical source passed on retry.
+- Deployment: `dpl_FmWZfS29WdoBuXMghcoJhNaeiEq4`, READY, Preview. [Immutable URL](https://vantage-movers-clients-main-site-4k8wjvbzs-vantage-4d3db9ef.vercel.app). Stable alias points to this exact deployment. [Identity record](deployment.json).
+- [Authenticated read-only HTTP checks](stable-checks.json): both resource directories, all six English articles, Consumer Information and both PDF redirects pass. HTML contains the new author, dates, covers and federal collection; page noindex remains effective; PDF targets return application/pdf. Anonymous command-line requests reached Vercel login, so these checks use the authenticated Vercel CLI without changing protection.
+- [Deployed browser checks](browser-checks.json): filters/search/empty reset, keyboard transition, six loaded covers, Spanish mobile at 390px, article at 320px, worksheet anchor, federal edition labels and no observed console errors. Browser viewports restored after checks.
+- Preview CMS revision 29: 114 fields appended, existing descriptors/overrides/testimonial policy preserved, identical replay is a no-op. No business records were created.
+- Production remained on `dpl_4jzUYdiummhMzTXkwCkYvHdB61fC`, unchanged from the pre-work readback.
+
+This completes the requested Resources implementation as a qualified preview. Owner visual/content review, Spanish editorial approval and production selection remain separate. Later evidence-only commits do not change the pinned application build.
