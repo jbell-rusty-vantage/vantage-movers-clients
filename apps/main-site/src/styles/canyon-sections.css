@@ -1,0 +1,557 @@
+html[data-presentation="canyon"] {
+  --section-space: clamp(3.5rem, 8vw, 7rem);
+}
+
+html[data-presentation="canyon"] .referral-strip {
+  padding-block: clamp(1.25rem, 3vw, 2rem);
+}
+
+html[data-presentation="canyon"] .referral-facts {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+html[data-presentation="canyon"] .referral-fact:hover {
+  background: var(--tone-ground);
+}
+
+html[data-presentation="canyon"] .planning-section {
+  --planning-bg: var(--tone-ground);
+  --planning-line: var(--tone-line-soft);
+  --planning-muted: var(--tone-muted);
+  --planning-call-bg: white;
+  --planning-call-text: var(--tone-ink);
+  --planning-top: clamp(2.5rem, 5.5vw, 5rem);
+  --planning-bottom: var(--section-space);
+  --planning-eyebrow-line: transparent;
+  --planning-eyebrow-bg: transparent;
+  --planning-accent: var(--tone-action-deep);
+  --planning-heading: var(--tone-ink);
+  --planning-heading-accent-style: normal;
+}
+
+html[data-presentation="canyon"] .planning-backdrop,
+html[data-presentation="canyon"] .testimonials-backdrop,
+html[data-presentation="canyon"] .closing-pattern {
+  display: none;
+}
+
+html[data-presentation="canyon"] :is(.planning-call, .faq-call) {
+  border: 1px solid var(--tone-line);
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+html[data-presentation="canyon"] .planning-heading,
+html[data-presentation="canyon"] .testimonials-heading {
+  margin-inline: 0;
+  text-align: left;
+}
+
+html[data-presentation="canyon"] .planning-eyebrow {
+  padding: 0;
+}
+
+html[data-presentation="canyon"] .moving-process {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+html[data-presentation="canyon"] .process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+  gap: 1rem;
+}
+
+html[data-presentation="canyon"] .process-step {
+  margin: 0;
+  min-width: 0;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-color: var(--tone-line-soft);
+  background: white;
+}
+
+html[data-presentation="canyon"] .process-step[data-selected="true"] {
+  border-color: var(--tone-action);
+  background: var(--tone-accent-soft);
+}
+
+html[data-presentation="canyon"] .process-step-action {
+  flex-direction: column;
+  color: var(--tone-ink);
+  font-size: 1rem;
+}
+
+html[data-presentation="canyon"] .process-step-number {
+  color: var(--tone-action-deep);
+  background: var(--tone-accent-soft);
+}
+
+html[data-presentation="canyon"] .process-step[data-selected="true"] .process-step-number {
+  color: white;
+  background: var(--tone-action);
+}
+
+html[data-presentation="canyon"] .process-step-copy {
+  padding-left: 0;
+  color: var(--tone-muted);
+}
+
+html[data-presentation="canyon"] .process-preview {
+  width: min(100%, 42rem);
+  margin-inline: auto;
+}
+
+html[data-presentation="canyon"] .process-figure {
+  border-color: var(--tone-line-soft);
+  box-shadow: var(--shadow-card);
+}
+
+html[data-presentation="canyon"] .process-previous {
+  border-color: var(--tone-line);
+  border-radius: 999px;
+  background: white;
+  color: var(--tone-ink);
+}
+
+html[data-presentation="canyon"] .process-next {
+  border-radius: 999px;
+  background: var(--tone-action);
+  color: white;
+}
+
+html[data-presentation="canyon"] .process-next:not([aria-disabled="true"]):hover {
+  background: var(--tone-action-mid);
+}
+
+html[data-presentation="canyon"] .process-position {
+  color: var(--tone-muted);
+}
+
+html[data-presentation="canyon"] :is(.home-services, .home-service-directory, .coverage-section, .home-about, .home-faq, .home-contact) {
+  padding-block: var(--section-space);
+}
+
+html[data-presentation="canyon"] :is(.home-services, .home-service-directory, .home-faq) {
+  background: white;
+}
+
+html[data-presentation="canyon"] .home-services {
+  --service-section-title-size: clamp(2rem, 3.5vw, 2.75rem);
+  --service-feature-title-size: clamp(1.375rem, 2.5vw, 1.625rem);
+}
+
+html[data-presentation="canyon"] .service-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 21.25rem), 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+html[data-presentation="canyon"] .service-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--tone-line-soft);
+  border-radius: var(--radius-card);
+  background: white;
+  box-shadow: var(--shadow-card);
+}
+
+html[data-presentation="canyon"] .service-feature-image {
+  min-height: 0;
+  height: clamp(11rem, 22vw, 16.25rem);
+  flex: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+html[data-presentation="canyon"] .service-feature-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+html[data-presentation="canyon"] .service-feature-actions {
+  margin-top: auto;
+}
+
+html[data-presentation="canyon"] :is(.service-feature-action, .about-action, .coverage-action) {
+  border-radius: 999px;
+}
+
+html[data-presentation="canyon"] .service-card {
+  min-width: 0;
+  border-radius: var(--radius-card);
+}
+
+html[data-presentation="canyon"] .service-card:hover {
+  border-color: var(--tone-action);
+}
+
+html[data-presentation="canyon"] .service-card-icon {
+  border-radius: 0.875rem;
+}
+
+html[data-presentation="canyon"] .broker-trust-band {
+  background: var(--tone-action);
+  border: 0;
+}
+
+html[data-presentation="canyon"] .broker-trust-copy b {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: white;
+}
+
+html[data-presentation="canyon"] .testimonials-section {
+  --testimonial-padding: clamp(1.1rem, 2.5vw, 2rem);
+  background: var(--tone-ground);
+}
+
+html[data-presentation="canyon"] .testimonials-heading :is(.testimonials-title, .testimonials-intro) {
+  color: var(--tone-ink);
+}
+
+html[data-presentation="canyon"] .testimonials-eyebrow {
+  color: var(--tone-action-deep);
+}
+
+html[data-presentation="canyon"] .testimonial-carousel {
+  max-width: 1240px;
+  padding-inline: clamp(0.75rem, 2.6vw, 2rem);
+}
+
+html[data-presentation="canyon"] .testimonial-viewport {
+  mask-image: none;
+}
+
+html[data-presentation="canyon"] .testimonial-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--tone-line-soft);
+  box-shadow: none;
+}
+
+html[data-presentation="canyon"] .testimonial-card figcaption {
+  margin-top: auto;
+}
+
+html[data-presentation="canyon"] .testimonial-quote {
+  font-style: normal;
+}
+
+html[data-presentation="canyon"] .testimonial-avatar {
+  flex-shrink: 0;
+  background: var(--tone-accent-soft);
+  color: var(--tone-action-deep);
+}
+
+html[data-presentation="canyon"] .testimonial-control {
+  border-color: var(--tone-line);
+  background: white;
+  color: var(--tone-action-deep);
+}
+
+html[data-presentation="canyon"] .testimonial-control:hover {
+  background: var(--tone-accent-soft);
+}
+
+html[data-presentation="canyon"] .coverage-section {
+  --coverage-heading: white;
+  --coverage-body: var(--tone-on-dark);
+  --coverage-detail-bg: white;
+  --coverage-detail-line: var(--tone-line-soft);
+  --coverage-detail-icon-bg: var(--tone-accent-soft);
+  --coverage-detail-icon: var(--tone-action-deep);
+  --coverage-detail-title: var(--tone-ink);
+  --coverage-detail-text: var(--tone-muted);
+  --coverage-action-bg: var(--tone-action);
+  --coverage-panel-bg: var(--tone-raised);
+  --coverage-panel-line: #4d372c;
+  --coverage-map-bg: var(--tone-raised);
+  --coverage-state: #684e3e;
+  --coverage-state-line: var(--tone-on-dark-muted);
+  --coverage-state-hover: var(--tone-action-mid);
+  --coverage-state-hover-line: var(--tone-accent);
+  --coverage-state-active: var(--tone-accent);
+  --coverage-state-active-line: white;
+  --coverage-label: white;
+  --coverage-hover-label: white;
+  --coverage-active-label: var(--tone-ink);
+  --coverage-shadow: var(--tone-footer);
+  background: var(--tone-dark);
+}
+
+html[data-presentation="canyon"] .coverage-layout {
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+html[data-presentation="canyon"] .coverage-intro {
+  grid-area: intro;
+  max-width: 44rem;
+}
+
+html[data-presentation="canyon"] .coverage-intro p {
+  margin-bottom: 0;
+}
+
+html[data-presentation="canyon"] .coverage-eyebrow {
+  color: var(--tone-accent);
+}
+
+html[data-presentation="canyon"] :is(.coverage-detail, .coverage-map-panel) {
+  min-width: 0;
+  border-radius: var(--radius-panel);
+}
+
+html[data-presentation="canyon"] .coverage-detail {
+  grid-area: detail;
+}
+
+html[data-presentation="canyon"] .coverage-map-panel {
+  grid-area: map;
+}
+
+html[data-presentation="canyon"] .coverage-state-group:focus-visible path {
+  stroke: white;
+  stroke-width: 3;
+}
+
+html[data-presentation="canyon"] .home-about {
+  --about-title-size: clamp(2rem, 3.5vw, 2.75rem);
+  background: var(--tone-ground);
+}
+
+html[data-presentation="canyon"] .about-copy {
+  color: var(--tone-muted);
+}
+
+html[data-presentation="canyon"] .about-image {
+  min-height: 0;
+  aspect-ratio: 5 / 4;
+  border-radius: var(--radius-panel);
+}
+
+html[data-presentation="canyon"] .broker-benefits {
+  --benefits-bg: white;
+  --benefits-title: var(--tone-ink);
+  --benefits-card-bg: white;
+  --benefits-line: var(--tone-line-soft);
+  --benefits-icon-bg: var(--tone-accent-soft);
+  --benefits-icon: var(--tone-action-deep);
+  --benefits-body: var(--tone-muted);
+  --benefits-cta-bg: var(--tone-raised);
+  --benefits-cta-text: var(--tone-on-dark);
+  --benefits-action-bg: var(--tone-accent);
+  --benefits-action-text: var(--tone-ink);
+}
+
+html[data-presentation="canyon"] .broker-benefits-cta {
+  box-shadow: none;
+}
+
+html[data-presentation="canyon"] .broker-benefits-action {
+  border-radius: 999px;
+}
+
+html[data-presentation="canyon"] .military-appreciation {
+  background: var(--tone-raised);
+}
+
+html[data-presentation="canyon"] .faq-layout {
+  gap: clamp(1.75rem, 5.5vw, 4.5rem);
+}
+
+html[data-presentation="canyon"] .faq-intro {
+  position: static;
+}
+
+html[data-presentation="canyon"] .faq-answers > div {
+  gap: 0;
+}
+
+html[data-presentation="canyon"] .faq-answers > div > div {
+  border: 0;
+  border-bottom: 1px solid var(--tone-line-soft);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+html[data-presentation="canyon"] .faq-answers button {
+  padding-inline: 0.25rem;
+}
+
+html[data-presentation="canyon"] .faq-answers button:focus-visible {
+  outline-offset: -3px;
+}
+
+html[data-presentation="canyon"] .faq-answers button span {
+  background: none;
+  color: var(--tone-action);
+}
+
+html[data-presentation="canyon"] .home-contact {
+  --contact-title-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+html[data-presentation="canyon"] .contact-frame {
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+}
+
+html[data-presentation="canyon"] .contact-layout {
+  padding: 0;
+}
+
+html[data-presentation="canyon"] :is(.contact-eyebrow, .contact-title-accent) {
+  color: var(--tone-action-deep);
+}
+
+html[data-presentation="canyon"] .contact-rule {
+  background: var(--tone-action);
+}
+
+html[data-presentation="canyon"] :is(.contact-title, .contact-detail, .contact-review-name) {
+  color: var(--tone-ink);
+}
+
+html[data-presentation="canyon"] :is(.contact-copy, .contact-partners-label, .contact-review-quote, .contact-review-source) {
+  color: var(--tone-muted);
+}
+
+html[data-presentation="canyon"] .contact-icon {
+  background: var(--tone-accent-soft);
+  color: var(--tone-action-deep);
+}
+
+html[data-presentation="canyon"] .contact-image {
+  border-radius: var(--radius-panel);
+}
+
+html[data-presentation="canyon"] .contact-review {
+  background: white;
+  border-color: var(--tone-line-soft);
+}
+
+html[data-presentation="canyon"] .contact-logo {
+  filter: grayscale(1);
+}
+
+html[data-presentation="canyon"] .home-closing {
+  --closing-background: none;
+  --closing-top: 0px;
+  --closing-bottom: var(--section-space);
+  --closing-accent: var(--tone-accent);
+  --closing-badge-line: transparent;
+  --closing-badge-bg: transparent;
+  --closing-title-size: clamp(2rem, 4vw, 3.25rem);
+  --closing-body: var(--tone-on-dark);
+  --closing-primary-bg: white;
+  --closing-primary-text: var(--tone-ink);
+  scroll-margin-top: 7rem;
+}
+
+html[data-presentation="canyon"] .closing-container {
+  max-width: 1240px;
+  text-align: left;
+}
+
+html[data-presentation="canyon"] .closing-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  background: var(--tone-dark);
+}
+
+html[data-presentation="canyon"] .closing-image {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 100%;
+  opacity: 0.55;
+  z-index: -1;
+}
+
+html[data-presentation="canyon"] .closing-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--tone-dark), transparent);
+}
+
+html[data-presentation="canyon"] .closing-content {
+  max-width: 46rem;
+  padding: clamp(1.5rem, 5.5vw, 4rem);
+}
+
+html[data-presentation="canyon"] .closing-eyebrow {
+  padding: 0;
+  border-width: 0;
+  background: transparent;
+}
+
+html[data-presentation="canyon"] .closing-actions {
+  justify-content: flex-start;
+}
+
+html[data-presentation="canyon"] :is(.closing-primary, .closing-secondary) {
+  border-radius: 999px;
+  box-shadow: none;
+  text-transform: none;
+}
+
+@media (min-width: 48rem) {
+  html[data-presentation="canyon"] .about-image {
+    grid-area: 1 / 1;
+  }
+
+  html[data-presentation="canyon"] .coverage-layout {
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+    grid-template-areas: "intro intro" "map detail";
+    align-items: stretch;
+  }
+
+  html[data-presentation="canyon"] .coverage-copy {
+    display: contents;
+  }
+
+  html[data-presentation="canyon"] .closing-image {
+    width: 48%;
+  }
+}
+
+@media (max-width: 47.999rem) {
+  html[data-presentation="canyon"] .testimonial-carousel-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "review review" "previous next";
+    gap: 0.5rem;
+  }
+
+  html[data-presentation="canyon"] .testimonial-viewport {
+    grid-area: review;
+  }
+
+  html[data-presentation="canyon"] .testimonial-previous {
+    grid-area: previous;
+    justify-self: end;
+  }
+
+  html[data-presentation="canyon"] .testimonial-next {
+    grid-area: next;
+  }
+
+  html[data-presentation="canyon"] .coverage-layout {
+    grid-template-areas: "copy" "map";
+  }
+
+  html[data-presentation="canyon"] .coverage-copy {
+    grid-area: copy;
+  }
+}

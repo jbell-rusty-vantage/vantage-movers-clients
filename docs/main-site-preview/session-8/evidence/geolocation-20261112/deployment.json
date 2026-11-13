@@ -1,0 +1,11 @@
+{
+  "verifiedAt": "2026-11-12T15:57:06.319Z",
+  "sourceSha": "76b9a8671f855391c17c01a72305e5def32dc5a3",
+  "ciBuildSha": "459a90cd5f03618db10d50359b2c10c59e69bedd",
+  "workflow": "https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43252730533",
+  "workflowConclusion": "success",
+  "deploymentId": "dpl_DxY7q76u3gBTornqrzeDQzRavTFM",
+  "immutableUrl": "https://vantage-movers-clients-main-site-90ai3mhog-vantage-4d3db9ef.vercel.app",
+  "stableUrl": "https://vantage-main-site-optimization.vercel.app",
+  "aliasMatches": true
+}

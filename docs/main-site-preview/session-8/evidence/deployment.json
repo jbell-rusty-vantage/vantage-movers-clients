@@ -1,0 +1,18 @@
+{
+  "verifiedAt": "2026-11-12T15:24:59.685Z",
+  "sourceSha": "748b2a39b3a0dfed735f8ac0326dbaddcae1c3f5",
+  "ciBuildSha": "9cb42b5828f793d06a1865748ffcf17fd6ae1e04",
+  "workflow": "https://github.com/jbell-rusty-vantage/vantage-movers-clients/actions/runs/43247187961",
+  "workflowConclusion": "success",
+  "deploymentId": "dpl_5jqRaaMsUphP7HuxCHJpzByZiRMB",
+  "immutableUrl": "https://vantage-movers-clients-main-site-9dcvadjzg-vantage-4d3db9ef.vercel.app",
+  "stableUrl": "https://vantage-main-site-optimization.vercel.app",
+  "aliasMatches": true,
+  "anonymousStatus": 302,
+  "quoteReceiptSourceSha": "4dd2806a66dee939d8ddf7ec49ad8110941e39a1",
+  "changesAfterQuoteReceipt": [
+    "apps/main-site/src/components/sections/ServicesSection.tsx",
+    "apps/main-site/src/lib/content.ts"
+  ],
+  "qualificationNote": "Final change is two homepage feature destinations. Quote/browser/API/Places/analytics code is unchanged; no second submission was made."
+}

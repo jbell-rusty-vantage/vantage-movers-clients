@@ -1,0 +1,334 @@
+{
+  "capturedAt": "2026-11-12T15:11:45.814Z",
+  "source": "237a8c9becd221884542a9d6bdcf9cd1f85f0f6f",
+  "sourceState": "Uncommitted integrated worktree; HEAD identifies its base, not the complete tested source.",
+  "environment": "Next development server, Chromium deviceScaleFactor=1, no network/CPU throttling; no physical-device claim.",
+  "screenshotTreatment": "Component-only screenshots hide sticky header, skip link and Next development portal during capture, without changing layout. They are not full-page screenshots.",
+  "mediaComparison": {
+    "originalHeroFileBytes": 1833644,
+    "selectedHeroFileBytes": 105142,
+    "boundary": "Source asset sizes supplied by integration owner. Not a measured network transfer reduction or controlled performance comparison."
+  },
+  "cases": [
+    {
+      "locale": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "mode": "interactive",
+      "status": "passed",
+      "initialRequests": [
+        "/images/preview/home-inventory.webp",
+        "/images/preview/quote-request.webp"
+      ],
+      "deferredFramesVerified": [
+        "inventory-call.webp",
+        "review-estimate.webp",
+        "carrier-paperwork.webp"
+      ],
+      "sharedAssetNote": "packing-detail is also used in the homepage service section; sequence itself mounts only one image.",
+      "noAutoplayWaitMs": 1400,
+      "initialBox": {
+        "x": 149,
+        "y": 178,
+        "width": 592.78125,
+        "height": 370.484375
+      },
+      "finalBox": {
+        "x": 149,
+        "y": 178,
+        "width": 592.78125,
+        "height": 370.484375
+      },
+      "metrics": {
+        "reducedMotion": true,
+        "animationCount": 0,
+        "buttonTransition": "0.15s",
+        "buttonTransitionProperty": "none",
+        "steps": [
+          "1Request a quoteTell Vantage the basics: pickup and delivery ZIPs, your preferred date and move size.",
+          "2Review your inventoryDiscuss your belongings and access at both addresses with your coordinator.",
+          "3Read the written estimateCompare the inventory, included services and optional charges. Ask questions before you agree.",
+          "4Prepare for pickupConfirm the arrangements, keep the entrance clear and set important paperwork aside.",
+          "5Meet the assigned carrierThe assigned motor carrier handles pickup, transportation and delivery. Check its name and contact details on your paperwork."
+        ],
+        "documentWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "heroLoading": {
+        "layoutShiftValue": 0,
+        "hero": [
+          {
+            "name": "/_next/image?url=%2Fimages%2Fpreview%2Fhome-inventory.webp&w=1920&q=75",
+            "transferSize": 77172,
+            "encodedBodySize": 76872,
+            "decodedBodySize": 76872,
+            "duration": 54
+          }
+        ]
+      },
+      "errors": []
+    },
+    {
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "interactive",
+      "status": "passed",
+      "initialRequests": [
+        "/images/preview/home-inventory.webp",
+        "/images/preview/quote-request.webp"
+      ],
+      "deferredFramesVerified": [
+        "inventory-call.webp",
+        "review-estimate.webp",
+        "carrier-paperwork.webp"
+      ],
+      "sharedAssetNote": "packing-detail is also used in the homepage service section; sequence itself mounts only one image.",
+      "noAutoplayWaitMs": 1400,
+      "initialBox": {
+        "x": 29,
+        "y": -192.328125,
+        "width": 332,
+        "height": 207.5
+      },
+      "finalBox": {
+        "x": 29,
+        "y": -192.328125,
+        "width": 332,
+        "height": 207.5
+      },
+      "metrics": {
+        "reducedMotion": true,
+        "animationCount": 0,
+        "buttonTransition": "0.15s",
+        "buttonTransitionProperty": "none",
+        "steps": [
+          "1Request a quoteTell Vantage the basics: pickup and delivery ZIPs, your preferred date and move size.",
+          "2Review your inventoryDiscuss your belongings and access at both addresses with your coordinator.",
+          "3Read the written estimateCompare the inventory, included services and optional charges. Ask questions before you agree.",
+          "4Prepare for pickupConfirm the arrangements, keep the entrance clear and set important paperwork aside.",
+          "5Meet the assigned carrierThe assigned motor carrier handles pickup, transportation and delivery. Check its name and contact details on your paperwork."
+        ],
+        "documentWidth": 390,
+        "viewportWidth": 390
+      },
+      "heroLoading": {
+        "layoutShiftValue": 0,
+        "hero": [
+          {
+            "name": "/_next/image?url=%2Fimages%2Fpreview%2Fhome-inventory.webp&w=640&q=75",
+            "transferSize": 21354,
+            "encodedBodySize": 21054,
+            "decodedBodySize": 21054,
+            "duration": 48.599999994039536
+          }
+        ]
+      },
+      "errors": []
+    },
+    {
+      "locale": "es",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "mode": "interactive",
+      "status": "passed",
+      "initialRequests": [
+        "/images/preview/home-inventory.webp",
+        "/images/preview/quote-request.webp"
+      ],
+      "deferredFramesVerified": [
+        "inventory-call.webp",
+        "review-estimate.webp",
+        "carrier-paperwork.webp"
+      ],
+      "sharedAssetNote": "packing-detail is also used in the homepage service section; sequence itself mounts only one image.",
+      "noAutoplayWaitMs": 1400,
+      "initialBox": {
+        "x": 149,
+        "y": 178.03125,
+        "width": 592.78125,
+        "height": 370.484375
+      },
+      "finalBox": {
+        "x": 149,
+        "y": 178.03125,
+        "width": 592.78125,
+        "height": 370.484375
+      },
+      "metrics": {
+        "reducedMotion": true,
+        "animationCount": 0,
+        "buttonTransition": "0.15s",
+        "buttonTransitionProperty": "none",
+        "steps": [
+          "1Solicite una cotizaciónComparta los datos básicos: códigos postales de origen y destino, fecha preferida y tamaño de la mudanza.",
+          "2Revise su inventarioConverse con su coordinador sobre sus pertenencias y el acceso a ambos domicilios.",
+          "3Lea el presupuesto escritoCompare el inventario, los servicios incluidos y los cargos opcionales. Aclare sus dudas antes de aceptar.",
+          "4Prepare la recogidaConfirme los arreglos, despeje la entrada y guarde los documentos importantes a mano.",
+          "5Identifique al transportistaEl transportista asignado realiza la recogida, el transporte y la entrega. Revise su nombre y datos de contacto en los documentos."
+        ],
+        "documentWidth": 1440,
+        "viewportWidth": 1440
+      },
+      "heroLoading": {
+        "layoutShiftValue": 0,
+        "hero": [
+          {
+            "name": "/_next/image?url=%2Fimages%2Fpreview%2Fhome-inventory.webp&w=1920&q=75",
+            "transferSize": 77172,
+            "encodedBodySize": 76872,
+            "decodedBodySize": 76872,
+            "duration": 26.5
+          }
+        ]
+      },
+      "errors": []
+    },
+    {
+      "locale": "es",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "interactive",
+      "status": "passed",
+      "initialRequests": [
+        "/images/preview/home-inventory.webp",
+        "/images/preview/quote-request.webp"
+      ],
+      "deferredFramesVerified": [
+        "inventory-call.webp",
+        "review-estimate.webp",
+        "carrier-paperwork.webp"
+      ],
+      "sharedAssetNote": "packing-detail is also used in the homepage service section; sequence itself mounts only one image.",
+      "noAutoplayWaitMs": 1400,
+      "initialBox": {
+        "x": 29,
+        "y": -203.28125,
+        "width": 332,
+        "height": 207.5
+      },
+      "finalBox": {
+        "x": 29,
+        "y": -203.28125,
+        "width": 332,
+        "height": 207.5
+      },
+      "metrics": {
+        "reducedMotion": true,
+        "animationCount": 0,
+        "buttonTransition": "0.15s",
+        "buttonTransitionProperty": "none",
+        "steps": [
+          "1Solicite una cotizaciónComparta los datos básicos: códigos postales de origen y destino, fecha preferida y tamaño de la mudanza.",
+          "2Revise su inventarioConverse con su coordinador sobre sus pertenencias y el acceso a ambos domicilios.",
+          "3Lea el presupuesto escritoCompare el inventario, los servicios incluidos y los cargos opcionales. Aclare sus dudas antes de aceptar.",
+          "4Prepare la recogidaConfirme los arreglos, despeje la entrada y guarde los documentos importantes a mano.",
+          "5Identifique al transportistaEl transportista asignado realiza la recogida, el transporte y la entrega. Revise su nombre y datos de contacto en los documentos."
+        ],
+        "documentWidth": 390,
+        "viewportWidth": 390
+      },
+      "heroLoading": {
+        "layoutShiftValue": 0,
+        "hero": [
+          {
+            "name": "/_next/image?url=%2Fimages%2Fpreview%2Fhome-inventory.webp&w=640&q=75",
+            "transferSize": 21354,
+            "encodedBodySize": 21054,
+            "decodedBodySize": 21054,
+            "duration": 29.099999994039536
+          }
+        ]
+      },
+      "errors": []
+    },
+    {
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "javascript-disabled",
+      "status": "passed",
+      "visibleSteps": 5,
+      "text": "1\nRequest a quote\n\nTell Vantage the basics: pickup and delivery ZIPs, your preferred date and move size.\n\n2\nReview your inventory\n\nDiscuss your belongings and access at both addresses with your coordinator.\n\n3\nRead the written estimate\n\nCompare the inventory, included services and optional charges. Ask questions before you agree.\n\n4\nPrepare for pickup\n\nConfirm the arrangements, keep the entrance clear and set important paperwork aside.\n\n5\nMeet the assigned carrier\n\nThe assigned motor carrier handles pickup, transportation and delivery. Check its name and contact details on your paperwork."
+    },
+    {
+      "locale": "es",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "javascript-disabled",
+      "status": "passed",
+      "visibleSteps": 5,
+      "text": "1\nSolicite una cotización\n\nComparta los datos básicos: códigos postales de origen y destino, fecha preferida y tamaño de la mudanza.\n\n2\nRevise su inventario\n\nConverse con su coordinador sobre sus pertenencias y el acceso a ambos domicilios.\n\n3\nLea el presupuesto escrito\n\nCompare el inventario, los servicios incluidos y los cargos opcionales. Aclare sus dudas antes de aceptar.\n\n4\nPrepare la recogida\n\nConfirme los arreglos, despeje la entrada y guarde los documentos importantes a mano.\n\n5\nIdentifique al transportista\n\nEl transportista asignado realiza la recogida, el transporte y la entrega. Revise su nombre y datos de contacto en los documentos."
+    },
+    {
+      "locale": "en",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "image-request-aborted",
+      "status": "passed",
+      "fallback": "Image unavailable\n\nTell Vantage the basics: pickup and delivery ZIPs, your preferred date and move size.",
+      "visibleSteps": 5
+    },
+    {
+      "locale": "es",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mode": "image-request-aborted",
+      "status": "passed",
+      "fallback": "La imagen no está disponible\n\nComparta los datos básicos: códigos postales de origen y destino, fecha preferida y tamaño de la mudanza.",
+      "visibleSteps": 5
+    },
+    {
+      "mode": "global-404-javascript-disabled",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "status": "passed",
+      "httpStatus": 404,
+      "robots": "noindex",
+      "languages": [
+        "en",
+        "es"
+      ],
+      "recoveryPaths": [
+        "/",
+        "/es"
+      ]
+    },
+    {
+      "mode": "global-404-javascript-disabled",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "passed",
+      "httpStatus": 404,
+      "robots": "noindex",
+      "languages": [
+        "en",
+        "es"
+      ],
+      "recoveryPaths": [
+        "/",
+        "/es"
+      ]
+    }
+  ]
+}

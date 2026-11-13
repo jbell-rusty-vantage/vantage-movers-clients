@@ -1,14 +1,18 @@
 import path from "node:path";
 import type { NextConfig } from "next";
+import { sitePresentation } from "./src/lib/presentation";
 
 const monorepoRoot = path.join(__dirname, "../..");
 
 const nextConfig: NextConfig = {
+  experimental: { globalNotFound: true },
   transpilePackages: ["@vantage/api-client", "@vantage/ui", "@vantage/utils"],
   outputFileTracingRoot: monorepoRoot,
   reactCompiler: true,
   turbopack: {
     root: monorepoRoot,
+    // Select the module before next/font builds its preload manifest.
+    resolveAlias: sitePresentation.id === "optimized" ? { "@/lib/fonts": "./src/lib/fonts-optimized.ts" } : {},
   },
   images: {
     dangerouslyAllowSVG: true,
@@ -17,6 +21,7 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      ...(process.env.VERCEL_ENV !== "production" ? [{ source: "/(.*)", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }] : []),
       {
         source: "/(.*)",
         headers: [
@@ -25,7 +30,7 @@ const nextConfig: NextConfig = {
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           {
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
+            value: "camera=(), microphone=(), geolocation=(self)",
           },
         ],
       },

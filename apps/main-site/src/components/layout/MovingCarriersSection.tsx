@@ -1,3 +1,4 @@
+import { CmsElement } from "@/components/cms/Content";
 import type { MovingCarrier } from "@vantage/api-client";
 import { heroBodyFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
@@ -20,11 +21,11 @@ export function MovingCarriersSection({ carriers }: MovingCarriersSectionProps) 
   }
 
   return (
-    <section
-      className={`${heroBodyFont.className} border-t px-7`}
+    <CmsElement element="section" scope="components/layout/MovingCarriersSection.tsx"
+      className={`${heroBodyFont.className} editorial-carrier-network border-t px-7`}
       style={{
-        backgroundColor: colors.footerBg,
-        borderColor: colors.borderColor,
+        backgroundColor: `var(--editorial-carrier-bg, ${colors.footerBg})`,
+        borderColor: `var(--editorial-carrier-border, ${colors.borderColor})`,
         paddingTop: `${PADDING.pt}px`,
         paddingBottom: `${PADDING.pb}px`,
       }}
@@ -33,6 +34,6 @@ export function MovingCarriersSection({ carriers }: MovingCarriersSectionProps) 
       <Container className="px-0">
         <MovingCarriersTable carriers={carriers} />
       </Container>
-    </section>
+    </CmsElement>
   );
 }

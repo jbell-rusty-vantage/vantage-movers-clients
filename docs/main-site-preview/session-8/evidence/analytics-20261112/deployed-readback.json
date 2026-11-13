@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-11-12T15:33:23.202Z",
+  "reference": "MS-20261112-67847D7501-PREVIEW-1794497595913",
+  "leadId": "6af5dc406f5de80e075af12a",
+  "previewDatabase": "testvantagemovers_sitepreview",
+  "previewCount": 1,
+  "productionDatabase": "vantagemovers",
+  "productionCount": 0,
+  "apiReadback": "passed",
+  "sourceCompany": "main_site",
+  "sourceCompanySite": "vantagehomemovers.com",
+  "lidPreserved": true,
+  "moveSize": "Studio",
+  "duplicate": false,
+  "postToGranot": false,
+  "previewLeadMessageCount": 0,
+  "sheetSyncEntryCount": 0,
+  "boundary": "Exact-reference counts and one synthetic preview Lead only. Site response does not expose CRM/messaging status; no such response receipt is inferred."
+}

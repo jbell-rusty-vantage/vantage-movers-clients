@@ -10,6 +10,7 @@ import "server-only";
  */
 
 import { resolveApiBaseUrl } from "./environment";
+import type { WebsiteAttribution } from "./website-attribution";
 
 const API_BASE_URL = resolveApiBaseUrl(process.env.VANTAGE_API_BASE_URL, process.env.VERCEL_ENV);
 
@@ -68,6 +69,7 @@ interface MovingCarrierListResponse {
 }
 
 export interface CreateFormLeadInput {
+  website_attribution?: WebsiteAttribution;
   source_company: string;
   source_company_site?: string;
   name?: string;
@@ -149,6 +151,48 @@ export async function getTestimonials(
     console.error("[vantage] testimonials fetch error:", error);
     return [];
   }
+}
+
+export interface PreviewSiteContent {
+  revision: number;
+  values: Record<string, string>;
+  testimonialPolicy: { minimumRating: number; excludedIds: string[] };
+}
+
+/** The preview CMS is never queried from a production or unspecified deployment. */
+export async function getPreviewSiteContent(): Promise<PreviewSiteContent> {
+  const fallback: PreviewSiteContent = { revision: 0, values: {}, testimonialPolicy: { minimumRating: 4, excludedIds: [] } };
+  if (process.env.VERCEL_ENV !== "preview") return fallback;
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/v1/site-preview/cms`, { headers: authHeaders(), cache: "no-store", signal: AbortSignal.timeout(6000) });
+    if (!response.ok) return fallback;
+    const body = await response.json() as { data?: PreviewSiteContent };
+    if (!body.data || typeof body.data.revision !== "number" || !body.data.values || Array.isArray(body.data.values)) return fallback;
+    const values = Object.fromEntries(Object.entries(body.data.values).filter(([key, value]) => /^(text|image)\.[a-f0-9]{16}$/.test(key) && typeof value === "string"));
+    return { ...fallback, ...body.data, values };
+  } catch { return fallback; }
+}
+
+/** Preview policy is applied by the API before its limit, not in a browser carousel. */
+export async function getMainSiteTestimonials(options: { limit?: number; featured?: boolean } = {}): Promise<Testimonial[]> {
+  if (process.env.VERCEL_ENV !== "preview") return getTestimonials(options);
+  try {
+    const params = new URLSearchParams({ limit: String(options.limit ?? 24) });
+    if (options.featured !== undefined) params.set("featured", String(options.featured));
+    const response = await fetch(`${API_BASE_URL}/api/v1/site-preview/cms/testimonials?${params}`, { headers: authHeaders(), cache: "no-store", signal: AbortSignal.timeout(6000) });
+    if (!response.ok) return [];
+    const body = await response.json() as TestimonialListResponse;
+    return (body.data?.items ?? []).filter(item => item.published);
+  } catch { return []; }
+}
+
+export async function getPreviewSiteMedia(id: string): Promise<Response | null> {
+  if (process.env.VERCEL_ENV !== "preview" || !/^[a-f0-9]{24}$/.test(id)) return null;
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/v1/site-preview/cms/media/${id}`, { headers: authHeaders(), cache: "no-store", signal: AbortSignal.timeout(12000) });
+    if (!response.ok || !["image/png", "image/jpeg", "image/webp", "image/avif"].includes(response.headers.get("content-type")?.split(";")[0] ?? "")) return null;
+    return response;
+  } catch { return null; }
 }
 
 /** Fetch all active moving carriers; revalidate frequently so the footer stays current. */

@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-11-12T20:55:55.981Z",
+  "reports": [
+    {
+      "path": "/",
+      "status": 200,
+      "compactFourStepForm": true,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "path": "/services/long-distance-moving",
+      "status": 200,
+      "compactFourStepForm": true,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "status": 200,
+      "compactFourStepForm": true,
+      "robots": "noindex, nofollow"
+    },
+    {
+      "path": "/services/packing-services",
+      "status": 200,
+      "compactFourStepForm": true,
+      "robots": "noindex, nofollow"
+    }
+  ]
+}

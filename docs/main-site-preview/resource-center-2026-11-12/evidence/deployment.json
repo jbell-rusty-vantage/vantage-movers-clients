@@ -1,0 +1,16 @@
+{
+  "applicationSource": "cd462dad2e3ec9d015f787ca42f44b8a862f6323",
+  "ciMerge": "c8283690ae1c19b58ea0b5be95be4e9fb130b07f",
+  "tree": "e84b5c342cf33453d44bd49d377e7c4d39685413",
+  "deploymentId": "dpl_HmYiC1iDGhgSAQkeoJ1zp4M4zjaC",
+  "immutableUrl": "https://vantage-movers-clients-main-site-y81nykpkv-vantage-4d3db9ef.vercel.app",
+  "stableAlias": "https://vantage-main-site-optimization.vercel.app",
+  "target": "preview",
+  "status": "READY",
+  "workflowRun": 43296545911,
+  "successfulAttempt": 2,
+  "deployedChecks": 878,
+  "failures": 0,
+  "productionDeployment": false,
+  "editorialApproval": false
+}

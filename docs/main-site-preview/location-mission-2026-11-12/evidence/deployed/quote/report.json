@@ -1,0 +1,51 @@
+{
+  "origin": "https://vantage-movers-clients-main-site-ji4bm12lw-vantage-4d3db9ef.vercel.app",
+  "mode": "Mocked quotes and Places; no Lead created",
+  "results": [
+    {
+      "width": 320,
+      "firstStepHasNoBack": true,
+      "locationStepHasBack": true,
+      "contactValidation": true,
+      "directContinueAfterPhoneCorrection": true,
+      "noEarlySubmission": true,
+      "destinationFallback": true,
+      "guideBack": true,
+      "localeReload": true,
+      "identicalRetryPayloads": true,
+      "falseConsent": true,
+      "captureClearsDraft": true
+    },
+    {
+      "width": 390,
+      "firstStepHasNoBack": true,
+      "locationStepHasBack": true,
+      "contactValidation": true,
+      "directContinueAfterPhoneCorrection": true,
+      "noEarlySubmission": true,
+      "destinationFallback": true,
+      "guideBack": true,
+      "localeReload": true,
+      "identicalRetryPayloads": true,
+      "falseConsent": true,
+      "captureClearsDraft": true
+    },
+    {
+      "width": 1440,
+      "firstStepHasNoBack": true,
+      "locationStepHasBack": true,
+      "contactValidation": true,
+      "directContinueAfterPhoneCorrection": true,
+      "noEarlySubmission": true,
+      "destinationFallback": true,
+      "guideBack": true,
+      "localeReload": true,
+      "identicalRetryPayloads": true,
+      "falseConsent": true,
+      "captureClearsDraft": true
+    },
+    {
+      "multipleHomeForms": "active attempt retained"
+    }
+  ]
+}

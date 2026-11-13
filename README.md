@@ -2,6 +2,10 @@
 
 pnpm workspace containing the public marketing Next.js apps and shared packages.
 
+## Main Site preview
+
+Start with the [Main Site optimization packet](docs/main-site-preview/README.md) for the current-UI preview, competitor research, content and media specifications, session briefs and release evidence requirements.
+
 ## Structure
 
 ```

@@ -1,0 +1,2144 @@
+{
+  "base": "http://localhost:3001",
+  "checks": [
+    {
+      "ok": true,
+      "name": "Referral strip animates",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "Referral strip pauses",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "Reduced motion stops cycling",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/long-distance-moving",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/residential-moving",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/corporate-office-moving",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/military-moving",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/senior-moving",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/packing-services",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/storage-options",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/auto-transport",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/long-distance-moving",
+      "width": 390,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/residential-moving",
+      "width": 390,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/corporate-office-moving",
+      "width": 390,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/military-moving",
+      "width": 390,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/senior-moving",
+      "width": 390,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/packing-services",
+      "width": 390,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/storage-options",
+      "width": 390,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/auto-transport",
+      "width": 390,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/long-distance-moving",
+      "width": 320,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/residential-moving",
+      "width": 320,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/corporate-office-moving",
+      "width": 320,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/military-moving",
+      "width": 320,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/senior-moving",
+      "width": 320,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/packing-services",
+      "width": 320,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/storage-options",
+      "width": 320,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/services/auto-transport",
+      "width": 320,
+      "height": 607
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Map selection changes details",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "FAQ opens",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "Referral strip animates",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "Referral strip pauses",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "Reduced motion stops cycling",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390,
+      "height": 570
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320,
+      "height": 611
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320,
+      "height": 611
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320,
+      "height": 611
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320,
+      "height": 611
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320,
+      "height": 611
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320,
+      "height": 611
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320,
+      "height": 611
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Full eight-service grid",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Testimonials section",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Interactive map",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service FAQs",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Contact has three fields",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Compact contact form",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320,
+      "height": 611
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Map selection changes details",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "FAQ opens",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "Genuine 200 percent browser zoom"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow at actual zoom"
+    },
+    {
+      "ok": true,
+      "name": "Form editable at actual zoom"
+    }
+  ],
+  "failures": [],
+  "zoom": {
+    "mechanism": "chrome.tabs.setZoom",
+    "zoom": 2,
+    "before": {
+      "dpr": 1,
+      "width": 1440
+    },
+    "after": {
+      "dpr": 2,
+      "width": 720
+    }
+  }
+}

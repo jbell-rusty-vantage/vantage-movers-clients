@@ -7,7 +7,6 @@ import {
   Package,
   Route,
   Shield,
-  Truck,
   Users,
 } from "lucide-react";
 
@@ -31,7 +30,7 @@ export const whyVantageIconLabels: Record<WhyVantageIconId, string> = {
   globe: "Globe — nationwide",
   headphones: "Headphones — support",
   briefcase: "Briefcase — commercial",
-  truck: "Truck — transportation",
+  truck: "Route / transportation",
   route: "Route — interstate",
   users: "Users — customer focus",
   package: "Package — packing",
@@ -43,7 +42,7 @@ export const whyVantageIcons: Record<WhyVantageIconId, LucideIcon> = {
   globe: Globe,
   headphones: Headphones,
   briefcase: Briefcase,
-  truck: Truck,
+  truck: Route,
   route: Route,
   users: Users,
   package: Package,

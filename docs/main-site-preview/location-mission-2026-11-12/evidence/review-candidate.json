@@ -1,0 +1,179 @@
+{
+  "status": "Local candidate; release permission pending",
+  "siteBase": "e18132990afd8954b3615a7022e3c6f6974953fc",
+  "serverBase": "873450a969405eac63742e07fbae91dd8665edb2",
+  "siteFiles": [
+    {
+      "path": "apps/main-site/public/licenses/us-atlas.txt",
+      "sha256": "8048290dfdb6e83fbed17e8985c8cfc4ce9da9b842642f3d3e497280790cfa31"
+    },
+    {
+      "path": "apps/main-site/scripts/build-state-map.py",
+      "sha256": "6d5399d41a648cbc04b9ccd41360fa19f4c5432ae5dea2f3994da252b8c72ada"
+    },
+    {
+      "path": "apps/main-site/src/app/sitemap.ts",
+      "sha256": "5b843f5bab5948911c55453392abf2cc01a8c99b3dfd4c68a429a31409b07a2e"
+    },
+    {
+      "path": "apps/main-site/src/components/editorial/ArticleMetadata.tsx",
+      "sha256": "9ade89d50ac26f820c33caec5d8528c497981f458d7911a8c9925d16cb13d4e0"
+    },
+    {
+      "path": "apps/main-site/src/components/editorial/DirectoryPage.tsx",
+      "sha256": "4a746b7b3b184d07d09ed35dbe941c6ea958655f1804058574dd1770271c3c99"
+    },
+    {
+      "path": "apps/main-site/src/components/editorial/EditorialCards.tsx",
+      "sha256": "dd00ce5e6166763e75f8b18359bc494212993537576cab8e0c9b747268ad7b74"
+    },
+    {
+      "path": "apps/main-site/src/components/editorial/EditorialPage.tsx",
+      "sha256": "d29b3fd4a9fe19be067c17f23287f220c8d197bfbcedde033232a08eab8e02f3"
+    },
+    {
+      "path": "apps/main-site/src/components/editorial/LocationPage.tsx",
+      "sha256": "8e49472e2ae4448fcc889f403f6d37149cb6797f9efa6314373cf40efdc5c5c0"
+    },
+    {
+      "path": "apps/main-site/src/components/editorial/PricingContext.tsx",
+      "sha256": "890c6d7462c958fa1d83cb7c6afa57d7add635ec03ae5f1d2c07f94591aeb932"
+    },
+    {
+      "path": "apps/main-site/src/components/editorial/ResourceCenter.tsx",
+      "sha256": "d97db271500f97473a7f59e9a5d807950b3ccab30f2e67343060d6aabc9ad65a"
+    },
+    {
+      "path": "apps/main-site/src/components/editorial/ServiceDetails.tsx",
+      "sha256": "89b7dfe9af6947583af7eae5a4a662f03599f61441d35672bc6afc6c4ff31271"
+    },
+    {
+      "path": "apps/main-site/src/components/editorial/ServiceFollowThrough.tsx",
+      "sha256": "c3fc20e1c448d1ca7e5486768a58b36809a4af5189550a96580da7478a939bbd"
+    },
+    {
+      "path": "apps/main-site/src/components/editorial/ServiceHero.tsx",
+      "sha256": "c0886c32b50125680c270a8436a51bb597aad74287e31456ebc9cf436108ff40"
+    },
+    {
+      "path": "apps/main-site/src/components/editorial/SourcesReview.tsx",
+      "sha256": "1ba048a5a34d3dbe69e5d09e8d0090b609caf87b697d9981eb8d7b238b625149"
+    },
+    {
+      "path": "apps/main-site/src/components/interactive/PickupLocationSuggestion.tsx",
+      "sha256": "aafb21136fe0b39727a1a8bf3e657b4571b33fd7a09f5667200ecfddfd120c2a"
+    },
+    {
+      "path": "apps/main-site/src/components/interactive/QuoteWizard.tsx",
+      "sha256": "0c591ef68194ebb1e7a185a6cca61a0acc34bdcfb616f0546f6315e189098753"
+    },
+    {
+      "path": "apps/main-site/src/components/interactive/StateRouteMap.tsx",
+      "sha256": "9bbe4a6d9f8f8e418d13e9a00323af68174247f027f08bb1b3039de3b2e1d937"
+    },
+    {
+      "path": "apps/main-site/src/components/layout/BrowseNavigation.tsx",
+      "sha256": "ab5a4db07b9b461cc9c28090362db3f7dfad327b00f3cf713fbc063ccf90ea25"
+    },
+    {
+      "path": "apps/main-site/src/components/layout/Header.tsx",
+      "sha256": "881fddef8598d967b53a5ecf932b994713a9d650c0571e8360a4c8b6b3fe47cb"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/destination-registry.ts",
+      "sha256": "3a972d9e84708dcb17b2badeeaf86942cd355e0fb5828dcb2f761011fa7d4f22"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/editorial.test.ts",
+      "sha256": "191c3ed71f4d59d14b196778359b406019d815fa5c6bc1c61711225d96ebdd46"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/florida.ts",
+      "sha256": "4cc78dd4373f8e9ce69dae3d69408e942dcd574f69a29fb067e7e20b9104eece"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/geography-sources.ts",
+      "sha256": "9bbf13f70a61a01bf51cfb9f5be711062d16edf4bfa22c7032be77a9a9f77e54"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/geography-types.ts",
+      "sha256": "2294f8034ff0df504d19af58454500e2350a7abe19fd34103205f7d07f1a55a3"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/geography.test.ts",
+      "sha256": "ec5297f9cc15f6f8699c9855ea397d63dab3af207eb77ee27e6a222717758fdb"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/index.ts",
+      "sha256": "ddae4b441ace5faea5e58a6573d350013e5ae7b7820ff7decc3973454a8831f8"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/moving-routes.ts",
+      "sha256": "908c0b28021ae2016acaadb116dd70943ee4c4396ed075c24aab54274caa8aeb"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/services.ts",
+      "sha256": "8d4f75e3657529800f5d351da1fe8bca9a72b5d0014f9cec03f5a17fc3c7d400"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/sources.ts",
+      "sha256": "7f93feaa8460ddc803d52d6df9011a54eb1e4fe66b3ef575c693a474a8b91ca5"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/state-geography.ts",
+      "sha256": "73679882595addb2c886cb1d98720b7dab33d7e545d716173ac86bca3d3f4e85"
+    },
+    {
+      "path": "apps/main-site/src/content/editorial/types.ts",
+      "sha256": "e225126631263982a0a077cd0042a121a62bd99a8044594722575e6c3d140ed3"
+    },
+    {
+      "path": "apps/main-site/src/content/geography/LICENSE-us-atlas.txt",
+      "sha256": "8048290dfdb6e83fbed17e8985c8cfc4ce9da9b842642f3d3e497280790cfa31"
+    },
+    {
+      "path": "apps/main-site/src/content/geography/usa-map.json",
+      "sha256": "5a4c34e084fbc3f1decae7ebf5b33cc9f4cab782a2e0e5884988351dee660d05"
+    },
+    {
+      "path": "apps/main-site/src/lib/analytics-contract.ts",
+      "sha256": "e9d517ebe6de1f601884a9332e156223fd7980a4222dc677c75f98270cff19c5"
+    },
+    {
+      "path": "apps/main-site/src/lib/editorial-routes.tsx",
+      "sha256": "1f373b77b167592ba667713bca9401693abc4e6a55bb2f9f1bbd35460da16c20"
+    },
+    {
+      "path": "apps/main-site/src/lib/publication.test.ts",
+      "sha256": "be22c17bf46d5e291d3cb62eb7c29c3a8c3d1c58dffa1e6600a7197f76b25ae6"
+    },
+    {
+      "path": "apps/main-site/src/lib/publication.ts",
+      "sha256": "627399d220da44ab2cf44df220ca4d531f2dda15b4a8517da7dbeba406ae0994"
+    },
+    {
+      "path": "packages/api-client/src/website-attribution.ts",
+      "sha256": "eb54d4f5e4f393042c9bd339fe95aeac1bb089e4b5f39802b2814e12e4f1175d"
+    }
+  ],
+  "serverFiles": [
+    {
+      "path": "docs/website-attribution/README.md",
+      "sha256": "17588c83baaa88367b678da3cda432081915dc715801f2194ca9407871dc17e8"
+    },
+    {
+      "path": "src/contracts/websiteAttribution.ts",
+      "sha256": "eb54d4f5e4f393042c9bd339fe95aeac1bb089e4b5f39802b2814e12e4f1175d"
+    },
+    {
+      "path": "src/services/analytics/websiteOutcomes.service.test.ts",
+      "sha256": "7b0c31c2d57285bcaa293c82d95c5ec4c117e282527b77bdc50a48f35c053f64"
+    }
+  ],
+  "builtPilotPaths": [
+    "/locations/florida-movers",
+    "/moving-routes/florida-to-north-carolina",
+    "/es/destinos/florida",
+    "/es/rutas/florida-a-carolina-del-norte"
+  ]
+}

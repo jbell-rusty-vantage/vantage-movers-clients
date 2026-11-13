@@ -1,0 +1,123 @@
+import { draft } from "./draft";
+import type { EditorialEntry } from "./types";
+import { floridaAnchor } from "./state-geography";
+
+const relatedIds = ["long-distance-moving", "residential-moving", "packing-services", "storage-options", "auto-transport", "florida-to-north-carolina"];
+const sourceIds = ["fmcsa-roles", "fmcsa-checklist", "vantage-broker-baseline", "florida-preparedness", "florida-new-resident"];
+
+export const floridaEntries: EditorialEntry[] = [
+  draft("en", {
+    id: "florida", kind: "state", path: "/locations/florida-movers", navLabel: "Florida",
+    title: "Your Florida move. A plan for every detail.",
+    description: "From a South Florida condo to a new chapter out of state, start with the details that shape your move. Vantage helps coordinate interstate moving services around your inventory, access and dates.",
+    sourceIds, relatedIds,
+    geography: {
+      origin: floridaAnchor, eyebrow: "Interstate moving · Florida",
+      quoteTitle: "Let’s plan your Florida move",
+      quoteDescription: "Moving to or from Florida? Share your actual pickup and destination ZIP codes. We’ll start with your household, then work through the building access and timing.",
+      planningTitle: "A Florida move deserves more than a generic checklist",
+      planningCards: [
+        { title: "Start with the whole household", body: "Include patio furniture, garage shelving and anything in a storage unit. One room-by-room inventory gives the estimate conversation a useful starting point." },
+        { title: "Make room for building rules", body: "Ask your condo or HOA about loading areas, elevator reservations and any documents it requires. Share the answers before a carrier is scheduled." },
+        { title: "Put dates in writing", body: "Separate your preferred pickup, property handover and delivery availability. Ask which dates are agreed windows and what happens if your keys are delayed." },
+        { title: "Know who does what", body: "Vantage coordinates as an interstate moving broker. The assigned motor carrier handles the physical pickup, transportation and delivery." },
+      ],
+      citiesTitle: "Where in Florida is your next chapter?",
+      citiesDescription: "Use these city starting points to prepare your quote. Share your exact ZIP codes, building details and dates so we can discuss availability for your move.",
+      cities: [
+        { name: "Miami & Fort Lauderdale", detail: "Condo entrance, elevator booking and building contact." },
+        { name: "West Palm Beach", detail: "Community access, gate instructions and loading arrangements." },
+        { name: "Orlando", detail: "Lease handover, storage items and delivery contact." },
+        { name: "Tampa & St. Petersburg", detail: "Parking space, apartment access and pickup inventory." },
+        { name: "Jacksonville", detail: "Both ZIP codes, driveway access and move-date flexibility." },
+        { name: "Fort Myers & Naples", detail: "Building rules, outdoor items and arrival arrangements." },
+      ],
+      serviceTitle: "Build your Florida move around the services you need",
+      serviceIntro: "Start with the household shipment, then discuss the extras. Each service, provider and charge needs confirmation in your written arrangements.",
+      serviceNotes: {
+        "long-distance-moving": "Compare the inventory, access details and delivery terms for a move across state lines.",
+        "residential-moving": "Bring the full home into the plan, including closets, balconies and garage items.",
+        "corporate-office-moving": "Identify work equipment, building access and the handover sequence for your relocation.",
+        "military-moving": "Discuss your household shipment and required paperwork before committing to arrangements.",
+        "senior-moving": "Set aside essential items and name a trusted person for pickup and arrival decisions.",
+        "packing-services": "Decide which rooms you will pack and which items need a carrier’s packing review.",
+        "storage-options": "If housing dates differ, confirm the facility, charges and release arrangements in writing.",
+        "auto-transport": "Plan the vehicle separately, with its own pickup, delivery and condition documentation.",
+      },
+      coordinationCards: [
+        { title: "A condo with a reserved elevator", body: "Match the household plan to the building’s loading rules and permitted hours.", serviceId: "residential-moving" },
+        { title: "A home that is not quite ready", body: "Review storage, release arrangements and costs when your key dates differ.", serviceId: "storage-options" },
+        { title: "A room that needs packing help", body: "Discuss the specific pieces, materials and labor you want included.", serviceId: "packing-services" },
+        { title: "A car with a separate journey", body: "Coordinate its handover and arrival alongside your household timeline.", serviceId: "auto-transport" },
+      ],
+      challengesTitle: "The challenges to plan around in Florida",
+      preparationTitle: "Get ready for what matters most in Florida",
+      routeTitle: "Explore a move out of Florida",
+      routeIntro: "Heading to North Carolina? Follow a plan that connects your Florida departure with the details at your new address.",
+      relatedRouteIds: ["florida-to-north-carolina"],
+    },
+    sections: [
+      { heading: "A weather plan that travels with you", paragraphs: ["Florida’s official hurricane-preparation page places Atlantic hurricane season from June 1 through November 30. Check official notices near your move and ask how a disruption would change pickup or delivery communication.", "Keep personal documents, medication and your household emergency supplies accessible during travel. A moving shipment should not be your only access to essentials."], sourceIds: ["florida-preparedness"] },
+      { heading: "Condo access is part of the inventory conversation", paragraphs: ["Before move day, get your building’s actual instructions for elevators, loading, vehicle access and permitted hours. Rules differ by property; there is no single Florida-wide condo checklist.", "Share any reservation or document requirement with your coordinator and the carrier. Ask about access-related charges before approving the written estimate."] },
+      { heading: "Pack for the handover, not just the truck", paragraphs: ["Choose a first-night bag with clothing, chargers, keys and personal essentials. Keep it with you so arrival does not depend on unpacking a particular box.", "Discuss outdoor furniture and garage contents early. Ask the carrier what it cannot accept and how it wants sensitive or unusual items prepared."], sourceIds: ["fmcsa-checklist"] },
+      { heading: "Arriving in Florida? Make a separate resident checklist", paragraphs: ["FLHSMV’s new-resident page explains driver license, identification, title and registration processes. Review the current document requirements and timing for your situation before scheduling appointments.", "Keep school, utility and property arrangements in the same arrival folder, but confirm each directly with the relevant provider. Your moving quote does not complete those tasks."], sourceIds: ["florida-new-resident"] },
+    ],
+  }),
+  draft("es", {
+    id: "florida", kind: "state", path: "/es/destinos/florida", navLabel: "Florida",
+    title: "Su mudanza en Florida. Cada detalle, bien pensado.",
+    description: "Desde un condominio del sur de Florida hasta una nueva etapa en otro estado, empiece por los detalles que definen su mudanza. Vantage coordina servicios interestatales según inventario, acceso y fechas.",
+    sourceIds, relatedIds,
+    geography: {
+      origin: floridaAnchor, eyebrow: "Mudanzas interestatales · Florida",
+      quoteTitle: "Planifiquemos su mudanza en Florida",
+      quoteDescription: "¿Se muda a Florida o sale del estado? Indique los códigos postales reales de origen y destino. Empezaremos por su hogar y después revisaremos acceso y fechas.",
+      planningTitle: "Su mudanza en Florida merece un plan específico",
+      planningCards: [
+        { title: "Incluya todo el hogar", body: "Añada muebles de patio, estantes del garaje y objetos de un almacén. Un inventario por habitación permite hablar del presupuesto con más claridad." },
+        { title: "Revise las reglas del edificio", body: "Consulte zonas de carga, reservas de ascensor y documentos exigidos por el condominio o la comunidad. Comparta las respuestas antes de programar al transportista." },
+        { title: "Aclare las fechas por escrito", body: "Distinga recogida deseada, entrega de llaves y disponibilidad para recibir. Pregunte qué ventanas están acordadas y qué ocurre si se retrasa la vivienda." },
+        { title: "Conozca cada responsabilidad", body: "Vantage coordina como intermediario de mudanzas interestatales. El transportista asignado realiza la recogida, el transporte y la entrega físicos." },
+      ],
+      citiesTitle: "¿En qué parte de Florida empieza su próxima etapa?",
+      citiesDescription: "Use estas ciudades como punto de partida. Comparta códigos postales, acceso al edificio y fechas para consultar disponibilidad para su mudanza.",
+      cities: [
+        { name: "Miami y Fort Lauderdale", detail: "Entrada del condominio, ascensor y contacto del edificio." },
+        { name: "West Palm Beach", detail: "Acceso a la comunidad, portón y zona de carga." },
+        { name: "Orlando", detail: "Entrega de vivienda, objetos almacenados y contacto de llegada." },
+        { name: "Tampa y St. Petersburg", detail: "Estacionamiento, acceso al apartamento e inventario." },
+        { name: "Jacksonville", detail: "Ambos códigos postales, entrada y flexibilidad de fechas." },
+        { name: "Fort Myers y Naples", detail: "Reglas del edificio, muebles exteriores y recepción." },
+      ],
+      serviceTitle: "Servicios para preparar su mudanza en Florida",
+      serviceIntro: "Empiece por el envío del hogar y después revise los servicios adicionales. Confirme cada proveedor, servicio y cargo por escrito.",
+      serviceNotes: {
+        "long-distance-moving": "Compare inventario, acceso y condiciones de entrega entre estados.",
+        "residential-moving": "Incluya todo el hogar: armarios, balcones y objetos del garaje.",
+        "corporate-office-moving": "Identifique equipos de trabajo, acceso y orden de entrega.",
+        "military-moving": "Revise el envío del hogar y los documentos necesarios antes de acordar servicios.",
+        "senior-moving": "Separe artículos esenciales y designe una persona de confianza para la llegada.",
+        "packing-services": "Decida qué habitaciones embalará usted y qué revisará el transportista.",
+        "storage-options": "Si las fechas no coinciden, confirme almacén, cargos y salida de los bienes.",
+        "auto-transport": "Organice el vehículo por separado, con fechas y registro de su condición.",
+      },
+      coordinationCards: [
+        { title: "Un condominio con ascensor reservado", body: "Ajuste el plan a las reglas de carga y los horarios del edificio.", serviceId: "residential-moving" },
+        { title: "Una vivienda que aún no está lista", body: "Revise almacenamiento, salida y costos si las fechas de llaves no coinciden.", serviceId: "storage-options" },
+        { title: "Una habitación que necesita embalaje", body: "Comente qué piezas, materiales y trabajo desea incluir.", serviceId: "packing-services" },
+        { title: "Un auto con su propio viaje", body: "Coordine su entrega y llegada junto con el calendario del hogar.", serviceId: "auto-transport" },
+      ],
+      challengesTitle: "Retos que conviene prever en Florida",
+      preparationTitle: "Prepárese para lo que más importa en Florida",
+      routeTitle: "Explore una salida de Florida",
+      routeIntro: "¿Su destino es Carolina del Norte? Conecte la salida de Florida con la preparación de su nuevo domicilio.",
+      relatedRouteIds: ["florida-to-north-carolina"],
+    },
+    sections: [
+      { heading: "Un plan para el clima que viaje con usted", paragraphs: ["La página oficial de preparación de Florida sitúa la temporada de huracanes del Atlántico del 1 de junio al 30 de noviembre. Consulte avisos oficiales cerca de la mudanza y pregunte cómo se comunicarían cambios de recogida o entrega.", "Lleve accesibles documentos, medicamentos y suministros de emergencia del hogar. No dependa del envío para acceder a lo esencial."], sourceIds: ["florida-preparedness"] },
+      { heading: "Incluya el acceso del condominio en la conversación", paragraphs: ["Pida las instrucciones concretas de ascensores, carga, entrada de vehículos y horarios. Cada inmueble tiene sus reglas; no existe una lista única para todos los condominios de Florida.", "Comparta reservas y documentos exigidos con el coordinador y transportista. Pregunte por cargos de acceso antes de aprobar el presupuesto."] },
+      { heading: "Prepare la llegada, además de las cajas", paragraphs: ["Lleve una bolsa para la primera noche con ropa, cargadores, llaves y artículos personales. Manténgala consigo para no depender de encontrar una caja al llegar.", "Mencione pronto muebles exteriores y contenido del garaje. Pregunte qué no acepta el transportista y cómo preparar objetos delicados o inusuales."], sourceIds: ["fmcsa-checklist"] },
+      { heading: "Si llega a Florida, prepare sus trámites por separado", paragraphs: ["La página de FLHSMV para nuevos residentes explica trámites de licencia, identificación, título y registro. Revise requisitos y plazos vigentes para su situación antes de pedir citas.", "Guarde acuerdos escolares, servicios de vivienda y documentos del inmueble en la carpeta de llegada. Confirme cada gestión directamente; una cotización de mudanza no las completa."], sourceIds: ["florida-new-resident"] },
+    ],
+  }),
+];

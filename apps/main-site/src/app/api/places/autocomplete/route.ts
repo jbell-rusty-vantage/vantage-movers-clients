@@ -41,7 +41,7 @@ export async function GET(req: Request) {
         input,
         includedRegionCodes: ["us"],
         includedPrimaryTypes: ["postal_code"],
-        languageCode: "en-US",
+        languageCode: url.searchParams.get("locale") === "es" ? "es-US" : "en-US",
         sessionToken,
       }),
     });

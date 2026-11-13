@@ -1,44 +1,20 @@
-import {
-  Bricolage_Grotesque,
-  Hanken_Grotesk,
-  Manrope,
-  Red_Hat_Display,
-} from "next/font/google";
 import localFont from "next/font/local";
 
-/** Site-wide display font (nav, section headings, CTAs outside hero). */
-export const siteDisplayFont = Bricolage_Grotesque({
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+// next.config.ts selects the optimized font module when that presentation is active.
+export const siteDisplayFont = localFont({
+  src: "../fonts/PlusJakartaSans-variable.woff2",
+  weight: "200 800",
   variable: "--font-display",
   display: "swap",
 });
 
-/** Site-wide body font. */
-export const siteBodyFont = Hanken_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+export const siteBodyFont = localFont({
+  src: "../fonts/Inter-variable.woff2",
+  weight: "100 900",
   variable: "--font-body",
   display: "swap",
 });
 
-/** Hero heading font — Red Hat Display (Storybook Playground choice). */
-export const heroHeadingFont = Red_Hat_Display({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  display: "swap",
-});
-
-/** Hero body copy font — Manrope (Storybook Playground choice). */
-export const heroBodyFont = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-/** Testimonials body font — Source Sans 3 (Storybook Playground choice). */
-export const testimonialsBodyFont = localFont({
-  src: "../fonts/SourceSans3-variable.ttf",
-  weight: "200 900",
-  display: "swap",
-});
+export const heroHeadingFont = siteDisplayFont;
+export const heroBodyFont = siteBodyFont;
+export const testimonialsBodyFont = siteBodyFont;

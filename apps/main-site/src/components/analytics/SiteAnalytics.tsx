@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { captureWebsiteAttribution } from "@/lib/website-attribution";
+import type { TelemetryMode } from "@/lib/telemetry-mode";
 import {
+  configureAnalytics,
   initializeBounceTracking,
   legalEventForHref,
   trackSectionViewed,
@@ -32,7 +36,6 @@ function propertiesForAnchor(anchor: HTMLAnchorElement): {
   properties: AnalyticsProperties;
 } | null {
   const href = anchor.getAttribute("href") || "";
-  const linkText = anchor.textContent?.trim().replace(/\s+/g, " ").slice(0, 80) || "unknown";
   const explicitEvent = anchor.dataset.analyticsEvent;
   const dataProperties = datasetProperties(anchor);
   const linkLocation = anchor.dataset.analyticsLocation || "unknown";
@@ -58,20 +61,17 @@ function propertiesForAnchor(anchor: HTMLAnchorElement): {
     return {
       eventName: "cta_clicked",
       properties: {
-        cta_location: anchor.dataset.analyticsLocation || linkText,
+        cta_location: anchor.dataset.analyticsLocation || "unknown",
         ...dataProperties,
       },
     };
   }
 
-  if (href.startsWith("#") || href.startsWith("/#")) {
+  if (href.startsWith("#") || href.startsWith("/")) {
     return {
       eventName: "nav_link_clicked",
       properties: {
         link_location: linkLocation,
-        link_text: linkText,
-        link_href: href,
-        move_type: anchor.dataset.analyticsMoveType || null,
       },
     };
   }
@@ -79,8 +79,13 @@ function propertiesForAnchor(anchor: HTMLAnchorElement): {
   return null;
 }
 
-export function SiteAnalytics() {
-  useEffect(() => initializeBounceTracking(), []);
+export function SiteAnalytics({ mode = "local" }: { mode?: TelemetryMode }) {
+  const pathname = usePathname();
+  useEffect(() => { captureWebsiteAttribution(); }, [pathname]);
+  useEffect(() => {
+    configureAnalytics(mode);
+    return initializeBounceTracking();
+  }, [mode]);
 
   useEffect(() => {
     if (!("IntersectionObserver" in window)) return;
@@ -105,7 +110,7 @@ export function SiteAnalytics() {
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     function handleClick(event: MouseEvent) {

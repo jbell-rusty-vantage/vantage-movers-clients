@@ -1,0 +1,22 @@
+import { ArrowUpRight, BookOpen, FileText, SearchCheck } from "lucide-react";
+import { CmsText, CmsElement } from "@/components/cms/Content";
+import type { EditorialLocale } from "@/content/editorial/types";
+
+/** Shared by Resources and Consumer Information so edition labels stay together. */
+export function FederalMovingResources({ locale = "en" }: { locale?: EditorialLocale }) {
+  const es = locale === "es";
+  const links = [
+    { href: "https://www.fmcsa.dot.gov/protect-your-move", title: "FMCSA · Protect Your Move", label: es ? "Orientación oficial actual" : "Current official guidance", text: es ? "Consulte la orientación de FMCSA antes de planificar y contratar su mudanza." : "Start with FMCSA’s consumer guidance when planning and arranging your move.", icon: BookOpen },
+    { href: "https://www.fmcsa.dot.gov/protect-your-move/search-mover", title: es ? "Verificar el registro federal" : "Check federal mover registration", label: es ? "Consulta oficial" : "Official lookup", text: es ? "Busque el nombre legal y el USDOT del transportista que aparece en sus documentos." : "Look up the legal name and USDOT number of the carrier on your shipment paperwork.", icon: SearchCheck },
+    { href: "/your-rights", title: "Your Rights and Responsibilities", label: es ? "PDF · edición almacenada de 2013" : "PDF · stored 2013 edition", text: es ? "Copia histórica en inglés. Para orientación actual, consulte las páginas de FMCSA." : "An archived reference copy. Use FMCSA’s current pages for up-to-date guidance.", icon: FileText },
+    { href: "/ready-to-move", title: "Ready to Move", label: es ? "PDF · edición almacenada de 2006" : "PDF · stored 2006 edition", text: es ? "Folleto histórico en inglés. Consulte también los recursos actuales de FMCSA." : "An archived preparation booklet. Read alongside FMCSA’s current consumer resources.", icon: FileText },
+  ];
+  return <section id="moving-authorities" className="editorial-panel mb-14 scroll-mt-36 rounded-3xl border border-cream-border bg-white p-6 sm:p-9" aria-labelledby="federal-heading">
+    <p className="editorial-kicker mb-3 text-xs font-bold tracking-widest text-ink-soft uppercase"><CmsText scope="components/editorial/FederalMovingResources.tsx">{es ? "Fuentes oficiales y documentos de referencia" : "Official sources & reference documents"}</CmsText></p>
+    <h2 id="federal-heading" className="font-display text-3xl font-extrabold text-brand-blue"><CmsText scope="components/editorial/FederalMovingResources.tsx">{es ? "Información federal sobre mudanzas" : "Federal moving information"}</CmsText></h2>
+    <p className="mt-4 max-w-3xl leading-relaxed text-ink-soft"><CmsText scope="components/editorial/FederalMovingResources.tsx">{es ? "Consulte la orientación y el registro actuales de FMCSA. Verifique el transportista que figura en sus propios documentos; un directorio de empresas no identifica al transportista asignado a su mudanza." : "Use FMCSA’s current consumer pages to check moving guidance and registration. Check the carrier on your own shipment paperwork; a network directory does not establish your assigned carrier."}</CmsText></p>
+    <div className="mt-7 grid gap-4 sm:grid-cols-2">{links.map(link => <CmsElement element="a" scope="components/editorial/FederalMovingResources.tsx" key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="editorial-card-link group flex items-start gap-4 rounded-2xl border border-cream-border p-5 no-underline transition hover:border-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
+      <link.icon size={23} aria-hidden className="mt-1 shrink-0 text-brand-blue" /><div className="min-w-0 flex-1"><p className="mb-2 text-xs font-semibold text-ink-soft"><CmsText scope="components/editorial/FederalMovingResources.tsx">{link.label}</CmsText></p><h3 className="font-display text-lg font-bold text-brand-blue group-hover:underline"><CmsText scope="components/editorial/FederalMovingResources.tsx">{link.title}</CmsText></h3><p className="mt-2 text-sm leading-relaxed text-ink-soft"><CmsText scope="components/editorial/FederalMovingResources.tsx">{link.text}</CmsText></p><p className="mt-3 text-xs text-ink-soft"><CmsText scope="components/editorial/FederalMovingResources.tsx">{es ? "En inglés · abre otra pestaña" : "Opens a new tab"}</CmsText></p></div><ArrowUpRight size={17} aria-hidden className="shrink-0 text-brand-blue" />
+    </CmsElement>)}</div>
+  </section>;
+}

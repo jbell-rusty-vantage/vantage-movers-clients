@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-11-12T18:14:48.827Z",
+  "reference": "MS-20261112-4223D384CF-PREVIEW-1794507284047",
+  "leadId": "6af60216ac04b2d3cb11ede1",
+  "previewDatabase": "testvantagemovers_sitepreview",
+  "previewCount": 1,
+  "productionDatabase": "vantagemovers",
+  "productionCount": 0,
+  "apiReadback": "passed",
+  "sourceCompany": "main_site",
+  "sourceCompanySite": "vantagehomemovers.com",
+  "lidPreserved": true,
+  "moveSize": "Studio",
+  "duplicate": false,
+  "postToGranot": false,
+  "previewLeadMessageCount": 0,
+  "sheetSyncEntryCount": 0,
+  "websiteAttribution": {
+    "version": 1,
+    "first_touch": {
+      "path": "/es/recursos/costos-de-mudanza",
+      "content_id": "moving-cost-guide",
+      "locale": "es",
+      "occurred_at": "2026-11-12T18:14:44.455Z",
+      "channel": "campaign",
+      "referring_host": "none",
+      "campaign": {
+        "source": "review",
+        "medium": "review",
+        "name": "preview-qualification"
+      }
+    },
+    "latest_non_direct_touch": {
+      "path": "/es/recursos/costos-de-mudanza",
+      "content_id": "moving-cost-guide",
+      "locale": "es",
+      "occurred_at": "2026-11-12T18:14:44.455Z",
+      "channel": "campaign",
+      "referring_host": "none",
+      "campaign": {
+        "source": "review",
+        "medium": "review",
+        "name": "preview-qualification"
+      }
+    },
+    "capture_page": {
+      "path": "/services/long-distance-moving",
+      "content_id": "long-distance-moving",
+      "locale": "en"
+    },
+    "design": {
+      "id": "main-site-optimization",
+      "version": "2026-11-12"
+    },
+    "received_at": "2026-11-12T18:14:45.782Z"
+  },
+  "boundary": "Exact-reference counts and one synthetic preview Lead only. Site response does not expose CRM/messaging status; no such response receipt is inferred."
+}

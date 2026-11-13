@@ -1,0 +1,32 @@
+{
+  "mode": "built-in image_gen",
+  "date": "2026-11-12",
+  "assetDirectory": "apps/main-site/public/images/editorial/still-life-20261112",
+  "provenance": "AI-generated editorial still lifes, not actual customers or employees. Original PNGs retained in Codex generated_images; project assets optimized to WebP.",
+  "prompts": [
+    {
+      "id": "inventory",
+      "prompt": "Create one premium editorial photograph, landscape 3:2, for a Vantage Movers inventory preparation guide. An overhead architectural flat lay of a beautiful simple home floor plan with small tactile wooden furniture shapes arranged room by room, an unbranded clipboard inventory sheet with only subtle illegible pencil marks, graphite pencil, muted blue measuring tape, warm oak tabletop. Art directed magazine still life, realistic materials, soft daylight, warm ivory, deep navy and small ochre accents, generous breathing room, visually compelling at small card size. No people, no faces, no hands, no vehicles, no logos, no readable text, no watermark. Not a collage or infographic."
+    },
+    {
+      "id": "estimates",
+      "prompt": "Create one premium editorial photograph, landscape 3:2, for Vantage Movers' planning guide library. Art directed magazine still life, authentic tactile materials, sophisticated warm ivory, navy and ochre color palette, natural daylight, compelling at small thumbnail size. No people, faces, hands, vehicles, logos, legible writing or watermark. No collage. Subject: two distinct cream estimate sheets side by side on a deep navy desktop, one mustard folder beneath the left sheet, one pale blue folder beneath the right, brass paper clips and a restrained magnifying glass. Sheets show faint ruled rows and checkboxes but no readable wording or prices. A carefully balanced comparison composition, top down, cool soft shadow."
+    },
+    {
+      "id": "roles",
+      "prompt": "Create one premium editorial photograph, landscape 3:2, for Vantage Movers' planning guide library. Art directed magazine still life, authentic tactile materials, sophisticated warm ivory, navy and ochre color palette, natural daylight, compelling at small thumbnail size. No people, faces, hands, vehicles, logos, legible writing or watermark. No collage. Subject: conceptual moving coordination still life. Three beautifully crafted miniature wooden houses on a matte blue work surface, a curved yellow cord linking them with two small brass location pins; an unbranded over-ear coordinator headset partially visible beside a closed ivory notebook. Three quarter camera angle, sculptural daylight, clean uncluttered photographic composition."
+    },
+    {
+      "id": "costs",
+      "prompt": "Create one premium editorial photograph, landscape 3:2, for Vantage Movers' planning guide library. Art directed magazine still life, authentic tactile materials, sophisticated warm ivory, navy and ochre color palette, natural daylight, compelling at small thumbnail size. No people, faces, hands, vehicles, logos, legible writing or watermark. No collage. Subject: close still life of a navy desktop calculator with blank display, three modest stacks of brass coins, miniature kraft moving cartons and a yellow measuring tape on warm pale stone. Strong diagonal sunlight, composed like a financial magazine cover photograph, rich materials, no fake monetary figures."
+    },
+    {
+      "id": "packing",
+      "prompt": "Create one premium editorial photograph, landscape 3:2, for Vantage Movers' planning guide library. Art directed magazine still life, authentic tactile materials, sophisticated warm ivory, navy and ochre color palette, natural daylight, compelling at small thumbnail size. No people, faces, hands, vehicles, logos, legible writing or watermark. No collage. Subject: close view inside an open corrugated moving box with beautiful ivory ceramic bowls and plates individually cushioned with crumpled kraft paper, deep blue linen, a roll of kraft paper on the side. Shot at a gentle overhead angle, realistic careful packing detail, luminous warm morning light, no human hands."
+    },
+    {
+      "id": "paperwork",
+      "prompt": "Create one premium editorial photograph, landscape 3:2, for Vantage Movers' planning guide library. Art directed magazine still life, authentic tactile materials, sophisticated warm ivory, navy and ochre color palette, natural daylight, compelling at small thumbnail size. No people, faces, hands, vehicles, logos, legible writing or watermark. No collage. Subject: an open accordion document organizer in deep navy with neat ivory dividers and small ochre blank tabs, simple house keys with a brass keyring and a black fountain pen on a light desk. A few sheets with delicate illegible gray lines, no readable text. Side-lit close-up, shallow depth of field, visual focus on orderly tabs and keys, orderly calm."
+    }
+  ]
+}

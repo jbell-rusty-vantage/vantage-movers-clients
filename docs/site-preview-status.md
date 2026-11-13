@@ -1,5 +1,9 @@
 # Site preview handoff status
 
+**Canyon preview candidate, November 13.** `agent/main-site-canyon` branches from the optimization checkpoint and uses the same CMS catalog and isolated preview API. The protected Canyon review deployment matched the optimization preview across 56 HTML routes for copy, display attributes, headings, links, media, language and noindex. Both PDF redirects, the geographic license and English and Spanish 404s passed. Canyon remains in Preview pending Owner selection. [Canyon review](https://vantage-main-site-canyon.vercel.app) · [Implementation and evidence](main-site-preview/canyon-2026-11-13/README.md)
+
+**Optimization candidate, November 12:** [Main Site milestone](main-site-preview/milestone-2026-11-12/README.md) and [review preview](https://vantage-main-site-optimization.vercel.app). Bounded server attribution/outcome reporting is now implemented and isolated-preview qualified. The October infrastructure and alternate-design checkpoints below remain historical. Production is unchanged by this milestone.
+
 Audit date: October 30, 2026 (America/New_York). This is an evidence snapshot, not an evergreen claim about branch counts.
 
 ## Branch inventory

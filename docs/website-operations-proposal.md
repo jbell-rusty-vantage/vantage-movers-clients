@@ -167,6 +167,8 @@ Target **$0 in new recurring software subscriptions at launch**, subject to curr
 
 ## 9. Delivery and operating ownership
 
+November 12 implementation checkpoint: [Main Site milestone](main-site-preview/milestone-2026-11-12/README.md) delivers isolated-preview attribution/outcome reporting and six bilingual resource candidates. This establishes engineering readiness within Stages 2–3; selecting/releasing one production design and reviewing/publishing/indexing those resources remain open. Stages 4–5 have not started under this milestone. The [subsequent resource-center and hero refinement](main-site-preview/resource-center-2026-11-12/README.md) adds article presentation, resource-type navigation, shared hero proof and composition, and the scroll call control for Owner review. It records the destination-resource expansion direction without claiming national guide coverage or publishing drafts.
+
 Indicative sequence below; dates depend on design review, access, and current implementation. Traffic determines experiment duration and SEO learning time.
 
 | Stage | Deliverables | Completion evidence |

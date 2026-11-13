@@ -1,0 +1,139 @@
+{
+  "origin": "https://vantage-main-site-optimization.vercel.app",
+  "access": "Authenticated Vercel CLI; deployment protection retained",
+  "checkedAt": "2026-11-13T02:25:24.031Z",
+  "passed": true,
+  "results": [
+    {
+      "path": "/resources",
+      "status": 200,
+      "checks": {
+        "ok": true,
+        "noindex": true,
+        "author": true,
+        "date": true,
+        "cover": true,
+        "search": true,
+        "results": true,
+        "sixCovers": true,
+        "editorial": true,
+        "federal": true,
+        "links": true
+      },
+      "passed": true
+    },
+    {
+      "path": "/es/recursos",
+      "status": 200,
+      "checks": {
+        "ok": true,
+        "noindex": true,
+        "author": true,
+        "date": true,
+        "cover": true,
+        "search": true,
+        "results": true,
+        "sixCovers": true,
+        "editorial": true,
+        "federal": true,
+        "links": true
+      },
+      "passed": true
+    },
+    {
+      "path": "/consumer-information",
+      "status": 200,
+      "checks": {
+        "ok": true,
+        "noindex": true,
+        "federal": true,
+        "links": true
+      },
+      "passed": true
+    },
+    {
+      "path": "/resources/comparing-moving-estimates",
+      "status": 200,
+      "checks": {
+        "ok": true,
+        "noindex": true,
+        "author": true,
+        "date": true,
+        "cover": true
+      },
+      "passed": true
+    },
+    {
+      "path": "/resources/before-the-inventory-call",
+      "status": 200,
+      "checks": {
+        "ok": true,
+        "noindex": true,
+        "author": true,
+        "date": true,
+        "cover": true
+      },
+      "passed": true
+    },
+    {
+      "path": "/resources/who-handles-my-move",
+      "status": 200,
+      "checks": {
+        "ok": true,
+        "noindex": true,
+        "author": true,
+        "date": true,
+        "cover": true
+      },
+      "passed": true
+    },
+    {
+      "path": "/resources/moving-cost-guide",
+      "status": 200,
+      "checks": {
+        "ok": true,
+        "noindex": true,
+        "author": true,
+        "date": true,
+        "cover": true
+      },
+      "passed": true
+    },
+    {
+      "path": "/resources/items-to-check-before-packing",
+      "status": 200,
+      "checks": {
+        "ok": true,
+        "noindex": true,
+        "author": true,
+        "date": true,
+        "cover": true
+      },
+      "passed": true
+    },
+    {
+      "path": "/resources/moving-paperwork-guide",
+      "status": 200,
+      "checks": {
+        "ok": true,
+        "noindex": true,
+        "author": true,
+        "date": true,
+        "cover": true
+      },
+      "passed": true
+    },
+    {
+      "path": "/your-rights",
+      "status": 200,
+      "contentType": "application/pdf",
+      "passed": true
+    },
+    {
+      "path": "/ready-to-move",
+      "status": 200,
+      "contentType": "application/pdf",
+      "passed": true
+    }
+  ]
+}

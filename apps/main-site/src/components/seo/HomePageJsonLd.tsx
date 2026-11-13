@@ -1,5 +1,5 @@
-import { business, faqs, quoteSection } from "@/lib/content";
-import { absoluteUrl, siteDescription, siteName, siteUrl } from "@/lib/site";
+import { business, faqs } from "@/lib/content";
+import { absoluteUrl, siteName, siteUrl } from "@/lib/site";
 import { JsonLd } from "./JsonLd";
 
 const address = {
@@ -17,18 +17,14 @@ export function HomePageJsonLd() {
   const structuredData = [
     {
       "@context": "https://schema.org",
-      "@type": "MovingCompany",
+      "@type": "Organization",
       "@id": organizationId,
       name: siteName,
       url: siteUrl,
-      description: siteDescription,
+      description: business.brokerDisclaimer,
       telephone: business.phoneDisplay,
       email: business.email,
       address,
-      areaServed: {
-        "@type": "Country",
-        name: "United States",
-      },
       identifier: [
         {
           "@type": "PropertyValue",
@@ -41,12 +37,6 @@ export function HomePageJsonLd() {
           value: business.mc,
         },
       ],
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: quoteSection.rating.value,
-        reviewCount: quoteSection.rating.reviewCount,
-      },
-      priceRange: "$$",
     },
     {
       "@context": "https://schema.org",

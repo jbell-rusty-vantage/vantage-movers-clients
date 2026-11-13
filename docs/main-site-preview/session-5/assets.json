@@ -1,0 +1,62 @@
+[
+  {
+    "name": "home-inventory",
+    "sourceFile": "exec-3690ab10-cb15-48e8-8d3c-da2abd41b9bb.png",
+    "sourceSha256": "20e6cc592251eca0a0ea9a98b40867cccef436e5ef0d7060f1da3e78df0c6049",
+    "sourceBytes": 2270397,
+    "webpBytes": 105142,
+    "width": 1440,
+    "height": 960,
+    "provenance": "ChatGPT Images generated illustration; fictional people; Owner review pending"
+  },
+  {
+    "name": "inventory-call",
+    "sourceFile": "exec-68cc1adf-f0da-4bd6-aaac-1c11af968996.png",
+    "sourceSha256": "b117da29d713be4799c7649b0d4117519612cddac0f1ccfd1d35d5d78b216a91",
+    "sourceBytes": 2469637,
+    "webpBytes": 151096,
+    "width": 1440,
+    "height": 960,
+    "provenance": "ChatGPT Images generated illustration; fictional people; Owner review pending"
+  },
+  {
+    "name": "packing-detail",
+    "sourceFile": "exec-005ac5a1-058b-4fc5-8dd5-118a91926dbc.png",
+    "sourceSha256": "ce9d9e2e7d9fa43f3656bcc68a6cbfb13547f86e5caa4b486c4963e4de04f2f7",
+    "sourceBytes": 2503180,
+    "webpBytes": 143250,
+    "width": 1440,
+    "height": 960,
+    "provenance": "ChatGPT Images generated illustration; fictional people; Owner review pending"
+  },
+  {
+    "name": "carrier-paperwork",
+    "sourceFile": "exec-113c5c5d-8dd2-462d-9528-b03f2e067eed.png",
+    "sourceSha256": "2c980c6c48a2f476bb8a00552e5211ad64e4ddae88e047f6e14b26d93cdf9e90",
+    "sourceBytes": 2486192,
+    "webpBytes": 138052,
+    "width": 1440,
+    "height": 960,
+    "provenance": "ChatGPT Images generated illustration; fictional people; Owner review pending"
+  },
+  {
+    "name": "review-estimate",
+    "sourceFile": "exec-b232d490-cafa-40ff-aa16-d6ea0688a05a.png",
+    "sourceSha256": "195bb4d7e1e649f022aab77fbfd5122f451d8ba37a89f001bc95444aecd55384",
+    "sourceBytes": 2217344,
+    "webpBytes": 100490,
+    "width": 1440,
+    "height": 960,
+    "provenance": "ChatGPT Images generated illustration; fictional people; Owner review pending"
+  },
+  {
+    "name": "office-preparation",
+    "sourceFile": "exec-6c1d1631-0f72-4fcc-922b-add159f79f46.png",
+    "sourceSha256": "da00d8cfb851e819543cf9c12a008428a3159d41218c0c800fcf5fb0cc20bd9d",
+    "sourceBytes": 2375856,
+    "webpBytes": 126644,
+    "width": 1440,
+    "height": 960,
+    "provenance": "ChatGPT Images generated illustration; fictional people; Owner review pending"
+  }
+]
