@@ -5,7 +5,7 @@ import { CmsImage as Image } from "@/components/cms/Content";
 import { CmsLink as Link } from "@/components/cms/Content";
 import { ArrowRight } from "lucide-react";
 import type { EditorialEntry } from "@/content/editorial/types";
-import { articleDetails } from "@/content/editorial/resource-center";
+import { articleDetails, editorialAuthor } from "@/content/editorial/resource-center";
 import type { ServiceId } from "@/content/editorial/services";
 import type { IconKey } from "@/lib/content";
 import { ServiceIcon } from "@/lib/icons";
@@ -40,6 +40,7 @@ export function EditorialCards({ entries }: { entries: EditorialEntry[] }) {
                 <ArrowRight size={17} className="shrink-0 self-center transition-transform motion-safe:group-hover:translate-x-0.5" aria-hidden />
               </h3>
               <p className="text-sm leading-relaxed text-ink-soft"><CmsText scope="components/editorial/EditorialCards.tsx">{entry.description}</CmsText></p>
+              {entry.kind === "resource" && <p className="mt-5 border-t border-cream-border pt-4 text-xs font-semibold text-brand-blue"><CmsText scope="content/editorial/resource-center.ts">{editorialAuthor[entry.locale]}</CmsText></p>}
             </div>
           </Link></ContentScope>
         );

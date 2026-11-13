@@ -1,4 +1,4 @@
-import { CmsElement } from "@/components/cms/Content";
+import { FederalMovingResources } from "@/components/editorial/FederalMovingResources";
 import { CmsText } from "@/components/cms/Content";
 import type { Metadata } from "next";
 import { CmsLink as Link } from "@/components/cms/Content";
@@ -13,7 +13,7 @@ import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Consumer Information",
-  description: "View the active moving carriers in the Vantage carrier network.",
+  description: "Find FMCSA moving guidance, federal registration lookup, reference PDFs and the Vantage carrier network directory.",
   alternates: {
     canonical: "/consumer-information",
   },
@@ -42,7 +42,7 @@ export default async function ConsumerInformationPage() {
             ><CmsText scope="app/(en)/consumer-information/page.tsx">{"Consumer Information"}</CmsText></h1>
           </Container>
         </section>
-        <Container className="py-10"><section className="rounded-card border border-cream-border bg-white p-6"><h2 className="mb-4 font-display text-2xl font-bold text-brand-blue"><CmsText scope="app/(en)/consumer-information/page.tsx">{"Federal moving information"}</CmsText></h2><p className="mb-4 leading-relaxed"><CmsText scope="app/(en)/consumer-information/page.tsx">{"Use FMCSA’s current consumer pages to check moving guidance and registration. Check the carrier on your own shipment paperwork; a network directory does not establish your assigned carrier."}</CmsText></p><ul className="space-y-3"><li><CmsElement element="a" scope="app/(en)/consumer-information/page.tsx" href="https://www.fmcsa.dot.gov/protect-your-move" target="_blank" rel="noopener noreferrer"><CmsText scope="app/(en)/consumer-information/page.tsx">{"FMCSA Protect Your Move (opens a new tab)"}</CmsText></CmsElement></li><li><CmsElement element="a" scope="app/(en)/consumer-information/page.tsx" href="https://www.fmcsa.dot.gov/protect-your-move/search-mover" target="_blank" rel="noopener noreferrer"><CmsText scope="app/(en)/consumer-information/page.tsx">{"Check federal mover registration (opens a new tab)"}</CmsText></CmsElement></li><li><CmsElement element="a" scope="app/(en)/consumer-information/page.tsx" href="/your-rights" target="_blank" rel="noopener noreferrer"><CmsText scope="app/(en)/consumer-information/page.tsx">{"Your Rights and Responsibilities — stored 2013 edition (PDF, new tab)"}</CmsText></CmsElement></li><li><CmsElement element="a" scope="app/(en)/consumer-information/page.tsx" href="/ready-to-move" target="_blank" rel="noopener noreferrer"><CmsText scope="app/(en)/consumer-information/page.tsx">{"Ready to Move — stored 2006 edition (PDF, new tab)"}</CmsText></CmsElement></li></ul></section></Container>
+        <Container className="py-10"><FederalMovingResources /><Link href="/resources" className="font-semibold text-brand-blue">Explore Vantage’s moving guides →</Link></Container>
         <MovingCarriersSection carriers={carriers} />
       </main>
       <SiteFooter />

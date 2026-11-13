@@ -6,6 +6,7 @@ import { ServiceFollowThrough } from "./ServiceFollowThrough";
 import { CmsImage as Image } from "@/components/cms/Content";
 import { guideLinksFor } from "@/lib/editorial-journey";
 import { articleDetails } from "@/content/editorial/resource-center";
+import { EditorialByline } from "./EditorialByline";
 import { ArticleMetadata } from "./ArticleMetadata";
 import { PricingContext } from "./PricingContext";
 import { Suspense } from "react";
@@ -45,11 +46,12 @@ export function EditorialPage({ entry }: { entry: EditorialEntry }) {
           <CmsText scope="components/editorial/EditorialPage.tsx">{entry.kind === "resource" && <div className="mb-5"><ArticleMetadata entry={entry} /></div>}</CmsText>
           <h1 className="max-w-[900px] font-display text-[clamp(30px,4vw,52px)] leading-[1.12] font-extrabold"><CmsText scope="components/editorial/EditorialPage.tsx">{entry.title}</CmsText></h1>
           <p className="mt-6 max-w-[760px] text-lg leading-relaxed"><CmsText scope="components/editorial/EditorialPage.tsx">{entry.description}</CmsText></p>
+          {entry.kind === "resource" && <EditorialByline locale={entry.locale} />}
           <div className="mt-7 flex flex-wrap gap-4"><CmsElement element="a" scope="components/editorial/EditorialPage.tsx" className="editorial-cta" href="#quote"><CmsText scope="components/editorial/EditorialPage.tsx">{es ? "Solicitar una cotización" : "Request a moving quote"}</CmsText></CmsElement><Link scope="components/editorial/EditorialPage.tsx" className="self-center text-white" href={paths.resource}><CmsText scope="components/editorial/EditorialPage.tsx">{es ? "Explorar guías" : "Explore moving guides"}</CmsText></Link></div>
         </Container>
       </section>}</CmsText>
       <Container className="py-10 sm:py-14">
-        <CmsText scope="components/editorial/EditorialPage.tsx">{entry.kind === "resource" && <figure className="mb-10"><div className="relative mx-auto aspect-[3/2] max-w-4xl overflow-hidden rounded-3xl"><Image scope="components/editorial/EditorialPage.tsx" src={articleDetails(entry).poster} alt="" fill sizes="(min-width: 1280px) 896px, 100vw" className="object-cover" /></div><figcaption className="mt-2 text-xs text-ink-soft"><CmsText scope="components/editorial/EditorialPage.tsx">{es ? "Imagen ilustrativa" : "Illustrative image"}</CmsText></figcaption></figure>}</CmsText>
+        <CmsText scope="components/editorial/EditorialPage.tsx">{entry.kind === "resource" && <figure className="mb-10"><div className="relative mx-auto aspect-[3/2] max-w-4xl overflow-hidden rounded-3xl"><Image scope="components/editorial/EditorialPage.tsx" src={articleDetails(entry).poster} alt="" fill sizes="(min-width: 1280px) 896px, 100vw" className="object-cover" /></div><figcaption className="mt-2 text-xs text-ink-soft"><CmsText scope="components/editorial/EditorialPage.tsx">{es ? "Imagen editorial generada con IA" : "AI-generated editorial illustration"}</CmsText></figcaption></figure>}</CmsText>
         <CmsText scope="components/editorial/EditorialPage.tsx">{entry.id === "long-distance-moving" && <PricingContext locale={entry.locale} />}</CmsText>
         <CmsText scope="components/editorial/EditorialPage.tsx">{entry.kind === "service" ? <ServiceDetails entry={entry} /> : <div className="grid items-start gap-10 lg:grid-cols-[1.15fr_.85fr]">
           <div className="min-w-0">
@@ -65,7 +67,7 @@ export function EditorialPage({ entry }: { entry: EditorialEntry }) {
             <p className="mt-5 text-sm leading-relaxed text-ink-soft"><CmsText scope="components/editorial/EditorialPage.tsx">{es ? "Vantage es un intermediario de mudanzas interestatales. El transportista asignado realiza la recogida, el transporte y la entrega. Solicitar una cotización no reserva un transportista ni una fecha." : "Vantage is an interstate moving broker. The assigned motor carrier performs pickup, transport and delivery. A quote request does not reserve a carrier or a date."}</CmsText></p>
           </aside>
         </div>}</CmsText>
-        <CmsText scope="components/editorial/EditorialPage.tsx">{entry.worksheet && <section className="worksheet mb-12">
+        <CmsText scope="components/editorial/EditorialPage.tsx">{entry.worksheet && <section id="worksheet" className="worksheet mb-12 scroll-mt-36">
           <div className="mb-5 flex flex-wrap items-center justify-between gap-3"><h2 className="font-display text-2xl font-bold text-brand-blue"><CmsText scope="components/editorial/EditorialPage.tsx">{entry.worksheet.rows.length ? (es ? "Ejemplo de comparación" : "Worked comparison") : entry.navLabel}</CmsText></h2><PrintButton locale={entry.locale} /></div>
           <CmsText scope="components/editorial/EditorialPage.tsx">{entry.worksheet.rows.length > 0 && <div className="overflow-x-auto"><table className="w-full border-collapse text-left text-sm"><caption className="mb-4 text-left leading-relaxed"><CmsText scope="components/editorial/EditorialPage.tsx">{entry.worksheet.caption}</CmsText></caption><thead><tr><CmsText scope="components/editorial/EditorialPage.tsx">{entry.worksheet.columns.map(c => <th key={c} scope="col" className="border border-cream-border bg-cream p-4"><CmsText scope="components/editorial/EditorialPage.tsx">{c}</CmsText></th>)}</CmsText></tr></thead><tbody><CmsText scope="components/editorial/EditorialPage.tsx">{entry.worksheet.rows.map(r => <tr key={r.label}><th scope="row" className="border border-cream-border p-4"><CmsText scope="components/editorial/EditorialPage.tsx">{r.label}</CmsText></th><td className="border border-cream-border p-4 leading-relaxed"><CmsText scope="components/editorial/EditorialPage.tsx">{r.a}</CmsText></td><td className="border border-cream-border p-4 leading-relaxed"><CmsText scope="components/editorial/EditorialPage.tsx">{r.b}</CmsText></td></tr>)}</CmsText></tbody></table></div>}</CmsText>
           <p className="my-6 leading-relaxed"><CmsText scope="components/editorial/EditorialPage.tsx">{entry.worksheet.conclusion}</CmsText></p>

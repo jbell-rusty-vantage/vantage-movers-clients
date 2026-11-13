@@ -22128,5 +22128,1145 @@
     "defaultValue": "Explore all locations →",
     "sourceFile": "components/sections/CoverageSection.tsx",
     "sourceLine": 17
+  },
+  {
+    "key": "text.617f55ee261274a2",
+    "section": "editorial / ArticleMetadata",
+    "label": "Copy · Borrador actualizado:",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Borrador actualizado:",
+    "sourceFile": "components/editorial/ArticleMetadata.tsx",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.0fea4ffb69f14202",
+    "section": "editorial / ArticleMetadata",
+    "label": "Copy · Draft updated:",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Draft updated:",
+    "sourceFile": "components/editorial/ArticleMetadata.tsx",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.d55b11554fbefd4e",
+    "section": "editorial / ArticleMetadata",
+    "label": "Copy · Actualizado:",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Actualizado:",
+    "sourceFile": "components/editorial/ArticleMetadata.tsx",
+    "sourceLine": 12
+  },
+  {
+    "key": "text.0da23fc2dd669938",
+    "section": "editorial / ArticleMetadata",
+    "label": "Copy · Updated:",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Updated:",
+    "sourceFile": "components/editorial/ArticleMetadata.tsx",
+    "sourceLine": 12
+  },
+  {
+    "key": "text.29be19c002922a57",
+    "section": "editorial / DirectoryPage",
+    "label": "Copy · Guías prácticas, hojas imprimibles y fuentes oficiales para planificar su m",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Guías prácticas, hojas imprimibles y fuentes oficiales para planificar su mudanza con preguntas más claras.",
+    "sourceFile": "components/editorial/DirectoryPage.tsx",
+    "sourceLine": 25
+  },
+  {
+    "key": "text.8528d31ecbaf7f34",
+    "section": "editorial / DirectoryPage",
+    "label": "Copy · Practical guides, printable worksheets and official sources to help you pla",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Practical guides, printable worksheets and official sources to help you plan your move and ask the right questions.",
+    "sourceFile": "components/editorial/DirectoryPage.tsx",
+    "sourceLine": 25
+  },
+  {
+    "key": "text.6d1eaa2ccd8b5d9b",
+    "section": "editorial / DirectoryPage / directoryTitles",
+    "label": "resource · Good information. A better move.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Good information. A better move.",
+    "sourceFile": "components/editorial/DirectoryPage.tsx",
+    "sourceLine": 13
+  },
+  {
+    "key": "text.3f474bf375a6f3f4",
+    "section": "editorial / DirectoryPage / directoryTitles",
+    "label": "location · Explore all 50 states",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Explore all 50 states",
+    "sourceFile": "components/editorial/DirectoryPage.tsx",
+    "sourceLine": 13
+  },
+  {
+    "key": "text.bb91d31a24000f4a",
+    "section": "editorial / DirectoryPage / directoryTitles",
+    "label": "resource · Información clara. Una mejor mudanza.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Información clara. Una mejor mudanza.",
+    "sourceFile": "components/editorial/DirectoryPage.tsx",
+    "sourceLine": 14
+  },
+  {
+    "key": "text.26bcefe218e3e13c",
+    "section": "editorial / DirectoryPage / directoryTitles",
+    "label": "location · Explore los 50 estados",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Explore los 50 estados",
+    "sourceFile": "components/editorial/DirectoryPage.tsx",
+    "sourceLine": 14
+  },
+  {
+    "key": "text.32a988082588ef14",
+    "section": "editorial / EditorialByline",
+    "label": "Copy · Preparado por",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Preparado por",
+    "sourceFile": "components/editorial/EditorialByline.tsx",
+    "sourceLine": 8
+  },
+  {
+    "key": "text.31cf4057ed00f090",
+    "section": "editorial / EditorialByline",
+    "label": "Copy · Prepared by",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Prepared by",
+    "sourceFile": "components/editorial/EditorialByline.tsx",
+    "sourceLine": 8
+  },
+  {
+    "key": "text.bdf1338611969e8c",
+    "section": "editorial / EditorialPage",
+    "label": "Copy · Imagen editorial generada con IA",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Imagen editorial generada con IA",
+    "sourceFile": "components/editorial/EditorialPage.tsx",
+    "sourceLine": 54
+  },
+  {
+    "key": "text.8dab94a1fa1fb60b",
+    "section": "editorial / EditorialPage",
+    "label": "Copy · AI-generated editorial illustration",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "AI-generated editorial illustration",
+    "sourceFile": "components/editorial/EditorialPage.tsx",
+    "sourceLine": 54
+  },
+  {
+    "key": "text.55265fa141f624e7",
+    "section": "editorial / FederalMovingResources",
+    "label": "title · FMCSA · Protect Your Move",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "FMCSA · Protect Your Move",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.9a2388e78881baf6",
+    "section": "editorial / FederalMovingResources",
+    "label": "label · Orientación oficial actual",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Orientación oficial actual",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.03df777b29c325d3",
+    "section": "editorial / FederalMovingResources",
+    "label": "label · Current official guidance",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Current official guidance",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.0b6b69e53bd72c53",
+    "section": "editorial / FederalMovingResources",
+    "label": "text · Consulte la orientación de FMCSA antes de planificar y contratar su mudanza",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Consulte la orientación de FMCSA antes de planificar y contratar su mudanza.",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.575f0200e61a5b68",
+    "section": "editorial / FederalMovingResources",
+    "label": "text · Start with FMCSA’s consumer guidance when planning and arranging your move.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Start with FMCSA’s consumer guidance when planning and arranging your move.",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.b2bccfca60615798",
+    "section": "editorial / FederalMovingResources",
+    "label": "title · Verificar el registro federal",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Verificar el registro federal",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 10
+  },
+  {
+    "key": "text.34a7030c718a8d5a",
+    "section": "editorial / FederalMovingResources",
+    "label": "title · Check federal mover registration",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Check federal mover registration",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 10
+  },
+  {
+    "key": "text.2eb841a4fbd4315c",
+    "section": "editorial / FederalMovingResources",
+    "label": "label · Consulta oficial",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Consulta oficial",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 10
+  },
+  {
+    "key": "text.61440894a5d38ac7",
+    "section": "editorial / FederalMovingResources",
+    "label": "label · Official lookup",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Official lookup",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 10
+  },
+  {
+    "key": "text.1e079a4824bb2eb1",
+    "section": "editorial / FederalMovingResources",
+    "label": "text · Busque el nombre legal y el USDOT del transportista que aparece en sus docu",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Busque el nombre legal y el USDOT del transportista que aparece en sus documentos.",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 10
+  },
+  {
+    "key": "text.66eccf803a47a470",
+    "section": "editorial / FederalMovingResources",
+    "label": "text · Look up the legal name and USDOT number of the carrier on your shipment pap",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Look up the legal name and USDOT number of the carrier on your shipment paperwork.",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 10
+  },
+  {
+    "key": "text.f87cdce4a1d8fc7f",
+    "section": "editorial / FederalMovingResources",
+    "label": "title · Your Rights and Responsibilities",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Your Rights and Responsibilities",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.52f5176a0cd9fe27",
+    "section": "editorial / FederalMovingResources",
+    "label": "label · PDF · edición almacenada de 2013",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "PDF · edición almacenada de 2013",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.bc883e79e183cd11",
+    "section": "editorial / FederalMovingResources",
+    "label": "label · PDF · stored 2013 edition",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "PDF · stored 2013 edition",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.3c413eaa899386ef",
+    "section": "editorial / FederalMovingResources",
+    "label": "text · Copia histórica en inglés. Para orientación actual, consulte las páginas de",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Copia histórica en inglés. Para orientación actual, consulte las páginas de FMCSA.",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.de05cbdb190a6123",
+    "section": "editorial / FederalMovingResources",
+    "label": "text · An archived reference copy. Use FMCSA’s current pages for up-to-date guidan",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "An archived reference copy. Use FMCSA’s current pages for up-to-date guidance.",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.5842746031370d43",
+    "section": "editorial / FederalMovingResources",
+    "label": "title · Ready to Move",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Ready to Move",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 12
+  },
+  {
+    "key": "text.6597525594a73175",
+    "section": "editorial / FederalMovingResources",
+    "label": "label · PDF · edición almacenada de 2006",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "PDF · edición almacenada de 2006",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 12
+  },
+  {
+    "key": "text.01703fe3c55e5b91",
+    "section": "editorial / FederalMovingResources",
+    "label": "label · PDF · stored 2006 edition",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "PDF · stored 2006 edition",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 12
+  },
+  {
+    "key": "text.b96e40b2f82588d0",
+    "section": "editorial / FederalMovingResources",
+    "label": "text · Folleto histórico en inglés. Consulte también los recursos actuales de FMCS",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Folleto histórico en inglés. Consulte también los recursos actuales de FMCSA.",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 12
+  },
+  {
+    "key": "text.1d4d7217d77abedd",
+    "section": "editorial / FederalMovingResources",
+    "label": "text · An archived preparation booklet. Read alongside FMCSA’s current consumer re",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "An archived preparation booklet. Read alongside FMCSA’s current consumer resources.",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 12
+  },
+  {
+    "key": "text.514bb608482ef556",
+    "section": "editorial / FederalMovingResources",
+    "label": "Copy · Fuentes oficiales y documentos de referencia",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Fuentes oficiales y documentos de referencia",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.5573a8b9b50208d9",
+    "section": "editorial / FederalMovingResources",
+    "label": "Copy · Official sources & reference documents",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Official sources & reference documents",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.e0608ffa386874d4",
+    "section": "editorial / FederalMovingResources",
+    "label": "Copy · Información federal sobre mudanzas",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Información federal sobre mudanzas",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 16
+  },
+  {
+    "key": "text.23c192c9ee84c228",
+    "section": "editorial / FederalMovingResources",
+    "label": "Copy · Federal moving information",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Federal moving information",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 16
+  },
+  {
+    "key": "text.fd6d86ab40eaa2e1",
+    "section": "editorial / FederalMovingResources",
+    "label": "Copy · Consulte la orientación y el registro actuales de FMCSA. Verifique el trans",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Consulte la orientación y el registro actuales de FMCSA. Verifique el transportista que figura en sus propios documentos; un directorio de empresas no identifica al transportista asignado a su mudanza.",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 17
+  },
+  {
+    "key": "text.7af617e56dbbc71c",
+    "section": "editorial / FederalMovingResources",
+    "label": "Copy · Use FMCSA’s current consumer pages to check moving guidance and registratio",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Use FMCSA’s current consumer pages to check moving guidance and registration. Check the carrier on your own shipment paperwork; a network directory does not establish your assigned carrier.",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 17
+  },
+  {
+    "key": "text.469d7cf287afc357",
+    "section": "editorial / FederalMovingResources",
+    "label": "Copy · En inglés · abre otra pestaña",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "En inglés · abre otra pestaña",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 19
+  },
+  {
+    "key": "text.c37a1c70bab4c9ec",
+    "section": "editorial / FederalMovingResources",
+    "label": "Copy · Opens a new tab",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Opens a new tab",
+    "sourceFile": "components/editorial/FederalMovingResources.tsx",
+    "sourceLine": 19
+  },
+  {
+    "key": "image.a92ad956dc289d70",
+    "section": "editorial / resource-center",
+    "label": "inventory.webp",
+    "locale": "shared",
+    "kind": "image",
+    "defaultValue": "/images/editorial/still-life-20261112/inventory.webp",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 1
+  },
+  {
+    "key": "image.a5e94d27b48ee2d1",
+    "section": "editorial / resource-center",
+    "label": "estimates.webp",
+    "locale": "shared",
+    "kind": "image",
+    "defaultValue": "/images/editorial/still-life-20261112/estimates.webp",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 1
+  },
+  {
+    "key": "image.782694f1f705402c",
+    "section": "editorial / resource-center",
+    "label": "roles.webp",
+    "locale": "shared",
+    "kind": "image",
+    "defaultValue": "/images/editorial/still-life-20261112/roles.webp",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 1
+  },
+  {
+    "key": "image.56541c997eada843",
+    "section": "editorial / resource-center",
+    "label": "costs.webp",
+    "locale": "shared",
+    "kind": "image",
+    "defaultValue": "/images/editorial/still-life-20261112/costs.webp",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 1
+  },
+  {
+    "key": "image.a8dc092f65c7c6a8",
+    "section": "editorial / resource-center",
+    "label": "packing.webp",
+    "locale": "shared",
+    "kind": "image",
+    "defaultValue": "/images/editorial/still-life-20261112/packing.webp",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 1
+  },
+  {
+    "key": "image.a275bf5fa8ad6f69",
+    "section": "editorial / resource-center",
+    "label": "paperwork.webp",
+    "locale": "shared",
+    "kind": "image",
+    "defaultValue": "/images/editorial/still-life-20261112/paperwork.webp",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 1
+  },
+  {
+    "key": "text.008e3e042fa691f7",
+    "section": "editorial / resource-center / editorialAuthor",
+    "label": "en · Vantage Movers Editorial Team",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Vantage Movers Editorial Team",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 3
+  },
+  {
+    "key": "text.1e562eb537df8a80",
+    "section": "editorial / resource-center / editorialAuthor",
+    "label": "es · Equipo editorial de Vantage Movers",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Equipo editorial de Vantage Movers",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 3
+  },
+  {
+    "key": "text.37b0d1696cce658f",
+    "section": "editorial / resource-center / resourceTopics",
+    "label": "en · All articles",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "All articles",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 5
+  },
+  {
+    "key": "text.9b1725111f4df279",
+    "section": "editorial / resource-center / resourceTopics",
+    "label": "es · Todos los artículos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Todos los artículos",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 5
+  },
+  {
+    "key": "text.fe8f9495a3979e8f",
+    "section": "editorial / resource-center / resourceTopics",
+    "label": "en · Moving tips",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Moving tips",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 6
+  },
+  {
+    "key": "text.d10e3071be61e11e",
+    "section": "editorial / resource-center / resourceTopics",
+    "label": "es · Consejos de mudanza",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Consejos de mudanza",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 6
+  },
+  {
+    "key": "text.28138579109c9fd5",
+    "section": "editorial / resource-center / resourceTopics",
+    "label": "en · Cost & pricing",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Cost & pricing",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.3b0ffb67d367fea6",
+    "section": "editorial / resource-center / resourceTopics",
+    "label": "es · Costos y presupuestos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Costos y presupuestos",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.8d5500e768ba8cc5",
+    "section": "editorial / resource-center / resourceTopics",
+    "label": "en · Packing & preparation",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Packing & preparation",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 8
+  },
+  {
+    "key": "text.391f79a0e1aab3a9",
+    "section": "editorial / resource-center / resourceTopics",
+    "label": "es · Embalaje y preparación",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Embalaje y preparación",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 8
+  },
+  {
+    "key": "text.7d0bfcaf6a1a221c",
+    "section": "editorial / resource-center / resourceTopics",
+    "label": "en · Paperwork & rights",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Paperwork & rights",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.6ade7eb190a6beb0",
+    "section": "editorial / resource-center / resourceTopics",
+    "label": "es · Documentos y derechos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Documentos y derechos",
+    "sourceFile": "content/editorial/resource-center.ts",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.f70b7347aa7d615a",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Antes de reservar",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Antes de reservar",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 25
+  },
+  {
+    "key": "text.bf1f469f1220df36",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Before you book",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Before you book",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 25
+  },
+  {
+    "key": "text.9ffc84ff4abd6b52",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Leer la guía y usar la hoja",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Leer la guía y usar la hoja",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 25
+  },
+  {
+    "key": "text.a76f77397ae6c8da",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Read the guide & use the worksheet",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Read the guide & use the worksheet",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 25
+  },
+  {
+    "key": "text.0dc5ee4a3226ef98",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Un plan más claro",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Un plan más claro",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 28
+  },
+  {
+    "key": "text.1505c85fd5134da1",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · A clearer plan",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "A clearer plan",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 28
+  },
+  {
+    "key": "text.a20a323a1803aa60",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Tres preguntas para empezar",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Tres preguntas para empezar",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 28
+  },
+  {
+    "key": "text.74fcfa4cc485e393",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Three questions to start with",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Three questions to start with",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 28
+  },
+  {
+    "key": "text.14925c10fcc5bd76",
+    "section": "editorial / ResourceCenter",
+    "label": "label · ¿Qué cambia el costo?",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "¿Qué cambia el costo?",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 29
+  },
+  {
+    "key": "text.4a150542dfeeeea7",
+    "section": "editorial / ResourceCenter",
+    "label": "label · What changes the cost?",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "What changes the cost?",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 29
+  },
+  {
+    "key": "text.78d0ec7a224f0202",
+    "section": "editorial / ResourceCenter",
+    "label": "label · ¿Qué debo revisar antes de embalar?",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "¿Qué debo revisar antes de embalar?",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 30
+  },
+  {
+    "key": "text.50c74d9308949108",
+    "section": "editorial / ResourceCenter",
+    "label": "label · What should I check before packing?",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "What should I check before packing?",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 30
+  },
+  {
+    "key": "text.d8af52b3aaf1912d",
+    "section": "editorial / ResourceCenter",
+    "label": "label · ¿Qué documentos debo guardar?",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "¿Qué documentos debo guardar?",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 31
+  },
+  {
+    "key": "text.62b3ff8070349a08",
+    "section": "editorial / ResourceCenter",
+    "label": "label · Which documents should I keep?",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Which documents should I keep?",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 31
+  },
+  {
+    "key": "text.959e3faec31f49cc",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Del artículo a la acción. Abra una guía y use «Imprimir hoja de trabajo» pa",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Del artículo a la acción. Abra una guía y use «Imprimir hoja de trabajo» para imprimirla o guardarla como PDF desde su navegador.",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 33
+  },
+  {
+    "key": "text.4c3e8598b3e5d93e",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Put the guidance to work. Open a guide and choose “Print worksheet” to prin",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Put the guidance to work. Open a guide and choose “Print worksheet” to print it or save it as a PDF from your browser.",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 33
+  },
+  {
+    "key": "text.0faf99a29bc036f1",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Hoja imprimible",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Hoja imprimible",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 33
+  },
+  {
+    "key": "text.baa28f6af8fec704",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Printable worksheet",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Printable worksheet",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 33
+  },
+  {
+    "key": "text.a36aa0480387216e",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Contactos de transportistas (inglés) →",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Contactos de transportistas (inglés) →",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 35
+  },
+  {
+    "key": "text.f207b4c035637420",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Carrier contacts →",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Carrier contacts →",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 35
+  },
+  {
+    "key": "text.7c40c55fd9d58c55",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Información al consumidor (inglés) →",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Información al consumidor (inglés) →",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 35
+  },
+  {
+    "key": "text.0477002004fc7a12",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Consumer information →",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Consumer information →",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 35
+  },
+  {
+    "key": "text.42c59906ddcc7e9e",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · USA.gov · Protección al consumidor (inglés, nueva pestaña) ↗",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "USA.gov · Protección al consumidor (inglés, nueva pestaña) ↗",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 35
+  },
+  {
+    "key": "text.53e9f00ded9dd09d",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · USA.gov · State consumer protection (new tab) ↗",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "USA.gov · State consumer protection (new tab) ↗",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 35
+  },
+  {
+    "key": "text.f70cad7b5d7fc6d6",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Quién prepara estas guías",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Quién prepara estas guías",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 36
+  },
+  {
+    "key": "text.795aa7194a12c629",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Behind the guides",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Behind the guides",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 36
+  },
+  {
+    "key": "text.21818ae557727ae5",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · La biblioteca editorial está dirigida por el propietario de Vantage Movers.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "La biblioteca editorial está dirigida por el propietario de Vantage Movers. Preparamos guías prácticas para ayudarle a organizar su inventario, comparar documentos y hacer preguntas más claras antes de una mudanza interestatal.",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 36
+  },
+  {
+    "key": "text.3eb55c76e2550514",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Our editorial library is led by the owner of Vantage Movers. We prepare pra",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Our editorial library is led by the owner of Vantage Movers. We prepare practical guides to help you organize your inventory, compare paperwork and ask clearer questions before an interstate move.",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 36
+  },
+  {
+    "key": "text.fdb49e62d470638b",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Cada guía reúne sus fuentes para que pueda consultarlas directamente. Las f",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Cada guía reúne sus fuentes para que pueda consultarlas directamente. Las fechas distinguen la publicación de las revisiones de borradores. Las condiciones escritas de su mudanza y la orientación oficial actual deben guiar sus decisiones.",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 36
+  },
+  {
+    "key": "text.b678c45bebed9dae",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Each guide links to its sources so you can check them directly. Dates disti",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Each guide links to its sources so you can check them directly. Dates distinguish publication from draft revisions. Your written shipment terms and current official guidance should inform your decisions.",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 36
+  },
+  {
+    "key": "text.9c48192d25ce60df",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Sugerir un tema o una corrección →",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Sugerir un tema o una corrección →",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 36
+  },
+  {
+    "key": "text.4545db1ee89a0e5c",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Suggest a topic or correction →",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Suggest a topic or correction →",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 36
+  },
+  {
+    "key": "text.7f5d8e84049a915b",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · La biblioteca",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "La biblioteca",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 19
+  },
+  {
+    "key": "text.dd3cb07628e60866",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · The reading room",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "The reading room",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 19
+  },
+  {
+    "key": "text.b998fb385e3233eb",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Encuentre su próximo paso",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Encuentre su próximo paso",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 20
+  },
+  {
+    "key": "text.7b593cf86352d3eb",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Find your next step",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Find your next step",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 20
+  },
+  {
+    "key": "text.20766431e6c6789e",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Buscar artículos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Buscar artículos",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 21
+  },
+  {
+    "key": "text.6d5e62a753546a4c",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Search articles",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Search articles",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 21
+  },
+  {
+    "key": "text.b6710a5d422d40eb",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Inventario, costos, documentos…",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Inventario, costos, documentos…",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 22
+  },
+  {
+    "key": "text.0f4bfd0deeb1d9cb",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Inventory, costs, paperwork…",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Inventory, costs, paperwork…",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 22
+  },
+  {
+    "key": "text.c6a89815b7264f9c",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Filtrar artículos por tema",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Filtrar artículos por tema",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 25
+  },
+  {
+    "key": "text.32555f0be2c4605b",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Filter articles by topic",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Filter articles by topic",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 25
+  },
+  {
+    "key": "text.f08112d38981c0d4",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · {{0}} de {{1}} artículos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "{{0}} de {{1}} artículos",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 29
+  },
+  {
+    "key": "text.f7ce17c51562d13a",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · {{0}} of {{1}} articles",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "{{0}} of {{1}} articles",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 29
+  },
+  {
+    "key": "text.49bcd8d595d43a3b",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Borrar filtros",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Borrar filtros",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 30
+  },
+  {
+    "key": "text.a149a8314d7b1cdf",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Clear filters",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Clear filters",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 30
+  },
+  {
+    "key": "text.0845b10386a451b1",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · No encontramos artículos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "No encontramos artículos",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 32
+  },
+  {
+    "key": "text.5c847ec174b55f9e",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · No articles found",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "No articles found",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 32
+  },
+  {
+    "key": "text.4f4e41d86dd069a8",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Pruebe otra palabra o borre los filtros para ver todas las guías.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Pruebe otra palabra o borre los filtros para ver todas las guías.",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 32
+  },
+  {
+    "key": "text.596cd160c280b6f8",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Try another keyword or clear the filters to see every guide.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Try another keyword or clear the filters to see every guide.",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 32
+  },
+  {
+    "key": "text.b65866780b1b55a2",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Ver todos los artículos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Ver todos los artículos",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 32
+  },
+  {
+    "key": "text.6370d8a67ff217bb",
+    "section": "editorial / ResourceLibrary",
+    "label": "Copy · Show all articles",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Show all articles",
+    "sourceFile": "components/editorial/ResourceLibrary.tsx",
+    "sourceLine": 32
+  },
+  {
+    "key": "text.4bc128ede7ea7a54",
+    "section": "editorial / ResourceCenter",
+    "label": "Copy · Del artículo a la acción. Abra una guía y use «Imprimir la hoja» para impri",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Del artículo a la acción. Abra una guía y use «Imprimir la hoja» para imprimirla o guardarla como PDF desde su navegador.",
+    "sourceFile": "components/editorial/ResourceCenter.tsx",
+    "sourceLine": 33
   }
 ]

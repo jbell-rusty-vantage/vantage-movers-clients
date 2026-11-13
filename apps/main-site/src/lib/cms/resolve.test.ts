@@ -16,6 +16,16 @@ const fields: ContentField[] = [
 ];
 
 describe("preview content rendering", () => {
+  it("resolves the new resource cover library and bilingual editorial identity", () => {
+    const resourceSource = "content/editorial/resource-center.ts";
+    const posters = actualCatalog.filter(field => field.kind === "image" && field.defaultValue.includes("/still-life-20261112/"));
+    expect(posters).toHaveLength(6);
+    const author = actualCatalog.find(field => field.sourceFile === resourceSource && field.defaultValue === "Vantage Movers Editorial Team")!;
+    const snapshot = contentBindings(actualCatalog, { [posters[0].key]: posters[1].defaultValue, [author.key]: "Vantage editorial" });
+    expect(resolveContent(posters[0].defaultValue, snapshot.values, "components/editorial/EditorialCards.tsx", "en", "image", snapshot.fields)).toBe(posters[1].defaultValue);
+    expect(resolveContent(author.defaultValue, snapshot.values, resourceSource, "en", "text", snapshot.fields)).toBe("Vantage editorial");
+    expect(resolveContent("Equipo editorial de Vantage Movers", snapshot.values, resourceSource, "es", "text", snapshot.fields)).toBe("Equipo editorial de Vantage Movers");
+  });
   it("binds active bilingual navigation without borrowing quote-form labels", () => {
     const source = "components/layout/BrowseNavigation.tsx|lib/publication.ts|components/interactive/ServicesDropdown.tsx";
     const faq = actualCatalog.find(field => field.sourceFile === "lib/publication.ts" && field.defaultValue === "FAQ")!;

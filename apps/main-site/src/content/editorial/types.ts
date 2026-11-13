@@ -36,6 +36,8 @@ export interface EditorialEntry {
   };
   // Set only after the locale has been approved for publication.
   publishedAt?: string;
+  // A material content revision, independent of publication approval.
+  updatedAt?: string;
   worksheet?: EditorialWorksheet;
   geography?: import("./geography-types").GeographyContent;
 }
