@@ -1,0 +1,510 @@
+{
+  "origin": "https://vantage-movers-clients-main-site-lfohjsb75-vantage-4d3db9ef.vercel.app",
+  "pages": 56,
+  "results": [
+    {
+      "path": "/",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": false,
+      "streamedHomepageOrderOnly": true,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 2
+    },
+    {
+      "path": "/accessibility",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/cancellation",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/carrier-contacts",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/consumer-information",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/contact",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/es",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/contacto",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/es/destinos",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/es/destinos/florida",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/destinos/wisconsin",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/destinos/wisconsin/madison",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/recursos",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/recursos/comparar-presupuestos",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/recursos/costos-de-mudanza",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/recursos/documentos-de-mudanza",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/recursos/preparar-inventario",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/rutas",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/es/rutas/florida-a-carolina-del-norte",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/servicios",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/servicios/mudanzas-militares",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/servicios/mudanzas-residenciales",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/servicios/servicios-de-embalaje",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/es/servicios/transporte-de-autos",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/locations",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/locations/florida-movers",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/locations/wisconsin-movers",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/locations/wisconsin-movers/madison",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/moving-routes",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/moving-routes/florida-to-north-carolina",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/privacy",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/resources",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/resources/before-the-inventory-call",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/resources/comparing-moving-estimates",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/resources/items-to-check-before-packing",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/resources/moving-cost-guide",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/resources/moving-paperwork-guide",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/resources/who-handles-my-move",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/services",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/services/auto-transport",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/services/corporate-office-moving",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/services/long-distance-moving",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/services/military-moving",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/services/packing-services",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/services/residential-moving",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/services/senior-moving",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/services/storage-options",
+      "textEqual": false,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 1
+    },
+    {
+      "path": "/sms-privacy",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/sms-terms",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    },
+    {
+      "path": "/terms",
+      "textEqual": true,
+      "existingCopyPreserved": true,
+      "textOrderAfterRemovingServerFormsEqual": true,
+      "streamedHomepageOrderOnly": false,
+      "imagesEqual": true,
+      "serverRenderedQuoteFormsAdded": 0
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 "use client";
+import { CmsElement, CmsText } from "@/components/cms/Content";
+
 
 import { useEffect, useMemo, useState } from "react";
 import { cn } from "@vantage/utils";
@@ -42,11 +44,11 @@ export function RollingNumber({ fallback, min, max, suffix = "", className }: Ro
   const display = value === null ? fallback : `${FORMATTER.format(value)}${suffix}`;
 
   return (
-    <span
+    <CmsElement element="span" scope="components/ui/RollingNumber.tsx"
       className={cn("inline-block tabular-nums", className)}
       aria-label={display}
     >
-      {display}
-    </span>
+      <CmsText scope="components/ui/RollingNumber.tsx">{display}</CmsText>
+    </CmsElement>
   );
 }

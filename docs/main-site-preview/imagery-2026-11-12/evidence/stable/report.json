@@ -1,0 +1,96 @@
+{
+  "base": "https://vantage-main-site-optimization.vercel.app",
+  "checks": [
+    {
+      "ok": true,
+      "name": "Review route responds",
+      "path": "/"
+    },
+    {
+      "ok": true,
+      "name": "Preview stays noindex",
+      "path": "/"
+    },
+    {
+      "ok": true,
+      "name": "Readable phone form capture",
+      "path": "/"
+    },
+    {
+      "ok": true,
+      "name": "Review route responds",
+      "path": "/es"
+    },
+    {
+      "ok": true,
+      "name": "Preview stays noindex",
+      "path": "/es"
+    },
+    {
+      "ok": true,
+      "name": "Readable phone form capture",
+      "path": "/es"
+    },
+    {
+      "ok": true,
+      "name": "Review route responds",
+      "path": "/resources"
+    },
+    {
+      "ok": true,
+      "name": "Preview stays noindex",
+      "path": "/resources"
+    },
+    {
+      "ok": true,
+      "name": "Six photographic resource previews",
+      "path": "/resources"
+    },
+    {
+      "ok": true,
+      "name": "Review route responds",
+      "path": "/es/recursos"
+    },
+    {
+      "ok": true,
+      "name": "Preview stays noindex",
+      "path": "/es/recursos"
+    },
+    {
+      "ok": true,
+      "name": "Six photographic resource previews",
+      "path": "/es/recursos"
+    },
+    {
+      "ok": true,
+      "name": "Review route responds",
+      "path": "/services/auto-transport"
+    },
+    {
+      "ok": true,
+      "name": "Preview stays noindex",
+      "path": "/services/auto-transport"
+    },
+    {
+      "ok": true,
+      "name": "Passenger car hero",
+      "path": "/services/auto-transport"
+    },
+    {
+      "ok": true,
+      "name": "Review route responds",
+      "path": "/es/servicios/transporte-de-autos"
+    },
+    {
+      "ok": true,
+      "name": "Preview stays noindex",
+      "path": "/es/servicios/transporte-de-autos"
+    },
+    {
+      "ok": true,
+      "name": "Passenger car hero",
+      "path": "/es/servicios/transporte-de-autos"
+    }
+  ],
+  "failures": []
+}

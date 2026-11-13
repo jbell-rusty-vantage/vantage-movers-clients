@@ -12,6 +12,7 @@ node_modules
 
 # testing
 /coverage
+.firecrawl/
 
 # next.js (monorepo)
 **/.next/
@@ -25,6 +26,7 @@ node_modules
 .turbo
 
 # misc
+.firecrawl/
 .DS_Store
 *.pem
 

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "missing API authentication rejected",
+    "unsigned and non-Owner writes inaccessible",
+    "deployed edit persists and stale write is refused",
+    "deployed upload, image assignment and binary retrieval",
+    "published rating threshold and individual exclusion applied",
+    "unsupported image rejected",
+    "restored initial values and testimonial policy after proof"
+  ],
+  "fields": 2161,
+  "initialRevision": 15,
+  "finalRevision": 19
+}

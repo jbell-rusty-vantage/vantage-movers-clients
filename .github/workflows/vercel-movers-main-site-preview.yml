@@ -66,8 +66,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Main Site lint
+        run: pnpm --filter @vantage/main-site lint
+
       - name: Typecheck
         run: pnpm turbo typecheck --filter=@vantage/main-site
+
+      - name: Main Site contract and publication checks
+        run: pnpm --filter @vantage/main-site exec vitest run --config vitest.unit.config.mts
 
       - name: Pull Vercel preview environment
         run: >-

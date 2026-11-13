@@ -1,0 +1,140 @@
+{
+  "checkedAt": "2026-11-12T18:14:48.832Z",
+  "site": "https://vantage-movers-clients-main-site-4oxm9wd0i-vantage-4d3db9ef.vercel.app",
+  "sourceSha": "73b4d7c7494e3f43cc006b2e88137596860ef0b1",
+  "anonymousProtectionStatus": 302,
+  "noindex": true,
+  "uiQuotePostCount": 1,
+  "quoteHttpStatus": 200,
+  "leadCaptured": true,
+  "reference": "MS-20261112-4223D384CF-PREVIEW-1794507284047",
+  "consentSubmitted": false,
+  "placesConfirmed": true,
+  "pageErrors": [],
+  "diagnosticEvents": [
+    {
+      "name": "form_step_viewed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:1"
+      }
+    },
+    {
+      "name": "site_lead_intent",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "form_started",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "calendar_or_date_picker_opened",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "form_step_completed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:1"
+      }
+    },
+    {
+      "name": "form_step_viewed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:2"
+      }
+    },
+    {
+      "name": "form_step_completed",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "step:2"
+      }
+    },
+    {
+      "name": "form_submit_attempted",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    },
+    {
+      "name": "form_submit_success",
+      "properties": {
+        "context": "main-site-optimization|preview|long-distance-moving|en",
+        "detail": "none"
+      }
+    }
+  ],
+  "collectorRequests": [],
+  "readback": {
+    "checkedAt": "2026-11-12T18:14:48.827Z",
+    "reference": "MS-20261112-4223D384CF-PREVIEW-1794507284047",
+    "leadId": "6af60216ac04b2d3cb11ede1",
+    "previewDatabase": "testvantagemovers_sitepreview",
+    "previewCount": 1,
+    "productionDatabase": "vantagemovers",
+    "productionCount": 0,
+    "apiReadback": "passed",
+    "sourceCompany": "main_site",
+    "sourceCompanySite": "vantagehomemovers.com",
+    "lidPreserved": true,
+    "moveSize": "Studio",
+    "duplicate": false,
+    "postToGranot": false,
+    "previewLeadMessageCount": 0,
+    "sheetSyncEntryCount": 0,
+    "websiteAttribution": {
+      "version": 1,
+      "first_touch": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "content_id": "moving-cost-guide",
+        "locale": "es",
+        "occurred_at": "2026-11-12T18:14:44.455Z",
+        "channel": "campaign",
+        "referring_host": "none",
+        "campaign": {
+          "source": "review",
+          "medium": "review",
+          "name": "preview-qualification"
+        }
+      },
+      "latest_non_direct_touch": {
+        "path": "/es/recursos/costos-de-mudanza",
+        "content_id": "moving-cost-guide",
+        "locale": "es",
+        "occurred_at": "2026-11-12T18:14:44.455Z",
+        "channel": "campaign",
+        "referring_host": "none",
+        "campaign": {
+          "source": "review",
+          "medium": "review",
+          "name": "preview-qualification"
+        }
+      },
+      "capture_page": {
+        "path": "/services/long-distance-moving",
+        "content_id": "long-distance-moving",
+        "locale": "en"
+      },
+      "design": {
+        "id": "main-site-optimization",
+        "version": "2026-11-12"
+      },
+      "received_at": "2026-11-12T18:14:45.782Z"
+    },
+    "boundary": "Exact-reference counts and one synthetic preview Lead only. Site response does not expose CRM/messaging status; no such response receipt is inferred."
+  },
+  "analytics": "Automated Chromium session: Vercel intentionally excludes webdriver traffic. Native browser and aggregation evidence must qualify analytics separately.",
+  "scope": "One real synthetic preview Form Lead via deployed UI. Invalid/retry contracts are separately mocked. No production submission."
+}

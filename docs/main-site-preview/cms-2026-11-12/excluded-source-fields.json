@@ -1,0 +1,2052 @@
+[
+  {
+    "key": "text.60985cfb72e85062",
+    "section": "(en) / consumer-information / page",
+    "label": "carriers · [main-site moving-carriers]",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "[main-site moving-carriers]",
+    "sourceFile": "app/(en)/consumer-information/page.tsx",
+    "sourceLine": 24
+  },
+  {
+    "key": "text.d6f22feb41e48f86",
+    "section": "(en) / page",
+    "label": "testimonialsPromise · [main-site testimonials]",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "[main-site testimonials]",
+    "sourceFile": "app/(en)/page.tsx",
+    "sourceLine": 21
+  },
+  {
+    "key": "text.8f50a6b93cc27900",
+    "section": "content / business",
+    "label": "tagline · MOVERS",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "MOVERS",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.c47bc8a827aa73da",
+    "section": "content / carrierContactsPage",
+    "label": "description · Carriers interested in working with Vantage Movers can submit their company",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Carriers interested in working with Vantage Movers can submit their company details through our carrier request form.",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 445
+  },
+  {
+    "key": "text.84442a8d8952f9ed",
+    "section": "content / footerServiceLinks",
+    "label": "label · Interstate Moving",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Interstate Moving",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 422
+  },
+  {
+    "key": "text.90a422764ab939b3",
+    "section": "content / footerServiceLinks",
+    "label": "label · Residential Moving",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Residential Moving",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 423
+  },
+  {
+    "key": "text.f88230c0ad3380a5",
+    "section": "content / footerServiceLinks",
+    "label": "label · Corporate Relocation",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Corporate Relocation",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 424
+  },
+  {
+    "key": "text.b17a45321d67856d",
+    "section": "content / footerServiceLinks",
+    "label": "label · Loading & Unloading",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Loading & Unloading",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 429
+  },
+  {
+    "key": "text.69ee6302a250f036",
+    "section": "content / hero",
+    "label": "brokerNote · Vantage Movers is a licensed interstate household goods moving broker. We d",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Vantage Movers is a licensed interstate household goods moving broker. We do not transport household goods directly. Instead, we arrange transportation through authorized motor carriers based on your move details, availability, route, and service needs.",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 36
+  },
+  {
+    "key": "text.98a8b47f2e485766",
+    "section": "content / howItWorksSection",
+    "label": "titleAccent · 4 simple steps",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "4 simple steps",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 208
+  },
+  {
+    "key": "text.511d9c8cfdb9f02c",
+    "section": "content / quoteSection",
+    "label": "formTitle · Get My Free Quote",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Get My Free Quote",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 385
+  },
+  {
+    "key": "text.f3ab8a1fefafa038",
+    "section": "content / quoteSection",
+    "label": "formSubtitle · Prepare your inventory and questions",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Prepare your inventory and questions",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 386
+  },
+  {
+    "key": "text.9e19ea1592485a6b",
+    "section": "content / quoteSection",
+    "label": "footerTrustItems · Review Your Inventory",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Review Your Inventory",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 387
+  },
+  {
+    "key": "text.aa5e6fe60bba6baf",
+    "section": "content / quoteSection",
+    "label": "footerTrustItems · Compare Written Terms",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Compare Written Terms",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 387
+  },
+  {
+    "key": "text.50ee144c1c6f3d24",
+    "section": "content / quoteSection",
+    "label": "footerTrustItems · Know Your Carrier",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Know Your Carrier",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 387
+  },
+  {
+    "key": "text.378c5f176b15f881",
+    "section": "content / stateNames",
+    "label": "DC · District of Columbia",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "District of Columbia",
+    "sourceFile": "lib/content.ts",
+    "sourceLine": 277
+  },
+  {
+    "key": "text.7a92ed2b18545d7e",
+    "section": "editorial / ArticleMetadata",
+    "label": "Copy · es-US",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "es-US",
+    "sourceFile": "components/editorial/ArticleMetadata.tsx",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.1e805a09a7d9e08c",
+    "section": "editorial / ArticleMetadata",
+    "label": "Copy · en-US",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "en-US",
+    "sourceFile": "components/editorial/ArticleMetadata.tsx",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.518977750263b783",
+    "section": "editorial / ArticleMetadata",
+    "label": "timeZone · UTC",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "UTC",
+    "sourceFile": "components/editorial/ArticleMetadata.tsx",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.294d545f07bb6c30",
+    "section": "editorial / destination-registry",
+    "label": "city · en-US",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "en-US",
+    "sourceFile": "content/editorial/destination-registry.ts",
+    "sourceLine": 21
+  },
+  {
+    "key": "text.50b7fd5ba3d3fcf2",
+    "section": "editorial / destination-registry / destinationResources",
+    "label": "state · WI",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "WI",
+    "sourceFile": "content/editorial/destination-registry.ts",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.1ab964244d3271f3",
+    "section": "editorial / geography-sources / check",
+    "label": "checkedBy · Codex · Firecrawl primary-source review",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Codex · Firecrawl primary-source review",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 3
+  },
+  {
+    "key": "text.fb1622e1c3475260",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "section · Moving or Relocating; Where to Go to Change Your Address",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Moving or Relocating; Where to Go to Change Your Address",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 5
+  },
+  {
+    "key": "text.877cba69c6f6a552",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "scope · USPS mail forwarding and address changes",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "USPS mail forwarding and address changes",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 5
+  },
+  {
+    "key": "text.932ac1eef0415b7f",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "finding · Official USPS page explains change-of-address options, forwarding and excep",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Official USPS page explains change-of-address options, forwarding and exceptions.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 5
+  },
+  {
+    "key": "text.ccb577f4bd56df55",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "recheckTrigger · Before publication or changes to USPS forwarding procedures.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication or changes to USPS forwarding procedures.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 5
+  },
+  {
+    "key": "text.88920853b731b9d0",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "limitation · No fee, forwarding duration or verification requirement is reproduced. USPS",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "No fee, forwarding duration or verification requirement is reproduced. USPS instructions should be checked for each household’s circumstances.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 5
+  },
+  {
+    "key": "text.173504d396920aeb",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "section · Preparing for Hurricane Season",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Preparing for Hurricane Season",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 6
+  },
+  {
+    "key": "text.a52c79fc06ea1025",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "scope · Florida household emergency preparation",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Florida household emergency preparation",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 6
+  },
+  {
+    "key": "text.e9e1263c9ee24d8c",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "finding · Official preparation page links to household disaster supplies and planning",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Official preparation page links to household disaster supplies and planning resources. Atlantic hurricane season is June 1 through November 30.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 6
+  },
+  {
+    "key": "text.34b4f9483a1cd03f",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "recheckTrigger · Before publication; revised emergency guidance or seasonal notices.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication; revised emergency guidance or seasonal notices.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 6
+  },
+  {
+    "key": "text.7e6523e4e3004223",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "limitation · General preparation only. No live storm forecast, road status, or carrier o",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "General preparation only. No live storm forecast, road status, or carrier operating promise is inferred.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 6
+  },
+  {
+    "key": "text.4a1fa22f0d9736db",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "section · Driver's License/ID Cards; Required Documentation; Title/Registration",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Driver's License/ID Cards; Required Documentation; Title/Registration",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.0ced849f1bc9c6fb",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "scope · Florida new-resident driver and vehicle procedures",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Florida new-resident driver and vehicle procedures",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.6f07a70e422f014d",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "finding · Official resource explains identification, required documentation and vehic",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Official resource explains identification, required documentation and vehicle title/registration processes.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.c8df35b8c783bdf3",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "recheckTrigger · Before publication or changes to residency, documentation, deadlines or fee",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication or changes to residency, documentation, deadlines or fees.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.2497890b6c4b984d",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "limitation · No deadline, fee or individual eligibility conclusion is reproduced. Reader",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "No deadline, fee or individual eligibility conclusion is reproduced. Readers must verify their applicable process directly.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.0d223cd65634ad99",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "section · New Residents; How do I title and register my vehicle?",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "New Residents; How do I title and register my vehicle?",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 8
+  },
+  {
+    "key": "text.4525fc3b9060bffd",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "scope · North Carolina new-resident driver and vehicle procedures",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "North Carolina new-resident driver and vehicle procedures",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 8
+  },
+  {
+    "key": "text.52598b04f913a933",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "finding · Official instructions address driver licensing, vehicle registration, docum",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Official instructions address driver licensing, vehicle registration, documents and insurance.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 8
+  },
+  {
+    "key": "text.de14549f8f1cbd29",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "recheckTrigger · Before publication or revised state process.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication or revised state process.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 8
+  },
+  {
+    "key": "text.e7139792f2ee0654",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "limitation · Links are a planning aid; no timing, fee, residency or insurance eligibilit",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Links are a planning aid; no timing, fee, residency or insurance eligibility advice is provided.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 8
+  },
+  {
+    "key": "text.cc1ecddf5195fb04",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "section · Map, alerts and route planning",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Map, alerts and route planning",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.f83f0a1793c4d299",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "scope · North Carolina public road-condition information",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "North Carolina public road-condition information",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.91f045db11f4964c",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "finding · Public travel site offers a map, alerts, cameras and route tools.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Public travel site offers a map, alerts, cameras and route tools.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.231d0cfe486c38e4",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "recheckTrigger · Before publication; travelers must recheck near departure.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication; travelers must recheck near departure.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.2f1a781826035181",
+    "section": "editorial / geography-sources / geographySources",
+    "label": "limitation · Dynamic conditions are not stored or described as current. This is not a co",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Dynamic conditions are not stored or described as current. This is not a commercial truck routing or shipment-tracking service.",
+    "sourceFile": "content/editorial/geography-sources.ts",
+    "sourceLine": 9
+  },
+  {
+    "key": "text.39cf8187eceb4d8b",
+    "section": "editorial / moving-routes / movingRouteEntries",
+    "label": "planningNote · Arrival: confirm keys, unloading access and who receives your North Carolin",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Arrival: confirm keys, unloading access and who receives your North Carolina shipment.",
+    "sourceFile": "content/editorial/moving-routes.ts",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.267974f42909b1a3",
+    "section": "editorial / moving-routes / movingRouteEntries",
+    "label": "planningNote · Llegada: confirme llaves, acceso y quién recibe el envío en Carolina del No",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Llegada: confirme llaves, acceso y quién recibe el envío en Carolina del Norte.",
+    "sourceFile": "content/editorial/moving-routes.ts",
+    "sourceLine": 62
+  },
+  {
+    "key": "text.85575851e41b9fe5",
+    "section": "editorial / resources / resourceEntries",
+    "label": "caption · Your own inventory notes — do not submit private information to use this wo",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Your own inventory notes — do not submit private information to use this worksheet",
+    "sourceFile": "content/editorial/resources.ts",
+    "sourceLine": 78
+  },
+  {
+    "key": "text.e4883c0a32241fb4",
+    "section": "editorial / resources / resourceEntries",
+    "label": "caption · Sus notas de inventario: no necesita enviar datos privados para usar esta h",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Sus notas de inventario: no necesita enviar datos privados para usar esta hoja",
+    "sourceFile": "content/editorial/resources.ts",
+    "sourceLine": 97
+  },
+  {
+    "key": "text.bbd248d3fd20d816",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Match the inventory",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Match the inventory",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 6
+  },
+  {
+    "key": "text.4429121526974311",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Check both addresses",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Check both addresses",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 6
+  },
+  {
+    "key": "text.4c92c54278d3745c",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Plan the delivery window",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Plan the delivery window",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 6
+  },
+  {
+    "key": "text.c288bc7e19efdddf",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Plan the route and the handoff at each end.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Plan the route and the handoff at each end.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 6
+  },
+  {
+    "key": "text.c33ae443637bef5a",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Compruebe ambos accesos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Compruebe ambos accesos",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.a1039048e1c6d0cd",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Planifique la entrega",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Planifique la entrega",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.a1cde1062d304379",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Planifique la ruta y la recepción en ambos extremos.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Planifique la ruta y la recepción en ambos extremos.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.58bd5c0d0b3cfb86",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Walk every room",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Walk every room",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 10
+  },
+  {
+    "key": "text.e8a5eeb5cf0c1712",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Confirm building access",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Confirm building access",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 10
+  },
+  {
+    "key": "text.ac7548ce465a42ea",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Set aside essentials",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Set aside essentials",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 10
+  },
+  {
+    "key": "text.1eebdf7c8a177165",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · A room-by-room plan starts at home.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "A room-by-room plan starts at home.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 10
+  },
+  {
+    "key": "text.34f47de0826a5544",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Confirme los accesos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Confirme los accesos",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.17c96c015763fd4b",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Separe lo esencial",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Separe lo esencial",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.353d36ac269a10ed",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · El plan por habitaciones comienza en casa.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "El plan por habitaciones comienza en casa.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 11
+  },
+  {
+    "key": "text.3acd528a1225386b",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Name building contacts",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Name building contacts",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 14
+  },
+  {
+    "key": "text.200736289f197d73",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Separate the IT plan",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Separate the IT plan",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 14
+  },
+  {
+    "key": "text.31b66ac78930d5df",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Keep equipment and reopening plans organized.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Keep equipment and reopening plans organized.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 14
+  },
+  {
+    "key": "text.b26a8dcd48b8c2d9",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Liste los puestos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Liste los puestos",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.3e03377b7fc95942",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Designe contactos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Designe contactos",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.dab6dec45466a807",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Separe el plan informático",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Separe el plan informático",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.00873027ea160130",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Organice los equipos y la vuelta al trabajo.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Organice los equipos y la vuelta al trabajo.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.f8d6f24af49e7d86",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Clarify your arrangements",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Clarify your arrangements",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 18
+  },
+  {
+    "key": "text.a98e8402e67c8f43",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Keep private orders secure",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Keep private orders secure",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 18
+  },
+  {
+    "key": "text.a6b31213d68dd27c",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Prepare family essentials",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Prepare family essentials",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 18
+  },
+  {
+    "key": "text.55a02071135e5e90",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Space to plan the family's next chapter.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Space to plan the family's next chapter.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 18
+  },
+  {
+    "key": "text.235f782804244134",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Aclare los acuerdos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Aclare los acuerdos",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 19
+  },
+  {
+    "key": "text.5af18004d82c63c8",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Proteja las órdenes privadas",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Proteja las órdenes privadas",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 19
+  },
+  {
+    "key": "text.6e0da234f344e83e",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Prepare lo esencial",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Prepare lo esencial",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 19
+  },
+  {
+    "key": "text.c1038236665fc147",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Espacio para planificar la próxima etapa familiar.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Espacio para planificar la próxima etapa familiar.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 19
+  },
+  {
+    "key": "text.044716c616e6c3f6",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Measure the new space",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Measure the new space",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 22
+  },
+  {
+    "key": "text.5036e2eedf1ac358",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Choose a trusted contact",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Choose a trusted contact",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 22
+  },
+  {
+    "key": "text.aa2c824222b75e10",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Keep daily items close",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Keep daily items close",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 22
+  },
+  {
+    "key": "text.af81d55ebf3738be",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Your decisions, with support from people you trust.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Your decisions, with support from people you trust.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 22
+  },
+  {
+    "key": "text.85706baa5d6a8d44",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Mida la nueva vivienda",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Mida la nueva vivienda",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 23
+  },
+  {
+    "key": "text.19b3dd1e674c7cac",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Elija una persona de confianza",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Elija una persona de confianza",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 23
+  },
+  {
+    "key": "text.5a01a1ed49128072",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Tenga lo diario a mano",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Tenga lo diario a mano",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 23
+  },
+  {
+    "key": "text.52730236b0f05e36",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Sus decisiones, con el apoyo de personas de confianza.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Sus decisiones, con el apoyo de personas de confianza.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 23
+  },
+  {
+    "key": "text.c261bbc0c31bf7f9",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Choose packing help",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Choose packing help",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 26
+  },
+  {
+    "key": "text.782269e481304944",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Check restricted items",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Check restricted items",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 26
+  },
+  {
+    "key": "text.55278b12b7b3248c",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Review materials and care for each fragile piece.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Review materials and care for each fragile piece.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 26
+  },
+  {
+    "key": "text.fd86626126c071ac",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Elija la ayuda necesaria",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Elija la ayuda necesaria",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 27
+  },
+  {
+    "key": "text.3cea1486e0233bd4",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Consulte las restricciones",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Consulte las restricciones",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 27
+  },
+  {
+    "key": "text.df25bdb5227cf63f",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Revise materiales y cuidados para cada pieza frágil.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Revise materiales y cuidados para cada pieza frágil.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 27
+  },
+  {
+    "key": "text.c5d59a995a1a3daa",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Describe the date gap",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Describe the date gap",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 30
+  },
+  {
+    "key": "text.65fac53cccd8dea9",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Confirm access and terms",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Confirm access and terms",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 30
+  },
+  {
+    "key": "text.eda68dc28a93aee0",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Plan final delivery",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Plan final delivery",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 30
+  },
+  {
+    "key": "text.0ea9d31533f50f9f",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Separate stored belongings from what travels with you.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Separate stored belongings from what travels with you.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 30
+  },
+  {
+    "key": "text.fb6420fb80078b67",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Confirme acceso y condiciones",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Confirme acceso y condiciones",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 31
+  },
+  {
+    "key": "text.149ea9edc0339d30",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Planifique la entrega final",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Planifique la entrega final",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 31
+  },
+  {
+    "key": "text.857329616624c88a",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Separe lo almacenado de lo que llevará consigo.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Separe lo almacenado de lo que llevará consigo.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 31
+  },
+  {
+    "key": "text.a6f9b00ed785ee5d",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Confirm handoff access",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Confirm handoff access",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 34
+  },
+  {
+    "key": "text.e5e88450001ef98f",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Review a separate agreement",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Review a separate agreement",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 34
+  },
+  {
+    "key": "text.2471bf48e7341c5e",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Give the vehicle its own transport plan.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Give the vehicle its own transport plan.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 34
+  },
+  {
+    "key": "text.f0cf844ccc0de19f",
+    "section": "editorial / service-preparation / preparation",
+    "label": "steps · Revise el contrato separado",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Revise el contrato separado",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 35
+  },
+  {
+    "key": "text.4ed5d1c50c50d9f9",
+    "section": "editorial / service-preparation / preparation",
+    "label": "caption · Prepare un plan de transporte propio para el vehículo.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Prepare un plan de transporte propio para el vehículo.",
+    "sourceFile": "content/editorial/service-preparation.ts",
+    "sourceLine": 35
+  },
+  {
+    "key": "text.805f708e9ffacfb5",
+    "section": "editorial / sources / check",
+    "label": "checkedBy · Codex source check",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Codex source check",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 4
+  },
+  {
+    "key": "text.a70edc7db7244d5e",
+    "section": "editorial / sources / editorialClaims",
+    "label": "recheckTrigger · Business and legal review before publication, or a role/workflow change.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Business and legal review before publication, or a role/workflow change.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 114
+  },
+  {
+    "key": "text.012788101bc48d84",
+    "section": "editorial / sources / editorialClaims",
+    "label": "en · Compare both costs and services and check the companies' registration.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Compare both costs and services and check the companies' registration.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 118
+  },
+  {
+    "key": "text.5182508a267f5e63",
+    "section": "editorial / sources / editorialClaims",
+    "label": "es · Compare costos y servicios y compruebe el registro de las empresas.",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Compare costos y servicios y compruebe el registro de las empresas.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 118
+  },
+  {
+    "key": "text.6f9adf53bce8e77d",
+    "section": "editorial / sources / editorialClaims",
+    "label": "recheckTrigger · Changed official guidance or changes to consumer-document wording.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Changed official guidance or changes to consumer-document wording.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 120
+  },
+  {
+    "key": "text.f3f87205a30292ee",
+    "section": "editorial / sources / editorialClaims",
+    "label": "en · Check the broker and carrier separately; a directory listing does not estab",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Check the broker and carrier separately; a directory listing does not establish shipment assignment.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 124
+  },
+  {
+    "key": "text.eb9b28aff5311dd4",
+    "section": "editorial / sources / editorialClaims",
+    "label": "es · Consulte por separado al intermediario y al transportista; un directorio no",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Consulte por separado al intermediario y al transportista; un directorio no confirma la asignación a su envío.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 124
+  },
+  {
+    "key": "text.666543bd1937002b",
+    "section": "editorial / sources / editorialClaims",
+    "label": "recheckTrigger · Lookup or carrier-identification flow changes.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Lookup or carrier-identification flow changes.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 126
+  },
+  {
+    "key": "text.2d3d47628e46b1ca",
+    "section": "editorial / sources / editorialClaims",
+    "label": "recheckTrigger · DMV page/process change; before adding deadlines or eligibility claims.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "DMV page/process change; before adding deadlines or eligibility claims.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 132
+  },
+  {
+    "key": "text.49735c5c6fe3ee02",
+    "section": "editorial / sources / editorialClaims",
+    "label": "recheckTrigger · Each annual student move-out notice or area/policy revision.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Each annual student move-out notice or area/policy revision.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 138
+  },
+  {
+    "key": "text.a72108ea03e9c964",
+    "section": "editorial / sources / editorialClaims",
+    "label": "en · The city's October 15, 2026 update anticipated construction in June 2027, s",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "The city's October 15, 2026 update anticipated construction in June 2027, subject to contract award; planned improvements are not open attractions.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 142
+  },
+  {
+    "key": "text.2fa43a5547013dfb",
+    "section": "editorial / sources / editorialClaims",
+    "label": "es · La actualización del 15 de octubre de 2026 preveía obras en junio de 2027 s",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "La actualización del 15 de octubre de 2026 preveía obras en junio de 2027 sujetas a adjudicación; las mejoras proyectadas no se presentan como abiertas.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 142
+  },
+  {
+    "key": "text.795bd7fd9cacfb8e",
+    "section": "editorial / sources / editorialClaims",
+    "label": "recheckTrigger · Every project update, construction/access change and pre-publication check.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Every project update, construction/access change and pre-publication check.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 144
+  },
+  {
+    "key": "text.23fcdcdddd48547d",
+    "section": "editorial / sources / editorialClaims",
+    "label": "recheckTrigger · Park listing or access changes; check before publication and visit.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Park listing or access changes; check before publication and visit.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 150
+  },
+  {
+    "key": "text.731b58b6aa522c75",
+    "section": "editorial / sources / editorialClaims",
+    "label": "en · Climate control, unrestricted storage access, open/enclosed auto capacity, ",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Climate control, unrestricted storage access, open/enclosed auto capacity, military weight-ticket availability, dates, discounts and specialized care are not promised.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 154
+  },
+  {
+    "key": "text.da5b1ff275580fef",
+    "section": "editorial / sources / editorialClaims",
+    "label": "es · No se prometen climatización, acceso libre a almacén, modalidades de transp",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "No se prometen climatización, acceso libre a almacén, modalidades de transporte de autos, comprobantes militares, fechas, descuentos ni cuidados especializados.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 154
+  },
+  {
+    "key": "text.59cfae32c4f512a9",
+    "section": "editorial / sources / editorialClaims",
+    "label": "recheckTrigger · Named operations owner supplies approved service-specific evidence and word",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Named operations owner supplies approved service-specific evidence and wording.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 156
+  },
+  {
+    "key": "text.dd6d17e60f719875",
+    "section": "editorial / sources / editorialSources",
+    "label": "section · Written estimates and non-binding costs",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Written estimates and non-binding costs",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 12
+  },
+  {
+    "key": "text.9ce0fe24193f8a7a",
+    "section": "editorial / sources / editorialSources",
+    "label": "scope · Interstate household goods",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Interstate household goods",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 12
+  },
+  {
+    "key": "text.acb67cf732b2a3f0",
+    "section": "editorial / sources / editorialSources",
+    "label": "recheckTrigger · Before publication or changed estimate guidance.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication or changed estimate guidance.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 13
+  },
+  {
+    "key": "text.1a36ecf9349e92a7",
+    "section": "editorial / sources / editorialSources",
+    "label": "finding · Written estimates describe charges; non-binding estimates do not guarantee ",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Written estimates describe charges; non-binding estimates do not guarantee final costs.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 14
+  },
+  {
+    "key": "text.3b7fd6143bd6330a",
+    "section": "editorial / sources / editorialSources",
+    "label": "limitation · Does not establish Vantage prices, terms or service availability.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Does not establish Vantage prices, terms or service availability.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.f7f9490f7f81d5d0",
+    "section": "editorial / sources / editorialSources",
+    "label": "section · Hazardous materials shipper responsibilities",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Hazardous materials shipper responsibilities",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 20
+  },
+  {
+    "key": "text.b814c13b7d29dc5f",
+    "section": "editorial / sources / editorialSources",
+    "label": "recheckTrigger · Before publication or changed hazardous-material guidance.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication or changed hazardous-material guidance.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 21
+  },
+  {
+    "key": "text.1049ec6430b1a84c",
+    "section": "editorial / sources / editorialSources",
+    "label": "finding · Offering hazardous materials brings specific shipper requirements; use the ",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Offering hazardous materials brings specific shipper requirements; use the carrier's instructions.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 22
+  },
+  {
+    "key": "text.6c9fb6242a2e4894",
+    "section": "editorial / sources / editorialSources",
+    "label": "limitation · The editorial examples are a question list, not a legal classification or p",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "The editorial examples are a question list, not a legal classification or permission to ship.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 23
+  },
+  {
+    "key": "text.b41fd0523bfae21b",
+    "section": "editorial / sources / editorialSources",
+    "label": "section · Estimates, inventory and bill of lading",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Estimates, inventory and bill of lading",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 28
+  },
+  {
+    "key": "text.69fffcd1a920a673",
+    "section": "editorial / sources / editorialSources",
+    "label": "recheckTrigger · Before publication or a revised consumer booklet.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication or a revised consumer booklet.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 29
+  },
+  {
+    "key": "text.2d789db00efcd2bb",
+    "section": "editorial / sources / editorialSources",
+    "label": "finding · Explains the written documents accompanying a household shipment.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Explains the written documents accompanying a household shipment.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 30
+  },
+  {
+    "key": "text.32a431271c393f5b",
+    "section": "editorial / sources / editorialSources",
+    "label": "limitation · Original folder organization is an editorial aid, not a replacement for app",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Original folder organization is an editorial aid, not a replacement for applicable documents or legal advice.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 31
+  },
+  {
+    "key": "text.29e6b3847ca106f4",
+    "section": "editorial / sources / editorialSources",
+    "label": "section · What's the difference between a mover and broker? / What do I do if I am wo",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "What's the difference between a mover and broker? / What do I do if I am working with a broker?",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 36
+  },
+  {
+    "key": "text.e440a547157a4310",
+    "section": "editorial / sources / editorialSources",
+    "label": "scope · United States interstate household goods moves",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "United States interstate household goods moves",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 37
+  },
+  {
+    "key": "text.aa10910d1ed83895",
+    "section": "editorial / sources / editorialSources",
+    "label": "recheckTrigger · Before publication, a federal rule change or a change to role/estimate word",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication, a federal rule change or a change to role/estimate wording.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 38
+  },
+  {
+    "key": "text.d4e757e26bdc5afb",
+    "section": "editorial / sources / editorialSources",
+    "label": "finding · The broker arranges transportation and is not the transporting company. Int",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "The broker arranges transportation and is not the transporting company. Interstate brokers and carriers require FMCSA registration. The official page was updated April 27, 2026.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 39
+  },
+  {
+    "key": "text.caa51660f6c588ee",
+    "section": "editorial / sources / editorialSources",
+    "label": "limitation · General federal guidance does not establish Vantage's current registration,",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "General federal guidance does not establish Vantage's current registration, specific carrier assignment or service availability.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 40
+  },
+  {
+    "key": "text.fb6b0d50f8102412",
+    "section": "editorial / sources / editorialSources",
+    "label": "section · Planning: Before You Move / Moving Day / Delivery Day",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Planning: Before You Move / Moving Day / Delivery Day",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 45
+  },
+  {
+    "key": "text.d8e1d00aeadf81b2",
+    "section": "editorial / sources / editorialSources",
+    "label": "recheckTrigger · Before publication or changes to estimate, paperwork, protection or deliver",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication or changes to estimate, paperwork, protection or delivery guidance.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 47
+  },
+  {
+    "key": "text.6959ea25cfd8f630",
+    "section": "editorial / sources / editorialSources",
+    "label": "finding · The checklist addresses comparison of estimates and services, registration,",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "The checklist addresses comparison of estimates and services, registration, contact arrangements, reading documents, inventory and delivery concerns. The page was updated November 4, 2024.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 48
+  },
+  {
+    "key": "text.c9f23536c5e46b07",
+    "section": "editorial / sources / editorialSources",
+    "label": "limitation · The new checklist and fictional worked example are original editorial plann",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "The new checklist and fictional worked example are original editorial planning aids, not FMCSA forms or actual quotes.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 49
+  },
+  {
+    "key": "text.3676083e54c8a026",
+    "section": "editorial / sources / editorialSources",
+    "label": "section · Search for a Registered Mover / Information you can review",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Search for a Registered Mover / Information you can review",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 54
+  },
+  {
+    "key": "text.8d4228bc794c5f62",
+    "section": "editorial / sources / editorialSources",
+    "label": "scope · United States interstate moving businesses",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "United States interstate moving businesses",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 55
+  },
+  {
+    "key": "text.3f24b125bb0e55f2",
+    "section": "editorial / sources / editorialSources",
+    "label": "recheckTrigger · Before publication or a change to the registration lookup destination.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication or a change to the registration lookup destination.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 56
+  },
+  {
+    "key": "text.1da096dfb0fc929f",
+    "section": "editorial / sources / editorialSources",
+    "label": "finding · The federal lookup provides company location, contact, business type, regis",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "The federal lookup provides company location, contact, business type, registration, complaint and safety information.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 57
+  },
+  {
+    "key": "text.8a5a89695a22a5dc",
+    "section": "editorial / sources / editorialSources",
+    "label": "limitation · No Vantage entity lookup or carrier-specific registration result is claimed",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "No Vantage entity lookup or carrier-specific registration result is claimed by this check.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 58
+  },
+  {
+    "key": "text.0be5145110e17625",
+    "section": "editorial / sources / editorialSources",
+    "label": "title · Vantage existing consumer information and broker disclosure",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Vantage existing consumer information and broker disclosure",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 61
+  },
+  {
+    "key": "text.2393e23964d02a3e",
+    "section": "editorial / sources / editorialSources",
+    "label": "section · Existing production-control copy: apps/main-site/src/lib/content.ts busines",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Existing production-control copy: apps/main-site/src/lib/content.ts business.brokerDisclaimer and hero.brokerNote at 145a4dd",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 63
+  },
+  {
+    "key": "text.d08a5f1cf130bd72",
+    "section": "editorial / sources / editorialSources",
+    "label": "scope · Vantage interstate household goods coordination",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Vantage interstate household goods coordination",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 64
+  },
+  {
+    "key": "text.97152448b04f9893",
+    "section": "editorial / sources / editorialSources",
+    "label": "recheckTrigger · Operations/legal owner review before publication; business identity or work",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Operations/legal owner review before publication; business identity or workflow changes.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 65
+  },
+  {
+    "key": "text.888b991d73773923",
+    "section": "editorial / sources / editorialSources",
+    "label": "finding · The current repository control says Vantage is a household goods broker and",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "The current repository control says Vantage is a household goods broker and does not transport household goods; it arranges transportation through motor carriers.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 66
+  },
+  {
+    "key": "text.503213c64d9cf9c1",
+    "section": "editorial / sources / editorialSources",
+    "label": "limitation · Internal baseline inspected, not independent current-authority verification",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Internal baseline inspected, not independent current-authority verification or approval of new copy. No new USDOT/MC claim, date guarantee or capacity claim is introduced.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 67
+  },
+  {
+    "key": "text.f74977c2135e7cb5",
+    "section": "editorial / sources / editorialSources",
+    "label": "section · Welcome to Wisconsin / Obtain a Wisconsin Driver License or ID / Apply onli",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Welcome to Wisconsin / Obtain a Wisconsin Driver License or ID / Apply online for a vehicle title and get new plates",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 72
+  },
+  {
+    "key": "text.1b913a924e92ea9f",
+    "section": "editorial / sources / editorialSources",
+    "label": "scope · Wisconsin resident driver/ID and vehicle processes",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Wisconsin resident driver/ID and vehicle processes",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 73
+  },
+  {
+    "key": "text.9ac2bc60471d66fa",
+    "section": "editorial / sources / editorialSources",
+    "label": "recheckTrigger · Before publication, changed DMV processes or any proposed deadline/eligibil",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication, changed DMV processes or any proposed deadline/eligibility statement.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 74
+  },
+  {
+    "key": "text.69bd5c1fbb1d43d3",
+    "section": "editorial / sources / editorialSources",
+    "label": "finding · The state page links to driver license/ID and vehicle title/plate processes",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "The state page links to driver license/ID and vehicle title/plate processes and Spanish information.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 75
+  },
+  {
+    "key": "text.e3cde70d19b4dfd0",
+    "section": "editorial / sources / editorialSources",
+    "label": "limitation · Extraction contained partial unavailable blocks. No legal deadline, fee, re",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Extraction contained partial unavailable blocks. No legal deadline, fee, residency test or eligibility rule is reproduced; readers are directed to current official instructions.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 76
+  },
+  {
+    "key": "text.1a918640251298be",
+    "section": "editorial / sources / editorialSources",
+    "label": "section · Student move-out area / Work Orders and the Move Out / Electronics / Collec",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Student move-out area / Work Orders and the Move Out / Electronics / Collection Guidelines",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 81
+  },
+  {
+    "key": "text.81c0d7eff53c2814",
+    "section": "editorial / sources / editorialSources",
+    "label": "scope · Defined Madison, Wisconsin student move-out area and applicable seasonal da",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Defined Madison, Wisconsin student move-out area and applicable seasonal dates",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 82
+  },
+  {
+    "key": "text.d58247f0adb42a21",
+    "section": "editorial / sources / editorialSources",
+    "label": "recheckTrigger · Before every August season, new annual notice, area map or collection polic",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before every August season, new annual notice, area map or collection policy change.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 83
+  },
+  {
+    "key": "text.a55689ebcfd46086",
+    "section": "editorial / sources / editorialSources",
+    "label": "finding · The page describes special 2026 seasonal collection arrangements limited by",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "The page describes special 2026 seasonal collection arrangements limited by area, dates, property and item type, with separate electronics instructions.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 84
+  },
+  {
+    "key": "text.2bcd03966339f36a",
+    "section": "editorial / sources / editorialSources",
+    "label": "limitation · The 2026 dates are historical for future moves and are deliberately not rep",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "The 2026 dates are historical for future moves and are deliberately not repeated as an upcoming schedule. No inference that every Madison address is in scope.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 85
+  },
+  {
+    "key": "text.29b7af34dfbfe5f2",
+    "section": "editorial / sources / editorialSources",
+    "label": "section · Project Updates: October 15, 2026",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Project Updates: October 15, 2026",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 90
+  },
+  {
+    "key": "text.0637dca1e2e27be7",
+    "section": "editorial / sources / editorialSources",
+    "label": "scope · Madison LakeWay planned waterfront improvements",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Madison LakeWay planned waterfront improvements",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 91
+  },
+  {
+    "key": "text.d3e7c311bb1cc7c3",
+    "section": "editorial / sources / editorialSources",
+    "label": "recheckTrigger · New project update, construction start, access notice, or immediately befor",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "New project update, construction start, access notice, or immediately before publication.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 92
+  },
+  {
+    "key": "text.df756ba5bf793e83",
+    "section": "editorial / sources / editorialSources",
+    "label": "finding · The October 15 update says project bidding is underway; construction is ant",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "The October 15 update says project bidding is underway; construction is anticipated for June 2027 pending contract award. Improvements are future works, not currently completed attractions.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 93
+  },
+  {
+    "key": "text.deba256dd6c03e80",
+    "section": "editorial / sources / editorialSources",
+    "label": "limitation · This is a dated project status, not assurance of future schedule or present",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "This is a dated project status, not assurance of future schedule or present access.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 94
+  },
+  {
+    "key": "text.0452d8e4c8219302",
+    "section": "editorial / sources / editorialSources",
+    "label": "section · At this Park: Basketball / Playground",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "At this Park: Basketball / Playground",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 99
+  },
+  {
+    "key": "text.af9fddd58775459e",
+    "section": "editorial / sources / editorialSources",
+    "label": "scope · Washington Manor Park, Madison, Wisconsin",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Washington Manor Park, Madison, Wisconsin",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 100
+  },
+  {
+    "key": "text.49724e9aeb83f297",
+    "section": "editorial / sources / editorialSources",
+    "label": "recheckTrigger · Before publication, park closures or amenity changes; visitor should check ",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Before publication, park closures or amenity changes; visitor should check access before outing.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 101
+  },
+  {
+    "key": "text.cfb60da286ba6036",
+    "section": "editorial / sources / editorialSources",
+    "label": "finding · Official park listing includes a basketball court and playground.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Official park listing includes a basketball court and playground.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 102
+  },
+  {
+    "key": "text.eca55328aff17919",
+    "section": "editorial / sources / editorialSources",
+    "label": "limitation · The listing is not a live opening-status or accessibility guarantee.",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "The listing is not a live opening-status or accessibility guarantee.",
+    "sourceFile": "content/editorial/sources.ts",
+    "sourceLine": 103
+  },
+  {
+    "key": "text.8f44c1f0bc8aea76",
+    "section": "editorial / SourcesReview",
+    "label": "dateFormat · es-US",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "es-US",
+    "sourceFile": "components/editorial/SourcesReview.tsx",
+    "sourceLine": 13
+  },
+  {
+    "key": "text.865127bc6a631534",
+    "section": "editorial / SourcesReview",
+    "label": "dateFormat · en-US",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "en-US",
+    "sourceFile": "components/editorial/SourcesReview.tsx",
+    "sourceLine": 13
+  },
+  {
+    "key": "text.34e37962f52e83c1",
+    "section": "editorial / SourcesReview",
+    "label": "timeZone · UTC",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "UTC",
+    "sourceFile": "components/editorial/SourcesReview.tsx",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.265a186a3cf1b0d7",
+    "section": "editorial / state-geography",
+    "label": "Copy · Missing state map geometry: {{0}}",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Missing state map geometry: {{0}}",
+    "sourceFile": "content/editorial/state-geography.ts",
+    "sourceLine": 7
+  },
+  {
+    "key": "text.b6f73854a8aa49f7",
+    "section": "hero-proof",
+    "label": "moves · Planificación de su mudanza",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Planificación de su mudanza",
+    "sourceFile": "content/hero-proof.ts",
+    "sourceLine": 14
+  },
+  {
+    "key": "text.a39179f0be8a17cc",
+    "section": "hero-proof",
+    "label": "moves · Move planning conversation",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Move planning conversation",
+    "sourceFile": "content/hero-proof.ts",
+    "sourceLine": 14
+  },
+  {
+    "key": "text.e1d4ef621ca592b7",
+    "section": "interactive / QuoteWizard",
+    "label": "timeout · Unable to resolve ZIP",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Unable to resolve ZIP",
+    "sourceFile": "components/interactive/QuoteWizard.tsx",
+    "sourceLine": 183
+  },
+  {
+    "key": "text.ec7a3e4a4c331985",
+    "section": "interactive / QuoteWizard",
+    "label": "Copy · Quote request failed",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Quote request failed",
+    "sourceFile": "components/interactive/QuoteWizard.tsx",
+    "sourceLine": 481
+  },
+  {
+    "key": "text.62069aecaf6e50fa",
+    "section": "interactive / QuoteWizard",
+    "label": "Copy · Lead capture unconfirmed",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Lead capture unconfirmed",
+    "sourceFile": "components/interactive/QuoteWizard.tsx",
+    "sourceLine": 483
+  },
+  {
+    "key": "text.770de2e1d44fa263",
+    "section": "layout / AnchorFocus",
+    "label": "focusable · input,button,select",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "input,button,select",
+    "sourceFile": "components/layout/AnchorFocus.tsx",
+    "sourceLine": 13
+  },
+  {
+    "key": "text.8aa3a93619e6138f",
+    "section": "layout / AnchorFocus",
+    "label": "Copy · input,button,select,a,textarea",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "input,button,select,a,textarea",
+    "sourceFile": "components/layout/AnchorFocus.tsx",
+    "sourceLine": 15
+  },
+  {
+    "key": "text.c15404176d9f6aff",
+    "section": "layout / AnchorFocus",
+    "label": "link · a[href]",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "a[href]",
+    "sourceFile": "components/layout/AnchorFocus.tsx",
+    "sourceLine": 20
+  },
+  {
+    "key": "text.bda8964d37f0a2e8",
+    "section": "layout / FloatingCall",
+    "label": "update · input, textarea, select, [contenteditable=true]",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "input, textarea, select, [contenteditable=true]",
+    "sourceFile": "components/layout/FloatingCall.tsx",
+    "sourceLine": 14
+  },
+  {
+    "key": "text.9b77276644679eaf",
+    "section": "layout / FloatingCall",
+    "label": "Copy · Llame a Vantage",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Llame a Vantage",
+    "sourceFile": "components/layout/FloatingCall.tsx",
+    "sourceLine": 24
+  },
+  {
+    "key": "text.5aa07268a2926930",
+    "section": "layout / FloatingCall",
+    "label": "Copy · Call Vantage",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Call Vantage",
+    "sourceFile": "components/layout/FloatingCall.tsx",
+    "sourceLine": 24
+  },
+  {
+    "key": "text.2e8fe00847eddf8e",
+    "section": "layout / FloatingCall",
+    "label": "Copy · Ocultar botón de llamada",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Ocultar botón de llamada",
+    "sourceFile": "components/layout/FloatingCall.tsx",
+    "sourceLine": 25
+  },
+  {
+    "key": "text.00bf2682acffd4b8",
+    "section": "layout / FloatingCall",
+    "label": "Copy · Dismiss call button",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Dismiss call button",
+    "sourceFile": "components/layout/FloatingCall.tsx",
+    "sourceLine": 25
+  },
+  {
+    "key": "text.e76990362acb2ff7",
+    "section": "legal / docs / cancellationPolicy",
+    "label": "description · Vantage Movers Cancellation Policy - broker fee disclosure, refund terms, a",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Vantage Movers Cancellation Policy - broker fee disclosure, refund terms, and how to submit a cancellation request.",
+    "sourceFile": "content/legal/docs.ts",
+    "sourceLine": 424
+  },
+  {
+    "key": "text.b71b83cd7df88a8f",
+    "section": "legal / docs / email",
+    "label": "email · support@vantagehomemovers.com",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "support@vantagehomemovers.com",
+    "sourceFile": "content/legal/docs.ts",
+    "sourceLine": 3
+  },
+  {
+    "key": "text.fa00422035983db7",
+    "section": "legal / docs / privacyPolicy",
+    "label": "description · Vantage Movers Privacy Policy - how we collect, use, share, and protect you",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Vantage Movers Privacy Policy - how we collect, use, share, and protect your personal information.",
+    "sourceFile": "content/legal/docs.ts",
+    "sourceLine": 38
+  },
+  {
+    "key": "text.acec163c4c754e3c",
+    "section": "legal / docs / smsPrivacyPolicy",
+    "label": "description · {{0}} SMS Privacy Policy - how we collect, use, and protect information for",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "{{0}} SMS Privacy Policy - how we collect, use, and protect information for our SMS program.",
+    "sourceFile": "content/legal/docs.ts",
+    "sourceLine": 324
+  },
+  {
+    "key": "text.6406ba2493b61400",
+    "section": "legal / docs / smsPrivacyPolicy",
+    "label": "html · For questions about this SMS Privacy Policy or our SMS program, contact {{0",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "For questions about this SMS Privacy Policy or our SMS program, contact {{0}} at {{1}}",
+    "sourceFile": "content/legal/docs.ts",
+    "sourceLine": 381
+  },
+  {
+    "key": "text.bcbfe6c94b92113c",
+    "section": "legal / docs / smsTerms",
+    "label": "description · {{0}} SMS Terms & Conditions for the Vantage Movers SMS Program.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "{{0}} SMS Terms & Conditions for the Vantage Movers SMS Program.",
+    "sourceFile": "content/legal/docs.ts",
+    "sourceLine": 394
+  },
+  {
+    "key": "text.f8897198b5dce564",
+    "section": "legal / docs / termsConditions",
+    "label": "description · {{0}} Terms & Conditions for use of the website and moving quote services.",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "{{0}} Terms & Conditions for use of the website and moving quote services.",
+    "sourceFile": "content/legal/docs.ts",
+    "sourceLine": 257
+  },
+  {
+    "key": "text.5401c803e591e168",
+    "section": "legal / docs / termsConditions",
+    "label": "html · Questions about these Terms & Conditions may be directed to {{0}} at {{1}}",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Questions about these Terms & Conditions may be directed to {{0}} at {{1}}",
+    "sourceFile": "content/legal/docs.ts",
+    "sourceLine": 311
+  },
+  {
+    "key": "text.4054654f389a4113",
+    "section": "partners / MAIN_SITE",
+    "label": "name · Vantage Home Movers",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "Vantage Home Movers",
+    "sourceFile": "content/partners.ts",
+    "sourceLine": 16
+  },
+  {
+    "key": "text.d80df01aa404bdae",
+    "section": "sections / TrustStrip",
+    "label": "Copy · Reanudar logos",
+    "locale": "es",
+    "kind": "text",
+    "defaultValue": "Reanudar logos",
+    "sourceFile": "components/sections/TrustStrip.tsx",
+    "sourceLine": 27
+  },
+  {
+    "key": "text.6d3e5c98c2cfe587",
+    "section": "sections / TrustStrip",
+    "label": "Copy · Resume logos",
+    "locale": "en",
+    "kind": "text",
+    "defaultValue": "Resume logos",
+    "sourceFile": "components/sections/TrustStrip.tsx",
+    "sourceLine": 27
+  },
+  {
+    "key": "text.32887e644dffa4a3",
+    "section": "ui / RollingNumber / FORMATTER",
+    "label": "FORMATTER · en-US",
+    "locale": "shared",
+    "kind": "text",
+    "defaultValue": "en-US",
+    "sourceFile": "components/ui/RollingNumber.tsx",
+    "sourceLine": 16
+  }
+]

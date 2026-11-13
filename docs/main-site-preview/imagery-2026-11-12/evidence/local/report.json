@@ -1,0 +1,2393 @@
+{
+  "source": "5550c22fb0f7d5fe5a0d0a572ae5d341616e8d2c",
+  "base": "http://localhost:3001",
+  "checks": [
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/"
+    },
+    {
+      "ok": true,
+      "name": "All eight service routes discovered",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Localized complete quote screenshot with responsive composition",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Form displayed at uncropped native aspect ratio",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 1440,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 1440,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 1440,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 1440,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Process returns to full form",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/long-distance-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/residential-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/corporate-office-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/military-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/senior-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/packing-services"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/storage-options"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/auto-transport"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/resources"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/resources",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/resources",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/resources",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/resources",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Six distinct photographic previews",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Localized complete quote screenshot with responsive composition",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Form displayed at uncropped native aspect ratio",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 390,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 390,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 390,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 390,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Process returns to full form",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/long-distance-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/residential-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/corporate-office-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/military-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/senior-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/packing-services"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/storage-options"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/auto-transport"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/resources"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/resources",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/resources",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/resources",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/resources",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Six distinct photographic previews",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Localized complete quote screenshot with responsive composition",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Form displayed at uncropped native aspect ratio",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 320,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 320,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 320,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "en",
+      "width": 320,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Process returns to full form",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/long-distance-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/residential-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/corporate-office-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/military-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/senior-moving"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/packing-services"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/storage-options"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/services/auto-transport"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/resources"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/resources",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/resources",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/resources",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/resources",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Six distinct photographic previews",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es"
+    },
+    {
+      "ok": true,
+      "name": "All eight service routes discovered",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Localized complete quote screenshot with responsive composition",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Form displayed at uncropped native aspect ratio",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 1440,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 1440,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 1440,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 1440,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Process returns to full form",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-larga-distancia"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-residenciales"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-de-oficina"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-militares"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-para-personas-mayores"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/servicios-de-embalaje"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/opciones-de-almacenamiento"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/transporte-de-autos"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/recursos"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/recursos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/recursos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/recursos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/recursos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Six distinct photographic previews",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Localized complete quote screenshot with responsive composition",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Form displayed at uncropped native aspect ratio",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 390,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 390,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 390,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 390,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Process returns to full form",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-larga-distancia"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-residenciales"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-de-oficina"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-militares"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-para-personas-mayores"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/servicios-de-embalaje"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/opciones-de-almacenamiento"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/transporte-de-autos"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/recursos"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/recursos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/recursos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/recursos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/recursos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Six distinct photographic previews",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Localized complete quote screenshot with responsive composition",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Form displayed at uncropped native aspect ratio",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 320,
+      "step": 2
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 320,
+      "step": 3
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 320,
+      "step": 4
+    },
+    {
+      "ok": true,
+      "name": "Process advances with loaded image",
+      "locale": "es",
+      "width": 320,
+      "step": 5
+    },
+    {
+      "ok": true,
+      "name": "Process returns to full form",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-larga-distancia"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-residenciales"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-de-oficina"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-militares"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/mudanzas-para-personas-mayores"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/servicios-de-embalaje"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/opciones-de-almacenamiento"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/servicios/transporte-de-autos"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Service uses curated library image",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Route loads",
+      "path": "/es/recursos"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow",
+      "path": "/es/recursos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No truck icons",
+      "path": "/es/recursos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No retired truck imagery or cartoon resource posters",
+      "path": "/es/recursos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All images decode",
+      "path": "/es/recursos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Six distinct photographic previews",
+      "locale": "es",
+      "width": 320
+    }
+  ],
+  "failures": [],
+  "images": [
+    "/images/selected-20261112/home-arrival.webp",
+    "/partnerlogos/tbm_leads.svg",
+    "/partnerlogos/tbm_prime_leads.svg",
+    "/partnerlogos/top10.svg",
+    "/partnerlogos/convoice.svg",
+    "/partnerlogos/getmovers.svg",
+    "/images/selected-20261112/long-distance-arrival.webp",
+    "/images/selected-20261112/military-packing.webp",
+    "http://localhost:3001/images/selected-20261112/quote-request-en.webp",
+    "/images/selected-20261112/move-coordinator.webp",
+    "/images/selected-20261112/quiet-arrival.webp",
+    "/images/editorial/photography-20261112/estimates.webp",
+    "/images/editorial/photography-20261112/roles.webp",
+    "/images/editorial/photography-20261112/inventory.webp",
+    "/images/selected-20261112/office-moving.webp",
+    "/images/selected-20261112/military-arrival.webp",
+    "/images/selected-20261112/senior-moving.webp",
+    "/images/selected-20261112/packing-care.webp",
+    "/images/selected-20261112/storage-belongings.webp",
+    "/images/selected-20261112/auto-arrival.webp",
+    "/images/editorial/photography-20261112/costs.webp",
+    "/images/editorial/photography-20261112/packing.webp",
+    "/images/editorial/photography-20261112/paperwork.webp",
+    "http://localhost:3001/images/selected-20261112/quote-request-es.webp"
+  ]
+}

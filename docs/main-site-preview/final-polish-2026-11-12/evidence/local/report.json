@@ -1,0 +1,3611 @@
+{
+  "source": "f4b95c8f79b30c0e85ae56b740c49041758735d7",
+  "base": "http://localhost:3001",
+  "checks": [
+    {
+      "ok": true,
+      "name": "Six distinct custom posters",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/long-distance-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/residential-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/corporate-office-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/military-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/senior-moving",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/packing-services",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/storage-options",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/auto-transport",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/before-the-inventory-call",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/before-the-inventory-call",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/before-the-inventory-call",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/before-the-inventory-call",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/before-the-inventory-call",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/before-the-inventory-call",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/who-handles-my-move",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/who-handles-my-move",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/who-handles-my-move",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/who-handles-my-move",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/who-handles-my-move",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/who-handles-my-move",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/moving-cost-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/moving-cost-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/moving-cost-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/moving-cost-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/moving-cost-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/moving-cost-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All custom posters loaded",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Referral side copy removed",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Unboxed transparent logo treatments",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Ribbon cycles",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Pause works",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All logos visible with reduced motion",
+      "locale": "en",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/long-distance-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/residential-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/corporate-office-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/military-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/senior-moving",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/packing-services",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/storage-options",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/auto-transport",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/before-the-inventory-call",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/before-the-inventory-call",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/before-the-inventory-call",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/before-the-inventory-call",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/before-the-inventory-call",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/before-the-inventory-call",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/who-handles-my-move",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/who-handles-my-move",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/who-handles-my-move",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/who-handles-my-move",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/who-handles-my-move",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/who-handles-my-move",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/moving-cost-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/moving-cost-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/moving-cost-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/moving-cost-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/moving-cost-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/moving-cost-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All custom posters loaded",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Referral side copy removed",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Unboxed transparent logo treatments",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Ribbon cycles",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Pause works",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All logos visible with reduced motion",
+      "locale": "en",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/long-distance-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/residential-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/corporate-office-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/military-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/senior-moving",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/packing-services",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/storage-options",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/services/auto-transport",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/comparing-moving-estimates",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/before-the-inventory-call",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/before-the-inventory-call",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/before-the-inventory-call",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/before-the-inventory-call",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/before-the-inventory-call",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/before-the-inventory-call",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/who-handles-my-move",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/who-handles-my-move",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/who-handles-my-move",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/who-handles-my-move",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/who-handles-my-move",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/who-handles-my-move",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/moving-cost-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/moving-cost-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/moving-cost-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/moving-cost-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/moving-cost-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/moving-cost-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/items-to-check-before-packing",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/resources/moving-paperwork-guide",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/resources",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/resources",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/resources",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All custom posters loaded",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Referral side copy removed",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Unboxed transparent logo treatments",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Ribbon cycles",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Pause works",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All logos visible with reduced motion",
+      "locale": "en",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Six distinct custom posters",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All custom posters loaded",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Referral side copy removed",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Unboxed transparent logo treatments",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Ribbon cycles",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "Pause works",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "All logos visible with reduced motion",
+      "locale": "es",
+      "width": 1440
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All custom posters loaded",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Referral side copy removed",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Unboxed transparent logo treatments",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Ribbon cycles",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "Pause works",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "All logos visible with reduced motion",
+      "locale": "es",
+      "width": 390
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/preparar-inventario",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/costos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Lock and shield under quote",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Saved-progress disclosure removed",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Privacy message links to policy",
+      "path": "/es/recursos/documentos-de-mudanza",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "One sitewide license strip",
+      "path": "/es/recursos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Correct license identifiers",
+      "path": "/es/recursos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "No overflow",
+      "path": "/es/recursos",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All custom posters loaded",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Referral side copy removed",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Unboxed transparent logo treatments",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Ribbon cycles",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "Pause works",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "All logos visible with reduced motion",
+      "locale": "es",
+      "width": 320
+    },
+    {
+      "ok": true,
+      "name": "License strip on policy and error pages",
+      "path": "/privacy"
+    },
+    {
+      "ok": true,
+      "name": "License strip on policy and error pages",
+      "path": "/terms"
+    },
+    {
+      "ok": true,
+      "name": "License strip on policy and error pages",
+      "path": "/consumer-information"
+    },
+    {
+      "ok": true,
+      "name": "License strip on policy and error pages",
+      "path": "/carrier-contacts"
+    },
+    {
+      "ok": true,
+      "name": "License strip on policy and error pages",
+      "path": "/accessibility"
+    },
+    {
+      "ok": true,
+      "name": "License strip on policy and error pages",
+      "path": "/missing-polish-test"
+    }
+  ],
+  "failures": []
+}

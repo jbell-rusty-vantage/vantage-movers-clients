@@ -1,0 +1,42 @@
+{
+  "base": "https://vantage-movers-clients-main-site-egbiygydl-vantage-4d3db9ef.vercel.app",
+  "checks": [
+    {
+      "ok": true,
+      "name": "Genuine 200 percent browser zoom"
+    },
+    {
+      "ok": true,
+      "name": "No horizontal overflow at actual zoom"
+    },
+    {
+      "ok": true,
+      "name": "Form editable at actual zoom"
+    }
+  ],
+  "failures": [],
+  "zoom": {
+    "mechanism": "chrome.tabs.setZoom",
+    "zoom": 2,
+    "before": {
+      "dpr": 1,
+      "width": 1440
+    },
+    "after": {
+      "dpr": 2,
+      "width": 720
+    },
+    "layout": {
+      "scrollY": 1,
+      "innerHeight": 500,
+      "headerTop": 0,
+      "formTop": 953.5
+    },
+    "formLayout": {
+      "scrollY": 844.5,
+      "headerTop": 0,
+      "formTop": 110,
+      "visualPageTop": 844.5
+    }
+  }
+}

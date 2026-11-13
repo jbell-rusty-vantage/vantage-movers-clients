@@ -1,0 +1,1135 @@
+{
+  "checkedAt": "2026-11-12T15:21:04.153Z",
+  "origin": "https://vantage-movers-clients-main-site-bpqnaxwaa-vantage-4d3db9ef.vercel.app",
+  "sourceSha": "4dd2806a66dee939d8ddf7ec49ad8110941e39a1",
+  "mode": "Deployed optimized preview; Chromium viewport emulation, reduced motion; read-only",
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Vantage Movers | Nationwide Long-Distance Moving Broker",
+      "canonical": "https://vantagehomemovers.com",
+      "headings": 1
+    },
+    {
+      "path": "/accessibility",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Accessibility Statement | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/accessibility",
+      "headings": 1
+    },
+    {
+      "path": "/cancellation",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Cancellation Policy | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/cancellation",
+      "headings": 1
+    },
+    {
+      "path": "/carrier-contacts",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Join Our Carrier Network | Vantage Movers | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/carrier-contacts",
+      "headings": 1
+    },
+    {
+      "path": "/consumer-information",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Consumer Information | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/consumer-information",
+      "headings": 1
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Contact Vantage | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/contact",
+      "headings": 1
+    },
+    {
+      "path": "/es",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Prepare su mudanza interestatal",
+      "canonical": "https://vantagehomemovers.com/es",
+      "headings": 1
+    },
+    {
+      "path": "/es/contacto",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Contacte con Vantage | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/contacto",
+      "headings": 1
+    },
+    {
+      "path": "/es/destinos",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Prepárese para llegar a su destino | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/destinos",
+      "headings": 1
+    },
+    {
+      "path": "/es/destinos/wisconsin",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Prepárese para mudarse a Wisconsin | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/destinos/wisconsin",
+      "headings": 1
+    },
+    {
+      "path": "/es/destinos/wisconsin/madison",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Cómo prepararse para mudarse a Madison, Wisconsin | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/destinos/wisconsin/madison",
+      "headings": 1
+    },
+    {
+      "path": "/es/recursos",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Guías prácticas para su mudanza | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/recursos",
+      "headings": 1
+    },
+    {
+      "path": "/es/recursos/comparar-presupuestos",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Cómo comparar dos presupuestos escritos de mudanza | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/recursos/comparar-presupuestos",
+      "headings": 1
+    },
+    {
+      "path": "/es/recursos/preparar-inventario",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Antes de la llamada: inventario habitación por habitación | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/recursos/preparar-inventario",
+      "headings": 1
+    },
+    {
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "¿Quién se encarga de mi mudanza después de pedir una cotización? | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/recursos/quien-organiza-mi-mudanza",
+      "headings": 1
+    },
+    {
+      "path": "/es/servicios",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Prepare la mudanza que necesita | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/servicios",
+      "headings": 1
+    },
+    {
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Organice la mudanza de su oficina según el trabajo que debe reanudarse. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/servicios/mudanzas-de-oficina",
+      "headings": 1
+    },
+    {
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "¿Se muda de un estado a otro? Empiece por los detalles de su presupuesto. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/servicios/mudanzas-larga-distancia",
+      "headings": 1
+    },
+    {
+      "path": "/es/servicios/mudanzas-militares",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "¿Su mudanza depende de órdenes militares? Empiece por los requisitos. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/servicios/mudanzas-militares",
+      "headings": 1
+    },
+    {
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Prepare la mudanza con quienes conocen su hogar. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/servicios/mudanzas-para-personas-mayores",
+      "headings": 1
+    },
+    {
+      "path": "/es/servicios/mudanzas-residenciales",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Prepare su mudanza interestatal desde un apartamento o una casa. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/servicios/mudanzas-residenciales",
+      "headings": 1
+    },
+    {
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "¿Debe salir antes de poder entrar? Planifique ese intervalo. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/servicios/opciones-de-almacenamiento",
+      "headings": 1
+    },
+    {
+      "path": "/es/servicios/servicios-de-embalaje",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "Elija qué quiere que le ayuden a embalar. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/servicios/servicios-de-embalaje",
+      "headings": 1
+    },
+    {
+      "path": "/es/servicios/transporte-de-autos",
+      "status": 200,
+      "noindex": true,
+      "lang": "es",
+      "title": "¿Llevará su auto a su nuevo hogar? Pregunte por un plan de transporte separado. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/es/servicios/transporte-de-autos",
+      "headings": 1
+    },
+    {
+      "path": "/locations",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Get ready for your destination | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/locations",
+      "headings": 1
+    },
+    {
+      "path": "/locations/wisconsin-movers",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Getting ready for your move to Wisconsin | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/locations/wisconsin-movers",
+      "headings": 1
+    },
+    {
+      "path": "/locations/wisconsin-movers/madison",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Getting ready to move to Madison, Wisconsin | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/locations/wisconsin-movers/madison",
+      "headings": 1
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Privacy Policy | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/privacy",
+      "headings": 1
+    },
+    {
+      "path": "/resources",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Moving guides you can use | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/resources",
+      "headings": 1
+    },
+    {
+      "path": "/resources/before-the-inventory-call",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Before the inventory call: a room-by-room checklist | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/resources/before-the-inventory-call",
+      "headings": 1
+    },
+    {
+      "path": "/resources/comparing-moving-estimates",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Comparing two written moving estimates | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/resources/comparing-moving-estimates",
+      "headings": 1
+    },
+    {
+      "path": "/resources/who-handles-my-move",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Who handles my move after I request a quote? | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/resources/who-handles-my-move",
+      "headings": 1
+    },
+    {
+      "path": "/services",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Plan the move you need | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/services",
+      "headings": 1
+    },
+    {
+      "path": "/services/auto-transport",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Taking your car to your new home? Ask about a separate transport plan. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/services/auto-transport",
+      "headings": 1
+    },
+    {
+      "path": "/services/corporate-office-moving",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Plan your office move around the work that needs to resume. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/services/corporate-office-moving",
+      "headings": 1
+    },
+    {
+      "path": "/services/long-distance-moving",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Moving out of state? Start with the details that shape your estimate. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/services/long-distance-moving",
+      "headings": 1
+    },
+    {
+      "path": "/services/military-moving",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Planning a move around military orders? Start with the requirements. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/services/military-moving",
+      "headings": 1
+    },
+    {
+      "path": "/services/packing-services",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Choose what you would like help packing. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/services/packing-services",
+      "headings": 1
+    },
+    {
+      "path": "/services/residential-moving",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Plan an interstate move from your apartment or house. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/services/residential-moving",
+      "headings": 1
+    },
+    {
+      "path": "/services/senior-moving",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Plan the move with the people who know your home. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/services/senior-moving",
+      "headings": 1
+    },
+    {
+      "path": "/services/storage-options",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Moving out before you can move in? Plan for the gap. | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/services/storage-options",
+      "headings": 1
+    },
+    {
+      "path": "/sms-privacy",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "SMS Privacy Policy | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/sms-privacy",
+      "headings": 1
+    },
+    {
+      "path": "/sms-terms",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "SMS Terms & Conditions | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/sms-terms",
+      "headings": 1
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "noindex": true,
+      "lang": "en",
+      "title": "Terms & Conditions | Vantage Movers",
+      "canonical": "https://vantagehomemovers.com/terms",
+      "headings": 1
+    }
+  ],
+  "layouts": [
+    {
+      "path": "/",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/accessibility",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/accessibility",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/accessibility",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/cancellation",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/cancellation",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/cancellation",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/carrier-contacts",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/carrier-contacts",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/carrier-contacts",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/consumer-information",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/consumer-information",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/consumer-information",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/contact",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/contact",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/contact",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/contacto",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/contacto",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/contacto",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/destinos",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/destinos",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/destinos",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/destinos/wisconsin",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/destinos/wisconsin",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/destinos/wisconsin",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/destinos/wisconsin/madison",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/destinos/wisconsin/madison",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/destinos/wisconsin/madison",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/recursos",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/recursos",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/recursos",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/recursos/comparar-presupuestos",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/recursos/preparar-inventario",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/recursos/preparar-inventario",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/recursos/preparar-inventario",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/servicios",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/servicios",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/servicios",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/servicios/mudanzas-militares",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/servicios/mudanzas-residenciales",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/servicios/servicios-de-embalaje",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/es/servicios/transporte-de-autos",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/locations",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/locations",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/locations",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/locations/wisconsin-movers",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/locations/wisconsin-movers",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/locations/wisconsin-movers",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/locations/wisconsin-movers/madison",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/locations/wisconsin-movers/madison",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/locations/wisconsin-movers/madison",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/privacy",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/privacy",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/privacy",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/resources",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/resources",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/resources",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/resources/before-the-inventory-call",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/resources/before-the-inventory-call",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/resources/before-the-inventory-call",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/resources/comparing-moving-estimates",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/resources/comparing-moving-estimates",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/resources/comparing-moving-estimates",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/resources/who-handles-my-move",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/resources/who-handles-my-move",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/resources/who-handles-my-move",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/services",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/services",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/services",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/services/auto-transport",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/services/auto-transport",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/services/auto-transport",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/services/corporate-office-moving",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/services/corporate-office-moving",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/services/corporate-office-moving",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/services/long-distance-moving",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/services/long-distance-moving",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/services/long-distance-moving",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/services/military-moving",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/services/military-moving",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/services/military-moving",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/services/packing-services",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/services/packing-services",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/services/packing-services",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/services/residential-moving",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/services/residential-moving",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/services/residential-moving",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/services/senior-moving",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/services/senior-moving",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/services/senior-moving",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/services/storage-options",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/services/storage-options",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/services/storage-options",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/sms-privacy",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/sms-privacy",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/sms-privacy",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/sms-terms",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/sms-terms",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/sms-terms",
+      "width": 320,
+      "documentWidth": 320
+    },
+    {
+      "path": "/terms",
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "path": "/terms",
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "path": "/terms",
+      "width": 320,
+      "documentWidth": 320
+    }
+  ],
+  "noJavaScript": [
+    {
+      "path": "/",
+      "status": 200,
+      "headingVisible": true
+    },
+    {
+      "path": "/es",
+      "status": 200,
+      "headingVisible": true
+    },
+    {
+      "path": "/services/long-distance-moving",
+      "status": 200,
+      "headingVisible": true
+    },
+    {
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "status": 200,
+      "headingVisible": true
+    }
+  ],
+  "errors": [],
+  "failures": [
+    "/: canonical",
+    "/accessibility: canonical",
+    "/cancellation: canonical",
+    "/carrier-contacts: canonical",
+    "/consumer-information: canonical",
+    "/contact: canonical",
+    "/es: canonical",
+    "/es/contacto: canonical",
+    "/es/destinos: canonical",
+    "/es/destinos/wisconsin: canonical",
+    "/es/destinos/wisconsin/madison: canonical",
+    "/es/recursos: canonical",
+    "/es/recursos/comparar-presupuestos: canonical",
+    "/es/recursos/preparar-inventario: canonical",
+    "/es/recursos/quien-organiza-mi-mudanza: canonical",
+    "/es/servicios: canonical",
+    "/es/servicios/mudanzas-de-oficina: canonical",
+    "/es/servicios/mudanzas-larga-distancia: canonical",
+    "/es/servicios/mudanzas-militares: canonical",
+    "/es/servicios/mudanzas-para-personas-mayores: canonical",
+    "/es/servicios/mudanzas-residenciales: canonical",
+    "/es/servicios/opciones-de-almacenamiento: canonical",
+    "/es/servicios/servicios-de-embalaje: canonical",
+    "/es/servicios/transporte-de-autos: canonical",
+    "/locations: canonical",
+    "/locations/wisconsin-movers: canonical",
+    "/locations/wisconsin-movers/madison: canonical",
+    "/privacy: canonical",
+    "/resources: canonical",
+    "/resources/before-the-inventory-call: canonical",
+    "/resources/comparing-moving-estimates: canonical",
+    "/resources/who-handles-my-move: canonical",
+    "/services: canonical",
+    "/services/auto-transport: canonical",
+    "/services/corporate-office-moving: canonical",
+    "/services/long-distance-moving: canonical",
+    "/services/military-moving: canonical",
+    "/services/packing-services: canonical",
+    "/services/residential-moving: canonical",
+    "/services/senior-moving: canonical",
+    "/services/storage-options: canonical",
+    "/sms-privacy: canonical",
+    "/sms-terms: canonical",
+    "/terms: canonical"
+  ]
+}

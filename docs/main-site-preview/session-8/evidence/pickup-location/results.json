@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-11-12T15:55:47.223Z",
+  "source": "76b9a8671f855391c17c01a72305e5def32dc5a3",
+  "origin": "https://vantage-movers-clients-main-site-90ai3mhog-vantage-4d3db9ef.vercel.app",
+  "scope": "Deployed preview, mocked browser location and provider seam, zero quote submissions. Not live geocoding qualification.",
+  "cases": [
+    {
+      "locale": "en",
+      "mode": "success",
+      "passed": true,
+      "locationRequests": 1
+    },
+    {
+      "locale": "en",
+      "mode": "denied",
+      "passed": true,
+      "locationRequests": 0
+    },
+    {
+      "locale": "en",
+      "mode": "unavailable",
+      "passed": true,
+      "locationRequests": 1
+    },
+    {
+      "locale": "en",
+      "mode": "editing-pending",
+      "passed": true,
+      "locationRequests": 0
+    },
+    {
+      "locale": "es",
+      "mode": "success",
+      "passed": true,
+      "locationRequests": 1
+    },
+    {
+      "locale": "es",
+      "mode": "denied",
+      "passed": true,
+      "locationRequests": 0
+    },
+    {
+      "locale": "es",
+      "mode": "unavailable",
+      "passed": true,
+      "locationRequests": 1
+    },
+    {
+      "locale": "es",
+      "mode": "editing-pending",
+      "passed": true,
+      "locationRequests": 0
+    }
+  ]
+}

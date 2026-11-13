@@ -3,12 +3,14 @@
 import {
   useEffect,
   useId,
+  useMemo,
   useRef,
   useState,
   type KeyboardEvent,
 } from "react";
 import { createPortal } from "react-dom";
 import { format } from "date-fns";
+import { es } from "date-fns/locale";
 import { DayPicker } from "react-day-picker";
 import { cn } from "@vantage/utils";
 import { parseIsoDate, startOfToday, toIsoDate } from "./date-utils";
@@ -17,6 +19,7 @@ import "./move-date-picker.css";
 export type MoveDatePickerVariant = "clients" | "main-site";
 
 export interface MoveDatePickerProps {
+  locale?: "en" | "es";
   id?: string;
   /** ISO date string (YYYY-MM-DD) */
   value: string;
@@ -62,6 +65,7 @@ function CalendarIcon() {
 }
 
 export function MoveDatePicker({
+  locale = "en",
   id,
   value,
   onChange,
@@ -81,8 +85,8 @@ export function MoveDatePicker({
   const [coords, setCoords] = useState<PopoverCoords | null>(null);
   const [month, setMonth] = useState<Date>(() => parseIsoDate(value) ?? startOfToday());
 
-  const selected = parseIsoDate(value);
-  const displayValue = selected ? format(selected, "MMM d, yyyy") : "";
+  const selected = useMemo(() => parseIsoDate(value), [value]);
+  const displayValue = selected ? format(selected, locale === "es" ? "d MMM yyyy" : "MMM d, yyyy", { locale: locale === "es" ? es : undefined }) : "";
   const today = startOfToday();
   const calendarStartMonth = new Date(today.getFullYear(), today.getMonth(), 1);
   const calendarEndMonth = new Date(today.getFullYear() + 3, 11, 1);
@@ -153,6 +157,7 @@ export function MoveDatePicker({
       if (event.key === "Escape") {
         setOpen(false);
         onBlur?.();
+        rootRef.current?.querySelector("button")?.focus();
       }
     }
 
@@ -177,6 +182,7 @@ export function MoveDatePicker({
     onChange(toIsoDate(date));
     setOpen(false);
     onBlur?.();
+    rootRef.current?.querySelector("button")?.focus();
   }
 
   function handleTriggerKeyDown(event: KeyboardEvent<HTMLButtonElement>) {
@@ -207,7 +213,7 @@ export function MoveDatePicker({
         disabled={disabled}
         aria-haspopup="dialog"
         aria-expanded={open}
-        aria-label={displayValue ? `Move date: ${displayValue}` : placeholder}
+        aria-label={displayValue ? `${locale === "es" ? "Fecha de mudanza" : "Move date"}: ${displayValue}` : placeholder}
       >
         <span className={cn("vdp__value", !displayValue && "vdp__value--placeholder")}>
           {displayValue || placeholder}
@@ -226,7 +232,7 @@ export function MoveDatePicker({
             className="vdp__popover vdp__popover--portal"
             data-variant={variant}
             role="dialog"
-            aria-label="Choose move date"
+            aria-label={locale === "es" ? "Elija la fecha de mudanza" : "Choose move date"}
             style={{
               top: coords.top,
               left: coords.left,
@@ -235,6 +241,13 @@ export function MoveDatePicker({
             }}
           >
             <DayPicker
+              locale={locale === "es" ? es : undefined}
+              labels={locale === "es" ? {
+                labelMonthDropdown: () => "Elija el mes",
+                labelYearDropdown: () => "Elija el año",
+                labelDayButton: (date, modifiers) => `${modifiers.today ? "Hoy, " : ""}${format(date, "PPPP", { locale: es })}${modifiers.selected ? ", seleccionado" : ""}`,
+              } : undefined}
+              autoFocus
               mode="single"
               selected={selected}
               onSelect={handleSelect}

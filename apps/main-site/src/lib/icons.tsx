@@ -12,7 +12,6 @@ import {
   PackageOpen,
   Route,
   Shield,
-  Truck,
   UserCheck,
   Users,
 } from "lucide-react";
@@ -25,7 +24,7 @@ export const SERVICE_ICONS: Record<
   ComponentType<{ size?: number; className?: string; strokeWidth?: number }>
 > = {
   car: Car,
-  truck: Truck,
+  truck: Route,
   route: Route,
   home: Home,
   office: Building2,
@@ -50,7 +49,7 @@ export const WHY_ICONS: Record<
 export const HOW_ICONS: Record<string, ComponentType<IconSize>> = {
   file: FileText,
   "user-check": UserCheck,
-  truck: Truck,
+  truck: Route,
 };
 
 export function ServiceIcon({

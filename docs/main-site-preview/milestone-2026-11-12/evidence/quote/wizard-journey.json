@@ -1,0 +1,43 @@
+{
+  "capturedAt": "2026-11-12T18:13:56.529Z",
+  "base": "http://localhost:3001",
+  "mode": "Local development; all quote and Places responses mocked. No Form Lead persisted.",
+  "geolocation": "No pickup permission requested; reverse-geolocation feature deferred. Manual ZIP path exercised.",
+  "results": [
+    {
+      "width": 390,
+      "locale": "es",
+      "draftExplorationBackReload": "passed",
+      "destinationCityStateGenericAndEdit": "passed",
+      "responseSequence": [
+        "200 false",
+        "503 false",
+        "200 true"
+      ],
+      "identicalRetryPayloads": true,
+      "falseConsentRetained": true,
+      "capturedDraftCleared": true,
+      "overflow": false,
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "locale": "es",
+      "draftExplorationBackReload": "passed",
+      "destinationCityStateGenericAndEdit": "passed",
+      "responseSequence": [
+        "200 false",
+        "503 false",
+        "200 true"
+      ],
+      "identicalRetryPayloads": true,
+      "falseConsentRetained": true,
+      "capturedDraftCleared": true,
+      "overflow": false,
+      "pageErrors": []
+    },
+    {
+      "homepageMultipleForms": "active form retained after navigation"
+    }
+  ]
+}

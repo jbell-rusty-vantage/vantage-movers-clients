@@ -1,0 +1,20 @@
+{
+  "database": "testvantagemovers_sitepreview",
+  "beforeRevision": 28,
+  "receipt": {
+    "installed": false,
+    "appended": 114,
+    "fields": 2327,
+    "revision": 29
+  },
+  "replay": {
+    "installed": false,
+    "appended": 0,
+    "fields": 2327,
+    "revision": 29
+  },
+  "existingDescriptorsPreserved": true,
+  "ownerOverridesPreserved": true,
+  "testimonialPolicyPreserved": true,
+  "sha256": "e9031fd134b40d88abdc744e8d09603c69ef0ada2e9e79b6e33541e559a1d268"
+}

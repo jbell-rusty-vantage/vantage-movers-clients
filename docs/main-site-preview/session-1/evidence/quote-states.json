@@ -1,0 +1,22 @@
+[
+  {
+    "width": 1440,
+    "simulation": true,
+    "attempts": 2,
+    "retainedFields": true,
+    "identicalRetryPayload": true,
+    "source": "main_site",
+    "consent": false,
+    "confirmation": "Request Your Moving Quote\n\nTell us where you are moving, when, and what you need moved.\n\n1\nMoving Details\n2\nContact Info\n3\nConfirmation\nRequest Received\n\n33426 → 53703 · 2 Bedrooms\n\nA Vantage moving coordinator will reach out shortly. To speak with someone now, call (888) 477-9232.\n\nSTART OVER\nFree Estimate\nBinding Estimates\nNo Hidden Fees"
+  },
+  {
+    "width": 390,
+    "simulation": true,
+    "attempts": 2,
+    "retainedFields": true,
+    "identicalRetryPayload": true,
+    "source": "main_site",
+    "consent": false,
+    "confirmation": "Request Your Moving Quote\n\nTell us where you are moving, when, and what you need moved.\n\n1\nMoving Details\n2\nContact Info\n3\nConfirmation\nRequest Received\n\n33426 → 53703 · 2 Bedrooms\n\nA Vantage moving coordinator will reach out shortly. To speak with someone now, call (888) 477-9232.\n\nSTART OVER\nFree Estimate\nBinding Estimates\nNo Hidden Fees"
+  }
+]

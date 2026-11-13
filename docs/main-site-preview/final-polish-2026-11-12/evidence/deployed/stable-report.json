@@ -1,0 +1,47 @@
+{
+  "source": "f4b95c8f79b30c0e85ae56b740c49041758735d7",
+  "base": "https://vantage-main-site-optimization.vercel.app",
+  "checks": [
+    {
+      "ok": true,
+      "name": "Stable archive renders",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "Preview noindex",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "All six posters decoded",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "License strip present",
+      "locale": "en"
+    },
+    {
+      "ok": true,
+      "name": "Stable archive renders",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "Preview noindex",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "All six posters decoded",
+      "locale": "es"
+    },
+    {
+      "ok": true,
+      "name": "License strip present",
+      "locale": "es"
+    }
+  ],
+  "failures": []
+}

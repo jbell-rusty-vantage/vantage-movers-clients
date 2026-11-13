@@ -1,7 +1,9 @@
 "use client";
+import { CmsText } from "@/components/cms/Content";
+
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { CmsLink as Link } from "@/components/cms/Content";
 import { ChevronDown } from "lucide-react";
 import { services } from "@/lib/content";
 import { SERVICE_ICONS } from "@/lib/icons";
@@ -62,22 +64,20 @@ export function ServicesDropdown({
             scheduleClose();
           }
         }}
-      >
-        Services
-        <ChevronDown size={14} strokeWidth={2.4} aria-hidden />
+      ><CmsText scope="components/interactive/ServicesDropdown.tsx">{"Services"}</CmsText><ChevronDown size={14} strokeWidth={2.4} aria-hidden />
       </button>
 
-      {open && (
+      <CmsText scope="components/interactive/ServicesDropdown.tsx">{open && (
         <div
           className="absolute top-full left-0 z-50 pt-2"
           onMouseEnter={openMenu}
           onMouseLeave={scheduleClose}
         >
           <div className="grid w-[520px] max-w-[calc(100vw-56px)] grid-cols-2 gap-1 rounded-card border border-cream-border bg-white p-3.5 shadow-menu">
-            {services.map((s) => {
+            <CmsText scope="components/interactive/ServicesDropdown.tsx">{services.map((s) => {
               const Icon = SERVICE_ICONS[s.icon];
               return (
-                <Link
+                <Link scope="components/interactive/ServicesDropdown.tsx"
                   key={s.title}
                   href={`/#${s.anchorId}`}
                   className="flex items-center gap-[11px] rounded-md2 px-3 py-2.5 text-[14.5px] font-semibold text-brand-blue no-underline transition hover:bg-cream"
@@ -88,13 +88,13 @@ export function ServicesDropdown({
                   <span className="grid size-[30px] flex-none place-items-center rounded-chip bg-brand-yellow-soft text-brand-blue-bright">
                     <Icon size={17} aria-hidden />
                   </span>
-                  {s.title}
+                  <CmsText scope="components/interactive/ServicesDropdown.tsx">{s.title}</CmsText>
                 </Link>
               );
-            })}
+            })}</CmsText>
           </div>
         </div>
-      )}
+      )}</CmsText>
     </div>
   );
 }

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "origin": "https://vantage-admin-ccbxnxhtq-vantage-4d3db9ef.vercel.app",
+  "checks": [
+    "anonymous CMS access rejected",
+    "real Owner session reads deployed catalog through signed preview proxy",
+    "cross-origin CMS save rejected",
+    "Owner edit persists through dashboard BFF",
+    "dashboard exposes revision conflict",
+    "protected original image thumbnail renders through Owner proxy",
+    "Owner can inspect preview testimonial eligibility",
+    "dashboard restore returns content to original state"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "preview": {
+    "id": "dpl_4qHq7JmRiHJjXTJbtM3v4MA6m2df",
+    "url": "vantage-movers-clients-main-site-kmpbfyxgy-vantage-4d3db9ef.vercel.app",
+    "target": "preview",
+    "state": "READY"
+  },
+  "production": {
+    "id": "dpl_4jzUYdiummhMzTXkwCkYvHdB61fC",
+    "url": "vantage-movers-clients-main-site-bpuxndl7r-vantage-4d3db9ef.vercel.app",
+    "target": "production",
+    "state": "READY"
+  }
+}

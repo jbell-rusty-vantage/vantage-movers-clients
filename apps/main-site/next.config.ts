@@ -4,6 +4,7 @@ import type { NextConfig } from "next";
 const monorepoRoot = path.join(__dirname, "../..");
 
 const nextConfig: NextConfig = {
+  experimental: { globalNotFound: true },
   transpilePackages: ["@vantage/api-client", "@vantage/ui", "@vantage/utils"],
   outputFileTracingRoot: monorepoRoot,
   reactCompiler: true,
@@ -17,6 +18,7 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      ...(process.env.VERCEL_ENV !== "production" ? [{ source: "/(.*)", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }] : []),
       {
         source: "/(.*)",
         headers: [
@@ -25,7 +27,7 @@ const nextConfig: NextConfig = {
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           {
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
+            value: "camera=(), microphone=(), geolocation=(self)",
           },
         ],
       },

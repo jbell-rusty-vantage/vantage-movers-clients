@@ -74,6 +74,10 @@ export const privacyPolicy: LegalDoc = {
           type: "p",
           html: "We do not request or knowingly collect sensitive information such as Social Security numbers, financial account numbers, or government-issued ID numbers through our quote forms.",
         },
+        {
+          type: "p",
+          html: 'If you choose the optional pickup-location suggestion and allow your browser to share location, we send approximate coordinates through our server to Google Maps to suggest a pickup ZIP. We do not add those coordinates to your quote, saved form progress or analytics. The suggestion does not change your pickup ZIP until you confirm it. Manual ZIP entry remains available. Google handles the lookup under its <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy (opens in a new tab)</a>.',
+        },
       ],
     },
     {
@@ -271,7 +275,7 @@ export const termsConditions: LegalDoc = {
       id: "submissions",
       index: "03",
       title: "User Submissions & Accuracy",
-      blocks: [{ type: "p", html: "You agree to provide accurate, complete, and current information when submitting a quote request. Estimates, scheduling, and carrier availability may depend on the accuracy of the information you provide, including origin and destination ZIP codes, move date, inventory size, and contact information." }],
+      blocks: [{ type: "p", html: 'You agree to provide accurate, complete, and current information when submitting a quote request. Estimates, scheduling, and carrier availability may depend on the accuracy of the information you provide, including origin and destination ZIP codes, move date, inventory size, and contact information. Optional location suggestions use Google Maps and are subject to the <a href="https://maps.google.com/help/terms_maps.html" target="_blank" rel="noopener noreferrer">Google Maps Additional Terms of Service (opens in a new tab)</a>. Confirm any suggested ZIP before using it.' }],
     },
     {
       id: "communications",

@@ -1,3 +1,4 @@
+import { CmsElement, CmsText } from "@/components/cms/Content";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/ui/Container";
@@ -37,18 +38,18 @@ export function QuoteWizardSkeleton({
   const isPanel = variant === "panel";
 
   return (
-    <div
+    <CmsElement element="div" scope="components/feedback/LoadingSkeletons.tsx"
       id={isPanel ? undefined : "quote"}
       className={`bg-white px-6 pt-0 pb-6 shadow-form-card ${isPanel ? radiusClasses.md2 : "rounded-panel px-[30px] pt-[30px] pb-[26px]"}`}
       aria-label="Loading quote form"
       role="status"
     >
-      {isPanel && (
+      <CmsText scope="components/feedback/LoadingSkeletons.tsx">{isPanel && (
         <div className="-mx-6 mb-6 bg-brand-blue px-6 pt-6 pb-5">
           <SkeletonBlock className="h-7 w-2/3" onDark />
           <SkeletonBlock className="mt-2 h-4 w-1/2" onDark />
         </div>
-      )}
+      )}</CmsText>
       <div className="space-y-5">
         <SkeletonBlock className="h-5 w-3/4" />
         <div className="grid gap-3 sm:grid-cols-2">
@@ -62,13 +63,13 @@ export function QuoteWizardSkeleton({
           <SkeletonBlock className="h-12 flex-1 rounded-lg2" />
         </div>
       </div>
-    </div>
+    </CmsElement>
   );
 }
 
 export function FeaturedReviewSkeleton() {
   return (
-    <figure
+    <CmsElement element="figure" scope="components/feedback/LoadingSkeletons.tsx"
       className="rounded-card border border-white/12 bg-white/6 px-5 py-4 backdrop-blur-sm"
       aria-label="Loading featured review"
       role="status"
@@ -85,13 +86,13 @@ export function FeaturedReviewSkeleton() {
         </div>
         <SkeletonBlock className="h-4 w-20" onDark />
       </div>
-    </figure>
+    </CmsElement>
   );
 }
 
 export function TestimonialsSectionSkeleton() {
   return (
-    <section className="relative overflow-hidden bg-brand-blue py-24" aria-label="Loading testimonials">
+    <CmsElement element="section" scope="components/feedback/LoadingSkeletons.tsx" className="relative overflow-hidden bg-brand-blue py-24" aria-label="Loading testimonials">
       <div
         className="absolute -top-[100px] -left-[100px] size-[420px] rounded-full bg-[radial-gradient(circle,rgba(46,134,222,.22),transparent_65%)]"
         aria-hidden
@@ -104,7 +105,7 @@ export function TestimonialsSectionSkeleton() {
         </div>
       </Container>
       <div className="mx-auto flex max-w-[1400px] gap-6 overflow-hidden px-4">
-        {Array.from({ length: 3 }).map((_, index) => (
+        <CmsText scope="components/feedback/LoadingSkeletons.tsx">{Array.from({ length: 3 }).map((_, index) => (
           <div
             key={index}
             className="min-h-[230px] flex-[0_0_320px] rounded-card bg-white p-7 shadow-[0_14px_36px_rgba(4,18,38,0.3)] md:flex-1"
@@ -121,9 +122,9 @@ export function TestimonialsSectionSkeleton() {
               </span>
             </div>
           </div>
-        ))}
+        ))}</CmsText>
       </div>
-    </section>
+    </CmsElement>
   );
 }
 
@@ -160,9 +161,9 @@ export function HomePageSkeleton() {
         <HomeHeroSkeleton />
         <section className="border-b border-cream-border-2 bg-white py-7">
           <Container className="flex flex-wrap items-center justify-center gap-8">
-            {Array.from({ length: 4 }).map((_, index) => (
+            <CmsText scope="components/feedback/LoadingSkeletons.tsx">{Array.from({ length: 4 }).map((_, index) => (
               <SkeletonBlock key={index} className="h-8 w-28" />
-            ))}
+            ))}</CmsText>
           </Container>
         </section>
         <section className="bg-cream py-20">
@@ -172,9 +173,9 @@ export function HomePageSkeleton() {
               <SkeletonBlock className="mx-auto h-10 w-80 max-w-full" />
             </div>
             <div className="grid gap-6 md:grid-cols-3">
-              {Array.from({ length: 3 }).map((_, index) => (
+              <CmsText scope="components/feedback/LoadingSkeletons.tsx">{Array.from({ length: 3 }).map((_, index) => (
                 <SkeletonCard key={index} />
-              ))}
+              ))}</CmsText>
             </div>
           </Container>
         </section>
@@ -200,20 +201,20 @@ export function PolicyPageSkeleton() {
         <Container className="grid gap-8 py-14 lg:grid-cols-[280px_1fr]">
           <aside className="h-fit rounded-card border border-cream-border bg-white p-5 shadow-card">
             <SkeletonBlock className="mb-5 h-4 w-28" />
-            {Array.from({ length: 6 }).map((_, index) => (
+            <CmsText scope="components/feedback/LoadingSkeletons.tsx">{Array.from({ length: 6 }).map((_, index) => (
               <SkeletonBlock key={index} className="mb-3 h-8 w-full rounded-md2" />
-            ))}
+            ))}</CmsText>
           </aside>
           <article className="rounded-panel border border-cream-border bg-white p-7 shadow-card md:p-10">
             <SkeletonBlock className="mb-10 h-5 w-full" />
-            {Array.from({ length: 4 }).map((_, index) => (
+            <CmsText scope="components/feedback/LoadingSkeletons.tsx">{Array.from({ length: 4 }).map((_, index) => (
               <div key={index} className="mb-10">
                 <SkeletonBlock className="mb-5 h-8 w-2/3" />
                 <SkeletonBlock className="mb-3 h-4 w-full" />
                 <SkeletonBlock className="mb-3 h-4 w-11/12" />
                 <SkeletonBlock className="h-4 w-4/5" />
               </div>
-            ))}
+            ))}</CmsText>
           </article>
         </Container>
       </main>

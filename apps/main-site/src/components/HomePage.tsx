@@ -1,3 +1,5 @@
+import { CmsElement } from "@/components/cms/Content";
+import { CmsText } from "@/components/cms/Content";
 import type { Testimonial } from "@vantage/api-client";
 import { Suspense } from "react";
 import { TestimonialsSectionSkeleton } from "@/components/feedback/LoadingSkeletons";
@@ -14,6 +16,7 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { TrustBand } from "@/components/sections/TrustBand";
 import { TrustStrip } from "@/components/sections/TrustStrip";
+import { MilitaryAppreciation } from "@/components/sections/MilitaryAppreciation";
 import { WhyVantageSection } from "@/components/sections/WhyVantageSection";
 import { HomePageJsonLd } from "@/components/seo/HomePageJsonLd";
 
@@ -44,7 +47,7 @@ export function HomePage({
     <>
       <HomePageJsonLd />
       <Header />
-      <main>
+      <main id="main-content" data-content-id="home">
         <HeroSection />
         <TrustStrip />
 
@@ -54,13 +57,14 @@ export function HomePage({
         <CoverageSection />
         <WhyVantageSection />
         <AboutSection />
+        <MilitaryAppreciation />
         <Suspense fallback={<TestimonialsSectionSkeleton />}>
           <TestimonialsStream testimonialsPromise={testimonialsPromise} />
         </Suspense>
         <FaqSection />
-        <GetInTouchSection
-          featuredTestimonialPromise={featuredTestimonialPromise}
-        />
+        <Suspense fallback={<section id="contact" className="bg-cream px-6 py-12"><h2 className="font-display text-2xl font-bold text-brand-blue"><CmsText scope="components/HomePage.tsx">{"Contact Vantage"}</CmsText></h2><CmsElement element="a" scope="components/HomePage.tsx" href="tel:8884779232"><CmsText scope="components/HomePage.tsx">{"(888) 477-9232"}</CmsText></CmsElement></section>}>
+          <GetInTouchSection featuredTestimonialPromise={featuredTestimonialPromise} />
+        </Suspense>
         <FinalCTASection />
       </main>
       <SiteFooter />

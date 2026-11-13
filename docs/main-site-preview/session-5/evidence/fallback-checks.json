@@ -1,0 +1,12 @@
+[
+  {
+    "locale": "en",
+    "fallback": "Image unavailable\n\nTell Vantage the basics: pickup and delivery ZIPs, your preferred date and move size.",
+    "visibleSteps": 5
+  },
+  {
+    "locale": "es",
+    "fallback": "La imagen no está disponible\n\nComparta los datos básicos: códigos postales de origen y destino, fecha preferida y tamaño de la mudanza.",
+    "visibleSteps": 5
+  }
+]

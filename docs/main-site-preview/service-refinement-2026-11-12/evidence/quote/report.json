@@ -1,0 +1,41 @@
+{
+  "mode": "Mocked quotes and Places; no Lead created",
+  "results": [
+    {
+      "width": 320,
+      "contactValidation": true,
+      "noEarlySubmission": true,
+      "destinationFallback": true,
+      "guideBack": true,
+      "localeReload": true,
+      "identicalRetryPayloads": true,
+      "falseConsent": true,
+      "captureClearsDraft": true
+    },
+    {
+      "width": 390,
+      "contactValidation": true,
+      "noEarlySubmission": true,
+      "destinationFallback": true,
+      "guideBack": true,
+      "localeReload": true,
+      "identicalRetryPayloads": true,
+      "falseConsent": true,
+      "captureClearsDraft": true
+    },
+    {
+      "width": 1440,
+      "contactValidation": true,
+      "noEarlySubmission": true,
+      "destinationFallback": true,
+      "guideBack": true,
+      "localeReload": true,
+      "identicalRetryPayloads": true,
+      "falseConsent": true,
+      "captureClearsDraft": true
+    },
+    {
+      "multipleHomeForms": "active attempt retained"
+    }
+  ]
+}

@@ -52,8 +52,10 @@ export const emptyQuote: QuoteFormValues = {
 };
 
 export const STEP_FIELDS: Record<number, (keyof QuoteFormInput)[]> = {
-  0: ["pickup", "dest", "date", "size"],
-  1: ["name", "phone", "email"],
+  0: ["name", "phone", "email"],
+  1: ["pickup", "dest"],
+  2: ["date", "size"],
+  3: ["smsConsent"],
 };
 
 export interface QuoteResult {

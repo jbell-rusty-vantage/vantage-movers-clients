@@ -1,0 +1,20 @@
+{
+  "origin": "https://vantage-main-site-optimization.vercel.app",
+  "method": "Authenticated in-app browser control",
+  "passed": true,
+  "checks": [
+    "English packing filter returns one matching article",
+    "Search combined with a topic yields the empty state for an unmatched term",
+    "Show all articles resets search and topic to all six articles",
+    "Keyboard Tab from search reaches the All articles button",
+    "All six new cover images are decoded in the deployed resource grid",
+    "Spanish cost filter returns two articles at 390px; searching inventario retains the two matching articles",
+    "No document horizontal overflow on desktop, 390px Spanish library or 320px English article",
+    "Article cover loads and editorial byline links to the editorial profile",
+    "Estimate worksheet anchor resolves on the deployed article",
+    "Consumer Information shows current FMCSA guidance and stored 2013/2006 editions",
+    "No warning or error logs observed in the deployed browser session"
+  ],
+  "access": "Anonymous command-line fetches reached Vercel's login page. Authenticated browser and Vercel CLI checks are the deployment evidence; protection was retained.",
+  "limitations": "Representative responsive checks, not an exhaustive device or accessibility certification. No quotes submitted."
+}

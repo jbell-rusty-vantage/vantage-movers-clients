@@ -1,0 +1,285 @@
+{
+  "origin": "http://localhost:3001",
+  "widths": [
+    320,
+    390,
+    1440
+  ],
+  "services": [
+    {
+      "id": "long-distance-moving",
+      "locale": "en",
+      "path": "/services/long-distance-moving",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "long-distance-moving",
+      "locale": "es",
+      "path": "/es/servicios/mudanzas-larga-distancia",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "residential-moving",
+      "locale": "en",
+      "path": "/services/residential-moving",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "residential-moving",
+      "locale": "es",
+      "path": "/es/servicios/mudanzas-residenciales",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "corporate-office-moving",
+      "locale": "en",
+      "path": "/services/corporate-office-moving",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "corporate-office-moving",
+      "locale": "es",
+      "path": "/es/servicios/mudanzas-de-oficina",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "military-moving",
+      "locale": "en",
+      "path": "/services/military-moving",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "military-moving",
+      "locale": "es",
+      "path": "/es/servicios/mudanzas-militares",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "senior-moving",
+      "locale": "en",
+      "path": "/services/senior-moving",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "senior-moving",
+      "locale": "es",
+      "path": "/es/servicios/mudanzas-para-personas-mayores",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "packing-services",
+      "locale": "en",
+      "path": "/services/packing-services",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "packing-services",
+      "locale": "es",
+      "path": "/es/servicios/servicios-de-embalaje",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "storage-options",
+      "locale": "en",
+      "path": "/services/storage-options",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "storage-options",
+      "locale": "es",
+      "path": "/es/servicios/opciones-de-almacenamiento",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "auto-transport",
+      "locale": "en",
+      "path": "/services/auto-transport",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "id": "auto-transport",
+      "locale": "es",
+      "path": "/es/servicios/transporte-de-autos",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    }
+  ],
+  "editorial": [
+    {
+      "path": "/resources",
+      "sources": []
+    },
+    {
+      "path": "/es/recursos",
+      "sources": []
+    },
+    {
+      "path": "/resources/comparing-moving-estimates",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover"
+      ]
+    },
+    {
+      "path": "/es/recursos/comparar-presupuestos",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover"
+      ]
+    },
+    {
+      "path": "/resources/before-the-inventory-call",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist"
+      ]
+    },
+    {
+      "path": "/es/recursos/preparar-inventario",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist"
+      ]
+    },
+    {
+      "path": "/resources/who-handles-my-move",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "path": "/es/recursos/quien-organiza-mi-mudanza",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/movers-vs-brokers",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist",
+        "https://www.fmcsa.dot.gov/protect-your-move/search-mover",
+        "https://www.vantagehomemovers.com/consumer-information"
+      ]
+    },
+    {
+      "path": "/resources/moving-cost-guide",
+      "sources": [
+        "https://www.fmcsa.dot.gov/consumer-protection/protect-your-move/how-can-i-avoid-unexpected-moving-costs",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist"
+      ]
+    },
+    {
+      "path": "/es/recursos/costos-de-mudanza",
+      "sources": [
+        "https://www.fmcsa.dot.gov/consumer-protection/protect-your-move/how-can-i-avoid-unexpected-moving-costs",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist"
+      ]
+    },
+    {
+      "path": "/resources/items-to-check-before-packing",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/how-to/subpartB",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist"
+      ]
+    },
+    {
+      "path": "/es/recursos/articulos-antes-de-embalar",
+      "sources": [
+        "https://www.fmcsa.dot.gov/protect-your-move/how-to/subpartB",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist"
+      ]
+    },
+    {
+      "path": "/resources/moving-paperwork-guide",
+      "sources": [
+        "https://www.fmcsa.dot.gov/sites/fmcsa.dot.gov/files/RightsandResponsibilitiesBooklet_2022Update.pdf",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist"
+      ]
+    },
+    {
+      "path": "/es/recursos/documentos-de-mudanza",
+      "sources": [
+        "https://www.fmcsa.dot.gov/sites/fmcsa.dot.gov/files/RightsandResponsibilitiesBooklet_2022Update.pdf",
+        "https://www.fmcsa.dot.gov/protect-your-move/moving-checklist"
+      ]
+    }
+  ],
+  "pageErrors": []
+}

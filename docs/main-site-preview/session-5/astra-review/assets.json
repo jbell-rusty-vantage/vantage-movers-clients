@@ -1,0 +1,37 @@
+[
+  {
+    "file": "apps/main-site/public/images/preview/astra-review/hero-phone-v1-1024.webp",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 96578,
+    "sha256": "294e89f713654875751983ed122d70028b1a92d5c9e7920a66e6aeb8fb00cfce"
+  },
+  {
+    "file": "apps/main-site/public/images/preview/astra-review/hero-phone-v1-720.webp",
+    "width": 720,
+    "height": 1080,
+    "bytes": 55758,
+    "sha256": "386bd01fb94d348f7db11bb66d5a31178269637009545082f8e383edec57faf1"
+  },
+  {
+    "file": "apps/main-site/public/images/preview/astra-review/hero-phone-v1-390.webp",
+    "width": 390,
+    "height": 585,
+    "bytes": 20496,
+    "sha256": "3318f8ce2f36533465aaa6f6f1890c0ffdc63ee93f5e7c3e4d15c20b4a103067"
+  },
+  {
+    "file": "apps/main-site/public/images/preview/astra-review/hero-phone-v1.png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 2125471,
+    "sha256": "cb1d4ce241aa48dd96192985042270b2442c9781eaed07e9fd4bd48cbddd2b35"
+  },
+  {
+    "file": "apps/main-site/public/images/preview/home-inventory.webp",
+    "width": 1440,
+    "height": 960,
+    "bytes": 105142,
+    "sha256": "b194a9f8babf72085e39db784f902983563653d6332f34bc9e9cfed440c58c6c"
+  }
+]

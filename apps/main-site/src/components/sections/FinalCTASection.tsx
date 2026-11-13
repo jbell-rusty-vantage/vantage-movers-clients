@@ -1,3 +1,5 @@
+import { CmsElement } from "@/components/cms/Content";
+import { CmsText } from "@/components/cms/Content";
 import { Phone } from "lucide-react";
 import { business, finalCta } from "@/lib/content";
 import { heroBodyFont, heroHeadingFont } from "@/lib/fonts";
@@ -46,7 +48,7 @@ export function FinalCTASection() {
             color: colors.badgeText,
           }}
         >
-          {finalCta.badge}
+          <CmsText scope="components/sections/FinalCTASection.tsx">{finalCta.badge}</CmsText>
         </div>
         <h2
           className={`${accentClass} mb-4 text-balance leading-[1.06] font-extrabold -tracking-[.02em]`}
@@ -55,16 +57,16 @@ export function FinalCTASection() {
             color: colors.titleColor,
           }}
         >
-          {finalCta.title}
+          <CmsText scope="components/sections/FinalCTASection.tsx">{finalCta.title}</CmsText>
         </h2>
         <p
           className={`${bodyClass} mx-auto mb-8 max-w-[680px] leading-[1.6]`}
           style={{ fontSize: `${BODY_FONT_SIZE}px`, color: colors.bodyColor }}
         >
-          {finalCta.body}
+          <CmsText scope="components/sections/FinalCTASection.tsx">{finalCta.body}</CmsText>
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3.5">
-          <a
+          <CmsElement element="a" scope="components/sections/FinalCTASection.tsx"
             href="#quote"
             className={`${accentClass} inline-flex w-full items-center justify-center gap-2 px-6 py-[17px] text-center font-bold tracking-[.04em] uppercase no-underline shadow-[0_10px_28px_rgba(255,192,46,.34)] transition hover:-translate-y-0.5 min-[420px]:w-auto sm:px-8 ${radiusClasses[PRIMARY_BUTTON_RADIUS]}`}
             style={{
@@ -75,9 +77,9 @@ export function FinalCTASection() {
             data-analytics-event="cta_clicked"
             data-analytics-cta-location="final_cta"
           >
-            {finalCta.primaryCta}
-          </a>
-          <a
+            <CmsText scope="components/sections/FinalCTASection.tsx">{finalCta.primaryCta}</CmsText>
+          </CmsElement>
+          <CmsElement element="a" scope="components/sections/FinalCTASection.tsx"
             href={business.phoneHref}
             className={`${accentClass} inline-flex w-full items-center justify-center gap-2 border-[1.5px] px-6 py-4 text-center font-bold tracking-[.04em] uppercase no-underline transition hover:bg-white/10 min-[420px]:w-auto sm:px-[30px] ${radiusClasses[SECONDARY_BUTTON_RADIUS]}`}
             style={{
@@ -88,8 +90,8 @@ export function FinalCTASection() {
             data-analytics-location="final_cta"
           >
             <Phone size={17} strokeWidth={2} aria-hidden />
-            {finalCta.secondaryCta}
-          </a>
+            <CmsText scope="components/sections/FinalCTASection.tsx">{finalCta.secondaryCta}</CmsText>
+          </CmsElement>
         </div>
       </Container>
     </section>

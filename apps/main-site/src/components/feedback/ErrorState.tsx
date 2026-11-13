@@ -1,7 +1,11 @@
 "use client";
+import { CmsElement } from "@/components/cms/Content";
+
+import { CmsText } from "@/components/cms/Content";
+
 
 import { useEffect } from "react";
-import Link from "next/link";
+import { CmsLink as Link } from "@/components/cms/Content";
 import { AlertTriangle, ArrowLeft, RefreshCw } from "lucide-react";
 import { business } from "@/lib/content";
 import { heroHeadingFont } from "@/lib/fonts";
@@ -18,18 +22,16 @@ function ErrorFallbackHeader() {
   return (
     <header className="border-b border-cream-border-2 bg-white px-6 py-4 shadow-[0_2px_12px_rgba(2,71,153,.05)]">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
-        <Link
+        <Link scope="components/feedback/ErrorState.tsx"
           href="/"
           className={`text-lg font-extrabold tracking-[.02em] text-brand-blue no-underline ${heroHeadingFont.className}`}
         >
-          {business.name}
+          <CmsText scope="components/feedback/ErrorState.tsx">{business.name}</CmsText>
         </Link>
-        <a
+        <CmsElement element="a" scope="components/feedback/ErrorState.tsx"
           href={business.phoneHref}
           className={`rounded-md2 bg-brand-yellow-soft px-4 py-2 text-sm font-extrabold tracking-[.03em] text-brand-blue uppercase no-underline ${heroHeadingFont.className}`}
-        >
-          Call
-        </a>
+        ><CmsText scope="components/feedback/ErrorState.tsx">{"Call"}</CmsText></CmsElement>
       </div>
     </header>
   );
@@ -39,7 +41,7 @@ function ErrorFallbackFooter() {
   return (
     <footer className="bg-white px-6 py-8 text-center text-sm leading-[1.7] text-[#64748B]">
       <p>
-        {business.brokerLine} - DOT {business.dot} - MC {business.mc}
+        <CmsText scope="components/feedback/ErrorState.tsx">{business.brokerLine}</CmsText><CmsText scope="components/feedback/ErrorState.tsx">{" - DOT "}</CmsText><CmsText scope="components/feedback/ErrorState.tsx">{business.dot}</CmsText><CmsText scope="components/feedback/ErrorState.tsx">{" - MC "}</CmsText><CmsText scope="components/feedback/ErrorState.tsx">{business.mc}</CmsText>
       </p>
     </footer>
   );
@@ -78,34 +80,30 @@ export function ErrorState({
             <p
               className={`mb-3 text-sm font-extrabold tracking-[.14em] text-brand-yellow uppercase ${heroHeadingFont.className}`}
             >
-              {business.name}
+              <CmsText scope="components/feedback/ErrorState.tsx">{business.name}</CmsText>
             </p>
             <h1
               className={`mb-4 text-balance text-[clamp(34px,5vw,56px)] leading-[1.04] font-extrabold tracking-[-.02em] ${heroHeadingFont.className}`}
             >
-              {title}
+              <CmsText scope="components/feedback/ErrorState.tsx">{title}</CmsText>
             </h1>
             <p className="mx-auto mb-8 max-w-xl text-[16px] leading-[1.7] text-on-dark-100">
-              {message}
+              <CmsText scope="components/feedback/ErrorState.tsx">{message}</CmsText>
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row">
-              {reset && (
+              <CmsText scope="components/feedback/ErrorState.tsx">{reset && (
                 <button
                   type="button"
                   onClick={reset}
                   className={`inline-flex items-center justify-center gap-2 rounded-lg2 border-0 bg-brand-yellow px-5 py-3 font-extrabold tracking-[.04em] text-black uppercase shadow-cta-yellow transition hover:-translate-y-0.5 ${heroHeadingFont.className}`}
                 >
-                  <RefreshCw className="size-4" strokeWidth={2.4} aria-hidden />
-                  Try Again
-                </button>
-              )}
-              <Link
+                  <RefreshCw className="size-4" strokeWidth={2.4} aria-hidden /><CmsText scope="components/feedback/ErrorState.tsx">{"Try Again"}</CmsText></button>
+              )}</CmsText>
+              <Link scope="components/feedback/ErrorState.tsx"
                 href="/"
                 className={`inline-flex items-center justify-center gap-2 rounded-lg2 border border-white/25 bg-white/10 px-5 py-3 font-extrabold tracking-[.04em] text-white no-underline transition hover:-translate-y-0.5 hover:bg-white/15 ${heroHeadingFont.className}`}
               >
-                <ArrowLeft className="size-4" strokeWidth={2.4} aria-hidden />
-                Back Home
-              </Link>
+                <ArrowLeft className="size-4" strokeWidth={2.4} aria-hidden /><CmsText scope="components/feedback/ErrorState.tsx">{"Back Home"}</CmsText></Link>
             </div>
           </div>
         </section>

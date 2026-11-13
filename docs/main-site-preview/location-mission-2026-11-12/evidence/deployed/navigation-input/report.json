@@ -1,0 +1,10 @@
+{
+  "origin": "https://vantage-movers-clients-main-site-ji4bm12lw-vantage-4d3db9ef.vercel.app",
+  "results": [
+    "Desktop mouse hover opens and pointer departure closes",
+    "First desktop click keeps the panel open and second closes it",
+    "Enter and Space open, Escape closes and restores focus",
+    "Touch tablet opens on first tap and closes on second or outside tap",
+    "Phone error first triggered on blur clears on edit and first Continue advances"
+  ]
+}

@@ -1,54 +1,14 @@
-import { Clock, Phone } from "lucide-react";
+import { CmsText } from "@/components/cms/Content";
+import { CmsLink as Link } from "@/components/cms/Content";
+import { ShieldCheck } from "lucide-react";
 import { business } from "@/lib/content";
-import { heroBodyFont } from "@/lib/fonts";
 import { Container } from "@/components/ui/Container";
 
-/** Relaxed spacing — layout-playground spacingScale.relaxed */
-const BAR_SPACING = { py: 12, gap: 24 } as const;
-
-export function ComplianceBar() {
-  return (
-    <div
-      className={`${heroBodyFont.className} bg-brand-blue text-[12px] tracking-[.01em] text-on-dark-100`}
-    >
-      <Container>
-        <div
-          className="flex flex-wrap items-center justify-between"
-          style={{
-            gap: `${BAR_SPACING.gap}px`,
-            paddingTop: `${BAR_SPACING.py}px`,
-            paddingBottom: `${BAR_SPACING.py}px`,
-          }}
-        >
-          <div
-            className="flex flex-wrap items-center"
-            style={{ gap: `${BAR_SPACING.gap}px` }}
-          >
-            <span className="inline-flex items-center gap-[7px] font-semibold text-white">
-              <span className="inline-block size-[7px] rounded-full bg-brand-yellow" aria-hidden />
-              {business.brokerLine}
-            </span>
-            <span className="text-on-dark-600">DOT {business.dot}</span>
-            <span className="text-on-dark-600">MC {business.mc}</span>
-          </div>
-          <div
-            className="flex flex-wrap items-center"
-            style={{ gap: `${BAR_SPACING.gap}px` }}
-          >
-            <span className="inline-flex items-center gap-1.5">
-              <Clock className="size-[13px] text-brand-yellow" strokeWidth={2} aria-hidden />
-              {business.hours}
-            </span>
-            <a
-              href={business.phoneHref}
-              className="inline-flex items-center gap-1.5 font-bold text-white no-underline"
-            >
-              <Phone className="size-[13px] text-brand-yellow" strokeWidth={2} aria-hidden />
-              {business.phoneDisplay}
-            </a>
-          </div>
-        </div>
-      </Container>
-    </div>
-  );
+export function ComplianceBar({ locale = "en" }: { locale?: "en" | "es" }) {
+  return <div className="license-strip bg-brand-blue text-white">
+    <Container className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 py-2 text-[11px] sm:text-xs">
+      <span className="inline-flex items-center gap-1.5 font-semibold"><ShieldCheck size={14} className="text-brand-yellow" aria-hidden /><CmsText scope="components/layout/ComplianceBar.tsx">{locale === "es" ? "Intermediario de mudanzas con licencia" : "Licensed Moving Broker"}</CmsText></span>
+      <Link scope="components/layout/ComplianceBar.tsx" href="/consumer-information" className="inline-flex gap-4 text-white no-underline hover:underline"><span><CmsText scope="components/layout/ComplianceBar.tsx">{"USDOT "}</CmsText><CmsText scope="components/layout/ComplianceBar.tsx">{business.dot}</CmsText></span><span><CmsText scope="components/layout/ComplianceBar.tsx">{"MC "}</CmsText><CmsText scope="components/layout/ComplianceBar.tsx">{business.mc}</CmsText></span></Link>
+    </Container>
+  </div>;
 }

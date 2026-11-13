@@ -1,5 +1,7 @@
 # Site preview handoff status
 
+**Current optimization candidate, November 12:** [Main Site milestone](main-site-preview/milestone-2026-11-12/README.md) and [review preview](https://vantage-main-site-optimization.vercel.app). Bounded server attribution/outcome reporting is now implemented and isolated-preview qualified. The October infrastructure and alternate-design checkpoints below remain historical. Production is unchanged by this milestone.
+
 Audit date: October 30, 2026 (America/New_York). This is an evidence snapshot, not an evergreen claim about branch counts.
 
 ## Branch inventory

@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-11-12T15:51:30.731Z",
+  "scope": "Local uncommitted implementation, mocked browser location and provider seam, zero quote submissions. Not live geocoding qualification.",
+  "cases": [
+    {
+      "locale": "en",
+      "mode": "success",
+      "passed": true,
+      "locationRequests": 1
+    },
+    {
+      "locale": "en",
+      "mode": "denied",
+      "passed": true,
+      "locationRequests": 0
+    },
+    {
+      "locale": "en",
+      "mode": "unavailable",
+      "passed": true,
+      "locationRequests": 1
+    },
+    {
+      "locale": "en",
+      "mode": "editing-pending",
+      "passed": true,
+      "locationRequests": 0
+    },
+    {
+      "locale": "es",
+      "mode": "success",
+      "passed": true,
+      "locationRequests": 1
+    },
+    {
+      "locale": "es",
+      "mode": "denied",
+      "passed": true,
+      "locationRequests": 0
+    },
+    {
+      "locale": "es",
+      "mode": "unavailable",
+      "passed": true,
+      "locationRequests": 1
+    },
+    {
+      "locale": "es",
+      "mode": "editing-pending",
+      "passed": true,
+      "locationRequests": 0
+    }
+  ]
+}

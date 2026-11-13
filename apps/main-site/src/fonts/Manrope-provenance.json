@@ -1,0 +1,30 @@
+{
+  "family": "Manrope",
+  "checkedAt": "2026-11-12",
+  "source": "https://github.com/google/fonts/tree/main/ofl/manrope",
+  "license": "SIL Open Font License 1.1",
+  "assets": [
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/Manrope%5Bwght%5D.ttf",
+      "file": "Manrope-variable.ttf",
+      "bytes": 164700,
+      "gitBlob": "75274da58537d6123b14f2cd0c355ad4681fc2b3",
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt",
+      "file": "OFL-Manrope.txt",
+      "bytes": 4387,
+      "gitBlob": "e271172a9ed0cddc895aabb6509f1c7d880b492d",
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    }
+  ],
+  "usage": {
+    "display": "swap",
+    "module": "src/lib/fonts.ts",
+    "weight": "400 700",
+    "export": "heroBodyFont",
+    "loader": "next/font/local"
+  },
+  "reason": "Avoid Next 16.3.3 Turbopack Google Manrope resolver failure observed in Main Site CI run 43245474623. Other fonts unchanged."
+}
